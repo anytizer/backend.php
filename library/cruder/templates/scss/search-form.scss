@@ -5,20 +5,20 @@
 .search-form
 {
 	background-color: #d9e7d9;
-}
+	
+	table
+	{
+		width: 100%;
+	}
 
-.search-form table
-{
-	width: 100%;
-}
+	table th
+	{
+		text-align: left;
+		padding: 4px;
+	}
 
-.search-form table th
-{
-	text-align: left;
-	padding: 4px;
-}
-
-.search-form input[type="text"]
-{
-	width: 200px;
+	input[type="text"]
+	{
+		width: 200px;
+	}
 }

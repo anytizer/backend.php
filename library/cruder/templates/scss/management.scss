@@ -1,17 +1,9 @@
-@import "_colors";
-
 /**
  * CSS produced for __SUBDOMAIN_NAME__, as of __TIMESTAMP__
  */
-*
-{
-	margin: 0;
-	padding: 0;
-	border: none;
-	outline: none;
-	font-family: Verdana, Arial, Helvetica, sans-serif;
-	font-size: 12px;
-}
+
+@import "_colors";
+@import "_reset";
 
 body
 {
@@ -363,7 +355,7 @@ a.button-cancel
 /** header */
 .header-wrapper
 {
-	background: url("../images/theme02/background-top.png") repeat-x left top;
+	background: url("../images/background-top.png") repeat-x left top;
 }
 
 .header
@@ -405,7 +397,7 @@ a.button-cancel
 	color: #333333;
 	font-size: 10px;
 	padding: 0px $padding 0px 20px;
-	background: url("../images/theme02/sprites-small.png") no-repeat left top;
+	background: url("../images/sprites-small.png") no-repeat left top;
 }
 
 .menus-top p a.item1
@@ -429,7 +421,7 @@ a.button-cancel
 
 .nav-container
 {
-	background: url("../images/theme02/background-navigator.png") repeat-x left top;
+	background: url("../images/background-navigator.png") repeat-x left top;
 }
 
 .navigator-main
@@ -442,7 +434,7 @@ a.button-cancel
 /** main content */
 .content-wrapper
 {
-	background: url("../images/theme02/background-content.png") repeat-y center top;
+	background: url("../images/background-content.png") repeat-y center top;
 }
 
 .content-panel
@@ -787,7 +779,7 @@ span.required
 	display: block;
 	width: 95px;
 	height: 93px;
-	background: #f8f8f8 url("../images/theme02/sprites.png") no-repeat left top;
+	background: #f8f8f8 url("../images/sprites.png") no-repeat left top;
 }
 
 .thumb-holder ul li a span
@@ -902,7 +894,7 @@ th.actions, td.actions
 {
 	display: block;
 	text-indent: -999em;
-	background: url("../images/theme02/sprites-small.png") no-repeat left top;
+	background: url("../images/sprites-small.png") no-repeat left top;
 	height: 16px;
 	width: 16px;
 }
@@ -939,7 +931,7 @@ li.move-down a
 
 .btm-action li a
 {
-	background: url("../images/theme02/sprites-small.png") no-repeat left top;
+	background: url("../images/sprites-small.png") no-repeat left top;
 	display: inline-block;
 	padding: 0px 0px 0px 20px;
 }
@@ -972,7 +964,7 @@ li.move-down a
 {
 	color: #ffffff;
 	font-size: 12px;
-	background: #97aa7d url("../images/theme02/sprites-small.png") no-repeat left 8px;
+	background: #97aa7d url("../images/sprites-small.png") no-repeat left 8px;
 	padding: 5px 15px 5px 25px;
 	display: block;
 }

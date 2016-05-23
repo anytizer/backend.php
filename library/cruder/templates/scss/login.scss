@@ -2,13 +2,7 @@
  * CSS produced for __SUBDOMAIN_NAME__, as of __TIMESTAMP__
  */
 
-*
-{
-	padding: 0px;
-	margin: 0px;
-	border: none;
-	outline: none;
-}
+@import "_reset";
 
 body, td, th
 {

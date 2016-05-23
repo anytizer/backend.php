@@ -40,7 +40,7 @@ ul.nav a:hover, .nav li.current > a
 
 .nav > li:hover > a
 {
-	background-color: #71a2ab;
+	background-color: $menu-background;
 }
 
 ul.nav li ul li.parent a
@@ -65,28 +65,31 @@ ul.nav li ul li
 	width: 200px;
 }
 
-ul.nav li ul a
+ul.nav li ul
 {
-	height: auto;
-	clear: both;
-	font-size: 12px;
-	padding: 7px 16px;
-	background-color: #2f2f2f;
-	border-bottom: 1px solid #000000;
-	border-top: 1px solid #4d4d4d;
-	color: #a7a7a7;
+	a
+	{
+		height: auto;
+		clear: both;
+		font-size: 12px;
+		padding: 7px 16px;
+		background-color: #2f2f2f;
+		border-bottom: 1px solid #000000;
+		border-top: 1px solid #4d4d4d;
+		color: #a7a7a7;
+	}
+	
+	a:hover
+	{
+		background-color: #242424;
+		color: #ffffff
+	}
+	a span
+	{
+		padding: 3px 0px;
+	}
 }
 
-ul.nav li ul a:hover
-{
-	background-color: #242424;
-	color: #ffffff
-}
-
-ul.nav li ul a span
-{
-	padding: 3px 0px;
-}
 
 ul.nav ul ul
 {
@@ -106,7 +109,6 @@ ul.nav li ul ul
 	top: 0px;
 }
 
-/*ul.nav li:hover ul ul, .nav li:hover ul ul ul, .nav li:hover ul ul ul ul { display:block !important; }*/
 .nav li ul li:hover ul
 {
 	display: block !important;
@@ -121,6 +123,3 @@ html > body .nav li ul li
 {
 	margin-top: -2px;
 }
-
-/** #body-frontend **/
-/** same as the above CSS here, if you like **/

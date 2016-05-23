@@ -4,13 +4,8 @@
 
 /** global error messages */
 
-*
-{
-	border: none;
-	margin: 0px;
-	padding: 0px;
-	outline: none;
-}
+@import "_colors";
+@import "_reset";
 
 body, td, th
 {
@@ -46,25 +41,28 @@ h1
 	border: thin solid #cccccc;
 }
 
-a:link
+a
 {
-	color: #0000ff;
-	text-decoration: none;
-}
+	&:link
+	{
+		color: #0000ff;
+		text-decoration: none;
+	}
 
-a:visited
-{
-	text-decoration: none;
-}
+	&:visited
+	{
+		text-decoration: none;
+	}
 
-a:hover
-{
-	text-decoration: none;
-}
+	&:hover
+	{
+		text-decoration: none;
+	}
 
-a:active
-{
-	text-decoration: none;
+	&:active
+	{
+		text-decoration: none;
+	}
 }
 
 em
