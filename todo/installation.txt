@@ -12,7 +12,7 @@ Produce database log files in REALPATH of public_html parent only.
 
 When license file exists, do not produce config files.
 Whe install directory exists, do not run the website.
-Create .ini file of the file to read back the configurations.
+Create php.ini file of the file to read back the configurations.
 Relocate license file in library directory.
 Do not serve license.ini in .htaccess.
 Create default users:

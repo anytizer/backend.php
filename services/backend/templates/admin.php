@@ -6,7 +6,7 @@
 	<meta name="keywords" content="{$page.meta_keywords|default:$smarty.const.__FRAMEWORK_META_KEYWORDS__}"/>
 	<meta name="description" content="{$page.meta_description|default:$smarty.const.__FRAMEWORK_META_DESCRIPTION__}"/>
 	<link href="css/framework.css" rel="stylesheet" type="text/css"/>
-	{\plugins\iepngfix}
+	{iepngfix}
 </head>
 <body>
 <!--

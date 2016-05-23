@@ -108,22 +108,12 @@ if(!(is_dir($subdomain_temp_zone) && is_writable($subdomain_temp_zone)))
 }
 #die($subdomain_temp_zone);
 ini_set('error_log', $subdomain_temp_zone . '/' . @date('Ymd') . '.log');
-
-# There are virtually no limitations in local systems.
-# We want to develop error prone applications.
-ini_set('display_errors', 'On');
-ini_set('log_errors', 'On');
-error_reporting(E_ALL | E_STRICT);
-
-# Continue even in user errors or browser is closed
-ignore_user_abort(true);
-
-# Allow scripts to run for infinite time.
-set_time_limit(0);
-
-# Virtually, there are no memory limits.
-# This framework runs on really big servers.
-ini_set('memory_limit', -1);
+ini_set('session.save_path', __TEMP_PATH__);
+$ini = parse_ini_file(__LIBRARY_PATH__.'/inc/php.ini', true);
+foreach($ini['backend'] as $key => $value)
+{
+	ini_set($key, $value);
+}
 
 /**
  * Smarty class initiation.
@@ -132,13 +122,6 @@ ini_set('memory_limit', -1);
  */
 require_once(__THIRD_PARTIES__ . '/smarty/Smarty.class.php');
 $smarty = new \Smarty();
-/**
- * @todo Problems with namespaces appeared
- */
-#$smarty->use_namespace('plugins');
-#$smarty->setNamespace('plugins'); 
-
-
 /**
  * Compiled files are already protected, and are not available for direct download.
  * In each template files, it will add extra security script
@@ -210,34 +193,17 @@ if(!is_writable($smarty->cache_dir))
 {
 	throw new \Exception("Unable to write to: chmod -R 777 {$smarty->cache_dir}");
 }
-# $smarty->testInstall();
+#$smarty->testInstall();
 
 # Read subdomain specific configuration file
 $service_config_file = __SUBDOMAIN_BASE__ . '/config.php';
 $controller_location = __SUBDOMAIN_BASE__ . '/controllers';
 
 /**
- * Only for file based sessions. Database enabled sessions do not need these.
- */
-#session_save_path(__TEMP_PATH__);
-# 5;/tmp + mod_files.bat
-ini_set('session.save_path', __TEMP_PATH__);
-ini_set('session.auto_start', false);
-ini_set('session.use_cookies', true);
-ini_set('session.cookie_httponly', true);
-ini_set('session.gc_probability', 1);
-ini_set('session.gc_divisor', 100);
-ini_set('session.gc_maxlifetime', 1440);
-
-/**
  * Handles session data from database.
  * Disable the below line if in case of performance issues.
  */
 $session = new \backend\session();
-
-/**
- * Begin the session
- */
 session_start();
 
 # Keep a log of unique visitors. It needs to access session data.

@@ -1,5 +1,5 @@
 <?php
-namespace common;
+namespace backend;
 
 /**
  * Reads an email template
@@ -19,7 +19,7 @@ class email_template
 		parent::__construct();
 
 		# Choose the Language of a customer
-		$headers = new headers();
+		$headers = new \common\headers();
 		$language = (!$language) ? $headers->language() : $language;
 		$template_sql = "
 SELECT
@@ -63,7 +63,7 @@ LIMIT 1
 			$template['text'] = "Error reading template text ($email_code). Check, if the template is ACTIVE.";
 		}
 		#\common\stopper::debug($template, false);
-		$this->template = new datatype_email($template['subject'], $template['html'], $template['text']);
+		$this->template = new \others\datatype_email($template['subject'], $template['html'], $template['text']);
 	}
 
 	/**
@@ -87,7 +87,7 @@ LIMIT 1
 		# Import the template skeleton into a local variable
 		#$template = $this->template; # a copy of datatype_email class
 		#$template = clone $this->template; # a copy of datatype_email class
-		$template = new datatype_email($this->template->subject, $this->template->html, $this->template->text);
+		$template = new \others\datatype_email($this->template->subject, $this->template->html, $this->template->text);
 		#\common\stopper::debug($template, false);
 		#\common\stopper::message('Template cloned');
 

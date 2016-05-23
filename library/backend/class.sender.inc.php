@@ -82,7 +82,7 @@ WHERE
 	 * Overwrite the default configurations
 	 * Resets the details of a sender
 	 */
-	public function reset_sender(datatype_recipient $recipient)
+	public function reset_sender(\others\datatype_recipient $recipient)
 	{
 		$this->From = $recipient->email;
 		$this->FromName = $recipient->name;
@@ -96,7 +96,7 @@ WHERE
 	 * Overwrite the default configurations
 	 * Resets the details of a recipient, reply to
 	 */
-	public function reset_reply_to(datatype_recipient $recipient)
+	public function reset_reply_to(\others\datatype_recipient $recipient)
 	{
 		$this->ReplyTo = array();
 		if($recipient->is_valid())
@@ -120,7 +120,7 @@ WHERE
 	/**
 	 * Send an email
 	 */
-	public function deliver(datatype_email $email_data, $config_name = 'TEST-LOCALHOST')
+	public function deliver(\others\datatype_email $email_data, $config_name = 'TEST-LOCALHOST')
 	{
 		$this->Subject = $email_data->subject;
 		$this->Body = $email_data->html;

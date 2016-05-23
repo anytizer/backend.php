@@ -11,13 +11,13 @@
 
 $code = $variable->get('code', 'string', '');
 
-$email_template = new email_template('201204301504529384'); # Test email template
-$sender = new sender($code);
+$email_template = new \backend\email_template('201204301504529384'); # Test email template
+$sender = new \backend\sender($code);
 $sender->ClearAddresses();
 
 # Send email to the administrator
-$sender->add_recipient(new datatype_recipient(DEVELOPER_EMAIL, 'Bimal Poudel'));
-$sender->AddBCC('emailtest@bugs.crossovernepal.com', 'Bimal Poudel');
+$sender->add_recipient(new \others\datatype_recipient(DEVELOPER_EMAIL, 'Bimal Poudel'));
+$sender->AddBCC('emailtest@example.com', 'Test Sender');
 
 $data = array(
 	'CODE' => $code,

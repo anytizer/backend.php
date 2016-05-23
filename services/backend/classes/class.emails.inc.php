@@ -95,7 +95,7 @@ class emails
 		$per_page = (int)$per_page;
 		$variable = new \common\variable(); # It may be necessary to read list out data of a user
 
-		$listing_sql = "
+		echo $listing_sql = "
 SELECT SQL_CALC_FOUND_ROWS
 	e.`email_id`, # Do not remove this
 	e.`subdomain_id`,
