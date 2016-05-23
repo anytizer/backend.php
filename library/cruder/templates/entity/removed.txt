@@ -1,0 +1,13 @@
+[removed from list-public.php]
+
+<!--
+<tfoot>
+	<tr>
+		<td>-</td>
+		<td>-</td>
+		
+		{* Empty FOOTER Cells *}
+		__COLUMN_EMPTY__
+	</tr>
+</tfoot>
+-->

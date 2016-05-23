@@ -1,0 +1,71 @@
+/** Useful for admin actions only */
+
+/** Listing pages to edit */
+.pages
+{
+	padding: 5px;
+	border: 1px solid #666666;
+}
+
+.page-holder
+{
+	clear: both;
+	height: 20px;
+}
+
+.A
+{
+	background-color: #ffffff;
+}
+
+.B
+{
+	background-color: #eeeeee;
+}
+
+.header
+{
+	color: #000033;
+	background-color: #cccccc;
+	font-weight: bold;
+}
+
+.icon
+{
+	float: left;
+	width: 100px; /** depends upon number of icons * 16 + marginal width */
+}
+
+.icon img
+{
+	width: 16px;
+	height: 16px;
+}
+
+.page
+{
+	padding: 3px;
+	float: left;
+	width: 260px;
+}
+
+.title
+{
+	float: left;
+}
+
+.marginal
+{
+	clear: both;
+}
+
+.error
+{
+	font-weight: bold;
+	color: #ff0000;
+}
+
+img.icon-admin, img.icon-login
+{
+	cursor: pointer;
+}

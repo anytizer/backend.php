@@ -1,0 +1,7 @@
+{
+	"require-dev": {
+		"phpunit/phpunit": "*",
+		"phpunit/phpunit-selenium": "*"
+        "phpdocumentor/phpdocumentor": "*"
+	}
+}

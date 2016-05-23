@@ -1,0 +1,12 @@
+This is a /images directory of this subdomain (__SUBDOMAIN_NAME__).
+Anything here, will appear as if called from the parent.
+Write your .images files uniquenly, not matching to the parent's /images/* files.
+
+This uses a special URL rewriring to do so, in the parent framework.
+
+ie.,
+<__SUBDOMAIN_NAME__>/images/* <= <subdomain>/library/services/<__SUBDOMAIN_NAME__>/images/*
+
+Notes:
+You may copy these files int /images to speed up the operation.
+File names here, should NOT match as that in parent's directory.

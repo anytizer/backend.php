@@ -1,0 +1,6 @@
+Register in https://gratipay.com/
+Make a video on
+	- download
+	- setup
+	- installation
+	- crud

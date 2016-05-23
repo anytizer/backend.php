@@ -1,0 +1,38 @@
+/** declaring entity details */
+.details div
+{
+	padding: 5px;
+	font-size: 12px;
+}
+
+.details div strong
+{
+	color: #009900;
+}
+
+.details .holder
+{
+	clear: both;
+}
+
+.details .holder .title
+{
+	float: left;
+	width: 150px;
+	text-align: right;
+	font-weight: bold;
+	padding-right: 10px;
+}
+
+.details .holder .content
+{
+	float: left;
+	text-align: left;
+}
+
+/** end of entity details */
+
+div.details > div
+{
+	padding-bottom: 15px;
+}

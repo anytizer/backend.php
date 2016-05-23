@@ -1,0 +1,13 @@
+The following files are used in this resource.
+
+images/logo.png			=> logo.png
+images/small-sprites.gif	=> sprites-small.png
+images/top-bg.jpg		=> background-top.png
+images/nav-bg.jpg		=> background-navigator.png
+images/sprite.jpg		=> sprites.png
+images/content-bg.jpg		=> background-content.png
+
+Copy these files to:
+	/library/services/www.test.com/cruder/
+	/js/theme02/dropdown-menus.js
+	/js/images/theme02/*.png

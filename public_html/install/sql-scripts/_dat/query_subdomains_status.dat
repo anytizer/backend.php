@@ -1,0 +1,8 @@
+
+TRUNCATE `query_subdomains_status`;
+
+LOAD DATA LOCAL INFILE '../public_html/install/sql-scripts/_csv/query_subdomains_status.csv'
+INTO TABLE `query_subdomains_status`
+FIELDS ESCAPED BY '\\' TERMINATED BY ',' ENCLOSED BY '"'
+LINES TERMINATED BY '\r\n';
+

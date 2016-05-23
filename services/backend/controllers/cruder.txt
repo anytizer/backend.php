@@ -1,0 +1,30 @@
+require_once(__ROOT__.'/classes/cruder/class.entity.inc.php');
+/**
+* Testing cruder: development task only
+*/
+
+# Instantiating
+$entity = new entity();
+
+# Add an entry in entity table
+/*$entity_id = $entity->add(
+	array(
+		'entity_name' => md5(microtime()),
+	)
+);*/
+#print_r($entity); die(__FILE__.', '.__LINE__);
+
+$entity_id = 1;
+
+/*# Modifying an attribute
+$entity->edit(
+	array(
+		'entity_name' => 'edited: '.md5(microtime()),
+	),
+	array(
+		'entity_id' => $entity_id,
+	)
+);*/
+
+# Removing with is_active='N' mode
+$entity->delete($entity_id);

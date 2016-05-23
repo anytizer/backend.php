@@ -1,0 +1,20 @@
+Subdomain : __SUBDOMAIN_NAME__
+Created on: __TIMESTAMP__
+
+
+Info:
+Holds the class files specific to this subdomain service.
+
+
+Developer's Notes:
+Every single class file servers as a model for your application.
+
+
+Warning:
+If the names collide with the parent's class names, they will be discarded.
+And, parent's class files will be used.
+
+
+Suggestions:
+Hence, be sure to make unique class names (entity names) only.
+Avoid using reserved class names.

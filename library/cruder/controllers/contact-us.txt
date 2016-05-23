@@ -1,0 +1,6 @@
+Somebody contacted via website
+Name/Email: {$NAME} <{$EMAIL}>
+
+Subject: {$SUBJECT}
+----------------------
+{$MESSAGE}

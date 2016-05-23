@@ -1,0 +1,115 @@
+To complete the installation; please copy the files under "root" into
+your server's root locations. They are normalled named similar to:
+	wwww
+	public_html
+	httpdocs
+	httpsdocs
+Contents under "root" directory are spefic to the subdomain service only.
+And they are developed as different applications; out of the scope of the 
+core framework you have used. Each sudomain might have its own dependencies.
+
+
+Directory Structures for __ENTITY__
+Location: library/services/__SUBDOMAIN_NAME__/
+	Put all files in this location.
+
+
+Frequently accessed directories are:
+	controlles
+	templates
+	sqls
+	js
+
+
+Detailed explanations of files and directories:
+
+
+config.mysql.inc.php (library/services/__SUBDOMAIN_NAME__/config.mysql.inc.php)
+Loads mysql connection.
+Absense of this file will lead to connect to parent's database (default feature).
+	Warnings:
+	It will isolate your application's database from the parent.
+	Using this file might prevent you to avoid backups from parent database.
+	It may create a confusion with a parent database.
+	Generally NOT suggested to use. Meant for expert level use only.
+
+config.php (library/services/__SUBDOMAIN_NAME__/config.php)
+This file is loaded before running any files under this subdomain.
+Put your global configurations and defined constants here.
+
+
+classes (library/services/__SUBDOMAIN_NAME__/classes)
+PHP Classes needed for this service only
+
+
+configs (library/services/__SUBDOMAIN_NAME__/configs)
+Smarty configurations if needed
+
+
+controllers (library/services/__SUBDOMAIN_NAME__/controllers)
+Controllers for this service only.
+The files here bridge between user's interactions, input and the database models.
+
+
+plugins (library/services/__SUBDOMAIN_NAME__/plugins)
+On-demand Smarty plugins for this service only.
+Put your application specific Smarty plugins here.
+If the names collide with the parent's name, they will be discarded.
+
+
+sqls (library/services/__SUBDOMAIN_NAME__/sqls)
+Sets of SQLs to register pages.
+Be careful with with the subdomain ID.
+Make sure that each sql file has used the correct subdomain id.
+All this files are created dynamically here, once you make files for an entity.
+
+
+templates (library/services/__SUBDOMAIN_NAME__/templates)
+Complete Smarty templates related to your entity.
+Parent (this directory) holds the parent templates like:
+	management.php (default to all)
+	login.php (full body login template)
+	404.php (used when the requested page was not registered)
+	blank.php (prints only the database based page details)
+	clear.php (clear templates, like one without detailed header/footers)
+		  (usable for pop-ups)
+	home.php (unused?)
+	null.php (for no template based outputs, contents determined by controller files)
+	static.php (unused?)
+
+Every single page is registed with one of these pages, by default.
+You are free to create any templates and register them in query_pages table.
+
+
+templates/css (library/services/__SUBDOMAIN_NAME__/templates/css)
+CSS files used with the templates.
+They now act as parent /css/*.css names.
+These css files have proper css header respones.
+
+
+templates/images (library/services/__SUBDOMAIN_NAME__/templates/images)
+Image files used with the templates (now act as parent /images/*.??? names
+Correctness of response, file size and MIME headers.
+
+
+templates/*, * = ENTITY (Old: tempaltes/my-templates)
+Entity specific template files are located here.
+Most of these files are auto generated for the purpose of:
+	add (admin purpose)
+	edit (admin purpose)
+	list (admin purpose)
+	details (admin purpose)
+
+	list (general purpose)
+	details (general purpose)
+
+File formats used here are:
+templates/my-templates/[ENTITY]/[ACTION].php
+templates/my-templates/[ENTITY]-[ACTION].php
+Be careful with the CSS when using [ / ] and [ - ] in the URLs.
+
+
+js (library/services/__SUBDOMAIN_NAME__/js)
+Holds subdomain specific js files (name should be different as that in parent js directory)
+These js files should be used straight forward, without {js} plugin function.
+Files here now act as /js/*.js with proper header responses.

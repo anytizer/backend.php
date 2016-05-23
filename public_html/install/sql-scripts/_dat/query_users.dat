@@ -1,0 +1,8 @@
+
+TRUNCATE `query_users`;
+
+LOAD DATA LOCAL INFILE '../public_html/install/sql-scripts/_csv/query_users.csv'
+INTO TABLE `query_users`
+FIELDS ESCAPED BY '\\' TERMINATED BY ',' ENCLOSED BY '"'
+LINES TERMINATED BY '\r\n';
+

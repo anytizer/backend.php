@@ -1,0 +1,1 @@
+When you export a subdomain, its corresponding SQL will be saved here.

@@ -1,0 +1,79 @@
+.calendar-box
+{
+	display: none;
+	position: absolute;
+	padding: 0px;
+	background-color: #ffffff;
+}
+
+.calendar-box select.calendar-month
+{
+	width: 90px;
+}
+
+.calendar-box select.calendar-year
+{
+	width: 70px;
+}
+
+.calendar-box .calendar-cancel
+{
+	width: 100%;
+}
+
+.calendar-box table td
+{
+	border: none;
+	margin: 0px;
+	padding: 4px;
+}
+
+.calendar-box .calendar-title
+{
+	text-align: center;
+}
+
+.calendar-box a
+{
+	text-decoration: none;
+}
+
+.calendar-box .today a
+{
+	padding: 0 5px;
+	margin-left: -5px;
+	background-color: #ffe9c6;
+}
+
+.calendar-box .selected a
+{
+	padding: 5px;
+	background-color: #000066;
+	color: #ffffff;
+}
+
+.calendar-box table
+{
+	border-collapse: collapse;
+	border: 2px solid #999999;
+}
+
+.calendar-box table .header td
+{
+	text-transform: uppercase;
+	background-color: #cc0000;
+	color: #ffffff;
+}
+
+.calendar-box table td
+{
+	border-bottom: 1px solid #cccccc;
+	border-right: 1px solid #cccccc;
+	width: 15px;
+	text-align: center;
+}
+
+.sat
+{
+	background-color: #ffff66;
+}

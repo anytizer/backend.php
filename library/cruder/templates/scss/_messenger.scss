@@ -1,0 +1,72 @@
+/**
+ * CSS produced for __SUBDOMAIN_NAME__, as of __TIMESTAMP__
+ */
+
+/**
+ * Messengers that are seen after certain events are triggered.
+ * One page is likely to show one kind of message only.
+ */
+
+#messenger
+{
+	/** for all kinds of relayed messages */
+	padding: 20px;
+}
+
+#messenger div
+{
+	padding-left: 40px;
+	background-image: url(../images/message-sprite.png);
+	background-repeat: no-repeat;
+	height: 25px;
+	padding-top: 10px;
+	margin-bottom: 5px;
+}
+
+#messenger .error
+{
+	/** user errors or when some actions failed */
+	background-color: #fbe3e3;
+	border: 1px solid #e1d3d3;
+	background-position: 10px 8px;
+}
+
+#messenger .success
+{
+	/** user action was processed successfully and without comments */
+	background-color: #e6efc2;
+	border: 1px solid #ccd4a1;
+	background-position: 10px -32px
+}
+
+#messenger .warning
+{
+	/** user has entered into a zone that requrires extra attentions to operate */
+	background-color: #fff6bf;
+	border: 1px solid #e0d698;
+	background-position: 10px -74px;
+}
+
+#messenger .caution
+{
+	/** the change might impact the system, similar to warning */
+	background-color: #ffffcc;
+	border: 1px solid #ffcc33;
+	background-position: 10px 5px;
+}
+
+#messenger .notice
+{
+	/** non contextual notifications only */
+	background-color: #e3f7fb;
+	border: 1px solid #a3d9e3;
+	background-position: 10px -153px;
+}
+
+#messenger .info
+{
+	/** Some information, similar to notice */
+	background-color: #66ccff;
+	border: 1px solid #0099ff;
+	background-position: 0 5px;
+}

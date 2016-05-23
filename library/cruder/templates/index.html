@@ -1,0 +1,809 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Admin Area</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<meta name="keywords" content="Framework"/>
+	<meta name="description" content="Backend Framework"/>
+	<link href="css/management.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div class="wrapper">
+<div class="header-wrapper">
+	<div class="header">
+		<h1 class="header-title"><a href="dashboard.php">Backend Framework</a></h1>
+
+		<div class="menus-top">
+			<p>
+				<!-- rather use menu context plugin -->
+				<a class="item1" href="dashboard.php">Home</a> <a class="item1" href="index.php">Website</a> <a
+					class="item2" href="#">Members</a> <a href="logout.php" class="last item3">Logout</a></p>
+		</div>
+		<div class="clear"></div>
+	</div>
+</div>
+<div class="nav-container">
+	<!-- Main Nav start -->
+	<div class="navigator-main">
+		<ul class="menu nav">
+			<li class="current"><a href="dashboard.php">Dashboard</a></li>
+			<li><a href="cms-list.php">CMS</a></li>
+			<li><a href="#">Emails</a></li>
+			<li><a href="#">Reports</a>
+			<li><a href="#">Contact Us</a>
+				<ul>
+					<li><a href="#">Web</a></li>
+					<li><a href="#">.NET</a></li>
+					<li><a href="#">Marketing</a></li>
+				</ul>
+			</li>
+			<li><a href="#">New arrival</a>
+				<ul>
+					<li><a href="#">Sub menu</a></li>
+				</ul>
+			</li>
+			<li><a href="#">Logout</a></li>
+		</ul>
+		<div class="clear"></div>
+	</div>
+	<!-- Main Nav end -->
+</div>
+<div class="content-wrapper">
+<div class="content-panel">
+<div class="separator"></div>
+<div class="content-box">
+	<div class="contents">
+		<h2 class="content-title">Dashboard</h2>
+
+		<div class="system-message">
+			<p>Welcome to <a href="#"><strong>www.example.com</strong></a>. Please <a href="#">login</a> to continue.</p>
+		</div>
+		<h2 class="content-title">Quick Shortcuts</h2>
+
+		<div class="tab-wrap">
+			<ul>
+				<li class="active"><a href="#">Routine Task</a></li>
+				<li><a href="#">To Do</a></li>
+				<li><a href="#">Products</a></li>
+			</ul>
+		</div>
+		<div class="thumb-holder">
+			<ul>
+				<li class="item1"><a href="#"><span>Site Template</span></a></li>
+				<li class="item2"><a href="#"><span>Date and Time Setup</span></a></li>
+				<li class="item3"><a href="#"><span>Browse Files</span></a></li>
+				<li class="item4"><a href="#"><span>Home Page</span></a></li>
+				<li class="item5"><a href="#"><span>Security</span></a></li>
+				<li class="item6"><a href="#"><span>Settings</span></a></li>
+				<li class="item7"><a href="#"><span>Static and Graphs</span></a></li>
+				<li class="item8"><a href="#"><span>Manage Users</span></a></li>
+				<li class="item9"><a href="#"><span>My Stuff</span></a></li>
+				<li class="item9"><a href="#"><span>My Stuff</span></a></li>
+				<li class="item10"><a href="#"><span>CMS Pages</span></a></li>
+				<li class="item11"><a href="#"><span>Email Templates</span></a></li>
+				<li class="item12"><a href="#"><span>Blocked Users</span></a></li>
+				<li class="item13"><a href="#"><span>Admin Logs</span></a></li>
+				<li class="item14"><a href="#"><span>Reports</span></a></li>
+				<li class="item15"><a href="#"><span>Site Map</span></a></li>
+			</ul>
+			<div class="clear"></div>
+		</div>
+	</div>
+</div>
+<div class="separator"></div>
+<div class="contents">
+	<div class="content-box">
+		<h2 class="content-title">Heading Goes Here</h2>
+
+		<div class="top-action style1">
+			<ul>
+				<li class="view"><a href="#">View all orders</a></li>
+			</ul>
+		</div>
+		<div class="form-wrap">
+			<form id="administrators-list-view" name="administrators-list-form" method="post"
+			      action="administrators-blockaction.php">
+				<table class="data" id="data-table1">
+					<!---->
+					<thead>
+					<tr class="thead">
+						<th class="th-checkall"><input type="checkbox" id="__ENTITY__-checkall" name="checkallentities"
+						                               value="checkallentities" tabindex="0"/></th>
+						<th class="th-sn">S.N.</th>
+						<th>Username</th>
+						<th>Name</th>
+						<th>Email</th>
+						<th>Phone</th>
+						<th class="th-actions">?</th>
+					</tr>
+					</thead>
+					<tbody>
+					<tr class="A">
+						<td><input type="checkbox" name="__ENTITY__[]" value=""/></td>
+						<td class="r">1.</td>
+						<td><a href="#">user1</a></td>
+						<td>Name One</td>
+						<td>user1@example.com</td>
+						<td>000-000-0000</td>
+						<td class="actions nowrap">
+							<ul>
+								<li class="edit"><a href="#" title="Edit">Edit</a></li>
+								<li class="detail"><a href="#" title="Detail">Detail</a></li>
+								<li class="delete"><a href="#" title="Delete">Delete</a></li>
+							</ul>
+						</td>
+					</tr>
+					<tr class="B">
+						<td><input type="checkbox" name="__ENTITY__[]" value=""/></td>
+						<td class="r">2.</td>
+						<td><a href="#">user2</a></td>
+						<td>Name Two</td>
+						<td>user2@example.com</td>
+						<td>000-000-0000</td>
+						<td class="actions nowrap">
+							<ul>
+								<li class="edit"><a href="#" title="Edit">Edit</a></li>
+								<li class="detail"><a href="#" title="Detail">Detail</a></li>
+								<li class="delete"><a href="#" title="Delete">Delete</a></li>
+							</ul>
+						</td>
+					</tr>
+					<tr class="A">
+						<td><input type="checkbox" name="__ENTITY__[]" value=""/></td>
+						<td class="r">3.</td>
+						<td><a href="#">user3</a></td>
+						<td>Name Three</td>
+						<td>user3@example.com</td>
+						<td>000-000-0000</td>
+						<td class="actions nowrap">
+							<ul>
+								<li class="edit"><a href="#" title="Edit">Edit</a></li>
+								<li class="detail"><a href="#" title="Detail">Detail</a></li>
+								<li class="delete"><a href="#" title="Delete">Delete</a></li>
+							</ul>
+						</td>
+					</tr>
+					<tr class="B">
+						<td><input type="checkbox" name="__ENTITY__[]" value=""/></td>
+						<td class="r">4.</td>
+						<td><a href="#">user4</a></td>
+						<td>Name Four</td>
+						<td>user4@example.com</td>
+						<td>000-000-0000</td>
+						<td class="actions nowrap">
+							<ul>
+								<li class="edit"><a href="#" title="Edit">Edit</a></li>
+								<li class="detail"><a href="#" title="Detail">Detail</a></li>
+								<li class="delete"><a href="#" title="Delete">Delete</a></li>
+							</ul>
+						</td>
+					</tr>
+					</tbody>
+				</table>
+				<div class="block-actions">
+					<!---->
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
+<div class="separator"></div>
+<div class="contents">
+	<div class="content-box">
+		<h2 class="content-title">Heading Goes Here for Product Listing</h2>
+
+		<div class="system-message">
+			<p>Message for this list goes here</p>
+		</div>
+		<div class="top-action style1">
+			<ul>
+				<li class="record-add"><a href="#">Add New Record</a></li>
+				<li class="prune-record-prune"><a href="#">Prune Record</a></li>
+			</ul>
+		</div>
+		<div class="form-wrap">
+			<form id="administrators1-list-form" name="administrators-list-form" method="post"
+			      action="administrators-blockaction.php">
+				<table class="data" id="data-table-list2">
+					<!---->
+					<thead>
+					<tr class="thead">
+						<th class="th-checkall"><input type="checkbox" id="__ENTITY__-checkall-list"
+						                               name="checkallentities" value="checkallentities" tabindex="0"/>
+						</th>
+						<th class="th-sn">S.N.</th>
+						<th>Photo</th>
+						<th>Name</th>
+						<th>Email</th>
+						<th>Move</th>
+						<th class="th-actions">?</th>
+					</tr>
+					</thead>
+					<tbody>
+					<tr class="A">
+						<td><input type="checkbox" name="__ENTITY__[]" value=""/></td>
+						<td class="r">1.</td>
+						<td class="image"><a href="#"><img src="images/gallery/image.jpg" alt=""/></a></td>
+						<td>Name One</td>
+						<td>user1@example.com</td>
+						<td>000-000-0000</td>
+						<td class="actions nowrap">
+							<ul>
+								<li class="move-up"><a href="#" title="Move Up">Move Top</a></li>
+								<li class="move-down"><a href="#" title="Move Down">Move Bottom</a></li>
+								<li class="edit"><a href="#" title="Edit">Edit</a></li>
+								<li class="detail"><a href="#" title="Detail">Detail</a></li>
+								<li class="delete"><a href="#" title="Delete">Delete</a></li>
+							</ul>
+						</td>
+					</tr>
+					<tr class="B">
+						<td><input type="checkbox" name="__ENTITY__[]" value=""/></td>
+						<td class="r">2.</td>
+						<td class="image"><a href="#"><img src="images/gallery/image.jpg" alt=""/></a></td>
+						<td>Name Two</td>
+						<td>user2@example.com</td>
+						<td>000-000-0000</td>
+						<td class="actions nowrap">
+							<ul>
+								<li class="move-up"><a href="#" title="Move Up">Move Top</a></li>
+								<li class="move-down"><a href="#" title="Move Down">Move Bottom</a></li>
+								<li class="edit"><a href="#" title="Edit">Edit</a></li>
+								<li class="detail"><a href="#" title="Detail">Detail</a></li>
+								<li class="delete"><a href="#" title="Delete">Delete</a></li>
+							</ul>
+						</td>
+					</tr>
+					<tr class="A">
+						<td><input type="checkbox" name="__ENTITY__[]" value=""/></td>
+						<td class="r">3.</td>
+						<td class="image"><a href="#"><img src="images/gallery/image.jpg" alt=""/></a></td>
+						<td>Name Three</td>
+						<td>user3@example.com</td>
+						<td>000-000-0000</td>
+						<td class="actions nowrap">
+							<ul>
+								<li class="move-up"><a href="#" title="Move Up">Move Top</a></li>
+								<li class="move-down"><a href="#" title="Move Down">Move Bottom</a></li>
+								<li class="edit"><a href="#" title="Edit">Edit</a></li>
+								<li class="detail"><a href="#" title="Detail">Detail</a></li>
+								<li class="delete"><a href="#" title="Delete">Delete</a></li>
+							</ul>
+						</td>
+					</tr>
+					<tr class="B">
+						<td><input type="checkbox" name="__ENTITY__[]" value=""/></td>
+						<td class="r">4.</td>
+						<td class="image"><a href="#"><img src="images/gallery/image.jpg" alt=""/></a></td>
+						<td>Name Four</td>
+						<td>user4@example.com</td>
+						<td>000-000-0000</td>
+						<td class="actions nowrap">
+							<ul>
+								<li class="move-up"><a href="#" title="Move Up">Move Top</a></li>
+								<li class="move-down"><a href="#" title="Move Down">Move Bottom</a></li>
+								<li class="edit"><a href="#" title="Edit">Edit</a></li>
+								<li class="detail"><a href="#" title="Detail">Detail</a></li>
+								<li class="delete"><a href="#" title="Delete">Delete</a></li>
+							</ul>
+						</td>
+					</tr>
+					</tbody>
+				</table>
+				<div class="block-actions">
+					<!---->
+				</div>
+			</form>
+		</div>
+	</div>
+	<!-- paginator begins -->
+	<div class="paginator">
+		<!-- wrap with <ul>...</ul> tags when using ulli=true parameter. -->                    <!-- <ul> -->                    <!--<span class="page-first"><a href="?pg=1" id="PG-FIRST">First</a></span> <span class="page-dotted">...</span> <span class="page-prev"><a href="?pg=32" id="PG-PREV">Prev</a></span> <span class="page-dotted">...</span> <span class="page-number"><a href="?pg=28" id="PG28">28</a></span> <span class="page-number"><a href="?pg=29" id="PG29">29</a></span> <span class="page-number"><a href="?pg=30" id="PG30">30</a></span> <span class="page-number"><a href="?pg=31" id="PG31">31</a></span> <span class="page-number"><a href="?pg=32" id="PG32">32</a></span> <span class="page-number"><a href="?pg=33" id="PG33" class="current">33</a></span> <span class="page-dotted">...</span> <span class="page-next"><a href="?pg=33" id="PG-NEXT">Next</a></span> <span class="page-dotted">...</span> <span class="page-last"><a href="?pg=33" id="PG-LAST">Last</a></span>-->
+		<ul class="pagination paginationB paginationB10">
+			<li><a href="#" class="first">First</a></li>
+			<li><a href="#" class="previous">Previous</a></li>
+			<li><a href="#">1</a></li>
+			<li><a href="#">2</a></li>
+			<li><a href="#" class="current">3</a></li>
+			<li><a href="#">4</a></li>
+			<li><a href="#">5</a></li>
+			<li><a href="#" class="next">Next</a></li>
+			<li><a href="#" class="last">Last</a></li>
+		</ul>
+		<!-- </ul> -->
+	</div>
+	<!-- paginator ends -->                <!-- if the messenger has something to relay -->
+	<div class="messenger-holder"></div>
+	<div class="additional"></div>
+</div>
+<div class="separator"></div>
+<div class="content-box">
+	<h2 class="content-title">Listing Administrators</h2>
+
+	<div class="contents">
+		<div class="system-message">
+			<p>List of                            <!-- PLURAL: [ administrators : membership_administrators ]-->                            Administrators.</p>
+		</div>
+		<!-- if the messenger has something to relay -->
+		<div id="messenger">
+			<div class="success">Some success messages appear here and vanish anway.</div>
+			<div class="notice">Notices may remain intact here.</div>
+			<div class="error">Eye catchy error messages will force the user rethink on the last editing.</div>
+			<div class="warning">Just some warning that completes the messaging.</div>
+			<div class="caution">Caution: A pre-operation message goes here.</div>
+		</div>
+		<div class="additional">
+			<!-- Beginning of administrators list -->
+			<div class="top-action style1">
+				<ul>
+					<li class="record-add"><a href="#">Add Administrators</a></li>
+					<li class="record-list"><a href="#">List Administrators</a></li>
+				</ul>
+			</div>
+			<div class="form-wrap">
+				<form id="administrators-list-form" name="administrators-list-form" method="post"
+				      action="administrators-blockaction.php">
+					<table class="data" id="data-table3">
+						<!---->
+						<thead>
+						<tr class="thead">
+							<th class="th-checkall"><input type="checkbox" id="__ENTITY__-checkall"
+							                               name="checkallentities" value="checkallentities"
+							                               tabindex="0"/></th>
+							<th class="th-sn">S.N.</th>
+							<th>User Name</th>
+							<th>Name</th>
+							<th>Email</th>
+							<th>Phone</th>
+							<th class="th-actions">?</th>
+						</tr>
+						</thead>
+						<tbody>
+						<tr class="A">
+							<td><input type="checkbox" name="__ENTITY__[]" value=""/></td>
+							<td class="r">1.</td>
+							<td>Name One</td>
+							<td>Name One</td>
+							<td>one@example.com</td>
+							<td>000-000-0000</td>
+							<td class="actions nowrap">
+								<ul>
+									<li class="edit"><a href="#" title="Edit">Edit</a></li>
+									<li class="detail"><a href="#" title="Detail">Detail</a></li>
+									<li class="delete"><a href="#" title="Delete">Delete</a></li>
+								</ul>
+							</td>
+						</tr>
+						<tr class="B">
+							<td><input type="checkbox" name="__ENTITY__[]" value=""/></td>
+							<td class="r">2.</td>
+							<td>Name Two</td>
+							<td>John Doe</td>
+							<td>john.doe@example.com</td>
+							<td>000-000-0000</td>
+							<td class="actions nowrap">
+								<ul>
+									<li class="edit"><a href="#" title="Edit">Edit</a></li>
+									<li class="detail"><a href="#" title="Detail">Detail</a></li>
+									<li class="delete"><a href="#" title="Delete">Delete</a></li>
+								</ul>
+							</td>
+						</tr>
+						<tr class="A">
+							<td><input type="checkbox" name="__ENTITY__[]" value=""/></td>
+							<td class="r">3.</td>
+							<td>Name Three</td>
+							<td>User One</td>
+							<td>userone@example.com</td>
+							<td>000-000-0000</td>
+							<td class="actions nowrap">
+								<ul>
+									<li class="edit"><a href="#" title="Edit">Edit</a></li>
+									<li class="detail"><a href="#" title="Detail">Detail</a></li>
+									<li class="delete"><a href="#" title="Delete">Delete</a></li>
+								</ul>
+							</td>
+						</tr>
+						<tr class="B">
+							<td><input type="checkbox" name="__ENTITY__[]" value=""/></td>
+							<td class="r">4.</td>
+							<td>Name Four</td>
+							<td>John Doe</td>
+							<td>john.doe@example.com</td>
+							<td>000-000-0000</td>
+							<td class="actions nowrap">
+								<ul>
+									<li class="edit"><a href="#" title="Edit">Edit</a></li>
+									<li class="detail"><a href="#" title="Detail">Detail</a></li>
+									<li class="delete"><a href="#" title="Delete">Delete</a></li>
+								</ul>
+							</td>
+						</tr>
+						</tbody>
+					</table>
+					<div class="block-actions">
+						<!---->
+					</div>
+				</form>
+			</div>
+		</div>
+		<!-- End of administrators List -->
+	</div>
+</div>
+<div class="separator"></div>
+<div class="contents">
+	<div class="content-box">
+		<h2 class="content-title">Details of a record in [ Administrators ]</h2>
+
+		<div class="system-message">
+			<p>A detailed record about Administrators.</p>
+		</div>
+		<!-- if the messenger has something to relay -->
+		<div class="messenger-holder"></div>
+		<div class="additional">
+			<!---->                        <!-- admin details -->
+			<div class="top-action style1">
+				<ul class="links">
+					<li class="record-add"><a href="#">Add Administrators</a></li>
+					<li class="record-list"><a href="#">List Administrators</a></li>
+				</ul>
+			</div>
+			<div class="clear">
+				<!---->
+			</div>
+			<!-- admmin details for administrators -->
+			<div class="details">
+				<div class="holder">
+					<div class="title">Username</div>
+					<div class="content">username</div>
+				</div>
+				<div class="holder">
+					<div class="title">Full Name</div>
+					<div class="content">John Doe</div>
+				</div>
+				<div class="holder">
+					<div class="title">Email Address</div>
+					<div class="content">john.doe@example.com</div>
+				</div>
+				<div class="holder">
+					<div class="title">Phone Number</div>
+					<div class="content">000-000-0000</div>
+				</div>
+				<div class="holder">
+					<div class="title">Address</div>
+					<div class="content">City Name</div>
+				</div>
+				<div class="holder">
+					<div class="title">Comments</div>
+					<div class="content">Super Administrator</div>
+				</div>
+				<div class="holder">
+					<div class="title">Description</div>
+					<div class="content">
+						<p>This can be a very long text in full HTML format.</p>
+
+						<p><em>Who can guess what it would be like?</em></p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="clear">
+			<!---->
+		</div>
+		<div class="information">
+			<ul class="links admin-editor btm-action">
+				<li class="list edit"><a href="#" class="list"> Edit this record</a></li>
+				<li class="list delete"><a href="#" class="delete"> Delete this record</a></li>
+			</ul>
+		</div>
+		<div class="clear">
+			<!---->
+		</div>
+		<!-- End of admin details of administrators (Administrators) -->
+	</div>
+</div>
+<div class="separator"></div>
+<div class="contents">
+	<div class="content-box">
+		<h2 class="content-title">Editing Administrators</h2>
+
+		<div class="system-message">
+			<p>Please modify the below data and save it. Your results will be visible immediately.</p>
+		</div>
+		<!-- if the messenger has something to relay -->
+		<div class="messenger-holder"></div>
+		<div class="additional">
+			<!---->
+			<div class="top-action style1">
+				<ul class="links">
+					<li class="record-list"><a href="#"> List Administrators</a></li>
+				</ul>
+			</div>
+			<div class="form-wrap">
+				<form id="administrators-edit-form" name="administrators-edit-form" method="post"
+				      action="administrators-edit.php">
+					<table class="data-editor">
+						<!-- file or image upload script/patch -->                                    <!---->
+						<tr class="A">
+							<td class="attribute">Username: <span class="required">*</span></td>
+							<td><input type="text" name="administrators[admin_username]" value="username" class="input"
+							           id="administrators-admin_username"/></td>
+						</tr>
+						<tr class="B">
+							<td class="attribute">Password: <span class="required">*</span></td>
+							<td><input type="password" name="administrators[admin_password]" value="bimelg"
+							           class="input" id="administrators-admin_password"/></td>
+						</tr>
+						<tr class="A">
+							<td class="attribute">Full Name: <span class="required">*</span></td>
+							<td><input type="text" name="administrators[admin_name]" value="John Doe" class="input"
+							           id="administrators-admin_name"/></td>
+						</tr>
+						<tr class="B">
+							<td class="attribute">Email Address: <span class="required">*</span></td>
+							<td><input type="text" name="administrators[admin_email]" value="john.doe@example.com"
+							           class="input" id="administrators-admin_email"/></td>
+						</tr>
+						<tr class="A">
+							<td class="attribute">Phone Number: <span class="required">*</span></td>
+							<td><input type="text" name="administrators[admin_phone]" value="000-000-0000" class="input"
+							           id="administrators-admin_phone"/></td>
+						</tr>
+						<tr class="B">
+							<td class="attribute">Address: <span class="required">*</span></td>
+							<td><input type="text" name="administrators[admin_address]" value="City Name"
+							           class="input" id="administrators-admin_address"/></td>
+						</tr>
+						<tr class="A">
+							<td class="attribute">Comments: <span class="required">*</span></td>
+							<td><input type="text" name="administrators[admin_comments]" value="Super Administrator"
+							           class="input" id="administrators-admin_comments"/></td>
+						</tr>
+						<tr>
+							<td class="attribute">&nbsp;</td>
+							<td><input type="text" name="email" value="" class="vanish"/> <input type="text"
+							                                                                     name="is_spam" value=""
+							                                                                     class="vanish"/>
+								<!---->
+								<input type="hidden" name="administrator_id" value=""/>
+								<!-- This is different than system's protection code. This is related to particular ID. -->
+								<input type="hidden" name="protection_code" value="29922d47f339d8a0f5df7faf83029b9"/>
+								<input type="hidden" name="edit-action" value="Edit Administrators"/> <input
+										type="submit" name="submit-button" class="submit" value="Save Changes"/> <a
+										href="#" class="button-cancel">Cancel</a></td>
+						</tr>
+					</table>
+				</form>
+			</div>
+			<!-- End of administrators Edit -->
+		</div>
+	</div>
+</div>
+<div class="separator"></div>
+<div class="contents">
+	<div class="content-box">
+		<h2 class="content-title">Adding Administrators</h2>
+
+		<div class="system-message">
+			<p>Please fill up the form below and click on [ Add ] button to save it.</p>
+		</div>
+		<!-- if the messenger has something to relay -->
+		<div class="messenger-holder"></div>
+		<div class="additional">
+			<!---->
+			<div class="top-action style1">
+				<ul class="links">
+					<li class="record-list"><a href="#">List Administrators</a></li>
+					<li class="record-prune"><a href="#">Prune Administrators</a></li>
+				</ul>
+			</div>
+			<div class="form-wrap">
+				<form id="administrators-add-form" name="administrators-add-form" method="post"
+				      action="administrators-add.php">
+					<table class="data-editor">
+						<tr class="A">
+							<td class="attribute">Username: <span class="required">*</span></td>
+							<td><input type="text" name="administrators[admin_username]" value="" class="input"
+							           id="administrators1-admin_username"/></td>
+						</tr>
+						<tr class="B">
+							<td class="attribute">Password: <span class="required">*</span></td>
+							<td><input type="password" name="administrators[admin_password]" value="" class="input"
+							           id="administrators1-admin_password"/></td>
+						</tr>
+						<tr class="A">
+							<td class="attribute">Full Name: <span class="required">*</span></td>
+							<td><input type="text" name="administrators[admin_name]" value="" class="input"
+							           id="administrators1-admin_name"/></td>
+						</tr>
+						<tr class="B">
+							<td class="attribute">Email Address: <span class="required">*</span></td>
+							<td><input type="text" name="administrators[admin_email]" value="" class="input"
+							           id="administrators1-admin_email"/></td>
+						</tr>
+						<tr class="A">
+							<td class="attribute">Phone Number: <span class="required">*</span></td>
+							<td><input type="text" name="administrators[admin_phone]" value="" class="input"
+							           id="administrators1-admin_phone"/></td>
+						</tr>
+						<tr class="B">
+							<td class="attribute">Address: <span class="required">*</span></td>
+							<td><input type="text" name="administrators[admin_address]" value="" class="input"
+							           id="administrators1-admin_address"/></td>
+						</tr>
+						<tr class="A">
+							<td class="attribute">Comments: <span class="required">*</span></td>
+							<td><input type="text" name="administrators[admin_comments]" value="" class="input"
+							           id="administrators1-admin_comments"/></td>
+						</tr>
+						<tr class="B">
+							<td class="attribute">Description: <span class="required">*</span></td>
+							<td><textarea rows="5" cols="75" name="description" class="editor"
+							              id="description1"></textarea></td>
+						</tr>
+						<tr class="A">
+							<td class="attribute">&nbsp;</td>
+							<td><input type="text" name="email" value="" class="vanish"/> <input type="text"
+							                                                                     name="is_spam" value=""
+							                                                                     class="vanish"/>
+								<!---->
+								<input type="hidden" name="protection_code" value="9e71201d8d81a233fd11d7d93cbc4e57"/>
+								<input type="hidden" name="add-action" value="Add Administrators"/> <input type="submit"
+								                                                                           name="submit-button"
+								                                                                           class="submit"
+								                                                                           value="Add"/>
+								<a href="#" class="button-cancel">Cancel</a></td>
+						</tr>
+					</table>
+				</form>
+			</div>
+			<!-- End of administrators Add -->
+		</div>
+	</div>
+</div>
+<div class="separator"></div>
+<div class="contents">
+	<div class="content-box">
+		<h2 class="content-title">List of Administrators</h2>
+
+		<div class="system-message">
+			<p>Below is a list of                            <!-- PLURAL? -->                            Administrators.</p>
+		</div>
+		<!-- if the messenger has something to relay -->
+		<div class="messenger-holder"></div>
+		<div class="additional">
+			<div class="top-action style1">
+				<ul class="links">
+					<li class="record-add"><a href="#">Add Administrators</a></li>
+					<li class="record-list"><a href="#">List Administrators</a></li>
+				</ul>
+			</div>
+			<!---->
+			<table class="data" id="data-table4">
+				<thead>
+				<tr class="thead">
+					<th>S.N.</th>
+					<th>Email</th>
+					<th>Username</th>
+					<th>Name</th>
+					<th>Phone</th>
+					<th>Address</th>
+				</tr>
+				</thead>
+				<tbody>
+				<tr class="A">
+					<td class="r">1.</td>
+					<td>user1@example.com</td>
+					<td><a href="#">userone</a></td>
+					<td>User One</td>
+					<td>000-000-0000</td>
+					<td>City Name</td>
+				</tr>
+				<tr class="B">
+					<td class="r">2.</td>
+					<td>user2@example.com</td>
+					<td><a href="#">username</a></td>
+					<td>John Doe</td>
+					<td>000-000-0000</td>
+					<td>City Name</td>
+				</tr>
+				<tr class="A">
+					<td class="r">3.</td>
+					<td>user3@example.com</td>
+					<td><a href="#">userone</a></td>
+					<td>User One</td>
+					<td>000-000-0000</td>
+					<td>City Name</td>
+				</tr>
+				<tr class="B">
+					<td class="r">4.</td>
+					<td>user4@example.com</td>
+					<td><a href="#">username</a></td>
+					<td>John Doe</td>
+					<td>000-000-0000</td>
+					<td>City Name</td>
+				</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+	<!-- paginator -->
+	<div class="paginator">
+		<!--<span class="page-first"><a href="?pg=1" id="PG-FIRST">First</a></span> <span class="page-dotted">...</span> <span class="page-prev"><a href="?pg=1" id="PG-PREV">Prev</a></span> <span class="page-dotted">...</span> <span class="page-number"><a href="?pg=1" id="PG1" class="current">1</a></span> <span class="page-number"><a href="?pg=2" id="PG2">2</a></span> <span class="page-number"><a href="?pg=3" id="PG3">3</a></span> <span class="page-number"><a href="?pg=4" id="PG4">4</a></span> <span class="page-disabled">5</span> <span class="page-disabled">6</span> <span class="page-disabled">7</span> <span class="page-disabled">8</span> <span class="page-disabled">9</span> <span class="page-disabled">10</span> <span class="page-dotted">...</span> <span class="page-next"><a href="?pg=2" id="PG-NEXT">Next</a></span> <span class="page-dotted">...</span> <span class="page-last"><a href="?pg=4" id="PG-LAST">Last</a></span>-->
+		<ul class="pagination paginationB paginationB10">
+			<li><a href="#" class="first">First</a></li>
+			<li><a href="#" class="previous">Previous</a></li>
+			<li><a href="#">1</a></li>
+			<li><a href="#">2</a></li>
+			<li><a href="#" class="current">3</a></li>
+			<li><a href="#">4</a></li>
+			<li><a href="#">5</a></li>
+			<li><a href="#" class="next">Next</a></li>
+			<li><a href="#" class="last">Last</a></li>
+		</ul>
+	</div>
+</div>
+<div class="separator"></div>
+<div class="contents">
+	<div class="content-box">
+		<h2 class="content-title">Details of Administrators</h2>
+
+		<div class="system-message">
+			<p>
+				<!-- PUBLIC -->                            Details of [ Administrators ]</p>
+		</div>
+		<!-- if the messenger has something to relay -->
+		<div class="messenger-holder"></div>
+		<div class="additional">
+			<!---->                        <!-- Public details for administrators (Administrators). -->
+			<div class="details">
+				<div class="holder">
+					<div class="title">Username</div>
+					<div class="content">username</div>
+				</div>
+				<div class="holder">
+					<div class="title">Full Name</div>
+					<div class="content">John Doe</div>
+				</div>
+				<div class="holder">
+					<div class="title">Email Address</div>
+					<div class="content">john.doe@example.com</div>
+				</div>
+				<div class="holder">
+					<div class="title">Phone Number</div>
+					<div class="content">000-000-0000</div>
+				</div>
+				<div class="holder">
+					<div class="title">Address</div>
+					<div class="content">City Name</div>
+				</div>
+				<div class="holder">
+					<div class="title">Comments</div>
+					<div class="content">Super Administrator</div>
+				</div>
+				<div class="holder">
+					<div class="title">Description</div>
+					<div class="content">
+						<p>This can be a very long text in full HTML format.</p>
+
+						<p><em>Who can guess what it would be like?</em></p>
+					</div>
+				</div>
+			</div>
+			<!-- End of public details of administrators (Administrators) -->
+		</div>
+	</div>
+</div>
+</div>
+</div>
+<div class="clear"></div>
+<div class="footer">
+	<p class="copy-right">&copy; 2009 - 2011, <a href="#">www.example.com</a>. All rights reserved. Powered by <a
+			href="#">Domain Owner</a>.</p>
+</div>
+</div>
+<script type='text/javascript' src='js/jquery-latest.js'></script>
+<script type='text/javascript' src='js/theme02/dropdown-menus.js'></script>
+<script type='text/javascript' src='js/check-all.js'></script>
+</body>
+</html>

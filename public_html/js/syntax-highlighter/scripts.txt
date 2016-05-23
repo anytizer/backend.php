@@ -1,0 +1,29 @@
+http://www.webdesignbooth.com/9-useful-javascript-syntax-highlighting-scripts/
+11:15 PM 5/7/2010
+
+1. SyntaxHighlighter
+	http://alexgorbatchev.com/wiki/SyntaxHighlighter
+
+2. SHJS
+	http://shjs.sourceforge.net/
+
+3. beautyOfCode
+	http://startbigthinksmall.wordpress.com/2008/10/30/beautyofcode-jquery-plugin-for-syntax-highlighting/
+
+4. Chili
+	http://code.google.com/p/jquery-chili-js/
+
+5. Lighter.js
+	http://pradador.com/code/lighterjs/
+
+6. Highlight.js
+	http://softwaremaniacs.org/soft/highlight/en/
+
+7. DlHighlight
+	http://mihai.bazon.net/projects/javascript-syntax-highlighting-engine
+
+8. Google Code Prettify
+	http://code.google.com/p/google-code-prettify/
+
+9. JUSH
+	http://plugins.jquery.com/project/JUSH

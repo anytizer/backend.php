@@ -1,0 +1,42 @@
+# Imported from old works of Prerana
+
+		// name of a personal
+		case "name":
+		{
+			ret = TestInputType(objValue,"[^A-Za-z\\s\.\(\)]",strError, // 0-9
+					objValue.name+": Only alpha-numeric characters and space allowed ");
+			break;
+		}
+		// slc symbol number
+		case "slc":
+		{
+			var slc =/^[0-9]{5,}[A-Z]{1}$/i;
+			ret = slc.test(objValue.value);
+			if(!ret)
+			{
+				alert(strError);
+			}
+			break;              
+		}
+		// date
+		case "date":
+		{
+			var date =/^[0-9]{4}\-[0-1][0-9]-[0-3][0-9]$/;
+			ret = date.test(objValue.value);
+			if(!ret)
+			{
+				alert(strError);
+			}
+			break;              
+		}
+		// time
+		case "time":
+	   {
+			var time =/^[0-2][0-9]\:[0-5][0-9]\:[0-5][0-9]$/;
+			ret = time.test(objValue.value);
+			if(!ret)
+			{
+				alert(strError);
+			}
+			break;              
+	   }

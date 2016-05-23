@@ -1,0 +1,28 @@
+2016-05-22
+	- Hinting default values with | separation in comments
+	- MYSQL_DATABASENAME defined constant may not be available
+	- Produce TRIGGER to save old edited values of each records
+	- Once a record is added, the ID is not returned (Direct Access Error)
+		- After an entity is created; jumps to details page without protection code
+
+
+2016-05-06
+	- Use single instance configuration if possible
+	- Stopper collides with undefined constants at database connection time
+
+
+2016-05-04
+	- subdomain_base() should NOT be called statically.
+	- Query Logger has 0 or '' Subdomain ID
+	- Remove all pages referring MSSQL
+	- Remove use of $db (use $this)
+
+
+2016-05-01
+2011-03-23
+	- Remove direct access to mysql_query()
+	- 38+ files use "mysql_" as deprecated system
+	- Remove mysql_connect() function calls
+	- Remove use of MYSQL_CONNECTION constant as resource
+	- modified common/config.mysql.inc.php and its template should be in git (mysqli version)
+	- Upgrade procedural mysql access to Object Oriented

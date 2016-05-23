@@ -1,0 +1,21 @@
+12:59 AM 4/19/2010
+
+
+/**
+* Custom message showing box.
+*/
+function custom_alert(message)
+{
+	if(message)
+	{
+		window.alert(message);
+	}
+	else
+	{
+		// no message to show. Keep quite.
+	}
+	return(false);
+}
+
+
+Replace all alert() with custom_alert() in the validator.

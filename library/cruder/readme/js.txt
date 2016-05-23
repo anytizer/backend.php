@@ -1,0 +1,23 @@
+This is a /js directory of this subdomain (__SUBDOMAIN_NAME__).
+Anything here, will appear as if called from the parent.
+Write your .js files uniquenly, not matching to the parent's /js/* files.
+
+This uses a special URL rewriring to do so, in the parent framework.
+
+ie.,
+<__SUBDOMAIN_NAME__>/js/* <= <subdomain>/library/services/<__SUBDOMAIN_NAME__>/js/*
+
+Notes:
+You may copy these files int /js to speed up the operation.
+File names here, should NOT match as that in parent's directory.
+
+Location of /js is within subdomain package is different as that of /css and /images.
+This is because, /js may NOT be a part of a theme and layout. It is required globally,
+whatever theme you use.
+
+Unobtrusive JavaScript references:
+	http://en.wikipedia.org/wiki/Unobtrusive_JavaScript
+	http://www.onlinetools.org/articles/unobtrusivejavascript/index.html
+
+Javascript form validation references:
+	http://www.javascript-coder.com/html-form/javascript-form-validation.phtml

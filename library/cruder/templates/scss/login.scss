@@ -1,0 +1,145 @@
+/**
+ * CSS produced for __SUBDOMAIN_NAME__, as of __TIMESTAMP__
+ */
+
+*
+{
+	padding: 0px;
+	margin: 0px;
+	border: none;
+	outline: none;
+}
+
+body, td, th
+{
+	color: #000066;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+}
+
+body
+{
+	background-color: #999999;
+	margin-left: 0px;
+	margin-top: 150px;
+	margin-right: 0px;
+	margin-bottom: 150px;
+}
+
+h1
+{
+	font-weight: bold;
+	color: #ff0000;
+	font-size: 18px;
+	margin-bottom: 20px;
+}
+
+a
+{
+	color: #0000ff;
+	text-decoration: none;
+}
+
+a:hover
+{
+	border-bottom: 1px solid #ff0000;
+}
+
+td.field
+{
+	text-align: right;
+}
+
+td.values
+{
+	text-align: left;
+}
+
+table.data
+{
+	border: 1px solid #ff0000;
+	background-color: #eeeeee;
+	margin-bottom: 20px;
+	padding: 20px;
+}
+
+td
+{
+	padding: 4px;
+}
+
+input[type="text"], input[type="password"]
+{
+	background-color: #99cc99;
+	border: 1px solid #0000ff;
+	width: 150px;
+	height: 20px;
+	padding: 2px;
+}
+
+input[type="text"]:hover, input[type="password"]:hover, input[type="text"]:focus, input[type="password"]:focus
+{
+	background-color: #cc6600;
+	color: #ffffff;
+}
+
+input[type="submit"]
+{
+	background-color: #666666;
+	border: 1px solid #0000ff;
+	font-weight: bold;
+	color: #ffff00;
+	text-align: center;
+	height: 20px;
+	padding: 2px;
+}
+
+input[type="submit"]:hover
+{
+	background-color: #cc3300;
+	color: #ffffff;
+}
+
+/**
+* IE Patch
+*/
+.input
+{
+	background-color: #99cc99;
+	border: 1px solid #0000ff;
+	width: 150px;
+	height: 20px;
+	padding: 2px;
+}
+
+.input:hover, .input:focus
+{
+	background-color: #cc6600;
+	color: #ffffff;
+}
+
+.submit
+{
+	background-color: #666666;
+	border: 1px solid #0000ff;
+	font-weight: bold;
+	color: #ffff00;
+	text-align: center;
+	height: 20px;
+	padding: 2px;
+}
+
+.submit:hover
+{
+	background-color: #cc3300;
+	color: #ffffff;
+}
+
+.wrapper
+{
+	width: 350px;
+	margin: 0px auto 0px auto;
+	background-color: #ffffff;
+	border: 4px solid #666666;
+	padding: 10px;
+}

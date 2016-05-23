@@ -1,0 +1,18 @@
+2016-05-05
+	- If the class files in interfaces/ are not interfaces, move them
+
+2016-05-05
+	- Files Duplicated: interface|class|cruder
+		?	 234 => 'prefilter.no_comments.php'
+		+    17 => 'class.controller.inc.php'
+		+    46 => 'class.entity.inc.php'
+		+    48 => 'class.error.inc.php'
+		+    140 => 'function.a2z.php'
+
+2016-04-30
+    - Code Inspection: return values should NOT be in braces.
+	- Make a separate project out of unused class files.
+	- Create PHPUnit test cases
+	- Make command line non-interactive CRUDer
+
+

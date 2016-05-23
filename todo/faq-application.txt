@@ -1,0 +1,4 @@
+## FAQ
+   - sort the faq questions
+   - add new variables, and validation in faq: contents, categories and questions.
+   - manage faq for this system as well.

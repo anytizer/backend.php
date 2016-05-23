@@ -1,0 +1,68 @@
+"1","27","0000-00-00 00:00:00","0000-00-00 00:00:00","0000-00-00 00:00:00","0","0","N","N","N","Y","N","N","Y","","","query_menus_contexts","Pre-identified list of menus context","","",""
+"2","27","0000-00-00 00:00:00","0000-00-00 00:00:00","0000-00-00 00:00:00","0","0","Y","N","Y","Y","Y","Y","Y","cms","page_id","query_pages","The main page listing holder","","",""
+"3","27","0000-00-00 00:00:00","0000-00-00 00:00:00","0000-00-00 00:00:00","0","0","N","N","N","Y","N","N","Y","","","query_random","Numbers listing for generating random numbers","","",""
+"4","27","0000-00-00 00:00:00","0000-00-00 00:00:00","0000-00-00 00:00:00","0","0","N","N","N","Y","N","N","Y","","redirect_id","query_redirects","Counts redirected urls","","",""
+"5","27","0000-00-00 00:00:00","0000-00-00 00:00:00","0000-00-00 00:00:00","0","0","Y","N","N","Y","Y","Y","Y","","query_id","query_server","Stores SQL for dynamic query for looping","","",""
+"6","27","0000-00-00 00:00:00","0000-00-00 00:00:00","0000-00-00 00:00:00","0","0","Y","N","N","N","Y","N","Y","","xxx_id","query_sessions","User session data","","",""
+"7","27","0000-00-00 00:00:00","0000-00-00 00:00:00","0000-00-00 00:00:00","0","0","N","N","N","Y","N","N","Y","","","query_sites","Application specific - collection of sites","","",""
+"8","27","0000-00-00 00:00:00","0000-00-00 00:00:00","0000-00-00 00:00:00","0","0","Y","N","N","Y","Y","Y","Y","subdomains","","query_subdomains","List of all sub-domain services","","",""
+"9","27","0000-00-00 00:00:00","0000-00-00 00:00:00","0000-00-00 00:00:00","0","0","Y","N","N","Y","Y","Y","Y","","status_id","query_subdomains_status","State of current subdomain service in action","","",""
+"10","27","0000-00-00 00:00:00","0000-00-00 00:00:00","0000-00-00 00:00:00","0","0","Y","N","Y","Y","Y","Y","Y","menus","menu_id","query_menus","List of menus for a subdomainm service","","SELECT\
+	*\
+FROM `smarty_framework`.`query_menus`\
+WHERE\
+	(`subdomain_id`=27 OR `subdomain_id`=0)\
+	AND `is_active`='Y'\
+ORDER BY\
+	menu_context,\
+	sink_weight,\
+	menu_text\
+;","We have a problem with unassigned subdomain IDs"
+"11","27","0000-00-00 00:00:00","0000-00-00 00:00:00","0000-00-00 00:00:00","0","0","Y","N","N","Y","Y","Y","Y","","","query_tables","This table - holds meta data about other query tables","","","<p>Controls a list of tables that require to:</p>\
+<ul>\
+<li>Export the Structure</li>\
+<li>Export the Data</li>\
+</ul>\
+<p>This increases safety of the registered applications by preventing their database being exported to the public SVN Server.</p>"
+"12","27","0000-00-00 00:00:00","0000-00-00 00:00:00","0000-00-00 00:00:00","0","0","N","N","N","Y","N","N","Y","","","query_templates","Teplate files into database","","",""
+"13","27","0000-00-00 00:00:00","0000-00-00 00:00:00","0000-00-00 00:00:00","0","0","N","N","N","Y","N","N","Y","","","query_timezones","Timezones of the world","","","Helps to show times worldwide."
+"14","27","0000-00-00 00:00:00","0000-00-00 00:00:00","0000-00-00 00:00:00","0","0","Y","N","Y","Y","Y","N","Y","uploads","upload_id","query_uploads","List of files uploaded","","",""
+"15","27","0000-00-00 00:00:00","0000-00-00 00:00:00","0000-00-00 00:00:00","0","0","N","N","N","Y","N","N","Y","","","query_actions","Cruder actions","","",""
+"16","27","0000-00-00 00:00:00","0000-00-00 00:00:00","0000-00-00 00:00:00","0","0","N","N","N","Y","N","N","Y","","","query_boxes","Loading boxes in templates","","",""
+"17","27","0000-00-00 00:00:00","0000-00-00 00:00:00","0000-00-00 00:00:00","0","0","N","N","N","Y","N","N","Y","","","query_boxes_static","Contents of static boxes","","",""
+"18","27","0000-00-00 00:00:00","0000-00-00 00:00:00","0000-00-00 00:00:00","0","0","Y","N","N","Y","Y","N","Y","","code_id","query_code_generators","Code generator","","","SELECT * FROM `smarty_framework`.query_code_generators WHERE subdomain_id IN(27, 0);"
+"19","27","0000-00-00 00:00:00","0000-00-00 00:00:00","0000-00-00 00:00:00","0","0","Y","N","N","Y","Y","Y","Y","","config_id","query_config","Site specific configurations","","",""
+"20","27","0000-00-00 00:00:00","0000-00-00 00:00:00","0000-00-00 00:00:00","0","0","Y","N","N","Y","Y","N","Y","","crud_id","query_cruded","List of CRUDed tables","","",""
+"21","27","0000-00-00 00:00:00","0000-00-00 00:00:00","0000-00-00 00:00:00","0","0","Y","N","Y","Y","Y","Y","Y","configurations","define_id","query_defines","List of defined constatnts","","",""
+"22","27","0000-00-00 00:00:00","0000-00-00 00:00:00","0000-00-00 00:00:00","0","0","Y","N","N","Y","Y","Y","Y","","history_id","query_development_history","List of Development History","","",""
+"23","27","0000-00-00 00:00:00","0000-00-00 00:00:00","0000-00-00 00:00:00","0","0","Y","N","N","Y","Y","Y","Y","","download_id","query_downloads","Application specific list of download URLs","","",""
+"24","27","0000-00-00 00:00:00","0000-00-00 00:00:00","0000-00-00 00:00:00","0","0","Y","N","N","Y","Y","Y","Y","","menu_id","query_dropdowns","List of menus for dropdowns","","","SELECT * FROM query_dropdowns WHERE subdomain_id IN(27);"
+"25","27","0000-00-00 00:00:00","0000-00-00 00:00:00","0000-00-00 00:00:00","0","0","Y","N","Y","Y","Y","N","N","emails","email_id","query_emails","Email templates","SELECT * FROM query_emails WHERE subdomain_id IN(27);","",""
+"26","27","0000-00-00 00:00:00","0000-00-00 00:00:00","0000-00-00 00:00:00","0","0","Y","N","Y","Y","Y","N","N","smtp","smtp_id","query_emails_smtp","SMTP user details","","",""
+"27","27","0000-00-00 00:00:00","0000-00-00 00:00:00","0000-00-00 00:00:00","0","0","N","N","N","Y","N","N","Y","","","query_errors","Capturing errors in PHP scripts","","",""
+"28","27","0000-00-00 00:00:00","0000-00-00 00:00:00","0000-00-00 00:00:00","0","0","N","N","N","Y","N","N","Y","","","query_http_status","List of all HTTP status codes","","",""
+"29","27","0000-00-00 00:00:00","0000-00-00 00:00:00","0000-00-00 00:00:00","0","0","Y","N","Y","Y","Y","Y","Y","","identifier_id","query_identifiers","List of queries for dropdowns in forms","","",""
+"30","27","0000-00-00 00:00:00","0000-00-00 00:00:00","0000-00-00 00:00:00","0","0","N","N","N","Y","N","N","Y","","","query_letters","A-Z Letters listing","","",""
+"31","27","0000-00-00 00:00:00","0000-00-00 00:00:00","0000-00-00 00:00:00","0","0","N","N","N","Y","N","N","Y","","","query_linux_commands","List of LINUX commands","","",""
+"32","27","0000-00-00 00:00:00","0000-00-00 00:00:00","0000-00-00 00:00:00","0","0","Y","N","N","Y","Y","N","Y","","logged_id","query_logger","HTTP Access Logger","","",""
+"33","27","0000-00-00 00:00:00","0000-00-00 00:00:00","0000-00-00 00:00:00","0","0","Y","N","Y","Y","Y","N","N","users","user_id","query_users","Users who can login into the system","SELECT\
+	*\
+FROM query_users\
+WHERE\
+	is_active='Y'\
+	AND do_export='Y'\
+;","","Framework users"
+"34","27","0000-00-00 00:00:00","0000-00-00 00:00:00","0000-00-00 00:00:00","0","0","Y","N","N","Y","Y","Y","Y","","distribution_id","query_distributions","Downlodable distributions made on this framework","","",""
+"36","27","0000-00-00 00:00:00","0000-00-00 00:00:00","0000-00-00 00:00:00","0","0","Y","N","N","Y","Y","Y","Y","","","query_cdn","Links from the CDN","","","SELECT * FROM `smarty_framework`.query_cdn WHERE subdomain_id IN(27, 0);"
+"37","27","0000-00-00 00:00:00","0000-00-00 00:00:00","0000-00-00 00:00:00","0","0","Y","N","N","Y","Y","Y","Y","","category_id","query_subdomains_categories","Categories for Subdomains","","",""
+"38","27","0000-00-00 00:00:00","0000-00-00 00:00:00","0000-00-00 00:00:00","0","0","Y","N","N","Y","Y","N","Y","","license_id","query_licenses","License Key Organizer","","",""
+"39","27","0000-00-00 00:00:00","0000-00-00 00:00:00","0000-00-00 00:00:00","0","0","N","N","N","Y","N","N","Y","","","query_handlers","Handlers and regular expressions","","",""
+"40","27","0000-00-00 00:00:00","0000-00-00 00:00:00","0000-00-00 00:00:00","0","0","Y","N","Y","Y","Y","Y","Y","articles","article_id","query_articles","Pieces of CMS Dynamic texts","","",""
+"41","27","0000-00-00 00:00:00","0000-00-00 00:00:00","0000-00-00 00:00:00","0","0","Y","N","N","Y","Y","Y","Y","","message_id","query_messages","Error and other messages","","","SELECT * FROM query_messages WHERE subdomain_id IN(27, 0);"
+"243","27","0000-00-00 00:00:00","0000-00-00 00:00:00","0000-00-00 00:00:00","0","0","N","N","N","Y","N","N","Y","","database_id","query_databases","","","",""
+"244","27","0000-00-00 00:00:00","0000-00-00 00:00:00","0000-00-00 00:00:00","0","0","N","N","N","Y","N","N","Y","","user_id","query_informer","","","",""
+"245","27","0000-00-00 00:00:00","0000-00-00 00:00:00","0000-00-00 00:00:00","0","0","N","N","N","Y","N","N","Y","","news_id","query_news","","","",""
+"299","27","0000-00-00 00:00:00","0000-00-00 00:00:00","0000-00-00 00:00:00","0","0","N","N","N","Y","N","N","Y","","","query_logs","","","",""
+"300","27","0000-00-00 00:00:00","0000-00-00 00:00:00","0000-00-00 00:00:00","0","0","N","N","N","Y","N","N","Y","","","query_table_template","","","",""
+"301","27","0000-00-00 00:00:00","0000-00-00 00:00:00","0000-00-00 00:00:00","0","0","Y","Y","N","Y","Y","Y","Y","","group_id","query_users_groups","User groups","","","Group permissions"
+"302","27","0000-00-00 00:00:00","0000-00-00 00:00:00","0000-00-00 00:00:00","0","0","Y","N","N","Y","Y","N","N","contacts","contact_id","query_contacts","Contacts received via contact-us pages","","",""

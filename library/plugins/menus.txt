@@ -1,0 +1,2 @@
+		# We are experiencing probloems with menus in the linux servers
+		file_put_contents($cache_file, $menu_output."<!-- {$menus_sql} -->");

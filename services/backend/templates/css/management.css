@@ -1,0 +1,288 @@
+*
+{
+	border: none;
+	padding: 0px;
+	margin: 0px;
+
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+}
+
+body, td, th
+{
+	color: #000000;
+}
+
+body
+{
+	background-color: #003300;
+	margin-left: 0px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+}
+
+h1
+{
+	font-size: 18px;
+	font-weight: bold;
+	padding: 15px;
+	padding-bottom: 5px;
+	border-bottom: 3px solid #00cc00;
+	color: #009900;
+}
+
+h2
+{
+	font-size: 16px;
+	font-weight: bold;
+	padding: 10px;
+}
+
+h3
+{
+	font-size: 14px;
+	font-weight: bold;
+	padding: 10px;
+}
+
+a
+{
+	color: #0000ff;
+	text-decoration: none;
+}
+
+a:hover
+{
+	color: #660099;
+	border-bottom: 1px solid #ff0000;
+}
+
+form
+{
+}
+
+table
+{
+	border-collapse: collapse;
+	border: 1px solid #003300;
+	margin-top: 10px;
+}
+
+th
+{
+	height: 22px;
+	vertical-align: middle;
+	background-color: #b3cfb3;
+	color: #000000;
+	font-weight: bold;
+}
+
+tr.A
+{
+	background-color: #c3ffc3;
+}
+
+td
+{
+	padding: 4px;
+	cursor: pointer;
+}
+
+td:hover
+{
+	background-color: #00ff99;
+}
+
+td.attribute
+{
+	font-weight: bold;
+	text-align: right;
+	padding-right: 10px;
+	background-color: #9dfe9d;
+}
+
+table.data
+{
+	width: 100%;
+}
+
+table.data caption
+{
+	color: #ff0000;
+	margin: 5px;
+	font-weight: bold;
+	font-size: 18px;
+}
+
+td.r
+{
+	text-align: right;
+}
+
+input, select, textarea
+{
+	background-color: #99ffcc;
+	border: 1px solid #006600;
+}
+
+textarea
+{
+	resize: none;
+}
+
+input[type="text"], input[type="password"], option
+{
+	padding: 5px 0px 3px 0px;
+	vertical-align: middle;
+}
+
+input[type="text"], input[type="password"]
+{
+	width: 250px;
+}
+
+select
+{
+	width: 265px;
+	height: 22px;
+}
+
+input[type="submit"]
+{
+	background-color: #035f03;
+	border: 1px solid #000000;
+	color: #ffff00;
+	font-weight: bold;
+	text-align: center;
+	padding: 3px;
+	height: 22px;
+}
+
+.wrapper
+{
+	width: 800px;
+	padding: 5px;
+	margin: 20px auto 20px auto;
+	border: 2px solid #ffff00;
+	background-color: #eeeeee;
+}
+
+.system-message
+{
+	padding: 10px 10px 10px 10px;
+	background-color: #ccccff;
+	margin-bottom: 10px;
+	color: #000099;
+	border: 1px solid #999999;
+}
+
+.contents
+{
+	margin: 5px;
+	padding: 10px 20px 10px 20px;
+	border-left: 1px solid #ffff66;
+	border-right: 1px solid #ffff66;
+	min-height: 370px;
+}
+
+.contents p
+{
+	line-height: 10px;
+	padding-bottom: 10px;
+}
+
+.footer
+{
+	padding: 10px;
+	margin-top: 25px;
+	line-height: 20px;
+	text-align: center;
+	background-color: #00609d;
+	border: 2px solid #00cccc;
+	color: #ffffff;
+}
+
+.footer a
+{
+	color: #ffff00;
+}
+
+.footer a:hover
+{
+	color: #00ffff;
+}
+
+.information
+{
+	padding: 5px;
+	margin: 10px 0px 10px 0px;
+	background-color: #cccc66;
+	border: 1px solid #666666;
+	text-align: right;
+	font-size: 16px;
+	font-weight: bold;
+}
+
+.information a
+{
+	color: #003366;
+}
+
+.information a:hover
+{
+	color: #ffffff;
+	font-weight: bold;
+}
+
+.information ul
+{
+	list-style: none;
+}
+
+.warning
+{
+	padding: 10px;
+	background-color: #ffff66;
+	border: 1px solid #ff9900;
+	margin-top: 5px;
+}
+
+/** pagination: holder, ul/li, a, span, current, ... */
+.paginator
+{
+	/** pagination holder */
+	padding-bottom: 10px;
+	padding-top: 10px;
+}
+
+.paginator .current
+{
+	/** currently acive page number */
+	border: 1px solid #006633;
+	background-color: #ffff99;
+}
+
+.paginator ul
+{
+	list-style: none;
+}
+
+.paginator ul li
+{
+	float: left;
+	padding-left: 5px;
+	padding-right: 5px;
+	text-align: center;
+}
+
+.details div
+{
+	padding: 5px;
+	font-size: 12px;
+}
+
+.details div strong
+{
+	color: #009900;
+}

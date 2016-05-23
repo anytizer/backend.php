@@ -1,0 +1,38 @@
+/**
+* Skeleton of [Query Distributions: query_distributions]
+* Downlodable distributions made with this framework
+* ==========================================================
+* Timely view/truncate this table, as it may swell too soon.
+*
+* @author Bimal Poudel
+* @package Backend Framework
+*/
+
+CREATE TABLE `query_distributions` (
+  `distribution_id` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT 'Distribution ID',
+  `subdomain_id` int(10) unsigned NOT NULL DEFAULT '0' COMMENT 'For which Subdomain ID?',
+  `added_on` datetime NOT NULL DEFAULT '0000-00-00 00:00:00' COMMENT 'When added?',
+  `fixed_on` datetime NOT NULL DEFAULT '0000-00-00 00:00:00' COMMENT 'Last time when CRON executed on this record',
+  `modified_on` datetime NOT NULL DEFAULT '0000-00-00 00:00:00' COMMENT 'Last modified on',
+  `modified_counter` int(10) unsigned NOT NULL DEFAULT '0' COMMENT 'Number of total modifications',
+  `sink_weight` int(10) unsigned NOT NULL DEFAULT '0' COMMENT 'Sorting weight',
+  `file_size` int(10) unsigned NOT NULL DEFAULT '0' COMMENT 'File size in bytes',
+  `stats_comments` int(10) unsigned NOT NULL DEFAULT '0' COMMENT 'Source code comments',
+  `stats_html` int(10) unsigned NOT NULL DEFAULT '0' COMMENT 'HTML Size',
+  `stats_php` int(10) unsigned NOT NULL DEFAULT '0' COMMENT 'PHP Size',
+  `stats_js` int(10) unsigned NOT NULL DEFAULT '0' COMMENT 'JS Size',
+  `stats_css` int(10) unsigned NOT NULL DEFAULT '0' COMMENT 'CSS Size',
+  `stats_images` int(10) unsigned NOT NULL DEFAULT '0' COMMENT 'Images Size',
+  `stats_text` int(10) unsigned NOT NULL DEFAULT '0' COMMENT 'Text file Size',
+  `stats_templates` int(10) unsigned NOT NULL DEFAULT '0' COMMENT 'Templates size',
+  `stats_scripts` int(10) unsigned NOT NULL DEFAULT '0' COMMENT '.sh, .bat, etc. scripts size',
+  `is_active` enum('N','Y') NOT NULL DEFAULT 'N' COMMENT 'Allow to download this?',
+  `is_approved` enum('N','Y') NOT NULL DEFAULT 'N' COMMENT 'Approved distribution?',
+  `show_links` enum('N','Y') NOT NULL DEFAULT 'N' COMMENT 'Show links?',
+  `show_samples` enum('N','Y') NOT NULL DEFAULT 'N' COMMENT 'Show samples?',
+  `distribution_link` varchar(255) NOT NULL DEFAULT '' COMMENT 'Link to this product or sample',
+  `distribution_title` varchar(255) NOT NULL DEFAULT '' COMMENT 'Title',
+  `distribution_text` text NOT NULL COMMENT 'Description',
+  PRIMARY KEY (`distribution_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Downlodable distributions made with this framework';
+

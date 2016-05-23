@@ -1,0 +1,6 @@
+Subdomain : __SUBDOMAIN_NAME__
+Created on: __TIMESTAMP__
+
+This directory holds the various templates and designs.
+
+Alternatively, you can host your subdmain's css and images files here.

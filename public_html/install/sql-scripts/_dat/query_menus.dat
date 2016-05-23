@@ -1,0 +1,8 @@
+
+TRUNCATE `query_menus`;
+
+LOAD DATA LOCAL INFILE '../public_html/install/sql-scripts/_csv/query_menus.csv'
+INTO TABLE `query_menus`
+FIELDS ESCAPED BY '\\' TERMINATED BY ',' ENCLOSED BY '"'
+LINES TERMINATED BY '\r\n';
+

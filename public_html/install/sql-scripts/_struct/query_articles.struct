@@ -1,0 +1,32 @@
+/**
+* Skeleton of [Query Articles: query_articles]
+* Dynamic article pieces
+* ==========================================================
+* Timely view/truncate this table, as it may swell too soon.
+*
+* @author Bimal Poudel
+* @package Backend Framework
+*/
+
+CREATE TABLE `query_articles` (
+  `article_id` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT 'Article ID',
+  `user_id` int(10) unsigned NOT NULL DEFAULT '0' COMMENT 'Who wrote this article?',
+  `subdomain_id` int(10) unsigned NOT NULL DEFAULT '0' COMMENT 'For which Subdomain ID?',
+  `added_on` datetime NOT NULL DEFAULT '0000-00-00 00:00:00' COMMENT 'Added on: first time created date',
+  `fixed_on` datetime NOT NULL DEFAULT '0000-00-00 00:00:00' COMMENT 'Last time when CRON executed on this record',
+  `modified_on` datetime NOT NULL DEFAULT '0000-00-00 00:00:00' COMMENT 'Last modified on',
+  `modified_counter` int(10) unsigned NOT NULL DEFAULT '0' COMMENT 'How many times is this record modified?',
+  `sink_weight` int(10) unsigned NOT NULL DEFAULT '0' COMMENT 'Sinking weight',
+  `is_active` enum('N','Y') NOT NULL DEFAULT 'N' COMMENT 'Active record?',
+  `is_approved` enum('N','Y') NOT NULL DEFAULT 'N' COMMENT 'Did we approve this record?',
+  `is_html` enum('N','Y') NOT NULL DEFAULT 'N' COMMENT 'Should we support HTML tags?',
+  `article_code` varchar(255) NOT NULL DEFAULT '' COMMENT 'Some Code',
+  `article_title` varchar(255) NOT NULL DEFAULT '' COMMENT 'Box text title',
+  `article_xref` varchar(255) NOT NULL DEFAULT '' COMMENT 'Additional XREF if used',
+  `article_image` varchar(255) NOT NULL DEFAULT '' COMMENT 'Associated image file',
+  `article_comments` varchar(255) NOT NULL DEFAULT '' COMMENT 'Short comments',
+  `article_excerpt` text NOT NULL COMMENT 'Summary of the article',
+  `article_text` text NOT NULL COMMENT 'Main, full text contents',
+  PRIMARY KEY (`article_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Dynamic article pieces';
+

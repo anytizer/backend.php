@@ -1,0 +1,33 @@
+Subdomain : __SUBDOMAIN_NAME__
+Created on: __TIMESTAMP__
+
+
+Put your Smarty config load files here.
+Make sure that they all are bound only to this subdoman service.
+You will need to load the config files on demand only:
+	via config_load plugin: {config_load file='*.conf'}
+	via php syntax: $smarty->config_load('*.conf');
+
+
+Configuration files will be used only if:
+	you explicitly put your Smarty config files here
+	and call them with a config load function.
+
+
+General guidelines:
+You can use config load files for:
+	customizing messages
+	multilingual contents
+	statically configured contents
+
+
+Please refer to the manual for Smarty's config load:
+
+$smarty->config_load(): PHP
+	http://www.smarty.net/manual/en/api.config.load.php
+
+{config_load}: Template Tag
+	http://www.smarty.net/manual/en/language.function.config.load.php
+
+Printing variables loaded from config files
+	http://www.smarty.net/manual/en/language.config.variables.php

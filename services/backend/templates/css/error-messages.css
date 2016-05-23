@@ -1,0 +1,101 @@
+/** global error messages */
+
+*
+{
+	border: none;
+	margin: 0px;
+	padding: 0px;
+	outline: none;
+}
+
+body, td, th
+{
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	background-color: #eeeeee;
+	color: #000000;
+}
+
+body
+{
+	margin-left: 0px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+}
+
+h1
+{
+	font-size: 18px;
+	padding-bottom: 5px;
+	border-bottom: 5px solid #cccccc;
+	margin-bottom: 5px;
+	color: #ff0000;
+}
+
+.wrapper
+{
+	width: 700px;
+	margin: 30px auto 10px auto;
+	padding: 5px;
+	background-color: #ffffff;
+	border: thin solid #cccccc;
+}
+
+a:link
+{
+	color: #0000ff;
+	text-decoration: none;
+}
+
+a:visited
+{
+	text-decoration: none;
+}
+
+a:hover
+{
+	text-decoration: none;
+}
+
+a:active
+{
+	text-decoration: none;
+}
+
+em
+{
+	color: #cc3300;
+}
+
+.marginal
+{
+	clear: both;
+}
+
+.footer
+{
+	margin-top: 40px;
+	padding-top: 5px;
+	border-top: 2px solid #ff9900;
+	text-align: center;
+}
+
+p
+{
+	margin-bottom: 10px;
+}
+
+.admininstrator
+{
+	text-align: right;
+	margin-top: 10px;
+}
+
+.error-body
+{
+	min-height: 250px;
+	background-color: #ff99ff;
+	padding: 20px;
+	border: 1px solid #ff0000;
+}

@@ -1,0 +1,25 @@
+/**
+* Skeleton of [Query Downloads: query_downloads]
+* List of good products to allow downloads
+* ==========================================================
+* Timely view/truncate this table, as it may swell too soon.
+*
+* @author Bimal Poudel
+* @package Backend Framework
+*/
+
+CREATE TABLE `query_downloads` (
+  `download_id` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT 'Downloadable URL ID',
+  `subdomain_id` int(10) unsigned NOT NULL DEFAULT '0' COMMENT 'For which Subdomain ID?',
+  `added_on` datetime NOT NULL DEFAULT '0000-00-00 00:00:00' COMMENT 'Added on',
+  `fixed_on` datetime NOT NULL DEFAULT '0000-00-00 00:00:00' COMMENT 'Last time when CRON executed on this record',
+  `modified_on` datetime NOT NULL DEFAULT '0000-00-00 00:00:00' COMMENT 'Modified on',
+  `modified_counter` int(10) unsigned NOT NULL DEFAULT '0' COMMENT 'Number of total modifications',
+  `sink_weight` int(10) unsigned NOT NULL DEFAULT '0' COMMENT 'Sink weight',
+  `is_active` enum('N','Y') NOT NULL DEFAULT 'Y' COMMENT 'Show this link?',
+  `is_approved` enum('N','Y') NOT NULL DEFAULT 'N' COMMENT 'Approved download link?',
+  `download_text` varchar(255) NOT NULL DEFAULT '' COMMENT 'Link Text',
+  `download_url` varchar(255) NOT NULL DEFAULT '' COMMENT 'Downlaod link',
+  PRIMARY KEY (`download_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='List of good products to allow downloads';
+

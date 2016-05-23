@@ -1,0 +1,10 @@
+Subdomain : __SUBDOMAIN_NAME__
+Created on: __TIMESTAMP__
+
+This directory holds the various Smarty Plugins speficic to your subdomain service (__SUBDOMAIN_NAME__).
+You can use the generic Smarty plugins from the parent module itself.
+
+Tips:
+When you think you are in need of a special plugin, think twice.
+The system default plugins might have been already accessible to your subdomain.
+So, please check for all list of default Smarty Plugins and the framework's Smarty plugins.

@@ -1,0 +1,15 @@
+11:10 AM 3/5/2016
+@todo The info may be wrong now, and should need changes in line numbers.
+
+12:41 AM 6/17/2010
+
+We have modified the Smarty's source code in order to use encrypted configurations.
+Here are the patches, for new releases:
+
+File: smarty_internal_data.php
+:public function getConfigVariable($variable):
+
+#1	$variable = hack_smarty::encrypt_key($variable);
+#2	return hack_smarty::decrypt_value($_ptr->config_vars[$variable]);
+
+1:18 AM 5/12/2010

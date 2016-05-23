@@ -1,0 +1,29 @@
+/**
+* Skeleton of [Query Messages: query_messages]
+* Who sent what message to whom?
+* ==========================================================
+* Timely view/truncate this table, as it may swell too soon.
+*
+* @author Bimal Poudel
+* @package Backend Framework
+*/
+
+CREATE TABLE `query_messages` (
+  `message_id` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT 'Message ID',
+  `subdomain_id` int(10) unsigned NOT NULL DEFAULT '0' COMMENT 'For which Subdomain ID?',
+  `added_on` datetime NOT NULL DEFAULT '0000-00-00 00:00:00' COMMENT 'Added on',
+  `fixed_on` datetime NOT NULL DEFAULT '0000-00-00 00:00:00' COMMENT 'Last time when CRON executed on this record',
+  `modified_on` datetime NOT NULL DEFAULT '0000-00-00 00:00:00' COMMENT 'Modified on',
+  `modified_counter` int(10) unsigned NOT NULL DEFAULT '0' COMMENT 'Modified counter',
+  `display_counter` int(10) unsigned NOT NULL DEFAULT '0' COMMENT 'Number of displays',
+  `sink_weight` int(10) unsigned NOT NULL DEFAULT '0' COMMENT 'Sinking weight',
+  `is_active` enum('N','Y') NOT NULL DEFAULT 'Y' COMMENT 'Active message?',
+  `is_approved` enum('N','Y') NOT NULL DEFAULT 'N' COMMENT 'Approved message?',
+  `message_code` varchar(255) NOT NULL DEFAULT '' COMMENT 'Unique code for this message',
+  `message_status` varchar(255) NOT NULL DEFAULT '' COMMENT 'What kind of message is this? (error, success, notice, warning, info, caution)',
+  `message_comments` varchar(255) NOT NULL DEFAULT '' COMMENT 'Where is this messaged used in?',
+  `message_body` text NOT NULL COMMENT 'Full message body',
+  PRIMARY KEY (`message_id`),
+  UNIQUE KEY `message_code_index` (`message_code`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Who sent what message to whom?';
+

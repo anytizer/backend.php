@@ -1,0 +1,35 @@
+/**
+* Skeleton of [Query Uploads: query_uploads]
+* List of files uploaded using APIs
+* ==========================================================
+* Timely view/truncate this table, as it may swell too soon.
+*
+* @author Bimal Poudel
+* @package Backend Framework
+*/
+
+CREATE TABLE `query_uploads` (
+  `upload_id` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT 'Upload ID',
+  `subdomain_id` int(10) unsigned NOT NULL DEFAULT '0' COMMENT 'For which Subdomain ID?',
+  `added_on` datetime NOT NULL DEFAULT '0000-00-00 00:00:00' COMMENT 'Useless at the moment',
+  `fixed_on` datetime NOT NULL DEFAULT '0000-00-00 00:00:00' COMMENT 'Last time when CRON executed on this record',
+  `upload_size` int(10) unsigned NOT NULL DEFAULT '0' COMMENT 'File size',
+  `uploaded_on` datetime NOT NULL DEFAULT '0000-00-00 00:00:00' COMMENT 'When uploaded?',
+  `modified_on` datetime NOT NULL DEFAULT '0000-00-00 00:00:00' COMMENT 'Modified on',
+  `modified_counter` int(10) unsigned NOT NULL DEFAULT '0' COMMENT 'Total number of modifications',
+  `sink_weight` int(10) unsigned NOT NULL DEFAULT '0' COMMENT 'Useless at the moment',
+  `image_width` int(10) unsigned NOT NULL DEFAULT '0' COMMENT 'If GD Image, get Width',
+  `image_height` int(10) unsigned NOT NULL DEFAULT '0' COMMENT 'If GD Image, get Height',
+  `downloads_counter` int(10) unsigned NOT NULL DEFAULT '0' COMMENT 'Downloads, Impression',
+  `file_code` varchar(255) NOT NULL DEFAULT '' COMMENT 'Stamp Coded Name',
+  `file_name` varchar(255) NOT NULL DEFAULT '' COMMENT 'Real name of file',
+  `file_mime` varchar(255) NOT NULL DEFAULT '' COMMENT 'MIME used while uploading',
+  `file_location` varchar(255) NOT NULL DEFAULT '' COMMENT 'Directory, where this file is uploaded at',
+  `comments_file` varchar(255) NOT NULL DEFAULT '' COMMENT 'Extra comments',
+  `comments_additional` varchar(255) NOT NULL DEFAULT '' COMMENT 'Extra explanation to the source who uploaded this file',
+  `is_active` enum('N','Y') NOT NULL DEFAULT 'N' COMMENT 'Removed?',
+  `is_approved` enum('N','Y') NOT NULL DEFAULT 'N' COMMENT 'Useless at the moment',
+  PRIMARY KEY (`upload_id`),
+  UNIQUE KEY `file_code_unique_index` (`file_code`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='List of files uploaded using APIs';
+

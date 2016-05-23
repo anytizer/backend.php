@@ -1,0 +1,12 @@
+IndexIgnore *
+Options -Indexes
+Options +FollowSymLinks
+DirectoryIndex mysql-version.php
+
+RewriteEngine on
+RewriteRule ^$ mysql-version.php [L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-s
+RewriteCond %{REQUEST_FILENAME} !-l
+RewriteRule (.*) mysql-version.php?page=$1 [QSA,L]

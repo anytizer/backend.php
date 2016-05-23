@@ -1,0 +1,180 @@
+"5","27","0000-00-00 00:00:00","0000-00-00 00:00:00","0000-00-00 00:00:00","0","0","Y","N","SYSTEM","running_numbers","","SELECT\
+	(units.d * tens.d + units.d) k,\
+	(units.d * tens.d + units.d) v\
+FROM _digits units\
+CROSS JOIN _digits tens\
+GROUP BY\
+	k\
+HAVING k BETWEEN 1 AND 50\
+ORDER BY\
+	k\
+;","SELECT\
+	(units.d * tens.d + units.d) k,\
+	(units.d * tens.d + units.d) v\
+FROM _digits units\
+CROSS JOIN _digits tens\
+GROUP BY\
+	k\
+HAVING k BETWEEN 1 AND 50\
+ORDER BY\
+	k\
+;"
+"11","27","0000-00-00 00:00:00","0000-00-00 00:00:00","0000-00-00 00:00:00","0","0","Y","N","SYSTEM","domain_prefixes","","SELECT\
+	prefix_name k,\
+	prefix_name v\
+FROM apps_domain_prefixes\
+WHERE\
+	is_active='Y'\
+ORDER BY\
+	sink_weight\
+;","SELECT\
+	prefix_name k,\
+	prefix_name v\
+FROM apps_domain_prefixes\
+WHERE\
+	is_active='Y'\
+ORDER BY\
+	sink_weight\
+;"
+"12","27","0000-00-00 00:00:00","0000-00-00 00:00:00","0000-00-00 00:00:00","0","0","Y","N","SYSTEM","system:services","","SELECT\
+	qs.subdomain_id k,\
+	CONCAT(\
+		subdomain_name,\
+		' (ID: ', qs.subdomain_id,\
+		#', Alias: ', qs.alias_id,\
+		', Pages: ', pages_counter,\
+		')'\
+	)  v\
+FROM query_subdomains qs\
+WHERE\
+	qs.is_active='Y'\
+	AND qs.alias_id=0 # Un-Aliased subdomains only\
+	AND is_hidden != 'Y' # Added on 2010-12-14\
+ORDER BY\
+	qs.subdomain_name\
+;","SELECT\
+	qs.subdomain_id k,\
+	CONCAT(\
+		subdomain_name,\
+		' (ID: ', qs.subdomain_id,\
+		', Alias: ', qs.alias_id,\
+		', Pages: ', pages_counter,\
+		')'\
+	)  v\
+FROM query_subdomains qs\
+WHERE\
+	qs.is_active='Y'\
+ORDER BY\
+	qs.subdomain_name\
+;\
+\
+\
+SELECT\
+	service_id k,\
+	service_name v\
+FROM apps_services\
+WHERE\
+	is_active='Y'\
+ORDER BY\
+	sink_weight\
+;"
+"13","27","0000-00-00 00:00:00","0000-00-00 00:00:00","0000-00-00 00:00:00","0","0","Y","N","SYSTEM","timezones","","SELECT\
+	timezone_id k,\
+	CONCAT('(GMT ', `sign`, hh, ':', mm, ') ', `name`) v\
+FROM query_timezones\
+ORDER BY\
+	sink_weight,\
+	`sign` DESC,\
+	hh,\
+	mm,\
+	`name`\
+;","SELECT\
+	timezone_id k,\
+	CONCAT('(GMT ', `sign`, hh, ':', mm, ') ', `name`) v\
+FROM query_timezones\
+ORDER BY\
+	sink_weight,\
+	`sign` DESC,\
+	hh,\
+	mm,\
+	`name`\
+;"
+"14","27","0000-00-00 00:00:00","0000-00-00 00:00:00","0000-00-00 00:00:00","0","0","Y","N","SYSTEM","countries","","SELECT\
+	countries_id k,\
+	countries_name v\
+FROM countries\
+ORDER BY\
+	countries_name\
+;","SELECT\
+	countries_id k,\
+	countries_name v\
+FROM countries\
+ORDER BY\
+	countries_name\
+;"
+"16","27","0000-00-00 00:00:00","0000-00-00 00:00:00","0000-00-00 00:00:00","0","0","Y","N","SYSTEM","system:subdomains_available","","SELECT\
+	subdomain_id k,\
+	subdomain_name v\
+FROM query_subdomains\
+WHERE\
+	is_active='Y'\
+ORDER BY\
+	subdomain_name\
+;","SELECT\
+	subdomain_name k,\
+	subdomain_name v\
+FROM query_subdomains\
+WHERE\
+	is_active='Y'\
+ORDER BY\
+	subdomain_name\
+;"
+"31","27","0000-00-00 00:00:00","0000-00-00 00:00:00","0000-00-00 00:00:00","0","0","Y","N","SYSTEM","framework:subdomain_status","","SELECT\
+	`status_id` `k`,\
+	`status_name` `v`\
+FROM `query_subdomains_status`\
+WHERE `is_active`='Y';","SELECT\
+	`status_id` `k`,\
+	`status_name` `v`\
+FROM `query_subdomain_status`\
+WHERE `is_active`='Y';"
+"49","27","0000-00-00 00:00:00","0000-00-00 00:00:00","0000-00-00 00:00:00","0","0","Y","N","SYSTEM","toc:parents","","SELECT\
+	qt.toc_id k,\
+	CONCAT(qt.toc_title, ': ', qt.toc_id) v\
+FROM query_toc qt\
+ORDER BY\
+	qt.parent_id,\
+	qt.sink_weight,\
+	qt.toc_title\
+;","SELECT\
+	qt.toc_id k,\
+	CONCAT(qt.toc_title, ': ', qt.toc_id) v\
+FROM query_toc qt\
+ORDER BY\
+	qt.parent_id,\
+	qt.sink_weight,\
+	qt.toc_title\
+;"
+"54","27","0000-00-00 00:00:00","0000-00-00 00:00:00","0000-00-00 00:00:00","0","0","Y","N","SYSTEM","system:subdomains_available:visible","","SELECT\
+	subdomain_id k,\
+	CONCAT(subdomain_name, ' (ID: ', subdomain_id, ')') v\
+FROM query_subdomains\
+WHERE\
+	is_active='Y'\
+	AND is_hidden != 'Y'\
+ORDER BY\
+	subdomain_name\
+;",""
+"61","27","0000-00-00 00:00:00","0000-00-00 00:00:00","0000-00-00 00:00:00","0","0","Y","N","SYSTEM","system:superfish-context","","SELECT\
+	context k,\
+	LOWER(CONCAT(context, ': ', COUNT(menu_id))) v\
+FROM query_dropdowns\
+GROUP BY context\
+ORDER BY context\
+;","SELECT\
+	context k,\
+	CONCAT(context, ': ', COUNT(menu_id)) v\
+FROM query_dropdowns\
+GROUP BY context\
+ORDER BY context\
+;"

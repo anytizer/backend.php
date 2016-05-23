@@ -1,0 +1,1094 @@
+2016-05-20
+	- Apply namespaces in all
+
+
+2016-05-17
+	- Remove service path, framework path constants
+	- Centralize all access.log files
+	- Move away the unused Smarty Plugins
+	- Write test cases for each plugins
+	- Uploader should handle files in arrays
+	- cURL should fix merging parameters to URL with GET
+	- Option to disable verification checks on trusted environment
+	- Do not run the application if install/ directory exists
+	- Make public_html slimmer
+	- SQL and other errors should share the Temp Zone Path
+	- Point out all error logs into temp zone path only (per subdomain)
+	- In the list of subdomains, icon for directory exists or not
+	- Form elements without an associated label or title
+	- Replace document.forms, ... with getElementBy...
+	- Cropnail should produce same image types, eg. jpg to jpg, png to png
+
+
+2016-05-10
+	- Replace the arrow images with unicode arrow characters
+
+
+2016-05-09
+	- Find all codes with Constructors with Parameters
+		- Regular expressions
+	- Rewrite those blocks
+	- new CLASS(NOT EMPTY);
+
+
+2016-04-25
+	- Organize the installation instructions
+	- Bring all access logs together within /tmp
+	- When new subdomain is created, automatically install it
+	- CRUDer to generate js/validators/ENTITY/populate.js file for each fields
+	- Fix the APIGen documentation with new release (via Composer)
+
+
+2016-03-13
+	- Push minor flags into separate record keeping databases. eg.
+		- added_on, modified_on, modified_counter, ...
+	- Convert unix timestamp into now()
+	- Recover date/time editor for SQL mode
+	- /mysql-backup-scripts.php needs to restore the export paths
+	- When exporting, reset the counters and datetime values
+	- Use Smarty compiler level plugins for css, js, jquery, icons, font-awesome CDN links
+
+
+2016-03-05
+	- Smarty's private members accessed publicly during setup
+	- in_array() should have a third parameter
+	- Remove dummy contents from Query Pages CSV File
+	- Code comments often have data-type and variable name used in invalid order
+	- Remove static calls to headers::__()
+	- Remove static calls to tools::__()
+	- Smarty Replacement: Caused problem with Auto Include
+	- Remove the use of ob_start()
+	- Remove support to custom CSS and JS
+		- Introduce queuing of CSS and JS scripts
+		- @see WordPress plugins
+		- Compile and output single CSS/JS output
+	- Remove support to SVN as we move to GIT
+	- Merge .htaccess from sub-directories into parent
+	- Handle sub-directories as pages
+		- admin/
+		- login/
+	- Change date formats [HH:MM AM|PM m/d/YYYY] into YYYY-MM-DD for this file
+	- Dates should be converted as YYYY-MM-DD HH:II:SS format, not timestamps
+	- Remove supports for unmaintained database/web-server platforms
+		- Databases: MSSQL, SQLSrv, PostgreSQL
+		- Web Servers: IIS
+	- Also remove physical file references from:
+		- Configurations
+		- File names
+		- Options eg. in index.php
+	- Also remove file contents
+		- Within configurations
+
+
+2015-05-28
+	- On fresh installation, the touch to configuration files generation fails.
+	- Hence, shorten the config file, ignore the main config file and borrow it from repository sample file.
+	- Issues on serving css/js files experienced on framework itself.
+
+
+2015-05-10
+	- Replace all die() calls with stopper::halt() and ErrorException.
+
+
+2015-04-21
+	- Contact us page can have QR Code link to mobile friendly home page
+
+
+2015-02-28
+	- Support basic wiki like texts [[url|text]] appears as a link
+	- Wiki Text can be read out anywhere (use API)
+
+
+2015-02-07
+	- In public details pages, validate all data entries being displayed.
+	- Link back to front end of the same item from the backend
+	- Hide fields with empty values.
+	- TinyMCE editor should be updated with the new release
+
+
+2015-02-02
+	- Expiring form submit protection
+		- allow a short time span only
+		- prevent dual form submission
+	- Hide mailer() function - the SMTP Details and act as FROM details only
+
+
+2015-02-01
+	- {js} should be a compile-time plugin in Smarty in order to have static output
+
+
+2014-11-19
+	- Check if session_save_path directory is active and writeable all the times
+
+
+2014-08-20
+	- Inform the user to change the author/password details once setup
+
+
+2014-07-29
+	- Use HTTP GET parameter to know the source of included files
+	- eg. tp=1
+
+
+2014-07-28
+	- 658+ files use "::" static calls including template scripts
+	- Query Logger should store the IP as string (no conversion)
+	- Dropdown/Menu: Use one name - query_dropdowns
+	- query_users_groups: Should be fixed to good name
+
+
+2014-07-21
+	- In each admin listing pages; show a head column search for that particular field.
+	- Added On, Created On, Modified On - those dates should have a DATETIME() format.
+
+
+2014-05-17
+	- Menu production (UNDER) feature
+		- Allows to choose a parent of a new menu
+		- Display in JS-Superfish menu style HTML
+
+	- Middleware design support
+		- Co-work with the Mrototype project
+		- Design all necessary middleware architectures
+			- Prefer JSON format data
+			- Support for XML Data format
+
+	- Add Automatic foreign key support required
+		- eg. Write "FK:TABLE:COLUMN" in the column comments
+		- It should support fetching those data contents as:
+			- Ajax dropdowns
+			- Simple dropdowns
+
+
+2014-05-14
+	- Promote the salt/pepper for all user passwords
+	- PHP 7 has auto salting features
+
+
+2014-03-16
+	- Ajax Call Implementation on the Tick/Unticks (Entity listing pages)
+		- ok
+	- Empty table structures should be replaced in the .dat, .csv and .sql files
+		- is_read added in query_contacts
+
+
+2014-01-11
+	- The framework database and application database should be different.
+	- Produce the security patch file right after a project database is installed.
+	- Contain all the default usernames and passwords published
+	- Notify how to change each of them.
+
+
+2014-01-01
+	- The system should be able to isolate the framework database in one schema and the project database in another.
+
+
+2012-05-10
+	- Even if an email template is not read out, try to send email with the unformatted data:
+	- print_r log in the email, so that contents are not lost in this case.
+
+	- Fix PHP Mailer Test script output page with realistic error/success messages and CODE to copy/paste
+	- Migration to PHPUnit as of 2016-05-01
+	- Write a mailer test script that can use the SMTP login and send emails to admins for a test.
+	- It make sure that each mailer accounts work.
+
+	- PHP Mailer - Sender should receive the read request
+	- Disposition-Notification-To: you@yourdomain.com
+	- $ConfirmReadingTo: you@yourdomain.com
+	- http://stackoverflow.com/questions/1334728/phpmailer-sending-email-ask-for-a-receipt
+		- $mail->ConfirmReadingTo = "someone@something.com";
+
+
+2013-07-07
+	- Create live/ and databases/ directory with an option to dump the database there within a subdomain created
+
+
+2013-07-07
+	- Add query_dashboarditems tables in the distribution
+
+
+2012-12-17
+	- Log the queries while creating a database (Sample Below)
+		- CREATE DATABASE db201212155459 CHARACTER SET utf8 COLLATE utf8_general_ci;
+		- GRANT ALL ON db201212155459.* TO 'user201212155459'@'localhost' IDENTIFIED BY 'pass8290565198';
+		- FLUSH PRIVILEGES;
+
+
+2012-10-15
+	- Auto search fields names in search controllers
+
+
+2012-08-01
+	- 404 Error Pages Logs
+		- Log all 404 error page names.
+		- List out 404 pages accessed for the admins.
+		- This can be distributed within the application.
+		- 404 Error logs should be configurable to use or not.
+
+
+2012-07-31
+	- Query Logger should update the number of page hits made by a visitor.
+		- Update the updated and first logged in timestamps.
+		- Need to add the column.
+		- Keep a login request IP and date time logs.
+		- Keep a log of who are trying to access our website admin area.
+		- Keep a log of what they are trying to do in the admin area.
+		- Make a report browsing feature too.
+
+
+2012-07-26
+	- Themes
+		- When screen size change is detected:
+		- we can replace the template layout
+		- Make: small screen, iphone/Android/iPad and full screen compatible themes
+	
+	- For example, 800x600 size can use - mobile device template.
+	- Need to make ajax info passing to the backend, at the end of script run.
+
+
+2012-07-17
+	- Avoid distributing data in the following tables. Rather make a separate CRUD.
+		- query_config
+		- query_contacts
+		- query_dropdowns
+		- query_emails
+		- query_emails_smtp
+	- Do not distribute data with parent subdomain ID 0 (zero).
+	- Do only for 27 (Core Framework)
+	- Reset Subdomain in SQLs, Database
+
+	- Avoid email/data in:
+		- query_defines - developer email
+
+
+2012-07-17
+	- Add a flag in email SMTP
+	- This flag acts as whether the account wants to accept all BCC emails back or not.
+	- This way, the coder does not have to write scripts for admin BCC emails.
+	- Email delivery read request receipt should be optional to the company's parameter.
+
+
+2012-04-05
+	- While cloning a system database, use the table prefixes from the subdomain configurations.
+	- And, append the framework table prefixes.
+	- Overall, give very little things to be configured by the user.
+
+
+2012-03-22
+	- Customize Ouch error - footer messages.
+	- Search for possibilities of this file per server name.
+	- Page add error in framework
+		- http://backend/backend/backend/page-add-error.php
+
+
+2012-03-17 Important Wislist
+	- Make sure that we can include the parent framework by directly operating on the child domain.
+	- It is a reverse action of the current working architecture, but may work good.
+	- In this case, we can host multiple children on different public_html and call the parent from there.
+	- Otherwise, as of current, we need to point all the child domains into the framework.
+
+
+2012-03-21 UPDATES
+	- It will attempt the write the licences file and database configuration files.
+	- They will be overwritten at the moment.
+
+
+2012-03-16 (Done)
+	- Confusion reduction: in_hosts => is_live in query_subdomains.
+	- Update all old independent applications.
+
+
+2012-03-16
+	- Make the system to ping back on a tracking server that will identify who installed the application.
+	- Make the system become able to connect and download latest update files.
+
+
+2012-03-16
+	- Subdomains Merging process should initiate only if there were data.
+	- Check on the live-imported third party data first.
+	- Give out the merging sql code for those tables with records only.
+
+
+2012-03-06
+	- Write a script to migrate/import the parent/ID based dropdowns and menus.
+	- Since the parent_id data should NOT be affected, we should carefully modify their IDs.
+
+
+2012-03-06
+	- Auto tweet the messages.
+	- Call a twitter message in ...
+	- The old framework still contains a lot of unpublished files and twitter messages.
+	- Be careful. Like, twitter API keys.
+	- Twitter API might have changed, upgrade: 2016-05-01
+
+
+2012-03-04
+	- Search results is going to public pages and links.
+	- Use admin and public - both the pages for this purpose.
+
+
+2012-03-03
+	- Uploader will have to upload images within their own directories.
+	- Eg. for stores: /templates/images/stores/, /templates/images/stores/thumbs
+	- Thumbnails will also have to be created accordingly.
+	- Pre-check write permissions on upload locations.
+
+
+2012-03-03
+	- When the crud file is an Image, do not replace anything. Copy as it is.
+
+
+2012-02-28
+	Plugins: |tb, |gb, |kb, |mb, |bytes, |byte_format conflicting. Try to reduce/reuse.
+
+
+2012-02-27
+	Keep the index page loader (boot strap) common for mssql/mysql versions.
+	Use very short level of customization only.
+
+
+2012-02-27
+	Installer: check all the necessary directories for file write permissions before proceeding.
+
+
+2012-02-23
+	Allow the query_subdomains write multiple lists of possible pointed_to locations.
+	So, it can use the files from all possible locations.
+
+
+2012-02-06
+	Not yet in the query_tables:
+		query_actions
+		query_articles
+		query_boxes
+		query_boxes_static
+		query_errors
+		query_handlers
+		query_http_status
+		query_letters
+		query_linux_commands
+		query_menus_contexts
+		query_random
+		query_sites
+
+		query_boxes
+		query_boxes_static
+		query_timezones
+
+
+2012-01-26
+	In the theme02 theme/js, write a small javascript/php that will activate the last used menu on its bar.
+	Remembers all the children menus as well, if it was classified.
+
+
+2012-01-26
+	framework mysql connection file modification
+	create admin user - admin/password
+
+
+2012-01-17
+	Remove the major portions of the mysql connection script to the class file.
+	Actual connections, timezone changing, etc. should be operated within that class file only.
+	Keep the size of the config file as small as possible.
+
+
+2012-01-13
+	Check for add_quick() features
+
+
+2012-01-10
+	Added datatype_dimensions in the repository. Just use this class to extend newly required resized images anywhere.
+
+
+2012-01-09
+	During the CRUD process, draw a list of columns from the desired table and let admin filter the columns via check boxes.
+	Even if the CRUD loads the columns, user loaded columns are of high priorities.
+
+
+2012-01-09
+	The framework system - query_tables has a flag to determine whether to export the framework data. Use this flag in the subdomain exporter.
+
+
+2012-01-06
+	When no columns were returned in the CRUDer, the list/details pages are erraneous with the missing blocks of data.
+
+
+2012-01-03
+	CRUDER: includes/ and static/ might contain same files with different layouts.
+	CRUDER: Fix one of them only and discard the other.
+
+
+2012-01-02
+	Password change link
+
+
+2011-12-29
+	Update entity name in the query_tables and query_crduded.
+
+
+2011-12-27
+	Look for CodeIgniter sample application made in 20 minutes.
+	http://video.derekallard.com/downloads
+
+
+2011-12-26
+	@cruder full templates - directory mismatched. fix with correct directory location (tree structures).
+
+
+2011-12-14
+	Change the passwords of the SMTP accounts used in the framework.
+	Plus, upgrade all websites with the new password.
+
+
+2011-12-14
+	Add conformation on DELETE link in the details page for each entities.
+
+
+2011-12-13
+	Create a theme02 default logo for the admin system.
+	use a default acceptable logo for this framework theme02 version.
+
+
+2011-12-11
+	In the contacts pages, add customized favicon.ico files - for each user,
+	defaults to system 's' icon.
+
+2011-11-24
+	GET() class should work from lower case file names.
+
+
+2011-11-11
+	Urgent: THe system is sending live examples of Test Email accounts and passwords over SVN
+	Please remove them soon.
+
+
+2011-11-07
+	Links - fix the links/, email template urls, delete/approve links, 
+	login into the same area when logged in.
+
+
+2011-10-31
+	Allow dash ( - ) and underscores ( _ ) in subdomain name.
+
+
+2011-10-19
+	According to the data counter from query_pages, hit access, hit counter, hits reports etc to generate.
+
+
+2011-10-14
+	CRUDer should test the existence of a table before CRUDing
+
+2011-09-30
+	Put a link for @bookmarks for quick access. Make a special bookmarks where users can upload their links/texts, icons and texts.
+
+
+2011-09-23
+	Update the installation manual.
+	1. add mysql into your system path.
+	2. update config.mysql.inc.php into framework as well
+	3. alias localhost export
+	
+	# Subdomain:
+	4. Install default pages instantly on the new subdomain.
+	5. Produce the "hosts" file.
+
+
+2011-09-23
+	Take uploads from zencart handler
+	jpg, jpeg, gif, png, eps, cdr, ai, pdf, tif, tiff, bmp, zip
+
+
+2011-09-22
+	Set table prefixes in query_emails_smtp table.
+
+
+2011-09-20
+	Make comments files editor - that will be used in CRUD per project.
+
+
+2011-09-05
+	Replace superfish menu with new version release
+
+
+2011-09-02
+	Merge query_news and query_articles
+	Refer to any plugins that might have used those tables.
+	Check with the other apps created using them.
+
+
+2011-08-31
+	Uploader should set the subdomain ID for all automated uploads.
+
+
+2011-08-02
+	Verify that all the table have the system defined column names.
+
+
+2011-07-29
+	Give a way to download system plugins (unavailable in Smarty by default).
+	Make a plugins download page.
+	Also, the page should display the google ad, the highlighted contents of the plugin,
+		and the download link.
+
+
+2011-07-22
+	Table creating script is lost.
+	is_acitve, subdomain ID, ... => search and find it out again somewhere...
+	seems to be in: mysql_table:create()..
+
+
+2011-07-15
+	.htaccess inside the subdomain files to protect them.
+	CRUDer should take care of them.
+
+
+2011-07-15
+	Checkbox (Y/N) remembering.
+	No = Unchecked, should be still remembered as NO.
+
+
+2011-07-11
+	Do not allow to CRUD for non existent tables.
+
+2011-07-07
+	Pre-patcher
+	If the subdomain is in expected, load the pre-patcher from this location as well.
+	Modify inc.config.php of the subdomain.
+
+
+2011-07-06
+	When in the uploader, set the subdomain ID.
+	Move the renamer.php from /images to /test
+
+
+2011-06-15
+	Give a full download link to table structures:
+	months
+	days
+	weeks
+	holidays list,
+	places
+	dates
+	persons
+	download links
+	urls and bookmarks
+	...
+
+
+2011-05-18
+	Fix CURL indices (curl.txt)
+	When the system runs without the framework
+	class.curl.inc.php on line 50
+	50	HTTP_USER_AGENT
+	29	__TEMP__
+
+
+2011-05-10
+	Possible errors in: cloning email names (as they are defined unique and hard coded) - query_emalls_smtp
+
+
+2011-05-06
+	While adding a subdomain, hint that if the subdomain is available for registration or not.
+
+
+2011-05-04
+	Make database dumper - CRUDs on: query_databases
+	Refer to database-backups scripts as well:
+		- Once database installation scripts are added
+			- give out uninstallation scripts too
+			- give database dump scripts too
+
+
+2011-05-02
+	List out users and their projects + svn
+
+
+2011-05-02
+	In automa, add SVN scripts to:
+	automatically backup the users
+	instead of mysql.user table problems, backup and restore them right after creation	
+		update mysql.user set passwword=oldpass where user='' and host='';
+	Thus, already created user accounts are unaffected
+	while only new accounts have passwords
+
+
+2011-04-28
+	automa - database:
+	Use different passwords for localhost and %
+	DO NOT OVEWRWIRTE the password, if user is created already.
+
+
+2011-05-02
+	Use COMPANY: /home/company/curlftpfs for live projects
+	$company/live <= live projects mounted locally.
+
+
+2011-04-28
+	When entity is having single or double quote, resist it.
+
+
+2011-04-13
+	In system.php or some attractive name, print some statistics including:
+	server subdomain ID, created on,
+	number of files
+	system files sizes analysed
+	number of images, texts, .php, ...
+	Menus,
+	number of registered pages
+	list of CRUDed entities, ...
+
+
+2011-04-13
+	Find out text area without rows/cols
+	Find input tags without /> at the end.
+
+
+2011-04-13
+	Throw: <style type="text/css">
+	Also, throw inline css expressions: style=""
+
+
+2011-04-13
+	</tr>
+	{/section}
+	</tbody>
+	</table>
+
+	<tbody> was missing in some files. (entity/list.php).
+
+
+2011-04-12
+	Open a different project and remove from parent distribution.
+	Make it callable by third party files.
+
+
+2011-04-12
+	PHP CLI database prefix backup:
+	Make it callable by anywhere. Put the .dmp files within the caller script directory.
+	Make a single dump file or create script to import them all at once.
+
+
+2011-04-12
+	Include file - search form of an entity.
+	Include it in add/edit/list/details/search-results pages.
+	Only thus, it will have a common look
+
+	Redirect search results pages to: entity-search.php
+
+
+2011-04-08
+	Remove class.listings.inc.php file from SVN
+	It is limited to a system only.
+
+
+2011-04-08
+	Copy an entire set of CRUD templates within the subdomain while installing it.
+	Use from there - and help subdomains customize their own templates.
+
+
+2011-04-08
+	Make a dropdown of paginator.
+	Convert to UL LI with corresponding CSS.
+
+
+2011-04-08
+	Superfish menus context is not working good.
+
+
+2011-04-07
+	Allow text version in {''|icon} and {icon} plugins
+
+
+2011-04-07
+	Replace the current templates/cruds with better ones.
+	Follow a designer's patterns.
+	Create a different set of entire things, css, templates and cruds.
+	Rather attempt to use from a trail directory. If not found, use the classic ones.
+	Leave a lot of layout junks to the css only
+
+
+2011-04-06
+	Once framework is exported from the subdomain:
+		write the scripts to delete the files on the subdomain that do not need super admin interface.
+		Remove: install/* but keep license.txt
+		Remove: selected js files
+		Remove: library/services/framework.*/controllers, configs, js, sqls, templates, ...
+
+
+2011-04-06
+	Remove the warning from all CRUDed files.
+	<div class="warning">
+		<p><img src="images/24/001_30.png" /> <strong>Warning</strong>:</p>
+		<p>DO NOT click on <strong>DELETE icon</strong>, unless you are sure of it. You may permanently lose a record from the database.</p>
+	</div>
+
+
+2011-04-06
+	- subdomains-hosts.php and subdomains-flaghosts.php => make same file/link
+
+
+2011-04-06
+	- Correct defines-list.php > defines-add.php page.
+	- Populate the default variables correctly.
+
+
+2011-04-05
+	- Replace $messenger object with query_message. eg. $messenger = new messenger('YYYYMMDDHHIISSXXXX');
+	- Messenger should be disposable.
+
+
+2011-04-04
+	- Add required fields: *: <span class="required">*</span> in all form inputs
+
+
+2011-04-04
+	- Add one more flag for pointed_to so that it will also run from there.
+
+
+2011-04-04
+	- Do not CRUD if copyright, developers and URL files are missing.
+
+
+2011-03-31
+	- Apply live search of objects.
+	- Add livesearch controllers
+	- Produce JS
+	- Produce only if requested in CRUDer,
+
+
+2011-03-29
+	- Use domain editor, superfish parser and menu editor links in dashboard.
+
+
+2011-03-29
+	- Build CRUD for list of CRUDed entities made under different subdomains.
+
+
+2011-03-29
+	- Make entity permissions manager in the admin.
+	- Use the below set of SQLs
+
+	# Generate the reset permissions SQL
+	SELECT CONCAT('UPDATE query_pages SET needs_login="', needs_login, '", is_admin="', is_admin, '" WHERE subdomain_id=', subdomain_id, ' AND page_id=', page_id, ' AND page_name LILE "', page_name, '";') reset_flags
+	FROM query_pages WHERE subdomain_id=161 AND page_name LIKE 'cms%';
+	
+	UPDATE query_pages SET needs_login="Y", is_admin="Y" WHERE subdomain_id=161 AND page_id=3333 AND page_name LIKE "cms-delete-successful.php";
+
+	page | is_admin | needs_login | in_sitemap | is_error | comments (id, ...)
+
+
+2011-03-29
+	- Correct is_error flags of the default pages written by cruder.
+	- Add needs_login='Y' to all the pages.
+	- Write a separate script the take the public pages out of login.
+
+
+2011-03-28
+	- Auto create javascript validators in add/edit/list forms.
+	- Please extend them as much as possible.
+	- At least, check for non-empty fields.
+
+
+2011-03-27
+	- Extend server->is_server() to be valid in case of proxy forwarding.
+
+
+2011-03-25
+	- resources > query > database backup: add copy /b *.dmp prefix.sql
+
+
+2011-03-23
+	- Install searcher in subdomain list
+
+
+
+
+2011-03-23
+	- Add allow add/edit in CRUDer forms.
+	- If unchecked, do not produce add/edit/delete forms.
+
+
+2011-03-23
+	- Rename email.* entity pages to emails.*. A new entity was written.
+
+
+2011-03-16
+	- Details pages:
+		- In a single item display, put next/previous buttons as well.
+		- Just alike the page content has been broken into one page.
+
+
+2011-03-14
+	- Subdomamain installation has a problem.
+	- It seeks for the file locations first, which are really absent.
+	- Installer is installing the framework only. Fix it.
+
+
+2011-02-24
+	- Remove hard quoted URLs/company names
+
+
+2011-02-24
+	- Create |icon plugin to print src="" portion. One plugin is already there.
+
+
+2011-02-24
+	- Unicode text in |HTMLEntities is bad, in editor
+
+
+2011-02-23
+	- Find out a way to dynamic var loading in query_dropdowns.
+	- Pass a list of array to the query and replace the contents.
+	- It should work like query_server.
+
+
+2011-02-23
+	- Replace direct access to images/selected-icons...
+	- Now, we have a plugin functional. {image icon='...'}
+
+
+2011-02-22
+	- List of template files used in a subdomain
+	- SELECT page_name, template_file FROM query_pages WHERE subdomain_id=125 ORDER BY template_file, page_name;
+
+
+2011-02-15
+	- - Replace oDesk company logo and texts
+
+
+2011-02-14
+	- Auto listing: Edit the links externally to allow sorting, even after renaming a project via info.xml.
+	- Prune framework() and tools() classes. Move static functions in one class only.
+	- Merge the contents if relevant.
+
+	- Menu Context for superfish are distributed into 4-5 different locations:
+		- clean_context()
+		- add_menu()
+		- context constructor
+		- dropdown-parser.php
+
+	- subdomain ID is not assigned into test/superfish menu-parser
+
+
+2011-02-15
+	- Superfish parser is wrong on child > child > menus. See MHE menus list.
+	- Superfish relinked. Please change the js links.
+	- superfish < query_dropdowns
+	- subdomains <= subdomains
+
+
+2011-02-14
+	- As soon as we install a subdomain ask to change the license files first.
+
+
+2011-02-12
+	- protected link is created already to save links from prying eyes
+
+
+2011-02-07
+	Take admin's page template assignment concept by crossoverweb.us site.
+	A user click on the name of layout, and its corresponding template page is assigned.
+	Example: Empty = null.php, Full => full.php, ...
+
+    view as others see - in admin
+        for public details
+        public listing pages
+        These links do not require a login or detailed parameters
+
+
+2011-01-06
+	Do not allow to crud, if the developer comments files are missing
+
+
+2011-01-05
+	TOC reserved variables, ..., [ toc show contents, hide contents, ]
+
+
+2011-01-05
+	Make admin data editors specific to a subdomain.
+	eg: subdomain > details > add email, ...
+
+
+2011-01-03
+	Move error_messages into template files.
+	Create new admin for admin section.
+	create PC uploaded/password corral and lister
+
+	Isolate the databases and keep framework database as little as possible.
+
+	Remove instances of library/services/ with $BASE
+	Files that access __BASE__ by hard codes: "library/services/"
+		class.mysql.inc.php
+		class.framework.inc.php
+		inc.config.php
+		inc.constants.php
+	
+	replace framework::subdomain_id() with framework::subdomain_id()
+	Remove $subdomain->base().
+
+	implement protection code to tighten security, strictly.
+		tokenize add form
+		tokenize edit form
+		tokenize delete form
+		check unique protection code while adding
+		check unique protection code while editing
+		check unique protection code while deleting
+
+	Use different protection codes for
+		adding
+		editing
+		deleting
+
+	replace hard links inside services with that of __BASE__
+
+	query_redirects: Make it with different table name of its own subdomain.
+
+	Make a data editor for development history
+	Make history browse-able for other subdomains as well.
+
+	rewrite framework's data editors
+		Query menus
+		SMTP
+		Email Templates
+		Subdomains
+		Pages
+		Menus
+		Menu contexts
+		Constants
+		Databases ??
+		CDN
+		Breaking News
+
+	Move breaking news into localhost.
+	Create a default admin password for localhost
+	Generate localhost as a simple news machine and put it back into svn.
+	Add breaking news server user table/database.
+	De-link all services from using "localhost".
+	
+	Export and self install create different types of username and password
+	
+	Activate show_link flag while listing the menus.
+	
+	full condition: do not back escape.
+	
+	Put ID in CRUDed forms. entity[prefix_name] => ID = entity-prefix-name
+	Characters [ and ] are not allowed in the HTML IDs.
+	
+	rename backend/download class into downloader.
+	
+	use {block} and {extends} features of smarty 3...
+	
+	make enums as radio options
+
+	exporter should be using column names with/out the primary key
+	This is intended to help in easy merging of subdomains even if the ID matched.
+	It should rather create a new subdomain.
+	
+	remove file_contents() and use tools::??
+	
+	stopper::message() will try to load the error template from within the specific subdomain.
+	
+	attribute/value: in the TR, use cycle a/b class.
+	
+	sync the row format in show table status;
+	
+	add Tooltip in add/edit forms based on the column comments
+
+
+2011-01-05
+	merge migrate, query: within framework and remove from the root.
+	merge use of query_config and query_defines
+	merge auto listing databases, data and tables.
+	merge distributions, downloads, cdn, redirects, uploads
+
+	rename emails to email_templates
+
+	smarty_modifier_dropdowns is not fully obeying database
+	It is rather using a single file in multiple cases
+
+
+	remove query_actions table
+	boxes plugin, if not used.
+
+	Support privacy (export hidden in subdomains)
+
+	Add a script to use -public.php in list, details: when no SESSION USER ID found.
+
+	export dependent (aliased) subdomains as well.
+
+	subdomain IP is not working:
+	Do not remove - dashes in names.
+
+	avoid using underscores (subscription_types)
+	in CRUD items. Got errors.
+
+	details => back to public listing in public details, admin listing in admin details.
+
+	avoid columns not using _ in middle.
+
+	add "preview" next to cancel/preview in edit forms.
+
+	auto listing - make dark green color if info.xml is used
+
+	user re-authentication (ask in different page) while deleting a record
+
+	use spam fields into {c_spammers} in add/edit pages
+
+	table details: correct when no parameters are sent.
+	protect loading entity without valid code
+	in details/edit pages for the cruder
+
+	avoid flag_, _counter in the cruder.
+
+	replace * with full list of active column names in table listing pages of CRUDs
+
+	create template editor to modify the subdomain template files.
+
+	replace template comments with {c_comments}? Not sure.
+
+	convert icon plugin into compiler plugin, not a modifier
+
+	add per_page to auto CRUDed entities. Each defaults to 10 lists.
+
+2011-01-07
+	subdomain installation - not done
+	Register default pages while installing the subdomain
+	{c_url} not copied
+
+	bring together:
+		database backup scripts
+		migration tool
+		subdomain export tool
+		group database backup tools
+		change subdomain ID
+		subdomain import tool
+		PHP CLI database backup tool
+
+
+remove unused js files and apps
+
+
+Replace tools::sanitize_name() with tools::alpha_numeric().
+
+
+customise error message page.
+move error message page per subdomain
+find out where used in, the error: system:message()
+
+
+use expiring tokens for add/edit/delete forms
+disable pressing buttons twice or double submissions
+Use user_id/token_code combination
+
+
+uploader: permission errors
+check earlier than allowing to upload files: is_writable
+
+
+frequently update the pages counter flag in query subdmains.
+This counter is used in loading the subdmainns (pages-list)
+Looks, this scrip is written already, somewhere else
+
+
+Admin pages: Put a link to edit the page itself for the logged in users.
+add download.php to framework core and make it functional.

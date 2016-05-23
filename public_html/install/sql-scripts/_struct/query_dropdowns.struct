@@ -1,0 +1,29 @@
+/**
+* Skeleton of [Query Dropdowns: query_dropdowns]
+* SQL holder to generate dropdown menus via superfish plugin
+* ==========================================================
+* Timely view/truncate this table, as it may swell too soon.
+*
+* @author Bimal Poudel
+* @package Backend Framework
+*/
+
+CREATE TABLE `query_dropdowns` (
+  `menu_id` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT 'Menu ID',
+  `parent_id` int(10) unsigned NOT NULL DEFAULT '0' COMMENT 'Parent Menu ID',
+  `subdomain_id` int(10) unsigned NOT NULL DEFAULT '0' COMMENT 'For which Subdomain ID?',
+  `added_on` datetime NOT NULL DEFAULT '0000-00-00 00:00:00' COMMENT 'Added on',
+  `fixed_on` datetime NOT NULL DEFAULT '0000-00-00 00:00:00' COMMENT 'Last time when CRON executed on this record',
+  `modified_on` datetime NOT NULL DEFAULT '0000-00-00 00:00:00' COMMENT 'Modified on',
+  `modified_counter` int(10) unsigned NOT NULL DEFAULT '0' COMMENT 'Number of total modifications',
+  `sink_weight` int(10) unsigned NOT NULL DEFAULT '99' COMMENT 'Ordering',
+  `is_active` enum('N','Y') NOT NULL DEFAULT 'N' COMMENT 'Active superfish menu?',
+  `is_approved` enum('N','Y') NOT NULL DEFAULT 'N' COMMENT 'Approved dropdown link?',
+  `menu_context` varchar(255) NOT NULL DEFAULT '' COMMENT 'Identifier',
+  `menu_text` varchar(255) NOT NULL DEFAULT '' COMMENT 'Link Name',
+  `menu_link` varchar(255) NOT NULL DEFAULT '#' COMMENT 'Links to this url',
+  `menu_description` text NOT NULL COMMENT 'Descriptions for reusability',
+  PRIMARY KEY (`menu_id`),
+  KEY `dropdown_parent_id_index` (`parent_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='SQL holder to generate dropdown menus via superfish plugin';
+

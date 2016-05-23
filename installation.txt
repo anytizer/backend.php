@@ -1,0 +1,74 @@
+12:14 PM 7/17/2012
+--------------------------------------------------------------------------------
+	How to install and use this framework
+--------------------------------------------------------------------------------
+
+Install server system - xampp, wamp or whatever.
+	Add MySQL and PHP binary directory location into your system path.
+	You can access system path at:
+		> My computer > Right click > properties
+		> Advanced system settings
+		> Environment Variables
+		> New/Edit PATH variable
+
+	For xampp:
+		C:\xampp\mysql\bin
+		C:\xampp\php
+
+ 	For wamp
+		C:\wamp\bin\mysql\mysql??.??\bin 
+		C:\wamp\bin\php\php????
+	
+
+Create a project directory within your htdocs area.
+	eg. c:\xampp\htdocs\www.project.com
+
+Right click on the directory - www.project.com > SVN Checkout
+	URL of repository: http://smarty-framework.googlecode.com/svn/trunk/
+	Hit Ok and wait for the file downloads to complete.
+
+Edit your hosts file (/etc/hosts or %WINDIR%\System32\Drivers\etc\hosts)
+	Add the below lines there
+	127.0.0.1	backend
+	127.0.0.1	www.example.com
+
+	Notes:
+	--------------------------------------------------------------------------------
+	backend Acts as your super admin backend.
+	www.example.com can act as your front end and normal backend.
+	You will have to create your normal backend yourself using backend
+
+Open MySQL admin tool and create a mysql user for your project.
+	CREATE DATABASE my_project CHARACTER SET utf8 COLLATE utf8_general_ci;
+	GRANT ALL ON my_project.* TO 'my_project'@'localhost' IDENTIFIED BY 'password';
+	FLUSH PRIVILEGES;
+
+	Note your parameters:
+		Host: localhost
+		Database Username: my_project
+		Database Password: password
+		Database Name: my_project
+
+Open your web browser and browse:
+	http://backend/subdomains/www.example.com/
+
+	For the first time, it will try to create self-made database configurations.
+	You can follow the instructions there. Later you can change the database with the
+	methods discussed just above.
+
+	Your MySQL configuration files in priority are:
+		library/classes/common/config.mysql.inc.php
+		library/services/backend/config.mysql.inc.php
+		library/mysql/<www.project.com>.php
+		library/services/<www.project.com>/config.mysql.inc.php
+	All these files are your MySQL configuration files for specific purpose.
+
+	Be sure to install the database as well, from the page's instructions.
+	Check the files that are NOT in SVN, under: install/sql-scripts directory.
+	Normally,
+		install-db????????????.bat and,
+		pre-install-db????????????.sql
+		Run the .bat file
+
+You are almost done!
+Follow the instructions on coding patterns and running the framework interface.

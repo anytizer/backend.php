@@ -1,0 +1,1 @@
+On-Demand Smarty config files are located here.

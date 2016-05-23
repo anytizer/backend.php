@@ -1,0 +1,16 @@
+{*
+Array
+(
+    [page_id] => 66
+    [is_active] => Y
+    [is_sitemap] => Y
+    [page_name] => about-us.php
+    [page_title] => About us
+    [include_file] => 
+    [content_title] => About us
+    [content_text] => ...
+    [meta_keywords] => 
+    [meta_description] => 
+    [template_file] => static.php
+)
+*}

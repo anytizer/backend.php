@@ -1,0 +1,19 @@
+Possibe sub-modules:
+
+https://github.com/jquery/jquery
+https://github.com/PHPMailer/PHPMailer
+https://github.com/smarty-php/smarty
+https://github.com/ApiGen/ApiGen
+
+/meta
+
+OAUTH (xhttp_*)
+
+Split:
+meta/
+admin/;login/
+install/
+htacces/
+library/services/
+documentation/ (part of APIGen output)
+js/

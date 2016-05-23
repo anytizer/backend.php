@@ -1,0 +1,4 @@
+Entity: 	__ENTITY__
+Produced on:	__TIMESTAMP__
+
+If you happened to rename this directory, please refer to the entity (__ENTITY__) here.

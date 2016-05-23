@@ -1,0 +1,27 @@
+/** pagination: holder, ul/li, a, span, current, ... */
+.paginator
+{
+	/** pagination holder */
+	padding-bottom: 10px;
+	padding-top: 10px;
+}
+
+.paginator .current
+{
+	/** currently acive page number */
+	border: 1px solid #006633;
+	background-color: #ffff99;
+}
+
+.paginator ul
+{
+	list-style: none;
+}
+
+.paginator ul li
+{
+	float: left;
+	padding-left: 5px;
+	padding-right: 5px;
+	text-align: center;
+}

@@ -1,0 +1,9 @@
+# No files under this directory are browsable.
+# Even if the valid files are called, block them.
+# The handler - index.php - just shows a warning only.
+# It protects any subdomain packs or other resources.
+
+<IfModule mod_rewrite.c>
+	RewriteEngine on
+	RewriteRule (.*) index.php?file=$1 [QSA,L]
+</IfModule>

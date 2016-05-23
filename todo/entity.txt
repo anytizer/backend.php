@@ -1,0 +1,7 @@
+2016-05-06
+	- Protect the Entity ID with the key
+	- Listing/Filter
+	- Details
+	- Edit
+	- Search
+	- Delete

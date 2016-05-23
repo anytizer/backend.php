@@ -1,0 +1,49 @@
+/**
+* Gathers and sends all css necessary for framework.
+* In production, rather copy/paste the contents of the files into this file.
+*/
+@import url("tags.css");
+/** basic HTML Tags */
+@import url("data.css");
+/** tabular data presentation */
+@import url("paginator.css");
+/** pagination links */
+@import url("details.css");
+/** holder, title, content */
+@import url("menus.css");
+/** holder, title, content */
+@import url("layout.css");
+/** HTML structure of the core template */
+@import url("messenger.css");
+
+/** HTML structure of the core template */
+
+#livesearch-results .holder
+{
+	color: #ff9900;
+	width: 310px;
+	padding: 0px 10px 10px 10px;
+	font-weight: bold;
+	position: absolute;
+	background-color: #990000;
+	border: 2px solid #000000;
+	overflow: hidden;
+}
+
+#livesearch-results .holder a
+{
+	color: #ffffff;
+}
+
+#livesearch-results div.result
+{
+	padding: 5px;
+	overflow: hidden;
+	border-bottom: 1px solid #cc6666;
+}
+
+span.required
+{
+	color: #ff0000;
+	font-weight: bold;
+}

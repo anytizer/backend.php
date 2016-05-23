@@ -1,0 +1,8 @@
+
+TRUNCATE `query_identifiers`;
+
+LOAD DATA LOCAL INFILE '../public_html/install/sql-scripts/_csv/query_identifiers.csv'
+INTO TABLE `query_identifiers`
+FIELDS ESCAPED BY '\\' TERMINATED BY ',' ENCLOSED BY '"'
+LINES TERMINATED BY '\r\n';
+
