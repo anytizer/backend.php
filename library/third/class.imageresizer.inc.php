@@ -1,4 +1,5 @@
 <?php
+namespace third;
 
 /**
  * This class is not part of Resize and upload image class.

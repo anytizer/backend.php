@@ -13,7 +13,7 @@ require_once(__THIRD_PARTIES__ . '/phpmailer/PHPMailerAutoload.php');
  * Do NOT test for the PHPMailer class as it will result errors
  */
 class sender
-	extends PHPMailer
+	extends \PHPMailer
 {
 	private $sender_loaded = false;
 
@@ -108,7 +108,7 @@ WHERE
 	/**
 	 * Add an recipient
 	 */
-	public function add_recipient(datatype_recipient $recipient)
+	public function add_recipient(\others\datatype_recipient $recipient)
 	{
 		if($recipient->is_valid())
 		{

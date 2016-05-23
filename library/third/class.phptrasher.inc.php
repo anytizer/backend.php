@@ -1,4 +1,5 @@
 <?php
+namespace third;
 
 /**
  * Allows to obfuscate the PHP source code.

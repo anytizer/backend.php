@@ -1,4 +1,5 @@
 <?php
+namespace third;
 
 /**
  * Connects to bitly.com to generate short URLs.

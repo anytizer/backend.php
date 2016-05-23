@@ -1,4 +1,6 @@
 <?php
+namespace third;
+
 /**
  * https://github.com/ivanakimov/hashids.php.git
  * http://www.hashids.org/php/

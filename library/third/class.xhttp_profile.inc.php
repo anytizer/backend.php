@@ -1,4 +1,6 @@
 <?php
+namespace third;
+
 /**
  * @package OAUTH
  * @author Arvin Castro

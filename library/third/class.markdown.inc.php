@@ -1,4 +1,5 @@
 <?php
+namespace third;
 
 /**
  * Converts HTML to formatted plain text: Markdown Parser Class

@@ -1,4 +1,6 @@
 <?php
+namespace third;
+
 /**
  * Tweets messages into Twitter
  * Some other useful links about Twitter:

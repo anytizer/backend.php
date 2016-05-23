@@ -1,4 +1,6 @@
 <?php
+namespace third;
+
 /**
  * @todo Find the usage or remove
  */

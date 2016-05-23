@@ -12,13 +12,16 @@ class datatype_recipient
 	/**
 	 * Set the variables properly
 	 */
-	public function __construct($email = '', $name = '')
+	public function __construct()
 	{
 		parent::__construct(array(
 			'email',
 			'name',
 		));
-
+	}
+	
+	public function setup($email = '', $name = '')
+	{
 		$this->email = \common\tools::sanitize($email);
 		$this->name = \common\tools::sanitize($name);
 	}
