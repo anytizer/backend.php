@@ -132,10 +132,16 @@ $pre_install = replace_sql_credentials($pre_install);
 $pre_installer = "{$scripts_destination}/" . next_id("pre-install-{$config['MYSQLDATABASE']}.sql");
 file_put_contents($pre_installer, $pre_install) or die('Cannot write to Pre-Install file: ' . $pre_installer);
 
-# Main Installation files
+# Main Installation files (Windows)
 $install = file_get_contents("{$scripts_source}/install.bat");
 $install = replace_sql_credentials($install);
 $installer = "{$scripts_destination}/" . next_id("install-{$config['MYSQLDATABASE']}.bat");
+file_put_contents($installer, $install) or die('Cannot write to Installer: ' . $installer);
+
+# Main Installation files (Linux)
+$install = file_get_contents("{$scripts_source}/install.sh");
+$install = replace_sql_credentials($install);
+$installer = "{$scripts_destination}/" . next_id("install-{$config['MYSQLDATABASE']}.sh");
 file_put_contents($installer, $install) or die('Cannot write to Installer: ' . $installer);
 
 /**

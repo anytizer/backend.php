@@ -1,5 +1,6 @@
 2016-05-27
 	- Relocate config.mysql.inc.php
+	- Alias the first remote hosted website a backend server
 
 
 2016-05-24
