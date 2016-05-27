@@ -38,7 +38,7 @@ $_SERVER['SERVER_PORT'] = !empty($_SERVER['SERVER_PORT']) ? $_SERVER['SERVER_POR
 /**
  * @todo Remove on production mode; used to analyze url calls. Save on test path only.
  */
-file_put_contents('access.log', "\r\n" . $_SERVER['REQUEST_URI'], FILE_APPEND | FILE_BINARY);
+file_put_contents($backend['paths']['__TEMP_PATH__'].'/access.log', "\r\n" . $_SERVER['REQUEST_URI'], FILE_APPEND | FILE_BINARY);
 
 /**
  * A lot of scripts must often run from cron too.

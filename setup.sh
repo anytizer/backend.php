@@ -1,5 +1,9 @@
 #!/bin/bash
 
+git -c core.filemode=false diff
+git config --global core.filemode false
+git config --global core.autocrlf true
+
 
 touch public_html/install/sql-scripts 
 chmod -R 777 public_html/install/sql-scripts 
@@ -7,7 +11,6 @@ touch services
 chmod -R 777 services 
 touch tmp 
 chmod -R 777 tmp
-chmod -R 777 database
 echo >  public_html/install/license.ini
 touch public_html/install/license.ini
 
