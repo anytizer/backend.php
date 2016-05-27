@@ -4,9 +4,9 @@ namespace common;
 /**
  * Stops execution or debugs a code.
  * Normally, all methods can be called statically.
- * @uses `__TEMP_PATH__`
- * @uses `__SUBDOMAIN_BASE__`
  * @uses `__LIBRARY_PATH__`
+ * @uses `__SUBDOMAIN_BASE__`
+ * @uses `__TEMP_PATH__`
  */
 class stopper
 {
@@ -126,10 +126,19 @@ class stopper
 	 */
 	public static function message($message = '', $halt_html_message = true)
 	{
+		global $backend;
+
 		if($halt_html_message === true)
 		{
 			# Uses a page decoration with HTML
-			$subdomain_error_file = __SUBDOMAIN_BASE__ . '/error-message.php';
+			if(defined('__SUBDOMAIN_BASE__'))
+			{
+				$subdomain_error_file = constant('__SUBDOMAIN_BASE__') . '/error-message.php';
+			}
+			else
+			{
+				$subdomain_error_file = __LIBRARY_PATH__ . '/error-message/error-message.php';
+			}
 			if(is_file($subdomain_error_file))
 			{
 				# Make sure that we can load the error message template from a specific subdomain.
