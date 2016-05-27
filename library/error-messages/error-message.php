@@ -21,7 +21,7 @@
 	<p class="administrator">- Administrator</p>
 
 	<div class="footer">
-		<p>domain - <a href="http://bimal.org.np/"><?php echo $_SERVER['SERVER_NAME']; ?></p>
+		<p>Domain: <a href="#"><?php echo $_SERVER['SERVER_NAME']; ?></p>
 	</div>
 </div>
 <!--
