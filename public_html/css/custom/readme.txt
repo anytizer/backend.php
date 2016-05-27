@@ -1,1 +1,0 @@
-If {css} plugin misses the base url, it will search the css files here.

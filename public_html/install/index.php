@@ -101,7 +101,7 @@ else
 
 
 $scripts_source = __ROOT_PATH__.'/install/sql-scripts';
-$scripts_destination = "{$backend['paths']['__APP_PATH__']}/{$config['MYSQLDATABASE']}";
+$scripts_destination = "{$backend['paths']['__APP_PATH__']}/database/{$config['MYSQLDATABASE']}";
 if(!is_dir($scripts_destination))
 {
 	mkdir($scripts_destination, 0777, true);

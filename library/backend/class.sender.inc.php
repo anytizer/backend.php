@@ -15,7 +15,7 @@ require_once(__THIRD_PARTIES__ . '/phpmailer/PHPMailerAutoload.php');
 class sender
 	extends \PHPMailer
 {
-	private $sender_loaded = false;
+	private $sender_loaded;
 
 	public function __construct()
 	{
@@ -23,7 +23,8 @@ class sender
 		 * Invoke the parent's constructor without having to throw \Exceptions.
 		 * @todo Fix this class file
 		 */
-		parent::__construct(false);
+		$this->sender_loaded = false;
+		parent::__construct(null);
 	}
 	
 	/**
@@ -33,7 +34,7 @@ class sender
 	{
 		$smtp_configurations_sql = "
 SELECT
-	`smtp_host`, `smtp_port`, do_authenticate,
+	connection_prefix, smtp_host, smtp_port, do_authenticate, is_smtp,
 	smtp_username, smtp_password,
 	from_name, from_email,
 	replyto_name, replyto_email
@@ -44,14 +45,16 @@ WHERE
 		#echo $smtp_configurations_sql;
 		$db = new \common\mysql();
 		$configs = $db->row($smtp_configurations_sql);
+		print_r($configs);
 
 		if($configs)
 		{
 			$this->sender_loaded = true;
 
-			$this->SMTPSecure = true;
+			$this->SMTPSecure = $configs['connection_prefix'];
+			$this->SMTPAutoTLS = $configs['connection_prefix']=='tls';
 			$this->SMTPDebug = 2;
-			$this->IsSMTP();
+			$this->IsSMTP($configs['is_smtp']=='Y');
 			$this->SMTPAuth = ($configs['do_authenticate'] == 'Y');
 			$this->Port = $configs['smtp_port'];
 			$this->Host = $configs['smtp_host'];
@@ -122,13 +125,25 @@ WHERE
 	 */
 	public function deliver(\others\datatype_email $email_data, $config_name = 'TEST-LOCALHOST')
 	{
+		if(!$email_data->is_valid())
+		{
+			#die('Not valid');
+			return -1;
+		}
+		
+		if($this->sender_loaded !== true)
+		{
+			#die('Sender Configs Not loaded...');
+			return -2;
+		}
+
 		$this->Subject = $email_data->subject;
 		$this->Body = $email_data->html;
 		$this->AltBody = $email_data->text;
 
 		# Compose and send the email to the recipient, now.
-		$delivery = ($email_data->is_valid() && $this->sender_loaded === true) ? parent::Send() : false;
-		return $delivery;
+		$success = $this->Send();
+		return $success;
 	}
 
 	/**

@@ -2,7 +2,7 @@
 namespace common;
 
 /**
- * Communiates short messages via session based messages.
+ * Communicates flash messages through session data.
  * @example `<div id="messenger">{messenger}</div>`
  */
 class messenger
@@ -123,4 +123,3 @@ class messenger
 		return $message;
 	}
 }
-

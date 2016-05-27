@@ -6,7 +6,6 @@ namespace common;
  */
 class input
 {
-	#private $steps = 2;
 	private $name = 'form';
 
 	/**
@@ -58,4 +57,3 @@ class input
 		$_SESSION[$this->name] = array();
 	}
 }
-

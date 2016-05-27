@@ -1,3 +1,9 @@
+2016-05-24
+	- Write to session data in bulk to save SQL Queries
+	- Replace with $variable access
+	- $_SESSION
+
+
 2016-05-22
 	- Hinting default values with | separation in comments
 	- MYSQL_DATABASENAME defined constant may not be available

@@ -24,5 +24,35 @@
 	<div><strong>Test it</strong>: <a
 			href="smtp-test.php?code={$smtp.smtp_identifier}">Sends a test email to developer using this account</a>
 	</div>
+	
+<div class="holder">
+	<div class="title">PHP Code</div>
+	<div class="content">
+		<pre>
+$email_template = new email_template(<strong>EMAILTEMPLATE_CODE</strong>);
+<em>$sender</em> = new sender('<strong>{$smtps.smtp_identifier|default:'-'}</strong>'); # CONTACTUS_SENDERSMTP
+$sender->ClearAddresses();
+
+# Developer monitors the emails till the development of the website
+# $sender->add_recipient(new datatype_recipient(<strong>DEVELOPER_EMAIL</strong>, <strong>DEVELOPER_NAME</strong>));
+
+# Send email to the administrator
+# $sender->add_recipient(new datatype_recipient(<strong>CONTACTUS_ADMINEMAIL</strong>, <strong>CONTACTUS_ADMINNAME</strong>));
+
+# Replies back to the messenger
+# $sender->AddReplyto(<strong>$email</strong>, <strong>$name</strong>);
+
+<em>$data</em> = array(
+	'KEY' => 'VALUE',
+);
+<em>$template_data</em> = $email_template->read_template(<strong>$data</strong>);
+<em>$success</em> = $sender->deliver(<em>$template_data</em>);
+if(<em>$success</em>)
+{
+	$messenger = new messenger('success', 'Your inquiry has been successfully forwarded.');
+}</pre>
+	</div>
+</div>
+	
 </div>
 <!-- End of smtp Details (Admin) -->

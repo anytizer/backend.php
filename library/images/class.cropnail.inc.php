@@ -20,6 +20,8 @@ class cropnail
 	 */
 	private $resize_width = 0;
 	private $resize_height = 0;
+	
+	private $transparent = false;
 
 	/**
 	 * @var integer Image output quality in Percentage
@@ -235,12 +237,13 @@ class cropnail
 				break;
 			case 'image/png':
 				$source = imagecreatefrompng($original_filename);
+				$this->transparent = $this->is_transparent_png($original_filename);
 				break;
 			default:
 				/**
 				 * Not an image file - there is no worth to attempt resize
 				 * We do not actually come here if we limit to png, gif and jpg images
-				 * At the momemnt we do not support other kinds of images
+				 * At the moment we do not support other types of images
 				 */
 				$this->debug[] = "Not an image file: {$original_filename}";
 
@@ -272,10 +275,6 @@ class cropnail
 			break;
 		}
 		
-		# bool imagegif ( resource $image [, string $filename ] )
-		# bool imagejpeg ( resource $image [, string $filename [, int $quality ]] )
-		# bool imagepng ( resource $image [, string $filename [, int $quality [, int $filters ]]] )
-
 		# Some debug information
 		$this->debug[] = "Canvas: {$canvas_width} x {$canvas_height}, {$original_filename}";
 		$this->debug[] = "Clip: {$clip_width} x {$clip_height}";
@@ -284,11 +283,23 @@ class cropnail
 
 		return $success;
 	}
+	
+	/**
+	 * Detect if a PNG Image is transparent
+	 * @see http://stackoverflow.com/questions/2057923/how-to-check-a-png-for-grayscale-alpha-color-type
+	 * @see http://www.codingforums.com/php/257111-checking-png-files-transparency.html
+	 * @see http://perplexed.co.uk/1814_png_optimization_with_gd_library.htm
+	 */
+	private function is_transparent_png($image_file='/tmp/image.png')
+	{
+		return ord(file_get_contents($image_file, null, null, 25, 1)) == 6;
+	}
 
 	/**
 	 * Sets a position from where we should crop the image for the best fit.
-	 * It is only for customized position cropping purpose
-	 * Optional to call. Defaults to center in horizontal and vertical positions.
+	 * It is only for customized position cropping purpose.
+	 * Optional to call.
+	 * Defaults to center in horizontal and vertical positions.
 	 */
 	public function set_postion($position_id = 0)
 	{

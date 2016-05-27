@@ -14,10 +14,13 @@ class email_template
 	/**
 	 * Email Template Constructor
 	 */
-	function __construct($email_code = 'WELCOME', $language = 'EN')
+	public function __construct()
 	{
 		parent::__construct();
-
+	}
+	
+	public function setup($email_code = 'WELCOME', $language = 'EN')
+	{
 		# Choose the Language of a customer
 		$headers = new \common\headers();
 		$language = (!$language) ? $headers->language() : $language;

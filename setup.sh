@@ -1,5 +1,17 @@
 #!/bin/bash
 
+
+touch public_html/install/sql-scripts 
+chmod -R 777 public_html/install/sql-scripts 
+touch services 
+chmod -R 777 services 
+touch tmp 
+chmod -R 777 tmp
+chmod -R 777 database
+echo >  public_html/install/license.ini
+touch public_html/install/license.ini
+
+
 cd /home/HTDOCS/
 mkdir live
 cd live
