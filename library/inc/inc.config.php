@@ -133,9 +133,9 @@ $smarty->direct_access_security = false;
 
 
 require_once(__LIBRARY_PATH__.'/backend/class.backend.inc.php');
-$backend = new \backend\backend();
-$backend->log_access(true, __TEMP_PATH__.'/accessed-classes.log');
-$backend->setup(true);
+$backend_backend = new \backend\backend();
+$backend_backend->log_access(true, __TEMP_PATH__.'/accessed-classes.log');
+$backend_backend->setup(true);
 
 $variable = new \common\variable();
 $framework = new \backend\framework();

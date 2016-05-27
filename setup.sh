@@ -11,15 +11,11 @@ touch services
 chmod -R 777 services 
 touch tmp 
 chmod -R 777 tmp
+
 chmod -R 777 database
 rm -rf database/*/
 rm -f database/config.mysql.inc.php
-rm -f public_html/install/license.ini
-touch public_html/install/license.ini
-
-echo >  public_html/install/license.ini
-rm -f library/common/config.mysql.inc.php
-touch library/common/config.mysql.inc.php
+rm -f database/license.ini
 
 cd /home/HTDOCS/
 mkdir live
