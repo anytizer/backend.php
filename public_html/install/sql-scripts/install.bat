@@ -3,7 +3,7 @@ REM Installs the database scripts on a FRESH database.
 REM Please set the PATH to mysql/bin if NOT available already.
 
 
-REM Configre MYSQL Parameters for administrative purpose
+REM Configure MYSQL Parameters for administrative purpose
 SET MYSQLHOSTNAME=MYSQLHOSTNAME
 SET MYSQLUSERNAME=MYSQLUSERNAME
 SET MYSQLPASSWORD=MYSQLPASSWORD
