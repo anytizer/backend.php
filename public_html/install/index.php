@@ -62,7 +62,7 @@ $license_text = "
 ";
 
 # Generate a license key and lock the installer
-$license_file = __ROOT_PATH__ . '/install/license.ini';
+$license_file = "{$backend['paths']['__APP_PATH__']}/database/license.ini";
 if(!is_file($license_file))
 {
 	if(is_writable(dirname($license_file)))
