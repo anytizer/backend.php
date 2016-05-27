@@ -1,3 +1,7 @@
+2016-05-27
+	- Relocate config.mysql.inc.php
+
+
 2016-05-24
 	- Write to session data in bulk to save SQL Queries
 	- Replace with $variable access

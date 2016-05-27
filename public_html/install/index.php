@@ -7,7 +7,7 @@ chdir(__ROOT_PATH__);
 
 require_once(__ROOT_PATH__.'/inc.bootstrap.php');
 
-$database_config_file = "{$backend['paths']['__LIBRARY_PATH__']}/common/config.mysql.inc.php";
+$database_config_file = "{$backend['paths']['__APP_PATH__']}/database/config.mysql.inc.php";
 if(is_file($database_config_file))
 {
 	throw new \Exception("Standard Config file exists already at: {$database_config_file}");
@@ -153,8 +153,7 @@ file_put_contents($post_installer, $post_install) or die('Cannot write to {$post
 
 # config.mysql.inc.php file
 # Add the server name for [ # CASE:SERVERNAME: ]
-$mysql_config_file = $backend['paths']['__LIBRARY_PATH__'] . '/common/config.mysql.inc.php';
-#$framework_file = $backend['paths']['__SERVICES_PATH__'] . "/{$config['frameworkname']}/config.mysql.inc.php";
+$mysql_config_file = $backend['paths']['__APP_PATH__'] . '/database/config.mysql.inc.php';
 $mysql_config = file_get_contents($backend['paths']['__LIBRARY_PATH__'] . '/cruder/config.mysql.inc.php'); # Read from the CRUDer
 #$mysql_config = file_get_contents($mysql_config_file);
 $mysql_config = preg_replace('#\[\'host\'\] = \'.*?\';#i', "['host']='{$config['MYSQLHOSTNAME']}';", $mysql_config);

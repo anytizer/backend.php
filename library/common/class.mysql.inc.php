@@ -6,6 +6,7 @@ namespace common;
  *
  * @package Databases
  * @uses __TEMP_PATH__
+ * @uses __APP_PATH__
  *
  * Change Log
  * - Basic Conversion to MySQLi
@@ -75,7 +76,8 @@ class mysql
 			 * All possible configuration files
 			 */
 			$lookups = array(# Attempt from the reservoir.
-				$myself . '/config.mysql.inc.php',
+				__APP_PATH__ . '/database/config.mysql.inc.php',
+				#$myself . '/config.mysql.inc.php',
 			);
 			#print_r($lookups);
 
