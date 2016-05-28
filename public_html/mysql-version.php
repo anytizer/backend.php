@@ -1,13 +1,13 @@
 <?php
 # Framework Bootstrap Loader
 require_once('inc.bootstrap.php');
-require_once($backend['paths']['__LIBRARY_PATH__'].'/inc/inc.config.php');
-
 if(!is_file("{$backend['paths']['__APP_PATH__']}/database/license.ini"))
 {
 	header('Location: install/');
 	exit(-1);
 }
+
+require_once($backend['paths']['__LIBRARY_PATH__'].'/inc/inc.config.php');
 
 # Please do not cache me.
 $headers = new \common\headers();
