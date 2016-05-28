@@ -17,16 +17,9 @@ if(is_file($database_config_file))
  * Verify installation paths are available for write-mode
  */
 $checks = array(
-	__ROOT_PATH__ . '/install/sql-scripts',
+	$backend['paths']['__APP_PATH__'].'/database',
 	$backend['paths']['__SERVICES_PATH__'],
 	$backend['paths']['__TEMP_PATH__'],
-	#$backend['paths']['__TEMP_PATH__'].'/cache-menus',
-	#$backend['paths']['__TEMP_PATH__'].'/curl-cookies',
-	#$backend['paths']['__TEMP_PATH__'].'/errors',
-	#$backend['paths']['__TEMP_PATH__'].'/smarty_cache',
-	#$backend['paths']['__TEMP_PATH__'].'/smarty_compiles',
-	#$backend['paths']['__TEMP_PATH__'].'/superfish',
-
 	# Need to overwrite the default settings in those configurations as well
 	# $database_config_file,
 );
@@ -229,23 +222,17 @@ $install = !preg_match('#/install/#', $_SERVER['REQUEST_URI']) ? 'install/' : ''
 <div class="wrapper">
 	<h2>Step #1: Database and configurations</h2>
 
-	<p>Login using the <strong> root</strong> user, hit all the commands below.</p>
+	<p>Using the <strong>root</strong> account in MySQL|MariaDB Server, hit the following Query:</p>
 
 	<div>
-		<p><code>DROP DATABASE IF EXISTS `<strong><?php echo $config['MYSQLDATABASE']; ?></strong>`;</code></p>
+<pre>
+# mysql -uroot -p****
 
-		<p>
-			<code>CREATE DATABASE `<strong><?php echo $config['MYSQLDATABASE']; ?></strong>` CHARACTER SET utf8 COLLATE
-				utf8_general_ci;</code>
-		</p>
-
-		<p><code>GRANT ALL ON
-				<strong><?php echo $config['MYSQLDATABASE']; ?></strong>.* TO
-				'<strong><?php echo $config['MYSQLUSERNAME']; ?></strong>'@'<strong><?php echo $config['MYSQLHOSTNAME']; ?></strong>'
-				IDENTIFIED BY '<strong><?php echo $config['MYSQLPASSWORD']; ?></strong>';</code>
-		</p>
-
-		<p><code>FLUSH PRIVILEGES;</code></p>
+DROP DATABASE IF EXISTS `<?php echo $config['MYSQLDATABASE']; ?>`;
+CREATE DATABASE `<?php echo $config['MYSQLDATABASE']; ?>` CHARACTER SET utf8 COLLATE utf8_general_ci;
+GRANT ALL ON `<?php echo $config['MYSQLDATABASE']; ?>`.* TO '<?php echo $config['MYSQLUSERNAME']; ?>'@'<?php echo $config['MYSQLHOSTNAME']; ?>' IDENTIFIED BY '<?php echo $config['MYSQLPASSWORD']; ?>';
+FLUSH PRIVILEGES;
+</pre>
 	</div>
 
 	<p><strong>Caution</strong>: It has been <strong class="error">replaced automatically</strong> for the first time.
@@ -262,7 +249,6 @@ $install = !preg_match('#/install/#', $_SERVER['REQUEST_URI']) ? 'install/' : ''
 			<strong>PATH</strong>. eg. c:\xampp\mysql\bin. If some value is already in the path, you may have to use a
 			semicolon ( ; ) to append a new path in the list.
 		</li>
-		<li>Explore into the directory: <strong>install/sql-scripts</strong></li>
 		<li>Execute the file
 			<strong><em><?php echo $config['MYSQLDATABASE']; ?>/install-<?php echo $config['MYSQLDATABASE']; ?>.bat</em></strong> produced. Run it - that it
 			completes the installation. It imports all the table structures and necessary data into your MySQL database.
