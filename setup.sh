@@ -1,28 +1,30 @@
 #!/bin/bash
 
-git -c core.filemode=false diff
+# Get the project
+git clone https://github.com/bimalpoudel/backend.git backend
+cd backend
+
+# Accept the GIT file differences
 git config --global core.filemode false
 git config --global core.autocrlf true
 
-
-touch public_html/install/sql-scripts 
-chmod -R 777 public_html/install/sql-scripts 
-touch services 
 chmod -R 777 services 
-touch tmp 
 chmod -R 777 tmp
-
 chmod -R 777 database
+
+# Patch for new setup
 rm -rf database/*/
 rm -f database/config.mysql.inc.php
 rm -f database/license.ini
+git checkout *
+git pull
 
-cd /home/HTDOCS/
-mkdir live
-cd live
-git clone https://github.com/bimalpoudel/backend.git backend
-mkdir -p subdomains/www.example.com
-	REM mkdir subdomains/www.example.com
+# Browse the site
+# http://.../backend/public_html/install/
+
+cd database/*/
+chmod 755 *.sh
+./03-install-*.sh
 
 mklink /d public_html backend\public_html
 

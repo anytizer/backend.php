@@ -29,7 +29,6 @@ mysql --local_infile=1 -h${HOSTNAME} -u${USERNAME} -p${PASSWORD} ${DATABASE} < 0
 mysql -h${HOSTNAME} -u${USERNAME} -p${PASSWORD} ${DATABASE} < 04-post-install-${DATABASE}.sql
 
 # Produce the database dumper script
-# To be run after database has been created once and installed
 # Produces the database dump right after installation
 # @todo Backup script MISSING > character
 mysqldump -h${HOSTNAME} -u${USERNAME} -p${PASSWORD} ${DATABASE} > dump-${DATABASE}.sql
