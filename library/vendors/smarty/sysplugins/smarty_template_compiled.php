@@ -124,7 +124,7 @@ class Smarty_Template_Compiled extends Smarty_Template_Resource_Base
      */
     private function loadCompiledTemplate(Smarty_Internal_Template $_smarty_tpl)
     {
-        if (function_exists('opcache_invalidate')) {
+        if (function_exists('opcache_invalidate') && strlen(ini_get("opcache.restrict_api")) < 1) {
             opcache_invalidate($this->filepath, true);
         } elseif (function_exists('apc_compile_file')) {
             apc_compile_file($this->filepath);
@@ -146,7 +146,15 @@ class Smarty_Template_Compiled extends Smarty_Template_Resource_Base
      */
     public function render(Smarty_Internal_Template $_template)
     {
+        // checks if template exists
+        if (!$_template->source->exists) {
+            $type = $_template->source->isConfig ? 'config' : 'template';
+            throw new SmartyException("Unable to load {$type} '{$_template->source->type}:{$_template->source->name}'");
+        }
         if ($_template->smarty->debugging) {
+            if (!isset($_template->smarty->_debug)) {
+                $_template->smarty->_debug = new Smarty_Internal_Debug();
+            }
             $_template->smarty->_debug->start_render($_template);
         }
         if (!$this->processed) {
@@ -163,9 +171,6 @@ class Smarty_Template_Compiled extends Smarty_Template_Resource_Base
         }
         if ($_template->caching && $this->has_nocache_code) {
             $_template->cached->hashes[ $this->nocache_hash ] = true;
-        }
-        if (isset($_template->parent) && $_template->parent->_objType == 2 && !empty($_template->tpl_function)) {
-            $_template->parent->tpl_function = array_merge($_template->parent->tpl_function, $_template->tpl_function);
         }
         if ($_template->smarty->debugging) {
             $_template->smarty->_debug->end_render($_template);
