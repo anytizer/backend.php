@@ -373,7 +373,7 @@ FLUSH PRIVILEGES;
 	</p>
 
 	<p>Create as many subdomains and domains as you like.
-		<strong>Make a fairly complex websites just in one day</strong>!</p>
+		<strong>Make a fairly complex website in just a day</strong>!</p>
 
 	<h2>Requirements</h2>
 	<ol>

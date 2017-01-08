@@ -32,10 +32,12 @@ switch($dbinfo['dbindex'])
 	case '__SUBDOMAIN_NAME__':
 	case 'localhost':
 	default:
-		$dbinfo[$dbinfo['dbindex']]['host'] = 'MYSQLDATABASE';
+		$dbinfo[$dbinfo['dbindex']]['host'] = 'MYSQLHOSTNAME';
 		$dbinfo[$dbinfo['dbindex']]['dbuser'] = 'MYSQLUSERNAME';
 		$dbinfo[$dbinfo['dbindex']]['dbpassword'] = 'MYSQLPASSWORD';
-		$dbinfo[$dbinfo['dbindex']]['database'] = 'MYSQLHOSTNAME';
+		$dbinfo[$dbinfo['dbindex']]['database'] = 'MYSQLDATABASE';
+		# CREATE DATABASE `MYSQLDATABASE` CHARACTER SET utf8 COLLATE utf8_general_ci;
+		# GRANT ALL ON `MYSQLDATABASE`.* TO 'MYSQLUSERNAME'@'MYSQLHOSTNAME' IDENTIFIED BY 'MYSQLPASSWORD';
 		break;
 }
 

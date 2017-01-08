@@ -6,7 +6,7 @@
 class installer
 {
 	public $company_name = '';
-	public $installed_on = '';
+	public $installed_datetime = '';
 	public $server_name = '';
 	public $license_key = '';
 
@@ -32,7 +32,7 @@ class installer
 		# The server will keep the record of these licenses.
 
 		$protection_key = 'backend';
-		$license_key = md5("{$protection_key}{$this->installed_on}{$this->server_name}");
+		$license_key = md5("{$protection_key}{$this->installed_datetime}{$this->server_name}");
 
 		return $license_key;
 	}

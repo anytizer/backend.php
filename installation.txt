@@ -60,7 +60,7 @@ Open your web browser and browse:
 		library/classes/common/config.mysql.inc.php
 		library/services/backend/config.mysql.inc.php
 		library/mysql/<www.project.com>.php
-		library/services/<www.project.com>/config.mysql.inc.php
+		library/services/<www.example.com>/config.mysql.inc.php
 	All these files are your MySQL configuration files for specific purpose.
 
 	Be sure to install the database as well, from the page's instructions.

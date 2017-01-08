@@ -26,7 +26,7 @@ Detailed explanations of files and directories:
 
 config.mysql.inc.php (library/services/__SUBDOMAIN_NAME__/config.mysql.inc.php)
 Loads mysql connection.
-Absense of this file will lead to connect to parent's database (default feature).
+Absence of this file will lead to connect to parent's database (default feature).
 	Warnings:
 	It will isolate your application's database from the parent.
 	Using this file might prevent you to avoid backups from parent database.
