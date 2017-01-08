@@ -53,7 +53,8 @@ $verify_installed_modules = function()
 	/**
 	 * Check for some standard PHP pre-requisites to run the system flawlessly
 	 */
-	$modules = array(# Basic PHP
+    $modules_missing = array();
+	$modules_required = array(# Basic PHP
 		'CURLFile' => 'curl_file_create',
 		'cURL' => 'curl_init',
 		'OpenSSL' => 'openssl_encrypt',
@@ -79,13 +80,17 @@ $verify_installed_modules = function()
 		'SOAP' => 'is_soap_fault',
 		'json' => 'json_encode',
 	);
-	foreach($modules as $module => $function)
+	foreach($modules_required as $module => $function)
 	{
 		if(!function_exists($function))
 		{
-			die("First, enable {$module} in php.ini to continue.");
+            $modules_missing[] = $module;
 		}
 	}
+    if($modules_missing)
+    {
+        die("<p>First, enable the following module(s) in php.ini to continue:</p><p>".implode(",<br />", $modules_missing)."</p>");
+    }
 };
 $verify_installed_modules();
 
