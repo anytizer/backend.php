@@ -63,7 +63,7 @@ $timezone = (defined('__TIMEZONE_NUMERIC__') && preg_match('/^[\+|\-][\d]{1,2}\:
 mysqli_query($MYSQL_CONNECTION, "SET time_zone = '{$timezone}';");
 
 /**
- * Support Unicodes by default.
+ * Support Unicode by default.
  */
 mysqli_query($MYSQL_CONNECTION, "SET NAMES 'utf8' COLLATE 'utf8_general_ci';");
 mysqli_query($MYSQL_CONNECTION, "SET CHARACTER_SET_CONNECTION=utf8;");

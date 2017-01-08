@@ -155,13 +155,20 @@ file_put_contents($post_installer, $post_install) or die('Cannot write to {$post
 $mysql_config_file = $backend['paths']['__APP_PATH__'] . '/database/config.mysql.inc.php';
 $mysql_config = file_get_contents($backend['paths']['__LIBRARY_PATH__'] . '/cruder/config.mysql.inc.php'); # Read from the CRUDer
 #$mysql_config = file_get_contents($mysql_config_file);
-$mysql_config = preg_replace('#\[\'host\'\] = \'.*?\';#i', "['host']='{$config['MYSQLHOSTNAME']}';", $mysql_config);
-$mysql_config = preg_replace('#\[\'dbuser\'\] = \'.*?\';#i', "['dbuser']='{$config['MYSQLUSERNAME']}';", $mysql_config);
-$mysql_config = preg_replace('#\[\'dbpassword\'\] = \'.*?\';#i', "['dbpassword']='{$config['MYSQLPASSWORD']}';", $mysql_config);
-$mysql_config = preg_replace('#\[\'database\'\] = \'.*?\';#i', "['database']='{$config['MYSQLDATABASE']}';", $mysql_config);
+$mysql_config = preg_replace('#\[\'host\'\] = \'.*?\';#i', "['host'] = '{$config['MYSQLHOSTNAME']}';", $mysql_config);
+$mysql_config = preg_replace('#\[\'dbuser\'\] = \'.*?\';#i', "['dbuser'] = '{$config['MYSQLUSERNAME']}';", $mysql_config);
+$mysql_config = preg_replace('#\[\'dbpassword\'\] = \'.*?\';#i', "['dbpassword'] = '{$config['MYSQLPASSWORD']}';", $mysql_config);
+$mysql_config = preg_replace('#\[\'database\'\] = \'.*?\';#i', "['database'] = '{$config['MYSQLDATABASE']}';", $mysql_config);
 $mysql_config = preg_replace('/# CASE\:__SUBDOMAIN_NAME__\:/i', "case '{$_SERVER['SERVER_NAME']}':", $mysql_config);
 $mysql_config = preg_replace('/# CASE\:SERVERNAME\:/i', "case '{$_SERVER['SERVER_NAME']}':", $mysql_config);
 $mysql_config = preg_replace('/\'' . preg_quote($config['frameworkname']) . '\'/i', "'{$_SERVER['SERVER_NAME']}'", $mysql_config);
+
+# Replace the remaining ones
+$mysql_config = preg_replace('/MYSQLHOSTNAME/i', $config['MYSQLHOSTNAME'], $mysql_config);
+$mysql_config = preg_replace('/MYSQLUSERNAME/i', $config['MYSQLUSERNAME'], $mysql_config);
+$mysql_config = preg_replace('/MYSQLPASSWORD/i', $config['MYSQLPASSWORD'], $mysql_config);
+$mysql_config = preg_replace('/MYSQLDATABASE/i', $config['MYSQLDATABASE'], $mysql_config);
+
 file_put_contents($mysql_config_file, $mysql_config) or die('Cannot write to MySQL Configuration File: ' . $mysql_config_file);
 
 

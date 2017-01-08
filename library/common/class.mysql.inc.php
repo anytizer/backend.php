@@ -82,7 +82,7 @@ class mysql
 			#print_r($lookups);
 
 			/**
-			 * Configuration files that exist
+			 * Get the first configuration files that exist
 			 */
 			$lookups = array_filter(array_map('realpath', $lookups));
 			#print_r($lookups);
@@ -90,16 +90,9 @@ class mysql
 			$looked_up = false;
 			foreach($lookups as $l => $configuration_file)
 			{
-				/**
-				 * @todo realpath() already validates
-				 * realpath() returns FALSE on failure, e.g. if the file does not exist.
-				 * @see http://php.net/manual/en/function.realpath.php
-				 */
 				require_once($configuration_file);
-				#die('Found ...: '.$MYSQL_CONNECTION);
 				$looked_up = true;
 				break;
-
 			}
 			if($looked_up != true)
 			{
