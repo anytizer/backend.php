@@ -1,4 +1,3 @@
-!/phpdox/readme.txt
 !/tmp/.htaccess
 !/tmp/backend/index.php
 !/tmp/index.php
@@ -14,7 +13,6 @@
 /library/common/config.mysql.inc.php
 /library/cruder/templates/.sass-cache
 /library/services/backend/config.mysql.inc.php
-/phpdox/*
 /public_html/images/selected-icons/*.css
 /public_html/images/selected-icons/*.html
 /public_html/images/selected-icons/*.png
