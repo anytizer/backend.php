@@ -2,10 +2,9 @@
 #namespace plugins;
 
 /**
- * Encrypts an email for showing up in the HTML.
- * It does not have any security.
+ * Obfuscates an email address for showing up in the HTML.
  */
-function smarty_modifier_email($email = '')
+function smarty_modifier_email($email_address = '')
 {
 	$search = array(
 		'-',
@@ -20,7 +19,7 @@ function smarty_modifier_email($email = '')
 		'<!--at-->(at)<!--at-->',
 		'<!--dot-->(dot)<!--dot-->',
 	);
-	$email = str_replace($search, $replace, $email);
+    $email_address = str_replace($search, $replace, $email_address);
 
-	return $email;
-} # email()
+	return $email_address;
+}

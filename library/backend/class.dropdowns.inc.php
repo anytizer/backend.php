@@ -2,7 +2,8 @@
 namespace backend;
 
 /**
- *
+ * Dropdown generator (used in menus)
+ * @todo List out the usages and examples
  */
 class dropdowns
 	extends \common\mysql
@@ -213,4 +214,3 @@ WHERE
 		return $parents;
 	}
 }
-

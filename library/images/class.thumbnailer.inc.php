@@ -2,8 +2,7 @@
 namespace images;
 
 /**
- * Thumbnail generator.
- * Currently supports jpeg only
+ * Thumbnail generator (currently supports jpeg only)
  *
  * @package Common
  */

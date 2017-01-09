@@ -3,12 +3,10 @@
 
 /**
  * IEPNG Fix - Smarty plugin
- * -------------------------------------------------------------
  * File:     compiler.iepngfix.php
  * Type:     compiler
  * Name:     iepngfix
  * Purpose:  Scripts for IE PNG Fix.
- * -------------------------------------------------------------
  */
 function smarty_compiler_iepngfix($tag_arg, $smarty)
 {
