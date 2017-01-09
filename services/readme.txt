@@ -5,11 +5,11 @@ If you create a different super-admin subdomain, do not just rename this directo
 Rather, make a copy of backend to your suitable super admin name.
 Example:
 	cp -R backend superadmin.mydomain.com
-	This is to avoid absensce of core files in backend.
+	This is to avoid absence of core files in backend.
 
 
 12:32 AM 6/17/2010
-Put alll of your business applications here...
+Put all of your business applications here...
 NEVER put them into .svn if:
 	They ARE NOT FREE.
 	They are closed sourced applications.
@@ -49,4 +49,4 @@ please avoid it from the SVN upload/download.
 Free/Stand Alone subdomain services
 	localhost (distributed as a sample CMS application)
 	backend (distribution continued as a core framework)
-	(a real time example on primtive use of this framework)
+	(a real time example on primitive use of this framework)

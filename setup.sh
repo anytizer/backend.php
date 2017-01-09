@@ -42,8 +42,6 @@ Install
 
 First CRUD
 
-
-
 # basic chmod
 chmod -R 777 library/services 
 chmod -R 777 library/tmp/cache-menus 

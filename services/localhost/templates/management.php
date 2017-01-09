@@ -17,7 +17,10 @@
 			<div class="page-description">{$page.content_text|default:'No Contents'}</div>
 		</div>
 		<div class="page-contents">
-			<!-- seeking template file: {$page.include_file} -->            <!--{* custom programmed contents: a special template file to include. *}-->            {if $page.include_file|valid_template}{include file=$page.include_file}{/if}            <!-- end of {$page.include_file} -->
+			<!-- seeking template file: {$page.include_file} -->
+			<!--{* custom programmed contents: a special template file to include. *}-->
+			{if $page.include_file|valid_template}{include file=$page.include_file}{/if}
+			<!-- end of {$page.include_file} -->
 		</div>
 	</div>
 </div>

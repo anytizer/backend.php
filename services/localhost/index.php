@@ -30,11 +30,6 @@
 	</style>
 </head>
 <body>
-<p>This application requires <a href="http://bimal.org.np/"
-                                title="Backend Framework">Backend Framework</a> to operate.</p>
-<!--
-Files protection mechanism for www.facet.sg
-You are looking at the partial files only.
--->
+<p>This application requires <a href="http://bimal.org.np/" title="Backend Framework">Backend Framework</a> to operate.</p>
 </body>
 </html>
