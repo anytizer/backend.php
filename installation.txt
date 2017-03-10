@@ -15,17 +15,8 @@ Install server system - xampp, wamp or whatever.
 		C:\xampp\mysql\bin
 		C:\xampp\php
 
- 	For wamp
-		C:\wamp\bin\mysql\mysql??.??\bin 
-		C:\wamp\bin\php\php????
-	
-
 Create a project directory within your htdocs area.
 	eg. c:\xampp\htdocs\www.project.com
-
-Right click on the directory - www.project.com > SVN Checkout
-	URL of repository: http://smarty-framework.googlecode.com/svn/trunk/
-	Hit Ok and wait for the file downloads to complete.
 
 Edit your hosts file (/etc/hosts or %WINDIR%\System32\Drivers\etc\hosts)
 	Add the below lines there
