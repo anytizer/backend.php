@@ -1,9 +1,0 @@
-2016-04-30
-    - Make /meta stand-alone patchable application
-	- /meta: PRIMARY_KEY identification is not working correctly.
-	- Make an admin interface to apply comments in the tables' columns for /meta.
-	- Make meta/ user interactive for the table prefixes
-	- Meta mismatched difference checker should be able to connect to different database servers
-	- meta/flags.php should be intelligently replace the name of the primary keys in the SQL produced.
-    - Create meta reports - how the database is looking like, and why which field is being used for?
-

@@ -1,4 +1,0 @@
-2011-12-28
-	In the CMS Editor page, meta description is one line.
-	Edit the corresponding Controller, include file template and basic template files.
-	meta_description is NOT a long column in CRUD Forms for CMS.

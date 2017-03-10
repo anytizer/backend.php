@@ -1,3 +1,0 @@
-2016-05-01
-	- Separate the standard/reusable Smarty Plugins
-	- HTMLSpamFilter replace with |safe

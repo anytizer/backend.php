@@ -1,7 +1,0 @@
-2015-02-22
-	- Google map details reminder for setup: Latitude/Longitude
-	- Google Webmaster Tools site verification link
-	- Dynamic logo uploader required
-	
-	- Configuration Editor should rewrite .conf files
-		eg. Google Map keys in Contact Us page.
