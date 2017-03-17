@@ -1,6 +1,6 @@
 # Backend CRUD Generator
 
-"_Make a fairly complex website in just a day._" Rather, spend your time in good database design.
+"_Make a fairly complex website in just one day._" Rather, spend your time in good database design.
 
 This tool is used to generate frontend and backend website from your raw database.
 
@@ -27,17 +27,18 @@ Scripts generation made easy with __themeable__ HTML ouput.
  * First, design your database based on your project's specific needs.
  * Standardize the naming conventions.
  * Apply system level flags on all tables.
- * Apply Column comments *(compulsory)*
+ * Apply Column comments in each columns, *(compulsory)*.
  * Generate the HTML Code for your database.
  * Write certain sppecific business logic codes to fulfill your requrements.
  * Theme your website.
  * Done!
+ * Modify templates and application as required.
 
 
 ## PHP Requirements
 
- * Preferred: PHP 7
- * Minimum: 5.4
+ * Preferred: PHP 7.0
+ * ~~Minimum: 5.4~~ Support removed
  * Use latest XAMPP as your development environment
 
 
