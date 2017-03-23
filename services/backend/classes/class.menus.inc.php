@@ -183,7 +183,7 @@ SELECT
 	menu_context
 FROM query_menus
 WHERE
-	menu_link!="" # Kicks off accidentally recorded contexts
+	menu_link!='' # Kicks off accidentally recorded contexts
 GROUP BY
 	menu_context
 ORDER BY
@@ -207,7 +207,7 @@ SELECT
 FROM query_menus
 WHERE
 	menu_context='{$context}'
-	AND menu_link!=""
+	AND menu_link!=''
 	AND is_active='Y'
 ORDER BY
 	menu_text

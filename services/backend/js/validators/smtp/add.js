@@ -47,7 +47,7 @@ function _ports_anchors() {
     document.forms['smtp-add-form'].elements['smtp[smtp_port]'].value = this.text;
     return false;
 }
-var ports_anchors = document.getElementById('smtp-ports').getElementsByTagName('a');
+var ports_anchors = document.getElementById('smtp-ports').getElementsByTagName("a");
 for (var i = 0; i < ports_anchors.length; ++i) {
     ports_anchors[i].onclick = _ports_anchors;
 }

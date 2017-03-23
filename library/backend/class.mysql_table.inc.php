@@ -97,7 +97,7 @@ CREATE TABLE `{$this->prefix}_{$table}` (
             $comment = implode(' ', array_map('ucfirst', array_filter(explode('_', $column_name))));
         }
 
-        $full_column = "`{$column_prefix}{$column_name}` varchar(255) NOT NULL DEFAULT "" COMMENT '{$comment}'";
+        $full_column = "`{$column_prefix}{$column_name}` VARCHAR(255) NOT NULL DEFAULT '' COMMENT '{$comment}'";
 
 		return $full_column;
 	}

@@ -65,7 +65,7 @@ ECHO TRUNCATE TABLE {$table}; > {$table}.dmp
 ECHO SET IDENTITY_INSERT {$table} ON; >> {$table}.dmp
 mysqldump {$backup_options} -u{$username} -p{$password} {$database} {$table} >> {$table}.dmp
 ECHO SET IDENTITY_INSERT {$table} OFF; >> {$table}.dmp
-..\\fart --quiet {$table}.dmp \' ""
+..\\fart --quiet {$table}.dmp \' ''
 ..\\fart --quiet {$table}.dmp \\\" \"
 REM ..\\fart --quiet {$table}.dmp \\r\\n
 REM ..\\fart --quiet {$table}.dmp \\t

@@ -148,7 +148,7 @@ $mysql_config = preg_replace('#\[\'dbpassword\'\] = \'.*?\';#i', "['dbpassword']
 $mysql_config = preg_replace('#\[\'database\'\] = \'.*?\';#i', "['database'] = '{$config['MYSQLDATABASE']}';", $mysql_config);
 $mysql_config = preg_replace('/# CASE\:__SUBDOMAIN_NAME__\:/i', "case '{$_SERVER['SERVER_NAME']}':", $mysql_config);
 $mysql_config = preg_replace('/# CASE\:SERVERNAME\:/i', "case '{$_SERVER['SERVER_NAME']}':", $mysql_config);
-$mysql_config = preg_replace('/\"" . preg_quote($config['frameworkname']) . '\'/i', "'{$_SERVER['SERVER_NAME']}'", $mysql_config);
+$mysql_config = preg_replace('/\'' . preg_quote($config['frameworkname']) . '\'/i', "'{$_SERVER['SERVER_NAME']}'", $mysql_config);
 
 # Replace the remaining ones
 $mysql_config = preg_replace('/MYSQLHOSTNAME/i', $config['MYSQLHOSTNAME'], $mysql_config);

@@ -5,7 +5,7 @@ function _livesearch___ENTITY__() {
     var str = this.value;
     if (str.length <= 1) {
         document.getElementById('livesearch-results').innerHTML = "";
-        document.getElementById('livesearch-results').style.border = '0px';
+        document.getElementById('livesearch-results').style.border = "0px";
         return false;
     }
     var xmlhttp = getXMLHTTPRequest();
@@ -55,9 +55,9 @@ function _confirm_deletion() {
     return success;
 }
 function handle_confirm_deletion() {
-    var entries = document.getElementsByTagName('a');
+    var entries = document.getElementsByTagName("a");
     for (var i = 0; i < entries.length; ++i) {
-        if (entries[i].className == 'delete') {
+        if (entries[i].className == "delete") {
             entries[i].onclick = _confirm_deletion;
         }
     }
@@ -68,15 +68,15 @@ function handle_confirm_deletion() {
  * Confirms a block action before performing it
  */
 function _blockactions___ENTITY__() {
-    document.forms['__ENTITY__-list-form'].elements['action'].value = document.forms['__ENTITY__-list-form'].elements['actions'].value;
+    document.forms["__ENTITY__-list-form"].elements['action'].value = document.forms["__ENTITY__-list-form"].elements['actions'].value;
 
     // remove the below line in production environment
     // alert('Performing block action might be dangerous!'); return false;
-    return window.confirm('Are you sure to perform this block action?\r\nIt may be too dangerous.');
+    return window.confirm("Are you sure to perform this block action?\r\nIt may be too dangerous.");
 }
 function handle_block_action() {
-    if (document.forms['__ENTITY__-list-form']) {
-        document.forms['__ENTITY__-list-form'].onsubmit = _blockactions___ENTITY__;
+    if (document.forms["__ENTITY__-list-form"]) {
+        document.forms["__ENTITY__-list-form"].onsubmit = _blockactions___ENTITY__;
     }
     return false;
 }

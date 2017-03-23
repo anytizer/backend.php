@@ -9,7 +9,7 @@ function smarty_function_cruded_menus($params = array(), &$smarty)
     global $subdomain_id;
     $params['admin'] = isset($params['admin']) ? $params['admin'] === true : false;
 
-    $cruded_sql = "SELECT full_name, crud_name FROM query_cruded WHERE subdomain_id={$subdomain_id} AND crud_name!="" AND is_active='Y' AND is_approved='Y';";
+    $cruded_sql = "SELECT full_name, crud_name FROM query_cruded WHERE subdomain_id={$subdomain_id} AND crud_name!='' AND is_active='Y' AND is_approved='Y';";
 	$db = new \common\mysql();
 	$db->query($cruded_sql);
 	$links = array();

@@ -14,7 +14,7 @@ function livesearch_subdomains() {
     var str = this.value;
     if (str.length <= 1) {
         document.getElementById('livesearch-results').innerHTML = "";
-        document.getElementById('livesearch-results').style.border = '0px';
+        document.getElementById('livesearch-results').style.border = "0px";
         return false;
     }
     var xmlhttp = getXMLHTTPRequest();
@@ -58,9 +58,9 @@ function _confirm_deletion() {
     var success = window.confirm('Are you sure to delete this [ subdomains ]?');
     return success;
 }
-var entries = document.getElementsByTagName('a');
+var entries = document.getElementsByTagName("a");
 for (var i = 0; i < entries.length; ++i) {
-    if (entries[i].className == 'delete') {
+    if (entries[i].className == "delete") {
         entries[i].onclick = _confirm_deletion;
     }
 }

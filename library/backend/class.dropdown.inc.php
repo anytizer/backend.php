@@ -101,7 +101,7 @@ WHERE
 	
 	AND menu_context='{$this->context}'
 	AND is_active='Y'
-	AND menu_text!=""
+	AND menu_text!=''
 ORDER BY
 	menu_id,
 	sink_weight,

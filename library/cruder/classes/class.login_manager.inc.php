@@ -131,7 +131,7 @@ WHERE
 	# AND user_name='<USERNAME>'         # This is optional security
 	AND user_password='{$password_old}'  # Current password matches
 	AND user_password!='{$password_new}' # New password is NOT same as old one
-	AND ""!='{$password_new}'            # New password is NOT blank
+	AND ''!='{$password_new}'            # New password is NOT blank
 	AND '{$password_new}'='{$password_confirm}' # New password confirms
 ;";
 		$this->query($reset_password_sql);

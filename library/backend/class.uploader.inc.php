@@ -167,7 +167,7 @@ WHERE
 	) AND (
 		# Special protection to filter empty queries
 		upload_id!=0
-		AND file_code!=""
+		AND file_code!=''
 	)
 LIMIT 1;";
 		if ($file = $this->row($choose_file_sql)) {

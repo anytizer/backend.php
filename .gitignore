@@ -4,8 +4,7 @@
 !/tmp/localhost/index.php
 !/tmp/readme.txt
 /.idea
-/access.log
-/css/access.log
+/**/access.log
 /database/*.ini
 /database/*.php
 /database/db*
@@ -20,5 +19,5 @@
 /tmp/backend
 /tmp/localhost
 /tmp/localhost/*.php
-*.phar
+/**/*.phar
 todo.txt

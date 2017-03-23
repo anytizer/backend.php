@@ -13,7 +13,7 @@ SELECT
 FROM query_menus
 WHERE
 	menu_context='{$context}'
-	AND menu_link!=""
+	AND menu_link!=''
 	AND is_active='Y'
 ORDER BY
 	sink_weight ASC,

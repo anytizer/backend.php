@@ -1,6 +1,6 @@
 <?php
-$sitemap_sql = "
 # Sitemap for our urls
+$sitemap_sql = "
 SELECT
 	qp.page_name n,
 	qp.content_title t
@@ -12,7 +12,7 @@ INNER JOIN query_subdomains qm ON
 	AND qp.in_sitemap='Y'
 	AND qp.is_system='N'
 WHERE
-	qp.content_title!=""
+	qp.content_title!=''
 ;";
 $db->query($sitemap_sql);
 $sitemap = $db->to_array();

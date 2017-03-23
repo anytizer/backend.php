@@ -66,5 +66,5 @@ mysqli_query($MYSQL_CONNECTION, "SET time_zone = '{$timezone}';");
  */
 mysqli_query($MYSQL_CONNECTION, "SET NAMES 'utf8' COLLATE 'utf8_general_ci';");
 mysqli_query($MYSQL_CONNECTION, "SET CHARACTER_SET_CONNECTION=utf8;");
-mysqli_query($MYSQL_CONNECTION, "SET SQL_MODE = "";");
+mysqli_query($MYSQL_CONNECTION, "SET SQL_MODE = '';");
 mysqli_query($MYSQL_CONNECTION, "SET SESSION sql_mode='STRICT_ALL_TABLES';");

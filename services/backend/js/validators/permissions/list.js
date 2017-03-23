@@ -35,9 +35,9 @@ function _confirm_deletion() {
     var success = window.confirm('Are you sure to delete this [ permissions ]?');
     return success;
 }
-var entries = document.getElementsByTagName('a');
+var entries = document.getElementsByTagName("a");
 for (var i = 0; i < entries.length; ++i) {
-    if (entries[i].className == 'delete') {
+    if (entries[i].className == "delete") {
         entries[i].onclick = _confirm_deletion;
     }
 }
