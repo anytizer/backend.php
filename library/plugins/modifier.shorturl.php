@@ -4,7 +4,7 @@
 /**
  * Gives the Short URL with the link
  */
-function smarty_modifier_shorturl($url = '')
+function smarty_modifier_shorturl($url = "")
 {
 	$short = preg_replace(
 		array(
@@ -14,10 +14,10 @@ function smarty_modifier_shorturl($url = '')
 			'#/$#',
 		),
 		array(
-			'',
-			'',
-			'',
-			'',
+			"",
+			"",
+			"",
+			"",
 		),
 		$url
 	);

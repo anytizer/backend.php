@@ -161,10 +161,10 @@ class SMTP
      * @var array
      */
     protected $error = array(
-        'error' => '',
-        'detail' => '',
-        'smtp_code' => '',
-        'smtp_code_ex' => ''
+        'error' => "",
+        'detail' => "",
+        'smtp_code' => "",
+        'smtp_code_ex' => ""
     );
 
     /**
@@ -189,7 +189,7 @@ class SMTP
      * The most recent reply received from the server.
      * @var string
      */
-    protected $last_reply = '';
+    protected $last_reply = "";
 
     /**
      * Output debugging info via a user-selected method.
@@ -217,7 +217,7 @@ class SMTP
             case 'html':
                 //Cleans up output a bit for a better looking, HTML-safe output
                 echo htmlentities(
-                    preg_replace('/[\r\n]+/', '', $str),
+                    preg_replace('/[\r\n]+/', "", $str),
                     ENT_QUOTES,
                     'UTF-8'
                 )
@@ -253,7 +253,7 @@ class SMTP
             $streamok = function_exists('stream_socket_client');
         }
         // Clear errors to avoid confusion
-        $this->setError('');
+        $this->setError("");
         // Make sure we are __not__ connected
         if ($this->connected()) {
             // Already connected, generate error
@@ -269,7 +269,7 @@ class SMTP
             self::DEBUG_CONNECTION
         );
         $errno = 0;
-        $errstr = '';
+        $errstr = "";
         if ($streamok) {
             $socket_context = stream_context_create($options);
             //Suppress errors; connection failures are handled at a higher level
@@ -374,8 +374,8 @@ class SMTP
         $username,
         $password,
         $authtype = null,
-        $realm = '',
-        $workstation = '',
+        $realm = "",
+        $workstation = "",
         $OAuth = null
     ) {
         if (!$this->server_caps) {
@@ -559,8 +559,8 @@ class SMTP
             $key = pack('H*', md5($key));
         }
         $key = str_pad($key, $bytelen, chr(0x00));
-        $ipad = str_pad('', $bytelen, chr(0x36));
-        $opad = str_pad('', $bytelen, chr(0x5c));
+        $ipad = str_pad("", $bytelen, chr(0x36));
+        $opad = str_pad("", $bytelen, chr(0x5c));
         $k_ipad = $key ^ $ipad;
         $k_opad = $key ^ $opad;
 
@@ -599,7 +599,7 @@ class SMTP
      */
     public function close()
     {
-        $this->setError('');
+        $this->setError("");
         $this->server_caps = null;
         $this->helo_rply = null;
         if (is_resource($this->smtp_conn)) {
@@ -653,7 +653,7 @@ class SMTP
 
         foreach ($lines as $line) {
             $lines_out = array();
-            if ($in_headers and $line == '') {
+            if ($in_headers and $line == "") {
                 $in_headers = false;
             }
             //Break this line up into several smaller lines if it's too long
@@ -711,7 +711,7 @@ class SMTP
      * @access public
      * @return boolean
      */
-    public function hello($host = '')
+    public function hello($host = "")
     {
         //Try extended hello first (RFC 2821)
         return (boolean)($this->sendHello('EHLO', $host) or $this->sendHello('HELO', $host));
@@ -793,7 +793,7 @@ class SMTP
      */
     public function mail($from)
     {
-        $useVerp = ($this->do_verp ? ' XVERP' : '');
+        $useVerp = ($this->do_verp ? ' XVERP' : "");
         return $this->sendCommand(
             'MAIL FROM',
             'MAIL FROM:<' . $from . '>' . $useVerp,
@@ -879,8 +879,8 @@ class SMTP
             $code_ex = (count($matches) > 2 ? $matches[2] : null);
             // Cut off error code from each response line
             $detail = preg_replace(
-                "/{$code}[ -]".($code_ex ? str_replace('.', '\\.', $code_ex).' ' : '')."/m",
-                '',
+                "/{$code}[ -]".($code_ex ? str_replace('.', '\\.', $code_ex).' ' : "")."/m",
+                "",
                 $this->last_reply
             );
         } else {
@@ -906,7 +906,7 @@ class SMTP
             return false;
         }
 
-        $this->setError('');
+        $this->setError("");
         return true;
     }
 
@@ -1062,9 +1062,9 @@ class SMTP
     {
         // If the connection is bad, give up straight away
         if (!is_resource($this->smtp_conn)) {
-            return '';
+            return "";
         }
-        $data = '';
+        $data = "";
         $endtime = 0;
         stream_set_timeout($this->smtp_conn, $this->Timeout);
         if ($this->Timelimit > 0) {
@@ -1126,7 +1126,7 @@ class SMTP
      * @param string $smtp_code An associated SMTP error code
      * @param string $smtp_code_ex Extended SMTP code
      */
-    protected function setError($message, $detail = '', $smtp_code = '', $smtp_code_ex = '')
+    protected function setError($message, $detail = "", $smtp_code = "", $smtp_code_ex = "")
     {
         $this->error = array(
             'error' => $message,

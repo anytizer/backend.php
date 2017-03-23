@@ -94,7 +94,7 @@ class phptrasher
 	 *
 	 * @return mixed it returns the obfuscated code or false if it fails.
 	 */
-	public function trash($file = '')
+	public function trash($file = "")
 	{
 		$in_function = false;
 		$in_class = false;
@@ -104,7 +104,7 @@ class phptrasher
 
 		$in_class_count = 0;
 
-		$result = '';
+		$result = "";
 		$code = @file_get_contents($file);
 		if($code !== false)
 		{
@@ -270,7 +270,7 @@ class phptrasher
 			return $result;
 		} // if ($code !== false) {
 		return false;
-	} // function trash ($file = '') {
+	} // function trash ($file = "") {
 
 
 	/**
@@ -282,7 +282,7 @@ class phptrasher
 	public function & obfuscate_directory($dir_source = '../classes', $dir_destination = './classes', $safety_level = 1)
 	{
 		#\common\stopper::message("{$dir_source} => {$dir_destination}");
-		$obfuscated_contents = '';
+		$obfuscated_contents = "";
 		$matches = array(); # File comparison match
 		$obfuscated_files = array();
 

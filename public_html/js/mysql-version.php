@@ -12,8 +12,8 @@ require_once($backend['paths']['__LIBRARY_PATH__'].'/inc/inc.config.php');
 $page = $variable->get('page', 'string', 'javascript.js');
 
 # Safety
-$page = preg_replace('/[^a-z0-9\-\_\.\/]/is', '', $page);
-$page = str_replace('..', '', $page);
+$page = preg_replace('/[^a-z0-9\-\_\.\/]/is', "", $page);
+$page = str_replace('..', "", $page);
 $page = str_replace('//', '/', $page);
 
 $file = realpath(__SUBDOMAIN_BASE__ . "/js/{$page}");

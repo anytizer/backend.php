@@ -21,10 +21,10 @@ $smarty->assign('status', $status);
 $messages = new \subdomain\messages();
 
 # Handle Editing, when data is supplied
-if($variable->post('edit-action', 'string', '') && ($message_id = $variable->post('message_id', 'integer', 0)))
+if($variable->post('edit-action', 'string', "") && ($message_id = $variable->post('message_id', 'integer', 0)))
 {
 	# Editing....
-	$code = $variable->post('protection_code', 'string', '');
+	$code = $variable->post('protection_code', 'string', "");
 	$data = $variable->post('messages', 'array', array());
 
 	# Mark when this data was modified last time.

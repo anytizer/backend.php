@@ -1,7 +1,7 @@
 <?php
 header('Content-Type: text/plain');
 
-function new_name($file = '')
+function new_name($file = "")
 {
 	$file = preg_replace('/[^a-z0-9]+/is', '-', $file);
 	if(preg_match('/^.*?php$/', $file))
@@ -12,7 +12,7 @@ function new_name($file = '')
 	return strtolower($file);
 }
 
-function rename_files($dir = '')
+function rename_files($dir = "")
 {
 	if($handle = opendir($dir))
 	{

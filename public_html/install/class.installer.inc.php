@@ -5,10 +5,10 @@
  */
 class installer
 {
-	public $company_name = '';
-	public $installed_datetime = '';
-	public $server_name = '';
-	public $license_key = '';
+	public $company_name = "";
+	public $installed_datetime = "";
+	public $server_name = "";
+	public $license_key = "";
 
 	public function __construct()
 	{

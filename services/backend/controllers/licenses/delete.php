@@ -15,7 +15,7 @@
 $licenses = new \subdomain\licenses();
 
 # Assumes, ID always, in the GET parameter
-if(($license_id = $variable->get('id', 'integer', 0)) && ($code = $variable->get('code', 'string', '')))
+if(($license_id = $variable->get('id', 'integer', 0)) && ($code = $variable->get('code', 'string', "")))
 {
 	if($licenses->delete('inactivate', $license_id, $code))
 	{

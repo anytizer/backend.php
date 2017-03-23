@@ -4,12 +4,12 @@
 /**
  * Primary key into column value
  */
-function smarty_modifier_table($pk_id = 0, $table = '', $column_name = '', $primary_key = '', $is_unsafe = true)
+function smarty_modifier_table($pk_id = 0, $table = "", $column_name = "", $primary_key = "", $is_unsafe = true)
 {
 	# Save time/resources in case zero or empty values arrived.
 	if(!$pk_id)
 	{
-		return '';
+		return "";
 	}
 
 	# Usage examples:

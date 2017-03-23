@@ -6,9 +6,9 @@
  *
  * @see |asterisk modifier.asterisk.php
  */
-function smarty_modifier_stars($value = '')
+function smarty_modifier_stars($value = "")
 {
-	$stars = '';
+	$stars = "";
 	#if(is_numeric($value) && strlen($value)==1)
 	if(preg_match('/^\d$/', $value))
 	{

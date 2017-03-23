@@ -10,7 +10,7 @@
 $cdn = new \subdomain\cdn();
 
 # Assumes, ID always, in the GET parameter
-if(($cdn_id = $variable->get('id', 'integer', 0)) && ($code = $variable->get('code', 'string', '')))
+if(($cdn_id = $variable->get('id', 'integer', 0)) && ($code = $variable->get('code', 'string', "")))
 {
 	if($cdn->delete('inactivate', $cdn_id, $code))
 	{

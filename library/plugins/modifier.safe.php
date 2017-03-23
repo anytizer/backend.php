@@ -5,11 +5,11 @@
  * A short clone of HTMLSpamFilter
  * @see HTMLSpamFilter
  */
-function smarty_modifier_safe($string = '')
+function smarty_modifier_safe($string = "")
 {
 	$trim_at = 2;
-	$boring_comments_html = '';
-	$return = '';
+	$boring_comments_html = "";
+	$return = "";
 	for($i = 0; $i < strlen($string); $i++)
 	{
 		$return .= '&#x' . bin2hex(substr($string, $i, 1)) . ';';

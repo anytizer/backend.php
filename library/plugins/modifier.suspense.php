@@ -4,7 +4,7 @@
 /**
  * Help to generate a random letter at once
  */
-function smarty_modifier_suspense_helper_suspense_character($letter = '')
+function smarty_modifier_suspense_helper_suspense_character($letter = "")
 {
 	$suspense_character = chr(mt_rand(ord('a'), ord('z')));
 
@@ -16,7 +16,7 @@ function smarty_modifier_suspense_helper_suspense_character($letter = '')
  * Usage example: in hiding details of a username.
  * Inspired by: Google's .SVN Server.
  */
-function smarty_modifier_suspense($word = '')
+function smarty_modifier_suspense($word = "")
 {
 	# suspense using this set of character(s)
 	#$suspense_character = '_';
@@ -51,5 +51,5 @@ function smarty_modifier_suspense($word = '')
 	}
 	$letters[] = '...';
 
-	return implode('', $letters);
+	return implode("", $letters);
 }

@@ -3,7 +3,7 @@
 # Hints while adding a new menu.
 
 $menus = new \backend\menus();
-$context = $variable->get('context', 'string', '');
+$context = $variable->get('context', 'string', "");
 $context = \common\tools::safe_sql_word($context);
 #print_r($_GET);
 
@@ -13,7 +13,7 @@ SELECT
 FROM query_menus
 WHERE
 	menu_context='{$context}'
-	AND menu_link!=''
+	AND menu_link!=""
 	AND is_active='Y'
 ORDER BY
 	sink_weight ASC,

@@ -42,7 +42,7 @@ class hashids
 	private $_math_functions = array();
 	private $_max_int_value = 1000000000;
 
-	function __construct($salt = '', $min_hash_length = 0, $alphabet = '')
+	function __construct($salt = "", $min_hash_length = 0, $alphabet = "")
 	{
 
 		/* if either math precision library is present, raise $this->_max_int_value */
@@ -77,7 +77,7 @@ class hashids
 
 		if($alphabet)
 		{
-			$this->_alphabet = implode('', array_unique(str_split($alphabet)));
+			$this->_alphabet = implode("", array_unique(str_split($alphabet)));
 		}
 
 		if(strlen($this->_alphabet) < self::MIN_ALPHABET_LENGTH)
@@ -93,8 +93,8 @@ class hashids
 		$alphabet_array = str_split($this->_alphabet);
 		$seps_array = str_split($this->_seps);
 
-		$this->_seps = implode('', array_intersect($alphabet_array, $seps_array));
-		$this->_alphabet = implode('', array_diff($alphabet_array, $seps_array));
+		$this->_seps = implode("", array_intersect($alphabet_array, $seps_array));
+		$this->_alphabet = implode("", array_diff($alphabet_array, $seps_array));
 		$this->_seps = $this->_consistent_shuffle($this->_seps, $this->_salt);
 
 		if(!$this->_seps || (strlen($this->_alphabet) / strlen($this->_seps)) > self::SEP_DIV)
@@ -138,7 +138,7 @@ class hashids
 	function encrypt()
 	{
 
-		$ret = '';
+		$ret = "";
 		$numbers = func_get_args();
 
 		if(!$numbers)
@@ -178,7 +178,7 @@ class hashids
 
 		if(!ctype_xdigit((string)$str))
 		{
-			return '';
+			return "";
 		}
 
 		$numbers = trim(chunk_split($str, 12, ' '));
@@ -332,7 +332,7 @@ class hashids
 	private function _hash($input, $alphabet)
 	{
 
-		$hash = '';
+		$hash = "";
 		$alphabet_length = strlen($alphabet);
 
 		do

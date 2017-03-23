@@ -15,7 +15,7 @@
 $permissions = new \subdomain\permissions();
 
 # Assumes, ID always, in the GET parameter
-if(($crud_id = $variable->get('id', 'integer', 0)) && ($code = $variable->get('code', 'string', '')))
+if(($crud_id = $variable->get('id', 'integer', 0)) && ($code = $variable->get('code', 'string', "")))
 {
 	if($permissions->delete('inactivate', $crud_id, $code))
 	{

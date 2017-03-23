@@ -10,10 +10,10 @@
 $subdomains = new \subdomain\subdomains();
 
 # Handle Editing, when data is supplied
-if($variable->post('edit-action', 'string', '') && ($subdomain_id = $variable->post('subdomain_id', 'integer', 0)))
+if($variable->post('edit-action', 'string', "") && ($subdomain_id = $variable->post('subdomain_id', 'integer', 0)))
 {
 	# Editing....
-	$code = $variable->post('protection_code', 'string', '');
+	$code = $variable->post('protection_code', 'string', "");
 	$data = $variable->post('subdomains', 'array', array());
 
 	# Mark when this data was modified last time.
@@ -27,7 +27,7 @@ if($variable->post('edit-action', 'string', '') && ($subdomain_id = $variable->p
 
 	# Linux file format compatibility
 	$data['pointed_to'] = str_replace('\\', '/', $data['pointed_to']);
-	$data['pointed_to'] = preg_replace('/\/$/is', '', $data['pointed_to']);
+	$data['pointed_to'] = preg_replace('/\/$/is', "", $data['pointed_to']);
 
 	if($success = $subdomains->edit(
 		$data, # Posted data

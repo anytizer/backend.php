@@ -9,14 +9,14 @@
 
 $subdomains = new \subdomain\subdomains();
 
-if($variable->post('add-action', 'string', ''))
+if($variable->post('add-action', 'string', ""))
 {
 	# Posted Data: Apply security
 	$data = $variable->post('subdomains', 'array', array());
 
 	# File names will be based on this declaration. It should be safe to use.
-	$data['subdomain_name'] = strtolower(preg_replace('/[^a-z0-9\_\-\.]+/is', '', $data['subdomain_name']));
-	$data['subdomain_description'] = '';
+	$data['subdomain_name'] = strtolower(preg_replace('/[^a-z0-9\_\-\.]+/is', "", $data['subdomain_name']));
+	$data['subdomain_description'] = "";
 	$data['begun_on'] = 'CURRENT_TIMESTAMP()';
 
 	# Immediately activate the record
@@ -24,7 +24,7 @@ if($variable->post('add-action', 'string', ''))
 
 	# When this record is added for the first time?
 	$data['added_on'] = 'CURRENT_TIMESTAMP()';
-	$data['pointed_to'] = !empty($data['pointed_to']) ? str_replace('\\', '/', $data['pointed_to']) : '';
+	$data['pointed_to'] = !empty($data['pointed_to']) ? str_replace('\\', '/', $data['pointed_to']) : "";
 
 	if(empty($data['subdomain_ip']))
 	{

@@ -10,7 +10,7 @@
 $downloads = new \subdomain\downloads();
 
 # Assumes, ID always, in the GET parameter
-if(($distribution_id = $variable->get('id', 'integer', 0)) && ($code = $variable->get('code', 'string', '')))
+if(($distribution_id = $variable->get('id', 'integer', 0)) && ($code = $variable->get('code', 'string', "")))
 {
 	if($downloads->delete('inactivate', $distribution_id, $code))
 	{

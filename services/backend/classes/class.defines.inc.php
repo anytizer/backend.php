@@ -1,5 +1,5 @@
 <?php
-namespace subdomain;
+namespace \subdomain;
 
 # Created on: 2010-06-16 21:19:04 969
 
@@ -73,7 +73,7 @@ class defines
 	 *
 	 * @return Boolean Success or Failure to edit a record
 	 */
-	public function edit($data = array(), $pk = array(), $protection_code = '', $define_id = 0)
+	public function edit($data = array(), $pk = array(), $protection_code = "", $define_id = 0)
 	{
 		# Use $protection_code ... to test the integrity of the posted items.
 		# First, Verifies if the user can edit the entry with the supplied protection code.
@@ -204,7 +204,7 @@ WHERE
 	 *
 	 * @return $details Associative Array of Detailed records of an entity
 	 */
-	public function get_details($define_id = 0, $protection_code = '')
+	public function get_details($define_id = 0, $protection_code = "")
 	{
 		$protection_code = $this->sanitize($protection_code);
 		$define_id = (int)$define_id;
@@ -234,7 +234,7 @@ WHERE
 	 *
 	 * @return boolan Success or failure status
 	 */
-	protected function allow_protected_action($define_id = 0, $protection_code = '')
+	protected function allow_protected_action($define_id = 0, $protection_code = "")
 	{
 		# Action is: edit:update / delete:inactivate
 		$define_id = (int)$define_id;
@@ -263,7 +263,7 @@ WHERE
 	/**
 	 * Sanitize code against hacks
 	 */
-	protected function sanitize($string = '')
+	protected function sanitize($string = "")
 	{
 		return \common\tools::sanitize_name($string);
 	}
@@ -283,10 +283,10 @@ WHERE
 	/**
 	 * Matches the user-returned protection code with its valid one
 	 */
-	protected function is_valid_code($protection_code = '')
+	protected function is_valid_code($protection_code = "")
 	{
 		$real_code = $this->code();
-		$is_valid = (($real_code == $protection_code) && ($protection_code != ''));
+		$is_valid = (($real_code == $protection_code) && ($protection_code != ""));
 
 		return $is_valid;
 	}

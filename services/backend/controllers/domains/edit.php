@@ -10,10 +10,10 @@
 $domains = new \subdomain\domains();
 
 # Handle Editing, when data is supplied
-if($variable->post('edit-action', 'string', '') && ($domain_id = $variable->post('domain_id', 'integer', 0)))
+if($variable->post('edit-action', 'string', "") && ($domain_id = $variable->post('domain_id', 'integer', 0)))
 {
 	# Editing....
-	$code = $variable->post('protection_code', 'string', '');
+	$code = $variable->post('protection_code', 'string', "");
 	$data = $variable->post('domains', 'array', array());
 
 	# Mark when this data was modified last time.

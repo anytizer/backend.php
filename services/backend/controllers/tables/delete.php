@@ -10,7 +10,7 @@
 $tables = new \subdomain\tables();
 
 # Assumes, ID always, in the GET parameter
-if(($table_id = $variable->get('id', 'integer', 0)) && ($code = $variable->get('code', 'string', '')))
+if(($table_id = $variable->get('id', 'integer', 0)) && ($code = $variable->get('code', 'string', "")))
 {
 	if($tables->delete($table_id, $code))
 	{

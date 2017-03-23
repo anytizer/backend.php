@@ -26,7 +26,7 @@ function reversed_entity_check()
 	var original = document.forms['cruder-form'].elements['entity[name]'].value;
 	var reversed = document.forms['cruder-form'].elements['entity[reverse]'].value;
 
-	var success = (original != '' && reversed != '' && original.split('').reverse().join('') == reversed);
+	var success = (original != "" && reversed != "" && original.split("").reverse().join("") == reversed);
 	if(success != true)
 	{
 		alert("Self CAPTCHA Error:\r\nYour entity name and reversed letters mismatched.");
@@ -39,7 +39,7 @@ v.setAddnlValidationFunction('reversed_entity_check');
 function reverse_captcha()
 {
 	var original = document.forms['cruder-form'].elements['entity[name]'].value;
-	var reversed = original.split('').reverse().join('');
+	var reversed = original.split("").reverse().join("");
 	//document.getElementById('reverse-captcha').innerHTML = reversed;
 	document.getElementById('reverse-captcha').value = reversed;
 	return true;

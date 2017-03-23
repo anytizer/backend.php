@@ -26,7 +26,7 @@ $entries = $menus-&gt;list_entries(array());
 
 $smarty-&gt;assignByRef('menuss', $entries);</pre>
 <p>And, this handles the deletion:</p>
-<pre class="prettyprint">if(($menus_id = $variable-&gt;get('id', 'integer', 0)) &amp;&amp; ($code = $variable-&gt;get('code', 'string', '')))
+<pre class="prettyprint">if(($menus_id = $variable-&gt;get('id', 'integer', 0)) &amp;&amp; ($code = $variable-&gt;get('code', 'string', "")))
 {
 	$menus = new \subdomain\menus();
 	if($menus-&gt;delete($menus_id, $code))

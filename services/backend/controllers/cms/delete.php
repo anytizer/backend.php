@@ -15,7 +15,7 @@
 $cms = new \subdomain\cms();
 
 # Assumes, ID always, in the GET parameter
-if(($page_id = $variable->get('id', 'integer', 0)) && ($code = $variable->get('code', 'string', '')))
+if(($page_id = $variable->get('id', 'integer', 0)) && ($code = $variable->get('code', 'string', "")))
 {
 	if($cms->delete('inactivate', $page_id, $code))
 	{

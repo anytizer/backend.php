@@ -9,7 +9,7 @@
  */
 
 $identifier_id = $variable->get('id', 'integer', 0);
-$code = $variable->get('code', 'string', ''); # For future references
+$code = $variable->get('code', 'string', ""); # For future references
 
 # Find out the direction to sort. Go upwards or downloads in the list.
 $direction = strtolower($variable->get('direction', 'string', 'down'));

@@ -15,7 +15,7 @@
 $messages = new \subdomain\messages();
 
 # Assumes, ID always, in the GET parameter
-if(($message_id = $variable->get('id', 'integer', 0)) && ($code = $variable->get('code', 'string', '')))
+if(($message_id = $variable->get('id', 'integer', 0)) && ($code = $variable->get('code', 'string', "")))
 {
 	if($messages->delete('inactivate', $message_id, $code))
 	{

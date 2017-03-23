@@ -29,7 +29,7 @@ require_once($backend['paths']['__LIBRARY_PATH__'].'/inc/inc.config.php');
  */
 $target = array(
 	'username' => 'root',
-	'password' => '',
+	'password' => "",
 	'hostname' => '192.168.1.1',
 );
 
@@ -75,7 +75,7 @@ if($subdomain['is_protected'] == 'Y')
 }
 
 # What will be the portion of the file name to save these scripts?
-$subdomain['filename'] = preg_replace('/[^a-z0-9\.\-]/', '', $subdomain['subdomain_name']) . '.sql';
+$subdomain['filename'] = preg_replace('/[^a-z0-9\.\-]/', "", $subdomain['subdomain_name']) . '.sql';
 
 # Entire list of aliases and subdomains to be exported
 $alias_sql = "
@@ -140,9 +140,9 @@ FLUSH PRIVILEGES;
 ## Now, importing the tables  ##
 ################################";
 
-while($table = $db->row(''))
+while($table = $db->row(""))
 {
-	$sqls[] = '';
+	$sqls[] = "";
 	$sqls[] = "## {$table['table_name']} ## {$table['table_comments']}";
 	$sqls[] = "DROP TABLE IF EXISTS `{$database_name}`.`{$table['table_name']}`;";
 	$sqls[] = "CREATE TABLE `{$database_name}`.`{$table['table_name']}` LIKE `{$current_database}`.`{$table['table_name']}`;";
@@ -184,7 +184,7 @@ WHERE
 }
 
 # Do not keep it here. Backup/Export will not succeed.
-#$sqls[] = '';
+#$sqls[] = "";
 #$sqls[] ='# Finally leave the system clean.';
 #$sqls[] = "DROP DATABASE IF EXISTS `{$database_name}`;";
 
@@ -202,7 +202,7 @@ WHERE
 	subdomain_id={$subdomain_id}
 ;";
 $subdomain = $db->row($subdomain_name_sql);
-$subdomain['name'] = isset($subdomain['name']) ? $subdomain['name'] : '';
+$subdomain['name'] = isset($subdomain['name']) ? $subdomain['name'] : "";
 if($subdomain['name'])
 {
 	$__SUBDOMAIN_BASE__ = $framework->subdomain_base($subdomain['subdomain_id']);

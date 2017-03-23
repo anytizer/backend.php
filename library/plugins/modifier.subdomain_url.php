@@ -25,7 +25,7 @@ WHERE
 	{
 		# check for full flags like: is_http
 		$http = ($subdomain['is_https'] == 'Y') ? 'https://' : 'http://';
-		$www = ($subdomain['is_www'] == 'Y') ? 'www.' : '';
+		$www = ($subdomain['is_www'] == 'Y') ? 'www.' : "";
 		$url = $http . $www . $subdomain['subdomain_name'] . '/';
 	}
 

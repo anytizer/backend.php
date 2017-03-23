@@ -15,7 +15,7 @@
 $domains = new \subdomain\domains();
 
 # Assumes, ID always, in the GET parameter
-if(($domain_id = $variable->get('id', 'integer', 0)) && ($code = $variable->get('code', 'string', '')))
+if(($domain_id = $variable->get('id', 'integer', 0)) && ($code = $variable->get('code', 'string', "")))
 {
 	if($domains->delete('inactivate', $domain_id, $code))
 	{

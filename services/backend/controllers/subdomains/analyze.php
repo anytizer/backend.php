@@ -3,13 +3,13 @@
  * Finds the extension of a file.
  * We will group the reports according to these file types.
  */
-function extension($name = '')
+function extension($name = "")
 {
 	# apply only on files
 	# if(!is_file($name)) return null; # checked already.
 
 	$data = array();
-	$extension = '';
+	$extension = "";
 
 	# Reading an extension - improved way.
 	if(preg_match('/\.([a-z0-9]+)$/', $name, $data))

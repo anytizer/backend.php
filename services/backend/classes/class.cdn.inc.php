@@ -1,5 +1,5 @@
 <?php
-namespace subdomain;
+namespace \subdomain;
 
 # Created on: 2010-11-15 13:36:42 243
 
@@ -43,10 +43,11 @@ class cdn
 	 * List entries from [ cdn ]
 	 * Column `code` signifies a protection code while deleting/editing a record
 	 *
-	 * @param $conditions SQL Conditions
-	 *
-	 * @return Multi-Dimensional array of entries in the list
-	 */
+     * @param \others\condition $condition SQL Conditions
+     * @param int $from_index
+     * @param int $per_page
+     * @return array Multi-Dimensional array of entries in the list
+     */
 	public function list_entries(\others\condition $condition, $from_index = 0, $per_page = 50)
 	{
 		$crud = new \backend\crud();
@@ -115,10 +116,9 @@ LIMIT {$from_index}, {$per_page}
 	/**
 	 * Details of an entity in [ cdn ] for management activities
 	 *
-	 * @param $pk integer Primary Key's value of an entity
-	 *
-	 * @return $details Associative Array of Detailed records of an entity
-	 */
+     * @param int $cdn_id
+     * @return array
+     */
 	public function details($cdn_id = 0)
 	{
 		$cdn_id = (int)$cdn_id;
@@ -142,11 +142,11 @@ WHERE
 	/**
 	 * Details of an entity in [ cdn ] for public display.
 	 *
-	 * @param $pk integer Primary Key's value of an entity
-	 *
-	 * @return $details Associative Array of Detailed records of an entity
-	 */
-	public function get_details($cdn_id = 0, $protection_code = '')
+     * @param int $cdn_id
+     * @param string $protection_code
+     * @return array
+     */
+	public function get_details($cdn_id = 0, $protection_code = "")
 	{
 		$protection_code = $this->sanitize($protection_code);
 		$cdn_id = (int)$cdn_id;

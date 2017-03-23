@@ -147,7 +147,7 @@
 
 		var sf = $.fn.superfish,
 			c = sf.c,
-			$arrow = $(['<span class="', c.arrowClass, '"> &#187;</span>'].join('')),
+			$arrow = $(['<span class="', c.arrowClass, '"> &#187;</span>'].join("")),
 			over = function()
 			{
 				var $$ = $(this), menu = getMenu($$);
@@ -162,7 +162,7 @@
 				{
 					o.retainPath = ($.inArray($$[0], o.$path) > -1);
 					$$.hideSuperfishUl();
-					if(o.$path.length && $$.parents(['li.', o.hoverClass].join('')).length < 1)
+					if(o.$path.length && $$.parents(['li.', o.hoverClass].join("")).length < 1)
 					{
 						over.call(o.$path);
 					}
@@ -170,7 +170,7 @@
 			},
 			getMenu = function($menu)
 			{
-				var menu = $menu.parents(['ul.', c.menuClass, ':first'].join(''))[0];
+				var menu = $menu.parents(['ul.', c.menuClass, ':first'].join(""))[0];
 				sf.op = sf.o[menu.serial];
 				return menu;
 			},
@@ -262,9 +262,9 @@
 		hideSuperfishUl: function()
 		{
 			var o = sf.op,
-				not = (o.retainPath === true) ? o.$path : '';
+				not = (o.retainPath === true) ? o.$path : "";
 			o.retainPath = false;
-			var $ul = $(['li.', o.hoverClass].join(''), this).add(this).not(not).removeClass(o.hoverClass)
+			var $ul = $(['li.', o.hoverClass].join(""), this).add(this).not(not).removeClass(o.hoverClass)
 				.find('>ul').hide().css('visibility', 'hidden');
 			o.onHide.call($ul);
 			return this;

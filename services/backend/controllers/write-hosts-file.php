@@ -16,7 +16,7 @@ $lines[] = '#######################################';
 $counter = 0;
 foreach($hosts as $h => $host)
 {
-	$lines[] = '';
+	$lines[] = "";
 	$lines[] = sprintf('# %07d. %s (ID: %d)', ++$counter, $host['comments'], $host['id']);
 
 	# Presence of the hash sign (#) will point the URL to the live server only.
@@ -27,12 +27,12 @@ foreach($hosts as $h => $host)
 # These lines appear in the bottom, to effectively supress them to 127.0.0.1
 
 # localhost
-$lines[] = '';
+$lines[] = "";
 $lines[] = "# Compulsory, for the Operating System";
 $lines[] = "127.0.0.1\tlocalhost";
 
 # This framework
-$lines[] = '';
+$lines[] = "";
 $lines[] = "# This framework application";
 $lines[] = "127.0.0.1\t{$_SERVER['SERVER_NAME']}";
 

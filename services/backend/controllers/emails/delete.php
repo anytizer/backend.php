@@ -15,7 +15,7 @@
 $emails = new \subdomain\emails();
 
 # Assumes, ID always, in the GET parameter
-if(($email_id = $variable->get('id', 'integer', 0)) && ($code = $variable->get('code', 'string', '')))
+if(($email_id = $variable->get('id', 'integer', 0)) && ($code = $variable->get('code', 'string', "")))
 {
 	if($emails->delete('inactivate', $email_id, $code))
 	{

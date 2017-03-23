@@ -3,7 +3,7 @@
 
 $pages = new \subdoamin\pages();
 
-if($variable->post('add-action', 'string', ''))
+if($variable->post('add-action', 'string', ""))
 {
 	# Posted Data: Apply security
 	$data = $variable->post('page', 'array', array());

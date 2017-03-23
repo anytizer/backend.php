@@ -4,7 +4,7 @@
 /**
  * Yes/No Text
  */
-function smarty_modifier_yesno($yn = 'N', $text_block = '')
+function smarty_modifier_yesno($yn = 'N', $text_block = "")
 {
 	switch($text_block)
 	{

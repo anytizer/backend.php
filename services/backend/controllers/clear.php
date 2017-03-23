@@ -118,9 +118,9 @@ foreach($sqls as $s => $sql)
 # Clear compiled files, with their IDs
 $sql='SELECT subdomain_name subdomain FROM query_subdomains GROUP BY subdomain_name;';
 $db->query($sql);
-while($row = $db->row(''))
+while($row = $db->row(""))
 {
-	$smarty->compile_id = preg_replace('/[^a-z]/is', '', $row['subdomain']);
+	$smarty->compile_id = preg_replace('/[^a-z]/is', "", $row['subdomain']);
 	$smarty->utility->clearCompiledTemplate(null, $smarty->compile_id);
 	#$smarty->utility->clearCompiledTemplate(); # Removes everything
 	$smarty->utility->clearCache()

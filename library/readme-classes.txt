@@ -1,7 +1,7 @@
 Auto included classes are stored here.
 Files in the (third) directories are included on demand only.
 
-This is the inclusion hirerachy:
+This is the inclusion hierarchy:
 	interfaces
 	datatypes
 	common

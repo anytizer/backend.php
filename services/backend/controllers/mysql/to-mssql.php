@@ -50,7 +50,7 @@ $db->query($sql);
 while($table = $db->row(""))
 {
 	#print_r($table); die("Tables_in_{$database} ({$tablename_prefix}%)");
-	# fart: Replaces \' with '' for MSSQL compatibility
+	# fart: Replaces \' with "" for MSSQL compatibility
 	$table = $table["Tables_in_{$database} ({$tablename_prefix}%)"];
 
 
@@ -67,7 +67,7 @@ ECHO TRUNCATE TABLE {$table}; > {$table}.dmp
 ECHO SET IDENTITY_INSERT {$table} ON; >> {$table}.dmp
 mysqldump {$backup_options} -u{$username} -p{$password} {$database} {$table} >> {$table}.dmp
 ECHO SET IDENTITY_INSERT {$table} OFF; >> {$table}.dmp
-..\\fart --quiet {$table}.dmp \' ''
+..\\fart --quiet {$table}.dmp \' ""
 ..\\fart --quiet {$table}.dmp \\\" \"
 REM ..\\fart --quiet {$table}.dmp \\r\\n
 REM ..\\fart --quiet {$table}.dmp \\t

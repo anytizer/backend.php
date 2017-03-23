@@ -1,5 +1,5 @@
 <?php
-namespace subdomain;
+namespace \subdomain;
 
 /**
  * Helps to create an automatic full CRUD class for each entity under consideration.
@@ -217,7 +217,7 @@ class cruder
 	 *
 	 * @return bool
 	 */
-	public function generate_codes($subdomain_id = 0, $entity_name = '', $__ENTITY_FULLNAME__ = '', $produce_files = false)
+	public function generate_codes($subdomain_id = 0, $entity_name = "", $__ENTITY_FULLNAME__ = "", $produce_files = false)
 	{
 		$subdomain_id = (int)$subdomain_id;
 		if($subdomain_id == 0)
@@ -416,8 +416,8 @@ WHERE
 		$__TIMESTAMP__ = date('Y-m-d H:i:s ') . mt_rand(100, 999);
 
 		$entity = $variable->post('entity', 'array', array());
-		$pk_name = $variable->read($entity, 'pk_name', 'string', '');
-		$table = $variable->read($entity, 'table_name', 'string', '');
+		$pk_name = $variable->read($entity, 'pk_name', 'string', "");
+		$table = $variable->read($entity, 'table_name', 'string', "");
 
 		# Begin reading columns
 		$columns = $this->columns($table);
@@ -650,7 +650,7 @@ WHERE
 			}
 		}
 		# Within the FORM tags
-		$__TR__ = implode('', $columns_tr);
+		$__TR__ = implode("", $columns_tr);
 
 		# In details pages
 		$__DATA_ROWS__ = implode("\r\n", $data_rows);
@@ -759,9 +759,9 @@ WHERE
 
 			# Also, lone a source (index) file to multiple targets (values)
 			# Avoid the invalid characters and get the path of source file.
-			$file_original = preg_replace('/[^a-z0-9\.\-\_\/\{\}]+/', '', $file_original);
+			$file_original = preg_replace('/[^a-z0-9\.\-\_\/\{\}]+/', "", $file_original);
 
-			$fc_original = '';
+			$fc_original = "";
 			foreach($cruder_templates as $ct => $path)
 			{
 				$expected_file = $path . '/' . $file_original;
@@ -889,7 +889,7 @@ WHERE
 	 *
 	 * @return string
 	 */
-	private function column_name($column_name = '')
+	private function column_name($column_name = "")
 	{
 		# Pre filters: some words appear as single word - but they are composed of multiple small words
 		$replaces = array(
@@ -936,7 +936,7 @@ WHERE
 	 *
 	 * @return bool True/False about if the column is in production
 	 */
-	private function production_level_column_heads($column = '')
+	private function production_level_column_heads($column = "")
 	{
 		# Remarks:
 		# We do not assume that `id` is a primary key.
@@ -944,7 +944,7 @@ WHERE
 
 		# Not necessary, because the field names come directly from the database meta data only.
 		# $column = strtolower($column);
-		# $column = preg_replace('/[^a-z0-9\_]/', '', $column);
+		# $column = preg_replace('/[^a-z0-9\_]/', "", $column);
 
 		$valid_column_head = true;
 
@@ -975,7 +975,7 @@ WHERE
 	 *
 	 * @return bool
 	 */
-	private function is_password_column($column_name = '')
+	private function is_password_column($column_name = "")
 	{
 		# This name can be located anywhere
 		# password_xxx, input_password_xxx, ...
@@ -994,7 +994,7 @@ WHERE
 	 *
 	 * @return bool
 	 */
-	private function is_file_column($column_name = '')
+	private function is_file_column($column_name = "")
 	{
 		/**
 		 * These field names may not need file uploader.
@@ -1040,7 +1040,7 @@ WHERE
 	 *
 	 * @return bool
 	 */
-	private function is_long_text_column($column_name = '')
+	private function is_long_text_column($column_name = "")
 	{
 		$long_text_column = false;
 
@@ -1072,7 +1072,7 @@ WHERE
 	 *
 	 * @return int|boolean True: Skip this field, False: Validate this field
 	 */
-	private function javascript_skip_field($column_name = '')
+	private function javascript_skip_field($column_name = "")
 	{
 		/**
 		 * Javascript won't check these fields.
@@ -1182,7 +1182,7 @@ WHERE
 	 *
 	 * @param string $entity_name
 	 */
-	public function uninstall($entity_name = '')
+	public function uninstall($entity_name = "")
 	{
 		$entity_name = \common\tools::sanitize($entity_name);
 		/*
@@ -1232,7 +1232,7 @@ WHERE
 	 */
 	public function read_file($file = 'header.html')
 	{
-		$file = __LIBRARY_PATH__ . '/cruder/' . preg_replace('/[^a-z0-9\.\-]/is', '', $file);
+		$file = __LIBRARY_PATH__ . '/cruder/' . preg_replace('/[^a-z0-9\.\-]/is', "", $file);
 		if(file_exists($file))
 		{
 			readfile($file);
@@ -1247,7 +1247,7 @@ WHERE
 	 *
 	 * @return null|string Column name that can be used in production level
 	 */
-	private function _production_level_column_head($column = '')
+	private function _production_level_column_head($column = "")
 	{
 		$valid_column_head = $column;
 

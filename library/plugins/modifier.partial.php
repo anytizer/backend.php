@@ -5,9 +5,9 @@
  * Partially show up the long text (cutting off in the middle)
  * Useful in printing long directory names
  */
-function smarty_modifier_partial($string = '', $acceptable_length = 50)
+function smarty_modifier_partial($string = "", $acceptable_length = 50)
 {
-	$partial = '';
+	$partial = "";
 	$string = strip_tags($string);
 
 	if(($length = strlen($string)) > $acceptable_length)

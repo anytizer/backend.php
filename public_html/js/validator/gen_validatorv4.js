@@ -1268,7 +1268,7 @@ function VWZ_IsChecked(objcheck, value)
 
 function sfm_str_trim(strIn)
 {
-	return strIn.replace(/^\s\s*/, '').replace(/\s\s*$/, '');
+	return strIn.replace(/^\s\s*/, "").replace(/\s\s*$/, "");
 }
 
 function VWZ_IsEmpty(value)

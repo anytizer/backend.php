@@ -10,10 +10,10 @@
 $smtp = new \subdomain\smtp();
 
 # Handle Editing, when data is supplied
-if($variable->post('edit-action', 'string', '') && ($smtp_id = $variable->post('smtp_id', 'integer', 0)))
+if($variable->post('edit-action', 'string', "") && ($smtp_id = $variable->post('smtp_id', 'integer', 0)))
 {
 	# Editing....
-	$code = $variable->post('protection_code', 'string', '');
+	$code = $variable->post('protection_code', 'string', "");
 	$data = $variable->post('smtp', 'array', array());
 	# $data['modified_on']  = 'CURRENT_TIMESTAMP()'; # 'UNIX_TIMESTAMP(CURRENT_TIMESTAMP())'; # Additional support, if any
 

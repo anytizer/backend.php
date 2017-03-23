@@ -23,7 +23,7 @@ IEPNGFix.tileBG = function(elm, pngSrc, ready)
 	{
 		data.tiles = {
 			elm: elm,
-			src: '',
+			src: "",
 			cache: [],
 			img: new Image(),
 			old: {}
@@ -159,7 +159,7 @@ IEPNGFix.tileBG = function(elm, pngSrc, ready)
 	}
 	while(count < tiles.cache.length)
 	{
-		this.fix(tiles.cache[count], '', 0);
+		this.fix(tiles.cache[count], "", 0);
 		tiles.cache[count++].style.display = 'none';
 	}
 

@@ -30,7 +30,7 @@ INNER JOIN query_subdomains qs ON
 	{
 		# check for full flags like: is_http
 		$http = ($page['is_https'] == 'Y') ? 'https://' : 'http://';
-		$www = ($page['is_www'] == 'Y') ? 'www.' : '';
+		$www = ($page['is_www'] == 'Y') ? 'www.' : "";
 		$url = "{$http}{$www}{$page['domain']}:{$page['port']}/{$page['page']}";
 	}
 

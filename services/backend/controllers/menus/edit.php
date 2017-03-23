@@ -10,7 +10,7 @@
 $menus = new \subdomain\menus();
 
 # Handle Editing, when data is supplied
-if($variable->post('edit-action', 'string', '') && $menus_id = $variable->post('menus_id', 'integer', 0))
+if($variable->post('edit-action', 'string', "") && $menus_id = $variable->post('menus_id', 'integer', 0))
 {
 	# Editing....
 	$data = $variable->post('menus', 'array', array());
@@ -20,7 +20,7 @@ if($variable->post('edit-action', 'string', '') && $menus_id = $variable->post('
 		array(
 			'menu_id' => $menus_id,
 		),
-		$code = $variable->post('protection_code', 'string', ''),
+		$code = $variable->post('protection_code', 'string', ""),
 		$menus_id
 	)
 	)

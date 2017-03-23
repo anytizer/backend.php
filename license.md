@@ -10,13 +10,15 @@
 	- Comes without support and warranty of any kind
 	- Subject to change without notices
 	- Under active development
-	- Inherits other third-party works
+	- Possibly incompatible with older releases
+	- Inherits some other third-party works
 		- [APIGen](http://www.apigen.com/) supported documentation style
 		- [JQuery](http://jquery.com/)
-		- [MarkDown](#)
+		- [MarkDown](http://daringfireball.net/projects/markdown/)
 		- [PHPJS](http://phpjs.org/)
-		- [PHPMailer](http://phpmailer.worxware.com/)
+		- [PHPMailer](https://github.com/PHPMailer/PHPMailer) - [Old](http://phpmailer.worxware.com/) - Needs a fix
 		- [ParseDown](http://parsedown.org/)
 		- [Smarty](http://www.smarty.net/)
 		- [TinyMCE](https://www.tinymce.com/)
 		- [XHTTP](#) - Twitter Connection
+		- [AngularJS](https://angularjs.org/)

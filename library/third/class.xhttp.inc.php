@@ -48,7 +48,7 @@ class xhttp
 
 		# Dissect URL
 		$urlparts = array_merge(
-			array('scheme' => 'http', 'user' => '', 'pass' => '', 'host' => '', 'port' => '', 'path' => '', 'query' => '', 'fragment' => ''),
+			array('scheme' => 'http', 'user' => "", 'pass' => "", 'host' => "", 'port' => "", 'path' => "", 'query' => "", 'fragment' => ""),
 			parse_url($url));
 
 		# Set Default Ports
@@ -73,7 +73,7 @@ class xhttp
 				$requestData['get'] = array();
 			}
 			$requestData['get'] = array_merge($requestData['get'], self::toQueryArray($urlparts['query']));
-			$urlparts['query'] = '';
+			$urlparts['query'] = "";
 		}
 
 		# Default Settings
@@ -83,7 +83,7 @@ class xhttp
 		}
 		if(!isset($requestData['headers']['Expect']))
 		{
-			$requestData['headers']['Expect'] = '';
+			$requestData['headers']['Expect'] = "";
 		}
 		if(!isset($requestData['curl'][CURLOPT_CONNECTTIMEOUT]))
 		{
@@ -128,7 +128,7 @@ class xhttp
 				$urlparts['user'] .= ':' . $urlparts['pass'];
 			}
 			$requestData['curl'][CURLOPT_USERPWD] = $urlparts['user'];
-			$urlparts['pass'] = $urlparts['user'] = '';
+			$urlparts['pass'] = $urlparts['user'] = "";
 		}
 
 		if($requestData['method'] == 'head')
@@ -387,11 +387,11 @@ class xhttp
 	{
 		if($urlparts['port'] == 80 and $urlparts['scheme'] == 'http')
 		{
-			$urlparts['port'] = '';
+			$urlparts['port'] = "";
 		}
 		if($urlparts['port'] == 443 and $urlparts['scheme'] == 'https')
 		{
-			$urlparts['port'] = '';
+			$urlparts['port'] = "";
 		}
 
 		if($urlparts['fragment'])
@@ -420,7 +420,7 @@ class xhttp
 
 	public static function toQueryString($array, $urlencode = true)
 	{
-		$string = '';
+		$string = "";
 		if(is_array($array))
 		{
 			foreach($array as $key => $value)
@@ -438,7 +438,7 @@ class xhttp
 		{
 			$keyvalue = explode('=', $pair, 2);
 			$key = trim($keyvalue[0]);
-			$value = (isset($keyvalue[1])) ? ($urldecode) ? urldecode($keyvalue[1]) : $keyvalue[1] : '';
+			$value = (isset($keyvalue[1])) ? ($urldecode) ? urldecode($keyvalue[1]) : $keyvalue[1] : "";
 			if($key)
 			{
 				$array[$key] = $value;
@@ -450,7 +450,7 @@ class xhttp
 
 	function toCookieString($array)
 	{
-		$string = '';
+		$string = "";
 		foreach($array as $key => $value)
 			$string .= $key . '=' . $value . '; ';
 
@@ -525,7 +525,7 @@ class xhttp
 		return $flat_array;
 	}
 
-	public static function close_connection($message = '', $headers = array())
+	public static function close_connection($message = "", $headers = array())
 	{
 		ob_end_clean();
 		if(function_exists('ini_set'))
@@ -544,7 +544,7 @@ class xhttp
 			}
 			header('Location: ' . $headers['location'], true, $headers['status']);
 			unset($headers['location']);
-			$message = '';
+			$message = "";
 		}
 		header('Connection: close');
 		foreach($headers as $name => $value)

@@ -24,7 +24,7 @@ Array
 */
 $menus = new \subdomain\menus();
 
-if($variable->post('add-action', 'string', ''))
+if($variable->post('add-action', 'string', ""))
 {
 	$data = $variable->post('menus', 'array', array());
 	$data['is_active'] = 'Y';

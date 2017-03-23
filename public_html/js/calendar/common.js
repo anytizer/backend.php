@@ -12,7 +12,7 @@ function getElementsByCSS(selector)
 }
 function getElementsByClassName(classname, tag)
 {
-	if(!tag)var tag = '';
+	if(!tag)var tag = "";
 	return getElementsByCSS(tag + '.' + classname);
 }
 function toggle(item, state)
@@ -30,8 +30,8 @@ var rel = "";
 
 function evaluate(id)
 {
-	var code = '';
-	var result = '';
+	var code = "";
+	var result = "";
 	var ele = $(id);
 	if(ele.tagName == "TEXTAREA") code = ele.value;
 	else code = ele.innerHTML;

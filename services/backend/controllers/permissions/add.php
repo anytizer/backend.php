@@ -9,7 +9,7 @@
 
 $permissions = new \subdomain\permissions();
 
-if($variable->post('add-action', 'string', ''))
+if($variable->post('add-action', 'string', ""))
 {
 	# Posted Data: Apply security
 	$data = $variable->post('permissions', 'array', array());

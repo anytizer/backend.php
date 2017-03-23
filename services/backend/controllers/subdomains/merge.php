@@ -26,7 +26,7 @@ $clone_to_subdomain_id = 'YYYY'; # '125, 126, 142'; # 170; # Including the alias
 /**
  * Let us hope that is are only one primary key in one table.
  */
-function pk_name($database_name = '', $table_name = '')
+function pk_name($database_name = "", $table_name = "")
 {
 	#static $pkname_db;
 	#if(!$pkname_db) $pkname_db = new \common\mysql();

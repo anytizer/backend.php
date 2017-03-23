@@ -104,12 +104,12 @@ class html2text
 	 * @see $search
 	 */
 	private $replace = array(
-		'', // Non-legal carriage return
+		"", // Non-legal carriage return
 		' ', // Newlines and tabs
 		' ', // Runs of spaces, pre-handling
-		'', // <script>s -- which strip_tags supposedly has problems with
-		'', // <style>s -- which strip_tags supposedly has problems with
-		//'',                                     // Comments -- which strip_tags might have problem a with
+		"", // <script>s -- which strip_tags supposedly has problems with
+		"", // <style>s -- which strip_tags supposedly has problems with
+		//"",                                     // Comments -- which strip_tags might have problem a with
 		"strtoupper(\"\n\n\\1\n\n\")", // H1 - H3
 		"ucwords(\"\n\n\\1\n\n\")", // H4 - H6
 		"\n\n\t", // <P>
@@ -143,7 +143,7 @@ class html2text
 		'*',
 		'�',
 		'EUR', // Euro sign. � ?
-		'', // Unknown/unhandled entities
+		"", // Unknown/unhandled entities
 		' ' // Runs of spaces, post-handling
 	);
 
@@ -155,7 +155,7 @@ class html2text
 	 * @access public
 	 * @see set_allowed_tags()
 	 */
-	private $allowed_tags = '';
+	private $allowed_tags = "";
 
 	/**
 	 * Contains the base URL that relative links should resolve to.
@@ -184,7 +184,7 @@ class html2text
 	 * @access private
 	 * @see _build_link_list()
 	 */
-	private $_link_list = '';
+	private $_link_list = "";
 
 	/**
 	 * Number of valid links detected in the text, used for plain text
@@ -216,7 +216,7 @@ class html2text
 	 * @access public
 	 * @return void
 	 */
-	public function process($source = '', $from_file = false)
+	public function process($source = "", $from_file = false)
 	{
 		if(!empty($source))
 		{
@@ -294,7 +294,7 @@ class html2text
 	 * @access public
 	 * @return void
 	 */
-	public function set_allowed_tags($allowed_tags = '')
+	public function set_allowed_tags($allowed_tags = "")
 	{
 		if(!empty($allowed_tags))
 		{
@@ -308,7 +308,7 @@ class html2text
 	 * @access public
 	 * @return void
 	 */
-	public function set_base_url($url = '')
+	public function set_base_url($url = "")
 	{
 		if(empty($url))
 		{
@@ -318,7 +318,7 @@ class html2text
 			}
 			else
 			{
-				$this->url = '';
+				$this->url = "";
 			}
 		}
 		else
@@ -347,7 +347,7 @@ class html2text
 	{
 		// Variables used for building the link list
 		$this->_link_count = 0;
-		$this->_link_list = '';
+		$this->_link_list = "";
 
 		$text = trim(stripslashes($this->html));
 
@@ -406,7 +406,7 @@ class html2text
 		elseif(substr($link, 0, 11) == 'javascript:')
 		{
 			// Don't count the link; ignore it
-			$additional = '';
+			$additional = "";
 			// what about href="#anchor" ?
 		}
 		else

@@ -31,7 +31,7 @@ class xhttp_oauth
 		);
 	}
 
-	public function set_token($profile, $token, $token_secret = '')
+	public function set_token($profile, $token, $token_secret = "")
 	{
 		$profile = ($profile instanceof xhttp_profile) ? $profile->name : ($profile) ? $profile : 'default';
 		self::$datastore[$profile]['token'] = $token;
@@ -59,7 +59,7 @@ class xhttp_oauth
 	// hook: curl-initialization
 	public static function return_authorization_header(&$urlparts, &$requestData)
 	{
-		return (isset($requestData['headers']['Authorization'])) ? $requestData['headers']['Authorization'] : '';
+		return (isset($requestData['headers']['Authorization'])) ? $requestData['headers']['Authorization'] : "";
 	}
 
 	public static function oauth_method($profile, $method = 'header')

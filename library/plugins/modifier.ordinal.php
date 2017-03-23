@@ -10,7 +10,7 @@
 function smarty_modifier_ordinal($number = 0, $html = false, $class = 'ordinal')
 {
 	$o = new \common\ordinal();
-	$output = '';
+	$output = "";
 	if($html === true)
 	{
 		if($class)

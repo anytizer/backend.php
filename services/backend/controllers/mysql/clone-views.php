@@ -29,7 +29,7 @@ USE `{$target_database}`;
 
 $sql = "SHOW FULL TABLES FROM `{$system_database}` WHERE table_type = 'BASE TABLE';";
 $db->query($sql);
-while($table = $db->row(''))
+while($table = $db->row(""))
 {
 	$table = $table["Tables_in_{$system_database}"];
 	if(!preg_match('/^(' . implode('|', $prefixes) . ')_/', $table))

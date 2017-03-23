@@ -1,6 +1,6 @@
 <div class="holder">
 <?php
-$_GET['q'] = isset($_GET['q']) ? addslashes($_GET['q']) : '';
+$_GET['q'] = isset($_GET['q']) ? addslashes($_GET['q']) : "";
 if(!$_GET['q'])
 {
 	echo 'No hints';

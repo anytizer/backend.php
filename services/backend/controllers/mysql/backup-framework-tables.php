@@ -21,7 +21,7 @@ $password = 'toor';
 
 $sql = "SHOW TABLES LIKE 'query_%';";
 $db->query($sql);
-while($table = $db->row(''))
+while($table = $db->row(""))
 {
 	$table = $table["Tables_in_{$database} (query_%)"];
 	echo "\r\nmysqldump --lock-tables -u{$username} -p{$password} {$database} {$table} > {$table}.dmp";

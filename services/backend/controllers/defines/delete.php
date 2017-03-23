@@ -10,7 +10,7 @@
 $defines = new \subdomain\defines();
 
 # Assumes, ID always, in the GET parameter
-if(($define_id = $variable->get('id', 'integer', 0)) && ($code = $variable->get('code', 'string', '')))
+if(($define_id = $variable->get('id', 'integer', 0)) && ($code = $variable->get('code', 'string', "")))
 {
 	if($defines->delete('inactivate', $define_id, $code))
 	{

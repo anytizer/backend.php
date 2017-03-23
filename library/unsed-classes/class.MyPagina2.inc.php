@@ -37,7 +37,7 @@ class MyPagina
 	// sets the current page number
 	function set_page()
 	{
-		$page = (isset($_REQUEST[$this->get_var]) && $_REQUEST[$this->get_var] != '') ? $_REQUEST[$this->get_var] : 0;
+		$page = (isset($_REQUEST[$this->get_var]) && $_REQUEST[$this->get_var] != "") ? $_REQUEST[$this->get_var] : 0;
 
 		return $page;
 	}
@@ -121,13 +121,13 @@ class MyPagina
 	}
 
 	// this method will return the navigation links for the conplete recordset
-	function navigation($separator = ' | ', $css_current = '', $back_forward = false, $use_images = false)
+	function navigation($separator = ' | ', $css_current = "", $back_forward = false, $use_images = false)
 	{
 		$max_links = $this->num_links;
 		$curr_pages = $this->set_page();
 		$all_pages = $this->get_num_pages() - 1;
 		$var = $this->get_var;
-		$navi_string = '';
+		$navi_string = "";
 		if(!$back_forward)
 		{
 			$max_links = ($max_links < 2) ? 2 : $max_links;
@@ -171,12 +171,12 @@ class MyPagina
 
 							$navi_string .= '<a href="' . $navi_url . '">';
 							$navi_string .= $a . '</a>';
-							$navi_string .= ($theNext < ($end - 1)) ? $separator : '';
+							$navi_string .= ($theNext < ($end - 1)) ? $separator : "";
 						}
 						else
 						{
-							$navi_string .= ($css_current != '') ? '<span class="' . $css_current . '">' . $a . '</span>' : $a;
-							$navi_string .= ($theNext < ($end - 1)) ? $separator : '';
+							$navi_string .= ($css_current != "") ? '<span class="' . $css_current . '">' . $a . '</span>' : $a;
+							$navi_string .= ($theNext < ($end - 1)) ? $separator : "";
 						}
 					}
 				}
@@ -215,7 +215,7 @@ class MyPagina
 	// simple method to show only the page back and forward link.
 	function back_forward_link($images = false)
 	{
-		$simple_links = $this->navigation(' ', '', true, $images);
+		$simple_links = $this->navigation(' ', "", true, $images);
 
 		return $simple_links;
 	}

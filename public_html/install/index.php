@@ -100,7 +100,7 @@ if(!is_dir($scripts_destination))
 	mkdir($scripts_destination, 0777, true);
 }
 
-function next_id($name = '')
+function next_id($name = "")
 {
 	static $next_filename_id = 0;
 	++$next_filename_id;
@@ -108,7 +108,7 @@ function next_id($name = '')
 	return str_pad($next_filename_id, 2, '0', STR_PAD_LEFT) . '-' . $name;
 }
 
-function replace_sql_credentials($credentials = '')
+function replace_sql_credentials($credentials = "")
 {
 	global $config;
 	$credentials = preg_replace('/MYSQLHOSTNAME/i', $config['MYSQLHOSTNAME'], $credentials);
@@ -161,7 +161,7 @@ $mysql_config = preg_replace('#\[\'dbpassword\'\] = \'.*?\';#i', "['dbpassword']
 $mysql_config = preg_replace('#\[\'database\'\] = \'.*?\';#i', "['database'] = '{$config['MYSQLDATABASE']}';", $mysql_config);
 $mysql_config = preg_replace('/# CASE\:__SUBDOMAIN_NAME__\:/i', "case '{$_SERVER['SERVER_NAME']}':", $mysql_config);
 $mysql_config = preg_replace('/# CASE\:SERVERNAME\:/i', "case '{$_SERVER['SERVER_NAME']}':", $mysql_config);
-$mysql_config = preg_replace('/\'' . preg_quote($config['frameworkname']) . '\'/i', "'{$_SERVER['SERVER_NAME']}'", $mysql_config);
+$mysql_config = preg_replace('/\"" . preg_quote($config['frameworkname']) . '\'/i', "'{$_SERVER['SERVER_NAME']}'", $mysql_config);
 
 # Replace the remaining ones
 $mysql_config = preg_replace('/MYSQLHOSTNAME/i', $config['MYSQLHOSTNAME'], $mysql_config);
@@ -211,7 +211,7 @@ function os_dir($location = '/tmp')
 }
 
 # Locate the installation directory
-$install = !preg_match('#/install/#', $_SERVER['REQUEST_URI']) ? 'install/' : '';
+$install = !preg_match('#/install/#', $_SERVER['REQUEST_URI']) ? 'install/' : "";
 ?>
 <!doctype html>
 <html>

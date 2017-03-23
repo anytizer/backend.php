@@ -10,10 +10,10 @@
 $cdn = new \subdomain\cdn();
 
 # Handle Editing, when data is supplied
-if($variable->post('edit-action', 'string', '') && ($cdn_id = $variable->post('cdn_id', 'integer', 0)))
+if($variable->post('edit-action', 'string', "") && ($cdn_id = $variable->post('cdn_id', 'integer', 0)))
 {
 	# Editing....
-	$code = $variable->post('protection_code', 'string', '');
+	$code = $variable->post('protection_code', 'string', "");
 	$data = $variable->post('cdn', 'array', array());
 	# $data['modified_on'] = 'CURRENT_TIMESTAMP()'; # Additional support, if any
 

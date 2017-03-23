@@ -7,7 +7,7 @@
  * @url http://www.smarty.net/forums/viewtopic.php?t=18399
  * @example {'page'|plural:2}
  */
-function smarty_modifier_plural($word = '', $counter = 0)
+function smarty_modifier_plural($word = "", $counter = 0)
 {
 	# What to append to the word to make it plural?
 	$plural_marker = 's';
@@ -37,7 +37,7 @@ function smarty_modifier_plural($word = '', $counter = 0)
 		$word = substr($word, 0, strlen($word) - 3);
 	}
 
-	$plural = $word . (($counter != 1) ? $plural_marker : '');
+	$plural = $word . (($counter != 1) ? $plural_marker : "");
 
 	return $plural;
 }

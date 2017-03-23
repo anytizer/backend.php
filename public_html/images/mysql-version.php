@@ -12,8 +12,8 @@ require_once($backend['paths']['__LIBRARY_PATH__'].'/inc/inc.config.php');
 $page = $variable->get('page', 'string', 'blank.png');
 
 # Safety of the image name
-$page = preg_replace('/[^a-z0-9\-\_\.\/\{\}]/is', '', $page);
-$page = str_replace('..', '', $page);
+$page = preg_replace('/[^a-z0-9\-\_\.\/\{\}]/is', "", $page);
+$page = str_replace('..', "", $page);
 $page = str_replace('//', '/', $page);
 
 $image_file_found = false;

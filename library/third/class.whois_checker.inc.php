@@ -10,7 +10,7 @@ class whois_checker
 	private $find = 'Expiration Date:';
 	private $method = 'get';
 
-	private $domain = '';
+	private $domain = "";
 
 	public function is_registered($domain = 'domain.com')
 	{

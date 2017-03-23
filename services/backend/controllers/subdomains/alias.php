@@ -5,7 +5,7 @@ $variable->validate('get', array(
 
 $subdomain = new \subdomain\subdomains();
 
-if($variable->post('alias-button', 'string', ''))
+if($variable->post('alias-button', 'string', ""))
 {
 	$data = $variable->post('alias', 'array', array());
 

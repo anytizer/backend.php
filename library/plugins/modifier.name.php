@@ -4,7 +4,7 @@
 /**
  * Splits first name, middle name and last name
  */
-function smarty_modifier_name($fullname = '', $position = 'first')
+function smarty_modifier_name($fullname = "", $position = 'first')
 {
 	$names = new \common\names();
 	$name_words = $names->read_name($fullname);

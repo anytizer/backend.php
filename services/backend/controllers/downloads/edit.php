@@ -10,10 +10,10 @@
 $downloads = new \subdomain\downloads();
 
 # Handle Editing, when data is supplied
-if($variable->post('edit-action', 'string', '') && ($distribution_id = $variable->post('distribution_id', 'integer', 0)))
+if($variable->post('edit-action', 'string', "") && ($distribution_id = $variable->post('distribution_id', 'integer', 0)))
 {
 	# Editing....
-	$code = $variable->post('protection_code', 'string', '');
+	$code = $variable->post('protection_code', 'string', "");
 	$data = $variable->post('downloads', 'array', array());
 
 	# Mark when this data was modified last time.

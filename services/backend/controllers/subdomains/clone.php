@@ -22,7 +22,7 @@ $clone_to_subdomain_id = 'yyy'; # 170;
 /**
  * Let us hope that is are only one primary key in one table.
  */
-function pk_name($database_name = '', $table_name = '')
+function pk_name($database_name = "", $table_name = "")
 {
 	static $pkname_db;
 	if(!$pkname_db)

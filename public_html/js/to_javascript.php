@@ -22,7 +22,7 @@ if(empty($_SERVER['HTTP_REFERER']))
 }
 else
 {
-	if($js_file = $variable->get('js', 'string', ''))
+	if($js_file = $variable->get('js', 'string', ""))
 	{
 		$js_file = $js_file . '.js';
 

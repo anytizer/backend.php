@@ -7,7 +7,7 @@
  * Delete an entity in [ menus ]
  */
 
-if(($menus_id = $variable->get('id', 'integer', 0)) && ($code = $variable->get('code', 'string', '')))
+if(($menus_id = $variable->get('id', 'integer', 0)) && ($code = $variable->get('code', 'string', "")))
 {
 	$menus = new \subdomain\menus();
 	if($menus->delete($menus_id, $code))

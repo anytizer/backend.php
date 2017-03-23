@@ -6,9 +6,9 @@
  * Reason: They might need to be embeded within the template file.
  * Usage: {'filename.css'|readcss}
  */
-function smarty_modifier_readcss($css_file = '')
+function smarty_modifier_readcss($css_file = "")
 {
-	$css_body = '';
+	$css_body = "";
 	if(defined('__SUBDOMAIN_BASE__'))
 	{
 		# We will access the files within their subdomains only

@@ -9,7 +9,7 @@
 
 $history = new \subdomain\history();
 
-if($variable->post('add-action', 'string', ''))
+if($variable->post('add-action', 'string', ""))
 {
 	# Posted Data: Apply security
 	$data = $variable->post('history', 'array', array());

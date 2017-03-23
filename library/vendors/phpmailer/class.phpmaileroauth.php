@@ -29,25 +29,25 @@ class PHPMailerOAuth extends PHPMailer
      * The OAuth user's email address
      * @var string
      */
-    public $oauthUserEmail = '';
+    public $oauthUserEmail = "";
 
     /**
      * The OAuth refresh token
      * @var string
      */
-    public $oauthRefreshToken = '';
+    public $oauthRefreshToken = "";
 
     /**
      * The OAuth client ID
      * @var string
      */
-    public $oauthClientId = '';
+    public $oauthClientId = "";
 
     /**
      * The OAuth client secret
      * @var string
      */
-    public $oauthClientSecret = '';
+    public $oauthClientSecret = "";
 
     /**
      * An instance of the PHPMailerOAuthGoogle class.
@@ -114,10 +114,10 @@ class PHPMailerOAuth extends PHPMailer
             // $hostinfo[4]: optional port number
             // The host string prefix can temporarily override the current setting for SMTPSecure
             // If it's not specified, the default value is used
-            $prefix = '';
+            $prefix = "";
             $secure = $this->SMTPSecure;
             $tls = ($this->SMTPSecure == 'tls');
-            if ('ssl' == $hostinfo[2] or ('' == $hostinfo[2] and 'ssl' == $this->SMTPSecure)) {
+            if ('ssl' == $hostinfo[2] or ("" == $hostinfo[2] and 'ssl' == $this->SMTPSecure)) {
                 $prefix = 'ssl://';
                 $tls = false; // Can't have SSL and TLS at the same time
                 $secure = 'ssl';

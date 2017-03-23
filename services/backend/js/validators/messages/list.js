@@ -16,7 +16,7 @@
 	var str = this.value;
 	if (str.length<=1)
 	{ 
-		document.getElementById('livesearch-results').innerHTML='';
+		document.getElementById('livesearch-results').innerHTML="";
 		document.getElementById('livesearch-results').style.border='0px';
 		return false;
 	}

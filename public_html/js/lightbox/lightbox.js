@@ -65,7 +65,7 @@ function getPageScroll()
 		yScroll = document.body.scrollTop;
 	}
 
-	arrayPageScroll = ['', yScroll];
+	arrayPageScroll = ["", yScroll];
 	return arrayPageScroll;
 }
 
@@ -292,7 +292,7 @@ function hideLightbox()
 	objLightbox.style.display = 'none';
 
 	// disable keypress listener
-	document.onkeypress = '';
+	document.onkeypress = "";
 }
 
 

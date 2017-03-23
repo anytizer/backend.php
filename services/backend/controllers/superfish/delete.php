@@ -15,7 +15,7 @@
 $superfish = new \subdomain\superfish();
 
 # Assumes, ID always, in the GET parameter
-if(($menu_id = $variable->get('id', 'integer', 0)) && ($code = $variable->get('code', 'string', '')))
+if(($menu_id = $variable->get('id', 'integer', 0)) && ($code = $variable->get('code', 'string', "")))
 {
 	if($superfish->delete('inactivate', $menu_id, $code))
 	{

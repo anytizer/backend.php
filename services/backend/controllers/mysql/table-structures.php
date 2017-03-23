@@ -10,7 +10,7 @@ $datestamp = date('Y-m-d H:i:s');
 /**
  * Readable table name
  */
-function processed_name($name = '')
+function processed_name($name = "")
 {
 	$names = preg_split('/[^a-z0-9]+/i', $name);
 	$names = array_map('ucfirst', $names);

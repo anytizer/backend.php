@@ -11,8 +11,8 @@ require_once($backend['paths']['__LIBRARY_PATH__'].'/inc/inc.config.php');
 $page = $variable->get('page', 'string', 'style.css');
 
 # Safety of the css names
-$page = preg_replace('/[^a-z0-9\-\_\.\/\{\}]/is', '', $page);
-$page = str_replace('..', '', $page);
+$page = preg_replace('/[^a-z0-9\-\_\.\/\{\}]/is', "", $page);
+$page = str_replace('..', "", $page);
 $page = str_replace('//', '/', $page);
 
 $css_file_found = false;

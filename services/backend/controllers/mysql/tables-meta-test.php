@@ -3,14 +3,14 @@
  * Specially format the display
  * @todo This file might broken HTML due to source code formatting of PHP without end tags
  */
-function fecho($string = '', $match = '', $match_print = '', $default = '')
+function fecho($string = "", $match = "", $match_print = "", $default = "")
 {
 	echo($string ? $string : '&nbsp;');
 
 	return;
 
 	$print = $string;
-	if ($match != '' && $string == $match) {
+	if ($match != "" && $string == $match) {
 		$print = $match_print;
 	} else {
 		$print = $default;
@@ -129,7 +129,7 @@ function fecho($string = '', $match = '', $match_print = '', $default = '')
 		$sql = "SHOW TABLES;";
 		$table_result = mysql_query($sql); # @todo Change to MySQLi
 
-		$table = '';
+		$table = "";
 		$j = 0;
 		while ($row = mysql_fetch_row($table_result)) { # @todo Change to MySQLi
 			$table = $row[0];
@@ -145,19 +145,19 @@ function fecho($string = '', $match = '', $match_print = '', $default = '')
 
 				?>
 				<tr class="<?php echo((++$j % 2) ? 'A' : 'B'); ?>">
-					<td class="<?php echo (preg_match(' /^[^a - z]/', $meta->table) || strtolower($meta->table) != $meta->table) ? 'warning' : ''; ?>"><?php fecho($meta->table); ?></td>
-					<td class="<?php echo !preg_match(' /^[^\_].*?\_ / ', $meta->name) ? 'warning' : ''; ?>"><?php fecho($meta->name); ?></td>
+					<td class="<?php echo (preg_match(' /^[^a - z]/', $meta->table) || strtolower($meta->table) != $meta->table) ? 'warning' : ""; ?>"><?php fecho($meta->table); ?></td>
+					<td class="<?php echo !preg_match(' /^[^\_].*?\_ / ', $meta->name) ? 'warning' : ""; ?>"><?php fecho($meta->name); ?></td>
 					<td><?php fecho($meta->def); ?></td>
 					<td><?php fecho($meta->max_length); ?></td>
-					<td class="<?php echo ($meta->not_null == 1) ? '' : 'error'; ?>"><?php fecho($meta->not_null, '1', '', 'N'); ?></td>
-					<td class="<?php echo ($meta->primary_key == 1 && !preg_match(' / auto_increment / ', $flags)) ? 'error' : ''; ?>"><?php fecho($meta->primary_key); ?></td>
-					<td class="<?php echo ($meta->unique_key == 1) ? 'warning' : ''; ?>"><?php fecho($meta->unique_key); ?></td>
+					<td class="<?php echo ($meta->not_null == 1) ? "" : 'error'; ?>"><?php fecho($meta->not_null, '1', "", 'N'); ?></td>
+					<td class="<?php echo ($meta->primary_key == 1 && !preg_match(' / auto_increment / ', $flags)) ? 'error' : ""; ?>"><?php fecho($meta->primary_key); ?></td>
+					<td class="<?php echo ($meta->unique_key == 1) ? 'warning' : ""; ?>"><?php fecho($meta->unique_key); ?></td>
 					<td><?php fecho($meta->multiple_key); ?></td>
 					<td><?php fecho($meta->numeric); ?></td>
-					<td class="<?php echo ($meta->blob != 1) ? '' : 'blob'; ?>"><?php fecho($meta->blob); ?></td>
-					<td class="<?php echo (!in_array($meta->type, array('string', 'int', 'real', 'blob', 'date'))) ? 'warning' : ''; ?>"><?php fecho($meta->type); ?></td>
-					<td class="<?php echo ($meta->numeric == 1 && $meta->unsigned != 1) ? 'error' : ''; ?>"><?php fecho($meta->unsigned, '1', 'Y', ''); ?></td>
-					<td><?php fecho($meta->zerofill, '1', '', 'N'); ?></td>
+					<td class="<?php echo ($meta->blob != 1) ? "" : 'blob'; ?>"><?php fecho($meta->blob); ?></td>
+					<td class="<?php echo (!in_array($meta->type, array('string', 'int', 'real', 'blob', 'date'))) ? 'warning' : ""; ?>"><?php fecho($meta->type); ?></td>
+					<td class="<?php echo ($meta->numeric == 1 && $meta->unsigned != 1) ? 'error' : ""; ?>"><?php fecho($meta->unsigned, '1', 'Y', ""); ?></td>
+					<td><?php fecho($meta->zerofill, '1', "", 'N'); ?></td>
 				</tr>
 				<?php
 				$i++;

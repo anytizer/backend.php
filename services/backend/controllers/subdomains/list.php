@@ -11,10 +11,10 @@
 \common\url::remember();
 
 # Name of the searched subdoman name
-#$subdomain_name = $variable->post('subdomain_name', 'string', '');
+#$subdomain_name = $variable->post('subdomain_name', 'string', "");
 #$subdomain_name = $variable->remember_string('subdomain_name', $subdomain_name);
-#$subdomain_name = $variable->remember_string('subdomain_name', $variable->post('subdomain_name', 'string', ''));
-$subdomain_name = $variable->remember_string('subdomain_name', '');
+#$subdomain_name = $variable->remember_string('subdomain_name', $variable->post('subdomain_name', 'string', ""));
+$subdomain_name = $variable->remember_string('subdomain_name', "");
 
 # Begin the paginator along with: subdomains
 # Parameter: GET[], and per page
@@ -26,7 +26,7 @@ $subdomains = new \subdomain\subdomains();
 # Please modify this code, particularly for:
 #	Page Limits
 #	Selection Conditions
-$search = $variable->post('search-query', 'string', '');
+$search = $variable->post('search-query', 'string', "");
 $search_query = $variable->remember_string('search-query');
 $smarty->assign('search_query', $search_query);
 

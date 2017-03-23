@@ -141,8 +141,8 @@ class POP3
         $host,
         $port = false,
         $timeout = false,
-        $username = '',
-        $password = '',
+        $username = "",
+        $password = "",
         $debug_level = 0
     ) {
         $pop = new POP3;
@@ -162,7 +162,7 @@ class POP3
      * @param integer $debug_level
      * @return boolean
      */
-    public function authorise($host, $port = false, $timeout = false, $username = '', $password = '', $debug_level = 0)
+    public function authorise($host, $port = false, $timeout = false, $username = "", $password = "", $debug_level = 0)
     {
         $this->host = $host;
         // If no port value provided, use default
@@ -263,7 +263,7 @@ class POP3
      * @param string $password
      * @return boolean
      */
-    public function login($username = '', $password = '')
+    public function login($username = "", $password = "")
     {
         if (!$this->connected) {
             $this->setError('Not connected to POP3 server');
@@ -351,7 +351,7 @@ class POP3
             $this->setError(array(
                 'error' => "Server reported an error: $string",
                 'errno' => 0,
-                'errstr' => ''
+                'errstr' => ""
             ));
             return false;
         } else {

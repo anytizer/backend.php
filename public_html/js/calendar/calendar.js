@@ -156,7 +156,7 @@ calendar = {
 					if(mon < 10)mon = "0" + mon;
 
 					//Is it today?
-					var class_name = '';
+					var class_name = "";
 					var yea = this.today.getYear();
 					if(yea < 1900) yea += 1900;
 

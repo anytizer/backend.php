@@ -25,7 +25,7 @@ class bitly
 	/**
 	 * Initiate the class with tokens stored separately
 	 */
-	public function __construct($token = '')
+	public function __construct($token = "")
 	{
 		$this->token = $token;
 	}
@@ -37,9 +37,9 @@ class bitly
 	 *
 	 * @return string URL
 	 */
-	public function shorten($url = '')
+	public function shorten($url = "")
 	{
-		$bitly_url = '';
+		$bitly_url = "";
 
 		$url_encoded = rawurlencode($url);
 		$bitly_request_url = "{$this->bitly_url}?access_token={$this->token}&longUrl={$url_encoded}";

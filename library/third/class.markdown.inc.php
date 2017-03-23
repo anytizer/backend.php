@@ -91,19 +91,19 @@ class markdown
 	);
 
 	public $em_relist = array(
-		'' => '(?:(?<!\*)\*(?!\*)|(?<!_)_(?!_))(?=\S)(?![.,:;]\s)',
+		"" => '(?:(?<!\*)\*(?!\*)|(?<!_)_(?!_))(?=\S)(?![.,:;]\s)',
 		'*' => '(?<=\S)(?<!\*)\*(?!\*)',
 		'_' => '(?<=\S)(?<!_)_(?!_)',
 	);
 
 	public $strong_relist = array(
-		'' => '(?:(?<!\*)\*\*(?!\*)|(?<!_)__(?!_))(?=\S)(?![.,:;]\s)',
+		"" => '(?:(?<!\*)\*\*(?!\*)|(?<!_)__(?!_))(?=\S)(?![.,:;]\s)',
 		'**' => '(?<=\S)(?<!\*)\*\*(?!\*)',
 		'__' => '(?<=\S)(?<!_)__(?!_)',
 	);
 
 	public $em_strong_relist = array(
-		'' => '(?:(?<!\*)\*\*\*(?!\*)|(?<!_)___(?!_))(?=\S)(?![.,:;]\s)',
+		"" => '(?:(?<!\*)\*\*\*(?!\*)|(?<!_)___(?!_))(?=\S)(?![.,:;]\s)',
 		'***' => '(?<=\S)(?<!\*)\*\*\*(?!\*)',
 		'___' => '(?<=\S)(?<!_)___(?!_)',
 	);
@@ -176,7 +176,7 @@ class markdown
 		$this->setup();
 
 		# Remove UTF-8 BOM and marker character in input, if present.
-		$text = preg_replace('{^\xEF\xBB\xBF|\x1A}', '', $text);
+		$text = preg_replace('{^\xEF\xBB\xBF|\x1A}', "", $text);
 
 		# Standardize line endings:
 		#   DOS to Unix and Mac to Unix
@@ -195,7 +195,7 @@ class markdown
 		# This makes subsequent regexen easier to write, because we can
 		# match consecutive blank lines with /\n+/ instead of something
 		# contorted like /[ ]*\n+/ .
-		$text = preg_replace('/^[ ]+$/m', '', $text);
+		$text = preg_replace('/^[ ]+$/m', "", $text);
 
 		# Run document gamut methods.
 		foreach($this->document_gamut as $method => $priority)
@@ -249,7 +249,7 @@ class markdown
 		$this->urls[$link_id] = $matches[2];
 		$this->titles[$link_id] =& $matches[3];
 
-		return ''; # String that will replace the block
+		return ""; # String that will replace the block
 	}
 
 
@@ -644,7 +644,7 @@ class markdown
 	{
 		$whole_match = $matches[1];
 		$link_text = $this->runSpanGamut($matches[2]);
-		$url = $matches[3] == '' ? $matches[4] : $matches[3];
+		$url = $matches[3] == "" ? $matches[4] : $matches[3];
 		$title =& $matches[7];
 
 		$url = $this->encodeAttribute($url);
@@ -760,7 +760,7 @@ class markdown
 	{
 		$whole_match = $matches[1];
 		$alt_text = $matches[2];
-		$url = $matches[3] == '' ? $matches[4] : $matches[3];
+		$url = $matches[3] == "" ? $matches[4] : $matches[3];
 		$title =& $matches[7];
 
 		$alt_text = $this->encodeAttribute($alt_text);
@@ -988,7 +988,7 @@ class markdown
 		{
 			# Recursion for sub-lists:
 			$item = $this->doLists($this->outdent($item));
-			$item = preg_replace('/\n+$/', '', $item);
+			$item = preg_replace('/\n+$/', "", $item);
 			$item = $this->runSpanGamut($item);
 		}
 
@@ -1025,7 +1025,7 @@ class markdown
 		$codeblock = htmlspecialchars($codeblock, ENT_NOQUOTES);
 
 		# trim leading newlines and trailing newlines
-		$codeblock = preg_replace('/\A\n+|\n+\z/', '', $codeblock);
+		$codeblock = preg_replace('/\A\n+|\n+\z/', "", $codeblock);
 
 		$codeblock = "<pre><code>$codeblock\n</code></pre>";
 
@@ -1073,10 +1073,10 @@ class markdown
 
 	function doItalicsAndBold($text)
 	{
-		$token_stack = array('');
-		$text_stack = array('');
-		$em = '';
-		$strong = '';
+		$token_stack = array("");
+		$text_stack = array("");
+		$em = "";
+		$strong = "";
 		$tree_char_em = false;
 
 		while(1)
@@ -1120,8 +1120,8 @@ class markdown
 					$span = $this->runSpanGamut($span);
 					$span = "<strong><em>$span</em></strong>";
 					$text_stack[0] .= $this->hashPart($span);
-					$em = '';
-					$strong = '';
+					$em = "";
+					$strong = "";
 				}
 				else
 				{
@@ -1133,7 +1133,7 @@ class markdown
 					$span = $this->runSpanGamut($span);
 					$span = "<$tag>$span</$tag>";
 					$text_stack[0] = $this->hashPart($span);
-					$$tag = ''; # $$tag stands for $em or $strong
+					$$tag = ""; # $$tag stands for $em or $strong
 				}
 				$tree_char_em = false;
 			}
@@ -1151,7 +1151,7 @@ class markdown
 						$span = $this->runSpanGamut($span);
 						$span = "<$tag>$span</$tag>";
 						$text_stack[0] .= $this->hashPart($span);
-						$$tag = ''; # $$tag stands for $em or $strong
+						$$tag = ""; # $$tag stands for $em or $strong
 					}
 				}
 				else
@@ -1161,7 +1161,7 @@ class markdown
 					$em = $token{0};
 					$strong = "$em$em";
 					array_unshift($token_stack, $token);
-					array_unshift($text_stack, '');
+					array_unshift($text_stack, "");
 					$tree_char_em = true;
 				}
 			}
@@ -1181,12 +1181,12 @@ class markdown
 					$span = $this->runSpanGamut($span);
 					$span = "<strong>$span</strong>";
 					$text_stack[0] .= $this->hashPart($span);
-					$strong = '';
+					$strong = "";
 				}
 				else
 				{
 					array_unshift($token_stack, $token);
-					array_unshift($text_stack, '');
+					array_unshift($text_stack, "");
 					$strong = $token;
 				}
 			}
@@ -1203,7 +1203,7 @@ class markdown
 						$span = $this->runSpanGamut($span);
 						$span = "<em>$span</em>";
 						$text_stack[0] .= $this->hashPart($span);
-						$em = '';
+						$em = "";
 					}
 					else
 					{
@@ -1213,7 +1213,7 @@ class markdown
 				else
 				{
 					array_unshift($token_stack, $token);
-					array_unshift($text_stack, '');
+					array_unshift($text_stack, "");
 					$em = $token;
 				}
 			}
@@ -1245,7 +1245,7 @@ class markdown
 	{
 		$bq = $matches[1];
 		# trim one level of quoting - trim whitespace-only lines
-		$bq = preg_replace('/^[ ]*>[ ]?|^[ ]+$/m', '', $bq);
+		$bq = preg_replace('/^[ ]*>[ ]?|^[ ]+$/m', "", $bq);
 		$bq = $this->runBlockGamut($bq); # recurse
 
 		$bq = preg_replace('/^/m', "  ", $bq);
@@ -1261,7 +1261,7 @@ class markdown
 	function _doBlockQuotes_callback2($matches)
 	{
 		$pre = $matches[1];
-		$pre = preg_replace('/^  /m', '', $pre);
+		$pre = preg_replace('/^  /m', "", $pre);
 
 		return $pre;
 	}
@@ -1274,7 +1274,7 @@ class markdown
 		#		$text - string to process with html <p> tags
 		#
 		# Strip leading and trailing lines:
-		$text = preg_replace('/\A\n+|\n+\z/', '', $text);
+		$text = preg_replace('/\A\n+|\n+\z/', "", $text);
 
 		$grafs = preg_split('/\n{2,}/', $text, -1, PREG_SPLIT_NO_EMPTY);
 
@@ -1329,7 +1329,7 @@ class markdown
 //					}
 //
 //					$div_open = preg_replace(
-//						'{\smarkdown\s*=\s*([\'"]).+?\1}', '', $div_open);
+//						'{\smarkdown\s*=\s*([\'"]).+?\1}', "", $div_open);
 //
 //					$graf = $div_open . "\n" . $div_content . "\n" . $div_close;
 //				}
@@ -1464,8 +1464,8 @@ class markdown
 			}
 		}
 
-		$addr = implode('', $chars);
-		$text = implode('', array_slice($chars, 7)); # text without `mailto:`
+		$addr = implode("", $chars);
+		$text = implode("", array_slice($chars, 7)); # text without `mailto:`
 		$addr = "<a href=\"$addr\">$text</a>";
 
 		return $addr;
@@ -1478,7 +1478,7 @@ class markdown
 		# Take the string $str and parse it into tokens, hashing embeded HTML,
 		# escaped characters and handling code spans.
 		#
-		$output = '';
+		$output = "";
 
 		$span_re = '{
 				(
@@ -1486,7 +1486,7 @@ class markdown
 				|
 					(?<![`\\\\])
 					`+						# code span marker
-			' . ($this->no_markup ? '' : '
+			' . ($this->no_markup ? "" : '
 				|
 					<!--    .*?     -->		# comment
 				|
@@ -1567,7 +1567,7 @@ class markdown
 		#
 		# Remove one level of line-leading tabs or spaces
 		#
-		return preg_replace('/^(\t|[ ]{1,' . $this->tab_width . '})/m', '', $text);
+		return preg_replace('/^(\t|[ ]{1,' . $this->tab_width . '})/m', "", $text);
 	}
 
 

@@ -7,16 +7,16 @@ This tool is used to generate frontend and backend website from your raw databas
 Requirement of this tool was to speedup website generation with some notable requirements like:
 
  * Every developer involved in the project should write similar patterns of code.
- * The website has to be easily themeable by the designer.
+ * The website has to be easily theme-able by the designer.
  * The database may be unstable and might change even after writing the necessary PHP Code for this.
  * Troubleshooting a bug made easy.
- * Same website can act as Desktop, Moile or API Version.
+ * Same website can act as Desktop, Mobile or API Version.
  * Application should support genral programming requirements like:
    - Sending out emails
    - Uploading image files with resize options
    - Uploading other documents
 
-Scripts generation made easy with __themeable__ HTML ouput.
+Scripts generation made easy with __theme-able__ HTML output.
 
  * Just focus your efforts on better database design.
  * It will create an admin panel for you.
@@ -39,7 +39,7 @@ Scripts generation made easy with __themeable__ HTML ouput.
 
  * Preferred: PHP 7.0
  * ~~Minimum: 5.4~~ Support removed
- * Use latest XAMPP as your development environment
+ * Use latest [XAMPP](https://www.apachefriends.org/) as your development environment
 
 
 ## MySQL Requirements
@@ -49,7 +49,7 @@ Scripts generation made easy with __themeable__ HTML ouput.
  * Removed support to other databases
 
 
-## Technolgies used
+## Technologies used
 
  * [Smarty Template Engine](http://www.smarty.net/)
  * [PHPMailer](https://github.com/PHPMailer/PHPMailer)

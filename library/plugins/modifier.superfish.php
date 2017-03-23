@@ -4,7 +4,7 @@
 /**
  * Reads the database and drops down a menu using superfish
  */
-function smarty_modifier_superfish($context = '', $force_compile = false)
+function smarty_modifier_superfish($context = "", $force_compile = false)
 {
 	$dd = new \backend\dropdown($context);
 

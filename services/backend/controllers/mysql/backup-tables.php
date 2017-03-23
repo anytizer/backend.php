@@ -21,7 +21,7 @@ $password = 'toor';
 
 $sql = "SHOW FULL TABLES FROM `{$database}` WHERE table_type = 'BASE TABLE';";
 $db->query($sql);
-while($table = $db->row(''))
+while($table = $db->row(""))
 {
 	$table = $table["Tables_in_{$database}"];
 	echo "\r\nmysqldump --lock-tables -u{$username} -p{$password} {$database} {$table} > {$table}.dmp";

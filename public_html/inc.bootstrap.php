@@ -6,10 +6,10 @@ $backend = array(
 	'paths' => array(),
 	'urls' => array(),
 	'database' => array(
-		'HOSTNAME' => '',
-		'USERNAME' => '',
-		'PASSWORD' => '',
-		'DATABASE' => '',
+		'HOSTNAME' => "",
+		'USERNAME' => "",
+		'PASSWORD' => "",
+		'DATABASE' => "",
 	),
 
 	# Verification of Backend Configuration
@@ -50,11 +50,11 @@ $backend['paths']['__SERVICES_PATH__']  = $backend['paths']['__APP_PATH__'].'/se
 $backend['paths']['__SUBDOMAIN_BASE__'] = $backend['paths']['__SERVICES_PATH__'].'/localhost';
 
 # 6 files
-$backend['urls']['__URL__'] = '';
+$backend['urls']['__URL__'] = "";
 
 # Generate signatures
 foreach($backend as $index => $value)
 {
-	$backend['signatures'][$index] = md5(implode('', array_keys($backend[$index])));
+	$backend['signatures'][$index] = md5(implode("", array_keys($backend[$index])));
 }
 #print_r($backend); die();

@@ -16,7 +16,7 @@ $tables = new \subdomain\tables();
 # Please modify this code, particularly for:
 #	Page Limits
 #	Selection Conditions
-$search = $variable->post('search-query', 'string', '');
+$search = $variable->post('search-query', 'string', "");
 $search_query = $variable->remember_string('search-query');
 $smarty->assign('search_query', $search_query);
 

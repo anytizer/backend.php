@@ -13,7 +13,7 @@ function smarty_modifier_yyyymmdd($date = '0000-00-00', $format_type = 0)
 		return 'Invalid date: ' . $date;
 	}
 
-	$ymd = '';
+	$ymd = "";
 	$months = array(
 		# Default value: when 0000-00-00 cannot be read out
 		# Few MySQL columns contain these types of values.

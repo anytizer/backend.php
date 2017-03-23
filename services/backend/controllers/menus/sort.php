@@ -6,7 +6,7 @@
 # menus-sort.php?context=framework:admin&id=25&direction=down
 
 $menus = new \subdomain\menus();
-$menu_context = $variable->get('context', 'string', '');
+$menu_context = $variable->get('context', 'string', "");
 $menu_context = \common\tools::safe_sql_word($menu_context);
 
 if($menu_id = $variable->get('id', 'integer', 0))
@@ -25,7 +25,7 @@ if($menu_id = $variable->get('id', 'integer', 0))
 else
 {
 	# Show the page normally
-	if($menu_context != '')
+	if($menu_context != "")
 	{
 		$entries = $menus->list_menus_for_sorting($menu_context);
 		$smarty->assignByRef('menus', $entries);

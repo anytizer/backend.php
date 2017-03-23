@@ -37,9 +37,9 @@ class acuploader
 	{
 		$this->FileName = 'lssll.jpg';
 		$this->OverWrite = true;
-		$this->NameCase = '';
-		$this->Error = '';
-		$this->NewName = '';
+		$this->NameCase = "";
+		$this->Error = "";
+		$this->NewName = "";
 	}
 
 	function UploadFile()
@@ -64,9 +64,9 @@ class acuploader
 	{
 		$record_id = (int)$record_id;
 
-		#$image_path = str_replace(PROPERTY_LOCATION, '', "{$this->destination_url}/{$filename}");
-		#$image_path = str_replace(__SUBDOMAIN_BASE__, '', "{$this->destination_url}/{$record_id}/{$filename}");
-		$image_path = str_replace(__SUBDOMAIN_BASE__, '', "pictures/{$record_id}/{$filename}");
+		#$image_path = str_replace(PROPERTY_LOCATION, "", "{$this->destination_url}/{$filename}");
+		#$image_path = str_replace(__SUBDOMAIN_BASE__, "", "{$this->destination_url}/{$record_id}/{$filename}");
+		$image_path = str_replace(__SUBDOMAIN_BASE__, "", "pictures/{$record_id}/{$filename}");
 		$patch_sql = "
 UPDATE mhe_property_photos SET
 	#photo_path='{$photo_path}'

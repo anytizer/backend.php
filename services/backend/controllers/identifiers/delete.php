@@ -15,7 +15,7 @@
 $identifiers = new \subdomain\identifiers();
 
 # Assumes, ID always, in the GET parameter
-if(($identifier_id = $variable->get('id', 'integer', 0)) && ($code = $variable->get('code', 'string', '')))
+if(($identifier_id = $variable->get('id', 'integer', 0)) && ($code = $variable->get('code', 'string', "")))
 {
 	if($identifiers->delete('inactivate', $identifier_id, $code))
 	{

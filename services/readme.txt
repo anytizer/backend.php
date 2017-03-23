@@ -43,7 +43,7 @@ reports and other kinds of documents.
 
 ============================================================
 This directory is a subdomain service using the framework.
-As this section may contain items in a commecial production,
+As this section may contain items in a commercial production,
 please avoid it from the SVN upload/download.
 
 Free/Stand Alone subdomain services

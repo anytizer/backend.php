@@ -1,5 +1,5 @@
 <?php
-namespace subdomain;
+namespace \subdomain;
 
 # Created on: 2010-12-14 00:48:38 194
 
@@ -187,7 +187,7 @@ WHERE
 	 *
 	 * @return $details Associative Array of Detailed records of an entity
 	 */
-	public function get_details($distribution_id = 0, $protection_code = '')
+	public function get_details($distribution_id = 0, $protection_code = "")
 	{
 		$protection_code = $this->sanitize($protection_code);
 		$distribution_id = (int)$distribution_id;

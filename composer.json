@@ -1,5 +1,6 @@
 {
 	"require-dev": {
+		"apigen/apigen": "*",
 		"phpunit/phpunit": "*",
 		"phpunit/phpunit-selenium": "*"
         "phpdocumentor/phpdocumentor": "*"

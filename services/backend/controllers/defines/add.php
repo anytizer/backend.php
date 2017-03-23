@@ -9,7 +9,7 @@
 
 $defines = new \subdomain\defines();
 
-if($variable->post('add-action', 'string', ''))
+if($variable->post('add-action', 'string', ""))
 {
 	# Posted Data: Apply security
 	$data = $variable->post('defines', 'array', array());

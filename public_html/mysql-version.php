@@ -1,4 +1,6 @@
 <?php
+declare(strict_types=1);
+
 # Framework Bootstrap Loader
 require_once('inc.bootstrap.php');
 if(!is_file("{$backend['paths']['__APP_PATH__']}/database/license.ini"))
@@ -80,7 +82,7 @@ if($page_details)
 
 	# If file name does not contain, '/' character,
 	# it is NOT having a no-directory instructions.
-	if(($valid_file_name = \common\tools::php_filename($page)) == '')
+	if(($valid_file_name = \common\tools::php_filename($page)) == "")
 	{
 		\common\stopper::message("Invalid filename/php: <strong>{$page}</strong>. It should pass \common\tools::php_filename().");
 	}
@@ -157,7 +159,7 @@ if($page_details)
 <p><strong>{$template_dir}/<em>{$template_file}</em></strong> for: {$page}</p>
 
 <div>
-	<h1>__SUBDOMAIN_BASE__: " . (defined('__SUBDOMAIN_BASE__') ? __SUBDOMAIN_BASE__ : '') . "</h1>
+	<h1>__SUBDOMAIN_BASE__: " . (defined('__SUBDOMAIN_BASE__') ? __SUBDOMAIN_BASE__ : "") . "</h1>
 	<h2>List of possible templates:</h2>
 	<div>
 		" . nl2br(print_r($smarty->template_dir, true)) . "

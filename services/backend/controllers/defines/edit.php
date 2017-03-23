@@ -10,10 +10,10 @@
 $defines = new \subdomain\defines();
 
 # Handle Editing, when data is supplied
-if($variable->post('edit-action', 'string', '') && ($define_id = $variable->post('define_id', 'integer', 0)))
+if($variable->post('edit-action', 'string', "") && ($define_id = $variable->post('define_id', 'integer', 0)))
 {
 	# Editing....
-	$code = $variable->post('protection_code', 'string', '');
+	$code = $variable->post('protection_code', 'string', "");
 	$data = $variable->post('defines', 'array', array());
 	$data['modified_on'] = 'CURRENT_TIMESTAMP()'; # Additional support, if any
 

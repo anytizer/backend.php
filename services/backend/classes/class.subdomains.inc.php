@@ -1,5 +1,5 @@
 <?php
-namespace subdomain;
+namespace \subdomain;
 
 
 # Created on: 2011-02-10 00:27:11 536
@@ -211,7 +211,7 @@ WHERE
 	 *
 	 * @return $details Associative Array of Detailed records of an entity
 	 */
-	public function get_details($subdomain_id = 0, $protection_code = '')
+	public function get_details($subdomain_id = 0, $protection_code = "")
 	{
 		$protection_code = $this->sanitize($protection_code);
 		$subdomain_id = (int)$subdomain_id;
@@ -238,7 +238,7 @@ WHERE
 	/**
 	 * Flag is_live
 	 */
-	public function flag_hosts($subdomain_id = 0, $protection_code = '')
+	public function flag_hosts($subdomain_id = 0, $protection_code = "")
 	{
 		$protection_code = $this->sanitize($protection_code);
 		$subdomain_id = (int)$subdomain_id;
@@ -295,7 +295,7 @@ WHERE
 	/**
 	 * Allow to operate on a particular record, with its protection code
 	 */
-	protected function allow_protected_action($subdomain_id = 0, $protection_code = '')
+	protected function allow_protected_action($subdomain_id = 0, $protection_code = "")
 	{
 		# Action is: edit:update / delete:inactivate
 		$subdomain_id = (int)$subdomain_id;
@@ -336,7 +336,7 @@ WHERE
 			# CSS
 			# Images
 
-			if($subdomain = $this->details($subdomain_id, ''))
+			if($subdomain = $this->details($subdomain_id, ""))
 			{
 				# We have just found the sufficient subdomain details
 			}
@@ -571,7 +571,7 @@ GROUP BY
 		$this->query($list_pages_sql);
 
 		$db = new \common\mysql();
-		while($sp = $this->row(''))
+		while($sp = $this->row(""))
 		{
 			$update_sql = "
 UPDATE query_subdomains SET

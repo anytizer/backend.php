@@ -6,7 +6,7 @@
  * Usage example:
  * {if $page.include_file|valid_template}{include file=$page.include_file}{/if}
  */
-function smarty_modifier_valid_template($template_name = '')
+function smarty_modifier_valid_template($template_name = "")
 {
 	$exists = false;
 	if($template_name)

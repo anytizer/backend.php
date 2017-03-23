@@ -1,5 +1,5 @@
 <?php
-namespace subdomain;
+namespace \subdomain;
 
 # Created on: 2009-11-11 20:04:26 653
 
@@ -66,7 +66,7 @@ class menus
 	 *
 	 * @return Boolean Success or Failure to edit a record
 	 */
-	public function edit($data = array(), $pk = array(), $code = '', $menu_id = 0)
+	public function edit($data = array(), $pk = array(), $code = "", $menu_id = 0)
 	{
 		$menu_id = (int)$menu_id;
 		# Verify if the user can edit the entry.
@@ -100,7 +100,7 @@ WHERE
 	 * @param string $protection_code String Secret Hash Key
 	 * @return bool
 	 */
-	public function delete($pk_value = 0, $protection_code = '')
+	public function delete($pk_value = 0, $protection_code = "")
 	{
 		$protection_code = $this->sanitize($protection_code);
 
@@ -176,7 +176,7 @@ SELECT
 	menu_context
 FROM query_menus
 WHERE
-	menu_link!='' # Kicks off accidentally recorded contexts
+	menu_link!="" # Kicks off accidentally recorded contexts
 GROUP BY
 	menu_context
 ORDER BY
@@ -191,7 +191,7 @@ ORDER BY
 	/**
 	 * List of menu contexts used so far
 	 */
-	public function used_texts_under_context($context = '')
+	public function used_texts_under_context($context = "")
 	{
 		$context = \common\tools::safe_sql_word($context);
 		$contexts_sql = "
@@ -200,7 +200,7 @@ SELECT
 FROM query_menus
 WHERE
 	menu_context='{$context}'
-	AND menu_link!=''
+	AND menu_link!=""
 	AND is_active='Y'
 ORDER BY
 	menu_text
@@ -214,7 +214,7 @@ ORDER BY
 	/**
 	 * List menus under a context, for sorting them
 	 */
-	function list_menus_for_sorting($menu_context = '')
+	function list_menus_for_sorting($menu_context = "")
 	{
 		$menu_context = \common\tools::safe_sql_word($menu_context);
 		$menus_sql = "
@@ -236,7 +236,7 @@ ORDER BY
 	/**
 	 * Sanitize code against hacks
 	 */
-	private function sanitize($string = '')
+	private function sanitize($string = "")
 	{
 		return \common\tools::sanitize_name($string);
 	}

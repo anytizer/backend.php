@@ -9,7 +9,7 @@
 
 $superfish = new \subdomain\superfish();
 
-if($variable->post('add-action', 'string', ''))
+if($variable->post('add-action', 'string', ""))
 {
 	# Posted Data: Apply security
 	$data = $variable->post('superfish', 'array', array());

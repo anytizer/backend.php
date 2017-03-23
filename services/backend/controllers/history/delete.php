@@ -10,7 +10,7 @@
 $history = new \subdomain\history();
 
 # Assumes, ID always, in the GET parameter
-if(($history_id = $variable->get('id', 'integer', 0)) && ($code = $variable->get('code', 'string', '')))
+if(($history_id = $variable->get('id', 'integer', 0)) && ($code = $variable->get('code', 'string', "")))
 {
 	if($history->delete('inactivate', $history_id, $code))
 	{

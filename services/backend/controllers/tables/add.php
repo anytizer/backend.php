@@ -9,11 +9,11 @@
 
 $tables = new \subdomain\tables();
 
-if($variable->post('add-action', 'string', ''))
+if($variable->post('add-action', 'string', ""))
 {
 	# Posted Data: Apply security
 	$data = $variable->post('tables', 'array', array());
-	$data['export_query'] = ''; # Not yet implemented.
+	$data['export_query'] = ""; # Not yet implemented.
 	$data['is_active'] = 'Y';
 
 	if($table_id = $tables->add($data))

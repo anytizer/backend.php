@@ -1,5 +1,5 @@
 <?php
-namespace subdomain;
+namespace \subdomain;
 
 # Created on: 2010-06-11 02:19:25 152
 
@@ -149,7 +149,7 @@ WHERE
 	 *
 	 * @return $details Associative Array of Detailed records of an entity
 	 */
-	public function get_details($table_id = 0, $protection_code = '')
+	public function get_details($table_id = 0, $protection_code = "")
 	{
 		$protection_code = $this->sanitize($protection_code);
 		$table_id = (int)$table_id;
@@ -177,7 +177,7 @@ WHERE
 	/**
 	 * Allow to operate on a particular record, with its protection code
 	 */
-	protected function allow_protected_action($table_id = 0, $protection_code = '')
+	protected function allow_protected_action($table_id = 0, $protection_code = "")
 	{
 		# Action is: edit:update / delete:inactivate
 		$table_id = (int)$table_id;
@@ -200,7 +200,7 @@ WHERE
 	/**
 	 * Sanitize code against hacks
 	 */
-	protected function sanitize($string = '')
+	protected function sanitize($string = "")
 	{
 		return \common\tools::sanitize_name($string);
 	}
@@ -208,10 +208,10 @@ WHERE
 	/**
 	 * Matches the user-returned protection code with its valid one
 	 */
-	protected function is_valid_code($protection_code = '')
+	protected function is_valid_code($protection_code = "")
 	{
 		$real_code = $this->code();
-		$is_valid = (($real_code == $protection_code) && ($protection_code != ''));
+		$is_valid = (($real_code == $protection_code) && ($protection_code != ""));
 
 		return $is_valid;
 	}

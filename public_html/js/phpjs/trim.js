@@ -18,7 +18,7 @@ function trim(str, charlist)
 	// *     returns 3: 6
 	var whitespace, l = 0,
 		i = 0;
-	str += '';
+	str += "";
 
 	if(!charlist)
 	{
@@ -28,7 +28,7 @@ function trim(str, charlist)
 	else
 	{
 		// preg_quote custom list
-		charlist += '';
+		charlist += "";
 		whitespace = charlist.replace(/([\[\]\(\)\.\?\/\*\{\}\+\$\^\:])/g, '$1');
 	}
 
@@ -52,5 +52,5 @@ function trim(str, charlist)
 		}
 	}
 
-	return whitespace.indexOf(str.charAt(0)) === -1 ? str : '';
+	return whitespace.indexOf(str.charAt(0)) === -1 ? str : "";
 }

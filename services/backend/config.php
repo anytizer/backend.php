@@ -29,4 +29,3 @@ $smarty->assign('page_details', $page_details);
 $smarty->configLoad('backend.conf');
 #die('err:'.__LINE__);
 #print_r($_SESSION);
-?>

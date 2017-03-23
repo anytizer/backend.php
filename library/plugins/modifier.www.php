@@ -8,11 +8,11 @@
  *
  * @see |url, |www, |domain
  */
-function smarty_modifier_www($domain_name = '', $prepend = true)
+function smarty_modifier_www($domain_name = "", $prepend = true)
 {
 	if($prepend == false)
 	{
-		$domain_name = preg_replace('/^www\./is', '', $domain_name);
+		$domain_name = preg_replace('/^www\./is', "", $domain_name);
 	}
 	else
 	{

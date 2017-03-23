@@ -1,5 +1,5 @@
 <?php
-namespace subdomain;
+namespace \subdomain;
 
 
 # Created on: 2011-04-06 14:42:31 485
@@ -159,7 +159,7 @@ WHERE
 	 *
 	 * @return $details Associative Array of Detailed records of an entity
 	 */
-	public function get_details($message_id = 0, $protection_code = '')
+	public function get_details($message_id = 0, $protection_code = "")
 	{
 		$protection_code = $this->sanitize($protection_code);
 		$message_id = (int)$message_id;
@@ -189,7 +189,7 @@ WHERE
 	 * Every method should sanitize the user input.
 	 * It will co-exist with the live features.
 	 */
-	public function flag_dummyfield($message_id = 0, $protection_code = '')
+	public function flag_dummyfield($message_id = 0, $protection_code = "")
 	{
 		$protection_code = $this->sanitize($protection_code);
 		$message_id = (int)$message_id;

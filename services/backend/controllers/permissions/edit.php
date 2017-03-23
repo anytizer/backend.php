@@ -10,10 +10,10 @@
 $permissions = new \subdomain\permissions();
 
 # Handle Editing, when data is supplied
-if($variable->post('edit-action', 'string', '') && ($crud_id = $variable->post('crud_id', 'integer', 0)))
+if($variable->post('edit-action', 'string', "") && ($crud_id = $variable->post('crud_id', 'integer', 0)))
 {
 	# Editing....
-	$code = $variable->post('protection_code', 'string', '');
+	$code = $variable->post('protection_code', 'string', "");
 	$data = $variable->post('permissions', 'array', array());
 
 	# Mark when this data was modified last time.

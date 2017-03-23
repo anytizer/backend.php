@@ -182,7 +182,7 @@ class MySQLDump
 			$structure .= '`' . $record['Field'] . '` ' . $record['Type'];
 			if(!empty($record['Default']))
 			{
-				$structure .= ' DEFAULT \'' . $record['Default'] . '\'';
+				$structure .= ' DEFAULT \"" . $record['Default'] . '\"";
 			}
 			if(@strcmp($record['Null'], 'YES') != 0)
 			{
@@ -267,7 +267,7 @@ class MySQLDump
 				}
 				else
 				{
-					$data .= '\'' . @str_replace('\"', '"', @mysql_escape_string($record[$field_name])) . '\'';
+					$data .= '\"" . @str_replace('\"', '"', @mysql_escape_string($record[$field_name])) . '\"";
 				}
 				$data .= ',';
 			}
@@ -276,7 +276,7 @@ class MySQLDump
 			if(strlen($data) > 1048576)
 			{
 				$this->saveToFile($this->file, $data);
-				$data = '';
+				$data = "";
 			}
 		}
 		$data .= "\n----------------------------------------------------------\n\n";
@@ -412,7 +412,7 @@ class MySQLDump
 				}
 			}
 		}
-		$sqlKeyStatement = '';
+		$sqlKeyStatement = "";
 		// generate primary, unique, key and fulltext
 		if($primary != "")
 		{

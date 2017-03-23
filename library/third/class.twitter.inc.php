@@ -22,7 +22,7 @@ class twitter
 	{
 	}
 	
-	public function tweet($message = '')
+	public function tweet($message = "")
 	{
 		$this->donot_tweet = false;
 		$parameters = array(
@@ -65,7 +65,7 @@ class twitter
 	 *
 	 * @return String
 	 */
-	public function status($message = '')
+	public function status($message = "")
 	{
 		if($this->donot_tweet || !$message)
 		{

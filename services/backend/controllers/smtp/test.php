@@ -9,7 +9,7 @@
  * @link smtp-test.php?code=201204271357108953
  */
 
-$code = $variable->get('code', 'string', '');
+$code = $variable->get('code', 'string', "");
 
 $email_template = new \backend\email_template('201204301504529384'); # Test email template
 $sender = new \backend\sender($code);

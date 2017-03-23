@@ -5,12 +5,12 @@
 $entity = $variable->post('entity', 'array', array()); # User input - Full Details
 
 # Reverse typed name
-$entity_reverse = \common\tools::sanitize($variable->read($entity, 'reverse', 'string', ''));
+$entity_reverse = \common\tools::sanitize($variable->read($entity, 'reverse', 'string', ""));
 
 # Clean ENTITY Name
-#$entity_name = \common\tools::sanitize($variable->read($entity, 'name', 'string', ''));
+#$entity_name = \common\tools::sanitize($variable->read($entity, 'name', 'string', ""));
 # Warning: Do not accept underscores! It might interfere with Smarty variable creation.
-$entity_name = preg_replace('/[^a-z0-9]+/i', '', $variable->read($entity, 'name', 'string', ''));
+$entity_name = preg_replace('/[^a-z0-9]+/i', "", $variable->read($entity, 'name', 'string', ""));
 $subdomain_id = \common\tools::sanitize($variable->read($entity, 'subdomain_id', 'integer', 0));
 
 # Boolean decision: to produce files or not
@@ -20,7 +20,7 @@ $produce_files = ('YES' == $variable->post('produce-files', 'string', 'N'));
 $cruder = new \subdomain\cruder();
 
 # Matched reverse print makes sure that it is a purposeful request.
-if($variable->post('entity-add', 'string', '') && $entity_name == strrev($entity_reverse) && $entity_name != '')
+if($variable->post('entity-add', 'string', "") && $entity_name == strrev($entity_reverse) && $entity_name != "")
 {
 	/**
 	 * Do not allow to write these entities.
@@ -116,7 +116,7 @@ if($variable->post('entity-add', 'string', '') && $entity_name == strrev($entity
 	/**
 	 * Check the existance of a table name first. Do not allow to CRUD on non existing tables.
 	 */
-	$table_name = !empty($_POST['entity']['table_name']) ? $_POST['entity']['table_name'] : '';
+	$table_name = !empty($_POST['entity']['table_name']) ? $_POST['entity']['table_name'] : "";
 	if(!$table_name)
 	{
 		\common\stopper::message('Table name is missing.');

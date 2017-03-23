@@ -8,7 +8,7 @@ function fade(eid)
 
 	if(element.FadeState == null)
 	{
-		if(element.style.opacity == null || element.style.opacity == ''
+		if(element.style.opacity == null || element.style.opacity == ""
 			|| element.style.opacity == '1')
 			element.FadeState = 2;
 		else

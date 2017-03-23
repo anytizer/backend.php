@@ -63,7 +63,7 @@ class xhttp_profile
 	 *
 	 * @author Bimal Poudel
 	 */
-	public function updateStatus($status = '')
+	public function updateStatus($status = "")
 	{
 		$data = array();
 		$data['post'] = array(

@@ -10,7 +10,7 @@
 $smtp = new \subdomain\smtp();
 
 # Assumes, ID always, in the GET parameter
-if(($smtp_id = $variable->get('id', 'integer', 0)) && ($code = $variable->get('code', 'string', '')))
+if(($smtp_id = $variable->get('id', 'integer', 0)) && ($code = $variable->get('code', 'string', "")))
 {
 	if($smtp->delete('inactivate', $smtp_id, $code))
 	{

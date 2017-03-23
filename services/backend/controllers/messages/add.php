@@ -20,7 +20,7 @@ $smarty->assign('status', $status);
 
 $messages = new \subdomain\messages();
 
-if($variable->post('add-action', 'string', ''))
+if($variable->post('add-action', 'string', ""))
 {
 	# Posted Data: Apply security
 	$data = $variable->post('messages', 'array', array());
