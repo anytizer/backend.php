@@ -8,7 +8,7 @@
  */
 function smarty_modifier_encrypt($string = "")
 {
-	$string = base64_encode(htmlentities($string));
+    $string = base64_encode(htmlentities($string));
 
-	return $string;
+    return $string;
 }

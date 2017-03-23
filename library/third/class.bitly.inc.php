@@ -19,53 +19,51 @@ namespace third;
  */
 class bitly
 {
-	private $token;
-	private $bitly_url = 'https://api-ssl.bitly.com/v3/shorten';
+    private $token;
+    private $bitly_url = 'https://api-ssl.bitly.com/v3/shorten';
 
-	/**
-	 * Initiate the class with tokens stored separately
-	 */
-	public function __construct($token = "")
-	{
-		$this->token = $token;
-	}
+    /**
+     * Initiate the class with tokens stored separately
+     */
+    public function __construct($token = "")
+    {
+        $this->token = $token;
+    }
 
-	/**
-	 * Generate a short URL in bit.ly server
-	 *
-	 * @param string $url
-	 *
-	 * @return string URL
-	 */
-	public function shorten($url = "")
-	{
-		$bitly_url = "";
+    /**
+     * Generate a short URL in bit.ly server
+     *
+     * @param string $url
+     *
+     * @return string URL
+     */
+    public function shorten($url = "")
+    {
+        $bitly_url = "";
 
-		$url_encoded = rawurlencode($url);
-		$bitly_request_url = "{$this->bitly_url}?access_token={$this->token}&longUrl={$url_encoded}";
+        $url_encoded = rawurlencode($url);
+        $bitly_request_url = "{$this->bitly_url}?access_token={$this->token}&longUrl={$url_encoded}";
 
-		/**
-		 * @todo Use cURL class rather
-		 */
-		$ch = curl_init();
-		curl_setopt($ch, CURLOPT_URL, $bitly_request_url);
-		curl_setopt($ch, CURLOPT_HEADER, false);
-		curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-		curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
-		$result = curl_exec($ch);
-		curl_close($ch);
+        /**
+         * @todo Use cURL class rather
+         */
+        $ch = curl_init();
+        curl_setopt($ch, CURLOPT_URL, $bitly_request_url);
+        curl_setopt($ch, CURLOPT_HEADER, false);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+        $result = curl_exec($ch);
+        curl_close($ch);
 
-		$json = json_decode($result);
-		if(property_exists($json, 'status_code'))
-		{
-			if($json->status_code == '200')
-			{
-				$bitly_url = $json->data->url;
-			}
-		}
+        $json = json_decode($result);
+        if (property_exists($json, 'status_code')) {
+            if ($json->status_code == '200') {
+                $bitly_url = $json->data->url;
+            }
+        }
 
-		return $bitly_url;
-	}
+        return $bitly_url;
+    }
 }
 
 /*

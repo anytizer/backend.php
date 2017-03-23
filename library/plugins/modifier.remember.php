@@ -8,27 +8,24 @@
  */
 function smarty_modifier_remember($value = "", $key = 'captcha')
 {
-	$key = preg_replace('/[^a-z0-9]/is', "", $key);
+    $key = preg_replace('/[^a-z0-9]/is', "", $key);
 
-	/**
-	 * What to remember?
-	 */
-	if(!$value)
-	{
-		# Optionally renerate it
-		if(isset($_SESSION[$key]))
-		{
-			$value = $_SESSION[$key];
-		}
-	}
+    /**
+     * What to remember?
+     */
+    if (!$value) {
+        # Optionally renerate it
+        if (isset($_SESSION[$key])) {
+            $value = $_SESSION[$key];
+        }
+    }
 
-	/**
-	 * Overwrite the session key
-	 */
-	if($key)
-	{
-		$_SESSION[$key] = $value;
-	}
+    /**
+     * Overwrite the session key
+     */
+    if ($key) {
+        $_SESSION[$key] = $value;
+    }
 
-	return $value;
+    return $value;
 }

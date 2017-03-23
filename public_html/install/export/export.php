@@ -16,7 +16,7 @@ require_once('../inc.config.php');
 die('Is bootstrap loaded for library path?');
 
 # Load the parent configurations
-require_once($backend['paths']['__LIBRARY_PATH__'].'/inc/inc.config.php');
+require_once($backend['paths']['__LIBRARY_PATH__'] . '/inc/inc.config.php');
 
 /**
  * Source/Target username for ROOT level permissions
@@ -28,9 +28,9 @@ require_once($backend['paths']['__LIBRARY_PATH__'].'/inc/inc.config.php');
  * @todo Use a common password
  */
 $target = array(
-	'username' => 'root',
-	'password' => "",
-	'hostname' => '192.168.1.1',
+    'username' => 'root',
+    'password' => "",
+    'hostname' => '192.168.1.1',
 );
 
 \common\headers::plain();
@@ -63,15 +63,13 @@ WHERE
 $subdomain = $db->row($subdomain_sql);
 
 # The subdomain should exist first.
-if(!isset($subdomain['subdomain_id']))
-{
-	\common\stopper::message('Invalid Subdomain ID: ' . $subdomain_id);
+if (!isset($subdomain['subdomain_id'])) {
+    \common\stopper::message('Invalid Subdomain ID: ' . $subdomain_id);
 }
 
 # Privacy control: Do not allow protected subdomains being exported.
-if($subdomain['is_protected'] == 'Y')
-{
-	\common\stopper::message('Subdoimain is protected. Can not export ' . $subdomain['subdomain_name'] . '.');
+if ($subdomain['is_protected'] == 'Y') {
+    \common\stopper::message('Subdoimain is protected. Can not export ' . $subdomain['subdomain_name'] . '.');
 }
 
 # What will be the portion of the file name to save these scripts?
@@ -140,24 +138,21 @@ FLUSH PRIVILEGES;
 ## Now, importing the tables  ##
 ################################";
 
-while($table = $db->row(""))
-{
-	$sqls[] = "";
-	$sqls[] = "## {$table['table_name']} ## {$table['table_comments']}";
-	$sqls[] = "DROP TABLE IF EXISTS `{$database_name}`.`{$table['table_name']}`;";
-	$sqls[] = "CREATE TABLE `{$database_name}`.`{$table['table_name']}` LIKE `{$current_database}`.`{$table['table_name']}`;";
+while ($table = $db->row("")) {
+    $sqls[] = "";
+    $sqls[] = "## {$table['table_name']} ## {$table['table_comments']}";
+    $sqls[] = "DROP TABLE IF EXISTS `{$database_name}`.`{$table['table_name']}`;";
+    $sqls[] = "CREATE TABLE `{$database_name}`.`{$table['table_name']}` LIKE `{$current_database}`.`{$table['table_name']}`;";
 
-	# For all newly created tables, truncate and reset their AUTO_INCREMENT status
-	# It will also re-index a new table, internally.
-	$sqls[] = "TRUNCATE `{$database_name}`.`{$table['table_name']}`;";
+    # For all newly created tables, truncate and reset their AUTO_INCREMENT status
+    # It will also re-index a new table, internally.
+    $sqls[] = "TRUNCATE `{$database_name}`.`{$table['table_name']}`;";
 
-	if($table['export_data'] == 'Y')
-	{
-		$sqls[] = "INSERT INTO `{$database_name}`.`{$table['table_name']}`";
+    if ($table['export_data'] == 'Y') {
+        $sqls[] = "INSERT INTO `{$database_name}`.`{$table['table_name']}`";
 
-		if(empty($table['export_query']))
-		{
-			$sqls[] = "SELECT * FROM `{$current_database}`.`{$table['table_name']}`
+        if (empty($table['export_query'])) {
+            $sqls[] = "SELECT * FROM `{$current_database}`.`{$table['table_name']}`
 WHERE
 	# Specific subdomain
 	subdomain_id={$subdomain_id}
@@ -171,16 +166,12 @@ WHERE
 	# Global entries (they might have been added by mistake)
 	# OR subdomain_id=0
 ;";
-		}
-		else
-		{
-			$sqls[] = "{$table['export_query']}";
-		}
-	}
-	else
-	{
-		# $sqls[] = "# TRUNCATE `{$database_name}`.`{$table['table_name']}`;";
-	}
+        } else {
+            $sqls[] = "{$table['export_query']}";
+        }
+    } else {
+        # $sqls[] = "# TRUNCATE `{$database_name}`.`{$table['table_name']}`;";
+    }
 }
 
 # Do not keep it here. Backup/Export will not succeed.
@@ -203,14 +194,13 @@ WHERE
 ;";
 $subdomain = $db->row($subdomain_name_sql);
 $subdomain['name'] = isset($subdomain['name']) ? $subdomain['name'] : "";
-if($subdomain['name'])
-{
-	$__SUBDOMAIN_BASE__ = $framework->subdomain_base($subdomain['subdomain_id']);
-	$export_sql_script = $__SUBDOMAIN_BASE__ . '/export-scripts.sql';
-	#echo $export_sql_script;
-	@file_put_contents($export_sql_script, $script_contents);
-	@file_put_contents($__SUBDOMAIN_BASE__ . '/export-scripts.bat',
-		"@ECHO OFF
+if ($subdomain['name']) {
+    $__SUBDOMAIN_BASE__ = $framework->subdomain_base($subdomain['subdomain_id']);
+    $export_sql_script = $__SUBDOMAIN_BASE__ . '/export-scripts.sql';
+    #echo $export_sql_script;
+    @file_put_contents($export_sql_script, $script_contents);
+    @file_put_contents($__SUBDOMAIN_BASE__ . '/export-scripts.bat',
+        "@ECHO OFF
 REM Begin to create the exported subdomain database.
 REM It will clone the system database and subdomain service database.
 
@@ -229,5 +219,5 @@ REM mysql -u{$target['username']} -p{$target['password']} -h{$target['hostname']
 PAUSE
 EXIT
 "
-	);
+    );
 }

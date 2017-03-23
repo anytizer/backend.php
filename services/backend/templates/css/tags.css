@@ -2,166 +2,144 @@
 * This css applies to HTML Tags only.
 * Author: Bimal Poudel
 */
-*
-{
-	padding: 0px;
-	margin: 0px;
-	border: none;
-	outline: none;
+* {
+    padding: 0px;
+    margin: 0px;
+    border: none;
+    outline: none;
 }
 
-body
-{
-	background-color: #666666;
-	margin-left: 20px;
-	margin-top: 20px;
-	margin-right: 20px;
-	margin-bottom: 20px;
-	background-image: url(../images/bg.png);
-	background-attachment: fixed;
+body {
+    background-color: #666666;
+    margin-left: 20px;
+    margin-top: 20px;
+    margin-right: 20px;
+    margin-bottom: 20px;
+    background-image: url(../images/bg.png);
+    background-attachment: fixed;
 }
 
-body, td, th
-{
-	font-family: Verdana, Arial, Helvetica, sans-serif;
-	font-size: 12px;
-	color: #000066;
+body, td, th {
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    color: #000066;
 }
 
-td
-{
-	vertical-align: top;
-	/*white-space:nowrap;*/
+td {
+    vertical-align: top;
+    /*white-space:nowrap;*/
 }
 
-th
-{
-	font-weight: bold;
+th {
+    font-weight: bold;
 }
 
-a
-{
-	color: #0099ff;
-	text-decoration: none;
+a {
+    color: #0099ff;
+    text-decoration: none;
 }
 
-h1
-{
-	font-size: 18px;
-	color: #0033ff;
-	font-weight: bold;
+h1 {
+    font-size: 18px;
+    color: #0033ff;
+    font-weight: bold;
 
-	margin-top: 10px;
-	margin-bottom: 25px;
-	padding: 10px;
-	border: 1px solid #ff9966;
-	border-bottom: 4px solid #ff9966;
-	border-left: 3px solid #ff9966;
-	background-color: #ffffcc;
+    margin-top: 10px;
+    margin-bottom: 25px;
+    padding: 10px;
+    border: 1px solid #ff9966;
+    border-bottom: 4px solid #ff9966;
+    border-left: 3px solid #ff9966;
+    background-color: #ffffcc;
 }
 
-h2
-{
-	color: #cc6600;
-	font-size: 16px;
-	font-weight: bold;
+h2 {
+    color: #cc6600;
+    font-size: 16px;
+    font-weight: bold;
 }
 
-h3
-{
-	color: #009900;
-	font-size: 14px;
-	font-weight: bold;
+h3 {
+    color: #009900;
+    font-size: 14px;
+    font-weight: bold;
 
-	padding: 10px;
-	margin-top: 20px;
-	margin-bottom: 10px;
-	background-color: #ffcc99;
+    padding: 10px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    background-color: #ffcc99;
 }
 
-p
-{
-	padding-bottom: 10px;
+p {
+    padding-bottom: 10px;
 }
 
-pre
-{
-	padding: 10px;
-	background-color: #ccffff;
-	border: 1px dashed #000000;
-	margin-bottom: 10px;
+pre {
+    padding: 10px;
+    background-color: #ccffff;
+    border: 1px dashed #000000;
+    margin-bottom: 10px;
 }
 
-input, textarea
-{
-	padding: 2px;
-	background-color: #eeeeee;
-	border: 1px solid #aaaaaa;
-	width: 300px;
+input, textarea {
+    padding: 2px;
+    background-color: #eeeeee;
+    border: 1px solid #aaaaaa;
+    width: 300px;
 }
 
-textarea
-{
-	width: 500px;
-	height: 250px;
-	resize: none;
+textarea {
+    width: 500px;
+    height: 250px;
+    resize: none;
 }
 
-input[type="text"]:hover, input[type="password"]:hover, textarea:hover
-{
-	background-color: #ffff99;
+input[type="text"]:hover, input[type="password"]:hover, textarea:hover {
+    background-color: #ffff99;
 }
 
-input[type="radio"], input.radio, input[type="checkbox"], input.checkbox
-{
-	width: 16px;
-	height: 16px;
+input[type="radio"], input.radio, input[type="checkbox"], input.checkbox {
+    width: 16px;
+    height: 16px;
 }
 
-input.vanish
-{
-	display: none;
-	visibility: hidden;
+input.vanish {
+    display: none;
+    visibility: hidden;
 }
 
-select
-{
-	width: 300px;
-	background-color: #00cc99;
+select {
+    width: 300px;
+    background-color: #00cc99;
 }
 
-input[type="submit"], input[type="reset"]
-{
-	width: auto;
-	background-color: #000000;
-	color: #ffff00;
-	font-weight: bold;
-	padding: 4px;
-	cursor: pointer;
+input[type="submit"], input[type="reset"] {
+    width: auto;
+    background-color: #000000;
+    color: #ffff00;
+    font-weight: bold;
+    padding: 4px;
+    cursor: pointer;
 }
 
-input[type="submit"]:hover
-{
-	background-color: #666666;
+input[type="submit"]:hover {
+    background-color: #666666;
 }
 
 /** f**k IE6 */
-.radio, .checkbox
-{
-	width: 16px;
-	height: 16px;
+.radio, .checkbox {
+    width: 16px;
+    height: 16px;
 }
 
-.submit
-{
-	width: auto;
-	background-color: #000000;
-	color: #ffff00;
-	font-weight: bold;
-	padding: 4px;
+.submit {
+    width: auto;
+    background-color: #000000;
+    color: #ffff00;
+    font-weight: bold;
+    padding: 4px;
 }
 
-label
-{
-	cursor: pointer;
+label {
+    cursor: pointer;
 }

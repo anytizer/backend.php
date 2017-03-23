@@ -8,5 +8,5 @@ namespace interfaces;
  */
 interface whois
 {
-	public function is_registered();
+    public function is_registered();
 }

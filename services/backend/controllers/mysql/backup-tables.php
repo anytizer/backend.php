@@ -21,20 +21,19 @@ $password = 'toor';
 
 $sql = "SHOW FULL TABLES FROM `{$database}` WHERE table_type = 'BASE TABLE';";
 $db->query($sql);
-while($table = $db->row(""))
-{
-	$table = $table["Tables_in_{$database}"];
-	echo "\r\nmysqldump --lock-tables -u{$username} -p{$password} {$database} {$table} > {$table}.dmp";
+while ($table = $db->row("")) {
+    $table = $table["Tables_in_{$database}"];
+    echo "\r\nmysqldump --lock-tables -u{$username} -p{$password} {$database} {$table} > {$table}.dmp";
 
-	# --lock-tables
-	# --routine
-	# --no-data
-	# --complete-insert
-	# --no-create-info
-	# --compact
+    # --lock-tables
+    # --routine
+    # --no-data
+    # --complete-insert
+    # --no-create-info
+    # --compact
 
-	# 1. SQL Sscripts only, with CREATE TABLE ...
-	# 2. Dump the Data only
+    # 1. SQL Sscripts only, with CREATE TABLE ...
+    # 2. Dump the Data only
 }
 
 $scripts = ob_get_flush();

@@ -6,7 +6,7 @@
  */
 function smarty_modifier_urlword($words = "")
 {
-	$safe_word = urlencode(htmlentities($words));
+    $safe_word = urlencode(htmlentities($words));
 
-	return $safe_word;
+    return $safe_word;
 }

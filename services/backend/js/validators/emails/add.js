@@ -9,12 +9,11 @@
 /**
  * Agreement
  */
-function agreement()
-{
-	var success = false;
-	// checked
-	success = true;
+function agreement() {
+    var success = false;
+    // checked
+    success = true;
 
-	return success;
+    return success;
 }
 //v.setAddnlValidationFunction('agreement');

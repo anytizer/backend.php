@@ -15,24 +15,22 @@ $ids = $variable->post('__ENTITY__', 'array', array());
 $ao = new \common\array_operation();
 $ids = $ao->operate('numeric', $ids);
 $ids = array_filter($ids);
-if(!count($ids))
-{
-	$ids = array(0);
+if (!count($ids)) {
+    $ids = array(0);
 }
 
 $__ENTITY__ = new \subdomain\__ENTITY__();
 
-switch($action)
-{
-	case 'delete':
-	case 'disable':
-	case 'enable':
-	case 'prune':
-		$__ENTITY__->blockaction($action, $ids);
-		break;
-	case 'nothing':
-	default:
-		break;
+switch ($action) {
+    case 'delete':
+    case 'disable':
+    case 'enable':
+    case 'prune':
+        $__ENTITY__->blockaction($action, $ids);
+        break;
+    case 'nothing':
+    default:
+        break;
 }
 
 /**

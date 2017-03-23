@@ -27,25 +27,24 @@ $dbinfo['dbindex'] = $_SERVER['SERVER_NAME'];
  * For each possible servers, define the connection parameters.
  * It increases the portability of the system across various servers.
  */
-switch($dbinfo['dbindex'])
-{
-	case '__SUBDOMAIN_NAME__':
-	case 'localhost':
-	default:
-		$dbinfo[$dbinfo['dbindex']]['host'] = 'MYSQLHOSTNAME';
-		$dbinfo[$dbinfo['dbindex']]['dbuser'] = 'MYSQLUSERNAME';
-		$dbinfo[$dbinfo['dbindex']]['dbpassword'] = 'MYSQLPASSWORD';
-		$dbinfo[$dbinfo['dbindex']]['database'] = 'MYSQLDATABASE';
-		# CREATE DATABASE `MYSQLDATABASE` CHARACTER SET utf8 COLLATE utf8_general_ci;
-		# GRANT ALL ON `MYSQLDATABASE`.* TO 'MYSQLUSERNAME'@'MYSQLHOSTNAME' IDENTIFIED BY 'MYSQLPASSWORD';
-		break;
+switch ($dbinfo['dbindex']) {
+    case '__SUBDOMAIN_NAME__':
+    case 'localhost':
+    default:
+        $dbinfo[$dbinfo['dbindex']]['host'] = 'MYSQLHOSTNAME';
+        $dbinfo[$dbinfo['dbindex']]['dbuser'] = 'MYSQLUSERNAME';
+        $dbinfo[$dbinfo['dbindex']]['dbpassword'] = 'MYSQLPASSWORD';
+        $dbinfo[$dbinfo['dbindex']]['database'] = 'MYSQLDATABASE';
+        # CREATE DATABASE `MYSQLDATABASE` CHARACTER SET utf8 COLLATE utf8_general_ci;
+        # GRANT ALL ON `MYSQLDATABASE`.* TO 'MYSQLUSERNAME'@'MYSQLHOSTNAME' IDENTIFIED BY 'MYSQLPASSWORD';
+        break;
 }
 
 $MYSQL_CONNECTION = mysqli_connect(
-	$dbinfo[$dbinfo['dbindex']]['host'],
-	$dbinfo[$dbinfo['dbindex']]['dbuser'],
-	$dbinfo[$dbinfo['dbindex']]['dbpassword'],
-	$dbinfo[$dbinfo['dbindex']]['database']
+    $dbinfo[$dbinfo['dbindex']]['host'],
+    $dbinfo[$dbinfo['dbindex']]['dbuser'],
+    $dbinfo[$dbinfo['dbindex']]['dbpassword'],
+    $dbinfo[$dbinfo['dbindex']]['database']
 ) or \common\stopper::message("Cannot connect to the database <strong>{$dbinfo[$dbinfo['dbindex']]['database']}</strong> on {$dbinfo[$dbinfo['dbindex']]['host']}.");
 
 /**

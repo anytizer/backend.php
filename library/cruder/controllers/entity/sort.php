@@ -13,10 +13,9 @@ $code = $variable->get('code', 'string', ""); # For future references
 
 $__ENTITY__ = new \subdomain\__ENTITY__();
 $data = $__ENTITY__->details($__PK_NAME__, $code);
-if(!$data)
-{
-	$messenger = new \common\messenger('error', 'No such data to sort.');
-	\common\headers::back('__ENTITY__-list.php');
+if (!$data) {
+    $messenger = new \common\messenger('error', 'No such data to sort.');
+    \common\headers::back('__ENTITY__-list.php');
 }
 
 # Find out the direction to sort. Go upwards or downloads in the list.

@@ -2,63 +2,54 @@
  * Messenger CSS produced for __SUBDOMAIN_NAME__, as of __TIMESTAMP__
  */
 
-#messenger
-{
-	/** for all kinds of relayed messages */
-	padding: 20px;
+#messenger {
+  /** for all kinds of relayed messages */
+  padding: 20px;
 }
 
-#messenger
-{
-	div
-	{
-		padding-left: 40px;
-		background-image: url(../images/messages-sprites.png);
-		background-repeat: no-repeat;
-		height: 25px;
-		padding-top: 10px;
-		margin-bottom: 5px;
-	}
+#messenger {
+  div {
+    padding-left: 40px;
+    background-image: url(../images/messages-sprites.png);
+    background-repeat: no-repeat;
+    height: 25px;
+    padding-top: 10px;
+    margin-bottom: 5px;
+  }
 
-	.error
-	{
-		background-color: #fbe3e3;
-		border: 1px solid #e1d3d3;
-		background-position: 10px 8px;
-	}
+  .error {
+    background-color: #fbe3e3;
+    border: 1px solid #e1d3d3;
+    background-position: 10px 8px;
+  }
 
-	.success
-	{
-		background-color: #e6efc2;
-		border: 1px solid #ccd4a1;
-		background-position: 10px -32px
-	}
+  .success {
+    background-color: #e6efc2;
+    border: 1px solid #ccd4a1;
+    background-position: 10px -32px
+  }
 
-	.warning
-	{
-		background-color: #fff6bf;
-		border: 1px solid #e0d698;
-		background-position: 10px -74px;
-	}
+  .warning {
+    background-color: #fff6bf;
+    border: 1px solid #e0d698;
+    background-position: 10px -74px;
+  }
 
-	.caution
-	{
-		background-color: #ffffcc;
-		border: 1px solid #ffcc33;
-		background-position: 10px 5px;
-	}
+  .caution {
+    background-color: #ffffcc;
+    border: 1px solid #ffcc33;
+    background-position: 10px 5px;
+  }
 
-	.notice
-	{
-		background-color: #e3f7fb;
-		border: 1px solid #a3d9e3;
-		background-position: 10px -153px;
-	}
+  .notice {
+    background-color: #e3f7fb;
+    border: 1px solid #a3d9e3;
+    background-position: 10px -153px;
+  }
 
-	.info
-	{
-		background-color: #66ccff;
-		border: 1px solid #0099ff;
-		background-position: 0 5px;
-	}
+  .info {
+    background-color: #66ccff;
+    border: 1px solid #0099ff;
+    background-position: 0 5px;
+  }
 }

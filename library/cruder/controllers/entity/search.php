@@ -26,10 +26,10 @@ $smarty->assign('search___ENTITY__', $search___ENTITY__);
 $condition = new \others\condition();
 
 $condition->add('FULL', array(
-	"e.subdomain_id={$subdomain_id}", # Bind the records with this subdomain only
-	"e.is_active='Y'", # Do not remove this
+    "e.subdomain_id={$subdomain_id}", # Bind the records with this subdomain only
+    "e.is_active='Y'", # Do not remove this
 
-	$search___ENTITY__ ? "(
+    $search___ENTITY__ ? "(
 		   e.__SEARCHFIELDS__ LIKE '%{$search___ENTITY__}%'
 	)" : "",
 ));
@@ -40,9 +40,9 @@ $condition->add('AND', array( #'e.search_field' => 'Y', # Partial %contents%
 
 # List out the entries
 $entries = $__ENTITY__->list_entries(
-	$condition,
-	$from_index = $pagination->beginning_entry(),
-	$pagination->per_page()
+    $condition,
+    $from_index = $pagination->beginning_entry(),
+    $pagination->per_page()
 );
 
 # Pagination helper

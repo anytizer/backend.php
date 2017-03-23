@@ -1,1004 +1,845 @@
 /**
  * CSS produced for __SUBDOMAIN_NAME__, as of __TIMESTAMP__
  */
-
 @import "_colors";
 @import "_reset";
 
-body
-{
-	background-color: #eee7dd;
+body {
+  background-color: #eee7dd;
 }
 
-h1
-{
-	font-size: 18px;
-	font-weight: bold;
-	padding: $padding;
-	padding-bottom: 5px;
-	color: #333333;
+h1 {
+  font-size: 18px;
+  font-weight: bold;
+  padding: $padding;
+  padding-bottom: 5px;
+  color: #333333;
 }
 
-h2
-{
-	font-size: 18px;
-	font-weight: normal;
-	padding: $padding;
-	color: #6699cc;
+h2 {
+  font-size: 18px;
+  font-weight: normal;
+  padding: $padding;
+  color: #6699cc;
 }
 
-h3
-{
-	font-size: 14px;
-	font-weight: bold;
-	padding: $padding;
+h3 {
+  font-size: 14px;
+  font-weight: bold;
+  padding: $padding;
 }
 
-a
-{
-	color: #0000ff;
-	text-decoration: none;
+a {
+  color: #0000ff;
+  text-decoration: none;
 }
 
-a:hover
-{
-	color: #660099;
-	text-decoration: underline;
+a:hover {
+  color: #660099;
+  text-decoration: underline;
 }
 
-a.delete:hover
-{
-	text-decoration: none;
-	border: none;
+a.delete:hover {
+  text-decoration: none;
+  border: none;
 }
 
-form
-{
+form {
 }
 
-table
-{
-	border-collapse: collapse;
-	width: 100%;
+table {
+  border-collapse: collapse;
+  width: 100%;
 }
 
-tr.A
-{
-	background-color: #f3f3f3;
+tr.A {
+  background-color: #f3f3f3;
 }
 
-tr.B
-{
-	background-color: #e5e5e5;
+tr.B {
+  background-color: #e5e5e5;
 }
 
-.data-editor
-{
-	padding: $padding 0px;
+.data-editor {
+  padding: $padding 0px;
 }
 
-.data-editor tr
-{
-	background: #f3f3f3;
+.data-editor tr {
+  background: #f3f3f3;
 }
 
-th.checkboxes, td.checkboxes
-{
-	display: none; /** Use it conditionally. */
+th.checkboxes, td.checkboxes {
+  display: none; /** Use it conditionally. */
 }
 
-th
-{
-	height: 22px;
-	vertical-align: middle;
-	background-color: #ffffff;
-	color: #1f476f;
-	font-weight: bold;
-	padding: 5px 4px;
-	font-size: 11px;
+th {
+  height: 22px;
+  vertical-align: middle;
+  background-color: #ffffff;
+  color: #1f476f;
+  font-weight: bold;
+  padding: 5px 4px;
+  font-size: 11px;
 }
 
-th a
-{
-	color: #000000;
-	text-decoration: none;
+th a {
+  color: #000000;
+  text-decoration: none;
 }
 
-th.th-sn
-{
-	width: 26px;
+th.th-sn {
+  width: 26px;
 }
 
-th.th-delete
-{
-	width: 30px;
+th.th-delete {
+  width: 30px;
 }
 
-th.th-actions
-{
-	width: 80px;
+th.th-actions {
+  width: 80px;
 }
 
-th.th-checkall
-{
-	width: 25px;
+th.th-checkall {
+  width: 25px;
 }
 
-thead tr th
-{
-	text-align: left;
-	white-space: nowrap;
-	background-color: #cccccc;
-	color: #000000;
-	font-weight: bold;
-	cursor: pointer;
+thead tr th {
+  text-align: left;
+  white-space: nowrap;
+  background-color: #cccccc;
+  color: #000000;
+  font-weight: bold;
+  cursor: pointer;
 }
 
-th a, th a:hover, th a:visited, th a:link
-{
-	color: #000000;
-	text-decoration: none;
+th a, th a:hover, th a:visited, th a:link {
+  color: #000000;
+  text-decoration: none;
 }
 
-td
-{
-	padding: 4px;
-	vertical-align: top;
+td {
+  padding: 4px;
+  vertical-align: top;
 }
 
-.data td
-{
-	border-right: 1px solid #cccccc;
-	font-size: 11px;
+.data td {
+  border-right: 1px solid #cccccc;
+  font-size: 11px;
 }
 
-.data td a
-{
-	text-decoration: underline;
-	color: #333333;
+.data td a {
+  text-decoration: underline;
+  color: #333333;
 }
 
-.data td a:hover
-{
-	color: #ff4e18
+.data td a:hover {
+  color: #ff4e18
 }
 
-td.attribute
-{
-	text-align: left;
-	padding-right: 10px;
-	padding-left: 10px;
-	width: 140px;
+td.attribute {
+  text-align: left;
+  padding-right: 10px;
+  padding-left: 10px;
+  width: 140px;
 }
 
-td.r
-{
-	text-align: right;
+td.r {
+  text-align: right;
 }
 
 /*td:hover { background-color:#00FF99; }*/
 /*table.data tr:hover { background-color:#FFCC99; }*/
-table.data caption
-{
-	color: #333333;
-	margin: 5px;
-	font-weight: normal;
-	font-size: 18px;
-	text-align: left;
+table.data caption {
+  color: #333333;
+  margin: 5px;
+  font-weight: normal;
+  font-size: 18px;
+  text-align: left;
 }
 
-table.data
-{
-	border: 1px solid #dbdbdb;
+table.data {
+  border: 1px solid #dbdbdb;
 }
 
-td.nowrap
-{
-	white-space: nowrap;
+td.nowrap {
+  white-space: nowrap;
 }
 
 /** for data editors only */
-table.edit
-{
-	background-color: #00ffcc;
+table.edit {
+  background-color: #00ffcc;
 }
 
 /** special, meta fields markers */
-tr.meta, tr.meta td
-{
-	background-color: #ffcccc;
+tr.meta, tr.meta td {
+  background-color: #ffcccc;
 }
 
-table.edit a
-{
-	color: #0000ff;
+table.edit a {
+  color: #0000ff;
 }
 
-.nodata
-{
-	padding: 40px;
-	color: #ff0000;
-	font-weight: bold;
-	font-size: 18px;
-	margin-top: 50px;
-	border-top: 1px solid #ff0000;
+.nodata {
+  padding: 40px;
+  color: #ff0000;
+  font-weight: bold;
+  font-size: 18px;
+  margin-top: 50px;
+  border-top: 1px solid #ff0000;
 }
 
 /** end of data editors */
 
-input, select, textarea
-{
-	background-color: #ffffff;
-	border: 1px solid #cecece;
+input, select, textarea {
+  background-color: #ffffff;
+  border: 1px solid #cecece;
 }
 
-input[type="text"], input[type="password"], option
-{
-	padding: 3px 5px 3px 5px;
-	vertical-align: middle;
+input[type="text"], input[type="password"], option {
+  padding: 3px 5px 3px 5px;
+  vertical-align: middle;
 }
 
-input[type="text"], input[type="password"]
-{
-	width: 350px;
-	height: 16px;
+input[type="text"], input[type="password"] {
+  width: 350px;
+  height: 16px;
 }
 
-input[disabled="disabled"]
-{
-	background-color: #999999;
-	color: #cccccc;
-	border: 1px solid #666666;
-	text-decoration: line-through;
+input[disabled="disabled"] {
+  background-color: #999999;
+  color: #cccccc;
+  border: 1px solid #666666;
+  text-decoration: line-through;
 }
 
-input[readonly="readonly"]
-{
-	background-color: #666666;
-	color: #ffffff;
-	border: 1px solid #000000;
+input[readonly="readonly"] {
+  background-color: #666666;
+  color: #ffffff;
+  border: 1px solid #000000;
 }
 
-textarea
-{
-	width: 350px;
-	height: 150px;
-	padding: 3px 5px;
-	resize: none;
+textarea {
+  width: 350px;
+  height: 150px;
+  padding: 3px 5px;
+  resize: none;
 }
 
-select
-{
-	width: 265px;
-	height: 22px;
+select {
+  width: 265px;
+  height: 22px;
 }
 
-input[type="submit"]
-{
-	color: #ffffff;
-	font-weight: normal;
-	text-align: center;
-	padding: 2px 5px 2px 5px;
-	background-color: #5c87af;
-	border: 1px solid #436789;
-	cursor: pointer;
+input[type="submit"] {
+  color: #ffffff;
+  font-weight: normal;
+  text-align: center;
+  padding: 2px 5px 2px 5px;
+  background-color: #5c87af;
+  border: 1px solid #436789;
+  cursor: pointer;
 }
 
-input.vanish
-{
-	display: none;
-	visibility: hidden;
+input.vanish {
+  display: none;
+  visibility: hidden;
 }
 
-a.button-cancel
-{
-	color: #333333;
+a.button-cancel {
+  color: #333333;
 }
 
 /** IE Patch for input area and submit buttons */
-.input
-{
-	width: 350px;
-	height: 20px;
+.input {
+  width: 350px;
+  height: 20px;
 }
 
-.submit
-{
-	/*height:25px;*/
-	color: #ffff00;
-	font-weight: normal;
-	text-align: center;
-	padding: 2px 5px 2px 5px;
-	background-color: #035f03;
-	border: 1px solid #000000;
+.submit {
+  /*height:25px;*/
+  color: #ffff00;
+  font-weight: normal;
+  text-align: center;
+  padding: 2px 5px 2px 5px;
+  background-color: #035f03;
+  border: 1px solid #000000;
 }
 
 /** End of IE Patch */
 
-.clear
-{
-	clear: both;
+.clear {
+  clear: both;
 }
 
-.content-box
-{
-	margin-bottom: 15px;
-	background: none repeat scroll 0px 0px #ebebeb;
+.content-box {
+  margin-bottom: 15px;
+  background: none repeat scroll 0px 0px #ebebeb;
 }
 
-.content-box table, .content-box form
-{
+.content-box table, .content-box form {
 }
 
-.form-wrap
-{
-	clear: both;
-	height: auto;
+.form-wrap {
+  clear: both;
+  height: auto;
 }
 
-.form-wrap form
-{
+.form-wrap form {
 }
 
-.content-title
-{
-	background: none repeat scroll 0px 0px #f3f3f3;
-	border-bottom: 1px solid #d9d9d9;
+.content-title {
+  background: none repeat scroll 0px 0px #f3f3f3;
+  border-bottom: 1px solid #d9d9d9;
 }
 
-.wrapper
-{
-	width: 100%;
-	margin: 0px auto;
+.wrapper {
+  width: 100%;
+  margin: 0px auto;
 }
 
 /** header */
-.header-wrapper
-{
-	background: url("../images/background-top.png") repeat-x left top;
+.header-wrapper {
+  background: url("../images/background-top.png") repeat-x left top;
 }
 
-.header
-{
-	width: 1000px;
-	margin: 0px auto;
-	position: relative;
-	background-image: url("../images/logo.png");
-	background-repeat: no-repeat;
-	background-position: 0px 20px;
+.header {
+  width: 1000px;
+  margin: 0px auto;
+  position: relative;
+  background-image: url("../images/logo.png");
+  background-repeat: no-repeat;
+  background-position: 0px 20px;
 }
 
-.header-title
-{
-	text-transform: uppercase;
-	padding: $padding 20px;
-	font-weight: normal;
-	float: left;
-	text-indent: -999em;
-	width: 263px;
-	height: 73px;
+.header-title {
+  text-transform: uppercase;
+  padding: $padding 20px;
+  font-weight: normal;
+  float: left;
+  text-indent: -999em;
+  width: 263px;
+  height: 73px;
 }
 
-.header-title a, .header-title a:hover
-{
-	text-decoration: none;
+.header-title a, .header-title a:hover {
+  text-decoration: none;
 }
 
-.menus-top
-{
-	float: right;
-	position: absolute;
-	right: 0px;
-	bottom: $padding;
+.menus-top {
+  float: right;
+  position: absolute;
+  right: 0px;
+  bottom: $padding;
 }
 
-.menus-top p a
-{
-	color: #333333;
-	font-size: 10px;
-	padding: 0px $padding 0px 20px;
-	background: url("../images/sprites-small.png") no-repeat left top;
+.menus-top p a {
+  color: #333333;
+  font-size: 10px;
+  padding: 0px $padding 0px 20px;
+  background: url("../images/sprites-small.png") no-repeat left top;
 }
 
-.menus-top p a.item1
-{
-	background-position: 0px -357px;
+.menus-top p a.item1 {
+  background-position: 0px -357px;
 }
 
-.menus-top p a.item2
-{
-	background-position: 0px -380px;
+.menus-top p a.item2 {
+  background-position: 0px -380px;
 }
 
-.menus-top p a.item3
-{
-	background-position: 0px -338px;
+.menus-top p a.item3 {
+  background-position: 0px -338px;
 }
 
-.menus-top p a.last
-{
+.menus-top p a.last {
 }
 
-.nav-container
-{
-	background: url("../images/background-navigator.png") repeat-x left top;
+.nav-container {
+  background: url("../images/background-navigator.png") repeat-x left top;
 }
 
-.navigator-main
-{
-	width: 1000px;
-	margin: 0px auto;
-	background-color: $menu-background;
+.navigator-main {
+  width: 1000px;
+  margin: 0px auto;
+  background-color: $menu-background;
 }
 
 /** main content */
-.content-wrapper
-{
-	background: url("../images/background-content.png") repeat-y center top;
+.content-wrapper {
+  background: url("../images/background-content.png") repeat-y center top;
 }
 
-.content-panel
-{
-	width: 990px;
-	padding: 5px 0px 5px 0px;
-	margin: 0px auto 0px auto;
+.content-panel {
+  width: 990px;
+  padding: 5px 0px 5px 0px;
+  margin: 0px auto 0px auto;
 }
 
-.contents
-{
-	/* min-height:370px; */
-	width: 990px;
-	overflow: hidden;
+.contents {
+  /* min-height:370px; */
+  width: 990px;
+  overflow: hidden;
 }
 
-.contents p
-{
-	line-height: 12px;
-	padding: $padding 5px $padding 5px;
+.contents p {
+  line-height: 12px;
+  padding: $padding 5px $padding 5px;
 }
 
-.system-message
-{
-	color: #cccccc;
-	background-color: #6f6f6f;
-	border: 1px solid #4d4d4d;
-	padding: 10px;
-	margin-bottom: 10px;
-	margin-top: 10px;
+.system-message {
+  color: #cccccc;
+  background-color: #6f6f6f;
+  border: 1px solid #4d4d4d;
+  padding: 10px;
+  margin-bottom: 10px;
+  margin-top: 10px;
 }
 
-.system-message p
-{
+.system-message p {
 }
 
-.system-message a
-{
-	color: #00ff00;
+.system-message a {
+  color: #00ff00;
 }
 
-.additional
-{
-	/** included files */
+.additional {
+  /** included files */
 }
 
 /** end of contents */
 
 /** footer */
-.footer
-{
-	padding: 10px;
-	line-height: 20px;
-	text-align: center;
-	background-color: #000000;
-	color: #cccccc;
-	width: 982px;
-	margin: 0px auto;
+.footer {
+  padding: 10px;
+  line-height: 20px;
+  text-align: center;
+  background-color: #000000;
+  color: #cccccc;
+  width: 982px;
+  margin: 0px auto;
 }
 
-.footer a
-{
-	color: #51d4ff;
+.footer a {
+  color: #51d4ff;
 }
 
 /** end of footer */
 
 /** administrative menus */
-.information
-{
-	padding: 5px;
-	margin: 10px 0px 0px 0px;
-	text-align: right;
-	font-size: 16px;
-	font-weight: bold;
-	min-height: 41px;
-	height: auto !important;
-	height: 41px;
+.information {
+  padding: 5px;
+  margin: 10px 0px 0px 0px;
+  text-align: right;
+  font-size: 16px;
+  font-weight: bold;
+  min-height: 41px;
+  height: auto !important;
+  height: 41px;
 }
 
-.information a
-{
-	color: #003366;
+.information a {
+  color: #003366;
 }
 
-.information a:hover
-{
-	border: none;
+.information a:hover {
+  border: none;
 }
 
-.information ul
-{
-	list-style: none;
-	height: 23px;
+.information ul {
+  list-style: none;
+  height: 23px;
 }
 
-.information ul li
-{
-	/** reverse list your menus */
-	float: right;
-	margin-left: 10px;
+.information ul li {
+  /** reverse list your menus */
+  float: right;
+  margin-left: 10px;
 }
 
-ul.links li.add
-{
-	padding-left: 20px;
+ul.links li.add {
+  padding-left: 20px;
 }
 
-.warning-list
-{
-	padding: 10px;
-	margin-top: 5px;
-	background-color: #ffff66;
-	border: 1px solid #ff9900; /** we do not need to show this anymore */
-	display: none;
-	visibility: hidden;
+.warning-list {
+  padding: 10px;
+  margin-top: 5px;
+  background-color: #ffff66;
+  border: 1px solid #ff9900; /** we do not need to show this anymore */
+  display: none;
+  visibility: hidden;
 }
 
-.warning p
-{
-	line-height: 18px;
+.warning p {
+  line-height: 18px;
 }
 
 /** end of administrative menus */
 
 /** pagination: holder, ul/li, a, span, current, ... */
-.paginator
-{
-	margin: 10px 0px;
-	overflow: hidden;
-	height: 30px;
+.paginator {
+  margin: 10px 0px;
+  overflow: hidden;
+  height: 30px;
 }
 
-ul.pagination
-{
-	height: 100%;
-	overflow: hidden;
-	font: 12px "Tahoma";
-	list-style-type: none;
+ul.pagination {
+  height: 100%;
+  overflow: hidden;
+  font: 12px "Tahoma";
+  list-style-type: none;
 }
 
-ul.pagination li
-{
-	float: left;
-	margin-left: 5px;
+ul.pagination li {
+  float: left;
+  margin-left: 5px;
 }
 
-ul.pagination li:first-child
-{
-	margin-left: 0px;
+ul.pagination li:first-child {
+  margin-left: 0px;
 }
 
-ul.pagination li a
-{
-	color: black;
-	display: block;
-	text-decoration: none;
-	padding: 7px 10px 7px 10px;
+ul.pagination li a {
+  color: black;
+  display: block;
+  text-decoration: none;
+  padding: 7px 10px 7px 10px;
 }
 
-ul.pagination li a img
-{
-	border: none;
+ul.pagination li a img {
+  border: none;
 }
 
-ul.paginationB li a
-{
-	border: solid 1px;
-	padding: 6px 9px 6px 9px;
+ul.paginationB li a {
+  border: solid 1px;
+  padding: 6px 9px 6px 9px;
 }
 
-ul.paginationB li
-{
-	padding-bottom: 1px;
+ul.paginationB li {
+  padding-bottom: 1px;
 }
 
-ul.paginationB li a:hover, ul.paginationB li a.current
-{
-	color: #ffffff;
+ul.paginationB li a:hover, ul.paginationB li a.current {
+  color: #ffffff;
 }
 
-.paginator .current
-{
-	background-color: #ffff99;
-	padding-left: 3px;
-	padding-right: 3px;
+.paginator .current {
+  background-color: #ffff99;
+  padding-left: 3px;
+  padding-right: 3px;
 }
 
 /*****************************************************************/
 
-ul.paginationB10 li a
-{
-	color: #444444;
-	border-color: #bebebe;
-	background: #fafafa;
+ul.paginationB10 li a {
+  color: #444444;
+  border-color: #bebebe;
+  background: #fafafa;
 }
 
-ul.paginationB10 li a:hover, ul.paginationB10 li a.current
-{
-	border-color: #202020;
-	background-color: #525252;
+ul.paginationB10 li a:hover, ul.paginationB10 li a.current {
+  border-color: #202020;
+  background-color: #525252;
 }
 
 /** end of pagination */
 
 /** for entity details */
-.details
-{
-	overflow: hidden;
-	background: #ffffff;
-	border: 1px solid #cccccc;
-	clear: both;
+.details {
+  overflow: hidden;
+  background: #ffffff;
+  border: 1px solid #cccccc;
+  clear: both;
 }
 
-.details div
-{
-	padding: 5px;
-	font-size: 12px;
+.details div {
+  padding: 5px;
+  font-size: 12px;
 }
 
-.details div strong
-{
-	color: #0080c2;
+.details div strong {
+  color: #0080c2;
 }
 
-.details .holder
-{
-	clear: both;
+.details .holder {
+  clear: both;
 }
 
-.details .holder .title
-{
-	float: left;
-	width: 160px;
-	text-align: right;
-	font-weight: bold;
-	padding-right: 10px;
+.details .holder .title {
+  float: left;
+  width: 160px;
+  text-align: right;
+  font-weight: bold;
+  padding-right: 10px;
 }
 
-.details .holder .content
-{
-	float: left;
-	text-align: left;
-	width: 790px;
+.details .holder .content {
+  float: left;
+  text-align: left;
+  width: 790px;
 }
 
-.details .holder .content p
-{
-	padding: 0px 0px 10px 0px;
-	line-height: 18px;
+.details .holder .content p {
+  padding: 0px 0px 10px 0px;
+  line-height: 18px;
 }
 
 /** end of entity details */
 
-span.required
-{
-	color: #ff0000;
+span.required {
+  color: #ff0000;
 }
 
 /* navigate thumb */
-.navigate-thumb
-{
-	clear: both;
+.navigate-thumb {
+  clear: both;
 }
 
-.navigate-thumb h2
-{
-	background: #f3f3f3;
-	border-bottom: 1px solid #d9d9d9;
+.navigate-thumb h2 {
+  background: #f3f3f3;
+  border-bottom: 1px solid #d9d9d9;
 }
 
-.navigate-thumb
-{
-	background: #ebebeb;
-	padding: 20px;
+.navigate-thumb {
+  background: #ebebeb;
+  padding: 20px;
 }
 
-.tab-wrap
-{
-	clear: both;
+.tab-wrap {
+  clear: both;
 }
 
-.tab-wrap ul
-{
-	list-style: none;
-	margin: 10px 0px;
-	float: right;
+.tab-wrap ul {
+  list-style: none;
+  margin: 10px 0px;
+  float: right;
 }
 
-.tab-wrap ul li
-{
-	float: left;
-	margin-right: 1px;
+.tab-wrap ul li {
+  float: left;
+  margin-right: 1px;
 }
 
-.tab-wrap ul li a
-{
-	display: block;
-	background: #cfcfcf;
-	color: #ffffff;
-	font-size: 12px;
-	padding: 4px 10px;
-	color: #666666;
+.tab-wrap ul li a {
+  display: block;
+  background: #cfcfcf;
+  color: #ffffff;
+  font-size: 12px;
+  padding: 4px 10px;
+  color: #666666;
 }
 
-.tab-wrap ul li a:hover, .tab-wrap ul li.active a
-{
-	text-decoration: none;
-	background: #a6a6a6;
-	color: #ffffff;
+.tab-wrap ul li a:hover, .tab-wrap ul li.active a {
+  text-decoration: none;
+  background: #a6a6a6;
+  color: #ffffff;
 }
 
-.thumb-holder
-{
-	clear: both;
-	padding: 0px 20px 5px 20px;
+.thumb-holder {
+  clear: both;
+  padding: 0px 20px 5px 20px;
 }
 
-.thumb-holder ul
-{
-	list-style: none;
-	margin-left: -15px;
+.thumb-holder ul {
+  list-style: none;
+  margin-left: -15px;
 }
 
-.thumb-holder ul li
-{
-	float: left;
-	margin: 0px 0px 10px 15px;
-	padding: 4px;
-	border: 1px solid #cccccc;
-	text-align: center;
+.thumb-holder ul li {
+  float: left;
+  margin: 0px 0px 10px 15px;
+  padding: 4px;
+  border: 1px solid #cccccc;
+  text-align: center;
 }
 
-.thumb-holder ul li:hover
-{
-	background-color: #ffffff;
+.thumb-holder ul li:hover {
+  background-color: #ffffff;
 }
 
-.thumb-holder ul li a
-{
-	position: relative;
-	display: block;
-	width: 95px;
-	height: 93px;
-	background: #f8f8f8 url("../images/sprites.png") no-repeat left top;
+.thumb-holder ul li a {
+  position: relative;
+  display: block;
+  width: 95px;
+  height: 93px;
+  background: #f8f8f8 url("../images/sprites.png") no-repeat left top;
 }
 
-.thumb-holder ul li a span
-{
-	width: 95px;
-	font-size: 11px;
-	display: block;
-	color: #2e738c;
-	left: 0px;
-	top: 61px;
-	position: absolute;
-	line-height: 12px;
+.thumb-holder ul li a span {
+  width: 95px;
+  font-size: 11px;
+  display: block;
+  color: #2e738c;
+  left: 0px;
+  top: 61px;
+  position: absolute;
+  line-height: 12px;
 }
 
-.thumb-holder ul li.item1 a
-{
-	background-position: 0px 0px;
+.thumb-holder ul li.item1 a {
+  background-position: 0px 0px;
 }
 
-.thumb-holder ul li.item1 a span
-{
+.thumb-holder ul li.item1 a span {
 }
 
-.thumb-holder ul li.item2 a
-{
-	background-position: -95px 0px;
+.thumb-holder ul li.item2 a {
+  background-position: -95px 0px;
 }
 
-.thumb-holder ul li.item2 a span
-{
+.thumb-holder ul li.item2 a span {
 }
 
-.thumb-holder ul li.item3 a
-{
-	background-position: -190px 0px;
+.thumb-holder ul li.item3 a {
+  background-position: -190px 0px;
 }
 
-.thumb-holder ul li.item3 a span
-{
+.thumb-holder ul li.item3 a span {
 }
 
-.thumb-holder ul li.item4 a
-{
-	background-position: -285px 0px;
+.thumb-holder ul li.item4 a {
+  background-position: -285px 0px;
 }
 
-.thumb-holder ul li.item4 a span
-{
+.thumb-holder ul li.item4 a span {
 }
 
-.thumb-holder ul li.item5 a
-{
-	background-position: -380px 0px;
+.thumb-holder ul li.item5 a {
+  background-position: -380px 0px;
 }
 
-.thumb-holder ul li.item5 a span
-{
+.thumb-holder ul li.item5 a span {
 }
 
-.thumb-holder ul li.item6 a
-{
-	background-position: -475px 0px;
+.thumb-holder ul li.item6 a {
+  background-position: -475px 0px;
 }
 
-.thumb-holder ul li.item6 a span
-{
+.thumb-holder ul li.item6 a span {
 }
 
-.thumb-holder ul li.item7 a
-{
-	background-position: -570px 0px;
+.thumb-holder ul li.item7 a {
+  background-position: -570px 0px;
 }
 
-.thumb-holder ul li.item7 a span
-{
+.thumb-holder ul li.item7 a span {
 }
 
-.thumb-holder ul li.item8 a
-{
-	background-position: -665px 0px;
+.thumb-holder ul li.item8 a {
+  background-position: -665px 0px;
 }
 
-.thumb-holder ul li.item8 a span
-{
+.thumb-holder ul li.item8 a span {
 }
 
-.thumb-holder ul li.item9 a
-{
-	background-position: -190px 0px;
+.thumb-holder ul li.item9 a {
+  background-position: -190px 0px;
 }
 
-.thumb-holder ul li.item9 a span
-{
+.thumb-holder ul li.item9 a span {
 }
 
 /* small icons */
-th.actions, td.actions
-{
+th.actions, td.actions {
 }
 
-.actions ul
-{
-	list-style: none;
+.actions ul {
+  list-style: none;
 }
 
-.actions li
-{
-	float: left;
+.actions li {
+  float: left;
 }
 
-.actions li a
-{
-	display: block;
-	text-indent: -999em;
-	background: url("../images/sprites-small.png") no-repeat left top;
-	height: 16px;
-	width: 16px;
+.actions li a {
+  display: block;
+  text-indent: -999em;
+  background: url("../images/sprites-small.png") no-repeat left top;
+  height: 16px;
+  width: 16px;
 }
 
-li.add a
-{
-	background-position: 0px 0px;
+li.add a {
+  background-position: 0px 0px;
 }
 
-li.detail a
-{
-	background-position: 0px -18px;
+li.detail a {
+  background-position: 0px -18px;
 }
 
-li.edit a, .btm-action li.edit a
-{
-	background-position: 0px -202px;
+li.edit a, .btm-action li.edit a {
+  background-position: 0px -202px;
 }
 
-li.delete a
-{
-	background-position: 0px -260px;
+li.delete a {
+  background-position: 0px -260px;
 }
 
-li.move-up a
-{
-	background-position: 0px -278px;
+li.move-up a {
+  background-position: 0px -278px;
 }
 
-li.move-down a
-{
-	background-position: 0px -162px;
+li.move-down a {
+  background-position: 0px -162px;
 }
 
-.btm-action li a
-{
-	background: url("../images/sprites-small.png") no-repeat left top;
-	display: inline-block;
-	padding: 0px 0px 0px 20px;
+.btm-action li a {
+  background: url("../images/sprites-small.png") no-repeat left top;
+  display: inline-block;
+  padding: 0px 0px 0px 20px;
 }
 
-.btm-action li.admin-list a
-{
-	background-position: 0px -398px;
+.btm-action li.admin-list a {
+  background-position: 0px -398px;
 }
 
-.top-action
-{
-	margin: 20px 0px 0px 0px;
-	height: 1%;
+.top-action {
+  margin: 20px 0px 0px 0px;
+  height: 1%;
 }
 
-.top-action ul
-{
-	list-style: none;
-	float: right;
-	width: auto;
+.top-action ul {
+  list-style: none;
+  float: right;
+  width: auto;
 }
 
-.top-action ul li
-{
-	float: left;
-	margin-left: 2px;
+.top-action ul li {
+  float: left;
+  margin-left: 2px;
 }
 
-.top-action ul li a
-{
-	color: #ffffff;
-	font-size: 12px;
-	background: #97aa7d url("../images/sprites-small.png") no-repeat left 8px;
-	padding: 5px 15px 5px 25px;
-	display: block;
+.top-action ul li a {
+  color: #ffffff;
+  font-size: 12px;
+  background: #97aa7d url("../images/sprites-small.png") no-repeat left 8px;
+  padding: 5px 15px 5px 25px;
+  display: block;
 }
 
-.top-action ul li a:hover
-{
-	text-decoration: none;
-	background-color: #708356;
+.top-action ul li a:hover {
+  text-decoration: none;
+  background-color: #708356;
 }
 
-.top-action ul li.record-add a
-{
-	background-position: 4px -176px;
+.top-action ul li.record-add a {
+  background-position: 4px -176px;
 }
 
-.top-action ul li.record-list a
-{
-	background-position: 4px -393px;
+.top-action ul li.record-list a {
+  background-position: 4px -393px;
 }
 
-.top-action ul li.view a
-{
-	background-image: none;
-	padding-left: 10px
+.top-action ul li.view a {
+  background-image: none;
+  padding-left: 10px
 }
 
-td.image
-{
-	width: 72px;
+td.image {
+  width: 72px;
 }
 
-.btm-action li.delete a
-{
-	background-position: 0px -258px;
+.btm-action li.delete a {
+  background-position: 0px -258px;
 }
 
 /* messenger holder */
@@ -1006,43 +847,37 @@ td.image
 /**
 * Throw away the below written CSS codes. It is put for testing only, or written by css non-experts.
 */
-.separator
-{
-	background-color: #fe0000;
-	height: 4px;
-	clear: both;
+.separator {
+  background-color: #fe0000;
+  height: 4px;
+  clear: both;
 }
 
-.content pre
-{
-	background-color: #99ccff;
-	border: 1px dashed #0033cc;
-	overflow: hidden;
-	padding: 5px;
-	width: 780px;
+.content pre {
+  background-color: #99ccff;
+  border: 1px dashed #0033cc;
+  overflow: hidden;
+  padding: 5px;
+  width: 780px;
 }
 
-a.not-working
-{
-	text-decoration: line-through;
+a.not-working {
+  text-decoration: line-through;
 }
 
 /** login form */
-form#login-form
-{
-	margin: 50px auto 10px auto;
-	width: 450px;
+form#login-form {
+  margin: 50px auto 10px auto;
+  width: 450px;
 }
 
-form#login-form td.field
-{
-	text-align: right;
+form#login-form td.field {
+  text-align: right;
 }
 
-form#table.data
-{
-	border: 4px solid #cccccc;
-	border-collapse: collapse;
+form#table.data {
+  border: 4px solid #cccccc;
+  border-collapse: collapse;
 }
 
 @import "_menu";

@@ -6,7 +6,7 @@
  * @todo Find out where is the Library Directory is
  */
 require_once('../inc.bootstrap.php');
-require_once($backend['paths']['__LIBRARY_PATH__'].'/inc/inc.config.php');
+require_once($backend['paths']['__LIBRARY_PATH__'] . '/inc/inc.config.php');
 
 $page = $variable->get('page', 'string', 'style.css');
 
@@ -18,26 +18,23 @@ $page = str_replace('//', '/', $page);
 $css_file_found = false;
 
 $css_files = array(
-	'base' => realpath(__SUBDOMAIN_BASE__ . "/templates/css/{$page}"),
+    'base' => realpath(__SUBDOMAIN_BASE__ . "/templates/css/{$page}"),
 );
-foreach($css_files as $css_file)
-{
-	if(is_file($css_file))
-	{
-		# Send CSS headers
-		\common\headers::cache();
-		\common\headers::headers_by_extension($css_file);
-		readfile($css_file);
+foreach ($css_files as $css_file) {
+    if (is_file($css_file)) {
+        # Send CSS headers
+        \common\headers::cache();
+        \common\headers::headers_by_extension($css_file);
+        readfile($css_file);
 
-		$css_file_found = true;
-		break;
-	}
+        $css_file_found = true;
+        break;
+    }
 }
 
-if(!$css_file_found)
-{
-	# Nothing to do...
-	# Make a server log
-	# Send the browser at least some expected CSS contents
-	echo "/** No CSS in {$page} **/";
+if (!$css_file_found) {
+    # Nothing to do...
+    # Make a server log
+    # Send the browser at least some expected CSS contents
+    echo "/** No CSS in {$page} **/";
 }

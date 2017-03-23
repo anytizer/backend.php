@@ -11,5 +11,5 @@
  */
 function smarty_compiler_cdn($params, Smarty $smarty)
 {
-	return "#tinymce";
+    return "#tinymce";
 }

@@ -12,17 +12,16 @@ $ids = $variable->post('superfish', 'array', array());
 
 $superfish = new \subdomain\superfish();
 
-switch($action)
-{
-	case 'delete':
-	case 'disable':
-	case 'enable':
-	case 'prune':
-		$superfish->blockaction($action, $ids);
-		break;
-	case 'nothing':
-	default:
-		break;
+switch ($action) {
+    case 'delete':
+    case 'disable':
+    case 'enable':
+    case 'prune':
+        $superfish->blockaction($action, $ids);
+        break;
+    case 'nothing':
+    default:
+        break;
 }
 
 /**

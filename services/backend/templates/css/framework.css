@@ -18,32 +18,28 @@
 
 /** HTML structure of the core template */
 
-#livesearch-results .holder
-{
-	color: #ff9900;
-	width: 310px;
-	padding: 0px 10px 10px 10px;
-	font-weight: bold;
-	position: absolute;
-	background-color: #990000;
-	border: 2px solid #000000;
-	overflow: hidden;
+#livesearch-results .holder {
+    color: #ff9900;
+    width: 310px;
+    padding: 0px 10px 10px 10px;
+    font-weight: bold;
+    position: absolute;
+    background-color: #990000;
+    border: 2px solid #000000;
+    overflow: hidden;
 }
 
-#livesearch-results .holder a
-{
-	color: #ffffff;
+#livesearch-results .holder a {
+    color: #ffffff;
 }
 
-#livesearch-results div.result
-{
-	padding: 5px;
-	overflow: hidden;
-	border-bottom: 1px solid #cc6666;
+#livesearch-results div.result {
+    padding: 5px;
+    overflow: hidden;
+    border-bottom: 1px solid #cc6666;
 }
 
-span.required
-{
-	color: #ff0000;
-	font-weight: bold;
+span.required {
+    color: #ff0000;
+    font-weight: bold;
 }

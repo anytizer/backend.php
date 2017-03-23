@@ -10,13 +10,12 @@
  */
 function smarty_modifier_age($date_of_birth = '0000-00-00')
 {
-	$dates = array();
-	if(!preg_match('/^([\d]{4})-([\d]{2}-[\d]{2})$/', $date_of_birth, $dates))
-	{
-		return null;
-	}
+    $dates = array();
+    if (!preg_match('/^([\d]{4})-([\d]{2}-[\d]{2})$/', $date_of_birth, $dates)) {
+        return null;
+    }
 
-	$age = (date('Y') - $dates[1]) - (date('m-d') < $dates[2] ? 1 : 0);
+    $age = (date('Y') - $dates[1]) - (date('m-d') < $dates[2] ? 1 : 0);
 
-	return $age;
+    return $age;
 }

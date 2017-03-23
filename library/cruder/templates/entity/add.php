@@ -4,30 +4,31 @@
 Created on: __TIMESTAMP__
 *}-->
 <div class="top-action">
-	<ul class="links">
-		<li><a href="__ENTITY__-list.php">List __ENTITY_FULLNAME__</a></li>
-	</ul>
+    <ul class="links">
+        <li><a href="__ENTITY__-list.php">List __ENTITY_FULLNAME__</a></li>
+    </ul>
 </div>
 <div class="form-wrap">
-	<form autocomplete="off" id="__ENTITY__-add-form" name="__ENTITY__-add-form" method="post" action="__ENTITY__-add.php"
-	      enctype="multipart/form-data">
-		<table class="data-editor">
-			__TR__
-			<tr class="{cycle values='A,B'}">
-				<td class="attribute">&nbsp;</td>
-				<td>
-					<input type="text" name="email" value="" class="vanish"/> <input type="text" name="is_spam" value=""
-					                                                                 class="vanish"/>
-					<!--{* 100% sure, only spammers fill these fields, Leave it blank/CSS hidden. *}-->
-					<input type="hidden" name="protection_code" value="{$protection_code}"/> <input type="hidden"
-					                                                                                name="add-action"
-					                                                                                value="Add __ENTITY_FULLNAME__"/>
-					<input type="submit" name="submit-button" class="submit" value="Add"/> <a
-						href="{\common\url::last_page('__ENTITY__-list.php')}" class="button-cancel">Cancel</a>
-				</td>
-			</tr>
-		</table>
-	</form>
+    <form autocomplete="off" id="__ENTITY__-add-form" name="__ENTITY__-add-form" method="post"
+          action="__ENTITY__-add.php"
+          enctype="multipart/form-data">
+        <table class="data-editor">
+            __TR__
+            <tr class="{cycle values='A,B'}">
+                <td class="attribute">&nbsp;</td>
+                <td>
+                    <input type="text" name="email" value="" class="vanish"/> <input type="text" name="is_spam" value=""
+                                                                                     class="vanish"/>
+                    <!--{* 100% sure, only spammers fill these fields, Leave it blank/CSS hidden. *}-->
+                    <input type="hidden" name="protection_code" value="{$protection_code}"/> <input type="hidden"
+                                                                                                    name="add-action"
+                                                                                                    value="Add __ENTITY_FULLNAME__"/>
+                    <input type="submit" name="submit-button" class="submit" value="Add"/> <a
+                        href="{\common\url::last_page('__ENTITY__-list.php')}" class="button-cancel">Cancel</a>
+                </td>
+            </tr>
+        </table>
+    </form>
 </div>
 <!-- End of administrators __ENTITY__ Add -->
 <!-- Add validation -->

@@ -15,23 +15,17 @@
 $domains = new \subdomain\domains();
 
 # Assumes, ID always, in the GET parameter
-if(($domain_id = $variable->get('id', 'integer', 0)) && ($code = $variable->get('code', 'string', "")))
-{
-	if($domains->delete('inactivate', $domain_id, $code))
-	{
-		$messenger = new \common\messenger('warning', 'The record has been deleted.');
+if (($domain_id = $variable->get('id', 'integer', 0)) && ($code = $variable->get('code', 'string', ""))) {
+    if ($domains->delete('inactivate', $domain_id, $code)) {
+        $messenger = new \common\messenger('warning', 'The record has been deleted.');
 
-		#\common\stopper::url('domains-delete-successful.php');
-		\common\stopper::url('domains-list.php');
-	}
-	else
-	{
-		$messenger = new \common\messenger('error', 'The record has NOT been deleted.');
+        #\common\stopper::url('domains-delete-successful.php');
+        \common\stopper::url('domains-list.php');
+    } else {
+        $messenger = new \common\messenger('error', 'The record has NOT been deleted.');
 
-		\common\stopper::url('domains-delete-error.php');
-	}
-}
-else
-{
-	\common\stopper::url('domains-direct-access-error.php');
+        \common\stopper::url('domains-delete-error.php');
+    }
+} else {
+    \common\stopper::url('domains-direct-access-error.php');
 }

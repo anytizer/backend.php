@@ -13,14 +13,13 @@
  */
 function smarty_function_random($params = array(), &$smarty)
 {
-	$length = isset($params['length']) ? (int)$params['length'] : 5;
-	if($length > 32 || $length < 1)
-	{
-		$length = 5;
-	}
+    $length = isset($params['length']) ? (int)$params['length'] : 5;
+    if ($length > 32 || $length < 1) {
+        $length = 5;
+    }
 
-	$salt = strrev(md5(mt_rand(1000, 9999) . microtime() . mt_rand(100, 999)));
-	$random = substr($salt, 0, $length);
+    $salt = strrev(md5(mt_rand(1000, 9999) . microtime() . mt_rand(100, 999)));
+    $random = substr($salt, 0, $length);
 
-	return $random;
+    return $random;
 }

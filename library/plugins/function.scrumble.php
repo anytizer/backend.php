@@ -13,7 +13,7 @@
  */
 function smarty_function_scrumble($text = "")
 {
-	$scrumble = "";
+    $scrumble = "";
 
-	return $text;
+    return $text;
 }

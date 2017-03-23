@@ -11,19 +11,18 @@
  */
 function smarty_function_a2z($params = array(), &$smarty)
 {
-	$params['url'] = !empty($params['url']) ? $params['url'] : 'letter.php';
-	$params['name'] = !empty($params['name']) ? $params['name'] : 'L'; # GET index
-	$params['active'] = !empty($params['active']) ? $params['active'] : 'A';
+    $params['url'] = !empty($params['url']) ? $params['url'] : 'letter.php';
+    $params['name'] = !empty($params['name']) ? $params['name'] : 'L'; # GET index
+    $params['active'] = !empty($params['active']) ? $params['active'] : 'A';
 
-	$links = array();
-	for($letter = ord('A'); $letter <= ord('Z'); ++$letter)
-	{
-		$alphabet = chr($letter);
-		$active = ($alphabet == $params['active']) ? ' class="active"' : "";
-		$links[] = "<li{$active}><span><a href='{$params['url']}?{$params['name']}={$alphabet}'>{$alphabet}</a></span></li>";
-	}
+    $links = array();
+    for ($letter = ord('A'); $letter <= ord('Z'); ++$letter) {
+        $alphabet = chr($letter);
+        $active = ($alphabet == $params['active']) ? ' class="active"' : "";
+        $links[] = "<li{$active}><span><a href='{$params['url']}?{$params['name']}={$alphabet}'>{$alphabet}</a></span></li>";
+    }
 
-	return implode("", $links);
+    return implode("", $links);
 }
 
 /*# Usages:

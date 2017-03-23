@@ -13,10 +13,10 @@
  */
 function smarty_block_html_comment($params, $content, Smarty &$smarty, &$repeat)
 {
-	# {comment type='html' status='on'}
-	# {comment type='html' status='off'}
-	# return "<!-- {$content} -->";
-	# {comment}...{/comment}
+    # {comment type='html' status='on'}
+    # {comment type='html' status='off'}
+    # return "<!-- {$content} -->";
+    # {comment}...{/comment}
 
-	return null;
+    return null;
 }

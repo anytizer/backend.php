@@ -14,17 +14,16 @@ $ids = $variable->post('cms', 'array', array());
 
 $cms = new \subdomain\cms();
 
-switch($action)
-{
-	case 'delete':
-	case 'disable':
-	case 'enable':
-	case 'prune':
-		$cms->blockaction($action, $ids);
-		break;
-	case 'nothing':
-	default:
-		break;
+switch ($action) {
+    case 'delete':
+    case 'disable':
+    case 'enable':
+    case 'prune':
+        $cms->blockaction($action, $ids);
+        break;
+    case 'nothing':
+    default:
+        break;
 }
 
 /**

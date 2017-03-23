@@ -9,144 +9,135 @@ namespace backend;
  */
 class to_javascript
 {
-	private $location;
+    private $location;
 
-	public function __construct($write_location = './tmp')
-	{
-		$this->location = $write_location;
-	}
+    public function __construct($write_location = './tmp')
+    {
+        $this->location = $write_location;
+    }
 
-	/**
-	 * Convrts an array to document.write() for javascript
-	 */
-	private function javascript($string = "", $header = true)
-	{
-		$strings = explode("\n", $string);
-		$js = "";
+    /**
+     * JS String: Returns a set of all lines as a string
+     */
+    public function js_string($lines = array())
+    {
+    }
 
-		if($header === true)
-		{
-			$js .= '<script type="text/javascript">';
-		}
+    /**
+     * Reads lines of javascripts from external file
+     */
+    public function read_external($js)
+    {
+        $fc = 'Error: js name is not defined or js file does not exist.';
+        if ($js) {
+            $fc = file_get_contents("{$this->location}/{$js}.js");
+        }
 
-		for($i = 0; $i < count($strings); ++$i)
-		{
-			$string_let = trim($strings[$i]);
-			if(!$string_let)
-			{
-				continue;
-			}
+        return $js;
+    }
 
-			$string_let = str_replace('"', "\\\"", $string_let);
-			$js .= "document.write(\"{$string_let}\");\n";
-		}
+    /**
+     * Dump file contents to an external file
+     */
+    public function write_external($conents = "")
+    {
+        list($usec, $sec) = explode(' ', microtime());
+        mt_srand((float)$sec + ((float)$usec * 100000));
+        $randval = mt_rand();
+        $js = md5($randval . microtime());
 
-		if($header === true)
-		{
-			$js .= "\n\r</script>";
-		}
-		#	echo($js);
+        $filename = "{$this->location}/{$js}.js";
+        $c = $this->javascript($conents, false);
+        file_put_contents($filename, $c);
 
-		#	\common\stopper::message($strings);
-		return $js;
-	}
+        return $js;
+    }
 
-	/**
-	 * JS String: Returns a set of all lines as a string
-	 */
-	public function js_string($lines = array())
-	{
-	}
+    /**
+     * Convrts an array to document.write() for javascript
+     */
+    private function javascript($string = "", $header = true)
+    {
+        $strings = explode("\n", $string);
+        $js = "";
 
-	/**
-	 * Reads lines of javascripts from external file
-	 */
-	public function read_external($js)
-	{
-		$fc = 'Error: js name is not defined or js file does not exist.';
-		if($js)
-		{
-			$fc = file_get_contents("{$this->location}/{$js}.js");
-		}
+        if ($header === true) {
+            $js .= '<script type="text/javascript">';
+        }
 
-		return $js;
-	}
+        for ($i = 0; $i < count($strings); ++$i) {
+            $string_let = trim($strings[$i]);
+            if (!$string_let) {
+                continue;
+            }
 
-	/**
-	 * Dump file contents to an external file
-	 */
-	public function write_external($conents = "")
-	{
-		list($usec, $sec) = explode(' ', microtime());
-		mt_srand((float)$sec + ((float)$usec * 100000));
-		$randval = mt_rand();
-		$js = md5($randval . microtime());
+            $string_let = str_replace('"', "\\\"", $string_let);
+            $js .= "document.write(\"{$string_let}\");\n";
+        }
 
-		$filename = "{$this->location}/{$js}.js";
-		$c = $this->javascript($conents, false);
-		file_put_contents($filename, $c);
+        if ($header === true) {
+            $js .= "\n\r</script>";
+        }
+        #	echo($js);
 
-		return $js;
-	}
+        #	\common\stopper::message($strings);
+        return $js;
+    }
 
-	public function load_external($js = "")
-	{
-		$contents = "<script type=\"text/javascript\" src=\"{$js}\"></script>";
+    public function load_external($js = "")
+    {
+        $contents = "<script type=\"text/javascript\" src=\"{$js}\"></script>";
 
-		return $contents;
-	}
+        return $contents;
+    }
 
 
-	/**
-	 * Send a contents of a file into document.write() javascript.
-	 * Reads a file.
-	 */
-	public function send_javascript($file_name = "", $do_mapping = false)
-	{
-		/*$fc = "<script>alert('js file: {$file_name}' does not exist.');</script>";*/
-		#$fc = "alert(JS file: '{$file_name}' does not exist.');";
-		$fc = "\r\n//JS file: <strong>{$file_name}</strong> does not exist.\r\n";
+    /**
+     * Send a contents of a file into document.write() javascript.
+     * Reads a file.
+     */
+    public function send_javascript($file_name = "", $do_mapping = false)
+    {
+        /*$fc = "<script>alert('js file: {$file_name}' does not exist.');</script>";*/
+        #$fc = "alert(JS file: '{$file_name}' does not exist.');";
+        $fc = "\r\n//JS file: <strong>{$file_name}</strong> does not exist.\r\n";
 
-		$file_name = "{$this->location}/{$file_name}";
-		if(is_file($file_name))
-		{
-			$fc = file_get_contents($file_name);
+        $file_name = "{$this->location}/{$file_name}";
+        if (is_file($file_name)) {
+            $fc = file_get_contents($file_name);
 
-			$save_name = basename($file_name); # Optional
-		}
+            $save_name = basename($file_name); # Optional
+        }
 
-		if($do_mapping === true)
-		{
-			# Add embedding \" for "
-			$fc = addslashes($fc);
+        if ($do_mapping === true) {
+            # Add embedding \" for "
+            $fc = addslashes($fc);
 
-			#$lines = explode("\n", $fc);
-			$lines = explode("\r\n", $fc);
-			#\common\stopper::message($lines);
+            #$lines = explode("\n", $fc);
+            $lines = explode("\r\n", $fc);
+            #\common\stopper::message($lines);
 
-			#$lines = array_map('js_var_line', $lines);
-			$lines = array_map(array(&$this, 'js_var_line'), $lines);
-		}
-		else
-		{
-			$lines = explode("\r\n", $fc);
-		}
-		#\common\stopper::message($lines);
+            #$lines = array_map('js_var_line', $lines);
+            $lines = array_map(array(&$this, 'js_var_line'), $lines);
+        } else {
+            $lines = explode("\r\n", $fc);
+        }
+        #\common\stopper::message($lines);
 
 
-		header('Content-type: text/javascript');
-		header('Content-Disposition: inline; filename="' . $save_name . '"');
-		header('Content-Transfer-Encoding: binary');
+        header('Content-type: text/javascript');
+        header('Content-Disposition: inline; filename="' . $save_name . '"');
+        header('Content-Transfer-Encoding: binary');
 
-		echo(implode("\r\n", $lines));
-	}
+        echo(implode("\r\n", $lines));
+    }
 
-	/**
-	 * Wraps a js line with document.write() looping: to map an array
-	 */
-	public function js_var_line($line = "")
-	{
-		# $line = addslashes($line); # Done already. Looping kills the time
-		return "document.write(\"{$line}\");";
-	}
+    /**
+     * Wraps a js line with document.write() looping: to map an array
+     */
+    public function js_var_line($line = "")
+    {
+        # $line = addslashes($line); # Done already. Looping kills the time
+        return "document.write(\"{$line}\");";
+    }
 }

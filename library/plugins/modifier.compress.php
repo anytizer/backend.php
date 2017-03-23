@@ -7,7 +7,7 @@
  */
 function smarty_modifier_compress($text = "")
 {
-	$text = preg_replace('/[^a-z0-9]+/is', "", $text);
+    $text = preg_replace('/[^a-z0-9]+/is', "", $text);
 
-	return strtoupper($text);
+    return strtoupper($text);
 }

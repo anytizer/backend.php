@@ -1,16 +1,14 @@
 /**
  * Populates __ENTITY__ add form.
  */
-function __(what, value)
-{
-	if(!what || !value) return false;
+function __(what, value) {
+    if (!what || !value) return false;
 
-	if(document.forms['__ENTITY__-add-form'].elements['__ENTITY__[' + what + ']'])
-	{
-		document.forms['__ENTITY__-add-form'].elements['__ENTITY__[' + what + ']'].value = value;
-	}
+    if (document.forms['__ENTITY__-add-form'].elements['__ENTITY__[' + what + ']']) {
+        document.forms['__ENTITY__-add-form'].elements['__ENTITY__[' + what + ']'].value = value;
+    }
 
-	return true;
+    return true;
 }
 
 /**

@@ -1,60 +1,52 @@
 @import "_colors";
 @import "_reset";
 
-body, td, th
-{
-	font-family: "Verdana, Arial, Helvetica, sans-serif";
-	font-size: 12px;
-	color: #000000;
+body, td, th {
+  font-family: "Verdana, Arial, Helvetica, sans-serif";
+  font-size: 12px;
+  color: #000000;
 }
 
-body
-{
-	background-color: #dddddd;
-	margin: $margin;
-	line-height: $margin;
+body {
+  background-color: #dddddd;
+  margin: $margin;
+  line-height: $margin;
 }
 
-a
-{
-	color: #0000ff;
-	text-decoration: none;
+a {
+  color: #0000ff;
+  text-decoration: none;
 }
 
-strong
-{
-	font-weight: bold;
-	color: $color;
+strong {
+  font-weight: bold;
+  color: $color;
 }
 
-h1
-{
-	font-size: 18px;
-	color: #000099;
-	margin-bottom: 25px;
-	padding-bottom: 10px;
-	border-bottom: 2px solid $color;
+h1 {
+  font-size: 18px;
+  color: #000099;
+  margin-bottom: 25px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid $color;
 }
 
-p
-{
-	padding: 10px;
+p {
+  padding: 10px;
 }
 
-.wrapper
-{
-	width: 500px;
-	padding: $margin;
-	margin: 40px auto 40px auto;
-	background-color: #ffffff;
-	border: 1px solid #ffcc33;
+.wrapper {
+  width: 500px;
+  padding: $margin;
+  margin: 40px auto 40px auto;
+  background-color: #ffffff;
+  border: 1px solid #ffcc33;
 }
 
-.error-name
-{
-	text-align: right;
-	overflow: hidden;
-	height: $margin;
-	color: #000066;
-	background-color: #ffff99;
+.error-name {
+  text-align: right;
+  overflow: hidden;
+  height: $margin;
+  color: #000066;
+  background-color: #ffff99;
 }

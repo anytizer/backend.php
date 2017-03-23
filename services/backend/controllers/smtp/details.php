@@ -13,12 +13,9 @@ $code = $variable->get('code', 'string', ""); # Protection Code
 $smtp = new \subdomain\smtp();
 
 # Try to load the details
-if($smtp_details = $smtp->details($smtp_id, $code))
-{
-	$smarty->assignByRef('smtp', $smtp_details);
-}
-else
-{
-	# Record not found
-	\common\stopper::url('smtp-direct-access-error.php');
+if ($smtp_details = $smtp->details($smtp_id, $code)) {
+    $smarty->assignByRef('smtp', $smtp_details);
+} else {
+    # Record not found
+    \common\stopper::url('smtp-direct-access-error.php');
 }

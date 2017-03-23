@@ -3,17 +3,15 @@ var v = new Validator('smtp-edit-form');
 /**
  * Agreement
  */
-function agreement()
-{
-	var success = false;
-	var yn = document.forms['smtp-edit-form'].elements['smtp[authenticate]'].value;
-	if(yn != 'Y' && yn != 'N')
-	{
-		alert('Authentication flag is only from [ Y / N ]');
-		success = false;
-	}
+function agreement() {
+    var success = false;
+    var yn = document.forms['smtp-edit-form'].elements['smtp[authenticate]'].value;
+    if (yn != 'Y' && yn != 'N') {
+        alert('Authentication flag is only from [ Y / N ]');
+        success = false;
+    }
 
-	return success;
+    return success;
 }
 v.setAddnlValidationFunction('agreement');
 
@@ -34,12 +32,10 @@ v.addValidation('smtp[smtp_comments]', 'required', 'Please describe this SMTP ac
 /**
  * Click on Yes/No button handler
  */
-function click_put(who, where, what)
-{
-	document.getElementById(who).onclick = function()
-	{
-		document.getElementById(where).value = what;
-	};
+function click_put(who, where, what) {
+    document.getElementById(who).onclick = function () {
+        document.getElementById(where).value = what;
+    };
 }
 click_put('put-Y', 'smtp-do_authenticate', 'Y');
 click_put('put-N', 'smtp-do_authenticate', 'N');

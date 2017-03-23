@@ -14,17 +14,16 @@ $ids = $variable->post('licenses', 'array', array());
 
 $licenses = new \subdomain\licenses();
 
-switch($action)
-{
-	case 'delete':
-	case 'disable':
-	case 'enable':
-	case 'prune':
-		$licenses->blockaction($action, $ids);
-		break;
-	case 'nothing':
-	default:
-		break;
+switch ($action) {
+    case 'delete':
+    case 'disable':
+    case 'enable':
+    case 'prune':
+        $licenses->blockaction($action, $ids);
+        break;
+    case 'nothing':
+    default:
+        break;
 }
 
 /**

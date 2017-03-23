@@ -9,11 +9,11 @@
  */
 function smarty_modifier_url($page_id = 0)
 {
-	$page_id = (int)$page_id;
+    $page_id = (int)$page_id;
 
-	$url = '#';
+    $url = '#';
 
-	$page_sql = "
+    $page_sql = "
 SELECT
 	qs.is_https,
 	qs.is_www,
@@ -25,14 +25,13 @@ INNER JOIN query_subdomains qs ON
 	qs.subdomain_id = qp.subdomain_id
 	AND qp.page_id={$page_id}
 ;";
-	$db = new \common\mysql();
-	if($page = $db->row($page_sql))
-	{
-		# check for full flags like: is_http
-		$http = ($page['is_https'] == 'Y') ? 'https://' : 'http://';
-		$www = ($page['is_www'] == 'Y') ? 'www.' : "";
-		$url = "{$http}{$www}{$page['domain']}:{$page['port']}/{$page['page']}";
-	}
+    $db = new \common\mysql();
+    if ($page = $db->row($page_sql)) {
+        # check for full flags like: is_http
+        $http = ($page['is_https'] == 'Y') ? 'https://' : 'http://';
+        $www = ($page['is_www'] == 'Y') ? 'www.' : "";
+        $url = "{$http}{$www}{$page['domain']}:{$page['port']}/{$page['page']}";
+    }
 
-	return $url;
+    return $url;
 }

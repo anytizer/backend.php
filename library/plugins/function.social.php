@@ -6,20 +6,20 @@
  */
 function smarty_function_social($params = array(), &$smarty)
 {
-	$social_html = "";
+    $social_html = "";
 
-	$params['title'] = isset($params['title']) ? urlencode($params['title']) : 'Social linking';
-	$url = urlencode("{$_SERVER['REQUEST_SCHEME']}://{$_SERVER['SERVER_NAME']}:{$_SERVER['SERVER_PORT']}{$_SERVER['REQUEST_URI']}");
+    $params['title'] = isset($params['title']) ? urlencode($params['title']) : 'Social linking';
+    $url = urlencode("{$_SERVER['REQUEST_SCHEME']}://{$_SERVER['SERVER_NAME']}:{$_SERVER['SERVER_PORT']}{$_SERVER['REQUEST_URI']}");
 
-	/* @group Social */
-	/**
-	 * <style type='text/css' media='screen'>
-	 * #social { position: fixed; left: 0; top: 40px; z-index: 10000; }
-	 * #social img { padding-bottom: 0.5em; }
-	 * </style>
-	 */
-	/* @end */
-	$social_html = "
+    /* @group Social */
+    /**
+     * <style type='text/css' media='screen'>
+     * #social { position: fixed; left: 0; top: 40px; z-index: 10000; }
+     * #social img { padding-bottom: 0.5em; }
+     * </style>
+     */
+    /* @end */
+    $social_html = "
 <div id='social'>
 	<div id='facebook'>
 		<a class='facebook' href='http://www.facebook.com/sharer.php?u={$url}&amp;t={$params['title']}%3F%20(%20{$url}%20)' target='_blank'>
@@ -44,5 +44,5 @@ function smarty_function_social($params = array(), &$smarty)
 </div>
 ";
 
-	return $social_html;
+    return $social_html;
 }

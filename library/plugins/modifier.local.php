@@ -6,7 +6,7 @@
  */
 function smarty_modifier_local($time = 0)
 {
-	$headers = new \common\headers();
+    $headers = new \common\headers();
 
-	return $headers->is_local();
+    return $headers->is_local();
 }

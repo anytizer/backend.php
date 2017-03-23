@@ -12,14 +12,12 @@
  */
 function smarty_function_steal($params = array(), &$smarty)
 {
-	$stolen_value = null;
-	if(!empty($params['tag']))
-	{
-		if(isset($smarty->_tpl_vars[$params['tag']]))
-		{
-			$stolen_value = $smarty->_tpl_vars[$params['tag']];
-		}
-	}
+    $stolen_value = null;
+    if (!empty($params['tag'])) {
+        if (isset($smarty->_tpl_vars[$params['tag']])) {
+            $stolen_value = $smarty->_tpl_vars[$params['tag']];
+        }
+    }
 
-	return $stolen_value;
+    return $stolen_value;
 }

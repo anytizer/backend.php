@@ -7,20 +7,20 @@ namespace others;
  * @package Interfaces
  */
 class datatype_dimensions
-	extends \abstracts\datatype
+    extends \abstracts\datatype
 {
-	private static $resizes = array();
+    private static $resizes = array();
 
-	public function __construct($width = 0, $height = "")
-	{
-		parent::__construct(array(
-			'width',
-			'height'
-		));
+    public function __construct($width = 0, $height = "")
+    {
+        parent::__construct(array(
+            'width',
+            'height'
+        ));
 
-		$this->resizes[] = array(
-			'width' => abs((int)$width),
-			'height' => abs((int)$height),
-		);
-	}
+        $this->resizes[] = array(
+            'width' => abs((int)$width),
+            'height' => abs((int)$height),
+        );
+    }
 }

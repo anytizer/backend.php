@@ -13,9 +13,9 @@
  */
 function smarty_modifier_crumble($text = "")
 {
-	# plain => painl
+    # plain => painl
 
-	$crumble = "";
+    $crumble = "";
 
-	return $text;
+    return $text;
 }

@@ -17,14 +17,13 @@
  */
 function smarty_compiler_remote_css($tag_attrs, &$compiler)
 {
-	$_params = $compiler->_parse_attrs($tag_attrs);
+    $_params = $compiler->_parse_attrs($tag_attrs);
 
-	if(!isset($_params['href']))
-	{
-		$compiler->_syntax_error("assign: missing 'href' parameter", E_USER_WARNING);
+    if (!isset($_params['href'])) {
+        $compiler->_syntax_error("assign: missing 'href' parameter", E_USER_WARNING);
 
-		return null;
-	}
+        return null;
+    }
 
-	return "echo {$_params['href']};";
+    return "echo {$_params['href']};";
 }

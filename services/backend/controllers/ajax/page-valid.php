@@ -6,13 +6,10 @@
 
 $subdomain_id = $variable->get('subdomain_id', 'integer', 0);
 $page_name = $variable->get('page_name', 'string', "");
-if($pages->if_page_exists($subdomain_id, $page_name))
-{
-	echo('<img src="images/selected-icons/tick.png" /> Page name valid. You can continue.');
-}
-else
-{
-	echo('<img src="images/selected-icons/cross.png" /> Choose a <strong>different</strong> name. It exists already, or name is invalid.');
+if ($pages->if_page_exists($subdomain_id, $page_name)) {
+    echo('<img src="images/selected-icons/tick.png" /> Page name valid. You can continue.');
+} else {
+    echo('<img src="images/selected-icons/cross.png" /> Choose a <strong>different</strong> name. It exists already, or name is invalid.');
 }
 
 /**

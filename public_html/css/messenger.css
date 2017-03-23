@@ -1,29 +1,24 @@
-#messenger
-{
-	padding: 5px;
-	margin: 5px 0px 5px 0px;
+#messenger {
+    padding: 5px;
+    margin: 5px 0px 5px 0px;
 }
 
-#messenger.error
-{
-	background-color: #ffcccc;
-	border: 1px solid #ff0000;
+#messenger.error {
+    background-color: #ffcccc;
+    border: 1px solid #ff0000;
 }
 
-#messenger.success
-{
-	background-color: #99ffcc;
-	border: 1px solid #00cc66;
+#messenger.success {
+    background-color: #99ffcc;
+    border: 1px solid #00cc66;
 }
 
-#messenger.warning
-{
-	background-color: #ffffcc;
-	border: 1px solid #ffcc33;
+#messenger.warning {
+    background-color: #ffffcc;
+    border: 1px solid #ffcc33;
 }
 
-#messenger.notice
-{
-	background-color: #66ccff;
-	border: 1px solid #0099ff;
+#messenger.notice {
+    background-color: #66ccff;
+    border: 1px solid #0099ff;
 }

@@ -9,5 +9,5 @@
 
 function smarty_modifier_matchtrue($value = null)
 {
-	return $value ? true : false;
+    return $value ? true : false;
 }

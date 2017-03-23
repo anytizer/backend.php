@@ -8,19 +8,25 @@ namespace interfaces;
  */
 interface IException
 {
-	/**
-	 * Protected methods inherited from \Exception class
-	 */
-	public function getMessage(); // \Exception message
-	public function getCode(); // User-defined \Exception code
-	public function getFile(); // Source filename
-	public function getLine(); // Source line
-	public function getTrace(); // An array of the backtrace()
-	public function getTraceAsString(); // Formatted string of trace
+        public function __construct($message = null, $code = 0); // \Exception message
 
-	/**
-	 * Override-able methods inherited from \Exception class
-	 */
-	public function __toString(); // formatted string for display
-	public function __construct($message = null, $code = 0);
+    /**
+     * Protected methods inherited from \Exception class
+     */
+    public function getMessage(); // User-defined \Exception code
+
+    public function getCode(); // Source filename
+
+    public function getFile(); // Source line
+
+    public function getLine(); // An array of the backtrace()
+
+    public function getTrace(); // Formatted string of trace
+
+    public function getTraceAsString(); // formatted string for display
+
+/**
+     * Override-able methods inherited from \Exception class
+     */
+    public function __toString();
 }

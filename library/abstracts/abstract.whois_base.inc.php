@@ -9,7 +9,7 @@ namespace abstracts;
  */
 abstract class whois_base
 {
-	protected $response_html = "";
-	protected $is_registered = false;
-	protected $expires_on = 'N/A';
+    protected $response_html = "";
+    protected $is_registered = false;
+    protected $expires_on = 'N/A';
 }

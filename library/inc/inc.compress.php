@@ -8,13 +8,10 @@ header('Content-Encoding: gzip');
 
 $zlib_output_compression = ini_get('zlib.output_compression');
 $zlib_output_handler = ini_get('zlib.output_handler');
-if(in_array(strtoupper($zlib_output_compression), array('ON', '1', 'TRUE')) && $zlib_output_handler != "")
-{
-	# Compression is defined already.
-	# Just begin the buffer.
-	ob_start();
-}
-else
-{
-	ob_start('ob_gzhandler');
+if (in_array(strtoupper($zlib_output_compression), array('ON', '1', 'TRUE')) && $zlib_output_handler != "") {
+    # Compression is defined already.
+    # Just begin the buffer.
+    ob_start();
+} else {
+    ob_start('ob_gzhandler');
 }

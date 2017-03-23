@@ -6,7 +6,7 @@
  */
 function smarty_function_comments($params = array(), &$smarty)
 {
-	$comments = isset($params['close']) ? '-->' : '<!--';
+    $comments = isset($params['close']) ? '-->' : '<!--';
 
-	return $comments;
+    return $comments;
 }

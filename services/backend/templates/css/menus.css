@@ -2,20 +2,18 @@
 * admin options and menus
 */
 
-img.icon-edit
-{
-	background-image: url('../images/selected-icons/edit.png');
-	border: none;
-	height: 16px;
-	width: 16px;
-	background-color: #9933cc;
+img.icon-edit {
+    background-image: url('../images/selected-icons/edit.png');
+    border: none;
+    height: 16px;
+    width: 16px;
+    background-color: #9933cc;
 }
 
-img.icon-delete
-{
-	background-image: url('../images/selected-icons/delete.png');
-	border: none;
-	height: 16px;
-	width: 16px;
-	background-color: #9933cc;
+img.icon-delete {
+    background-image: url('../images/selected-icons/delete.png');
+    border: none;
+    height: 16px;
+    width: 16px;
+    background-color: #9933cc;
 }

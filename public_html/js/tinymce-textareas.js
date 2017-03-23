@@ -1,11 +1,11 @@
 /**
-var editor = document.createElement("script");
-editor.type = "text/javascript";
-editor.src = "//cdn.tinymce.com/4/tinymce.min.js";
-$("head").append(editor);
-*/
+ var editor = document.createElement("script");
+ editor.type = "text/javascript";
+ editor.src = "//cdn.tinymce.com/4/tinymce.min.js";
+ $("head").append(editor);
+ */
 
-tinymce.init({ selector:'textarea.editor' });
+tinymce.init({selector: 'textarea.editor'});
 
 /**
  * Basic configurations for a standard editor to suit almost all kinds of deployment environment.
@@ -14,8 +14,8 @@ tinymce.init({ selector:'textarea.editor' });
  * http://www.tinymce.com/wiki.php/Configuration:relative_urls
  * http://www.tinymce.com/wiki.php/Configuration:extended_valid_elements
  */
- /**
-tinyMCE.init({
+/**
+ tinyMCE.init({
 	relative_urls: false,
 
 	mode: "specific_textareas",

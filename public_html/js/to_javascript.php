@@ -16,24 +16,18 @@ Array
 
 # To protect stealing of this script, do:
 #if(preg_match('/detail\.php\?id\=[\d]+/is', $_SERVER['HTTP_REFERER']))
-if(empty($_SERVER['HTTP_REFERER']))
-{
-	echo '//Sorry';
-}
-else
-{
-	if($js_file = $variable->get('js', 'string', ""))
-	{
-		$js_file = $js_file . '.js';
+if (empty($_SERVER['HTTP_REFERER'])) {
+    echo '//Sorry';
+} else {
+    if ($js_file = $variable->get('js', 'string', "")) {
+        $js_file = $js_file . '.js';
 
-		/**
-		 * @todo Fix as contructions are without parameters
-		 */
-		$tj = new to_javascript();
-		$tj->send_javascript(__TEMP_PATH__ . '/to_javascript-'.$js_file);
-	}
-	else
-	{
-		echo '//sorry!';
-	}
+        /**
+         * @todo Fix as contructions are without parameters
+         */
+        $tj = new to_javascript();
+        $tj->send_javascript(__TEMP_PATH__ . '/to_javascript-' . $js_file);
+    } else {
+        echo '//sorry!';
+    }
 }

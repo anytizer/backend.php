@@ -17,24 +17,18 @@ $__PK_NAME__ = $variable->get('id', 'integer', 0);
 $code = $variable->get('code', 'string', "");
 
 # Assumes, ID always, in the GET parameter
-if($__PK_NAME__ && $code)
-{
-	if($__ENTITY__->delete('inactivate', $__PK_NAME__, $code))
-	{
-		$messenger = new \common\messenger('warning', 'The record has been deleted.');
+if ($__PK_NAME__ && $code) {
+    if ($__ENTITY__->delete('inactivate', $__PK_NAME__, $code)) {
+        $messenger = new \common\messenger('warning', 'The record has been deleted.');
 
-		# \common\stopper::url('__ENTITY__-delete-successful.php');
-		# \common\headers::back('__ENTITY__-list.php');
-		\common\stopper::url('__ENTITY__-list.php');
-	}
-	else
-	{
-		$messenger = new \common\messenger('error', 'The record has NOT been deleted.');
+        # \common\stopper::url('__ENTITY__-delete-successful.php');
+        # \common\headers::back('__ENTITY__-list.php');
+        \common\stopper::url('__ENTITY__-list.php');
+    } else {
+        $messenger = new \common\messenger('error', 'The record has NOT been deleted.');
 
-		\common\stopper::url('__ENTITY__-delete-error.php?context=permissions');
-	}
-}
-else
-{
-	\common\stopper::url('__ENTITY__-direct-access-error.php?context=delete');
+        \common\stopper::url('__ENTITY__-delete-error.php?context=permissions');
+    }
+} else {
+    \common\stopper::url('__ENTITY__-direct-access-error.php?context=delete');
 }

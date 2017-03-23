@@ -4,13 +4,13 @@
  */
 
 $subdomains = array(
-	27, # Framework
-	# 228, 229, # Study Nepal Application
-	222, 223, # uniQrewards
+    27, # Framework
+    # 228, 229, # Study Nepal Application
+    222, 223, # uniQrewards
 );
 $prefixes = array(
-	'query', # Framework
-	'reward', # Application
+    'query', # Framework
+    'reward', # Application
 );
 $target_database = 'framework_projects';
 
@@ -29,15 +29,13 @@ USE `{$target_database}`;
 
 $sql = "SHOW FULL TABLES FROM `{$system_database}` WHERE table_type = 'BASE TABLE';";
 $db->query($sql);
-while($table = $db->row(""))
-{
-	$table = $table["Tables_in_{$system_database}"];
-	if(!preg_match('/^(' . implode('|', $prefixes) . ')_/', $table))
-	{
-		continue;
-	}
-	$subdomains_list = implode(',', $subdomains);
-	echo("
+while ($table = $db->row("")) {
+    $table = $table["Tables_in_{$system_database}"];
+    if (!preg_match('/^(' . implode('|', $prefixes) . ')_/', $table)) {
+        continue;
+    }
+    $subdomains_list = implode(',', $subdomains);
+    echo("
 DROP VIEW IF EXISTS `{$target_database}`.`{$table}`;
 CREATE VIEW `{$target_database}`.`{$table}` AS SELECT * FROM `{$system_database}`.`{$table}` WHERE subdomain_id IN ($subdomains_list);
 ");

@@ -1,150 +1,124 @@
-.dashboard
-{
-	width: 785px; /** 785 | 675 */
-	clear: both;
-	font-size: 10px;
-	margin: 0px auto 0px auto;
+.dashboard {
+    width: 785px; /** 785 | 675 */
+    clear: both;
+    font-size: 10px;
+    margin: 0px auto 0px auto;
 }
 
-.entry
-{
-	float: left;
-	margin: 5px;
-	height: 120px;
-	width: 100px;
-	cursor: pointer;
-	overflow: hidden;
-	border: 1px solid #999999;
+.entry {
+    float: left;
+    margin: 5px;
+    height: 120px;
+    width: 100px;
+    cursor: pointer;
+    overflow: hidden;
+    border: 1px solid #999999;
 }
 
-.icon
-{
-	background-color: #9900ff;
-	width: 100px;
-	height: 100px;
+.icon {
+    background-color: #9900ff;
+    width: 100px;
+    height: 100px;
 
-	/** special case */
-	background-image: url(../images/sprites.jpg);
-	background-repeat: no-repeat;
+    /** special case */
+    background-image: url(../images/sprites.jpg);
+    background-repeat: no-repeat;
 }
 
-.text
-{
-	width: 100px;
-	height: 20px;
-	text-align: center;
-	background-color: #cccccc;
-	padding-top: 4px;
+.text {
+    width: 100px;
+    height: 20px;
+    text-align: center;
+    background-color: #cccccc;
+    padding-top: 4px;
 }
 
-.dashboard-subdomains
-{
-	background-position: 0px 0px;
+.dashboard-subdomains {
+    background-position: 0px 0px;
 }
 
-.dashboard-pages
-{
-	background-position: -100px 0px;
+.dashboard-pages {
+    background-position: -100px 0px;
 }
 
-.dashboard-cruder
-{
-	background-position: -200px 0px;
+.dashboard-cruder {
+    background-position: -200px 0px;
 }
 
-.dashboard-menus
-{
-	background-position: -300px 0px;
+.dashboard-menus {
+    background-position: -300px 0px;
 }
 
-.dashboard-constants
-{
-	background-position: -400px 0px;
+.dashboard-constants {
+    background-position: -400px 0px;
 }
 
-.dashboard-databases
-{
-	background-position: -500px 0px;
+.dashboard-databases {
+    background-position: -500px 0px;
 }
 
-.dashboard-smtp
-{
-	background-position: -500px -400px;
+.dashboard-smtp {
+    background-position: -500px -400px;
 }
 
-.dashboard-emails
-{
-	background-position: 0px -200px;
+.dashboard-emails {
+    background-position: 0px -200px;
 }
 
-.dashboard-cdn
-{
-	background-position: -400px -100px;
+.dashboard-cdn {
+    background-position: -400px -100px;
 }
 
-.dashboard-clear
-{
-	background-position: -200px -300px;
+.dashboard-clear {
+    background-position: -200px -300px;
 }
 
-.dashboard-tables
-{
-	background-position: -200px -100px;
+.dashboard-tables {
+    background-position: -200px -100px;
 }
 
-.dashboard-builtons
-{
-	background-position: -100px -500px;
+.dashboard-builtons {
+    background-position: -100px -500px;
 }
 
-.dashboard-introduction
-{
-	background-position: 0px -100px;
+.dashboard-introduction {
+    background-position: 0px -100px;
 }
 
-.dashboard-help
-{
-	background-position: -400px -500px;
+.dashboard-help {
+    background-position: -400px -500px;
 }
 
-.dashboard-toc
-{
-	background-position: -200px -400px;
+.dashboard-toc {
+    background-position: -200px -400px;
 }
 
-.dashboard-aboutus
-{
-	background-position: -300px -500px;
+.dashboard-aboutus {
+    background-position: -300px -500px;
 }
 
-.dashboard-downloads
-{
-	background-position: -100px -300px;
+.dashboard-downloads {
+    background-position: -100px -300px;
 }
 
-.dashboard-sitemap
-{
-	background-position: 0px -400px;
+.dashboard-sitemap {
+    background-position: 0px -400px;
 }
 
-.dashboard-support
-{
-	background-position: -300px -300px;
+.dashboard-support {
+    background-position: -300px -300px;
 }
 
-.dashboard-contactus
-{
-	background-position: -200px -200px;
+.dashboard-contactus {
+    background-position: -200px -200px;
 }
 
-.dashboard-identifier
-{
-	background-position: -500px -500px;
+.dashboard-identifier {
+    background-position: -500px -500px;
 }
 
-.dashboard-domains
-{
-	background-position: -400px -300px;
+.dashboard-domains {
+    background-position: -400px -300px;
 }
 
 /*

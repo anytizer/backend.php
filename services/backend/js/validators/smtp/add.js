@@ -3,17 +3,15 @@ var v = new Validator('smtp-add-form');
 /**
  * Agreement
  */
-function agreement()
-{
-	var success = false;
-	var yn = document.forms['smtp-add-form'].elements['smtp[do_authenticate]'].value;
-	if(yn != 'Y' && yn != 'N')
-	{
-		alert('Authentication flag is only from [ Y / N ]');
-		success = false;
-	}
+function agreement() {
+    var success = false;
+    var yn = document.forms['smtp-add-form'].elements['smtp[do_authenticate]'].value;
+    if (yn != 'Y' && yn != 'N') {
+        alert('Authentication flag is only from [ Y / N ]');
+        success = false;
+    }
 
-	return success;
+    return success;
 }
 //v.setAddnlValidationFunction('agreement');
 
@@ -36,24 +34,20 @@ v.addValidation('smtp[smtp_comments]', 'required', 'Please describe this SMTP ac
 /**
  * Click on Yes/No button handler
  */
-function click_put(who, where, what)
-{
-	document.getElementById(who).onclick = function()
-	{
-		document.getElementById(where).value = what;
-		return false;
-	};
+function click_put(who, where, what) {
+    document.getElementById(who).onclick = function () {
+        document.getElementById(where).value = what;
+        return false;
+    };
 }
 click_put('put-Y', 'smtp-do_authenticate', 'Y');
 click_put('put-N', 'smtp-do_authenticate', 'N');
 
-function _ports_anchors()
-{
-	document.forms['smtp-add-form'].elements['smtp[smtp_port]'].value = this.text;
-	return false;
+function _ports_anchors() {
+    document.forms['smtp-add-form'].elements['smtp[smtp_port]'].value = this.text;
+    return false;
 }
 var ports_anchors = document.getElementById('smtp-ports').getElementsByTagName('a');
-for(var i = 0; i < ports_anchors.length; ++i)
-{
-	ports_anchors[i].onclick = _ports_anchors;
+for (var i = 0; i < ports_anchors.length; ++i) {
+    ports_anchors[i].onclick = _ports_anchors;
 }

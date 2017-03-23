@@ -28,15 +28,15 @@ $condition = new \others\condition();
 
 # Compulsory conditions
 $condition->add('AND', array(
-	# 'e.subdomain_id' => $subdomain_id, # Bind the records
-	'e.is_active' => 'Y', # Do not remove this
+    # 'e.subdomain_id' => $subdomain_id, # Bind the records
+    'e.is_active' => 'Y', # Do not remove this
 ));
 
 # List out the entries
 $entries = $superfish->list_entries(
-	$condition,
-	$from_index = $pagination->beginning_entry(),
-	$pagination->per_page()
+    $condition,
+    $from_index = $pagination->beginning_entry(),
+    $pagination->per_page()
 );
 
 # Pagination helper

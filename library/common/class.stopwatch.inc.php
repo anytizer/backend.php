@@ -16,50 +16,50 @@ namespace common;
  */
 class stopwatch
 {
-	private $_starttime;
+    private $_starttime;
 
-	function __construct()
-	{
-		/**
-		 * Auto initiate the timer
-		 */
-		$this->start();
-	}
+    function __construct()
+    {
+        /**
+         * Auto initiate the timer
+         */
+        $this->start();
+    }
 
-	/**
-	 * Finds out the FLOAT value of current time
-	 */
-	private function current_time()
-	{
-		$current_time = microtime();
-		list($microseconds, $seconds) = explode(' ', $current_time);
+    /**
+     * Begin the timer
+     */
+    public function start()
+    {
+        $this->_starttime = $this->current_time();
+    }
 
-		return (float)$microseconds + (float)$seconds;
-	}
+    /**
+     * Finds out the FLOAT value of current time
+     */
+    private function current_time()
+    {
+        $current_time = microtime();
+        list($microseconds, $seconds) = explode(' ', $current_time);
 
-	/**
-	 * Begin the timer
-	 */
-	public function start()
-	{
-		$this->_starttime = $this->current_time();
-	}
+        return (float)$microseconds + (float)$seconds;
+    }
 
-	/**
-	 * Stop the timer
-	 */
-	public function stop()
-	{
-		$stop_time = $this->current_time();
+    /**
+     * Alias of stopper
+     */
+    public function time_taken()
+    {
+        return $this->stop();
+    }
 
-		return round($stop_time - $this->_starttime, 4);
-	}
+    /**
+     * Stop the timer
+     */
+    public function stop()
+    {
+        $stop_time = $this->current_time();
 
-	/**
-	 * Alias of stopper
-	 */
-	public function time_taken()
-	{
-		return $this->stop();
-	}
+        return round($stop_time - $this->_starttime, 4);
+    }
 }

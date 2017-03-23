@@ -10,45 +10,45 @@ namespace third;
 class xhttp_rpc
 {
 
-	public function __construct()
-	{
-		// oh, nothing
-	}
+    public function __construct()
+    {
+        // oh, nothing
+    }
 
-	public function call($url, $method, $parameters, $options = array())
-	{
-		$options = array_merge(array('verbosity' => 'no_white_space'), $options);
-		$data['post'] = xmlrpc_encode_request($method, $parameters, $options);
-		$data['headers']['Content-Type'] = 'text/xml';
-		$data['method'] = 'post';
+    public static function set_rpc_data(&$urlparts, &$requestData)
+    {
+        $requestData['method'] = 'post';
+        $requestData['curl'][CURLOPT_POSTFIELDS] = $requestData['post'];
+        $requestData['post'] = null;
+    }
 
-		xhttp::addHookToRequest($data, 'data-preparation', array(__CLASS__, 'set_rpc_data'), 8);
+    public function call($url, $method, $parameters, $options = array())
+    {
+        $options = array_merge(array('verbosity' => 'no_white_space'), $options);
+        $data['post'] = xmlrpc_encode_request($method, $parameters, $options);
+        $data['headers']['Content-Type'] = 'text/xml';
+        $data['method'] = 'post';
 
-		$response = xhttp::fetch($url, $data);
+        xhttp::addHookToRequest($data, 'data-preparation', array(__CLASS__, 'set_rpc_data'), 8);
 
-		$response['raw'] = $response['body'];
-		$response['body'] = str_replace('i8>', 'i4>', $response['body']);
-		$response['body'] = xmlrpc_decode($response['body']);
+        $response = xhttp::fetch($url, $data);
 
-		if($response['body'] AND xmlrpc_is_fault($response['body']))
-		{
-			$response['rpc_fault'] = $response['body']['faultString'];
-			$response['rpc_fault_code'] = $response['body']['faultCode'];
-		}
+        $response['raw'] = $response['body'];
+        $response['body'] = str_replace('i8>', 'i4>', $response['body']);
+        $response['body'] = xmlrpc_decode($response['body']);
 
-		return $response;
-	}
+        if ($response['body'] AND xmlrpc_is_fault($response['body'])) {
+            $response['rpc_fault'] = $response['body']['faultString'];
+            $response['rpc_fault_code'] = $response['body']['faultCode'];
+        }
 
-	public function load()
-	{
-		return true;
-	}
+        return $response;
+    }
 
-	// hook: data-preparation
-	public static function set_rpc_data(&$urlparts, &$requestData)
-	{
-		$requestData['method'] = 'post';
-		$requestData['curl'][CURLOPT_POSTFIELDS] = $requestData['post'];
-		$requestData['post'] = null;
-	}
+    // hook: data-preparation
+
+    public function load()
+    {
+        return true;
+    }
 }

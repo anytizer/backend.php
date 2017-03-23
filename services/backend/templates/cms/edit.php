@@ -2,14 +2,14 @@
 Created on: 2011-02-09 23:32:47 349
 *}-->
 <div class="information">
-	<ul class="links">
-		<li><a href="cms-list.php"><img src="{'table'|icon}" title="List CMS" alt="List CMS"/> List CMS</a></li>
-	</ul>
+    <ul class="links">
+        <li><a href="cms-list.php"><img src="{'table'|icon}" title="List CMS" alt="List CMS"/> List CMS</a></li>
+    </ul>
 </div>
 <div class="clear"><!--{*  style="clear:both;" *}--></div>
 <form autocomplete="off" id="cms-edit-form" name="cms-edit-form" method="post" action="cms-edit.php">
-	<table class="data edit">
-		<!-- file or image upload script/patch --><!--{*
+    <table class="data edit">
+        <!-- file or image upload script/patch --><!--{*
 	<tr class="{cycle values='A,B'} waring-overwrite">
 		<td class="attribute">cms File/Picture:</td>
 		<td>
@@ -18,74 +18,74 @@ Created on: 2011-02-09 23:32:47 349
 		</td>
 	</tr>
 *}-->
-		<tr class="{cycle values='A,B'}">
-			<td class="attribute">Page Name:</td>
-			<td><input type="text" name="cms[page_name]" value="{$cms.page_name|htmlentities}" class="input"
-			           id="cms-page_name"/></td>
-		</tr>
-		<tr class="{cycle values='A,B'}">
-			<td class="attribute">Page Title:</td>
-			<td><input type="text" name="cms[page_title]" value="{$cms.page_title|htmlentities}" class="input"
-			           id="cms-page_title"/></td>
-		</tr>
-		<tr class="{cycle values='A,B'}">
-			<td class="attribute">Include File:</td>
-			<td><input type="text" name="cms[include_file]" value="{$cms.include_file|htmlentities}" class="input"
-			           id="cms-include_file"/></td>
-		</tr>
-		<tr class="{cycle values='A,B'}">
-			<td class="attribute">Content Title:</td>
-			<td><input type="text" name="cms[content_title]" value="{$cms.content_title|htmlentities}" class="input"
-			           id="cms-content_title"/></td>
-		</tr>
-		<tr class="{cycle values='A,B'}">
-			<td class="attribute">Content Text:</td>
-			<td class="value"><textarea rows="5" cols="50" name="cms[content_text]" class="editor"
-			                            id="cms-content_text">{$cms.content_text|htmlentities}</textarea></td>
-		</tr>
-		<tr class="{cycle values='A,B'}">
-			<td class="attribute">Meta Keywords:</td>
-			<td><input type="text" name="cms[meta_keywords]" value="{$cms.meta_keywords|htmlentities}" class="input"
-			           id="cms-meta_keywords"/></td>
-		</tr>
-		<tr class="{cycle values='A,B'}">
-			<td class="attribute">Meta Description:</td>
-			<td class="value"><textarea rows="5" cols="50" name="cms[meta_description]" class="editor"
-			                            id="cms-meta_description">{$cms.meta_description|htmlentities}</textarea></td>
-		</tr>
-		<tr class="{cycle values='A,B'}">
-			<td class="attribute">Template File:</td>
-			<td><input type="text" name="cms[template_file]" value="{$cms.template_file|htmlentities}" class="input"
-			           id="cms-template_file"/></td>
-		</tr>
-		<tr class="{cycle values='A,B'}">
-			<td class="attribute">Page Comments:</td>
-			<td><input type="text" name="cms[page_comments]" value="{$cms.page_comments|htmlentities}" class="input"
-			           id="cms-page_comments"/></td>
-		</tr>
-		<tr class="{cycle values='A,B'}">
-			<td class="attribute">Page Extra:</td>
-			<td><input type="text" name="cms[page_extra]" value="{$cms.page_extra|htmlentities}" class="input"
-			           id="cms-page_extra"/></td>
-		</tr>
-		<tr>
-			<td class="attribute">&nbsp;</td>
-			<td>
-				<input type="text" name="email" value="" style="display:none; visibility:hidden;"/> <input type="text"
-				                                                                                           name="is_spam"
-				                                                                                           value=""
-				                                                                                           style="display:none; visibility:hidden;"/>
-				<!--{* 100% sure, only spammers fill these fields, Leave blank. *}-->
-				<input type="hidden" name="page_id" value="{$cms.page_id}"/>
-				<!-- This is different than system's protection code. This is related to particular ID. -->
-				<input type="hidden" name="protection_code" value="{$cms.code}"/> <input type="hidden"
-				                                                                         name="edit-action"
-				                                                                         value="Edit CMS"/> <input
-					type="submit" name="submit-button" class="submit" value="Save Changes"/> Or, <a
-					href="{\common\url::last_page('cms-list.php')}">Cancel</a>
-			</td>
-		</tr>
-	</table>
+        <tr class="{cycle values='A,B'}">
+            <td class="attribute">Page Name:</td>
+            <td><input type="text" name="cms[page_name]" value="{$cms.page_name|htmlentities}" class="input"
+                       id="cms-page_name"/></td>
+        </tr>
+        <tr class="{cycle values='A,B'}">
+            <td class="attribute">Page Title:</td>
+            <td><input type="text" name="cms[page_title]" value="{$cms.page_title|htmlentities}" class="input"
+                       id="cms-page_title"/></td>
+        </tr>
+        <tr class="{cycle values='A,B'}">
+            <td class="attribute">Include File:</td>
+            <td><input type="text" name="cms[include_file]" value="{$cms.include_file|htmlentities}" class="input"
+                       id="cms-include_file"/></td>
+        </tr>
+        <tr class="{cycle values='A,B'}">
+            <td class="attribute">Content Title:</td>
+            <td><input type="text" name="cms[content_title]" value="{$cms.content_title|htmlentities}" class="input"
+                       id="cms-content_title"/></td>
+        </tr>
+        <tr class="{cycle values='A,B'}">
+            <td class="attribute">Content Text:</td>
+            <td class="value"><textarea rows="5" cols="50" name="cms[content_text]" class="editor"
+                                        id="cms-content_text">{$cms.content_text|htmlentities}</textarea></td>
+        </tr>
+        <tr class="{cycle values='A,B'}">
+            <td class="attribute">Meta Keywords:</td>
+            <td><input type="text" name="cms[meta_keywords]" value="{$cms.meta_keywords|htmlentities}" class="input"
+                       id="cms-meta_keywords"/></td>
+        </tr>
+        <tr class="{cycle values='A,B'}">
+            <td class="attribute">Meta Description:</td>
+            <td class="value"><textarea rows="5" cols="50" name="cms[meta_description]" class="editor"
+                                        id="cms-meta_description">{$cms.meta_description|htmlentities}</textarea></td>
+        </tr>
+        <tr class="{cycle values='A,B'}">
+            <td class="attribute">Template File:</td>
+            <td><input type="text" name="cms[template_file]" value="{$cms.template_file|htmlentities}" class="input"
+                       id="cms-template_file"/></td>
+        </tr>
+        <tr class="{cycle values='A,B'}">
+            <td class="attribute">Page Comments:</td>
+            <td><input type="text" name="cms[page_comments]" value="{$cms.page_comments|htmlentities}" class="input"
+                       id="cms-page_comments"/></td>
+        </tr>
+        <tr class="{cycle values='A,B'}">
+            <td class="attribute">Page Extra:</td>
+            <td><input type="text" name="cms[page_extra]" value="{$cms.page_extra|htmlentities}" class="input"
+                       id="cms-page_extra"/></td>
+        </tr>
+        <tr>
+            <td class="attribute">&nbsp;</td>
+            <td>
+                <input type="text" name="email" value="" style="display:none; visibility:hidden;"/> <input type="text"
+                                                                                                           name="is_spam"
+                                                                                                           value=""
+                                                                                                           style="display:none; visibility:hidden;"/>
+                <!--{* 100% sure, only spammers fill these fields, Leave blank. *}-->
+                <input type="hidden" name="page_id" value="{$cms.page_id}"/>
+                <!-- This is different than system's protection code. This is related to particular ID. -->
+                <input type="hidden" name="protection_code" value="{$cms.code}"/> <input type="hidden"
+                                                                                         name="edit-action"
+                                                                                         value="Edit CMS"/> <input
+                    type="submit" name="submit-button" class="submit" value="Save Changes"/> Or, <a
+                    href="{\common\url::last_page('cms-list.php')}">Cancel</a>
+            </td>
+        </tr>
+    </table>
 </form>
 <!-- Validation -->
 <script type="text/javascript" src="js/validator/gen_validatorv31.js"></script>

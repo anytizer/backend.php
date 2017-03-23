@@ -6,18 +6,14 @@
  */
 function smarty_modifier_address($value = "", $field = "", $separator = ': ', $EOL_separator = '<br />')
 {
-	$html = "";
-	if($value)
-	{
-		if($field)
-		{
-			$html = $field . $separator . $value . $EOL_separator;
-		}
-		else
-		{
-			$html = $value . $EOL_separator;
-		}
-	}
+    $html = "";
+    if ($value) {
+        if ($field) {
+            $html = $field . $separator . $value . $EOL_separator;
+        } else {
+            $html = $value . $EOL_separator;
+        }
+    }
 
-	return $html;
+    return $html;
 }
