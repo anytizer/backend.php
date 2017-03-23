@@ -1,5 +1,5 @@
 <?php
-namespace subdomain;
+namespace \subdomain;
 
 #__DEVELOPER-COMMENTS__
 
@@ -34,7 +34,7 @@ class login_manager
 	/**
 	 * Authenticate a user
 	 */
-	public function login_user($username = '', $password = '')
+	public function login_user($username = "", $password = "")
 	{
 		$username = \common\tools::sanitize($username);
 		$password = \common\tools::sanitize($password);
@@ -111,7 +111,7 @@ GROUP BY
 	 *
 	 * @return int
 	 */
-	public function password_change($user_id = 0, $password_old = '', $password_new = '', $password_confirm = '')
+	public function password_change($user_id = 0, $password_old = "", $password_new = "", $password_confirm = "")
 	{
 		$user_id = (int)$user_id;
 
@@ -135,7 +135,7 @@ WHERE
 	# AND user_name='<USERNAME>'         # This is optional security
 	AND user_password='{$password_old}'  # Current password matches
 	AND user_password!='{$password_new}' # New password is NOT same as old one
-	AND ''!='{$password_new}'            # New password is NOT blank
+	AND ""!='{$password_new}'            # New password is NOT blank
 	AND '{$password_new}'='{$password_confirm}' # New password confirms
 ;";
 		$this->query($reset_password_sql);
@@ -150,7 +150,7 @@ WHERE
 	 *
 	 * @return bool
 	 */
-	public function password_forgot($username_email = '')
+	public function password_forgot($username_email = "")
 	{
 		# Map email or username to user_name column.
 		# If data exists, send a link to reset the password
@@ -167,7 +167,7 @@ WHERE
 	 *
 	 * @return bool
 	 */
-	public function notify_password_changed($user_id = 0, $new_clean_password = '')
+	public function notify_password_changed($user_id = 0, $new_clean_password = "")
 	{
 		# Probably write here a script to send password and other message to the user.
 		return true;

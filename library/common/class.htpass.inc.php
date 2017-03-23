@@ -19,7 +19,7 @@ class htpass
 	/**
 	 * Add a valid user/password in the list
 	 */
-	public function add_user($user_name = '', $password = '')
+	public function add_user($user_name = "", $password = "")
 	{
 		if(preg_match('/^[a-z]+$/im', $user_name))
 		{
@@ -31,12 +31,12 @@ class htpass
 		return false;
 	}
 
-	public function get_password($string = '', $password_level = 0)
+	public function get_password($string = "", $password_level = 0)
 	{
 		# Different servers may support password encryption techiques.
 		# Go through hits and trails.
 
-		$password = '';
+		$password = "";
 		switch($password_level)
 		{
 			case 0:
@@ -101,19 +101,19 @@ require valid-user
 
 	//encryption functions
 
-	public function easy_password($string = '')
+	public function easy_password($string = "")
 	{
 		return $string;
 	}
 
-	public function crypted($string = '')
+	public function crypted($string = "")
 	{
 		$password = crypt($string, base64_encode($string));
 
 		return $password;
 	}
 
-	public function rand_salt_crypt($string = '')
+	public function rand_salt_crypt($string = "")
 	{
 		$salt = "";
 		mt_srand((double)microtime() * 1000000);
@@ -123,7 +123,7 @@ require valid-user
 		return "$apr1$" . crypt($string, $salt);
 	}
 
-	public function rand_salt_sha1($string = '')
+	public function rand_salt_sha1($string = "")
 	{
 		mt_srand((double)microtime() * 1000000);
 		$salt = pack("CCCC", mt_rand(), mt_rand(), mt_rand(), mt_rand());
@@ -131,7 +131,7 @@ require valid-user
 		return "{SSHA}" . base64_encode(pack("H*", sha1($string . $salt)) . $salt);
 	}
 
-	public function non_salted_sha1($string = '')
+	public function non_salted_sha1($string = "")
 	{
 		return "{SHA}" . base64_encode(pack("H*", sha1($string)));
 	}

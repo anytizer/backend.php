@@ -5,14 +5,14 @@
  * For various drop downs; Alternative to dropdown plugin
  * @url http://www.smarty.net/forums/viewtopic.php?t=14990
  *
- * @example <select name="country" id="country">{html_options options='countries'|dropdown selected=''}</select>
+ * @example <select name="country" id="country">{html_options options='countries'|dropdown selected=""}</select>
  */
 
-function smarty_modifier_dropdowns($identifier = '')
+function smarty_modifier_dropdowns($identifier = "")
 {
 	$data = array();
 
-	$file = preg_replace('/[^a-z\-]+/', '', $identifier);
+	$file = preg_replace('/[^a-z\-]+/', "", $identifier);
 	$cache_file_name = __TEMP_PATH__ . '/cache-menus-dropdowns-' . $file . '.serialized';
 
 	# Use only fresh cache files

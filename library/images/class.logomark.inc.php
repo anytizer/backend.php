@@ -10,8 +10,8 @@ namespace images;
 class logomark
 {
 	private $clear_too_old_images = false;
-	private $logo_fullpath = '';
-	private $temp_directory = '';
+	private $logo_fullpath = "";
+	private $temp_directory = "";
 	private $resize_save = false; # true (test) | false
 	private $resize_image = false; # true (test) | false
 	private $resize = array('width' => 0, 'height' => 0);
@@ -20,7 +20,7 @@ class logomark
 	private $cropnail_x = 0;
 	private $cropnail_y = 0;
 
-	public function __construct($logo_fullpath = '')
+	public function __construct($logo_fullpath = "")
 	{
 		if(is_file($logo_fullpath))
 		{
@@ -45,7 +45,7 @@ class logomark
 	 * Save the image to the given location
 	 * It is an optional patching only, before calling to show_image()
 	 */
-	public function save_to($fullpath = '')
+	public function save_to($fullpath = "")
 	{
 		/**
 		 * @todo Validate the save path
@@ -57,7 +57,7 @@ class logomark
 	/**
 	 * Puts a small logo on the image (bottom right corner)
 	 */
-	function show_image($image_fullpath = '')
+	function show_image($image_fullpath = "")
 	{
 		if(!is_file($image_fullpath))
 		{
@@ -166,7 +166,7 @@ class logomark
 				3 => "width=\"$this->resize['width']\" height=\"$this->resize['height']\"",
 				'bits' => 0,
 				'channels' => 0,
-				'mime' => '',
+				'mime' => "",
 			);
 		}
 

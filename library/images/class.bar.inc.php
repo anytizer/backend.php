@@ -60,9 +60,9 @@ class bar
 	/**
 	 * Put the text marker
 	 */
-	private function mark_percentage($image_text = '')
+	private function mark_percentage($image_text = "")
 	{
-		if($image_text == '')
+		if($image_text == "")
 		{
 			# Why to bother, when there is nothing?
 			return false;
@@ -130,7 +130,7 @@ class bar
 			}
 			else
 			{
-				$image_text = '';
+				$image_text = "";
 			}
 		}
 

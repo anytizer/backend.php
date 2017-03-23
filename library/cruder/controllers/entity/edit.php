@@ -10,10 +10,10 @@
 $__ENTITY__ = new \subdomain\__ENTITY__();
 
 # Handle Editing, when data is supplied
-if($variable->post('edit-action', 'string', '') && ($__PK_NAME__ = $variable->post('__PK_NAME__', 'integer', 0)))
+if($variable->post('edit-action', 'string', "") && ($__PK_NAME__ = $variable->post('__PK_NAME__', 'integer', 0)))
 {
 	# Refer to old records in case we need it
-	$code = $variable->post('protection_code', 'string', '');
+	$code = $variable->post('protection_code', 'string', "");
 	$old = $__ENTITY__->details($__PK_NAME__, $code);
 	if(!$old)
 	{
@@ -33,7 +33,7 @@ if($variable->post('edit-action', 'string', '') && ($__PK_NAME__ = $variable->po
 	/**
 	 * $uploader = new \backend\uploader(__SUBDOMAIN_BASE__.'/templates/images/__ENTITY__', true);
 	 * $file_field_name = 'file_field';
-	 * $file_field = $uploader->store($file_field_name, '');
+	 * $file_field = $uploader->store($file_field_name, "");
 	 * if($file_field)
 	 * {
 	 * $data[$file_field_name] = $file_field;
@@ -93,7 +93,7 @@ else
 	/**
 	 * Otherwise, load the details of the entity before editing it.
 	 */
-	$code = $variable->get('code', 'string', ''); # Protection Code
+	$code = $variable->get('code', 'string', ""); # Protection Code
 	if($__PK_NAME__ = $variable->get('id', 'integer', 0))
 	{
 		$details = $__ENTITY__->details($__PK_NAME__, $code);
@@ -103,7 +103,7 @@ else
 			\common\stopper::url('__ENTITY__-edit-error.php?context=data');
 		}
 
-		if($details['code'] != $variable->get('code', 'string', ''))
+		if($details['code'] != $variable->get('code', 'string', ""))
 		{
 			$messenger = new \common\messenger('error', 'You are attempting to edit wrong data.');
 			\common\stopper::url('__ENTITY__-edit-error.php?context=attemptedwrongdata');

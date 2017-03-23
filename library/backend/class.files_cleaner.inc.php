@@ -29,7 +29,7 @@ class files_cleaner
 		}
 
 		$acceptable_age = (int)$acceptable_age;
-		$extension = preg_replace('/[^a-z]/i', '', $extension); # use lower-case alphabetic extensions only
+		$extension = preg_replace('/[^a-z]/i', "", $extension); # use lower-case alphabetic extensions only
 
 		# Reset the counters
 		$this->files_removed = 0;

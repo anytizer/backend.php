@@ -150,7 +150,7 @@ WHERE
 	 * A modified clone of PHPMailer::MsgHTML() function
 	 * Embeds images within an email.
 	 */
-	public function embed($message, $basedir = '')
+	public function embed($message, $basedir = "")
 	{
 		preg_match_all("/(src|background)=\"(.*)\"/Ui", $message, $images);
 		if(!isset($images[2]))
@@ -164,7 +164,7 @@ WHERE
 			{
 				$filename = basename($url);
 				$directory = dirname($url);
-				($directory == '.') ? $directory = '' : '';
+				($directory == '.') ? $directory = "" : "";
 				$cid = 'cid:' . md5($filename);
 				$ext = pathinfo($filename, PATHINFO_EXTENSION);
 				$mimeType = self::_mime_types($ext);
@@ -195,9 +195,9 @@ WHERE
 	 *
 	 * @todo Support MarkDown (.md) as well | Parsedown is also good
 	 */
-	public function file2html($filename = '')
+	public function file2html($filename = "")
 	{
-		$file_contents = '';
+		$file_contents = "";
 		if(is_file($filename))
 		{
 			$file_contents = (nl2br(file_get_contents($filename)));

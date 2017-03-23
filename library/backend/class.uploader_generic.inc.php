@@ -45,23 +45,23 @@ class uploader_generic
 
 		# Special protection measures
 		$this->destination_url = $destination_url;
-		$this->destination_url = str_replace('..', '', $this->destination_url); # disallow any guessed paths
+		$this->destination_url = str_replace('..', "", $this->destination_url); # disallow any guessed paths
 		$this->destination_url = preg_replace('#/+#', '/', $this->destination_url);
 
 		# Do not allow to write to the root.
-		$this->destination_url = preg_replace('#^/#is', '', trim($this->destination_url));
+		$this->destination_url = preg_replace('#^/#is', "", trim($this->destination_url));
 	}
 
 	/**
 	 * Upload the file into the location defined by the child class.
 	 */
-	public function upload($extension = '', $filename = '')
+	public function upload($extension = "", $filename = "")
 	{
-		if($filename == '')
+		if($filename == "")
 		{
 			# If file name is missing, applies the default, random generated file name.
 			$filename = date('YmdHis') . mt_rand(1000, 9999);
-			$filename .= ($extension) ? '.' . preg_replace('#^\.#is', '', $extension) : '';
+			$filename .= ($extension) ? '.' . preg_replace('#^\.#is', "", $extension) : "";
 		}
 
 		if(!is_writable($this->destination))

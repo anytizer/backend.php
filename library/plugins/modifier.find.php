@@ -5,7 +5,7 @@
  * Finds out a variable
  * Similar to ||magical plugin
  */
-function smarty_modifier_find($index = '', $default = 0)
+function smarty_modifier_find($index = "", $default = 0)
 {
 	$variable = new \common\variable();
 

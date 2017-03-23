@@ -24,7 +24,7 @@ $condition->add('FULL', array(
 	"e.is_approved='Y'", # Optionally use this flag
 
 	# In search.php
-	# $search___ENTITY__?"(e.field_name LIKE '%{$search___ENTITY__}%' OR e.field_name LIKE '%{$search___ENTITY__}%')":'',
+	# $search___ENTITY__?"(e.field_name LIKE '%{$search___ENTITY__}%' OR e.field_name LIKE '%{$search___ENTITY__}%')":"",
 ));
 
 # Compulsory conditions

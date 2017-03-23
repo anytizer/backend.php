@@ -8,10 +8,10 @@
  *
  * @see |stars modifier.stars.php
  */
-function smarty_modifier_asterisk($value = '', $conditional_value = '', $stars = 1)
+function smarty_modifier_asterisk($value = "", $conditional_value = "", $stars = 1)
 {
-	$html = '';
-	$stars = str_pad('', (int)$stars, '*', STR_PAD_LEFT);
+	$html = "";
+	$stars = str_pad("", (int)$stars, '*', STR_PAD_LEFT);
 
 	if(!empty($value) && $value == $conditional_value)
 	{

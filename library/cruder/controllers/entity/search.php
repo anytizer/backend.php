@@ -31,7 +31,7 @@ $condition->add('FULL', array(
 
 	$search___ENTITY__ ? "(
 		   e.__SEARCHFIELDS__ LIKE '%{$search___ENTITY__}%'
-	)" : '',
+	)" : "",
 ));
 
 # Compulsory conditions

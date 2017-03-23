@@ -3,6 +3,10 @@
 
 /**
  * Useful in making a website have COMPLETE URL
+ *
+ * @param array $params
+ * @param $smarty
+ * @return string
  */
 function smarty_compiler_c_url($params = array(), &$smarty)
 {
@@ -11,7 +15,7 @@ function smarty_compiler_c_url($params = array(), &$smarty)
 	# It should not have a trailing / because:
 	# Other applications might have used it already.
 	# A subdirectory should begin with a slash, and end without a slash.
-	$sub_directory = (__LIVE__ === true) ? '' : '/backend/backend/public_html';
+	$sub_directory = (__LIVE__ === true) ? "" : '/backend/backend/public_html';
 
 	$url_sql = "
 SELECT
@@ -27,7 +31,7 @@ WHERE
 	if($page = $db->row($url_sql))
 	{
 		$http = ($page['is_https'] == 'Y') ? 'https://' : 'http://';
-		$www = ($page['is_www'] == 'Y') ? 'www.' : '';
+		$www = ($page['is_www'] == 'Y') ? 'www.' : "";
 		$url = "{$http}{$www}{$page['domain']}:{$page['port']}{$sub_directory}";
 	}
 	else

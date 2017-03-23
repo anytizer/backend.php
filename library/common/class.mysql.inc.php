@@ -123,7 +123,7 @@ class mysql
 	 *
 	 * @return array
 	 */
-	public function values($column = '', $sql = '')
+	public function values($column = "", $sql = "")
 	{
 		if($sql)
 		{
@@ -151,10 +151,10 @@ class mysql
 	 * @var string $sql Valid SQL to hit
 	 * @return boolean Success / Failure  status while making a query
 	 */
-	public function query($sql = '')
+	public function query($sql = "")
 	{
 		$success = false;
-		if($sql == '' || $sql == '#')
+		if($sql == "" || $sql == '#')
 		{
 			debug_print_backtrace();
 			\common\stopper::message('Empty query was passed in.', false);
@@ -270,7 +270,7 @@ class mysql
 	 * Logs queries by Daily Hours/Minute stamp, appending into a common file.
 	 * This makes the debug easier, within the temp/sql directory list.
 	 */
-	private function _log_query($sql = '')
+	private function _log_query($sql = "")
 	{
 		static $counter = 0;
 		++$counter;
@@ -326,7 +326,7 @@ class mysql
 	 *
 	 * @todo This is probably a deprecated way.
 	 */
-	public function &lead_unique($column_name = '')
+	public function &lead_unique($column_name = "")
 	{
 		$array = array();
 		while($this->next_record())
@@ -346,7 +346,7 @@ class mysql
 	 *
 	 * @todo This is probably a deprecated way.
 	 */
-	public function &lead($column_name = '')
+	public function &lead($column_name = "")
 	{
 		$array = array();
 		while($this->next_record())
@@ -370,7 +370,7 @@ class mysql
 	 *
 	 * @return array Associative array of indices and vlaues.
 	 */
-	public function to_association($index_column = '', $value_column = '')
+	public function to_association($index_column = "", $value_column = "")
 	{
 		$index_column = trim($index_column);
 		$value_column = trim($value_column);
@@ -396,7 +396,7 @@ class mysql
 			#else
 			{
 				# Rather this, raise some error notifications
-				#$array[$this->row_data[$index_column]]='';
+				#$array[$this->row_data[$index_column]]="";
 			}
 		}
 
@@ -408,7 +408,7 @@ class mysql
 	 * If value repeats, array will contain repeated value in its own.
 	 * Similar to TO_ARRAY() but takes only one column instead of all columns available
 	 */
-	public function to_columnar_array($index_column = '')
+	public function to_columnar_array($index_column = "")
 	{
 		$RESULTSET = $this->RESULTSET; # Backup, for safety
 		$array = array();
@@ -424,7 +424,7 @@ class mysql
 	 * Find a row out of a query data generated.
 	 * Recommended to use a query resulting only one row.
 	 */
-	public function count_records($sql = '')
+	public function count_records($sql = "")
 	{
 		$row = array();
 
@@ -468,7 +468,7 @@ class mysql
 	/**
 	 * Gives the to_array() result directly from SQL.
 	 */
-	public function arrays($sql_full_string = '')
+	public function arrays($sql_full_string = "")
 	{
 		$this->toggle_update_meta(false);
 
@@ -507,7 +507,7 @@ class mysql
 	/**
 	 * Convert a table name's id into its value, based on its primary key
 	 */
-	public function get_table_value($table = '', $column_name = '', $primary_key = '', $pk_id = 0, $is_unsafe = true)
+	public function get_table_value($table = "", $column_name = "", $primary_key = "", $pk_id = 0, $is_unsafe = true)
 	{
 		/**
 		 * When considering unsafe entries, make them integers by adding zero.
@@ -582,7 +582,7 @@ WHERE
 	/**
 	 * Lists out all columns in a table
 	 */
-	public function columns($table = '')
+	public function columns($table = "")
 	{
 		$this->META_DATA = array(); # Reset it
 
@@ -645,7 +645,7 @@ WHERE
 	 * is_array: true: Returns array
 	 *    false: returns html part
 	 */
-	public function options($key_column = '', $value_column = '', $is_array = false, $print_first_empty = false)
+	public function options($key_column = "", $value_column = "", $is_array = false, $print_first_empty = false)
 	{
 		$options = array();
 		if($print_first_empty === true)
@@ -665,7 +665,7 @@ WHERE
 		}
 		else
 		{
-			return implode('', $options);
+			return implode("", $options);
 		}
 	}
 

@@ -4,7 +4,8 @@ namespace abstracts;
 /**
  * Database Entity for total CURD functions.
  *
- * @package Interfaces
+ * Class entity
+ * @package abstracts
  */
 abstract class entity
 	extends \common\mysql
@@ -19,9 +20,9 @@ abstract class entity
 	/**
 	 * Set Private, Protected or Public Members
 	 */
-	protected $protection_code = ''; # Some random text, valid for the entire life
-	protected $table_name = ''; # Name of this table/entity name
-	protected $pk_column = ''; # Primary Key's Column Name
+	protected $protection_code = ""; # Some random text, valid for the entire life
+	protected $table_name = ""; # Name of this table/entity name
+	protected $pk_column = ""; # Primary Key's Column Name
 
 	/**
 	 * Pagination helper
@@ -50,7 +51,7 @@ abstract class entity
 
 	abstract public function details($__PK_NAME__ = 0);
 
-	abstract public function get_details($__PK__NAME__ = 0, $protection_code = '');
+	abstract public function get_details($__PK__NAME__ = 0, $protection_code = "");
 
 	# Backward compatibility: Old CRUDed files might not have these methods.
 	# abstract public function welcome_first($__PK_NAME__=0);
@@ -66,7 +67,7 @@ abstract class entity
 	public function add($data = array(), $skip_protection_code = false)
 	{
 		$variable = new \common\variable();
-		$protection_code = $variable->post('protection_code', 'string', '');
+		$protection_code = $variable->post('protection_code', 'string', "");
 
 		if($skip_protection_code !== true)
 		{
@@ -132,7 +133,7 @@ abstract class entity
 	 *
 	 * @return Boolean Success or Failure to edit a record
 	 */
-	public function edit($data = array(), $pk = array(), $protection_code = '', $__PK_NAME__ = 0)
+	public function edit($data = array(), $pk = array(), $protection_code = "", $__PK_NAME__ = 0)
 	{
 		# Use $protection_code ... to test the integrity of the posted items.
 		# First, Verifies if the user can edit the entry with the supplied protection code.
@@ -164,7 +165,7 @@ abstract class entity
 	 * @param $pk_value Integer: __PK_NAME__ to delete
 	 * @param $protection_code String Secret Hash Key
 	 */
-	public function delete($mode = 'inactivate', $__PK_NAME__ = 0, $protection_code = '')
+	public function delete($mode = 'inactivate', $__PK_NAME__ = 0, $protection_code = "")
 	{
 		$__PK_NAME__ = (int)$__PK_NAME__;
 		$protection_code = $this->sanitize($protection_code);
@@ -189,7 +190,7 @@ abstract class entity
 	/**
 	 * Allow to operate on a particular record, with its protection code
 	 */
-	protected function allow_protected_action($pk_column_id = 0, $protection_code = '')
+	protected function allow_protected_action($pk_column_id = 0, $protection_code = "")
 	{
 		# Action is: edit:update / delete:inactivate
 		$pk_column_id = (int)$pk_column_id;
@@ -214,7 +215,7 @@ WHERE
 	 * Sanitize code against hacks
 	 * @return string Sanitized conent safe for using in SQLs
 	 */
-	protected function sanitize($string = '')
+	protected function sanitize($string = "")
 	{
 		return \common\tools::sanitize_name($string);
 	}
@@ -222,14 +223,14 @@ WHERE
 	/**
 	 * Returns the encrypted protection code in a dynamic manner
 	 * Advanced use: Use this method to write a self hack for management purpose.
-	 * Example: $_POST[''] =
+	 * Example: $_POST[""] =
 	 *
 	 * @return string Protection code
 	 */
 	public function code($pk_id = 0)
 	{
 		$pk_id = (int)$pk_id;
-		$protection_code = '';
+		$protection_code = "";
 		if(!$pk_id)
 		{
 			# User is requesting a code of the entire entity
@@ -253,10 +254,10 @@ WHERE
 	 * Matches the user-returned protection code with its valid one
 	 * @return boolean Code valid status
 	 */
-	protected function is_valid_code($protection_code = '')
+	protected function is_valid_code($protection_code = "")
 	{
 		$real_code = $this->code();
-		$is_valid = (($real_code == $protection_code) && ($protection_code != ''));
+		$is_valid = (($real_code == $protection_code) && ($protection_code != ""));
 
 		return $is_valid;
 	}

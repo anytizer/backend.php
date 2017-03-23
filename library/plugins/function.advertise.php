@@ -12,12 +12,16 @@
  * Examples:
  * {advertise type='infolinks'}
  * {advertise type='analytics'}
+ *
+ * @param array $params
+ * @param $smarty
+ * @return string
  */
 function smarty_function_advertise($params = array(), &$smarty)
 {
 	$js = 'http://pagead2.googlesyndication.com/pagead/show_ads.js'; # When nothing matches
 
-	$params['type'] = !empty($params['type']) ? $params['type'] : ''; # Show all the times? or filter in localhost?
+	$params['type'] = !empty($params['type']) ? $params['type'] : ""; # Show all the times? or filter in localhost?
 	$params['force'] = !empty($params['force']) ? true : false;
 	switch($params['type'])
 	{

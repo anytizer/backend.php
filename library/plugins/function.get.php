@@ -11,7 +11,7 @@ function smarty_function_get($params = array(), &$smarty)
 {
 	$g = new \common\get($_GET);
 
-	$params['filter'] = !empty($params['filter']) ? $params['filter'] : '';
+	$params['filter'] = !empty($params['filter']) ? $params['filter'] : "";
 	$filters = preg_split('/[^a-z0-9\_]+/is', $params['filter']);
 	foreach($filters as $f => $filter)
 	{

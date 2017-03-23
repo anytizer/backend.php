@@ -12,7 +12,7 @@ class shortener
 	/**
 	 * Use these character set only
 	 */
-	private $ALLOWED_CHARS = '';
+	private $ALLOWED_CHARS = "";
 	private $length = 0;
 
 	/**
@@ -29,7 +29,7 @@ class shortener
 	 */
 	function getShortenedURLFromID($integer = 0)
 	{
-		$out = '';
+		$out = "";
 		while($integer > $this->length - 1)
 		{
 			$out = $this->ALLOWED_CHARS[fmod($integer, $this->length)] . $out;
@@ -42,7 +42,7 @@ class shortener
 	/**
 	 * Converts a short string into integer
 	 */
-	function getIDFromShortenedURL($string = '')
+	function getIDFromShortenedURL($string = "")
 	{
 		$this->length = strlen($this->ALLOWED_CHARS);
 		$size = strlen($string) - 1;

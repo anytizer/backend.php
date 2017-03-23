@@ -16,15 +16,15 @@
  */
 function smarty_function_datepicker($params = array(), &$smarty)
 {
-	$params['id'] = !empty($params['id']) ? $params['id'] : '';
+	$params['id'] = !empty($params['id']) ? $params['id'] : "";
 	if(!$params['id'])
 	{
-		return '';
+		return "";
 	}
 
-	$params['live'] = !empty($params['live']) ? (boolean)$params['live'] : '';
+	$params['live'] = !empty($params['live']) ? (boolean)$params['live'] : "";
 
-	$params['id'] = str_replace('#', '', $params['id']);
+	$params['id'] = str_replace('#', "", $params['id']);
 	$ids = explode(',', $params['id']);
 	foreach($ids as $i => $id)
 	{
@@ -32,7 +32,7 @@ function smarty_function_datepicker($params = array(), &$smarty)
 	}
 	$ids_list = implode(',', $ids);
 
-	$html = '';
+	$html = "";
 
 	/**
 	 * @todo Use live resource: Upgrade to latest release and test

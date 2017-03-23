@@ -1,5 +1,5 @@
 <?php
-namespace subdomain;
+namespace \subdomain;
 
 #__DEVELOPER-COMMENTS__
 
@@ -114,7 +114,7 @@ LIMIT {$from_index}, {$per_page}
 	 *
 	 * @return array $details Associative Array of Detailed records of an entity
 	 */
-	public function details($__PK_NAME__ = 0, $protection_code = '')
+	public function details($__PK_NAME__ = 0, $protection_code = "")
 	{
 		global $subdomain_id;
 		$protection_code = $this->sanitize($protection_code);
@@ -148,7 +148,7 @@ WHERE
 	 *
 	 * @return array Associative Array of Detailed records of an entity
 	 */
-	public function get_details($__PK_NAME__ = 0, $protection_code = '')
+	public function get_details($__PK_NAME__ = 0, $protection_code = "")
 	{
 		$__PK_NAME__ = (int)$__PK_NAME__;
 		$protection_code = $this->sanitize($protection_code);
@@ -182,7 +182,7 @@ WHERE
 	 *
 	 * @return bool
 	 */
-	public function flag_field($__PK_NAME__ = 0, $protection_code = '', $field_name = '')
+	public function flag_field($__PK_NAME__ = 0, $protection_code = "", $field_name = "")
 	{
 		# Allow only selected fields to be flagged Y/N
 		if(!in_array($field_name, array('is_approved', 'is_featured', 'is_reported', 'is_private')))

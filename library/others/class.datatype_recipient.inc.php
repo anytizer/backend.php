@@ -20,7 +20,7 @@ class datatype_recipient
 		));
 	}
 	
-	public function setup($email = '', $name = '')
+	public function setup($email = "", $name = "")
 	{
 		$this->email = \common\tools::sanitize($email);
 		$this->name = \common\tools::sanitize($name);
@@ -32,7 +32,7 @@ class datatype_recipient
 	public function is_valid()
 	{
 		# Validate name
-		$success = ($this->name != '' && $this->email != '');
+		$success = ($this->name != "" && $this->email != "");
 
 		# Add more validation here...
 		# ...

@@ -7,7 +7,7 @@
  * Perform a block action in entities. Input is via POST only
  */
 
-$action = $variable->post('action', 'string', '');
+$action = $variable->post('action', 'string', "");
 $ids = $variable->post('__ENTITY__', 'array', array());
 #print_r($_POST); print_r($ids); die();
 

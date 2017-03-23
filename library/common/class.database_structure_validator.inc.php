@@ -59,7 +59,7 @@ class database_structure_validator extends \common\mysql
 	private $error = 'error';
 	private $warning = 'warning';
 	private $blob = 'blob';
-	private $good = '';
+	private $good = "";
 
 	public function __construct()
 	{
@@ -69,7 +69,7 @@ class database_structure_validator extends \common\mysql
 	/**
 	 * Compares if a name is in lowercase
 	 */
-	public function lowercase($name = '')
+	public function lowercase($name = "")
 	{
 		return $name == strtolower($name);
 	}
@@ -77,7 +77,7 @@ class database_structure_validator extends \common\mysql
 	/**
 	 * Specifies if a filed type is uncommon.
 	 */
-	public function css_common_type($name = '')
+	public function css_common_type($name = "")
 	{
 		if(in_array($name, $this->uncommon_types))
 		{
@@ -90,33 +90,33 @@ class database_structure_validator extends \common\mysql
 	}
 
 
-	# echo($meta->zerofill==1)?'error':'';
-	public function css_zerofill($zerofill = false, $type = '')
+	# echo($meta->zerofill==1)?'error':"";
+	public function css_zerofill($zerofill = false, $type = "")
 	{
 		echo (!in_array($type, $this->disregard_zerofills) && $zerofill) ? $this->warning : $this->good;
 	}
 
 	# If a filed value is empty, warn
-	public function empty_field_warning($field_value = '')
+	public function empty_field_warning($field_value = "")
 	{
 		echo $field_value ? $this->good : $this->warning;
 	}
 
 	# If a filed value is empty, error
-	public function empty_field_error($field_value = '')
+	public function empty_field_error($field_value = "")
 	{
 		echo $field_value ? $this->good : $this->error;
 	}
 
 	# Check the standards of the table name
-	public function css_table_name($table_name = '', $within_table = false)
+	public function css_table_name($table_name = "", $within_table = false)
 	{
 		$name = (!$within_table && (preg_match('/^[^a-z]/', $table_name) || strtolower($table_name) != $table_name)) ? $this->warning : $this->good;
 		return $name;
 	}
 
 	# Check the standards of the field name
-	function css_field_name($field_name = '')
+	function css_field_name($field_name = "")
 	{
 		# Begins with Non numeric, non underscore
 		# Contains an underscore in between (prefix used)
@@ -131,7 +131,7 @@ class database_structure_validator extends \common\mysql
 		}
 	}
 
-	public function css_primary_key($is_primary_key = false, $is_multiple_key = false, $flags = '', $type)
+	public function css_primary_key($is_primary_key = false, $is_multiple_key = false, $flags = "", $type)
 	{
 		if($is_primary_key && $is_multiple_key)
 		{
@@ -147,7 +147,7 @@ class database_structure_validator extends \common\mysql
 	}
 
 	# Data Types validation
-	public function css_datatype($datatype = '')
+	public function css_datatype($datatype = "")
 	{
 		$css = $this->good;
 		/*		foreach($this->common_types as $good_type)
@@ -242,7 +242,7 @@ class database_structure_validator extends \common\mysql
 	/**
 	 * Reads Engine/Comments combination of a table
 	 */
-	function table_comments($table_name = '')
+	function table_comments($table_name = "")
 	{
 		$show_create_table_sql = "SHOW CREATE TABLE `{$table_name}`;";
 
@@ -253,7 +253,7 @@ class database_structure_validator extends \common\mysql
 		#echo $rs;
 		if(!mysqli_num_rows($rs))
 		{
-			$table = array('Create Table' => '',);
+			$table = array('Create Table' => "",);
 		}
 		else
 		{
@@ -274,6 +274,6 @@ class database_structure_validator extends \common\mysql
 
 		#print_r($data);
 
-		return isset($data[0][2]) ? $data[0][2] : '';
+		return isset($data[0][2]) ? $data[0][2] : "";
 	}
 }

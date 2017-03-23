@@ -13,7 +13,7 @@ class to_config
 	function to_array($sample = array(), $name = '$config', $depth = 0)
 	{
 		$string = "";
-		$pad = '';
+		$pad = "";
 		foreach($sample as $i => $var)
 		{
 			if(is_int($i))
@@ -32,7 +32,7 @@ class to_config
 			else
 			{
 				#$pad = str_pad($input, $depth, ".", STR_PAD_LEFT);
-				$var_treated = '';
+				$var_treated = "";
 				if(is_numeric($var))
 				{
 					$var_treated = $var;

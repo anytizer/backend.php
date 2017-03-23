@@ -10,7 +10,7 @@ class cropper_quick
 	 * Session/Post have the information on what file to crop and in which dimensions.
 	 * Crop and save the file accordingly.
 	 */
-	public function crop($source_image = '', $width = 0, $height = 0, $destination = '')
+	public function crop($source_image = "", $width = 0, $height = 0, $destination = "")
 	{
 		# Whatever was the crop size selected, what is the size to load?
 		$new = array(
@@ -44,7 +44,7 @@ class cropper_quick
 		return imagedestroy($thumb);
 	}
 
-	public function crop_ratio($source_image = '', $ratio = 0.3, $destination = '')
+	public function crop_ratio($source_image = "", $ratio = 0.3, $destination = "")
 	{
 		$info = array();
 		list($info['width'], $info['height'], $info['type'], $info['attr']) = getimagesize($source_image);
@@ -79,7 +79,7 @@ class cropper_quick
 	}
 
 
-	public function crop_percent($source_image = '', $percent = 30, $destination = '')
+	public function crop_percent($source_image = "", $percent = 30, $destination = "")
 	{
 		$info = array();
 		list($info['width'], $info['height'], $info['type'], $info['attr']) = getimagesize($source_image);

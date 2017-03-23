@@ -109,7 +109,7 @@ class cropnail
 	 *    - true:  Image has been resized correctly
 	 *    - false: Image has NOT been resized because of several reasons
 	 */
-	public function resize($original_filename = '', $cropnail_filename = '', $crop_pattern = 0)
+	public function resize($original_filename = "", $cropnail_filename = "", $crop_pattern = 0)
 	{
 		/**
 		 * Resizer needs the target dimensions

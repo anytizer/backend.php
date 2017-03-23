@@ -6,7 +6,7 @@ function _livesearch___ENTITY__()
 	var str = this.value;
 	if(str.length <= 1)
 	{
-		document.getElementById('livesearch-results').innerHTML = '';
+		document.getElementById('livesearch-results').innerHTML = "";
 		document.getElementById('livesearch-results').style.border = '0px';
 		return false;
 	}

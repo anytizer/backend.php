@@ -22,7 +22,7 @@ class hack_smarty
 	 * the one that matches as in the config file.
 	 * Decryption of a key is never required.
 	 */
-	public static function encrypt_key($key = '')
+	public static function encrypt_key($key = "")
 	{
 		$key = (self::is_already_encrypted === true) ? md5($key) : $key;
 
@@ -36,7 +36,7 @@ class hack_smarty
 	 * @param string $value Plain input string to encrypt in config file.
 	 * @return string
 	 */
-	public static function encrypt_value($value = '')
+	public static function encrypt_value($value = "")
 	{
 		# You may write your own stronger encryption codes here.
 		$value = (self::is_already_encrypted === true) ? base64_encode($value) : $value;
@@ -50,7 +50,7 @@ class hack_smarty
 	 * Template configuration values were encrypted.
 	 * Just decrypt them for display.
 	 */
-	public static function decrypt_value($value = '')
+	public static function decrypt_value($value = "")
 	{
 		# Make sure that this is an "exact reverse" of self::encrypt_value().
 		$value = (self::is_already_encrypted === true) ? base64_decode($value) : $value;

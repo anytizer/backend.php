@@ -40,7 +40,7 @@ INSERT IGNORE INTO query_pages (
 ) VALUES (
 	@SUBDOMAIN_ID, CURRENT_TIMESTAMP(),
 	'N', 'Y', 'Y', 'Y', 'Y',
-	'__ENTITY__-blockaction.php', 'Block action performed', '',
+	'__ENTITY__-blockaction.php', 'Block action performed', "",
 	'Block action!', '<p>This is a controller only page to perform certain actions on selected records.</p>',
 	'null.php'
 ) ON DUPLICATE KEY UPDATE fixed_on = CURRENT_TIMESTAMP();
@@ -56,7 +56,7 @@ INSERT IGNORE INTO query_pages (
 ) VALUES (
 	@SUBDOMAIN_ID, CURRENT_TIMESTAMP(),
 	'N', 'N', 'Y', 'Y', 'Y',
-	'__ENTITY__-direct-access-error.php', 'Error (contents protected)', '',
+	'__ENTITY__-direct-access-error.php', 'Error (contents protected)', "",
 	'Direct access error!', '<p>Missing sufficient parameters to load the page contents. Unfortunately, direct access to this record is NOT allowed.</p>',
 	'frontend.php'
 ) ON DUPLICATE KEY UPDATE fixed_on = CURRENT_TIMESTAMP();
@@ -161,7 +161,7 @@ INSERT IGNORE INTO query_pages (
 ) VALUES (
 	@SUBDOMAIN_ID, CURRENT_TIMESTAMP(),
 	'N', 'Y', 'Y', 'Y',
-	'__ENTITY__-sort.php', 'Sorting __ENTITY__', '',
+	'__ENTITY__-sort.php', 'Sorting __ENTITY__', "",
 	'Sorting __ENTITY__', '<p>This is a controller only page.</p><p>We have just sorted the records in <strong>__ENTITY_FULLNAME__</strong> based on their sinking weight.</p>',
 	'null.php '
 ) ON DUPLICATE KEY UPDATE fixed_on = CURRENT_TIMESTAMP();
@@ -194,7 +194,7 @@ INSERT IGNORE INTO query_pages (
 ) VALUES (
 	@SUBDOMAIN_ID, CURRENT_TIMESTAMP(),
 	'N', 'Y', 'Y', 'Y', 'Y',
-	'__ENTITY__-add-successful.php', 'Addition Successful', '',
+	'__ENTITY__-add-successful.php', 'Addition Successful', "",
 	'Congrats!', '<p>This record is added successfully. <a href="__ENTITY__-list.php">Go back now</a> or <a href="__ENTITY__-add.php">add another record</a>.</p>',
 	'admin.php'
 ) ON DUPLICATE KEY UPDATE fixed_on = CURRENT_TIMESTAMP();
@@ -210,7 +210,7 @@ INSERT IGNORE INTO query_pages (
 ) VALUES (
 	@SUBDOMAIN_ID, CURRENT_TIMESTAMP(),
 	'N', 'Y', 'Y', 'Y', 'Y', 'Y',
-	'__ENTITY__-add-error.php', 'Addition Failed', '',
+	'__ENTITY__-add-error.php', 'Addition Failed', "",
 	'Sorry!', '<p>Could not save this record. Have you entered the data correctly? Any duplicates? Also check, if you passed <strong>protection code</strong> correctly. <a href="__ENTITY__-add.php">Retry</a>.</p>',
 	'admin.php'
 ) ON DUPLICATE KEY UPDATE fixed_on = CURRENT_TIMESTAMP();
@@ -256,7 +256,7 @@ INSERT IGNORE INTO query_pages (
 ) VALUES (
 	@SUBDOMAIN_ID, CURRENT_TIMESTAMP(),
 	'N', 'Y', 'Y', 'Y', 'Y',
-	'__ENTITY__-edit-successful.php', 'Edit Successful', '',
+	'__ENTITY__-edit-successful.php', 'Edit Successful', "",
 	'Edit successful!', '<p>This record is modified successfully. <a href="__ENTITY__-list.php">Go back now</a>.</p>',
 	'admin.php'
 ) ON DUPLICATE KEY UPDATE fixed_on = CURRENT_TIMESTAMP();
@@ -271,7 +271,7 @@ INSERT IGNORE INTO query_pages (
 ) VALUES (
 	@SUBDOMAIN_ID, CURRENT_TIMESTAMP(),
 	'N', 'Y', 'Y', 'Y', 'Y', 'Y',
-	'__ENTITY__-edit-error.php', 'Error', '',
+	'__ENTITY__-edit-error.php', 'Error', "",
 	'Edit failed!', '<p>Error found while modifying the record. Please check for <strong>sufficient parameters</strong> and <strong>modification code</strong>.</p><p>This error also appears <strong>when you did not really edit any data</strong> but clicked on save/edit button. Or, the <strong>UPDATE</strong> query is wrong.</p>',
 	'admin.php'
 ) ON DUPLICATE KEY UPDATE fixed_on = CURRENT_TIMESTAMP();
@@ -288,7 +288,7 @@ INSERT IGNORE INTO query_pages (
 ) VALUES (
 	@SUBDOMAIN_ID, CURRENT_TIMESTAMP(),
 	'N', 'Y', 'Y', 'Y', 'Y',
-	'__ENTITY__-flag.php', 'Flagging [ __ENTITY__ : __TABLE__ ] data', '',
+	'__ENTITY__-flag.php', 'Flagging [ __ENTITY__ : __TABLE__ ] data', "",
 	'Flagging [ __ENTITY__ : __TABLE__ ] data', '<p>This is a controller only page to revert the current flag of the record.</p>',
 	'null.php'
 ) ON DUPLICATE KEY UPDATE fixed_on = CURRENT_TIMESTAMP();
@@ -305,7 +305,7 @@ INSERT IGNORE INTO query_pages (
 ) VALUES (
 	@SUBDOMAIN_ID, CURRENT_TIMESTAMP(),
 	'N', 'Y', 'Y', 'Y', 'Y',
-	'__ENTITY__-delete.php', 'Delete [ __ENTITY__ : __TABLE__ ] data', '',
+	'__ENTITY__-delete.php', 'Delete [ __ENTITY__ : __TABLE__ ] data', "",
 	'Deleting [ __ENTITY__ : __TABLE__ ] data', '<p>This is a controller only page. Attempting to delete a record.</p>',
 	'null.php'
 ) ON DUPLICATE KEY UPDATE fixed_on = CURRENT_TIMESTAMP();
@@ -320,7 +320,7 @@ INSERT IGNORE INTO query_pages (
 ) VALUES (
 	@SUBDOMAIN_ID, CURRENT_TIMESTAMP(),
 	'N', 'Y', 'Y', 'Y', 'Y',
-	'__ENTITY__-delete-successful.php', 'Deletion successful', '',
+	'__ENTITY__-delete-successful.php', 'Deletion successful', "",
 	'Record deleted successfully!', '<p>The record has been removed from the list successfully. You may think of <strong>pruning</strong> the database:table([ __ENTITY__ : __TABLE__ ]) as well. <a href="__ENTITY__-list.php">Go back now.</a></p>',
 	'admin.php'
 ) ON DUPLICATE KEY UPDATE fixed_on = CURRENT_TIMESTAMP();
@@ -335,7 +335,7 @@ INSERT IGNORE INTO query_pages (
 ) VALUES (
 	@SUBDOMAIN_ID, CURRENT_TIMESTAMP(),
 	'N', 'Y', 'Y', 'Y', 'Y', 'Y',
-	'__ENTITY__-delete-error.php', 'Deletion Failed', '',
+	'__ENTITY__-delete-error.php', 'Deletion Failed', "",
 	'Deletion failed!', '<p>The record is not deleted! Do you have enough <strong>permissions</strong> or <strong>valid code</strong> to delete this record?</p>',
 	'admin.php'
 ) ON DUPLICATE KEY UPDATE fixed_on = CURRENT_TIMESTAMP();

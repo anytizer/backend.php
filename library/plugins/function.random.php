@@ -6,7 +6,10 @@
  * Can be useful in:
  *    Generating the random texts for form validations, check against spams
  *    Random Password Generation
-
+ *
+ * @param array $params
+ * @param $smarty
+ * @return string
  */
 function smarty_function_random($params = array(), &$smarty)
 {

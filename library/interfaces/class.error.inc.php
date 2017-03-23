@@ -18,7 +18,7 @@ class error
 	/**
 	 * @todo Fix this class
 	 */
-	public function process($ini_file = '')
+	public function process($ini_file = "")
 	{
 		if(file_exists($ini_file))
 		{
@@ -41,11 +41,11 @@ class error
 		}
 	}
 
-	public function message($reason = '')
+	public function message($reason = "")
 	{
-		$message = '';
+		$message = "";
 
-		$reason = preg_replace('/[^a-z0-9\>\:]+/is', '', strtolower($reason));
+		$reason = preg_replace('/[^a-z0-9\>\:]+/is', "", strtolower($reason));
 		$why = preg_split('/\>|\:/is', $reason);
 		if(count($why) < 2)
 		{
@@ -70,7 +70,7 @@ class error
 		return $message;
 	}
 
-	public function stop($reason = '')
+	public function stop($reason = "")
 	{
 		die($this->message($reason));
 	}

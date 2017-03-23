@@ -13,8 +13,8 @@
 
 $__ENTITY__ = new \subdomain\__ENTITY__();
 $__PK_NAME__ = $variable->get('id', 'integer', 0);
-$code = $variable->get('code', 'string', '');
-$flag = $variable->get('flag', 'string', '');
+$code = $variable->get('code', 'string', "");
+$flag = $variable->get('flag', 'string', "");
 
 /**
  * Process request as Ajax Call
@@ -22,7 +22,7 @@ $flag = $variable->get('flag', 'string', '');
 $ajax = $variable->get('ajax', 'string', 'false') == 'true';
 
 # Assumes, ID always, in the GET parameter
-if($__PK_NAME__ != 0 && $code != '' && $flag != '')
+if($__PK_NAME__ != 0 && $code != "" && $flag != "")
 {
 	$data = $__ENTITY__->details($__PK_NAME__, $code);
 	if(!$data)

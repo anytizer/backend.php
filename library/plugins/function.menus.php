@@ -12,7 +12,7 @@
 
 function smarty_function_menus($params = array(), &$smarty)
 {
-	$menu_output = ''; # Output store
+	$menu_output = ""; # Output store
 	#print_r($_SESSION); print_r($_GET); print_r($params);
 
 	$menu_id = 0;
@@ -89,13 +89,13 @@ ORDER BY
 
 		$db->query($menus_sql);
 		$menus = array();
-		while($menu = $db->row(''))
+		while($menu = $db->row(""))
 		{
 			# Capitalize the first words?
 			# Don't be oversmart. Let the user manage it within the database.
 			# $menu['mt'] = ucwords($menu['mt']);
 
-			$id_class = ($menu_id == $menu['menu_id']) ? ' current' : '';
+			$id_class = ($menu_id == $menu['menu_id']) ? ' current' : "";
 
 			$strings = array();
 			$strings[] = ($menu['target']) ? "target=\"{$menu['target']}\"" : null;
@@ -105,10 +105,10 @@ ORDER BY
 			if($menu_id !== null)
 			{
 				#Remove last & in menu
-				$menu['href'] = preg_replace('/\#.*?$/is', '', $menu['href']);
-				$menu['href'] = preg_replace('/\&$/is', '', $menu['href']);
-				$menu['href'] = preg_replace('/\?/is', '', $menu['href']);
-				$menu['href'] = preg_replace('/\=$/is', '', $menu['href']);
+				$menu['href'] = preg_replace('/\#.*?$/is', "", $menu['href']);
+				$menu['href'] = preg_replace('/\&$/is', "", $menu['href']);
+				$menu['href'] = preg_replace('/\?/is', "", $menu['href']);
+				$menu['href'] = preg_replace('/\=$/is', "", $menu['href']);
 				if(strpos($menu['href'], '?') !== false)
 				{
 					# ? found in the URL: Just apped our CID
@@ -130,7 +130,7 @@ ORDER BY
 			$menus[] = "{$params['prefix']}<a {$attributes}><span>{$menu['text']}</span></a>{$params['suffix']}";
 		}
 
-		$menu_output = implode('', $menus);
+		$menu_output = implode("", $menus);
 		file_put_contents($cache_file, $menu_output);
 	} # if
 

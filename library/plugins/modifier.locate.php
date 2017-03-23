@@ -13,7 +13,7 @@ function smarty_modifier_locate($code = 'YYYYMMDDHHIISSXXXX')
 	}
 	else
 	{
-		$code = strtolower(preg_replace('/[^a-z0-9]/is', '', $code));
+		$code = strtolower(preg_replace('/[^a-z0-9]/is', "", $code));
 	}
 
 	return $code;

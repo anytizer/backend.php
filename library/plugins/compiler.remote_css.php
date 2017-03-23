@@ -10,6 +10,10 @@
  * @name remote_css
  * @url http://www.smarty.net/forums/viewtopic.php?p=61096#61096
  * @example {remote_css href='css/styles.css'}
+ *
+ * @param $tag_attrs
+ * @param $compiler
+ * @return null|string
  */
 function smarty_compiler_remote_css($tag_attrs, &$compiler)
 {

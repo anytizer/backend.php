@@ -19,14 +19,14 @@ function smarty_function_paginate($params = array(), &$smarty)
 	$params['ulli'] = !empty($params['ulli']) ? $params['ulli'] === true : false;
 
 	#$params['separator'] = !empty($params['separator'])?$params['separator']:' | ';
-	#$params['separator'] = ($params['ulli'])?'':$params['separator']; # Not needed in cse of UL/LI: Cleanup them
+	#$params['separator'] = ($params['ulli'])?"":$params['separator']; # Not needed in cse of UL/LI: Cleanup them
 	$params['separator'] = "\r\n";
 
 	if(empty($params['source']) || get_class($params['source']) != 'pagination')
 	{
 		$smarty->trigger_error('Pagination source must be defined. Hints: pass <strong>pagination</strong> object only', E_USER_ERROR);
 
-		return '';
+		return "";
 	}
 	else
 	{

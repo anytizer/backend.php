@@ -44,7 +44,7 @@ class server_side_validator
 	/**
 	 * Data can not be blank.
 	 */
-	public function validate_not_empty(&$value, $message = '')
+	public function validate_not_empty(&$value, $message = "")
 	{
 		$success = true;
 		if(empty($value))
@@ -60,7 +60,7 @@ class server_side_validator
 	 * No validations at all. This is the default validation, and should NOT be used programmatically.
 	 * Considerable with automated systems: Always returns true.
 	 */
-	public function validate_anything(&$value, $message = '')
+	public function validate_anything(&$value, $message = "")
 	{
 		return true;
 	}
@@ -68,7 +68,7 @@ class server_side_validator
 	/**
 	 * Validate texts (alphabets and space)
 	 */
-	public function validate_text(&$value, $message = '')
+	public function validate_text(&$value, $message = "")
 	{
 		$success = false;
 		if(preg_match("/^[a-z\ ]+$/is", $value))
@@ -86,7 +86,7 @@ class server_side_validator
 	/**
 	 * Validate numbers
 	 */
-	public function validate_number(&$value, $message = '')
+	public function validate_number(&$value, $message = "")
 	{
 		$success = false;
 		if(preg_match("/^[0-9]+$/is", $value))
@@ -104,7 +104,7 @@ class server_side_validator
 	/**
 	 * Validate date in YYYY-MM-DD format
 	 */
-	public function validate_date(&$value, $message = '')
+	public function validate_date(&$value, $message = "")
 	{
 		$success = false;
 		#if(preg_match("/^[0-9]{4}\-[0-9]{2}\-[0-9]{2}$/is", $value))
@@ -123,7 +123,7 @@ class server_side_validator
 	/**
 	 * Validate time in HH:MM:SS, 24 hours time format
 	 */
-	public function validate_time(&$value, $message = '')
+	public function validate_time(&$value, $message = "")
 	{
 		$success = false;
 		#if(preg_match("/^[0-9]{2}\:[0-9]{2}\:[0-9]{2}$/is", $value))
@@ -142,7 +142,7 @@ class server_side_validator
 	/**
 	 * Validate word as atomic group of alphabets only.
 	 */
-	public function validate_word(&$value, $message = '')
+	public function validate_word(&$value, $message = "")
 	{
 		$success = false;
 		$value = trim($value);
@@ -162,7 +162,7 @@ class server_side_validator
 	 * Validate that the input comprises of words.
 	 * Uses a portion of validating a single word.
 	 */
-	public function validate_words(&$value, $message = '')
+	public function validate_words(&$value, $message = "")
 	{
 		#echo("Validating: {$value}");
 		$v = trim($value);
@@ -198,7 +198,7 @@ class server_side_validator
 	/**
 	 * Validate floating point number
 	 */
-	public function validate_float(&$value, $message = '')
+	public function validate_float(&$value, $message = "")
 	{
 		$success = false;
 		if(preg_match("/^[\-\+]?[0-9]*\.?[0-9]+$/is", $value))
@@ -217,7 +217,7 @@ class server_side_validator
 	 * Validate money amount, with two digits in the decimal
 	 * A subset of float type numbers.
 	 */
-	public function validate_money(&$value, $message = '')
+	public function validate_money(&$value, $message = "")
 	{
 		$success = false;
 		if(preg_match("/^[\-\+]?[0-9]*\.?[0-9]{2}$/is", $value))
@@ -235,7 +235,7 @@ class server_side_validator
 	/**
 	 * Validate mixed: Accepts all possible ASCII keyboard entries for readable things.
 	 */
-	public function validate_mixed(&$value, $message = '')
+	public function validate_mixed(&$value, $message = "")
 	{
 		$success = false;
 		if(preg_match('/^[0-9a-z_\-\.\,\;\:\(\)\+\=\[\]\{\}\!\@\#\$\%\^\&\*\'\ ]+$/is', $value))
@@ -253,7 +253,7 @@ class server_side_validator
 	/**
 	 * Validate length of a text. Use zero ( 0 ) length to skip testing.
 	 */
-	public function validate_length(&$value, $min_length = 0, $max_length = 0, $message = '')
+	public function validate_length(&$value, $min_length = 0, $max_length = 0, $message = "")
 	{
 		$success = true;
 		if(
@@ -272,7 +272,7 @@ class server_side_validator
 	 * Validate a regular expression pattern.
 	 * An attempt to make extensions for custom validations.
 	 */
-	public function validate_regex(&$value, $pattern = '/^(.*?)$/', $message = '')
+	public function validate_regex(&$value, $pattern = '/^(.*?)$/', $message = "")
 	{
 		# addslashes | stripslashes, if read out from DB / Config
 		/*
@@ -304,7 +304,7 @@ class server_side_validator
 	 * Validate IPv4 Address
 	 * @url http://www.regular-expressions.info/examples.html
 	 */
-	public function validate_ipv4(&$value, $message = '')
+	public function validate_ipv4(&$value, $message = "")
 	{
 		# /^[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}$/is
 		# /^[\d]{1,3}\.[\d]{1,3}\.[\d]{1,3}\.[\d]{1,3}$/is
@@ -329,7 +329,7 @@ class server_side_validator
 	 * Validate IPv6 Address.
 	 * Not implemented now. Stub only
 	 */
-	public function validate_ipv6(&$value, $message = '')
+	public function validate_ipv6(&$value, $message = "")
 	{
 		$success = true;
 
@@ -341,7 +341,7 @@ class server_side_validator
 	 * Validate email address
 	 * Has a lot of conflicts and tradeoffs
 	 */
-	public function validate_email_single(&$value, $message = '')
+	public function validate_email_single(&$value, $message = "")
 	{
 		$success = false;
 		$email_reg = "/^[A-Za-z0-9_-]+@[A-Za-z0-9_-]+\.([A-Za-z0-9_-][A-Za-z0-9_]+)$/";
@@ -362,7 +362,7 @@ class server_side_validator
 	 * @see http://www.addedbytes.com/php/email-address-validation/
 	 * @todo Fix ereg with preg_match
 	 */
-	public function check_email_address($email = '')
+	public function check_email_address($email = "")
 	{
 		// First, we check that there's one @ symbol, and that the lengths are right
 		if(!ereg("^[^@]{1,64}@[^@]{1,255}$", $email))
@@ -403,7 +403,7 @@ class server_side_validator
 		return true;
 	}
 
-	public function validate_email($email = '')
+	public function validate_email($email = "")
 	{
 		return preg_match('/^((\"[^\"\f\n\r\t\v\b]+\")|([\w\!\#\$\%\&\'\*\+\-\~\/\^\`\|\{\}]+(\.[\w\!\#\$\%\&\'\*\+\-\~\/\^\`\|\{\}]+)*))@((\[(((25[0-5])|(2[0-4][0-9])|([0-1]?[0-9]?[0-9]))\.((25[0-5])|(2[0-4][0-9])|([0-1]?[0-9]?[0-9]))\.((25[0-5])|(2[0-4][0-9])|([0-1]?[0-9]?[0-9]))\.((25[0-5])|(2[0-4][0-9])|([0-1]?[0-9]?[0-9])))\])|(((25[0-5])|(2[0-4][0-9])|([0-1]?[0-9]?[0-9]))\.((25[0-5])|(2[0-4][0-9])|([0-1]?[0-9]?[0-9]))\.((25[0-5])|(2[0-4][0-9])|([0-1]?[0-9]?[0-9]))\.((25[0-5])|(2[0-4][0-9])|([0-1]?[0-9]?[0-9])))|((([A-Za-z0-9\-])+\.)+[A-Za-z\-]+))$/', $email);
 	}
@@ -412,8 +412,8 @@ class server_side_validator
 	/**
 	 * Alias sections, for quick data validation (one way testing)
 	 */
-	public function is_date($date = '')
+	public function is_date($date = "")
 	{
-		return $this->validate_date($date, '');
+		return $this->validate_date($date, "");
 	}
 }

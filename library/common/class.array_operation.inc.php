@@ -24,7 +24,7 @@ class array_operation
 	 *
 	 * @return array
 	 */
-	public function operate($ao_function = '', &$array = array())
+	public function operate($ao_function = "", &$array = array())
 	{
 		if(!is_array($array))
 		{
@@ -58,7 +58,7 @@ class array_operation
 	 *
 	 * @return string
 	 */
-	public function url_encode($value = '')
+	public function url_encode($value = "")
 	{
 		return urlencode($value);
 	} # url_encode()
@@ -71,7 +71,7 @@ class array_operation
 	 *
 	 * @return string
 	 */
-	public function td($value = '')
+	public function td($value = "")
 	{
 		return "<td>{$value}</td>";
 	} # td()
@@ -84,7 +84,7 @@ class array_operation
 	 *
 	 * @return string
 	 */
-	public function tr($value = '')
+	public function tr($value = "")
 	{
 		return "<tr>{$value}</tr>";
 	} # tr()
@@ -96,7 +96,7 @@ class array_operation
 	 *
 	 * @return string
 	 */
-	public function li($value = '')
+	public function li($value = "")
 	{
 		return "<li>{$value}</li>";
 	} # li()
@@ -110,7 +110,7 @@ class array_operation
 	 *
 	 * @return string
 	 */
-	public function quote($value = '')
+	public function quote($value = "")
 	{
 		$v = "'" . addslashes($value) . "'";
 
@@ -124,7 +124,7 @@ class array_operation
 	 *
 	 * @return string
 	 */
-	public function quotes($value = '')
+	public function quotes($value = "")
 	{
 		return $this->quote($value);
 	}
@@ -138,7 +138,7 @@ class array_operation
 	 *
 	 * @return string
 	 */
-	public function no_slash($text = '')
+	public function no_slash($text = "")
 	{
 		$no_slashes = stripslashes($text);
 
@@ -168,7 +168,7 @@ class array_operation
 	 *
 	 * @return string
 	 */
-	public function no_tags($text = '')
+	public function no_tags($text = "")
 	{
 		$clean_text = strip_tags($text);
 
@@ -182,7 +182,7 @@ class array_operation
 	 *
 	 * @return string
 	 */
-	public function clean($text = '')
+	public function clean($text = "")
 	{
 		return trim($text);
 	} # clean()
@@ -196,7 +196,7 @@ class array_operation
 	 *
 	 * @return array
 	 */
-	public function title($html = '')
+	public function title($html = "")
 	{
 		$pattern = '/<title>(.*?)\<\/title\>/i';
 		$findings = array();
@@ -213,7 +213,7 @@ class array_operation
 	 *
 	 * @return array
 	 */
-	public function explode_tabs($line = '')
+	public function explode_tabs($line = "")
 	{
 		$columns = explode("\t", $line);
 
@@ -227,12 +227,12 @@ class array_operation
 	 *
 	 * @return mixed|string
 	 */
-	public function remove_quotes($word = '')
+	public function remove_quotes($word = "")
 	{
 		$new_word = $word;
-		$new_word = str_replace('"', '', $new_word);
-		$new_word = str_replace("'", '', $new_word);
-		$new_word = str_replace("`", '', $new_word); # Optional
+		$new_word = str_replace('"', "", $new_word);
+		$new_word = str_replace("'", "", $new_word);
+		$new_word = str_replace("`", "", $new_word); # Optional
 		return $new_word;
 	}
 
@@ -243,7 +243,7 @@ class array_operation
 	 *
 	 * @return string
 	 */
-	public function wrap_quotes_single($word = '')
+	public function wrap_quotes_single($word = "")
 	{
 		$bound_word = $word;
 
@@ -262,7 +262,7 @@ class array_operation
 	 *
 	 * @return string
 	 */
-	public function wrap_quotes_double($word = '')
+	public function wrap_quotes_double($word = "")
 	{
 		$bound_word = $word;
 		$bound_word = "\"{$bound_word}\"";
@@ -277,7 +277,7 @@ class array_operation
 	 *
 	 * @return string
 	 */
-	public function wrap_ticks($word = '')
+	public function wrap_ticks($word = "")
 	{
 		$bound_word = "`{$word}`";
 
@@ -289,7 +289,7 @@ class array_operation
 	 *
 	 * @return string
 	 */
-	public function tick($word = '')
+	public function tick($word = "")
 	{
 		return $this->wrap_ticks($word);
 	}
@@ -299,7 +299,7 @@ class array_operation
 	 *
 	 * @return string
 	 */
-	public function ticks($word = '')
+	public function ticks($word = "")
 	{
 		return $this->wrap_ticks($word);
 	}
@@ -309,7 +309,7 @@ class array_operation
 	 *
 	 * @return string
 	 */
-	public function wrap_tick($word = '')
+	public function wrap_tick($word = "")
 	{
 		return $this->wrap_ticks($word);
 	}
@@ -321,7 +321,7 @@ class array_operation
 	 *
 	 * @return string
 	 */
-	public function wrap_braces($word = '')
+	public function wrap_braces($word = "")
 	{
 		$bound_word = "({$word})";
 
@@ -333,7 +333,7 @@ class array_operation
 	 *
 	 * @return string
 	 */
-	public function brackets($word = '')
+	public function brackets($word = "")
 	{
 		return $this->wrap_braces($word);
 	}
@@ -343,7 +343,7 @@ class array_operation
 	 *
 	 * @return string
 	 */
-	public function bracket($word = '')
+	public function bracket($word = "")
 	{
 		return $this->wrap_braces($word);
 	}
@@ -353,7 +353,7 @@ class array_operation
 	 *
 	 * @return string
 	 */
-	public function braces($word = '')
+	public function braces($word = "")
 	{
 		return $this->wrap_braces($word);
 	}
@@ -382,11 +382,11 @@ class array_operation
 	 *
 	 * @return string
 	 */
-	private function numeric($string = '')
+	private function numeric($string = "")
 	{
 		$digits = preg_split('/[^\d]+/is', $string, -1);
 
-		return implode('', $digits);
+		return implode("", $digits);
 	}
 
 	/**
@@ -398,7 +398,7 @@ class array_operation
 	 *
 	 * @return string
 	 */
-	private function _assign_key_value($key = '', $value = '')
+	private function _assign_key_value($key = "", $value = "")
 	{
 		$assign = "{$key}={$value}";
 

@@ -87,7 +87,7 @@ class logger
 		# Remove any possible cookies
 		foreach($_COOKIE as $cookie => $value)
 		{
-			setcookie($cookie, '', time() - 42000, '/');
+			setcookie($cookie, "", time() - 42000, '/');
 		}
 
 		session_destroy();

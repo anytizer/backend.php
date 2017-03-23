@@ -21,7 +21,7 @@ class protection_codes
 	private $username_expired = 45;
 	private $password_mismatched = 45;
 
-	public function get_code($index = '')
+	public function get_code($index = "")
 	{
 		$value = null;
 		if($index && isset($this->$index))

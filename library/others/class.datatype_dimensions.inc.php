@@ -11,7 +11,7 @@ class datatype_dimensions
 {
 	private static $resizes = array();
 
-	public function __construct($width = 0, $height = '')
+	public function __construct($width = 0, $height = "")
 	{
 		parent::__construct(array(
 			'width',

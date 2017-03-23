@@ -35,7 +35,7 @@ class curl
 	 *
 	 * @return bool
 	 */
-	public function set_option($identifier = '', $value = '')
+	public function set_option($identifier = "", $value = "")
 	{
 		/**
 		 * @todo Check for usage; code smell?
@@ -102,10 +102,10 @@ class curl
 	 *
 	 * @return mixed
 	 */
-	public function get($url = '', $data = array())
+	public function get($url = "", $data = array())
 	{
 		$post_data = $this->fix_array($data);
-		$url = ($post_data != '') ? $url . '?' . $post_data : $url;
+		$url = ($post_data != "") ? $url . '?' . $post_data : $url;
 
 		return $this->get_url($url);
 	}
@@ -116,7 +116,7 @@ class curl
 	 *
 	 * @return mixed
 	 */
-	public function post($link = '', $data = array())
+	public function post($link = "", $data = array())
 	{
 		$post_data = $this->fix_array($data);
 
@@ -200,7 +200,7 @@ class curl
 	 *
 	 * @return mixed
 	 */
-	private function get_url($url = '')
+	private function get_url($url = "")
 	{
 		$this->set_option(CURLOPT_POST, false);
 		$this->set_option(CURLOPT_URL, $url);
@@ -214,7 +214,7 @@ class curl
 	 *
 	 * @return mixed
 	 */
-	private function post_url($url = '', $data_string = '')
+	private function post_url($url = "", $data_string = "")
 	{
 		$this->set_option(CURLOPT_POST, true);
 		$this->set_option(CURLOPT_URL, $url);
@@ -233,7 +233,7 @@ class curl
 	 */
 	private function fix_array($data = array())
 	{
-		$post_data = '';
+		$post_data = "";
 		$post_data_array = array();
 		if(is_array($data) && $data)
 		{

@@ -15,7 +15,7 @@ INSERT IGNORE INTO query_pages (
 ) VALUES (
 	@SUBDOMAIN_ID, CURRENT_TIMESTAMP(),
 	'N', 'N', 'Y', 'Y',
-	'robots.txt', 'robots.txt', '',
+	'robots.txt', 'robots.txt', "",
 	'robots.txt', 'robots.txt',
 	'null.php'
 ) ON DUPLICATE KEY UPDATE fixed_on = CURRENT_TIMESTAMP();
@@ -30,7 +30,7 @@ INSERT IGNORE INTO query_pages (
 ) VALUES (
 	@SUBDOMAIN_ID, CURRENT_TIMESTAMP(),
 	'N', 'N', 'Y', 'Y',
-	'cron.php', 'Cron', '',
+	'cron.php', 'Cron', "",
 	'Cron Output', 'Cron Page',
 	'null.php'
 ) ON DUPLICATE KEY UPDATE fixed_on = CURRENT_TIMESTAMP();
@@ -78,7 +78,7 @@ INSERT IGNORE INTO query_pages (
 ) VALUES (
 	@SUBDOMAIN_ID, CURRENT_TIMESTAMP(),
 	'N', 'N', 'Y', 'Y',
-	'admin.php', 'Admin Login', '',
+	'admin.php', 'Admin Login', "",
 	'Login', '<p>Please login to __SUBDOMAIN_NAME__.</p>',
 	'login.php' # This is a full page in itself
 ) ON DUPLICATE KEY UPDATE fixed_on = CURRENT_TIMESTAMP();
@@ -110,7 +110,7 @@ INSERT IGNORE INTO query_pages (
 ) VALUES (
 	@SUBDOMAIN_ID, CURRENT_TIMESTAMP(),
 	'Y', 'N', 'Y', 'Y',
-	'logout.php', 'Logout', '',
+	'logout.php', 'Logout', "",
 	'Logout', '<p>Logging you out from __SUBDOMAIN_NAME__.<p>',
 	'null.php' # This is a full page
 ) ON DUPLICATE KEY UPDATE fixed_on = CURRENT_TIMESTAMP();
@@ -127,7 +127,7 @@ INSERT IGNORE INTO query_pages (
 ) VALUES (
 	@SUBDOMAIN_ID, CURRENT_TIMESTAMP(),
 	'Y', 'Y', 'Y', 'Y',
-	'dashboard.php', 'Admin Dashboard', '',
+	'dashboard.php', 'Admin Dashboard', "",
 	'Dashboard', '<p>Welcome to administrative dashboard. Please operate carefully.</p>',
 	'admin.php'
 ) ON DUPLICATE KEY UPDATE fixed_on = CURRENT_TIMESTAMP();
@@ -172,7 +172,7 @@ INSERT IGNORE INTO query_pages (
 ) VALUES (
 	@SUBDOMAIN_ID, CURRENT_TIMESTAMP(),
 	'Y', 'N', 'Y', 'Y',
-	'password-changed-successfully.php', 'Your password has been changed successfully.', '',
+	'password-changed-successfully.php', 'Your password has been changed successfully.', "",
 	'Password changed', '<p>Your password has been changed successfully.</p>',
 	'admin.php'
 ) ON DUPLICATE KEY UPDATE fixed_on = CURRENT_TIMESTAMP();
@@ -187,7 +187,7 @@ INSERT IGNORE INTO query_pages (
 ) VALUES (
 	@SUBDOMAIN_ID, CURRENT_TIMESTAMP(),
 	'Y', 'N', 'Y', 'Y',
-	'password-change-failed.php', 'Your password is not changed.', '',
+	'password-change-failed.php', 'Your password is not changed.', "",
 	'Password was NOT changed', '<p>sorry, but we encountered a problem while changing your password. Please attempt with valid old password and new passwords.</p><p>There can be several reasons why password change failed.</p>',
 	'admin.php'
 ) ON DUPLICATE KEY UPDATE fixed_on = CURRENT_TIMESTAMP();
@@ -248,7 +248,7 @@ INSERT IGNORE INTO query_pages (
 ) VALUES (
 	@SUBDOMAIN_ID, CURRENT_TIMESTAMP(),
 	'N', 'N', 'Y', 'Y',
-	'permission-denied.php', 'Access error', '',
+	'permission-denied.php', 'Access error', "",
 	'Permission denied', '<p>You do not have sufficient authority to access this page.</p>',
 	'frontend.php'
 ) ON DUPLICATE KEY UPDATE fixed_on = CURRENT_TIMESTAMP();
@@ -292,6 +292,6 @@ INSERT IGNORE INTO query_pages (
 ) VALUES (
 	@SUBDOMAIN_ID, CURRENT_TIMESTAMP(),
 	'Y', 'Y', 'Y', 'N', 'N', 'N', 'N', 'N', 'N', 'N',
-	'captcha.php', 'Captcha Image', '', 'Captcha Image', '',
-	'', '', 'null.php', '', ''
+	'captcha.php', 'Captcha Image', "", 'Captcha Image', "",
+	"", "", 'null.php', "", ""
 ) ON DUPLICATE KEY UPDATE fixed_on = CURRENT_TIMESTAMP();

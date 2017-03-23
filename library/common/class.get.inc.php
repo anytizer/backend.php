@@ -75,7 +75,7 @@ class get
 	 *
 	 * @return bool
 	 */
-	public function no_get($index = '')
+	public function no_get($index = "")
 	{
 		$success = false;
 		if(isset($this->GET[$index]))

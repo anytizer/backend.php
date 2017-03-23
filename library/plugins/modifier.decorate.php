@@ -5,10 +5,10 @@
  * ID/Code/TimestampXXXX Decorator
  * Makes sure that a code is readable as it decomposes the fundamental portions.
  */
-function smarty_modifier_decorate($code = '')
+function smarty_modifier_decorate($code = "")
 {
 	$data = array();
-	$decorator = '';
+	$decorator = "";
 	switch(1)
 	{
 		# Student: STYYYNNNSG
@@ -61,5 +61,5 @@ function smarty_modifier_decorate($code = '')
 	unset($data[0]);
 
 	#print_r($data);
-	return implode('', $data);
+	return implode("", $data);
 }

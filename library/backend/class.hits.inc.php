@@ -22,7 +22,7 @@ Usage example:
 class hits
 	extends \common\mysql
 {
-	public function update_hits($table_name = '', $pk_name = '', $pk_id = 0)
+	public function update_hits($table_name = "", $pk_name = "", $pk_id = 0)
 	{
 		# choose a table.
 		# insert into ....
@@ -47,7 +47,7 @@ INSERT INTO `hits_{$table_name}` (
 		return $this->query($update_sql);
 	}
 
-	public function reset_hits($table_name = '', $pk_name = '', $pk_id = 0)
+	public function reset_hits($table_name = "", $pk_name = "", $pk_id = 0)
 	{
 		$table_name = $this->sanitze($table_name);
 		$pk_name = $this->sanitze($pk_name);
@@ -61,9 +61,9 @@ INSERT INTO `hits_{$table_name}` (
 	/**
 	 * Clean up the table name for preventing form SQL hacks
 	 */
-	private function sanitze($name = '')
+	private function sanitze($name = "")
 	{
-		$name = preg_replace('/[^a-z\_]/', '', $name);
+		$name = preg_replace('/[^a-z\_]/', "", $name);
 
 		return $name;
 	}

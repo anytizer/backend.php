@@ -9,7 +9,7 @@
 
 $__ENTITY__ = new \subdomain\__ENTITY__();
 
-if($variable->post('add-action', 'string', ''))
+if($variable->post('add-action', 'string', ""))
 {
 	# Posted Data: Apply security
 	$data = $variable->post('__ENTITY__', 'array', array());
@@ -29,7 +29,7 @@ if($variable->post('add-action', 'string', ''))
 	# And assign the name of the file returned, to the same field.
 	$uploader = new \backend\uploader(__SUBDOMAIN_BASE__.'/templates/images/__ENTITY__', true);
 	$file_field_name = 'file_field';
-	$file_field = $uploader->store($file_field_name, '');
+	$file_field = $uploader->store($file_field_name, "");
 	if($file_field)
 	{
 		$data[$file_field_name] = $file_field;

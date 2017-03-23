@@ -6,12 +6,12 @@
  * Searching for an existing indexed value on $_POST, $_GET, $_SESSION, $_COOKIE.
  * Makes sure that the return value is always a string.
  */
-function smarty_modifier_magical($variable_index = '', $save_for_future = true, $overwrite_value = false)
+function smarty_modifier_magical($variable_index = "", $save_for_future = true, $overwrite_value = false)
 {
-	$value = '';
+	$value = "";
 
 	# Optional, for enhancing safety
-	$variable_index = preg_replace('/[^a-z0-9\_]+/i', '', $variable_index);
+	$variable_index = preg_replace('/[^a-z0-9\_]+/i', "", $variable_index);
 
 	switch(true)
 	{

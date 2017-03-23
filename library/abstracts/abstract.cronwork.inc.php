@@ -4,7 +4,8 @@ namespace abstracts;
 /**
  * CRON jobs activator
  *
- * @package Interfaces
+ * Class cronwork
+ * @package abstracts
  */
 abstract class cronwork
 {

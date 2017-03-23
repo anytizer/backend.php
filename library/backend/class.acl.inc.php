@@ -21,9 +21,9 @@ class acl
 	/**
 	 * Login a user
 	 */
-	public function login($username = '', $password = '')
+	public function login($username = "", $password = "")
 	{
-		$error = '';
+		$error = "";
 		if($this->user_exists($username))
 		{
 			if($this->password_matches($username, $password))
@@ -67,7 +67,7 @@ class acl
 			$error = 'login>absent';
 		}
 
-		if($error != '')
+		if($error != "")
 		{
 			throw new \Exception($this->error->message($error));
 
@@ -82,7 +82,7 @@ class acl
 	/**
 	 * Touch last login DATETIME
 	 */
-	private function update_login($username = '', $password = '')
+	private function update_login($username = "", $password = "")
 	{
 		$sql = "
 UPDATE acl_users SET
@@ -98,7 +98,7 @@ WHERE
 	/**
 	 * Creates a standard user
 	 */
-	public function create($username = '', $password = '')
+	public function create($username = "", $password = "")
 	{
 		if($this->user_exists($username))
 		{
@@ -122,7 +122,7 @@ INSERT INTO acl_users (
 	/**
 	 * Checks if a user exists
 	 */
-	private function user_exists($username = '')
+	private function user_exists($username = "")
 	{
 		$sql = "
 # Validity check
@@ -140,7 +140,7 @@ WHERE
 	/**
 	 * Matches the password
 	 */
-	private function password_matches($username = '', $password = '')
+	private function password_matches($username = "", $password = "")
 	{
 		$sql = "
 # Password matches
@@ -160,7 +160,7 @@ WHERE
 	/**
 	 * Checks if a user has expired
 	 */
-	private function user_expired($username = '')
+	private function user_expired($username = "")
 	{
 		$sql = "
 SELECT COUNT(*)=1 matched FROM acl_users
@@ -176,7 +176,7 @@ WHERE
 	/**
 	 * Is the user disabled by admins?
 	 */
-	private function user_disabled($username = '')
+	private function user_disabled($username = "")
 	{
 		$sql = "
 SELECT COUNT(*)!=1 matched FROM acl_users
@@ -190,13 +190,13 @@ WHERE
 		return $record['matched'];
 	}
 
-	private function user_locked($username = '')
+	private function user_locked($username = "")
 	{
 		# Check somewhere to know, if a user has done some fraud activities.
 		return false;
 	}
 
-	private function user_id($username = '')
+	private function user_id($username = "")
 	{
 		$sql = "SELECT user_id FROM acl_users WHERE MD5('{$username}') = `username`;";
 		if($record = $this->row($sql))
@@ -210,7 +210,7 @@ WHERE
 		return $record['user_id'];
 	}
 
-	private function group_id($group_context = '', $group_name = '')
+	private function group_id($group_context = "", $group_name = "")
 	{
 		$sql = "SELECT group_id FROM acl_groups WHERE group_code='{$group_name}' AND group_context='{$group_context}';";
 		if($record = $this->row($sql))
@@ -227,9 +227,9 @@ WHERE
 	# Make in a group
 	# insert into `acl_user_groups`(`user_id`,`group_id`) values ( '1','1')
 
-	public function is($who = '')
+	public function is($who = "")
 	{
-		$who = preg_replace('/[^a-z0-9\>\:]+/is', '', strtolower($who));
+		$who = preg_replace('/[^a-z0-9\>\:]+/is', "", strtolower($who));
 		$acl = preg_split('/\>|\:/is', $who);
 		if(count($acl) < 2)
 		{

@@ -13,7 +13,7 @@
  */
 function smarty_function_messenger($params = array(), &$smarty)
 {
-	$envelope = '';
+	$envelope = "";
 
 	if(isset($params['code']))
 	{
@@ -35,12 +35,12 @@ function smarty_function_messenger($params = array(), &$smarty)
 		else
 		{
 			# Nessage not found.
-			# $envelope = '';
+			# $envelope = "";
 		}
 	}
 	else
 	{
-		$messenger = new \common\messenger('', '');
+		$messenger = new \common\messenger("", "");
 
 		$level = $messenger->level();
 		$message = $messenger->message();

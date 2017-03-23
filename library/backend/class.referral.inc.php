@@ -34,12 +34,12 @@ class referral
 	/**
 	 * Keep a history that there was a referral.
 	 */
-	public function record_referral($referrer_id = 0, $referral_code = '')
+	public function record_referral($referrer_id = 0, $referral_code = "")
 	{
 		$referrer_id += 0;
-		$ip = isset($_SERVER['REMOTE_ADDR']) ? $_SERVER['REMOTE_ADDR'] : '';
-		$url = isset($_SERVER['HTTP_REFERER']) ? $_SERVER['HTTP_REFERER'] : '';
-		$browser = isset($_SERVER['HTTP_USER_AGENT']) ? $_SERVER['HTTP_USER_AGENT'] : '';
+		$ip = isset($_SERVER['REMOTE_ADDR']) ? $_SERVER['REMOTE_ADDR'] : "";
+		$url = isset($_SERVER['HTTP_REFERER']) ? $_SERVER['HTTP_REFERER'] : "";
+		$browser = isset($_SERVER['HTTP_USER_AGENT']) ? $_SERVER['HTTP_USER_AGENT'] : "";
 		$record_referral_sql = "
 INSERT INTO `referrer_history`(
 	`referrer_id`, `referrer_code`,

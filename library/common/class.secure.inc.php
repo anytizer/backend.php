@@ -18,7 +18,7 @@ class secure
 	public function generate_code($characters = 5)
 	{
 		$possible = '09876543'; # Good, non-confusing characters
-		$security_code = '';
+		$security_code = "";
 		for($i = 0; $i < $characters && $i <= 10; ++$i)
 		{
 			$security_code .= substr($possible, mt_rand(0, strlen($possible) - 1), 1);
@@ -111,8 +111,8 @@ class secure
 		# Please DO NOT re-use the session security code.
 		$success = false;
 		$variable = new \common\variable();
-		$security_code_post = $variable->post('security_code', 'string', '');
-		$security_code_session = $variable->session('security_code', 'string', '');
+		$security_code_post = $variable->post('security_code', 'string', "");
+		$security_code_session = $variable->session('security_code', 'string', "");
 		if($security_code_post && $security_code_session && ($security_code_post == $security_code_session))
 		{
 			#echo("True!...");

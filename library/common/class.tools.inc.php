@@ -43,7 +43,7 @@ class tools
 			$random[] = chr(65 + mt_rand(0, 25));
 		}
 
-		return implode('', $random);
+		return implode("", $random);
 	}
 
 	/**
@@ -63,29 +63,29 @@ class tools
 			$random[] = mt_rand(0, 9);
 		}
 
-		return implode('', $random);
+		return implode("", $random);
 	}
 
 	/**
 	 * Only allows numbers and digits in a text
 	 */
-	public static function sanitize_name($string = '')
+	public static function sanitize_name($string = "")
 	{
-		return preg_replace('/[^a-z0-9]/is', '', $string);
+		return preg_replace('/[^a-z0-9]/is', "", $string);
 	}
 
 	/**
 	 * Only allows numbers and digits in a text
 	 */
-	public static function alpha_numeric($string = '')
+	public static function alpha_numeric($string = "")
 	{
-		return preg_replace('/[^a-z0-9]+/is', '', $string);
+		return preg_replace('/[^a-z0-9]+/is', "", $string);
 	}
 
 	/**
 	 * Clean up a string to make it usable within SQL statements.
 	 */
-	public static function sanitize($string = '')
+	public static function sanitize($string = "")
 	{
 		return addslashes($string);
 	}
@@ -93,9 +93,9 @@ class tools
 	/**
 	 * Allow alphabets only
 	 */
-	public static function alphabetic($string = '')
+	public static function alphabetic($string = "")
 	{
-		$sanitized = preg_replace('/[^a-z]+/is', '', $string);
+		$sanitized = preg_replace('/[^a-z]+/is', "", $string);
 
 		return $sanitized;
 	}
@@ -104,7 +104,7 @@ class tools
 	 * Wraps a word with a tick ( ` )
 	 * Particularly useful in creating SQL column names
 	 */
-	public static function tick($word = '')
+	public static function tick($word = "")
 	{
 		return "`{$word}`";
 	}
@@ -113,28 +113,28 @@ class tools
 	 * Extracts the numbers only from a string
 	 * Example = in phones
 	 */
-	public static function digits($string = '')
+	public static function digits($string = "")
 	{
 		$digits = preg_split('/[^\d]+/', $string, -1);
 
-		return implode('', $digits);
+		return implode("", $digits);
 	}
 
 	/**
 	 * Extracts the numbers only from a string
 	 * Example = in phones
 	 */
-	public static function numeric($string = '')
+	public static function numeric($string = "")
 	{
 		$digits = preg_split('/[^\d]+/is', $string, -1);
 
-		return implode('', $digits);
+		return implode("", $digits);
 	}
 
 	/**
 	 * Removes the Magic Quotes
 	 */
-	public static function fix_slashes($array = '')
+	public static function fix_slashes($array = "")
 	{
 		if($array === null || empty($array))
 		{
@@ -147,7 +147,7 @@ class tools
 	/**
 	 * Adds the Magic Quotes
 	 */
-	public static function add_slashes($array = '')
+	public static function add_slashes($array = "")
 	{
 		if($array === null || empty($array))
 		{
@@ -160,7 +160,7 @@ class tools
 	/**
 	 * Sanitizes PHP file names: Allowed file name
 	 */
-	public static function php_filename($filename = '')
+	public static function php_filename($filename = "")
 	{
 		$file = null;
 		$data = array();
@@ -177,7 +177,7 @@ class tools
 	/**
 	 * Sanitise a filename so that it guarantees saving.
 	 */
-	public static function filename($filename = '')
+	public static function filename($filename = "")
 	{
 		$filename = preg_replace('/\s+/is', '-', $filename);
 		$filename = preg_replace('/[^a-z0-9\.\,\_\-]+/is', '-', strtolower($filename));
@@ -194,10 +194,10 @@ class tools
 	 * Particularly, it is a word for identifications.
 	 * So, some legal characters too are not allowed.
 	 */
-	public static function safe_sql_word($string = '')
+	public static function safe_sql_word($string = "")
 	{
-		#$sanitized = preg_replace('/[^a-z0-9\:\ \,\.\=\_\-]+/is', '', $string);
-		$sanitized = preg_replace('/[^a-z0-9\:\,\.\_\-]+/is', '', $string);
+		#$sanitized = preg_replace('/[^a-z0-9\:\ \,\.\=\_\-]+/is', "", $string);
+		$sanitized = preg_replace('/[^a-z0-9\:\,\.\_\-]+/is', "", $string);
 
 		return $sanitized;
 	}
@@ -206,7 +206,7 @@ class tools
 	 * Load a subdomain specific class
 	 * This class file is probably not seen by the autoloaders.
 	 */
-	public static function service_class($class_name = '')
+	public static function service_class($class_name = "")
 	{
 		$loaded = false;
 		$class_file = __SUBDOMAIN_BASE__ . "/classes/class.<strong>{$class_name}</strong>.inc.php";
@@ -230,7 +230,7 @@ class tools
 	 *    Full Name: Higher Secondary Education Act, 2046
 	 *    Shortened: hsea(2046)
 	 */
-	public static function suggested_name($full_name = '')
+	public static function suggested_name($full_name = "")
 	{
 		$names = preg_split('/[^a-z0-9\-\_\.]+/is', strtolower($full_name));
 
@@ -254,7 +254,7 @@ class tools
 			}
 		}
 
-		return implode('', $parts);
+		return implode("", $parts);
 	}
 
 	/**
@@ -307,7 +307,7 @@ class tools
 	public static function unix_timestamp($yyyymmdd = '0000-00-00 00:00:00')
 	{
 		$time = 0;
-		if($yyyymmdd != '' && $yyyymmdd != '0000-00-00 00:00:00')
+		if($yyyymmdd != "" && $yyyymmdd != '0000-00-00 00:00:00')
 		{
 			if(preg_match('/^[\d]{4}\-[\d]{2}-[\d]{2}$/', $yyyymmdd))
 			{
@@ -357,7 +357,7 @@ class tools
 	 * Should be similar to `mkdir -p direcotry` in linux terminal
 	 * Warning: DO NOT MISUSE THIS TOOL.
 	 */
-	public static function make_directory($full_path_directory = '')
+	public static function make_directory($full_path_directory = "")
 	{
 		$success = true;
 
@@ -365,7 +365,7 @@ class tools
 		$full_path_directory = str_replace('\\', '/', $full_path_directory);
 		$dirs = explode('/', $full_path_directory);
 
-		$dir = '';
+		$dir = "";
 		foreach($dirs as $d => $dirname)
 		{
 			$dir .= $dirname . '/';
@@ -411,7 +411,7 @@ class tools
 	 */
 	public static function file_contents()
 	{
-		$fc = '';
+		$fc = "";
 		if(func_num_args() >= 1)
 		{
 			$files = func_get_args();
@@ -453,7 +453,7 @@ class tools
 		# Begin by removing suspicious characters
 		# Allow Windows drive [:, \]
 		$safe_directory_name = $unsafe_directory_name;
-		#$safe_directory_name = preg_replace('/[^a-z0-9\.\-\_\/\\\\:]/is', '', $safe_directory_name);
+		#$safe_directory_name = preg_replace('/[^a-z0-9\.\-\_\/\\\\:]/is', "", $safe_directory_name);
 
 		# Convert to Linux compatibility
 		$safe_directory_name = str_replace('\\', '/', $safe_directory_name);
@@ -466,7 +466,7 @@ class tools
 		$safe_directory_name = preg_replace('/\/\.\//is', '/', $safe_directory_name); # /./ => /
 
 		# Remove trailing slash
-		$safe_directory_name = preg_replace('/\/$/is', '', $safe_directory_name);
+		$safe_directory_name = preg_replace('/\/$/is', "", $safe_directory_name);
 
 		return $safe_directory_name;
 	}
@@ -475,7 +475,7 @@ class tools
 	 * Renames a directory
 	 * Moves a directory and its contents into some other directory
 	 */
-	public static function rename_directory($fullpath = '/tmp/directory', $rename_to = '')
+	public static function rename_directory($fullpath = '/tmp/directory', $rename_to = "")
 	{
 		# Smart validation
 		$fullpath = realpath($fullpath);
@@ -530,7 +530,7 @@ class tools
 	 *
 	 * @link http://www.php.net/manual/en/function.image-type-to-extension.php
 	 */
-	public static function extension($full_path_to_image = '')
+	public static function extension($full_path_to_image = "")
 	{
 		$extension = 'null';
 		if($image_type = exif_imagetype($full_path_to_image))
@@ -550,9 +550,9 @@ class tools
 	/**
 	 * Checks and returns defined value or supplied default value
 	 */
-	public static function defined_constant($define_name = '', $default_value = '')
+	public static function defined_constant($define_name = "", $default_value = "")
 	{
-		$value = '';
+		$value = "";
 		if(defined($define_name))
 		{
 			$value = constant($define_name);
@@ -604,7 +604,7 @@ class tools
 	/**
 	 * Encrypts a string
 	 */
-	public static function encrypt($string = '')
+	public static function encrypt($string = "")
 	{
 		#$cipher = $string;
 		#return $cipher;
@@ -624,7 +624,7 @@ class tools
 	/**
 	 * Decrypts a string
 	 */
-	public static function decrypt($cipher = '')
+	public static function decrypt($cipher = "")
 	{
 		#$string = $cipher;
 		#return $string;

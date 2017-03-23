@@ -30,7 +30,7 @@ class imagecolors
 	private $resizeto_width = 0;
 	private $resizeto_height = 0;
 
-	private $original_filename = '';
+	private $original_filename = "";
 	private $image = null;
 
 	private $palettes = array();
@@ -49,7 +49,7 @@ class imagecolors
 	}
 	
 	
-	public function process($original_filename = '')
+	public function process($original_filename = "")
 	{
 		if(!is_file($original_filename))
 		{
@@ -296,8 +296,8 @@ class imagecolors
 				$this->statistics[$converted_color] = array(
 					'color' => $converted_color,
 					'weight' => 1 + (isset($this->statistics[$converted_color]['weight']) ? $this->statistics[$converted_color]['weight'] : 0),
-					'rank' => '', # calculate it later on
-					'percentage' => '', # calculate it later on
+					'rank' => "", # calculate it later on
+					'percentage' => "", # calculate it later on
 				);
 			}
 		}

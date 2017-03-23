@@ -17,7 +17,7 @@ class csv
 	 *
 	 * @return string CSV text
 	 */
-	public function to_csv($table = '', $is_sql = false)
+	public function to_csv($table = "", $is_sql = false)
 	{
 		$sql = "SELECT * FROM {$table};"; #  LIMIT 20;
 		if($is_sql === true)
@@ -121,7 +121,7 @@ class csv
 	 *
 	 * @return mixed
 	 */
-	public function create_table_sql($table = '')
+	public function create_table_sql($table = "")
 	{
 		$sql = "SHOW CREATE TABLE `{$table}`;";
 		$this->query($sql);

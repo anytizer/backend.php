@@ -13,7 +13,7 @@ class pagination
 	private $current_page; # Current page being traversed to
 	private $parameter_name; # GET paramenter name
 
-	private $marginal_separator = ''; # ... wrapper that separates numers and first/last, next/previous buttons
+	private $marginal_separator = ""; # ... wrapper that separates numers and first/last, next/previous buttons
 
 	public function __construct($parameter_name = 'pg', $per_page_limit = 10)
 	{
@@ -39,10 +39,10 @@ class pagination
 	public function show_pages($link_file = 'page.php', $ulli = true, $separator = ' ')
 	{
 		# Do not allow ( ? ) - Important
-		$link_file = ($link_file == '?') ? '' : $link_file;
+		$link_file = ($link_file == '?') ? "" : $link_file;
 
-		$wrap_begin = '';
-		$wrap_end = '';
+		$wrap_begin = "";
+		$wrap_end = "";
 		if($ulli === true)
 		{
 			$wrap_begin = '<li>';
@@ -54,7 +54,7 @@ class pagination
 		$pagination_links = array();
 		for($i = 1; $i <= $this->pages; ++$i)
 		{
-			$class = ($this->current_page == $i) ? ' class="current"' : '';
+			$class = ($this->current_page == $i) ? ' class="current"' : "";
 			$pagination_links[] = "{$wrap_begin}<span class=\"page-number\"><a href=\"{$link_file}?{$this->parameter_name}={$i}\" id=\"PG{$i}\"{$class}>{$i}</a></span>{$wrap_end}";
 		}
 		#\common\stopper::debug($pagination_links, false);
@@ -79,10 +79,10 @@ class pagination
 		}
 
 		# Do not allow ( ? ) - Important
-		$link_file = ($link_file == '?') ? '' : $link_file;
+		$link_file = ($link_file == '?') ? "" : $link_file;
 
-		$wrap_begin = '';
-		$wrap_end = '';
+		$wrap_begin = "";
+		$wrap_end = "";
 		if($ulli === true)
 		{
 			$wrap_begin = '<li>';
@@ -103,8 +103,8 @@ class pagination
 
 		for($i = $left; $i <= $right; ++$i)
 		{
-			$current_class_span = ($this->current_page == $i) ? ' current' : ''; # [space] applied in front of the value
-			$class = ($this->current_page == $i) ? ' class="current"' : '';
+			$current_class_span = ($this->current_page == $i) ? ' current' : ""; # [space] applied in front of the value
+			$class = ($this->current_page == $i) ? ' class="current"' : "";
 
 			#if($this->pages <= $right)
 			$link = "{$wrap_begin}<span class=\"page-disabled\">{$i}</span>{$wrap_end}";

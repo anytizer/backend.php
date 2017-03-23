@@ -12,7 +12,7 @@ class image_dimensions
 	public $width = 0;
 	public $height = 0;
 
-	public function __construct($image_file = '')
+	public function __construct($image_file = "")
 	{
 		/**
 		 * @todo Validate image file with gd_info().

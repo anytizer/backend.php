@@ -9,7 +9,7 @@
  */
 function smarty_modifier___SINGULAR__($__SINGULAR___id = 0, $show_link = true)
 {
-	$link = '';
+	$link = "";
 	$page = constant('IS_ADMINISTRATOR') ? '__ENTITY__-details.php' : '__SINGULAR__.php';
 
 	$__SINGULAR___id = (int)$__SINGULAR___id;

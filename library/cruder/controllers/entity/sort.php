@@ -9,7 +9,7 @@
  */
 
 $__PK_NAME__ = $variable->get('id', 'integer', 0);
-$code = $variable->get('code', 'string', ''); # For future references
+$code = $variable->get('code', 'string', ""); # For future references
 
 $__ENTITY__ = new \subdomain\__ENTITY__();
 $data = $__ENTITY__->details($__PK_NAME__, $code);

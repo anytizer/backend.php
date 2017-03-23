@@ -14,7 +14,7 @@ class files_remover
 		parent::__construct();
 	}
 
-	public function remove_files($path = '/tmp', $table = '', $column = '')
+	public function remove_files($path = '/tmp', $table = "", $column = "")
 	{
 		if(!is_dir($path))
 		{
@@ -31,7 +31,7 @@ class files_remover
 	/**
 	 * Tests if the image reocrd is available in the database.
 	 */
-	private function is_valid_file($fullpath = '/tmp', $table = '', $column = '')
+	private function is_valid_file($fullpath = '/tmp', $table = "", $column = "")
 	{
 		$filename = basename($fullpath);
 		$match_sql = "SELECT {$column} FROM {$table} WHERE $column='{$filename}';";

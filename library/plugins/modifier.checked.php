@@ -6,7 +6,7 @@
  */
 function smarty_modifier_checked($yn = 'N')
 {
-	$checked = ($yn == 'Y') ? 'checked="checked"' : '';
+	$checked = ($yn == 'Y') ? 'checked="checked"' : "";
 
 	return $checked;
 } # checked()

@@ -4,7 +4,7 @@
 /**
  * Obfuscates an email address for showing up in the HTML.
  */
-function smarty_modifier_email($email_address = '')
+function smarty_modifier_email($email_address = "")
 {
 	$search = array(
 		'-',

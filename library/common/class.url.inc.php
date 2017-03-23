@@ -49,7 +49,7 @@ class url
 	/**
 	 * Get URI from the memory
 	 */
-	public static function last_page($url_if_empty = '', $xhtml_valid = true)
+	public static function last_page($url_if_empty = "", $xhtml_valid = true)
 	{
 		$uri = isset($_SESSION['REMEMBER_URI']) ? $_SESSION['REMEMBER_URI'] : $_SERVER['HTTP_REFERER'];
 

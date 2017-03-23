@@ -8,10 +8,10 @@ Array
     [password-forgot-action] => Submit
 )*/
 
-$email = \common\tools::sanitize($variable->post('email', 'string', ''));
+$email = \common\tools::sanitize($variable->post('email', 'string', ""));
 $smarty->assign('email', $email);
 
-if($variable->post('action', 'string', ''))
+if($variable->post('action', 'string', ""))
 {
 	$_SESSION['attempted_email'] = $email;
 
@@ -28,10 +28,10 @@ if($variable->post('action', 'string', ''))
 		$messenger = new \common\messenger('notice', 'Your password has been reset.');
 
 		$email_template = new email_template('YYYYMMDDHHIISSXXXX');
-		$sender = new sender('');
+		$sender = new sender("");
 		$sender->ClearAddresses();
-		$sender->add_recipient(new datatype_recipient('', ''));
-		$sender->add_recipient(new datatype_recipient('', ''));
+		$sender->add_recipient(new datatype_recipient("", ""));
+		$sender->add_recipient(new datatype_recipient("", ""));
 		$sample_data = array(
 			# Customer Data
 		);

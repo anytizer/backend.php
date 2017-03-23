@@ -5,7 +5,8 @@ namespace abstracts;
  * An abstract form of data holding box - to enhance the security, that the object cannot contain unnecessary members.
  * Also, helps to return multiple parameters from a function output.
  *
- * @package Interfaces
+ * Class datatype
+ * @package abstracts
  */
 abstract class datatype
 {
@@ -37,9 +38,10 @@ abstract class datatype
 	/**
 	 * Checks whether an index is valid
 	 *
-	 * @param $index string Index Key to check for validity
-	 */
-	private function is_index_valid($index = '')
+     * @param string $index Index Key to check for validity
+     * @return bool
+     */
+	private function is_index_valid($index = "")
 	{
 		$success = false;
 		if (!is_array($this->indices)) {
@@ -70,7 +72,7 @@ Valid list is:<br>
 	 *
 	 * @return bool
 	 */
-	public function __get($index = '')
+	public function __get($index = "")
 	{
 		$value = $this->is_index_valid($index) ? $this->data[$index] : false;
 
@@ -86,7 +88,7 @@ Valid list is:<br>
 	 *
 	 * @return bool
 	 */
-	public function __set($index = '', $value = '')
+	public function __set($index = "", $value = "")
 	{
 		$success = false;
 		if ($this->is_index_valid($index)) {
@@ -105,7 +107,7 @@ Valid list is:<br>
 	 *
 	 * @return bool
 	 */
-	public function __isset($index = '')
+	public function __isset($index = "")
 	{
 		return $this->is_index_valid($index);
 	}
@@ -116,7 +118,7 @@ Valid list is:<br>
 	 *
 	 * @param $index string Index Key to unset
 	 */
-	public function __unset($index = '')
+	public function __unset($index = "")
 	{
 		$success = false;
 		if ($this->is_index_valid($index)) {

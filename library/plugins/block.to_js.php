@@ -4,12 +4,18 @@
 /**
  * Sends a javascript code into external temp file and reloads it.
  * @todo Check if useful
+ *
+ * @param array $params
+ * @param string $content
+ * @param $smarty
+ * @param $repeat
+ * @return string
  */
-function smarty_block_to_js($params = array(), $content = '', &$smarty, &$repeat)
+function smarty_block_to_js($params = array(), $content = "", &$smarty, &$repeat)
 {
-	$external_js = '';
+	$external_js = "";
 
-	$params['comments'] = isset($params['comments']) ? $params['comments'] : '';
+	$params['comments'] = isset($params['comments']) ? $params['comments'] : "";
 
 	if(isset($content))
 	{

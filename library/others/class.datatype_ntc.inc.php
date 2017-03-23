@@ -9,7 +9,7 @@ namespace others;
 class datatype_ntc
 	extends \abstracts\datatype
 {
-	public function __construct($username = '', $password = '')
+	public function __construct($username = "", $password = "")
 	{
 		parent::__construct(array(
 			'username',

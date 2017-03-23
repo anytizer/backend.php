@@ -8,7 +8,7 @@
  * @example {'agenda'|an}  => an agenda
  * @author Bimal Poudel
  */
-function smarty_modifier_an($word = '')
+function smarty_modifier_an($word = "")
 {
 	$word = "{$word}"; # Make it a string, if not.
 
@@ -21,7 +21,7 @@ function smarty_modifier_an($word = '')
 
 	$article = 'a';
 
-	$word_clean = preg_replace('/[^a-z]+/i', '', $word);
+	$word_clean = preg_replace('/[^a-z]+/i', "", $word);
 
 	if(strlen($word_clean) > 1)
 	{

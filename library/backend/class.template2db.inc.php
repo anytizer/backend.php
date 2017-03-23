@@ -8,8 +8,8 @@ namespace backend;
 class template2db
 	extends \common\mysql
 {
-	private $subdomain_name = '';
-	private $template_location = '';
+	private $subdomain_name = "";
+	private $template_location = "";
 	
 	/**
 	 * @todo Fix this class file
@@ -23,7 +23,7 @@ class template2db
 	/**
 	 * Begin to read module name and location, immediately.
 	 */
-	public function read($subdomain_name = '', $template_location = '')
+	public function read($subdomain_name = "", $template_location = "")
 	{
 		if(!$subdomain_name)
 		{

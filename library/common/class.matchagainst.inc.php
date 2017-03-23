@@ -12,10 +12,10 @@ class matchagainst
 	private $error = true;
 	private $skip_list = array('.', '..');
 
-	private $regexp_filter = '';
+	private $regexp_filter = "";
 	protected $files = array();
 
-	public function __construct($path = '/tmp', $regexp_filter = '')
+	public function __construct($path = '/tmp', $regexp_filter = "")
 	{
 		if(is_dir($path))
 		{

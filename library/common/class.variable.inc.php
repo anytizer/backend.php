@@ -33,7 +33,7 @@ class variable
 	 *
 	 * @return array|bool|float|int|null|string
 	 */
-	public function get($key = '', $type = 'integer', $default = '')
+	public function get($key = "", $type = 'integer', $default = "")
 	{
 		$value = null;
 
@@ -58,7 +58,7 @@ class variable
 				$value = ($this->proceed) ? $this->read_boolean($_GET[$key]) : false;
 				break;
 			case 'string':
-				$value = ($this->proceed) ? $this->read_string($_GET[$key]) : '';
+				$value = ($this->proceed) ? $this->read_string($_GET[$key]) : "";
 				break;
 			case 'array':
 				$value = ($this->proceed) ? (array)($_GET[$key]) : array();
@@ -67,7 +67,7 @@ class variable
 				$this->wrong_datatype($type);
 		}
 
-		$value = !empty($value) ? $value : $default;
+		$value = $value ?? $default;
 
 		return $value;
 	}
@@ -76,7 +76,7 @@ class variable
 	/**
 	 * Read out from $_POST parameters
 	 */
-	public function post($key = '', $type = 'integer', $default = '')
+	public function post($key = "", $type = 'integer', $default = "")
 	{
 		$value = null;
 
@@ -101,7 +101,7 @@ class variable
 				$value = ($this->proceed) ? $this->read_boolean($_POST[$key]) : false;
 				break;
 			case 'string':
-				$value = ($this->proceed) ? $this->read_string($_POST[$key]) : '';
+				$value = ($this->proceed) ? $this->read_string($_POST[$key]) : "";
 				break;
 			case 'array':
 				$value = ($this->proceed) ? (array)($_POST[$key]) : array();
@@ -110,7 +110,7 @@ class variable
 				$this->wrong_datatype($type);
 		}
 
-		$value = !empty($value) ? $value : $default;
+		$value = $value ?? $default;
 
 		return $value;
 	}
@@ -119,7 +119,7 @@ class variable
 	/**
 	 * Read out from $_SESSION parameters
 	 */
-	public function session($key = '', $type = 'integer', $default = '')
+	public function session($key = "", $type = 'integer', $default = "")
 	{
 		$value = null;
 
@@ -141,7 +141,7 @@ class variable
 				$value = ($this->proceed) ? $this->read_boolean($_SESSION[$key]) : false;
 				break;
 			case 'string':
-				$value = ($this->proceed) ? $this->read_string($_SESSION[$key]) : '';
+				$value = ($this->proceed) ? $this->read_string($_SESSION[$key]) : "";
 				break;
 			case 'array':
 				$value = ($this->proceed) ? (array)($_SESSION[$key]) : array();
@@ -166,7 +166,7 @@ class variable
 	 *
 	 * @return array|float|int|null|string
 	 */
-	public function read($variable = array(), $key = '', $type = 'integer', $default = '')
+	public function read($variable = array(), $key = "", $type = 'integer', $default = "")
 	{
 		$value = null;
 
@@ -184,7 +184,7 @@ class variable
 				$value = ($this->proceed) ? (float)($variable[$key]) : 0;
 				break;
 			case 'string':
-				$value = ($this->proceed) ? $this->read_string($variable[$key]) : '';
+				$value = ($this->proceed) ? $this->read_string($variable[$key]) : "";
 				break;
 			case 'array':
 				$value = ($this->proceed) ? (array)($variable[$key]) : array();
@@ -232,7 +232,7 @@ class variable
 	/**
 	 * Read a variable as SAFE string
 	 */
-	private function read_string($variable = '')
+	private function read_string($variable = "")
 	{
 		$variable = trim($variable);
 
@@ -243,7 +243,7 @@ class variable
 	/**
 	 * Writes a session, get, post
 	 */
-	public function write($where = 'nothing', $key = '', $value = '')
+	public function write($where = 'nothing', $key = "", $value = "")
 	{
 		$success = true;
 		switch($where)
@@ -285,7 +285,7 @@ class variable
 			case 'session':
 				if(isset($_COOKIE[session_name()]))
 				{
-					setcookie(session_name(), '', time() - 86400, '/');
+					setcookie(session_name(), "", time() - 86400, '/');
 				}
 				# session_destroy(); # Might be uninitialized.
 				$_SESSION = array();
@@ -309,7 +309,7 @@ class variable
 				foreach($_COOKIE as $cookie => $value)
 				{
 					# Expiration Date in the past.
-					setcookie($cookie, '', time() - 3600);
+					setcookie($cookie, "", time() - 3600);
 				}
 				$_COOKIE = array();
 				break;
@@ -327,7 +327,7 @@ class variable
 	 * @see remember_as() method
 	 * @reference Clicking on the refresh() button/link will clear the memory
 	 */
-	function forget($alias_key = '')
+	function forget($alias_key = "")
 	{
 		if(isset($_SESSION['REMEMBERAS'][$alias_key]))
 		{
@@ -380,7 +380,7 @@ class variable
 	 *
 	 * @example $creator_id = $variable->remember_as('id', 'creator_id');
 	 */
-	public function remember_as($variable_index = 'remembered', $alias = '')
+	public function remember_as($variable_index = 'remembered', $alias = "")
 	{
 		$value = null;
 		if(!$variable_index || !$alias)
@@ -409,7 +409,7 @@ class variable
 	/**
 	 * Similar to remember() method, but works for STRING data types.
 	 */
-	public function remember_string($variable_index = 'index', $default = '')
+	public function remember_string($variable_index = 'index', $default = "")
 	{
 		$value = null;
 		if(!$variable_index)
@@ -417,18 +417,18 @@ class variable
 			return $value;
 		}
 
-		if($value = $this->get($variable_index, 'string', ''))
+		if($value = $this->get($variable_index, 'string', ""))
 		{
 			$this->write('session', $variable_index, $value);
 		}
-		elseif($value = $this->post($variable_index, 'string', ''))
+		elseif($value = $this->post($variable_index, 'string', ""))
 		{
 			$this->write('session', $variable_index, $value);
 		}
 		else
 		{
 			# Read out from the session
-			if(!($value = $this->session($variable_index, 'string', '')))
+			if(!($value = $this->session($variable_index, 'string', "")))
 			{
 				# Remember the data in session to make it available in next run
 				$value = (string)$default;
@@ -444,7 +444,7 @@ class variable
 	 * Permanently traps a variable, once it is queried to access it default value.
 	 * Useful in making column heads for sorting.
 	 */
-	public function find($variable_index = '', $default_value = '')
+	public function find($variable_index = "", $default_value = "")
 	{
 		# GET, POST, SESSION search
 		$variable = $default_value;

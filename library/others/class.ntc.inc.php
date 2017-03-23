@@ -32,14 +32,14 @@ class ntc
 		return $page_1;
 	}
 
-	public function send($destination = '000-000-0000', $message = '')
+	public function send($destination = '000-000-0000', $message = "")
 	{
 		$data = array();
 		$data['dest_no'] = $destination;
-		$data['senddate'] = '';
-		$data['btn_senddate'] = '';
+		$data['senddate'] = "";
+		$data['btn_senddate'] = "";
 		$data['message'] = $this->clean_sms_text($message);
-		#$data['preset'] = '';
+		#$data['preset'] = "";
 		$data['mlength'] = strlen($data['message']); # '142';
 		$data['mlengthby'] = '/ 142';
 		$data['Submit'] = 'Send';
@@ -52,7 +52,7 @@ class ntc
 	/**
 	 * allowed length of NTC sms message
 	 */
-	private function clean_sms_text($text = '')
+	private function clean_sms_text($text = "")
 	{
 		return substr($text, 0, 142);
 	} # clean_sms_text()

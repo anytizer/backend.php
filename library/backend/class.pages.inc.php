@@ -41,24 +41,24 @@ class pages
 		 */
 		$this->fields = array(
 			'add' => array(
-				'subdomain_id' => '',
-				'page_name' => '',
-				'page_title' => '',
-				'meta_keywords' => '',
-				'meta_description' => '',
-				'content_title' => '',
-				'content_text' => '',
-				'include_file' => '',
+				'subdomain_id' => "",
+				'page_name' => "",
+				'page_title' => "",
+				'meta_keywords' => "",
+				'meta_description' => "",
+				'content_title' => "",
+				'content_text' => "",
+				'include_file' => "",
 			),
 			'edit' => array(
-				'subdomain_id' => '',
-				'page_name' => '',
-				'page_title' => '',
-				'meta_keywords' => '',
-				'meta_description' => '',
-				'content_title' => '',
-				'content_text' => '',
-				'include_file' => '',
+				'subdomain_id' => "",
+				'page_name' => "",
+				'page_title' => "",
+				'meta_keywords' => "",
+				'meta_description' => "",
+				'content_title' => "",
+				'content_text' => "",
+				'include_file' => "",
 			),
 		);
 
@@ -175,7 +175,7 @@ WHERE
 	 *
 	 * @return $details Associative Array of Detailed records of an entity
 	 */
-	public function get_details($page_id = 0, $protection_code = '')
+	public function get_details($page_id = 0, $protection_code = "")
 	{
 		$protection_code = $this->sanitize($protection_code);
 		$page_id = (int)$page_id;
@@ -205,7 +205,7 @@ WHERE
 	public function list_pages($subdomain_id = 0)
 	{
 		$subdomain_id = (int)$subdomain_id;
-		$specific_subdomain_sql = ($subdomain_id) ? 'AND subdomain_id=' . $subdomain_id : '';
+		$specific_subdomain_sql = ($subdomain_id) ? 'AND subdomain_id=' . $subdomain_id : "";
 
 		$pages_sql = "
 SELECT
@@ -234,7 +234,7 @@ ORDER BY
 	public function list_pages_for_sorting_in_sitemap($subdomain_id = 0)
 	{
 		$subdomain_id = (int)$subdomain_id;
-		$specific_subdomain_sql = ($subdomain_id) ? 'AND subdomain_id=' . $subdomain_id : '';
+		$specific_subdomain_sql = ($subdomain_id) ? 'AND subdomain_id=' . $subdomain_id : "";
 
 		$pages_sql = "
 SELECT
@@ -304,7 +304,7 @@ WHERE
 	/**
 	 * Checks if a page name exists in a subdomain
 	 */
-	public function if_page_exists($subdomain_id = 0, $filename = '')
+	public function if_page_exists($subdomain_id = 0, $filename = "")
 	{
 		$subdomain_id = (int)$subdomain_id;
 		$filename = \common\tools::php_filename($filename);
@@ -331,7 +331,7 @@ WHERE
 	 * Sends page details - static contents defined in the database.
 	 * @todo Make use of alias ID in subdomain_name
 	 */
-	public function get_current_page($page_name = '')
+	public function get_current_page($page_name = "")
 	{
 		$page_name = addslashes($page_name);
 		$subdomain_name = addslashes($_SERVER['SERVER_NAME']);

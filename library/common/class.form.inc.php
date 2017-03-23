@@ -41,7 +41,7 @@ class form
 	 *
 	 * @return mixed
 	 */
-	private function element($name = '')
+	private function element($name = "")
 	{
 		$name = $this->sanitize($name);
 		$this->elements[$name] = mt_rand(1000, 9999); # md5(mt_rand(1000, 9999).microtime());
@@ -79,7 +79,7 @@ class form
 		$keys = array_map(array(&$this, 'sanitize'), $keys);
 		$hash = $this->hash($keys);
 
-		$matched = $hash != '' && $hash == $this->generate_key();
+		$matched = $hash != "" && $hash == $this->generate_key();
 		return $matched;
 	}
 
@@ -93,7 +93,7 @@ class form
 	private function hash($keys = array())
 	{
 		rsort($keys); # A way to obfuscate
-		$string = md5('HaSHKeY' . implode('', $keys) . 'RaND0M');
+		$string = md5('HaSHKeY' . implode("", $keys) . 'RaND0M');
 
 		return $string;
 	}
@@ -101,7 +101,7 @@ class form
 	/**
 	 * Allow alphabets only
 	 */
-	private function sanitize($name = '')
+	private function sanitize($name = "")
 	{
 		return \common\tools::alphabetic($name);
 	}

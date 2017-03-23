@@ -11,7 +11,7 @@ class error_handler
 		$old_error_handler = set_error_handler(array(&$this, 'handler'));
 	}
 
-	public function handler($error_no = 0, $error_message = '', $file_name = '', $line_number = 0, $variables = array())
+	public function handler($error_no = 0, $error_message = "", $file_name = "", $line_number = 0, $variables = array())
 	{
 		# Validation
 		$error_no = (int)$error_no;

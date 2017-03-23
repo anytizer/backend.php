@@ -29,7 +29,7 @@ class backend
 		spl_autoload_register(array($this, '_search_and_include_class_files'), true, false);
 	}
 
-	public function _search_and_include_class_files($class_name = '')
+	public function _search_and_include_class_files($class_name = "")
 	{
 		#echo "\r\nSearching for Autoloaded Class: {$class_name}";
 		$namespaces = explode('\\', $class_name);

@@ -4,7 +4,7 @@
 /**
  * Converts Windows file name into Linux types.
  */
-function smarty_modifier_filename($filename = '')
+function smarty_modifier_filename($filename = "")
 {
 	$filename = str_replace('\\', '/', $filename);
 

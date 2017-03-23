@@ -8,11 +8,11 @@ namespace common;
  */
 class dater
 {
-	private $date_input = '';
+	private $date_input = "";
 
 	# Parsed date formats
-	private $yyyymmdd = '';
-	private $mmddyyyy = '';
+	private $yyyymmdd = "";
+	private $mmddyyyy = "";
 
 	# While returning a date
 	private $separator = '/';
@@ -27,9 +27,9 @@ class dater
 	/**
 	 * @param string $date_input
 	 */
-	public function convert($date_input = '')
+	public function convert($date_input = "")
 	{
-		$date_input = preg_replace('/[^0-9\/\-]/', '', $date_input);
+		$date_input = preg_replace('/[^0-9\/\-]/', "", $date_input);
 		$date_input = preg_replace('/[^0-9]+/', '-', $date_input);
 		if($date_input)
 		{

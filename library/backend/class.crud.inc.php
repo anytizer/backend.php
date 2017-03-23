@@ -18,7 +18,7 @@ class crud
 	 * If column names do not match exactly, transate them
 	 * To continue with errors on duplicate data, ignore mode
 	 */
-	public function add($table = '', $data = array(), $duplicates = array(), $translate = false, $ignore_mode = false)
+	public function add($table = "", $data = array(), $duplicates = array(), $translate = false, $ignore_mode = false)
 	{
 		$columns = array_keys($data);
 		$values = array_values($data);
@@ -36,7 +36,7 @@ class crud
 
 		if(!count($duplicates))
 		{
-			$ignore = ($ignore_mode == false) ? '' : 'IGNORE';
+			$ignore = ($ignore_mode == false) ? "" : 'IGNORE';
 			$crud_sql = "
 INSERT {$ignore} INTO `{$table}` (
 	{$columns}
@@ -75,7 +75,7 @@ INSERT INTO `{$table}` (
 	/**
 	 * Save the modified records in the database
 	 */
-	public function update($table = '', $data = array(), $pk = array())
+	public function update($table = "", $data = array(), $pk = array())
 	{
 		$crud_sql = '#';
 
@@ -125,7 +125,7 @@ WHERE
 	/**
 	 * Deletes or inactivates a record in a table.
 	 */
-	public function delete($mode = 'inactivate', $table_name = '', $pk_column = 'id', $pk_value = 0)
+	public function delete($mode = 'inactivate', $table_name = "", $pk_column = 'id', $pk_value = 0)
 	{
 		if(!$this->validate(array(
 			'mode' => $mode,
@@ -181,7 +181,7 @@ LIMIT 1;";
 	/**
 	 * Wrap with ticks, particulalry for column names
 	 */
-	private function tick($name = '')
+	private function tick($name = "")
 	{
 		return "`{$name}`";
 	}
@@ -189,7 +189,7 @@ LIMIT 1;";
 	/**
 	 * Wrap a value within two quotation marks.
 	 */
-	private function quote($value = '')
+	private function quote($value = "")
 	{
 		# If +, - or tick (`) is found, it can be a valid expression.
 		if(preg_match('/[\`|\+\-]/i', $value))
@@ -326,12 +326,12 @@ LIMIT 1;";
 	/**
 	 * Puts a marker flag in a table, for matching pk
 	 */
-	private function set_flag($table_name = '', $column_name = '', $value = '', $pk = array())
+	private function set_flag($table_name = "", $column_name = "", $value = "", $pk = array())
 	{
 		# Experiemental only
 		return false;
 		$value = quote($value);
-		$pk_sql = '';
+		$pk_sql = "";
 		#$flag_sql = "UPDATE `{$table_name}` SET `{$column_name}` = '{$value}' WHERE `{$column_name}` = 1;";
 		$flag_sql = "UPDATE `{$table_name}` SET `{$column_name}`='{$value}', modified_on = CURRENT_TIMESTAMP() WHERE `{$column_name}` = 1;";
 
@@ -343,7 +343,7 @@ LIMIT 1;";
 	 * Modify the column names with a different one!
 	 * Lookup table is referenced.
 	 */
-	private function translate_names($column_name = '')
+	private function translate_names($column_name = "")
 	{
 		$translation = array();
 		/**
@@ -406,8 +406,8 @@ LIMIT 1;";
 		$counter = 0;
 		foreach($columns as $i => $column)
 		{
-			#if($column=='') continue; # No worth calculating the blank column
-			if($accept_blank == false && $values[$i] == '')
+			#if($column=="") continue; # No worth calculating the blank column
+			if($accept_blank == false && $values[$i] == "")
 			{
 				continue;
 			}
@@ -458,7 +458,7 @@ LIMIT 1;";
 	{
 		#echo("Depth: ".$depth);
 		$depth = (int)$depth;
-		$marker = '';
+		$marker = "";
 		$depth_space_original = "\t";
 		for($i = 0; $i < $depth; ++$i)
 		{

@@ -19,12 +19,12 @@ class initials
 	/**
 	 * Calculate the initials
 	 */
-	public function get($string = '')
+	public function get($string = "")
 	{
 		$words = explode(" ", $string);
 		$letters = array_map(array(&$this, 'letter'), $words);
 
-		$phrase = implode('', $letters);
+		$phrase = implode("", $letters);
 
 		return $phrase;
 	}
@@ -32,7 +32,7 @@ class initials
 	/**
 	 * Read an initial letter of a name's word
 	 */
-	private function letter($word = '')
+	private function letter($word = "")
 	{
 		$letters = strtolower(substr($word, 0, $this->first));
 

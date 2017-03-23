@@ -4,7 +4,8 @@ namespace abstracts;
 /**
  * Login interface
  *
- * @package Interfaces
+ * Class login
+ * @package abstracts
  */
 abstract class login
 {
@@ -26,7 +27,7 @@ abstract class login
 	 *
 	 * @return Boolean True/False on login success/error.
 	 */
-	abstract public function login_user($username = '', $password = '');
+	abstract public function login_user($username = "", $password = "");
 
 	/**
 	 * Uses User ID to logout
@@ -42,7 +43,7 @@ abstract class login
 	 *
 	 * @return mixed
 	 */
-	abstract public function password_change($user_id = 0, $password_new = '', $password_old = '');
+	abstract public function password_change($user_id = 0, $password_new = "", $password_old = "");
 
 	/**
 	 * Password forgotten. Send an email.
@@ -51,5 +52,5 @@ abstract class login
 	 *
 	 * @return mixed
 	 */
-	abstract public function password_forgot($username_email = '');
+	abstract public function password_forgot($username_email = "");
 }

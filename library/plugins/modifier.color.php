@@ -7,7 +7,7 @@
 /**
  * Privately called to capitalize randomly selected letters
  */
-function smarty_modifier_color_garble_capital($letter = '')
+function smarty_modifier_color_garble_capital($letter = "")
 {
 	if(mt_rand(0, 9) % 3 == 0)
 	{
@@ -20,7 +20,7 @@ function smarty_modifier_color_garble_capital($letter = '')
 /**
  * Privately called to colorate a single letter
  */
-function smarty_modifier_color_garble_colors($letter = '')
+function smarty_modifier_color_garble_colors($letter = "")
 {
 	$colors = array('FF0000', '009900', '0000FF');
 
@@ -36,7 +36,7 @@ function smarty_modifier_color_garble_colors($letter = '')
 /**
  * Colorates a text of any length
  */
-function smarty_modifier_color($text = '', $capitals = false, $colors = false)
+function smarty_modifier_color($text = "", $capitals = false, $colors = false)
 {
 
 	$letters = $text;
@@ -53,5 +53,5 @@ function smarty_modifier_color($text = '', $capitals = false, $colors = false)
 		$letters = array_map('smarty_modifier_color_garble_colors', $letters);
 	}
 
-	return implode('', $letters);
+	return implode("", $letters);
 }

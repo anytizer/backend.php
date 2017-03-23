@@ -8,19 +8,19 @@ namespace common;
  */
 class compressor
 {
-	public $compressor_contents = '';
-	public $compressor_size = '';
+	public $compressor_contents = "";
+	public $compressor_size = "";
 	public $files = array();
-	public $directory_cached = '';
-	public $directory_protected = '';
-	public $content_type = '';
+	public $directory_cached = "";
+	public $directory_protected = "";
+	public $content_type = "";
 
 	/**
 	 * Constructor establishes the variables that can not be (null or blank).
 	 */
 	public function __construct()
 	{
-		$this->compressor_contents = '';
+		$this->compressor_contents = "";
 		$this->compressor_size = 0;
 		$this->files = array();
 
@@ -41,7 +41,7 @@ class compressor
 	public function gather_files($files_list = 'snippet1.txt|snippet2.txt', $compression_type = 'javascript')
 	{
 		$file_details = array();
-		$this->compressor_contents = ''; # Reset it first.
+		$this->compressor_contents = ""; # Reset it first.
 		$files = explode('|', $files_list); # Were there multiple files requested?
 		#\common\stopper::debug($files, false); \common\stopper::message();
 		foreach($files as $i => $file)
@@ -73,9 +73,9 @@ class compressor
 		#\common\stopper::debug($file_details, false);
 		$file_details['details'] =
 			$compression_type .
-			implode('', $file_details['name']) .
-			implode('', $file_details['time']) .
-			implode('', $file_details['size']);
+			implode("", $file_details['name']) .
+			implode("", $file_details['time']) .
+			implode("", $file_details['size']);
 		$file_details['cache_name'] = $this->directory_cached . '/' . md5($file_details['details']) . '.cache';
 		#\common\stopper::debug($file_details, false);
 
@@ -104,7 +104,7 @@ class compressor
 			# Fashionably decorates the plain license text with starting * of the comments.
 			# This block is optional.
 			$license_file = "license.{$compression_type}.txt";
-			$license_contents = '';
+			$license_contents = "";
 			if(file_exists($license_file))
 			{
 				#$license_contents = file_get_contents($license_file);
@@ -136,17 +136,17 @@ class compressor
 
 		# Remove the comments in /* ... */ boundaries
 		# JS comments can not be nested anymore
-		$this->compressor_contents = preg_replace('/\/\*.*?\*\//s', '', $this->compressor_contents);
+		$this->compressor_contents = preg_replace('/\/\*.*?\*\//s', "", $this->compressor_contents);
 
 		# Remove the comments in lines startring from //
-		$this->compressor_contents = preg_replace('/^\/\/.*?$/m', '', $this->compressor_contents);
+		$this->compressor_contents = preg_replace('/^\/\/.*?$/m', "", $this->compressor_contents);
 
 		# Remove the comments in lines having // and comments there after.
 		# Risky: Be careful for the enclosed " // " things withing the variables.
-		$this->compressor_contents = preg_replace('/\/\/.*?$/m', '', $this->compressor_contents); # Removes ANY: RISKY
+		$this->compressor_contents = preg_replace('/\/\/.*?$/m', "", $this->compressor_contents); # Removes ANY: RISKY
 
 		# Compact, by removing the beginning whitespaces
-		$this->compressor_contents = preg_replace('/^[\s]+/m', '', $this->compressor_contents); # Removes ANY: RISKY
+		$this->compressor_contents = preg_replace('/^[\s]+/m', "", $this->compressor_contents); # Removes ANY: RISKY
 	}
 
 	/**
@@ -161,7 +161,7 @@ class compressor
 
 		# Remove the comments in /* ... */ boundaries
 		# CSS comments can not be nested anymore
-		$this->compressor_contents = preg_replace('/\/\*.*?\*\//is', '', $this->compressor_contents);
+		$this->compressor_contents = preg_replace('/\/\*.*?\*\//is', "", $this->compressor_contents);
 
 		# Tighten the boundaries.
 		# Compact the whitespaces around the braces
@@ -170,7 +170,7 @@ class compressor
 
 		# NOT frequently useful.
 		# CSS safety, when a javascript was used with this, throw the line away.
-		$this->compressor_contents = preg_replace('/\/\/.*?$/m', '', $this->compressor_contents); # Removes ANY: RISKY
+		$this->compressor_contents = preg_replace('/\/\/.*?$/m', "", $this->compressor_contents); # Removes ANY: RISKY
 
 		# Remove thet newline and tabs together.
 		$this->compressor_contents = preg_replace('/[\r|\n]+[\t| ]+/is', ' ', $this->compressor_contents);
@@ -200,7 +200,7 @@ class compressor
 		echo($this->compressor_contents);
 	}
 
-	public function comment_start($snippet_line = '')
+	public function comment_start($snippet_line = "")
 	{
 		return "* {$snippet_line}";
 	}

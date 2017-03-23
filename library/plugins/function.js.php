@@ -23,14 +23,14 @@ function smarty_function_js($params = array(), &$smarty)
 	# {js line="alert('hi!');"}
 
 	$params['base'] = !empty($params['base']) ? $params['base'] : './js'; # 'smarty_templates/js';
-	$params['src'] = !empty($params['src']) ? $params['src'] : '';
-	$params['url'] = !empty($params['url']) ? $params['url'] : '';
+	$params['src'] = !empty($params['src']) ? $params['src'] : "";
+	$params['url'] = !empty($params['url']) ? $params['url'] : "";
 	$params['validator'] = !empty($params['validator']) ? (boolean)$params['validator'] : false;
 
 	$js = array();
 
-	$params['line'] = !empty($params['line']) ? $params['line'] : '';
-	if($params['line'] != '')
+	$params['line'] = !empty($params['line']) ? $params['line'] : "";
+	if($params['line'] != "")
 	{
 		# Very short term line case.
 		$js[] = "<script type=\"text/javascript\">{$params['line']}</script>";

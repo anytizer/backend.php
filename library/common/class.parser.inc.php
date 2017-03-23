@@ -17,7 +17,7 @@ class parser
 	public $assigns = array();
 	public $columns = array();
 
-	public function parse(&$post_field_name = '')
+	public function parse(&$post_field_name = "")
 	{
 		#\common\stopper::message("Data: ".$post_field_name);
 		$this->lines = explode("\n", $post_field_name); # POST['textfield']

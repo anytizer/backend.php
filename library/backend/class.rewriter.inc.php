@@ -42,7 +42,7 @@ class rewriter
 					# Make the global $vars
 					$vars = preg_split('/[^a-z0-9\_]/', $settings['vars']);
 					$vars = array_filter($vars);
-					#array_unshift($vars, ''); # Just to make sure that its ID matches
+					#array_unshift($vars, ""); # Just to make sure that its ID matches
 					#print_r($vars);
 
 

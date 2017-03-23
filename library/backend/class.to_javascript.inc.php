@@ -19,10 +19,10 @@ class to_javascript
 	/**
 	 * Convrts an array to document.write() for javascript
 	 */
-	private function javascript($string = '', $header = true)
+	private function javascript($string = "", $header = true)
 	{
 		$strings = explode("\n", $string);
-		$js = '';
+		$js = "";
 
 		if($header === true)
 		{
@@ -75,7 +75,7 @@ class to_javascript
 	/**
 	 * Dump file contents to an external file
 	 */
-	public function write_external($conents = '')
+	public function write_external($conents = "")
 	{
 		list($usec, $sec) = explode(' ', microtime());
 		mt_srand((float)$sec + ((float)$usec * 100000));
@@ -89,7 +89,7 @@ class to_javascript
 		return $js;
 	}
 
-	public function load_external($js = '')
+	public function load_external($js = "")
 	{
 		$contents = "<script type=\"text/javascript\" src=\"{$js}\"></script>";
 
@@ -101,7 +101,7 @@ class to_javascript
 	 * Send a contents of a file into document.write() javascript.
 	 * Reads a file.
 	 */
-	public function send_javascript($file_name = '', $do_mapping = false)
+	public function send_javascript($file_name = "", $do_mapping = false)
 	{
 		/*$fc = "<script>alert('js file: {$file_name}' does not exist.');</script>";*/
 		#$fc = "alert(JS file: '{$file_name}' does not exist.');";
@@ -144,7 +144,7 @@ class to_javascript
 	/**
 	 * Wraps a js line with document.write() looping: to map an array
 	 */
-	public function js_var_line($line = '')
+	public function js_var_line($line = "")
 	{
 		# $line = addslashes($line); # Done already. Looping kills the time
 		return "document.write(\"{$line}\");";

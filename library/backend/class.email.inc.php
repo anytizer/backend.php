@@ -72,7 +72,7 @@ class email
 	 *
 	 * @return Boolean Success or Failure to edit a record
 	 */
-	public function edit($data = array(), $pk = array(), $protection_code = '', $pk_value = 0)
+	public function edit($data = array(), $pk = array(), $protection_code = "", $pk_value = 0)
 	{
 		# Use $protection_code ... to test the integrity of the posted items. Verifies if the user can edit the entry.
 		$code = $this->sanitize($protection_code);
@@ -150,7 +150,7 @@ LIMIT {$from_index}, {$per_page}
 	 *
 	 * @return $details Associative Array of Detailed records of an entity
 	 */
-	public function details($email_id = 0, $code_user = '')
+	public function details($email_id = 0, $code_user = "")
 	{
 		$code = $this->sanitize($code_user);
 		$email_id = (int)$email_id;
@@ -173,7 +173,7 @@ WHERE
 	/**
 	 * For compatibility only
 	 */
-	public function get_details($subdomain_id = 0, $protection_code = '')
+	public function get_details($subdomain_id = 0, $protection_code = "")
 	{
 		return null;
 	}
@@ -182,7 +182,7 @@ WHERE
 	/**
 	 * Allow to operate on a particular record, with its protection code
 	 */
-	protected function allow_protected_action($email_id = 0, $protection_code = '')
+	protected function allow_protected_action($email_id = 0, $protection_code = "")
 	{
 		# Action is: edit:update / delete:inactivate
 		$email_id = (int)$email_id;

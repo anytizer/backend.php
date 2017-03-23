@@ -19,11 +19,11 @@ class codegen
 		parent::__construct();
 	}
 	
-	public function setup($context = '', $name = '')
+	public function setup($context = "", $name = "")
 	{
-		$this->context = strtoupper(preg_replace('/[^a-z]/is', '', $context));
-		$this->name = strtoupper(preg_replace('/[^a-z]/is', '', $name));
-		if($this->context == '' || $this->name == '')
+		$this->context = strtoupper(preg_replace('/[^a-z]/is', "", $context));
+		$this->name = strtoupper(preg_replace('/[^a-z]/is', "", $name));
+		if($this->context == "" || $this->name == "")
 		{
 			\common\stopper::message('We need a valid context/name for codegen');
 		}
@@ -31,7 +31,7 @@ class codegen
 
 	public function generate_code($params = array())
 	{
-		$code = '';
+		$code = "";
 
 		$sql = "
 SELECT
@@ -84,7 +84,7 @@ LIMIT 1;";
 	protected function colman_student($params = array())
 	{
 		$params['gender'] = isset($params['gender']) ? substr(trim($params['gender']), 0, 1) : 'U';
-		$params['percent'] = isset($params['percent']) ? (float)preg_replace('/[^0-9\.]/', '', $params['percent']) : '0.00';
+		$params['percent'] = isset($params['percent']) ? (float)preg_replace('/[^0-9\.]/', "", $params['percent']) : '0.00';
 		# ST2010070015M
 
 		$academic_grade_sql = "

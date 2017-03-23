@@ -11,7 +11,7 @@ function smarty_function_icon($params = array(), &$smarty)
 	# Replace with valid HTML/IMG tags.
 	$icon = 'X';
 
-	$params['name'] = isset($params['name']) ? preg_replace('/[^a-z]+/', '', $params['name']) : 'list';
+	$params['name'] = isset($params['name']) ? preg_replace('/[^a-z]+/', "", $params['name']) : 'list';
 
 	# Additional XHTML parameters useful in user interaction
 	$params['alt'] = htmlentities(isset($params['alt']) ? $params['alt'] : $params['name']);

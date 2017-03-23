@@ -2,7 +2,7 @@
 /**
  * Custom define a constant
  */
-function defines($name = '', $value = '')
+function defines($name = "", $value = "")
 {
 	if(!defined($name))
 	{

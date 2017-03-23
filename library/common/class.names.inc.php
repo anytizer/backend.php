@@ -16,14 +16,14 @@ class names
 	 *
 	 * @return array
 	 */
-	public function read_name($full_name = '', $fix_case = false)
+	public function read_name($full_name = "", $fix_case = false)
 	{
 		$names = explode(' ', $full_name);
 
 		$name = array();
-		$name['F'] = '';
-		$name['M'] = '';
-		$name['L'] = '';
+		$name['F'] = "";
+		$name['M'] = "";
+		$name['L'] = "";
 		# Assigning these empty values makes sure that each of the three parts exists.
 
 		$words = count($names);

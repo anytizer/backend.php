@@ -7,20 +7,20 @@ namespace backend;
  */
 class mysql_table
 {
-	private $prefix = ''; # prefix in table name
-	private $primary_prefix = ''; # prefix in column names
-	private $comments = ''; # table comments
+	private $prefix = ""; # prefix in table name
+	private $primary_prefix = ""; # prefix in column names
+	private $comments = ""; # table comments
 
-	public function __construct($prefix = '', $comments = '')
+	public function __construct($prefix = "", $comments = "")
 	{
-		$this->prefix = preg_replace('/[^a-z]+/is', '', $prefix);
-		$this->comments = preg_replace('/[^a-z0-9\.\-\_\ ]+/is', '', $comments);
+		$this->prefix = preg_replace('/[^a-z]+/is', "", $prefix);
+		$this->comments = preg_replace('/[^a-z0-9\.\-\_\ ]+/is', "", $comments);
 	}
 
 	/**
 	 * Generate the MySQL valid SQL to create a table with prefix.
 	 */
-	public function create($table = '', $columns = array())
+	public function create($table = "", $columns = array())
 	{
 		$this->primary_prefix = $this->_prefix_key($table);
 
@@ -54,25 +54,25 @@ CREATE TABLE `{$this->prefix}_{$table}` (
 	/**
 	 * Make a full column listing. Column name can often contain coumn comments.
 	 */
-	private function _full_column($column_name_full = '')
+	private function _full_column($column_name_full = "")
 	{
 		# Make the column name from readable string
 		$column_name = strtolower(preg_replace('/[\ ]+/is', '_', $column_name_full));
-		$column_name = preg_replace('/[^a-z0-9\_].*?$/is', '', $column_name); # Remove the breakers: \:|\|
+		$column_name = preg_replace('/[^a-z0-9\_].*?$/is', "", $column_name); # Remove the breakers: \:|\|
 
 		# If the column name already contains an underscore, do not prefix.
-		$column_prefix = (!preg_match('/\_/is', $column_name)) ? $this->primary_prefix . '_' : '';
+		$column_prefix = (!preg_match('/\_/is', $column_name)) ? $this->primary_prefix . '_' : "";
 
 		# Readable comments: Check if there is a comment requested in the field
 		# When not found, use the coulumn name itself as the comment text
-		$comment = trim(preg_replace('/^[a-z0-9\_\ ]+\:/is', '', $column_name_full));
-		$comment = (($comment != $column_name) ? $comment : '');
-		if($comment == '')
+		$comment = trim(preg_replace('/^[a-z0-9\_\ ]+\:/is', "", $column_name_full));
+		$comment = (($comment != $column_name) ? $comment : "");
+		if($comment == "")
 		{
 			$comment = implode(' ', array_map('ucfirst', array_filter(explode('_', $column_name))));
 		}
 
-		$full_column = "`{$column_prefix}{$column_name}` varchar(255) NOT NULL DEFAULT '' COMMENT '{$comment}'";
+		$full_column = "`{$column_prefix}{$column_name}` varchar(255) NOT NULL DEFAULT "" COMMENT '{$comment}'";
 
 		return $full_column;
 	}
@@ -80,14 +80,14 @@ CREATE TABLE `{$this->prefix}_{$table}` (
 	/**
 	 * Remove the plural forms - Produce the singular form of a word
 	 */
-	private function _prefix_key($column_name = '')
+	private function _prefix_key($column_name = "")
 	{
 		$replaces = array(
-			'/ies$/is' => 'y',
-			'/oes$/is' => 'o', # mangoes|mango
-			'/ee([a-z])$/is' => 'oo$1', # :-( degrees|degroo, feet|foot
-			'/s$/is' => '',
-			'/sses$/is' => 'ss', # businesses|business
+			"/ies$/is" => "y",
+			"/oes$/is" => "o", # mangoes|mango
+			"/ee([a-z])$/is" => "oo$1", # :-( degrees|degroo, feet|foot
+			"/s$/is" => "",
+			"/sses$/is" => "ss", # businesses|business
 		);
 		$column_name = preg_replace(array_keys($replaces), array_values($replaces), $column_name);
 
@@ -99,7 +99,7 @@ CREATE TABLE `{$this->prefix}_{$table}` (
 	 *
 	 * @see CRUDer column name function
 	 */
-	public function singular($word = '')
+	public function singular($word = "")
 	{
 		return $this->_prefix_key($word);
 	}

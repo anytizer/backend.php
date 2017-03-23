@@ -4,6 +4,10 @@
 /**
  * Steals a value of another template variable
  *
+ * @param array $params
+ * @param $smarty
+ * @return null
+ *
  * @link http://www.smarty.net/forums/viewtopic.php?p=60628#60628
  */
 function smarty_function_steal($params = array(), &$smarty)

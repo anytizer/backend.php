@@ -11,7 +11,7 @@
  * @param bool $link_only
  * @return string
  */
-function smarty_modifier_gravatar($email = '', $link_only = true)
+function smarty_modifier_gravatar($email = "", $link_only = true)
 {
 	/**
 	 * constant $gravatar_host

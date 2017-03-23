@@ -17,8 +17,8 @@ class cropper
 	/**
 	 * Images being cropped
 	 */
-	private $source = '';
-	private $destination = '';
+	private $source = "";
+	private $destination = "";
 
 	private $errors = array(
 		'destination_exists' => 'Desitntion exists already.',
@@ -69,8 +69,8 @@ class cropper
 			$this->height = (int)$_SESSION['cropper']['height'];
 		}
 
-		$this->source = isset($_SESSION['cropper']['source']) ? $_SESSION['cropper']['source'] : '';
-		$this->destination = isset($_SESSION['cropper']['destination']) ? $_SESSION['cropper']['destination'] : '';
+		$this->source = isset($_SESSION['cropper']['source']) ? $_SESSION['cropper']['source'] : "";
+		$this->destination = isset($_SESSION['cropper']['destination']) ? $_SESSION['cropper']['destination'] : "";
 
 		if(is_file($interface_file))
 		{
@@ -85,7 +85,7 @@ class cropper
 		}
 	}
 
-	public function crop_interface($source = '', $destination = '')
+	public function crop_interface($source = "", $destination = "")
 	{
 		if(is_file($destination))
 		{

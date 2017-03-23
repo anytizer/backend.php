@@ -7,7 +7,7 @@
  */
 function smarty_modifier_icon($value = 'N', $context = 'YN')
 {
-	$icon_name = '';
+	$icon_name = "";
 	if(!in_array($value, array('N', 'Y', 'D')))
 	{
 		# requesting src="..." only

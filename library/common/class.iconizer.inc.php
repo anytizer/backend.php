@@ -44,7 +44,7 @@ class iconizer
 	/**
 	 * Reads a directory of images and produces: css and a big image file
 	 */
-	public function iconize($directory = '', $css_filename = '')
+	public function iconize($directory = "", $css_filename = "")
 	{
 		$i = 0;
 		$samples = array();

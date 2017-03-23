@@ -11,13 +11,13 @@ class thumbnailer
 	public $original = array();
 	private $dimension;
 
-	public function __construct($original_name = '')
+	public function __construct($original_name = "")
 	{
 		if(is_file($original_name))
 		{
 			$this->original = array(
-				'name' => '',
-				'mime' => '',
+				'name' => "",
+				'mime' => "",
 			);
 
 			if($size = getimagesize($original_name))
@@ -41,7 +41,7 @@ class thumbnailer
 		}
 	}
 
-	public function generate($new_width = 0, $new_height = 0, $thumb_file = '', $quality = 75)
+	public function generate($new_width = 0, $new_height = 0, $thumb_file = "", $quality = 75)
 	{
 		$quality = (int)$quality;
 		$success = false;

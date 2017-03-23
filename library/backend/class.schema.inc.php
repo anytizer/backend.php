@@ -19,7 +19,7 @@ class schema
 		parent::__construct();
 	}
 	
-	public function database($database = '')
+	public function database($database = "")
 	{
 		if(!$database)
 		{
@@ -35,7 +35,7 @@ class schema
 	 *
 	 * @link http://codeherb.com/find_primary_keys_sql/
 	 */
-	public function primary_key($table = '')
+	public function primary_key($table = "")
 	{
 		$find_primary_key_sql = "
 SELECT
@@ -60,7 +60,7 @@ WHERE
 	/**
 	 * Finds out the column comment on a particular database
 	 */
-	public function column_comments($table = '', $column = '')
+	public function column_comments($table = "", $column = "")
 	{
 		$column_comment_sql = "
 SELECT
@@ -74,7 +74,7 @@ WHERE
 		$column = $this->row($column_comment_sql);
 		if(!isset($column['COLUMN_COMMENT']))
 		{
-			$column = array('COLUMN_COMMENT' => '');
+			$column = array('COLUMN_COMMENT' => "");
 		}
 
 		return $column['COLUMN_COMMENT'];

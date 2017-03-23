@@ -35,10 +35,10 @@ class dropdowns
 		# Avoid too much recursion
 		if($level > $this->depth)
 		{
-			return '';
+			return "";
 		}
 
-		$html = '';
+		$html = "";
 		$parent_id = (int)$parent_id;
 		$load_sql = "
 SELECT

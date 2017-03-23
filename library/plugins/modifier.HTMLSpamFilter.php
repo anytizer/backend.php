@@ -24,10 +24,10 @@
  *
  * @return string
  */
-function smarty_modifier_HTMLSpamFilter($string = '', $trim_at = 3)
+function smarty_modifier_HTMLSpamFilter($string = "", $trim_at = 3)
 {
-	$boring_comments_html = '';
-	$return = '';
+	$boring_comments_html = "";
+	$return = "";
 	for($i = 0; $i < strlen($string); $i++)
 	{
 		$return .= '&#x' . bin2hex(substr($string, $i, 1)) . ';';

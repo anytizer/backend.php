@@ -42,9 +42,9 @@ function _random_priority($default = '0.0')
  */
 function smarty_function_sitemap($parameters = array(), &$smarty)
 {
-	$parameters['modification'] = isset($parameters['modification']) ? $parameters['modification'] : '';
-	$parameters['frequency'] = isset($parameters['frequency']) ? $parameters['frequency'] : '';
-	$parameters['priority'] = isset($parameters['priority']) ? $parameters['priority'] : '';
+	$parameters['modification'] = isset($parameters['modification']) ? $parameters['modification'] : "";
+	$parameters['frequency'] = isset($parameters['frequency']) ? $parameters['frequency'] : "";
+	$parameters['priority'] = isset($parameters['priority']) ? $parameters['priority'] : "";
 
 	if($parameters['modification'])
 	{
@@ -60,6 +60,6 @@ function smarty_function_sitemap($parameters = array(), &$smarty)
 	}
 	else
 	{
-		return '';
+		return "";
 	}
 }

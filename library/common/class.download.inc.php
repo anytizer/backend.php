@@ -26,7 +26,7 @@ class download
 	/**
 	 * Read and send a file to the client browser.
 	 */
-	public function send_file($filename_path = '', $save_name = '')
+	public function send_file($filename_path = "", $save_name = "")
 	{
 		#\common\stopper::message("Download for: {$filename} n save as: {$save_name}");
 
@@ -103,7 +103,7 @@ class download
 	 * When file was not sent, send an alternative error texts.
 	 * It is a readable file to describe what happened.
 	 */
-	function send_error_contents($filename = '')
+	function send_error_contents($filename = "")
 	{
 		$timestamp = date('Y-m-d H:i:s');
 		$tz = date('YmdHis');
@@ -127,9 +127,9 @@ Administrator
 	/**
 	 * Convert a base file name into a name that can be saved on a client's computer
 	 */
-	public function save_name($save_name = '')
+	public function save_name($save_name = "")
 	{
-		$save_name = preg_replace('/[^a-z0-9\_\-\.]+/', '', $save_name);
+		$save_name = preg_replace('/[^a-z0-9\_\-\.]+/', "", $save_name);
 
 		return $save_name;
 	}
@@ -138,7 +138,7 @@ Administrator
 	/**
 	 * Send some headers useful to the downloader client.
 	 */
-	private function headers($filename = '', $length = 0)
+	private function headers($filename = "", $length = 0)
 	{
 		if(!$filename || !$length || $this->error)
 		{
@@ -170,15 +170,15 @@ Administrator
 		return true;
 	}
 
-	public function details($filename = '')
+	public function details($filename = "")
 	{
 		$is_valid = is_file($filename);
 
 		$meta = array();
-		$meta['name'] = ($is_valid) ? basename($filename) : '';
+		$meta['name'] = ($is_valid) ? basename($filename) : "";
 		$meta['filesize'] = ($is_valid) ? filesize($filename) : 0;
 		$meta['mtime'] = ($is_valid) ? filemtime($filename) : 0;
-		$meta['location'] = ($is_valid) ? $filename : '';
+		$meta['location'] = ($is_valid) ? $filename : "";
 		#$meta['extension'] = ($is_valid)?($filename):0;
 
 		$meta = array_map('addslashes', $meta);

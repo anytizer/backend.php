@@ -6,7 +6,7 @@
  */
 function smarty_function_comment($params = array(), &$smarty)
 {
-	$output = '';
+	$output = "";
 	$params['type'] = isset($params['type']) ? $params['type'] : 'html';
 	switch($params['type'])
 	{
@@ -14,7 +14,7 @@ function smarty_function_comment($params = array(), &$smarty)
 			$output = isset($params['begin']) ? '<!--' : '-->';
 			break;
 		case 'normal':
-			$output = isset($params['value']) ? $params['value'] : '';
+			$output = isset($params['value']) ? $params['value'] : "";
 			break;
 		default:
 	}

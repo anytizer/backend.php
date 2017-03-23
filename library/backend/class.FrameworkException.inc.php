@@ -17,7 +17,7 @@ class FrameworkException
 	 * @param \Exception $previous
 	 * @param null      $field
 	 */
-	public function __construct($message = '', $code = 0, \Exception $previous = null, $field = null)
+	public function __construct($message = "", $code = 0, \Exception $previous = null, $field = null)
 	{
 		/**
 		 * @todo Nicely decorate the Error Messages

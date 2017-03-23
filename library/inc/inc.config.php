@@ -64,9 +64,9 @@ $verify_installed_modules = function()
 		# Databases
 		#'MySQL' => 'mysql_connect', # 2016-05-01 use with PHP7
 		'MySQLi' => 'mysqli_connect', # Optional but very good
-		#'pdo' => '',
-		#'pdo_mysql' => '',
-		#'pdo_sqlite' => '',
+		#'pdo' => "",
+		#'pdo_mysql' => "",
+		#'pdo_sqlite' => "",
 
 		# Other PHP Internals
 		'Hash' => 'hash',
@@ -177,7 +177,7 @@ chdir(__SUBDOMAIN_BASE__); # Enter inside the subdomain directory path
 require_once(__LIBRARY_PATH__ . '/inc/inc.constants.php');
 
 # Avoid the risk of files being over-written when using common directory for all subdomains
-$smarty->compile_id = preg_replace('/[^a-z]/is', '', $_SERVER['SERVER_NAME']);
+$smarty->compile_id = preg_replace('/[^a-z]/is', "", $_SERVER['SERVER_NAME']);
 $smarty->addPluginsDir(array(
 	__SUBDOMAIN_BASE__ . '/plugins',
 	__LIBRARY_PATH__ . '/plugins',

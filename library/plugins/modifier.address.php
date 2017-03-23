@@ -4,9 +4,9 @@
 /**
  * Prints an HTML output of the address entity. Useful in managing the users and membership details.
  */
-function smarty_modifier_address($value = '', $field = '', $separator = ': ', $EOL_separator = '<br />')
+function smarty_modifier_address($value = "", $field = "", $separator = ': ', $EOL_separator = '<br />')
 {
-	$html = '';
+	$html = "";
 	if($value)
 	{
 		if($field)

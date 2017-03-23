@@ -5,10 +5,10 @@
  * Sends the website inquiry messages to the administrators
  */
 
-if($variable->post('submit_button', 'string', ''))
+if($variable->post('submit_button', 'string', ""))
 {
 	# Verify that it is a human with javascript enabled browser.
-	if($variable->post('noemail', 'string', '') || $variable->post('nospam', 'string', '') != 'nospam')
+	if($variable->post('noemail', 'string', "") || $variable->post('nospam', 'string', "") != 'nospam')
 	{
 		$messenger = new \common\messenger('error', 'You cannot misuse our contact form!');
 		\common\stopper::url('./');
@@ -25,10 +25,10 @@ if($variable->post('submit_button', 'string', ''))
 		'contact_host' => gethostbyaddr($_SERVER['REMOTE_ADDR']),
 		'contact_browser' => $_SERVER['HTTP_USER_AGENT'],
 		
-		'contact_name' => $variable->post('name', 'string', ''),
-		'contact_email' => $variable->post('email', 'string', ''),
-		'contact_subject' => $variable->post('subject', 'string', ''),
-		'contact_message' => $variable->post('message', 'string', ''),
+		'contact_name' => $variable->post('name', 'string', ""),
+		'contact_email' => $variable->post('email', 'string', ""),
+		'contact_subject' => $variable->post('subject', 'string', ""),
+		'contact_message' => $variable->post('message', 'string', ""),
 	);
 	$contacts = new contacts();
 	$message_id = $contacts->add_quick($messages);
@@ -60,13 +60,13 @@ if($variable->post('submit_button', 'string', ''))
 	$sender->add_recipient(new datatype_recipient(CONTACTUS_ADMINEMAIL, CONTACTUS_ADMINNAME));
 
 	# Replies back to the messenger
-	$sender->AddReplyto($variable->post('email', 'string', ''), $variable->post('name', 'string', ''));
+	$sender->AddReplyto($variable->post('email', 'string', ""), $variable->post('name', 'string', ""));
 
 	$data = array(
-		'NAME' => $variable->post('name', 'string', ''),
-		'EMAIL' => $variable->post('email', 'string', ''),
-		'SUBJECT' => $variable->post('subject', 'string', ''),
-		'MESSAGE' => $variable->post('message', 'string', '')
+		'NAME' => $variable->post('name', 'string', ""),
+		'EMAIL' => $variable->post('email', 'string', ""),
+		'SUBJECT' => $variable->post('subject', 'string', ""),
+		'MESSAGE' => $variable->post('message', 'string', "")
 	);
 	$template_data = $email_template->read_template($data);
 	$success = $sender->deliver($template_data);

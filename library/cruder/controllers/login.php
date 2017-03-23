@@ -8,16 +8,16 @@
 $session_message = isset($_SESSION['messenger']) ? $_SESSION['messenger'] : array();
 
 # Which email address is being used?
-$attempted_email = isset($_SESSION['attempted_email']) ? $_SESSION['attempted_email'] : '';
+$attempted_email = isset($_SESSION['attempted_email']) ? $_SESSION['attempted_email'] : "";
 $attempted_email = isset($_GET['username']) ? base64_decode($_GET['username']) : $attempted_email;
 
 $login = new \subdomain\login_manager();
 
-$login_action = $variable->post('login-action', 'string', '');
+$login_action = $variable->post('login-action', 'string', "");
 if($login_action)
 {
-	$username = $variable->post('username', 'string', '');
-	$password = $variable->post('password', 'string', '');
+	$username = $variable->post('username', 'string', "");
+	$password = $variable->post('password', 'string', "");
 
 	$goto_page = './';
 	$secure = new \common\secure();
@@ -25,11 +25,11 @@ if($login_action)
 	{
 		if($login->login_user($username, $password))
 		{
-			if($goto = $variable->post('goto', 'string', ''))
+			if($goto = $variable->post('goto', 'string', ""))
 			{
 				$goto_page = $goto;
 			}
-			else if($goto = $variable->session('goto', 'string', ''))
+			else if($goto = $variable->session('goto', 'string', ""))
 			{
 				# Unset it, and make it ready for other pages / login
 				unset($_SESSION['goto']);

@@ -15,10 +15,10 @@ class thumbnail
 
 	public function __construct()
 	{
-		$this->thumb_binary = '';
+		$this->thumb_binary = "";
 	}
 
-	public function load($original_name = '')
+	public function load($original_name = "")
 	{
 		$this->original = array();
 		$this->original['name'] = $original_name; # 'test.jpg';
@@ -40,7 +40,7 @@ class thumbnail
 		ob_end_clean();
 	}
 
-	public function save($location_name = '')
+	public function save($location_name = "")
 	{
 		# Returns the number of bytes saved in this image
 		return file_put_contents($location_name, $this->thumb_binary, FILE_BINARY);
@@ -80,7 +80,7 @@ class thumbnail
 	/**
 	 * Height and width of an image source
 	 */
-	public function dimensions($source_image = '')
+	public function dimensions($source_image = "")
 	{
 		// create a 300*200 image
 		#$img = imagecreatetruecolor(300, 200);

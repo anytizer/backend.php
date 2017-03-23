@@ -12,7 +12,7 @@ class framework
 	private $context;
 
 	# Subdomain prefix, used to generate codes
-	private $prefix = '';
+	private $prefix = "";
 
 	/**
 	 * Load a specific context - Not used so far.
@@ -74,7 +74,7 @@ WHERE
 	 * Load the user defined constants specific to a subdomain
 	 * Chooses the currently active subdomain.
 	 */
-	public function load_user_defined_constants($context = '')
+	public function load_user_defined_constants($context = "")
 	{
 		# n: Name to define
 		# v: Value to define
@@ -326,7 +326,7 @@ WHERE
 	/**
 	 * Verifies that the configuration value is an email
 	 */
-	private function handler_email($value = '')
+	private function handler_email($value = "")
 	{
 		return $value;
 	}
@@ -336,7 +336,7 @@ WHERE
 	 * true, TRUE, 1
 	 * false, FALSE, 0
 	 */
-	private function handler_boolean($value = '')
+	private function handler_boolean($value = "")
 	{
 		return $value;
 	}
@@ -344,7 +344,7 @@ WHERE
 	/**
 	 * Verifies that the configuration value is in YYYY-MM-DD format
 	 */
-	private function handler_date($value = '')
+	private function handler_date($value = "")
 	{
 		return $value;
 	}
@@ -352,7 +352,7 @@ WHERE
 	/**
 	 * Verifies that the configuration value is in HH:MM:DD time format
 	 */
-	private function handler_time($value = '')
+	private function handler_time($value = "")
 	{
 		return $value;
 	}
@@ -361,9 +361,9 @@ WHERE
 	 * Extracts all digits from a value.
 	 * It does not accept FLOAT.ING numbers.
 	 */
-	private function handler_numeric($value = '')
+	private function handler_numeric($value = "")
 	{
-		$value = preg_replace('/[^\d]+/', '', $value);
+		$value = preg_replace('/[^\d]+/', "", $value);
 
 		return $value;
 	}
@@ -371,7 +371,7 @@ WHERE
 	/**
 	 * String data sanitizer
 	 */
-	private function handler_string($value = '')
+	private function handler_string($value = "")
 	{
 		return $value;
 	}
@@ -379,7 +379,7 @@ WHERE
 	/**
 	 * URL data validator
 	 */
-	private function handler_url($value = '')
+	private function handler_url($value = "")
 	{
 		return $value;
 	}

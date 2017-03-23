@@ -30,12 +30,12 @@ class messenger
 	/**
 	 * The message to tell
 	 */
-	private $message = '';
+	private $message = "";
 
 	/**
 	 * Initiate the messenger
 	 */
-	public function __construct($level = '', $message = '')
+	public function __construct($level = "", $message = "")
 	{
 		if(preg_match('/^[\d]{18}$/', $level))
 		{
@@ -55,7 +55,7 @@ class messenger
 			}
 		}
 
-		if($level != '')
+		if($level != "")
 		{
 			if(!in_array($level, array_keys($this->levels), false))
 			{
@@ -69,7 +69,7 @@ class messenger
 			$this->level = $this->level();
 		}
 
-		if($message != '')
+		if($message != "")
 		{
 			$this->tell($message);
 		}
@@ -78,7 +78,7 @@ class messenger
 	/**
 	 * Compile the message to relay
 	 */
-	public function tell($what = '')
+	public function tell($what = "")
 	{
 		$this->message = $what;
 
@@ -96,8 +96,8 @@ class messenger
 	public function told()
 	{
 		$_SESSION['messenger'] = array(
-			'level' => '',
-			'message' => '',
+			'level' => "",
+			'message' => "",
 		);
 
 		return true;
@@ -108,7 +108,7 @@ class messenger
 	 */
 	public function level()
 	{
-		$level = isset($_SESSION['messenger']['level']) ? $_SESSION['messenger']['level'] : '';
+		$level = isset($_SESSION['messenger']['level']) ? $_SESSION['messenger']['level'] : "";
 
 		return $level;
 	}
@@ -118,7 +118,7 @@ class messenger
 	 */
 	public function message()
 	{
-		$message = isset($_SESSION['messenger']['message']) ? $_SESSION['messenger']['message'] : '';
+		$message = isset($_SESSION['messenger']['message']) ? $_SESSION['messenger']['message'] : "";
 
 		return $message;
 	}

@@ -12,7 +12,7 @@ class datatype_email
 	/**
 	 * Set the variables properly
 	 */
-	public function __construct($subject = '', $html = '', $text = '')
+	public function __construct($subject = "", $html = "", $text = "")
 	{
 		parent::__construct(array(
 			'subject',

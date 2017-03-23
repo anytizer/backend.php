@@ -15,7 +15,7 @@ class input
 	{
 	}
 	
-	public function process($name = '')
+	public function process($name = "")
 	{
 		if(!preg_match('/^[a-z]+$/', $name, $data))
 		{
@@ -27,9 +27,9 @@ class input
 	/**
 	 * reads out a key from session
 	 */
-	public function session($key = '')
+	public function session($key = "")
 	{
-		$value = isset($_SESSION[$this->name][$key]) ? $_SESSION[$this->name][$key] : '';
+		$value = isset($_SESSION[$this->name][$key]) ? $_SESSION[$this->name][$key] : "";
 
 		return $value;
 	}

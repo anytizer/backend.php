@@ -21,23 +21,23 @@ class listing
 	{
 		$this->connections = array();
 		# host, username, password, database, <option: table name, prefix, ...>
-		$this->connections['listing0'] = array('dbserver', 'dbuser', 'dbpassword', '', '');
-		$this->connections['listing1'] = array('dbserver', 'dbuser', 'dbpassword', '', '');
-		$this->connections['listing2'] = array('dbserver', 'dbuser', 'dbpassword', '', '');
-		$this->connections['listing3'] = array('dbserver', 'dbuser', 'dbpassword', '', '');
-		$this->connections['listing4'] = array('dbserver', 'dbuser', 'dbpassword', '', '');
-		$this->connections['listing5'] = array('dbserver', 'dbuser', 'dbpassword', '', '');
-		$this->connections['listing6'] = array('dbserver', 'dbuser', 'dbpassword', '', '');
-		$this->connections['listing7'] = array('dbserver', 'dbuser', 'dbpassword', '', '');
-		$this->connections['listing8'] = array('dbserver', 'dbuser', 'dbpassword', '', '');
-		$this->connections['listing9'] = array('dbserver', 'dbuser', 'dbpassword', '', '');
+		$this->connections['listing0'] = array('dbserver', 'dbuser', 'dbpassword', "", "");
+		$this->connections['listing1'] = array('dbserver', 'dbuser', 'dbpassword', "", "");
+		$this->connections['listing2'] = array('dbserver', 'dbuser', 'dbpassword', "", "");
+		$this->connections['listing3'] = array('dbserver', 'dbuser', 'dbpassword', "", "");
+		$this->connections['listing4'] = array('dbserver', 'dbuser', 'dbpassword', "", "");
+		$this->connections['listing5'] = array('dbserver', 'dbuser', 'dbpassword', "", "");
+		$this->connections['listing6'] = array('dbserver', 'dbuser', 'dbpassword', "", "");
+		$this->connections['listing7'] = array('dbserver', 'dbuser', 'dbpassword', "", "");
+		$this->connections['listing8'] = array('dbserver', 'dbuser', 'dbpassword', "", "");
+		$this->connections['listing9'] = array('dbserver', 'dbuser', 'dbpassword', "", "");
 	}
 
 	/**
 	 * Creates a pool of database connections.
 	 * Returns an index name to the connection pool.
 	 */
-	function connect_database($index = '')
+	function connect_database($index = "")
 	{
 		if(empty($this->connections[$index]))
 		{
@@ -71,7 +71,7 @@ class listing
 	/**
 	 * Collects recent posts from a WordPress database
 	 */
-	function list_wp($index = '')
+	function list_wp($index = "")
 	{
 		if($blank = $this->blank())
 		{
@@ -118,7 +118,7 @@ LIMIT 0 , {$this->total_list};";
 		return $links;
 	}
 
-	function list_phpbb($index = '')
+	function list_phpbb($index = "")
 	{
 		if($blank = $this->blank())
 		{
@@ -170,7 +170,7 @@ LIMIT 0, {$this->total_list};";
 	/**
 	 * Pull links from the NLD
 	 */
-	function list_nld($index = '')
+	function list_nld($index = "")
 	{
 		if($blank = $this->blank())
 		{
@@ -224,10 +224,10 @@ LIMIT 0, {$this->total_list};";
 	/**
 	 * Briefly reduce the number of words in a string.
 	 */
-	function shorten_words($string = '')
+	function shorten_words($string = "")
 	{
 		$total_words_allowed = 8;
-		$append = '';
+		$append = "";
 		$words = explode(' ', $string);
 		#echo(" <!-- "); \common\stopper::debug($words, false); echo(" --> ");
 		$words_new = array();

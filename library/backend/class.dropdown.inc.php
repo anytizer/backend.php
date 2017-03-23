@@ -31,7 +31,7 @@ class dropdown
 	/**
 	 * Set the default context to load the menus from the database
 	 */
-	public function __construct($context = '')
+	public function __construct($context = "")
 	{
 		parent::__construct();
 		$this->context = $this->safe_context($context);
@@ -68,7 +68,7 @@ class dropdown
 	 */
 	private function make_dropdown($parent_id = 0, $depth = 0)
 	{
-		$html = '';
+		$html = "";
 
 		$parent_id = (int)$parent_id;
 		$depth = (int)$depth;
@@ -85,7 +85,7 @@ WHERE
 	
 	AND menu_context='{$this->context}'
 	AND is_active='Y'
-	AND menu_text!=''
+	AND menu_text!=""
 ORDER BY
 	menu_id,
 	sink_weight,
@@ -120,7 +120,7 @@ ORDER BY
 	/**
 	 * Reads an TSV from excel sheet for individual records
 	 */
-	public function parse_tsv($menu_tsv = '')
+	public function parse_tsv($menu_tsv = "")
 	{
 		$tsv_original = preg_split('/\t/is', $menu_tsv);
 		$tsv = array_values(array_filter($tsv_original));
@@ -136,13 +136,13 @@ ORDER BY
 	 * Determines the depth of a menu, by counting its leading tabs.
 	 * Leading tabs (each tab means a depth from its parent.
 	 */
-	public function find_depth($menu_tsv = '')
+	public function find_depth($menu_tsv = "")
 	{
 		$data = array();
 		preg_match_all('/^(\t+)/is', $menu_tsv, $data, PREG_SET_ORDER);
 		if(!isset($data[0][1]))
 		{
-			$data[0][1] = '';
+			$data[0][1] = "";
 		}
 		$depth = strlen($data[0][1]);
 
@@ -242,7 +242,7 @@ WHERE
 	/**
 	 * First column (single column or multi column data)
 	 */
-	private function record_node($sql = '')
+	private function record_node($sql = "")
 	{
 		$rs = mysqli_query($this->CONNECTION, $sql);
 		$row = mysqli_fetch_array($rs, MYSQL_NUM);
@@ -294,13 +294,13 @@ WHERE
 	/**
 	 * Make the context safe to use.
 	 */
-	public function safe_context($context = '')
+	public function safe_context($context = "")
 	{
 		/**
 		 * List of not allowed characters
 		 */
 		$filter = '/[^a-z0-9\:\_\-]+/is';
-		$context = preg_replace($filter, '', $context);
+		$context = preg_replace($filter, "", $context);
 		$context = strtolower($context);
 
 		return $context;
@@ -319,7 +319,7 @@ WHERE
 	 * Quickly parse menus context. This is a very sensitive information.
 	 * Use carefully.
 	 */
-	public function quick_parse($dropdown_excel_tsv = '', $subdomain_id = 0)
+	public function quick_parse($dropdown_excel_tsv = "", $subdomain_id = 0)
 	{
 		# Delete the temp file
 		$cache = __TEMP_PATH__ . '/superfish-' . md5($this->context) . '.php';

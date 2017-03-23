@@ -38,7 +38,7 @@ class element
 	 *
 	 * @var string $name Name of the element
 	 */
-	public function name($name = '')
+	public function name($name = "")
 	{
 		$this->name = $name;
 	} # name()
@@ -52,7 +52,7 @@ class element
 	 *
 	 * @return boolean Was the attribute added successfully?
 	 */
-	public function attribute_add($name = '', $value = '')
+	public function attribute_add($name = "", $value = "")
 	{
 		if($name != "" && $value != "")
 		{
@@ -80,7 +80,7 @@ class element
 	 *
 	 * @param string $data Data contents
 	 */
-	function data($data = '')
+	function data($data = "")
 	{
 		$this->data = "{$data}"; # Make it a string
 	} # data()

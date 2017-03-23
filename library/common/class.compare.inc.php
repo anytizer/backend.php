@@ -15,10 +15,10 @@ class compare
 	/**
 	 * Begin
 	 */
-	public function __construct($original_file = '', $compared_file = '')
+	public function __construct($original_file = "", $compared_file = "")
 	{
-		$this->original = file_exists($original_file) ? $original_file : '';
-		$this->compared = file_exists($compared_file) ? $compared_file : '';
+		$this->original = file_exists($original_file) ? $original_file : "";
+		$this->compared = file_exists($compared_file) ? $compared_file : "";
 	}
 
 	public function compare_size()
@@ -94,7 +94,7 @@ class compare
 			#break;
 		}
 
-		return '<ol>' . implode('', $lines) . '</ol>';
+		return '<ol>' . implode("", $lines) . '</ol>';
 	}
 }
 

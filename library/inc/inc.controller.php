@@ -16,7 +16,7 @@ $controller_location = __SUBDOMAIN_BASE__ . '/controllers';
 
 	# If file name does not contain, '/' character,
 	# it is NOT having a no-directory instructions.
-	if(($valid_file_name = \common\tools::php_filename($page)) == '')
+	if(($valid_file_name = \common\tools::php_filename($page)) == "")
 	{
 		\common\stopper::message("Invalid filename/php: <strong>{$page}</strong>. It should pass \common\tools::php_filename().");
 	}

@@ -33,7 +33,7 @@ class ordinal
 			13 => 'th'
 		);
 
-		$ordinality = '';
+		$ordinality = "";
 		if(array_key_exists($number, $ordinals))
 		{
 			$ordinality = $ordinals[$number];

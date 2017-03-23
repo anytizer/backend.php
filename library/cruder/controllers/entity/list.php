@@ -24,7 +24,7 @@ $search___ENTITY__ = $variable->remember_string('search___ENTITY__');
 $smarty->assign('search___ENTITY__', $search___ENTITY__);
 
 # Clicking on the refresh() button/link will clear the memory
-#if($reset_random = $variable->get('random', 'string', '')) { $variable->forget('somefk_id'); }
+#if($reset_random = $variable->get('random', 'string', "")) { $variable->forget('somefk_id'); }
 #$somefk_id = $variable->remember_as('id', 'somefk_id');
 
 $condition = new \others\condition();
@@ -35,10 +35,10 @@ $condition->add('FULL', array(
 	#"e.is_approved='Y'", # Optionally use this flag
 
 	# Filter list of records by some FK/ID
-	# $somefk_id?"e.somefk_id={$somefk_id}":'',
+	# $somefk_id?"e.somefk_id={$somefk_id}":"",
 
 	# In search.php
-	# $search___ENTITY__?"(e.field_name LIKE '%{$search___ENTITY__}%' OR e.field_name LIKE '%{$search___ENTITY__}%')":'',
+	# $search___ENTITY__?"(e.field_name LIKE '%{$search___ENTITY__}%' OR e.field_name LIKE '%{$search___ENTITY__}%')":"",
 ));
 
 # Compulsory conditions

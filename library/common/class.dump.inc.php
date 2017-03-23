@@ -71,7 +71,7 @@ class dump
 	 */
 	function create_tables()
 	{
-		$real_create_table = '';
+		$real_create_table = "";
 		foreach($this->tables as $key => $table)
 		{
 			$create_table_sql = "SHOW CREATE TABLE {$table};";
@@ -82,10 +82,10 @@ class dump
 		}
 
 		$replace = array();
-		#$replace['ENGINE=MyISAM DEFAULT CHARSET=latin1']='';
-		$replace['ENGINE=MyISAM'] = '';
-		$replace['DEFAULT CHARSET=latin1'] = '';
-		$replace['DEFAULT CHARSET=utf8'] = '';
+		#$replace['ENGINE=MyISAM DEFAULT CHARSET=latin1']="";
+		$replace['ENGINE=MyISAM'] = "";
+		$replace['DEFAULT CHARSET=latin1'] = "";
+		$replace['DEFAULT CHARSET=utf8'] = "";
 		$replace[' varchar('] = ' VARCHAR(';
 		$replace[' int('] = ' INT(';
 		$replace[' int '] = ' INT ';
@@ -118,7 +118,7 @@ class dump
 
 	function insert_statement($table_name, $from_index = 0, $to_offset = 0)
 	{
-		$limit_sql = '';
+		$limit_sql = "";
 		if($to_offset > 0)
 		{
 			$limit_sql = " LIMIT {$from_index}, {$to_offset}";
@@ -177,7 +177,7 @@ INSERT INTO {$table_name} ( {$column_name_list} ) VALUES ( {$column_value_list} 
 	 */
 	function insert_statement_improved($table_name, $from_index = 0, $to_offset = 0)
 	{
-		$limit_sql = '';
+		$limit_sql = "";
 		if($to_offset > 0)
 		{
 			$limit_sql = " LIMIT {$from_index}, {$to_offset}";
@@ -236,7 +236,7 @@ INSERT INTO {$table_name} ( {$column_name_list} ) VALUES ( {$column_value_list} 
 	 *
 	 * @return mixed
 	 */
-	function count_data($table_name = '')
+	function count_data($table_name = "")
 	{
 		$sql = "SELECT COUNT(1) AS counter FROM {$table_name};";
 		$this->db0->query($sql);

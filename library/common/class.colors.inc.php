@@ -60,7 +60,7 @@ class colors
 				$rgb[$c] = $conversion[$color];
 			}
 		}
-		return implode('', $rgb);*/
+		return implode("", $rgb);*/
 
 		return str_replace(array_keys($conversion), array_values($conversion), $rrggbb);
 	}
@@ -229,7 +229,7 @@ class colors
 	 */
 	private function sanitize($rrggbb = '000000')
 	{
-		return preg_replace('/[^0-9A-F]+/s', '', strtoupper($rrggbb));
+		return preg_replace('/[^0-9A-F]+/s', "", strtoupper($rrggbb));
 	}
 }
 

@@ -6,7 +6,7 @@
  */
 function smarty_function_social($params = array(), &$smarty)
 {
-	$social_html = '';
+	$social_html = "";
 
 	$params['title'] = isset($params['title']) ? urlencode($params['title']) : 'Social linking';
 	$url = urlencode("{$_SERVER['REQUEST_SCHEME']}://{$_SERVER['SERVER_NAME']}:{$_SERVER['SERVER_PORT']}{$_SERVER['REQUEST_URI']}");

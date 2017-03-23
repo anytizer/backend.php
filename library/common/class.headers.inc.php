@@ -27,7 +27,7 @@ class headers
 	 *
 	 * @return bool
 	 */
-	public static function pdf($file = '', $name = '')
+	public static function pdf($file = "", $name = "")
 	{
 		# The file name must terminate with .pdf extension
 		$success = false;
@@ -116,7 +116,7 @@ class headers
 	/**
 	 * Image Headers (JPG, PNG, GIF)
 	 */
-	public static function image($type = '')
+	public static function image($type = "")
 	{
 		switch(strtolower($type))
 		{
@@ -200,7 +200,7 @@ class headers
 	 *
 	 * @param string $filename
 	 */
-	public static function headers_by_extension($filename = '')
+	public static function headers_by_extension($filename = "")
 	{
 		# Send some headers to force cache. each of these read-out items
 		# require a lot of server resources to serve.
@@ -242,7 +242,7 @@ class headers
 	 *
 	 * @param string $filename
 	 */
-	public static function headers_by_gd($filename = '')
+	public static function headers_by_gd($filename = "")
 	{
 		$sizes = getimagesize($filename);
 		if(isset($sizes['mime']))
@@ -259,7 +259,7 @@ class headers
 	 *
 	 * @return bool
 	 */
-	public static function url_exists($url = '')
+	public static function url_exists($url = "")
 	{
 		# Articles used to create this body part:
 		#   http://www.wrichards.com/blog/2009/05/php-check-if-a-url-exists-with-curl/
@@ -302,13 +302,13 @@ class headers
 	 *
 	 * @param string $url
 	 */
-	public static function back($url = '')
+	public static function back($url = "")
 	{
 		if(isset($_SERVER['HTTP_REFERER']))
 		{
 			$back_url = $_SERVER['HTTP_REFERER'];
 		}
-		elseif($url != '')
+		elseif($url != "")
 		{
 			$back_url = $url;
 		}
@@ -556,9 +556,9 @@ class headers
 	 *
 	 * @return string
 	 */
-	private function fetch($index = '')
+	private function fetch($index = "")
 	{
-		$data = isset($this->data[$index]) ? $this->data[$index] : '';
+		$data = isset($this->data[$index]) ? $this->data[$index] : "";
 
 		return $data;
 	}

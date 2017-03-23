@@ -104,7 +104,7 @@ class image
 	/**
 	 * Height and width of an image source
 	 */
-	public function dimensions($source_image = '')
+	public function dimensions($source_image = "")
 	{
 		// create a 300*200 image
 		#$img = imagecreatetruecolor(300, 200);

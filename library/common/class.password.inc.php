@@ -53,9 +53,9 @@ class password
 	/**
 	 * Exact copy of zen (front end password encrypt)
 	 */
-	public function encrypt_password($plain = '')
+	public function encrypt_password($plain = "")
 	{
-		$password = '';
+		$password = "";
 		for($i = 0; $i < 10; $i++)
 		{
 			$password .= $this->random();
@@ -70,7 +70,7 @@ class password
 	/**
 	 * Validates a plain text password with an encrpyted password
 	 */
-	public function validate_password($plain = '', $encrypted = '')
+	public function validate_password($plain = "", $encrypted = "")
 	{
 		# if password match fails, you might have supplied encrypted password instead of plain password.
 		#die("Plain: {$plain}, Encrypted Match: {$encrypted}");
@@ -122,7 +122,7 @@ class password
 			/**
 			 * @todo Smelly code
 			 */
-			if((is_string($value) || is_int($value)) && ($value != '') && ($value != 'NULL') && (strlen(trim($value)) > 0))
+			if((is_string($value) || is_int($value)) && ($value != "") && ($value != 'NULL') && (strlen(trim($value)) > 0))
 			{
 				return true;
 			}

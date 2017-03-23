@@ -29,13 +29,13 @@ class stopper
 	 *
 	 * @example: \common\stopper::url();
 	 */
-	public static function url($location = '')
+	public static function url($location = "")
 	{
 		# URL Sanitization and removal of any NULL characters
-		$location = str_replace(array('&amp;', "\n", "\r"), array('&', '', ''), $location);
-		$location = preg_replace('|[^a-z0-9-~+_.?#=&;,/:%]|i', '', $location);
-		$location = preg_replace('/\0+/', '', $location);
-		$location = preg_replace('/(\\\\0)+/', '', $location);
+		$location = str_replace(array('&amp;', "\n", "\r"), array('&', "", ""), $location);
+		$location = preg_replace('|[^a-z0-9-~+_.?#=&;,/:%]|i', "", $location);
+		$location = preg_replace('/\0+/', "", $location);
+		$location = preg_replace('/(\\\\0)+/', "", $location);
 
 		# remove %0d and %0a from location
 		$strip = array('%0d', '%0a');
@@ -48,7 +48,7 @@ class stopper
 				while(strpos($location, $val) !== false)
 				{
 					$found = true;
-					$location = str_replace($val, '', $location);
+					$location = str_replace($val, "", $location);
 				}
 			}
 		}
@@ -80,7 +80,7 @@ class stopper
 	 * Show a message about a variable (mixed, array, ingeter, ...
 	 * Stop the execution on demand.
 	 */
-	public static function debug($variable = '', $stop_execution = true)
+	public static function debug($variable = "", $stop_execution = true)
 	{
 		#if(defined('__DEBUG__') && __DEBUG__ === true)
 		{
@@ -124,7 +124,7 @@ class stopper
 	 * Halts execution of a page.
 	 * Alternative to die/exit
 	 */
-	public static function message($message = '', $halt_html_message = true)
+	public static function message($message = "", $halt_html_message = true)
 	{
 		global $backend;
 
@@ -169,7 +169,7 @@ class stopper
 		exit(0);
 	}
 
-	public static function record($filename = '', $message = '')
+	public static function record($filename = "", $message = "")
 	{
 		$filename = preg_replace('/[\/|\/]+/', '-', $filename);
 		if(!$filename)

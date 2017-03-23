@@ -4,7 +4,8 @@ namespace abstracts;
 /**
  * Interfaces an email sending process with lock marker
  *
- * @package Interfaces
+ * Class emailer
+ * @package abstracts
  */
 abstract class emailer
 	extends \common\mysql
@@ -18,14 +19,14 @@ abstract class emailer
 	abstract public function lock_recipient(); # Lock the running email recipient (id)
 	abstract public function error_sending(); # Error sending to this email recipient (id)
 
-	public function __construct($email = '', $name = '')
+	public function __construct($email = "", $name = "")
 	{
 		/**
 		 * Safety of the sender
 		 */
-		if($email == '' || $name == '')
+		if($email == "" || $name == "")
 		{
-			\common\stopper::message('Please give email/name immediately while you instantiate emailer.');
+			\common\stopper::message("Please give email/name immediately while you instantiate emailer.");
 		}
 
 		# Establish the database connection
@@ -67,7 +68,7 @@ abstract class emailer
 	/**
 	 * Processes the sending queue under some limits
 	 */
-	public function send($template_code = '')
+	public function send($template_code = "")
 	{
 		# JOBS:EMPL-PROPOSAL
 		$email_template = new email_template($template_code);

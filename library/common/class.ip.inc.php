@@ -36,7 +36,7 @@ class ip
 		return $is_long ? ip2long($last) : $last;
 	}
 
-	public function long_ip($ip = '')
+	public function long_ip($ip = "")
 	{
 		if(!$ip)
 		{

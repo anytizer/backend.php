@@ -9,7 +9,7 @@
 
 $__ENTITY__ = new \subdomain\__ENTITY__();
 $__PK_NAME__ = $variable->get('id', 'integer', 0); # Entity ID
-$code = $variable->get('code', 'string', ''); # Protection Code
+$code = $variable->get('code', 'string', ""); # Protection Code
 
 if(!$__PK_NAME__ || !$code)
 {

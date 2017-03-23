@@ -44,7 +44,7 @@ class lister
 	 */
 	private function _replace_source($path='/tmp')
 	{
-		$path = preg_replace('/^'.preg_quote($this->source_path).'\/?/', '', $path);
+		$path = preg_replace('/^'.preg_quote($this->source_path).'\/?/', "", $path);
 		return $path;
 	}
 

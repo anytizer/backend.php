@@ -31,7 +31,7 @@ class paths
 
 	public function block($letter = 'A')
 	{
-		return isset($this->blocks[$leter]) ? $this->blocks[$leter] : '';
+		return isset($this->blocks[$leter]) ? $this->blocks[$leter] : "";
 	}
 
 	public function create($directory = './')

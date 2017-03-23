@@ -7,7 +7,7 @@ namespace backend;
 class system_module
 	extends \common\mysql
 {
-	private $subdomain_name = '';
+	private $subdomain_name = "";
 
 	/*	public function __construct()
 		{
@@ -19,13 +19,13 @@ class system_module
 	public function is_valid()
 	{
 		$variable = new \common\variable();
-		$pages = explode('/', $variable->get('page', 'string', ''));
+		$pages = explode('/', $variable->get('page', 'string', ""));
 		if(!$pages)
 		{
 			# Not a chance of being a module:
 			return false;
 		}
-		$module = preg_replace('/[^a-z0-9]/is', '', $pages[0]);
+		$module = preg_replace('/[^a-z0-9]/is', "", $pages[0]);
 		$modules_sql = "SELECT * FROM query_subdomains WHERE subdomain_name = '{$module}' AND is_active='Y';";
 		$records = $this->row($modules_sql);
 		if(!$records)

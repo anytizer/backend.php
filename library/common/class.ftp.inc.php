@@ -17,7 +17,7 @@ class ftp
 	}
 	
 
-	public function connect($ftp_server = '')
+	public function connect($ftp_server = "")
 	{
 		$success = true;
 		$this->connection = ftp_connect($ftp_server) or $success = false;
@@ -32,7 +32,7 @@ class ftp
 		return $success;
 	}
 
-	public function login($ftp_user_name = '', $ftp_user_pass = '')
+	public function login($ftp_user_name = "", $ftp_user_pass = "")
 	{
 		$this->login = ftp_login($this->connection, $ftp_user_name, $ftp_user_pass) or die('Could not login');
 
@@ -44,7 +44,7 @@ class ftp
 	 * Login via direct URL.
 	 * All the connection parameters (eg. username, password, directory to login to etc.) are already supplied.
 	 */
-	public function login_direct($url = '')
+	public function login_direct($url = "")
 	{
 		#$url = 'ftp://username:password@hostnameorip/fol/der';
 		#$url = 'ftp://username:password@hostnameorip';
@@ -60,7 +60,7 @@ class ftp
 		# Change the directory specified
 	}
 
-	public function upload($destination_file = '', $source_file = '')
+	public function upload($destination_file = "", $source_file = "")
 	{
 		#echo "\r\nftp_put({$this->connection}, {$destination_file}, {$source_file}, FTP_BINARY);";
 		#die('Directory: '.dirname($destination_file));
@@ -83,9 +83,9 @@ class ftp
 	 *
 	 * @return boolean Success flag
 	 */
-	public function make_directory($path = '')
+	public function make_directory($path = "")
 	{
-		$path = '';
+		$path = "";
 		$success = true;
 		$directory = explode('/', $path);
 

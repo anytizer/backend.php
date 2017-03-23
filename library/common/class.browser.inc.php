@@ -47,7 +47,7 @@ class browser
 	 */
 	public function browser_version()
 	{
-		$version = '';
+		$version = "";
 
 		return $version;
 	}

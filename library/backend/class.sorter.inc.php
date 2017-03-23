@@ -13,7 +13,7 @@ class sorter extends \common\mysql
 {
 	private $context_sql;
 
-	public function __construct($context_sql = '')
+	public function __construct($context_sql = "")
 	{
 		/**
 		 * Context SQL should be used to choose list of entries broadly.
@@ -35,7 +35,7 @@ class sorter extends \common\mysql
 	 * @param string $direction Can always be one of: up/down
 	 * @param string $sink_name Name of column that holds the weights of entries to sort
 	 */
-	public function sort_table($table_name = '', $pk_name = '', $pk_id = 0, $direction = 'up', $sink_name = 'sink_weight')
+	public function sort_table($table_name = "", $pk_name = "", $pk_id = 0, $direction = 'up', $sink_name = 'sink_weight')
 	{
 		$direction = (in_array(strtolower($direction), array('up', 'upward', 'up', 'u'))) ? 'up' : 'down';
 

@@ -35,8 +35,8 @@ Array
 class uploader
 	extends \common\mysql
 {
-	public $destination = '';
-	public $last_name = ''; # Name of recently uploaded file
+	public $destination = "";
+	public $last_name = ""; # Name of recently uploaded file
 
 	private $preserve_extension = false;
 
@@ -47,7 +47,7 @@ class uploader
 	{
 	}
 	
-	public function upload($destination_location = '', $preserve_extension = false)
+	public function upload($destination_location = "", $preserve_extension = false)
 	{
 		# Linux/Windows Compatible location
 		$destination_location = str_replace('\\', '/', $destination_location);
@@ -74,7 +74,7 @@ class uploader
 	 *
 	 * @todo Use a parameter and remove from physical file, database entries.
 	 */
-	static function upload_delete($pk_id = 0, $file_code = '')
+	static function upload_delete($pk_id = 0, $file_code = "")
 	{
 		#$file_code = addslashes($file_code);
 		#$delete_sql="DELETE FROM query_uploads WHERE file_code='{$file_code}';";
@@ -84,7 +84,7 @@ class uploader
 	/**
 	 * Gives the name of the file uploaded as a stamp
 	 */
-	public function store($index = '', $comments_additional = '')
+	public function store($index = "", $comments_additional = "")
 	{
 		if(!isset($_FILES[$index]))
 		{
@@ -158,7 +158,7 @@ INSERT INTO `query_uploads`(
 	public function download($upload_id_or_file_code = '00000000000000000', $inline = false)
 	{
 		$upload_id = -1;
-		$file_code = '';
+		$file_code = "";
 		if(strlen($upload_id_or_file_code) == strlen(\common\tools::timestamp()))
 		{
 			# This is a file code
@@ -181,7 +181,7 @@ WHERE
 	) AND (
 		# Special protection to filter empty queries
 		upload_id!=0
-		AND file_code!=''
+		AND file_code!=""
 	)
 LIMIT 1;";
 		if($file = $this->row($choose_file_sql))
@@ -215,7 +215,7 @@ WHERE
 		$this->query($counter_sql);
 	}
 
-	public function file_size_mb($filename = '')
+	public function file_size_mb($filename = "")
 	{
 		$size = $this->file_size($filename);
 		$mb = number_format($size / (1024 * 1024), 2, ',', '.');
@@ -223,7 +223,7 @@ WHERE
 		return $mb;
 	}
 
-	public function file_size($filename = '')
+	public function file_size($filename = "")
 	{
 		$size = 0;
 		if(file_exists($filename))
@@ -237,7 +237,7 @@ WHERE
 	/**
 	 * Human readable file sizes
 	 */
-	public function file_size_human($filename = '')
+	public function file_size_human($filename = "")
 	{
 		# echo("Your file: {$filename}");
 		$size = $this->file_size($filename);
@@ -273,7 +273,7 @@ WHERE
 	/**
 	 * Read MIME of an uploaded file
 	 */
-	public function mime($file_code = '')
+	public function mime($file_code = "")
 	{
 		$file_code = \common\tools::sanitize($file_code);
 		$file_mime_sql = "
