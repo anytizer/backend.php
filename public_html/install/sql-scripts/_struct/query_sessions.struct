@@ -9,7 +9,7 @@
 */
 
 CREATE TABLE `query_sessions` (
-  `session_id` varchar(50) NOT NULL DEFAULT '' COMMENT 'PHP Session ID - String',
+  `session_id` varchar(50) NOT NULL DEFAULT "" COMMENT 'PHP Session ID - String',
   `session_ip` int(10) unsigned NOT NULL DEFAULT '0' COMMENT 'Which IP is used to request the services?',
   `subdomain_id` int(10) unsigned NOT NULL DEFAULT '0' COMMENT 'For which Subdomain ID?',
   `added_on` datetime NOT NULL DEFAULT '0000-00-00 00:00:00' COMMENT 'Session created or last modified on',
@@ -19,7 +19,7 @@ CREATE TABLE `query_sessions` (
   `sink_weight` int(10) unsigned NOT NULL DEFAULT '0' COMMENT 'Useless; sink weight',
   `is_active` enum('N','Y') NOT NULL DEFAULT 'N' COMMENT 'Useless; Sink weight',
   `is_approved` enum('N','Y') NOT NULL DEFAULT 'N' COMMENT 'Useless; Approved session data?',
-  `session_ipv6` varchar(255) NOT NULL DEFAULT '' COMMENT 'IPV6 text format address',
+  `session_ipv6` varchar(255) NOT NULL DEFAULT "" COMMENT 'IPV6 text format address',
   `session_data` text NOT NULL COMMENT 'Session Data, keep as short as possible',
   PRIMARY KEY (`session_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Storage for database handled PHP Sessions';

@@ -18,8 +18,8 @@ CREATE TABLE `query_subdomains_status` (
   `sink_weight` int(10) unsigned NOT NULL DEFAULT '0' COMMENT 'Sorting',
   `is_active` enum('N','Y') NOT NULL DEFAULT 'N' COMMENT 'Active status?',
   `is_approved` enum('N','Y') NOT NULL DEFAULT 'N' COMMENT 'Approved status?',
-  `status_name` varchar(255) NOT NULL DEFAULT '' COMMENT 'Readable status name',
-  `status_comments` varchar(255) NOT NULL DEFAULT '' COMMENT 'Status Comments',
+  `status_name` varchar(255) NOT NULL DEFAULT "" COMMENT 'Readable status name',
+  `status_comments` varchar(255) NOT NULL DEFAULT "" COMMENT 'Status Comments',
   PRIMARY KEY (`status_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Development status of subdomain services';
 

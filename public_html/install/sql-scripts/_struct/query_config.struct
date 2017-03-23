@@ -19,11 +19,11 @@ CREATE TABLE `query_config` (
   `is_active` enum('N','Y') NOT NULL DEFAULT 'N' COMMENT 'Active configuration?',
   `is_approved` enum('N','Y') NOT NULL DEFAULT 'N' COMMENT 'Approved configuration?',
   `is_editable` enum('N','Y') NOT NULL DEFAULT 'N' COMMENT 'Include in editor?',
-  `config_context` varchar(255) NOT NULL DEFAULT '' COMMENT 'Sitewide context',
-  `config_name` varchar(255) NOT NULL DEFAULT '' COMMENT 'Identifier',
-  `config_value` varchar(255) NOT NULL DEFAULT '' COMMENT 'Value',
-  `config_type` varchar(255) NOT NULL DEFAULT '' COMMENT 'Storage Type',
-  `config_comments` varchar(255) NOT NULL DEFAULT '' COMMENT 'Explanation',
+  `config_context` varchar(255) NOT NULL DEFAULT "" COMMENT 'Sitewide context',
+  `config_name` varchar(255) NOT NULL DEFAULT "" COMMENT 'Identifier',
+  `config_value` varchar(255) NOT NULL DEFAULT "" COMMENT 'Value',
+  `config_type` varchar(255) NOT NULL DEFAULT "" COMMENT 'Storage Type',
+  `config_comments` varchar(255) NOT NULL DEFAULT "" COMMENT 'Explanation',
   PRIMARY KEY (`config_id`),
   UNIQUE KEY `query_config_subdomain_id_config_name_index` (`subdomain_id`,`config_name`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Standard configurations used in the subdomains';

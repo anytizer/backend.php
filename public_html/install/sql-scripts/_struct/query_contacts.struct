@@ -22,13 +22,13 @@ CREATE TABLE `query_contacts` (
   `is_approved` enum('N','Y') NOT NULL DEFAULT 'N' COMMENT 'Suspendable, logically active record, if applies',
   `is_read` enum('N','Y') NOT NULL DEFAULT 'N' COMMENT 'Did we read this contact?',
   `is_replied` enum('N','Y') NOT NULL DEFAULT 'N' COMMENT 'Did the admin reply to this email',
-  `contact_name` varchar(255) NOT NULL DEFAULT '' COMMENT 'Who is contacting the admin',
-  `contact_email` varchar(255) NOT NULL DEFAULT '' COMMENT 'Email address of the contactor',
-  `contact_subject` varchar(255) NOT NULL DEFAULT '' COMMENT 'Subject of the message',
+  `contact_name` varchar(255) NOT NULL DEFAULT "" COMMENT 'Who is contacting the admin',
+  `contact_email` varchar(255) NOT NULL DEFAULT "" COMMENT 'Email address of the contactor',
+  `contact_subject` varchar(255) NOT NULL DEFAULT "" COMMENT 'Subject of the message',
   `contact_message` text NOT NULL COMMENT 'Full plain/text email message',
-  `contact_ip` varchar(255) NOT NULL DEFAULT '' COMMENT 'IP address in number format',
-  `contact_host` varchar(255) NOT NULL DEFAULT '' COMMENT 'Host name of the current IP address',
-  `contact_browser` varchar(255) NOT NULL DEFAULT '' COMMENT 'HTTP user agent',
+  `contact_ip` varchar(255) NOT NULL DEFAULT "" COMMENT 'IP address in number format',
+  `contact_host` varchar(255) NOT NULL DEFAULT "" COMMENT 'Host name of the current IP address',
+  `contact_browser` varchar(255) NOT NULL DEFAULT "" COMMENT 'HTTP user agent',
   PRIMARY KEY (`contact_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Contact Us data received by the front end contact us forms';
 

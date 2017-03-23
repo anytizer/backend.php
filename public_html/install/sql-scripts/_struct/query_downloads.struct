@@ -18,8 +18,8 @@ CREATE TABLE `query_downloads` (
   `sink_weight` int(10) unsigned NOT NULL DEFAULT '0' COMMENT 'Sink weight',
   `is_active` enum('N','Y') NOT NULL DEFAULT 'Y' COMMENT 'Show this link?',
   `is_approved` enum('N','Y') NOT NULL DEFAULT 'N' COMMENT 'Approved download link?',
-  `download_text` varchar(255) NOT NULL DEFAULT '' COMMENT 'Link Text',
-  `download_url` varchar(255) NOT NULL DEFAULT '' COMMENT 'Downlaod link',
+  `download_text` varchar(255) NOT NULL DEFAULT "" COMMENT 'Link Text',
+  `download_url` varchar(255) NOT NULL DEFAULT "" COMMENT 'Downlaod link',
   PRIMARY KEY (`download_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='List of good products to allow downloads';
 

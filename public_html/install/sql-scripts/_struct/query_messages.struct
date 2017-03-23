@@ -19,9 +19,9 @@ CREATE TABLE `query_messages` (
   `sink_weight` int(10) unsigned NOT NULL DEFAULT '0' COMMENT 'Sinking weight',
   `is_active` enum('N','Y') NOT NULL DEFAULT 'Y' COMMENT 'Active message?',
   `is_approved` enum('N','Y') NOT NULL DEFAULT 'N' COMMENT 'Approved message?',
-  `message_code` varchar(255) NOT NULL DEFAULT '' COMMENT 'Unique code for this message',
-  `message_status` varchar(255) NOT NULL DEFAULT '' COMMENT 'What kind of message is this? (error, success, notice, warning, info, caution)',
-  `message_comments` varchar(255) NOT NULL DEFAULT '' COMMENT 'Where is this messaged used in?',
+  `message_code` varchar(255) NOT NULL DEFAULT "" COMMENT 'Unique code for this message',
+  `message_status` varchar(255) NOT NULL DEFAULT "" COMMENT 'What kind of message is this? (error, success, notice, warning, info, caution)',
+  `message_comments` varchar(255) NOT NULL DEFAULT "" COMMENT 'Where is this messaged used in?',
   `message_body` text NOT NULL COMMENT 'Full message body',
   PRIMARY KEY (`message_id`),
   UNIQUE KEY `message_code_index` (`message_code`)

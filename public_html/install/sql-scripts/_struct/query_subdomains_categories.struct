@@ -18,8 +18,8 @@ CREATE TABLE `query_subdomains_categories` (
   `sink_weight` int(10) unsigned NOT NULL DEFAULT '0' COMMENT 'Sink Weight',
   `is_active` enum('N','Y') NOT NULL DEFAULT 'N' COMMENT 'Use this category?',
   `is_approved` enum('N','Y') NOT NULL DEFAULT 'N' COMMENT 'Approved category?',
-  `category_name` varchar(255) NOT NULL DEFAULT '' COMMENT 'Subdomain Category',
-  `category_comments` varchar(255) NOT NULL DEFAULT '' COMMENT 'Comments',
+  `category_name` varchar(255) NOT NULL DEFAULT "" COMMENT 'Subdomain Category',
+  `category_comments` varchar(255) NOT NULL DEFAULT "" COMMENT 'Comments',
   PRIMARY KEY (`category_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Grouping of subdomains based on these categories';
 
