@@ -37,7 +37,7 @@ Scripts generation made easy with __theme-able__ HTML output.
 
 ## PHP Requirements
 
- * Preferred: PHP 7.0
+ * Preferred: PHP 7.1
  * ~~Minimum: 5.4~~ Support removed
  * Use latest [XAMPP](https://www.apachefriends.org/) as your development environment
 
@@ -51,27 +51,35 @@ Scripts generation made easy with __theme-able__ HTML output.
 
 ## Technologies used
 
- * [Smarty Template Engine](http://www.smarty.net/)
- * [PHPMailer](https://github.com/PHPMailer/PHPMailer)
- * [Compass](http://compass-style.org/)/[SCSS](http://sass-lang.com/), [CSS](https://www.w3.org/TR/CSS/)
- * [W3CSS](http://www.w3schools.com/w3css/)
- * [HTML](https://www.w3.org/TR/html5/), JavaScript
- * [PHP](http://php.net/manual/en/), [Shell Scripts](http://www.shellscript.sh/), [Curl](https://curl.haxx.se/), [.bat]()
- * [FileZilla](https://filezilla-project.org/), [SSH](https://en.wikipedia.org/wiki/Secure_Shell), [Putty](http://www.chiark.greenend.org.uk/~sgtatham/putty/)
- * [MariaDB](https://mariadb.org/), [MySQL](http://www.mysql.com/) and command line utilities
- * [XAMPP](https://www.apachefriends.org/)
- * [SQLYog](https://github.com/webyog/sqlyog-community/wiki/Downloads), [HeidiSQL](http://www.heidisql.com/)
- * [JQuery](http://jquery.com/), [AngularJS](https://angularjs.org/)
+ * [AngularJS](https://angularjs.org/)
  * [Apache](https://en.wikipedia.org/wiki/Apache_HTTP_Server), [.htaccess](https://httpd.apache.org/docs/2.4/howto/htaccess.html)
  * [ApiGen](http://www.apigen.org/)
- * [Ubuntu](https://www.ubuntu.com/), [CentOS](https://www.centos.org/), [Raspbian](https://www.raspberrypi.org/downloads/raspbian/), [Windows](https://www.microsoft.com/en-us/windows)
- * [PHPUnit](https://phpunit.de/)
- * [JSON](http://www.json.org/), CSV, XML, Parsers
+ * [CentOS](https://www.centos.org/)
+ * [Compass](http://compass-style.org/)/[SCSS](http://sass-lang.com/), [CSS](https://www.w3.org/TR/CSS/)
  * [Composer](https://getcomposer.org/)
- * [GIT SCM](https://git-scm.com/), [Tortoise Git](https://tortoisegit.org/), [GitHub](https://github.com/), ~~[Tortoise Subversion](https://tortoisesvn.net/)~~
- * [PHPStorm IDE](https://www.jetbrains.com/phpstorm/), [Notepad++](https://notepad-plus-plus.org/)
+ * [FileZilla](https://filezilla-project.org/), [SSH](https://en.wikipedia.org/wiki/Secure_Shell), [Putty](http://www.chiark.greenend.org.uk/~sgtatham/putty/)
+ * [GitHub](https://github.com/)
+ * [GIT SCM](https://git-scm.com/)
+ * [HTML](https://www.w3.org/TR/html5/), JavaScript
+ * [JQuery](http://jquery.com/)
+ * [JSON](http://www.json.org/), CSV, XML, Parsers
+ * [MariaDB](https://mariadb.org/)
+ * [MySQL](http://www.mysql.com/) and command line utilities
+ * [Notepad++](https://notepad-plus-plus.org/)
+ * [PHPMailer](https://github.com/PHPMailer/PHPMailer)
+ * [PHPStorm IDE](https://www.jetbrains.com/phpstorm/)
+ * [PHPUnit](https://phpunit.de/)
+ * [PHP](http://php.net/manual/en/), [Shell Scripts](http://www.shellscript.sh/), [Curl](https://curl.haxx.se/), [.bat]()
+ * [Raspbian](https://www.raspberrypi.org/downloads/raspbian/)
+ * [SQLYog](https://github.com/webyog/sqlyog-community/wiki/Downloads), [HeidiSQL](http://www.heidisql.com/)
+ * [Smarty Template Engine](http://www.smarty.net/)
+ * [Tortoise Git](https://tortoisegit.org/), ~~[Tortoise Subversion](https://tortoisesvn.net/)~~
+ * [Ubuntu](https://www.ubuntu.com/)
+ * [W3CSS](http://www.w3schools.com/w3css/)
+ * [Windows](https://www.microsoft.com/en-us/windows)
+ * [XAMPP](https://www.apachefriends.org/)
 
-There may be alternative links to the products above.
+There may be alternative links to the products listed above.
 
 
 ## Future Enhancement

@@ -287,7 +287,7 @@ class headers
      *
      * @return bool
      */
-    public static function url_exists($url = "")
+    public function url_exists($url = ""): boolean
     {
         # Articles used to create this body part:
         #   http://www.wrichards.com/blog/2009/05/php-check-if-a-url-exists-with-curl/
@@ -460,7 +460,7 @@ class headers
      *
      * @return bool
      */
-    public function is_local()
+    public function is_local(): boolean
     {
         #$remote_address = $this->fetch('REMOTE_ADDR');
         #$server_address = $this->fetch('SERVER_ADDR');
@@ -483,7 +483,7 @@ class headers
      *
      * @return bool
      */
-    public function is_server()
+    public function is_server(): boolean
     {
         # In some proxy forwarded cases, the remote and server address still differ.
         # But this is a valid case of server.
@@ -520,7 +520,7 @@ class headers
     /**
      * Checks out if the system is accessed via mobile devices
      */
-    public function is_mobile()
+    public function is_mobile(): boolean
     {
         # Please build this list
         $mobiles = array(
