@@ -13,6 +13,7 @@
 	- Possibly incompatible with older releases
 	- Inherits some other third-party works
 		- [APIGen](http://www.apigen.com/) supported documentation style
+		- [AngularJS](https://angularjs.org/)
 		- [JQuery](http://jquery.com/)
 		- [MarkDown](http://daringfireball.net/projects/markdown/)
 		- [PHPJS](http://phpjs.org/)
@@ -21,4 +22,3 @@
 		- [Smarty](http://www.smarty.net/)
 		- [TinyMCE](https://www.tinymce.com/)
 		- [XHTTP](#) - Twitter Connection
-		- [AngularJS](https://angularjs.org/)
