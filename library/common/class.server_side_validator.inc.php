@@ -8,7 +8,14 @@ namespace common;
  */
 class server_side_validator
 {
+    /**
+     * @var array
+     */
     public $errors;
+
+    /**
+     * @var string
+     */
     public $unknown_error_message;
 
     public function __construct()
@@ -29,6 +36,10 @@ class server_side_validator
 
     /**
      * Data can not be blank.
+     *
+     * @param $value
+     * @param string $message
+     * @return bool
      */
     public function validate_not_empty(&$value, $message = "")
     {
@@ -63,6 +74,10 @@ class server_side_validator
 
     /**
      * Validate texts (alphabets and space)
+     *
+     * @param $value
+     * @param string $message
+     * @return bool
      */
     public function validate_text(&$value, $message = "")
     {
@@ -78,6 +93,10 @@ class server_side_validator
 
     /**
      * Validate numbers
+     *
+     * @param $value
+     * @param string $message
+     * @return bool
      */
     public function validate_number(&$value, $message = "")
     {
@@ -110,6 +129,10 @@ class server_side_validator
     /**
      * Validate that the input comprises of words.
      * Uses a portion of validating a single word.
+     *
+     * @param $value
+     * @param string $message
+     * @return bool
      */
     public function validate_words(&$value, $message = "")
     {
@@ -140,6 +163,10 @@ class server_side_validator
 
     /**
      * Validate word as atomic group of alphabets only.
+     *
+     * @param $value
+     * @param string $message
+     * @return bool
      */
     public function validate_word(&$value, $message = "")
     {
@@ -187,6 +214,10 @@ class server_side_validator
 
     /**
      * Validate mixed: Accepts all possible ASCII keyboard entries for readable things.
+     *
+     * @param $value
+     * @param string $message
+     * @return bool
      */
     public function validate_mixed(&$value, $message = "")
     {
@@ -202,6 +233,12 @@ class server_side_validator
 
     /**
      * Validate length of a text. Use zero ( 0 ) length to skip testing.
+     *
+     * @param $value
+     * @param int $min_length
+     * @param int $max_length
+     * @param string $message
+     * @return bool
      */
     public function validate_length(&$value, $min_length = 0, $max_length = 0, $message = "")
     {
@@ -220,6 +257,11 @@ class server_side_validator
     /**
      * Validate a regular expression pattern.
      * An attempt to make extensions for custom validations.
+     *
+     * @param $value
+     * @param string $pattern
+     * @param string $message
+     * @return bool
      */
     public function validate_regex(&$value, $pattern = '/^(.*?)$/', $message = "")
     {
@@ -249,6 +291,10 @@ class server_side_validator
     /**
      * Validate IPv4 Address
      * @url http://www.regular-expressions.info/examples.html
+     *
+     * @param $value
+     * @param string $message
+     * @return bool
      */
     public function validate_ipv4(&$value, $message = "")
     {
@@ -271,6 +317,10 @@ class server_side_validator
     /**
      * Validate IPv6 Address.
      * Not implemented now. Stub only
+     *
+     * @param $value
+     * @param string $message
+     * @return bool
      */
     public function validate_ipv6(&$value, $message = "")
     {
@@ -300,6 +350,9 @@ class server_side_validator
     /**
      * @see http://www.addedbytes.com/php/email-address-validation/
      * @todo Fix ereg with preg_match
+     *
+     * @param string $email
+     * @return bool
      */
     public function check_email_address($email = "")
     {
@@ -355,7 +408,7 @@ class server_side_validator
     {
         $success = false;
         #if(preg_match("/^[0-9]{4}\-[0-9]{2}\-[0-9]{2}$/is", $value))
-        if (preg_match("/^[0-9]{4}\-[01][0-9]\-[0-3][0-9]$/is", $value)) {
+        if (preg_match("/^[0-9]{4}\\-[01][0-9]\-[0-3][0-9]$/is", $value)) {
             $success = true;
         } else {
             $this->add_error($message);
