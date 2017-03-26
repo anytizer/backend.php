@@ -41,7 +41,7 @@ class server_side_validator
      * @param string $message
      * @return bool
      */
-    public function validate_not_empty(&$value, $message = "")
+    public function validate_not_empty($value, $message = "")
     {
         $success = true;
         if (empty($value)) {
@@ -52,7 +52,7 @@ class server_side_validator
         return $success;
     }
 
-    public function add_error(&$message)
+    public function add_error($message)
     {
         if (!empty($message)) {
             $this->errors[] = $message;
@@ -62,12 +62,26 @@ class server_side_validator
 
         return false;
     }
+	
+	public function validate_phonenumber($value, $mesage="")
+	{
+		$phonenuber = $value;
+
+        $phonenuber = preg_replace("/[^\\+0-9]/is", "", $phonenuber);
+        if(strlen($phonenuber))
+        {
+            $has_plus_sign = $phonenuber[0]=="+"; // first is +
+            $phonenuber = ($has_plus_sign?"+":"").preg_replace("/[^0-9]/is", "", $phonenuber);
+        }
+
+		return $phonenuber;
+	}
 
     /**
      * No validations at all. This is the default validation, and should NOT be used programmatically.
      * Considerable with automated systems: Always returns true.
      */
-    public function validate_anything(&$value, $message = "")
+    public function validate_anything($value, $message = "")
     {
         return true;
     }
@@ -79,10 +93,10 @@ class server_side_validator
      * @param string $message
      * @return bool
      */
-    public function validate_text(&$value, $message = "")
+    public function validate_text($value, $message = "")
     {
         $success = false;
-        if (preg_match("/^[a-z\ ]+$/is", $value)) {
+        if (preg_match("/^[a-z\\ ]+$/is", $value)) {
             $success = true;
         } else {
             $this->add_error($message);
@@ -98,7 +112,7 @@ class server_side_validator
      * @param string $message
      * @return bool
      */
-    public function validate_number(&$value, $message = "")
+    public function validate_number($value, $message = "")
     {
         $success = false;
         if (preg_match("/^[0-9]+$/is", $value)) {
@@ -113,11 +127,11 @@ class server_side_validator
     /**
      * Validate time in HH:MM:SS, 24 hours time format
      */
-    public function validate_time(&$value, $message = "")
+    public function validate_time($value, $message = "")
     {
         $success = false;
         #if(preg_match("/^[0-9]{2}\:[0-9]{2}\:[0-9]{2}$/is", $value))
-        if (preg_match("/^[012][0-9]\:[0-5][0-9]\:[0-5][0-9]$/is", $value)) {
+        if (preg_match("/^[012][0-9]\\:[0-5][0-9]\\:[0-5][0-9]$/is", $value)) {
             $success = true;
         } else {
             $this->add_error($message);
@@ -134,7 +148,7 @@ class server_side_validator
      * @param string $message
      * @return bool
      */
-    public function validate_words(&$value, $message = "")
+    public function validate_words($value, $message = "")
     {
         #echo("Validating: {$value}");
         $v = trim($value);
@@ -168,23 +182,21 @@ class server_side_validator
      * @param string $message
      * @return bool
      */
-    public function validate_word(&$value, $message = "")
+    public function validate_word($value, $message = "")
     {
         $success = false;
         $value = trim($value);
-        if (!empty($value) && preg_match("/^[a-z]+$/is", $value)) {
-            $success = true;
-        } else {
+        if (empty($value) || !preg_match("/^[a-z]+$/is", $value)) {
             $this->add_error($message);
         }
 
-        return $success;
+        return $value;
     }
 
     /**
      * Validate floating point number
      */
-    public function validate_float(&$value, $message = "")
+    public function validate_float($value, $message = "")
     {
         $success = false;
         if (preg_match("/^[\-\+]?[0-9]*\.?[0-9]+$/is", $value)) {
@@ -200,10 +212,10 @@ class server_side_validator
      * Validate money amount, with two digits in the decimal
      * A subset of float type numbers.
      */
-    public function validate_money(&$value, $message = "")
+    public function validate_money($value, $message = "")
     {
         $success = false;
-        if (preg_match("/^[\-\+]?[0-9]*\.?[0-9]{2}$/is", $value)) {
+        if (preg_match("/^[\\-\\+]?[0-9]*\\.?[0-9]{2}$/is", $value)) {
             $success = true;
         } else {
             $this->add_error($message);
@@ -219,7 +231,7 @@ class server_side_validator
      * @param string $message
      * @return bool
      */
-    public function validate_mixed(&$value, $message = "")
+    public function validate_mixed($value, $message = "")
     {
         $success = false;
         if (preg_match('/^[0-9a-z_\-\.\,\;\:\(\)\+\=\[\]\{\}\!\@\#\$\%\^\&\*\'\ ]+$/is', $value)) {
@@ -240,7 +252,7 @@ class server_side_validator
      * @param string $message
      * @return bool
      */
-    public function validate_length(&$value, $min_length = 0, $max_length = 0, $message = "")
+    public function validate_length($value, $min_length = 0, $max_length = 0, $message = "")
     {
         $success = true;
         if (
@@ -263,7 +275,7 @@ class server_side_validator
      * @param string $message
      * @return bool
      */
-    public function validate_regex(&$value, $pattern = '/^(.*?)$/', $message = "")
+    public function validate_regex($value, $pattern = '/^(.*?)$/', $message = "")
     {
         # addslashes | stripslashes, if read out from DB / Config
         /*
@@ -296,7 +308,7 @@ class server_side_validator
      * @param string $message
      * @return bool
      */
-    public function validate_ipv4(&$value, $message = "")
+    public function validate_ipv4($value, $message = "")
     {
         # /^[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}$/is
         # /^[\d]{1,3}\.[\d]{1,3}\.[\d]{1,3}\.[\d]{1,3}$/is
@@ -305,7 +317,7 @@ class server_side_validator
         # \b(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\b
         # (?:\d{1,3}\.){3}\d{1,3}
         $success = false;
-        if (preg_match("/^(?:\d{1,3}\.){3}\d{1,3}$/is", $value)) {
+        if (preg_match("/^(?:\\d{1,3}\\.){3}\d{1,3}$/is", $value)) {
             $success = true;
         } else {
             $this->add_error($message);
@@ -322,7 +334,7 @@ class server_side_validator
      * @param string $message
      * @return bool
      */
-    public function validate_ipv6(&$value, $message = "")
+    public function validate_ipv6($value, $message = "")
     {
         $success = true;
 
@@ -333,7 +345,7 @@ class server_side_validator
      * Validate email address
      * Has a lot of conflicts and tradeoffs
      */
-    public function validate_email_single(&$value, $message = "")
+    public function validate_email_single($value, $message = "")
     {
         $success = false;
         $email_reg = "/^[A-Za-z0-9_-]+@[A-Za-z0-9_-]+\.([A-Za-z0-9_-][A-Za-z0-9_]+)$/";
@@ -404,7 +416,7 @@ class server_side_validator
     /**
      * Validate date in YYYY-MM-DD format
      */
-    public function validate_date(&$value, $message = "")
+    public function validate_date($value, $message = "")
     {
         $success = false;
         #if(preg_match("/^[0-9]{4}\-[0-9]{2}\-[0-9]{2}$/is", $value))
