@@ -3,7 +3,8 @@ namespace common;
 
 /**
  * Fetches a page with cURL library.
- * Warning: Make a directory to save the cookie, cookie jar, and browsed files.
+ * @todo Required: directory to save the cookie, cookie jar, and browsed files.
+ *
  * @uses `__TEMP_PATH__`
  * @package Common
  */
