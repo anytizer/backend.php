@@ -166,7 +166,7 @@ class validation_rules
         {
             case "Y":
             case "YES":
-            $yn = "Y";
+                $yn = "Y";
                 break;
             case "N":
             case "NO":
