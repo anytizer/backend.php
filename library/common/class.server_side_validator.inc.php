@@ -3,9 +3,10 @@ namespace common;
 
 /**
  * Generic all kinds of validations, used in server side validation process.
- *
- * @package Common
+ * Class server_side_validator
+ * @package common
  */
+
 class server_side_validator
 {
     /**
