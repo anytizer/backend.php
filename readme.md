@@ -1,26 +1,9 @@
 # Backend CRUD Generator
+Generates an admin panel for your database.
 
-"_Make a fairly complex website in just one day._" Rather, spend your time in good database design.
-
-This tool is used to generate frontend and backend website from your raw database.
-
-Requirement of this tool was to speedup website generation with some notable requirements like:
-
- * Every developer involved in the project should write similar patterns of code.
- * The website has to be easily theme-able by the designer.
- * The database may be unstable and might change even after writing the necessary PHP Code for this.
- * Troubleshooting a bug made easy.
- * Same website can act as Desktop, Mobile or API Version.
- * Application should support genral programming requirements like:
-   - Sending out emails
-   - Uploading image files with resize options
-   - Uploading other documents
-
-Scripts generation made easy with __theme-able__ HTML output.
-
- * Just focus your efforts on better database design.
- * It will create an admin panel for you.
-
+## Motivation
+Development of this tool was motivated with some significant requirements.
+[Read more](motivation.md).
 
 ## Necessary steps
 
@@ -29,7 +12,7 @@ Scripts generation made easy with __theme-able__ HTML output.
  * Apply system level flags on all tables.
  * Apply Column comments in each columns, *(compulsory)*.
  * Generate the HTML Code for your database.
- * Write certain sppecific business logic codes to fulfill your requrements.
+ * Write certain specific business logic codes to fulfill your requirements.
  * Theme your website.
  * Done!
  * Modify templates and application as required.
@@ -83,6 +66,4 @@ There may be alternative links to the products listed above.
 
 
 ## Future Enhancement
-
- * To use AngularJS for listing the tables
- * Manage bulk operations via Ajax/JSON
+[Read more](future.md).
