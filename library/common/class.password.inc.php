@@ -8,7 +8,7 @@ namespace common;
  */
 class password
 {
-    private $salt_length = 2;
+    private $salt_length = 5;
 
     /**
      * Begin password
@@ -20,32 +20,58 @@ class password
         }
     }
 
+    public function random_password(): string
+    {
+        $min = 10;
+        $max = 20;
+
+        $length = $this->random($min, $max);
+        $random_password = $this->random_string($length);
+
+        return $random_password;
+    }
+
+    public function random_salt(): string
+    {
+        $min = 5;
+        $max = 10;
+
+        $length = $this->random($min, $max);
+        $random_password = $this->random_string($length);
+
+        return $random_password;
+    }
+
+    private function random_string(int $length): string
+    {
+        $random_password = random_bytes($length);
+
+        return $random_password;
+    }
+
     /**
-     * Exact copy of zen (front end password encrypt)
+     * Exact copy of old zencart (front end password encrypt)
      */
-    public function encrypt_password($plain = "")
+    public function encrypt_password($plain = ""): string
     {
         $password = "";
         for ($i = 0; $i < 10; $i++) {
             $password .= $this->random();
         }
 
-        $salt = substr(md5($password), 0, $this->salt_length);
-        $password = md5($salt . $plain) . ':' . $salt;
+        $auto_salt = substr(md5($password), 0, $this->salt_length);
+        $password = md5($salt . $plain) . ':' . $auto_salt;
 
         return $password;
     }
 
     /**
-     * Return a random value
+     * Return a random numeric value
      */
-    private function random($min = null, $max = null)
+    private function random(int $min = null, int $max = null): int
     {
-        static $seeded;
-        if (!$seeded) {
-            mt_srand((double)microtime() * 1000000);
-            $seeded = true;
-        }
+        mt_srand((double)microtime() * 1000000);
+		$seeded = true;
 
         if (isset($min) && isset($max)) {
             if ($min >= $max) {
@@ -61,7 +87,7 @@ class password
     /**
      * Validates a plain text password with an encrpyted password
      */
-    public function validate_password($plain = "", $encrypted = "")
+    public function validate_password($plain = "", $encrypted = ""): bool
     {
         # if password match fails, you might have supplied encrypted password instead of plain password.
         #die("Plain: {$plain}, Encrypted Match: {$encrypted}");
@@ -89,9 +115,12 @@ class password
     }
 
     /**
-     * A modified copy of zen password checker
+     * A modified copy of old zencarrt password checker
+	 * @see https://github.com/zencart/zencart
+	 * @see includes\library\ircmaxell\password_compat\lib\password.php
+	 * @see zen_not_null includes\functions\functions_general.php
      */
-    private function not_null($value)
+    private function not_null($value): bool
     {
         if (is_array($value)) {
             if (count($value) > 0) {
@@ -101,7 +130,7 @@ class password
             }
         } else {
             /**
-             * @todo Smelly code
+             * @todo Some smelly code
              */
             if ((is_string($value) || is_int($value)) && ($value != "") && ($value != 'NULL') && (strlen(trim($value)) > 0)) {
                 return true;

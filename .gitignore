@@ -21,3 +21,7 @@
 /tmp/localhost/*.php
 /**/*.phar
 todo.txt
+/lint-checker.bat
+/lint-checker.log
+/phpunit/phpunit.phar
+/phpunit/phpunit.cmd
