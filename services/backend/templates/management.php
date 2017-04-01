@@ -44,7 +44,7 @@
             </ul>
         </div>
         <div class="developer">
-            <p><a href="http://bimal.org.np/">Backend Framework</a>, &copy; 2010 - {'Y'|date}</p>
+            <p><a href="https://goo.gl/WnpFxB">Backend Framework</a>, &copy; 2010 - {'Y'|date}</p>
         </div>
     </div>
 </div>

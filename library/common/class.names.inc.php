@@ -4,8 +4,6 @@ namespace common;
 /**
  * Read a name string and break it into First name, Middle name and Last name.
  * Supports many words as a name.
- *
- * @author Bimal Poudel <smarty@bimal.org.np>
  */
 class names
 {

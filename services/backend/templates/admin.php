@@ -45,7 +45,7 @@
             </ul>
         </div>
         <div class="developer">
-            <p><a href="http://bimal.org.np/">Backend Framework</a> - 2010</p>
+            <p><a href="https://goo.gl/WnpFxB">Backend Framework</a> - 2010</p>
         </div>
     </div>
 </div>

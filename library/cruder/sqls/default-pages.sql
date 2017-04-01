@@ -219,7 +219,7 @@ INSERT IGNORE INTO query_pages (
 	@SUBDOMAIN_ID, CURRENT_TIMESTAMP(),
 	'N', 'N', 'Y', 'Y',
 	'about-us.php', 'About us',
-	'About us', '<p>We have used <a href="http://bimal.org.np/">Backend Framework</a> to make this website. Please use <a href="cms-list.php">CMS page editor</a> to modify the contents.</p>',
+	'About us', '<p>We have used <a href="https://goo.gl/WnpFxB">Backend Framework</a> to make this website. Please use <a href="cms-list.php">CMS page editor</a> to modify the contents.</p>',
 	'frontend.php'
 ) ON DUPLICATE KEY UPDATE fixed_on = CURRENT_TIMESTAMP();
 

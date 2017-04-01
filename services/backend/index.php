@@ -27,7 +27,7 @@
     </style>
 </head>
 <body>
-<p>This application requires <a href="http://bimal.org.np/"
+<p>This application requires <a href="https://goo.gl/WnpFxB"
                                 title="Backend Framework">Backend Framework</a> to operate.</p>
 <!--
 Files protection mechanism for www.facet.sg

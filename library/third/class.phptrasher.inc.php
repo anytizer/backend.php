@@ -86,11 +86,8 @@ class phptrasher
         $this->classes = array();
     }
 
-        /**
+     /**
      * Extension to obfuscate a directory content to another.
-     *
-     * @author Bimal Poudel <smarty@bimal.org.np>
-     * @link http://www.sitbim.com/php/class.phptrasher.inc.php
      */
     public function & obfuscate_directory($dir_source = '../classes', $dir_destination = './classes', $safety_level = 1)
     {

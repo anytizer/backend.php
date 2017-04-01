@@ -15,13 +15,13 @@
     </div>
     <h2>Did you click a link from somewhere else in our site?</h2>
 
-    <p>We might have missed the link. <a href="http://bimal.org.np">Email us</a> to fix it.</p>
+    <p>We might have missed the link. <a href="https://goo.gl/WnpFxB">Email us</a> to fix it.</p>
 
     <h2>Did you follow a link from another site?</h2>
 
     <p> Links from other sites can sometimes be outdated or misspelled. We'd like to fix that problem too, consider
         dropping us an
-        <a href="http://bimal.org.np">email us</a> so we can try to contact the other site and fix the problem.
+        <a href="https://goo.gl/WnpFxB">email us</a> so we can try to contact the other site and fix the problem.
     </p>
 
     <h2>Did you type the URL?</h2>

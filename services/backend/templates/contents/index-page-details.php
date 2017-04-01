@@ -21,7 +21,7 @@
 <h3><a></a>Proof of Concept</h3>
 <p>Now, you can write your own module, without affecting the core system we develop. Hence, it can increase your
     creativity.
-    <a href="http://bimal.org.np/">See more in google codes</a>.</p>
+    <a href="https://goo.gl/WnpFxB">See more in google codes</a>.</p>
 <h3><a></a>Backend / Frontend</h3>
 <p>We have almost lost the concepts of backend for our projects, and this framework supports making a frondend look like
     its backend. Here is a code sample on how to list out the database entities, like menus:</p>
