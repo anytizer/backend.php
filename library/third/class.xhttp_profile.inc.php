@@ -83,8 +83,6 @@ class xhttp_profile
 
     /**
      * Quickly update status
-     *
-     * @author Bimal Poudel
      */
     public function updateStatus($status = "")
     {

@@ -5,7 +5,6 @@ namespace backend;
  * Cleans up old files of selected extension and age of creation (in seconds).
  * Warning: If used wrongly, it will erase everything, without a chance of recovery.
  *
- * @author Bimal Poudel
  * Example of usage:
  *    $lookup_dir = './'; # Where to look for files to delete?
  *    $extension = 'xml'; # Remove this kind of file

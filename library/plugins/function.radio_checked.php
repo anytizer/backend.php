@@ -3,8 +3,6 @@
 
 /**
  * A reusable component to check HTML radios and check boxes
- *
- * @author Bimal Poudel
  */
 function smarty_function_radio_checked($params = array(), &$smarty)
 {

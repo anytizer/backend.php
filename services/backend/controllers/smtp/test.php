@@ -16,7 +16,7 @@ $sender = new \backend\sender($code);
 $sender->ClearAddresses();
 
 # Send email to the administrator
-$sender->add_recipient(new \others\datatype_recipient(DEVELOPER_EMAIL, 'Bimal Poudel'));
+$sender->add_recipient(new \others\datatype_recipient(DEVELOPER_EMAIL, 'Sender Name'));
 $sender->AddBCC('emailtest@example.com', 'Test Sender');
 
 $data = array(

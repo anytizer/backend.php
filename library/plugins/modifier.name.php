@@ -29,10 +29,10 @@ function smarty_modifier_name($fullname = "", $position = 'first')
 
 /**
  * Examples:
- * {assign var='fullname' value='Bimal'}
- * {assign var='fullname' value='Bimal Dev'}
- * {assign var='fullname' value='Bimal Dev Kumar'}
- * {assign var='fullname' value='Bimal Dev Kumar Pandey'}
+ * {assign var='fullname' value='First'}
+ * {assign var='fullname' value='First Last'}
+ * {assign var='fullname' value='First Middle Last'}
+ * {assign var='fullname' value='First Middle Extra Last'}
  * First: {$fullname|name:'first'}<br />
  * Middle: {$fullname|name:'middle'}<br />
  * Last: {$fullname|name:'last'}

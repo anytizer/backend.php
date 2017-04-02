@@ -18,10 +18,9 @@
  *
  * @link http://smarty.php.net/manual/en/language.modifier.HTMLSpamFilter.php
  *          HTMLSpamFilter (Smarty online manual)
- * @author   Bimal Poudel
  *
- * @param string Any text, NOT HTML, without the hyperlinks.
- *
+ * @param string $string Any text, NOT HTML, without the hyperlinks.
+ * @param int $trim_at
  * @return string
  */
 function smarty_modifier_HTMLSpamFilter($string = "", $trim_at = 3)

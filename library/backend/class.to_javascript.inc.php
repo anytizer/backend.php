@@ -3,9 +3,6 @@ namespace backend;
 
 /**
  * To Javascript: Sends a plain text to javascript written texts.
- *
- * @author Bimal Poudel <bimal@hwbnepal.com>
- * @copyright Bimal Poudel
  */
 class to_javascript
 {

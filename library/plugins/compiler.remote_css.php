@@ -4,7 +4,6 @@
 /**
  * Remote CSS Fetcher - works only in the compile time
  * Output html containing the link to remote css file without affecting the design
- * @author Bimal Poudel
  * @file compiler.remote_css.php
  * @type compiler
  * @name remote_css

@@ -9,11 +9,15 @@ require_once(__ROOT_PATH__ . '/inc.bootstrap.php');
 
 $database_config_file = "{$backend['paths']['__APP_PATH__']}/database/config.mysql.inc.php";
 if (is_file($database_config_file)) {
-    throw new \Exception("Standard Config file exists already at: {$database_config_file}");
+    /**
+     * Do not overwrite the database configuration file.
+     */
+    // throw new \Exception("Your configuration file exists already at: {$database_config_file}");
+    die("Your configuration file exists already at: {$database_config_file}");
 }
 
 /**
- * Verify installation paths are available for write-mode
+ * Verify that all of the installation paths are available for write-mode
  */
 $checks = array(
     $backend['paths']['__APP_PATH__'] . '/database',
@@ -224,14 +228,12 @@ $install = !preg_match('#/install/#', $_SERVER['REQUEST_URI']) ? 'install/' : ""
 
 DROP DATABASE IF EXISTS `<?php echo $config['MYSQLDATABASE']; ?>`;
 CREATE DATABASE `<?php echo $config['MYSQLDATABASE']; ?>` CHARACTER SET utf8 COLLATE utf8_general_ci;
-GRANT ALL ON `<?php echo $config['MYSQLDATABASE']; ?>`.* TO '<?php echo $config['MYSQLUSERNAME']; ?>
-    '@'<?php echo $config['MYSQLHOSTNAME']; ?>' IDENTIFIED BY '<?php echo $config['MYSQLPASSWORD']; ?>';
+GRANT ALL ON `<?php echo $config['MYSQLDATABASE']; ?>`.* TO '<?php echo $config['MYSQLUSERNAME']; ?>'@'<?php echo $config['MYSQLHOSTNAME']; ?>' IDENTIFIED BY '<?php echo $config['MYSQLPASSWORD']; ?>';
 FLUSH PRIVILEGES;
 </pre>
     </div>
 
-    <p><strong>Caution</strong>: It has been <strong class="error">replaced automatically</strong> for the first time.
-    </p>
+    <p><strong>Caution</strong>: It has been <strong class="error">replaced automatically</strong> for the first time.</p>
 
     <h2>Step #2: Create table structures and import the sample data</h2>
     <ol>
@@ -329,15 +331,14 @@ FLUSH PRIVILEGES;
     <h2>Ask for a support</h2>
 
     <p>Please <a
-            href="http://bimal.org.np/">let us know if you need an installation support</a> and running this framework.
+            href="https://goo.gl/WnpFxB">let us know if you need an installation support</a> and running this framework.
         Installation support is free. To use this framework for business use and make commercial applications.
     </p>
 
     <h1>Uninstallation</h1>
     <code>
         -- DROP DATABASE IF EXISTS `<?php echo $config['MYSQLDATABASE']; ?>`;
-        -- DROP USER
-        '<strong><?php echo $config['MYSQLUSERNAME']; ?></strong>'@'<strong><?php echo $config['MYSQLHOSTNAME']; ?></strong>';
+        -- DROP USER '<strong><?php echo $config['MYSQLUSERNAME']; ?></strong>'@'<strong><?php echo $config['MYSQLHOSTNAME']; ?></strong>';
     </code>
 
     <h1>Important notices on:</h1>

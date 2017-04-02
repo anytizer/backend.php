@@ -4,8 +4,6 @@ namespace others;
 /**
  * Send SMS using Nepal Telecom's Web SMS Service
  * Details at: http://websmsnew.ntc.net.np/websmss/
- *
- * @author Bimal Poudel <sms@bimal.org.np>
  */
 class ntc
     extends curl

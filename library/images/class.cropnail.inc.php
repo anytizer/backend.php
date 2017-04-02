@@ -6,12 +6,9 @@ namespace images;
  * Rather it will crop the best largest size possible within the image to maintain the ratio.
  * So, it is practically possible to create thumbnails of any size from the orignal image of any size.
  *
- * @author Bimal Poudel
- *
  * @example $cropnail = new cropnail(100, 200);
  * @example $cropnail->resize($original_image_filename, $cropnail_image_filename);
  * @see http://www.sitepoint.com/forums/showthread.php?868379-Dealing-With-Different-User-Image-Sizes&highlight=multipe+image+sizes
- * @see http://cropnail.googlecode.com/svn/trunk/class.cropnail.inc.php
  */
 class cropnail
 {

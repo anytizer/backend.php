@@ -6,7 +6,6 @@
  *
  * @example {'meeting'|an} => a meeting
  * @example {'agenda'|an}  => an agenda
- * @author Bimal Poudel
  */
 function smarty_modifier_an($word = "")
 {

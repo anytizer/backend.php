@@ -3,7 +3,7 @@
  * By Maximus (maximus@nsimail.com) w/ mods by DynamicDrive
  * For full source code, visit http://www.dynamicdrive.com
  *
- * Modified by Bimal Poudel
+ * Modified
  * Just, externally add this script at the bottom of the page
  * you want to block the right click.
  */

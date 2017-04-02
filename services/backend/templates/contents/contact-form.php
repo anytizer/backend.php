@@ -61,7 +61,7 @@
         <tr>
             <td class="r">&nbsp;</td>
             <td style="padding-top:10px;">
-                <!--{* [contact - 12:11EE064750 ], [bimal - 1:254FF9706B] *}-->
+                <!--{* [contact - 12:11EE064750 ], [test - 1:254FF9706B] *}-->
                 <input type="hidden" name="contact_quick" value="contact"/> <input type="hidden" name="CONTACT_KEY"
                                                                                    value="12:11EE064750"/> <input
                     type="hidden" name="HTTP_REFERER" value="/"/> <input type="input"
