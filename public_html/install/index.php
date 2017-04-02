@@ -2,12 +2,12 @@
 /**
  * @todo Bootstrap configurations should be loaded earlier.
  */
-define('__ROOT_PATH__', realpath(dirname(__FILE__) . '/..'));
+define("__ROOT_PATH__", realpath(dirname(__FILE__) . "/.."));
 chdir(__ROOT_PATH__);
 
-require_once(__ROOT_PATH__ . '/inc.bootstrap.php');
+require_once(__ROOT_PATH__ . "/inc.bootstrap.php");
 
-$database_config_file = "{$backend['paths']['__APP_PATH__']}/database/config.mysql.inc.php";
+$database_config_file = "{$backend["paths"]["__APP_PATH__"]}/database/config.mysql.inc.php";
 if (is_file($database_config_file)) {
     /**
      * Do not overwrite the database configuration file.
@@ -20,9 +20,9 @@ if (is_file($database_config_file)) {
  * Verify that all of the installation paths are available for write-mode
  */
 $checks = array(
-    $backend['paths']['__APP_PATH__'] . '/database',
-    $backend['paths']['__SERVICES_PATH__'],
-    $backend['paths']['__TEMP_PATH__'],
+    $backend["paths"]["__APP_PATH__"] . "/database",
+    $backend["paths"]["__SERVICES_PATH__"],
+    $backend["paths"]["__TEMP_PATH__"],
     # Need to overwrite the default settings in those configurations as well
     # $database_config_file,
 );
@@ -38,8 +38,8 @@ if ($errors) {
     die("<p>Error! Please do the following touch first:</p>" . implode("\r\n<br />", $errors));
 }
 
-require_once(__ROOT_PATH__ . '/install/inc.config.php');
-require_once(__ROOT_PATH__ . '/install/class.installer.inc.php');
+require_once(__ROOT_PATH__ . "/install/inc.config.php");
+require_once(__ROOT_PATH__ . "/install/class.installer.inc.php");
 
 $installer = new installer();
 
@@ -48,14 +48,14 @@ $license_text = "
 [BACKEND]
     APPLICATION=\"BACKEND FRAMEWORK\"
     COMPANY_NAME=\"{$installer->company_name}\"
-    INSTALLED_ON=\"{$installer->installed_on}\"
+    INSTALLED_ON=\"{$installer->installed_on}\"REPLACE_
     SERVER_NAME=\"{$installer->server_name}\"
     LICENSE_KEY=\"{$installer->license_key}\"
-    LICENSE_DATABASE=\"{$config['MYSQLDATABASE']}\"
+    LICENSE_DATABASE=\"{$config["MYSQLDATABASE"]}\"
 ";
 
 # Generate a license key and lock the installer
-$license_file = "{$backend['paths']['__APP_PATH__']}/database/license.ini";
+$license_file = "{$backend["paths"]["__APP_PATH__"]}/database/license.ini";
 if (!is_file($license_file)) {
     if (is_writable(dirname($license_file))) {
         if (!file_put_contents($license_file, $license_text)) {
@@ -69,24 +69,24 @@ if (!is_file($license_file)) {
     # Verify it or just skip.
     $license = parse_ini_file($license_file, true);
 
-    $database_ini_file = "{$backend['paths']['__APP_PATH__']}/{$license['BACKEND']['LICENSE_DATABASE']}/{$license['BACKEND']['LICENSE_DATABASE']}.ini";
+    $database_ini_file = "{$backend["paths"]["__APP_PATH__"]}/{$license["BACKEND"]["LICENSE_DATABASE"]}/{$license["BACKEND"]["LICENSE_DATABASE"]}.ini";
     if (!is_file($database_ini_file)) {
-        die('Remove your license file and continue.');
+        die("Remove your license file and continue.");
     }
     $database = parse_ini_file($database_ini_file, true);
 
     /**
      * Read back the configurations
      */
-    $config['MYSQLHOSTNAME'] = $database['DATABASE']['HOSTNAME'];
-    $config['MYSQLUSERNAME'] = $database['DATABASE']['USERNAME'];
-    $config['MYSQLPASSWORD'] = $database['DATABASE']['PASSWORD'];
-    $config['MYSQLDATABASE'] = $database['DATABASE']['DATABASE'];
+    $config["MYSQLHOSTNAME"] = $database["DATABASE"]["HOSTNAME"];
+    $config["MYSQLUSERNAME"] = $database["DATABASE"]["USERNAME"];
+    $config["MYSQLPASSWORD"] = $database["DATABASE"]["PASSWORD"];
+    $config["MYSQLDATABASE"] = $database["DATABASE"]["DATABASE"];
 }
 
 
-$scripts_source = __ROOT_PATH__ . '/install/sql-scripts';
-$scripts_destination = "{$backend['paths']['__APP_PATH__']}/database/{$config['MYSQLDATABASE']}";
+$scripts_source = __ROOT_PATH__ . "/install/sql-scripts";
+$scripts_destination = "{$backend["paths"]["__APP_PATH__"]}/database/{$config["MYSQLDATABASE"]}";
 if (!is_dir($scripts_destination)) {
     mkdir($scripts_destination, 0777, true);
 }
@@ -96,16 +96,16 @@ function next_id($name = "")
     static $next_filename_id = 0;
     ++$next_filename_id;
 
-    return str_pad($next_filename_id, 2, '0', STR_PAD_LEFT) . '-' . $name;
+    return str_pad($next_filename_id, 2, "0", STR_PAD_LEFT) . "-" . $name;
 }
 
 function replace_sql_credentials($credentials = "")
 {
     global $config;
-    $credentials = preg_replace('/MYSQLHOSTNAME/i', $config['MYSQLHOSTNAME'], $credentials);
-    $credentials = preg_replace('/MYSQLDATABASE/i', $config['MYSQLDATABASE'], $credentials);
-    $credentials = preg_replace('/MYSQLUSERNAME/i', $config['MYSQLUSERNAME'], $credentials);
-    $credentials = preg_replace('/MYSQLPASSWORD/i', $config['MYSQLPASSWORD'], $credentials);
+    $credentials = preg_replace("/REPLACE_MYSQLHOSTNAME/i", $config["MYSQLHOSTNAME"], $credentials);
+    $credentials = preg_replace("/REPLACE_MYSQLDATABASE/i", $config["MYSQLDATABASE"], $credentials);
+    $credentials = preg_replace("/REPLACE_MYSQLUSERNAME/i", $config["MYSQLUSERNAME"], $credentials);
+    $credentials = preg_replace("/REPLACE_MYSQLPASSWORD/i", $config["MYSQLPASSWORD"], $credentials);
 
     return $credentials;
 }
@@ -113,38 +113,38 @@ function replace_sql_credentials($credentials = "")
 # Pre-Installation files
 $pre_install = file_get_contents("{$scripts_source}/pre-install.sql");
 $pre_install = replace_sql_credentials($pre_install);
-$pre_installer = "{$scripts_destination}/" . next_id("pre-install-{$config['MYSQLDATABASE']}.sql");
-file_put_contents($pre_installer, $pre_install) or die('Cannot write to Pre-Install file: ' . $pre_installer);
+$pre_installer = "{$scripts_destination}/" . next_id("pre-install-{$config["MYSQLDATABASE"]}.sql");
+file_put_contents($pre_installer, $pre_install) or die("Cannot write to Pre-Install file: " . $pre_installer);
 
 # Main Installation files (Windows)
 $install = file_get_contents("{$scripts_source}/install.bat");
 $install = replace_sql_credentials($install);
-$installer = "{$scripts_destination}/" . next_id("install-{$config['MYSQLDATABASE']}.bat");
-file_put_contents($installer, $install) or die('Cannot write to Installer: ' . $installer);
+$installer = "{$scripts_destination}/" . next_id("install-{$config["MYSQLDATABASE"]}.bat");
+file_put_contents($installer, $install) or die("Cannot write to Installer: " . $installer);
 
 # Main Installation files (Linux)
 $install = file_get_contents("{$scripts_source}/install.sh");
 $install = replace_sql_credentials($install);
-$installer = "{$scripts_destination}/" . next_id("install-{$config['MYSQLDATABASE']}.sh");
-file_put_contents($installer, $install) or die('Cannot write to Installer: ' . $installer);
+$installer = "{$scripts_destination}/" . next_id("install-{$config["MYSQLDATABASE"]}.sh");
+file_put_contents($installer, $install) or die("Cannot write to Installer: " . $installer);
 
 /**
  * Uninstall script
  */
 $uninstall = file_get_contents("{$scripts_source}/uninstall.sql");
 $uninstall = replace_sql_credentials($uninstall);
-$uninstaller = "{$scripts_destination}/" . next_id("uninstall-{$config['MYSQLDATABASE']}.sql");
-file_put_contents($uninstaller, $uninstall) or die('Cannot write to {$uninstaller}: ' . $uninstall);
+$uninstaller = "{$scripts_destination}/" . next_id("uninstall-{$config["MYSQLDATABASE"]}.sql");
+file_put_contents($uninstaller, $uninstall) or die("Cannot write to {$uninstaller}: " . $uninstall);
 
 $post_install = file_get_contents("{$scripts_source}/post-install.sql");
 #$post_install = replace_sql_credentials($post_install);
-$post_installer = "{$scripts_destination}/" . next_id("post-install-{$config['MYSQLDATABASE']}.sql");
-file_put_contents($post_installer, $post_install) or die('Cannot write to {$post_installer}: ' . $post_install);
+$post_installer = "{$scripts_destination}/" . next_id("post-install-{$config["MYSQLDATABASE"]}.sql");
+file_put_contents($post_installer, $post_install) or die("Cannot write to {$post_installer}: " . $post_install);
 
 # config.mysql.inc.php file
 # Add the server name for [ # CASE:SERVERNAME: ]
-$mysql_config_file = $backend['paths']['__APP_PATH__'] . '/database/config.mysql.inc.php';
-$mysql_config = file_get_contents($backend['paths']['__LIBRARY_PATH__'] . '/cruder/config.mysql.inc.php'); # Read from the CRUDer
+$mysql_config_file = $backend["paths"]["__APP_PATH__"] . "/database/config.mysql.inc.php";
+$mysql_config = file_get_contents($backend["paths"]["__LIBRARY_PATH__"] . "/cruder/config.mysql.inc.php"); # Read from the CRUDer
 #$mysql_config = file_get_contents($mysql_config_file);
 $mysql_config = preg_replace('#\[\'host\'\] = \'.*?\';#i', "['host'] = '{$config['MYSQLHOSTNAME']}';", $mysql_config);
 $mysql_config = preg_replace('#\[\'dbuser\'\] = \'.*?\';#i', "['dbuser'] = '{$config['MYSQLUSERNAME']}';", $mysql_config);
@@ -155,23 +155,23 @@ $mysql_config = preg_replace('/# CASE\:SERVERNAME\:/i', "case '{$_SERVER['SERVER
 $mysql_config = preg_replace('/\'' . preg_quote($config['frameworkname']) . '\'/i', "'{$_SERVER['SERVER_NAME']}'", $mysql_config);
 
 # Replace the remaining ones
-$mysql_config = preg_replace('/MYSQLHOSTNAME/i', $config['MYSQLHOSTNAME'], $mysql_config);
-$mysql_config = preg_replace('/MYSQLUSERNAME/i', $config['MYSQLUSERNAME'], $mysql_config);
-$mysql_config = preg_replace('/MYSQLPASSWORD/i', $config['MYSQLPASSWORD'], $mysql_config);
-$mysql_config = preg_replace('/MYSQLDATABASE/i', $config['MYSQLDATABASE'], $mysql_config);
+$mysql_config = preg_replace("/MYSQLHOSTNAME/i", $config["MYSQLHOSTNAME"], $mysql_config);
+$mysql_config = preg_replace("/MYSQLUSERNAME/i", $config["MYSQLUSERNAME"], $mysql_config);
+$mysql_config = preg_replace("/MYSQLPASSWORD/i", $config["MYSQLPASSWORD"], $mysql_config);
+$mysql_config = preg_replace("/MYSQLDATABASE/i", $config["MYSQLDATABASE"], $mysql_config);
 
-file_put_contents($mysql_config_file, $mysql_config) or die('Cannot write to MySQL Configuration File: ' . $mysql_config_file);
+file_put_contents($mysql_config_file, $mysql_config) or die("Cannot write to MySQL Configuration File: " . $mysql_config_file);
 
 
-$database_ini_file = "{$scripts_destination}/{$config['MYSQLDATABASE']}.ini";
+$database_ini_file = "{$scripts_destination}/{$config["MYSQLDATABASE"]}.ini";
 $database_parameters = "
 [DATABASE]
-    HOSTNAME=\"{$config['MYSQLHOSTNAME']}\"
-    USERNAME=\"{$config['MYSQLUSERNAME']}\"
-    PASSWORD=\"{$config['MYSQLPASSWORD']}\"
-    DATABASE=\"{$config['MYSQLDATABASE']}\"
+    HOSTNAME=\"{$config["MYSQLHOSTNAME"]}\"
+    USERNAME=\"{$config["MYSQLUSERNAME"]}\"
+    PASSWORD=\"{$config["MYSQLPASSWORD"]}\"
+    DATABASE=\"{$config["MYSQLDATABASE"]}\"
 ";
-file_put_contents($database_ini_file, $database_parameters) or die('Cannot write to MySQL configuration ini File: ' . $database_ini_file);
+file_put_contents($database_ini_file, $database_parameters) or die("Cannot write to MySQL configuration ini File: " . $database_ini_file);
 
 
 /**
@@ -179,9 +179,9 @@ file_put_contents($database_ini_file, $database_parameters) or die('Cannot write
  *
  * @see install.bat for alternative production
  */
-#$mysql_backup = "mysqldump --routines -h{$config['MYSQLHOSTNAME']} -u{$config['MYSQLUSERNAME']} -p{$config['MYSQLPASSWORD']} {$config['MYSQLDATABASE']} > {$config['MYSQLDATABASE']}.dmp";
-#$dump_file = "{$scripts_destination}/backup-{$config['MYSQLDATABASE']}.bat";
-#file_put_contents($dump_file, $mysql_backup) or die('Cannot write to: ' . $framework_file);
+#$mysql_backup = "mysqldump --routines -h{$config["MYSQLHOSTNAME"]} -u{$config["MYSQLUSERNAME"]} -p{$config["MYSQLPASSWORD"]} {$config["MYSQLDATABASE"]} > {$config["MYSQLDATABASE"]}.dmp";
+#$dump_file = "{$scripts_destination}/backup-{$config["MYSQLDATABASE"]}.bat";
+#file_put_contents($dump_file, $mysql_backup) or die("Cannot write to: " . $framework_file);
 
 # Post Installation files: Not used yet
 
@@ -193,16 +193,16 @@ file_put_contents($database_ini_file, $database_parameters) or die('Cannot write
  *
  * @return mixed
  */
-function os_dir($location = '/tmp')
+function os_dir($location = "/tmp")
 {
-    $is_windows = preg_match('/windows/i', $_SERVER['HTTP_USER_AGENT'], $data);
-    $directory_separator = ($is_windows) ? '\\' : '/';
+    $is_windows = preg_match("/windows/i", $_SERVER["HTTP_USER_AGENT"], $data);
+    $directory_separator = ($is_windows) ? "\\" : "/";
 
-    return str_replace('/', $directory_separator, $location);
+    return str_replace("/", $directory_separator, $location);
 }
 
 # Locate the installation directory
-$install = !preg_match('#/install/#', $_SERVER['REQUEST_URI']) ? 'install/' : "";
+$install = !preg_match("#/install/#", $_SERVER["REQUEST_URI"]) ? "install/" : "";
 ?>
 <!doctype html>
 <html>
@@ -210,9 +210,9 @@ $install = !preg_match('#/install/#', $_SERVER['REQUEST_URI']) ? 'install/' : ""
     <meta charset="utf-8"/>
     <title>Framework installation process</title>
 
-    <?php echo ' <!-- '; ?>
+    <?php echo " <!-- "; ?>
     <link href="install.css" rel="stylesheet" type="text/css"/>
-    <?php echo ' --> '; ?>
+    <?php echo " --> "; ?>
 
     <link href="<?php echo $install; ?>install.css" rel="stylesheet" type="text/css"/>
 </head>
@@ -226,9 +226,9 @@ $install = !preg_match('#/install/#', $_SERVER['REQUEST_URI']) ? 'install/' : ""
 <pre>
 # mysql -uroot -p****
 
-DROP DATABASE IF EXISTS `<?php echo $config['MYSQLDATABASE']; ?>`;
-CREATE DATABASE `<?php echo $config['MYSQLDATABASE']; ?>` CHARACTER SET utf8 COLLATE utf8_general_ci;
-GRANT ALL ON `<?php echo $config['MYSQLDATABASE']; ?>`.* TO '<?php echo $config['MYSQLUSERNAME']; ?>'@'<?php echo $config['MYSQLHOSTNAME']; ?>' IDENTIFIED BY '<?php echo $config['MYSQLPASSWORD']; ?>';
+DROP DATABASE IF EXISTS `<?php echo $config["MYSQLDATABASE"]; ?>`;
+CREATE DATABASE `<?php echo $config["MYSQLDATABASE"]; ?>` CHARACTER SET utf8 COLLATE utf8_general_ci;
+GRANT ALL ON `<?php echo $config["MYSQLDATABASE"]; ?>`.* TO "<?php echo $config["MYSQLUSERNAME"]; ?>"@"<?php echo $config["MYSQLHOSTNAME"]; ?>" IDENTIFIED BY "<?php echo $config["MYSQLPASSWORD"]; ?>";
 FLUSH PRIVILEGES;
 </pre>
     </div>
@@ -247,16 +247,16 @@ FLUSH PRIVILEGES;
             semicolon ( ; ) to append a new path in the list.
         </li>
         <li>Execute the file
-            <strong><em><?php echo $config['MYSQLDATABASE']; ?>/install-<?php echo $config['MYSQLDATABASE']; ?>.bat</em></strong>
+            <strong><em>database/<?php echo $config["MYSQLDATABASE"]; ?>/install-<?php echo $config["MYSQLDATABASE"]; ?>.bat</em></strong>
             produced. Run it - that it
             completes the installation. It imports all the table structures and necessary data into your MySQL database.
         </li>
         <li>Optionally execute the query:
-            <em>INSERT INTO `<?php echo $config['MYSQLDATABASE']; ?>`.`query_subdomains`(`alias_id`,`is_active`,
-                subdomain_name) VALUES ('27','Y', 'localhost');</em>
+            <em>INSERT INTO `<?php echo $config["MYSQLDATABASE"]; ?>`.`query_subdomains`(`alias_id`,`is_active`,
+                subdomain_name) VALUES ("27","Y", "localhost");</em>
         </li>
         <li>Navigate to the database
-            <em><strong><?php echo $config['MYSQLDATABASE']; ?></strong></em> - and open the table
+            <em><strong><?php echo $config["MYSQLDATABASE"]; ?></strong></em> - and open the table
             <strong>query_users</strong>. Insert any username/password there. The password is in a clean text, without
             encryption.
         </li>
@@ -267,7 +267,7 @@ FLUSH PRIVILEGES;
     <p><strong class="error">Notes</strong>: For automatic installation, run</p>
     <ol>
         <li>
-            <em><?php echo os_dir('install/sql-scripts/install-' . $config['MYSQLDATABASE'] . '.bat'); ?></em> (for
+            <em><?php echo os_dir("install/sql-scripts/install-" . $config["MYSQLDATABASE"] . ".bat"); ?></em> (for
             newly created databases, from above)
         </li>
     </ol>
@@ -276,7 +276,7 @@ FLUSH PRIVILEGES;
     <p>Locate and edit your
         <strong>hosts</strong> file. Your test domain should point to your local machine, until you deploy. Your default
         server name should be:
-        <em><?php echo $config['frameworkname']; ?></em>.</p>
+        <em><?php echo $config["frameworkname"]; ?></em>.</p>
     <ol type="1">
         <li>On Windows: &quot;<em>notepad %WINDIR%\system32\drivers\etc\<strong>hosts</strong></em>&quot;</li>
         <li>On Linux: &quot;<em>vi <strong>/etc/hosts</strong></em>"</li>
@@ -285,15 +285,15 @@ FLUSH PRIVILEGES;
             <strong>edit-hosts-file.lnk</strong> shortcut to open the hosts file in notepad <em>(in Windows only)</em>.
         </li>
         <li>Set a <strong>default</strong> framework subdomain: <a
-                href="http://127.0.0.1/"><?php echo $config['frameworkname']; ?></a> to <a
-                href="http://<?php echo $config['frameworkname']; ?>/">127.0.0.1</a>.
+                href="http://127.0.0.1/"><?php echo $config["frameworkname"]; ?></a> to <a
+                href="http://<?php echo $config["frameworkname"]; ?>/">127.0.0.1</a>.
         </li>
         <li>Flush your DNS Cache (<em>ipconfig /flushdns</em>). <em class="error">Hints</em>: Use
             <strong>flush.bat</strong> in the root.
         </li>
     </ol>
     <p><strong class="error">Alternatively</strong>, edit
-        <em><?php echo os_dir('library/inc/inc.config.php'); ?></em> file for $_SERVER['SERVER_NAME'] of your choice.
+        <em><?php echo os_dir("library/inc/inc.config.php"); ?></em> file for $_SERVER["SERVER_NAME"] of your choice.
     </p>
 
     <h2>Step #5: Validate the installation</h2>
@@ -304,7 +304,7 @@ FLUSH PRIVILEGES;
         <em>index.php</em> file.</p>
 
     <p>Then, browse: <a
-            href="http://<?php echo $config['frameworkname']; ?>/">http://<?php echo $config['frameworkname']; ?>/</a>
+            href="http://<?php echo $config["frameworkname"]; ?>/">http://<?php echo $config["frameworkname"]; ?>/</a>
         locally. If you see something but the error, you are done.
     </p>
 
@@ -337,8 +337,8 @@ FLUSH PRIVILEGES;
 
     <h1>Uninstallation</h1>
     <code>
-        -- DROP DATABASE IF EXISTS `<?php echo $config['MYSQLDATABASE']; ?>`;
-        -- DROP USER '<strong><?php echo $config['MYSQLUSERNAME']; ?></strong>'@'<strong><?php echo $config['MYSQLHOSTNAME']; ?></strong>';
+        -- DROP DATABASE IF EXISTS `<?php echo $config["MYSQLDATABASE"]; ?>`;
+        -- DROP USER "<strong><?php echo $config["MYSQLUSERNAME"]; ?></strong>"@"<strong><?php echo $config["MYSQLHOSTNAME"]; ?></strong>";
     </code>
 
     <h1>Important notices on:</h1>
