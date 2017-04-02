@@ -12,9 +12,9 @@ class installer
 
     public function __construct()
     {
-        $this->company_name = 'Company Name';
-        $this->installed_on = @date('YmdHis') . mt_rand(1000, 9999);
-        $this->server_name = $_SERVER['SERVER_NAME'];
+        $this->company_name = "Company Name";
+        $this->installed_on = @date("YmdHis") . mt_rand(1000, 9999);
+        $this->server_name = $_SERVER["SERVER_NAME"]??"localhost";
         $this->license_key = $this->license_key();
     }
 
@@ -31,8 +31,9 @@ class installer
         # It will return the license text.
         # The server will keep the record of these licenses.
 
-        $protection_key = 'backend';
+        $protection_key = "backend";
         $license_key = md5("{$protection_key}{$this->installed_datetime}{$this->server_name}");
+		$license_key = strtoupper($license_key);
 
         return $license_key;
     }
