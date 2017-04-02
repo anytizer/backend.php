@@ -17,7 +17,7 @@ echo > 04-data.sql
 rm -f 04-data.sql
 cat ../../public_html/install/sql-scripts/_dat/*.dat > 04-data.sql
 
-# Loads the table structuers into the database.
+# Loads the table structures into the database.
 mysql -h${HOSTNAME} -u${USERNAME} -p${PASSWORD} ${DATABASE} < 03-structure.sql
 
 # Loads the csv files into the database.
