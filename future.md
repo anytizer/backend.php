@@ -1,11 +1,22 @@
 # Future Enhancement
 
- * Use AngularJS or latest version of Angular
- * Manage bulk operations via Ajax/JSON
- * Make it an API Based application
- * Composer installable modules
- * Completely remove third party applications (installed on demand)
- * Prvoice scss
+Planned changes are:
+
+  * Separation of class files
+  * Using namespaces
+  * Individual test units
+  * Making composer-installable modules
+  * Separation of third party frameworks
+  * Use of AngularJS
+  * Upgrade to PHP-7 only version
+  * Use AngularJS or latest version of Angular
+  * Manage bulk operations via Ajax/JSON
+  * Make it an API Based application
+  * Composer installable modules
+  * Completely remove third party applications (installed on demand)
+  * Prvoide full scss
+    - For application itself
+	- For any subdomains generated underneath
 
  
 ## Regarding test scripts

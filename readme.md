@@ -5,16 +5,7 @@ Generates an admin panel for your database.
 
 ## Special notes on development
 
-This project has been seriously updated by the newer development techniques and is under parial rewrite.
-Planned changes are:
-
-  * Separation of class files
-  * Using namespaces
-  * Individual test units
-  * Making composer-installable modules
-  * Separation of third party frameworks
-  * Use of AngularJS
-  * Upgrade to PHP-7 only version
+This project has been seriously affected by the newer development techniques and is under parial rewrite. See [planned changes](future.md).
 
 
 ## Motivation
