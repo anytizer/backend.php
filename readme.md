@@ -5,7 +5,7 @@ Generates an admin panel for your database.
 
 ## Special notes on development
 
-This project has been seriously affected by the newer development techniques and is under parial rewrite. See [planned changes](future.md).
+Being affected by the newer development techniques there are some planned changes](future.md).
 
 
 ## Motivation
