@@ -5,6 +5,7 @@
  * Make it an API Based application
  * Composer installable modules
  * Completely remove third party applications (installed on demand)
+ * Prvoice scss
 
  
 ## Regarding test scripts
