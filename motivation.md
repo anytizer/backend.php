@@ -1,4 +1,5 @@
 # Motivation
+
 Development of this tool was motivated with some significant requirements.
 
  * Every developer involved in a project should write similar patterns of code.
