@@ -1,6 +1,19 @@
 # Backend CRUD Generator
 Generates an admin panel for your database.
 
+
+## Special noets on development
+This project has been seriously updated by the newer development techniques and is under parial rewrite.
+Planned changes are:
+  * Separation of class files
+  * Using namespaces
+  * Individual test units
+  * Making composer-installable modules
+  * Separation of third party frameworks
+  * Use of AngularJS
+  * Upgrade to PHP-7 only version
+
+
 ## Motivation
 Development of this tool was motivated with some significant requirements.
 [Read more](motivation.md).

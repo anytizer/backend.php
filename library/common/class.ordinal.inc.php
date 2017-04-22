@@ -11,7 +11,7 @@ class ordinal
      */
     function __construct()
     {
-    } # __construct()
+    }
 
     /**
      * Calculates the ordinality of a given number.
@@ -24,13 +24,13 @@ class ordinal
     {
         $number += 0; # safety against hack-attempts
         $ordinals = array(
-            0 => 'th',
-            1 => 'st',
-            2 => 'nd',
-            3 => 'rd',
-            11 => 'th',
-            12 => 'th',
-            13 => 'th'
+            0 => "th",
+            1 => "st",
+            2 => "nd",
+            3 => "rd",
+            11 => "th",
+            12 => "th",
+            13 => "th"
         );
 
         $ordinality = "";
@@ -41,14 +41,14 @@ class ordinal
             if (array_key_exists($number, $ordinals)) {
                 $ordinality = $ordinals[$number];
             } else {
-                $ordinality = 'th';
+                $ordinality = "th";
             }
         }
 
         return $ordinality;
-    } # ordinality()
+    }
 
-} # ordinal 
+}
 
 /**
  * # Case study:

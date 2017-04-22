@@ -336,10 +336,10 @@ FLUSH PRIVILEGES;
     </p>
 
     <h1>Uninstallation</h1>
-    <code>
+    <pre>
         -- DROP DATABASE IF EXISTS `<?php echo $config["MYSQLDATABASE"]; ?>`;
         -- DROP USER "<strong><?php echo $config["MYSQLUSERNAME"]; ?></strong>"@"<strong><?php echo $config["MYSQLHOSTNAME"]; ?></strong>";
-    </code>
+    </pre>
 
     <h1>Important notices on:</h1>
 

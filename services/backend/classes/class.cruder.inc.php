@@ -5,6 +5,8 @@ namespace \subdomain;
  * Helps to create an automatic full CRUD class for each entity under consideration.
  * Tightly integrated with our framework and database logics.
  * It helps saving time by self generating a lot of php codes to perform various CRUD actions.
+ *
+ * @todo Replace using .sqlite database
  */
 class cruder
     extends \common\mysql

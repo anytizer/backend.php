@@ -25,3 +25,4 @@ todo.txt
 /lint-checker.log
 /phpunit/phpunit.phar
 /phpunit/phpunit.cmd
+/scss/.sass-cache

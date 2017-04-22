@@ -2,7 +2,7 @@
 #namespace plugins;
 
 /**
- * Removes HTML Comments in a text
+ * Removes HTML Comments <!-- and --> in a text
  */
 
 function smarty_prefilter_no_comments($source = "", &$smarty)
