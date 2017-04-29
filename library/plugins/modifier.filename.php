@@ -4,11 +4,11 @@
 /**
  * Converts Windows file name into Linux types.
  */
-function smarty_modifier_filename($filename = '')
+function smarty_modifier_filename($filename = "")
 {
-	$filename = str_replace('\\', '/', $filename);
+    $filename = str_replace('\\', '/', $filename);
 
-	# Not necessary to check the existence of the filename for now.
+    # Not necessary to check the existence of the filename for now.
 
-	return $filename;
+    return $filename;
 }

@@ -399,7 +399,7 @@ NOTE: WE HAVE A NEW LANGUAGE VARIABLE FOR DIGITALLY SIGNED S/MIME EMAILS. IF YOU
     `$myVar = date_default_timezone_get();`
     as a test, it will throw an error.
 * added ability to define path (mainly for embedded images)
-  function `MsgHTML($message,$basedir='')` ... where:
+  function `MsgHTML($message,$basedir="")` ... where:
   `$basedir` is the fully qualified path
 * fixed `MsgHTML()` function:
   - Embedded Images where images are specified by `<protocol>://` will not be altered or embedded

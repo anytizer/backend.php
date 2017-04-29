@@ -2,14 +2,13 @@
 /**
  * Custom define a constant
  */
-function defines($name = '', $value = '')
+function defines($name = "", $value = "")
 {
-	if(!defined($name))
-	{
-		define($name, $value, false);
-	}
+    if (!defined($name)) {
+        define($name, $value, false);
+    }
 
-	return null;
+    return null;
 }
 
 # Load some crucial, but undefined constants.
@@ -29,14 +28,13 @@ defines('__TIMEZONE_NUMERIC__', '+5:45');
 # Keep this value compatible with __TIMEZONE_NUMERIC__.
 # @url http://php.net/manual/en/timezones.php
 defines('__TIMEZONE_TEXT_PHP__', 'Asia/Kathmandu');
-if(function_exists('date_default_timezone_set'))
-{
-	date_default_timezone_set(__TIMEZONE_TEXT_PHP__);
+if (function_exists('date_default_timezone_set')) {
+    date_default_timezone_set(__TIMEZONE_TEXT_PHP__);
 }
 
 # Default/Expected base storage location of a subdoman service/application
 # If not defined earlier in the database, __SUBDOMAIN_BASE__ can be relocated from here.
-defines('__SUBDOMAIN_BASE__', __SERVICES_PATH__.'/' . $_SERVER['SERVER_NAME']);
+defines('__SUBDOMAIN_BASE__', __SERVICES_PATH__ . '/' . $_SERVER['SERVER_NAME']);
 
 # Who owns the scripts at the moment?
 # Used in error pages or where relevant.

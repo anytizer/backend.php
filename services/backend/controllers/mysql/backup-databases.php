@@ -14,9 +14,8 @@ REM This allows to backup ALL databases in the system.
 
 $sql = "SHOW DATABASES;";
 $db->query($sql);
-while($database = $db->row(''))
-{
-	echo("
+while ($database = $db->row("")) {
+    echo("
 mysqldump -uroot -ptoor --routine {$database['Database']} > {$database['Database']}.dmp");
 }
 

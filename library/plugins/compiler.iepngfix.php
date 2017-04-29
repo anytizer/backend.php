@@ -7,10 +7,14 @@
  * Type:     compiler
  * Name:     iepngfix
  * Purpose:  Scripts for IE PNG Fix.
+ *
+ * @param $tag_arg
+ * @param $smarty
+ * @return string
  */
 function smarty_compiler_iepngfix($tag_arg, $smarty)
 {
-	$text = '
+    $text = '
 <!--[if IE]>
 <style type="text/css">
 	img { behavior: url("js/iepngfix/iepngfix.htc") }
@@ -19,5 +23,5 @@ function smarty_compiler_iepngfix($tag_arg, $smarty)
 <![endif]-->
 ';
 
-	return $text;
+    return $text;
 }

@@ -1,102 +1,84 @@
-table.data
-{
-	width: 100%;
+table.data {
+    width: 100%;
 }
 
-.data
-{
-	border: 1px solid #999999;
-	border-collapse: collapse;
+.data {
+    border: 1px solid #999999;
+    border-collapse: collapse;
 }
 
-.data .thead, .data thead
-{
-	background-color: #cccccc;
+.data .thead, .data thead {
+    background-color: #cccccc;
 }
 
-.data th
-{
-	color: #000000;
-	font-weight: bold;
-	text-align: left;
+.data th {
+    color: #000000;
+    font-weight: bold;
+    text-align: left;
 }
 
-.data td, .data th
-{
-	padding: 2px;
+.data td, .data th {
+    padding: 2px;
 }
 
-tr.A
-{
-	background-color: #ddeedd;
+tr.A {
+    background-color: #ddeedd;
 }
 
-tr.B
-{
-	background-color: #ffffff;
+tr.B {
+    background-color: #ffffff;
 }
 
-td a
-{
-	color: #0000ff;
+td a {
+    color: #0000ff;
 }
 
-.data td, .data th
-{
-	padding: 4px;
+.data td, .data th {
+    padding: 4px;
 }
 
-.data tr.A:hover, .data tr.B:hover
-{
-	background-color: #ffcc66;
+.data tr.A:hover, .data tr.B:hover {
+    background-color: #ffcc66;
 }
 
-.r
-{
-	text-align: right;
+.r {
+    text-align: right;
 }
 
 /** Table Cell */
-.attribute
-{
-	text-align: right;
-	background-color: #eeeeee;
+.attribute {
+    text-align: right;
+    background-color: #eeeeee;
 }
 
 /** table caption */
-table.data caption
-{
-	font-weight: bold;
-	font-family: Arial, Helvetica, sans-serif;
-	font-size: 16px;
-	text-align: center;
-	padding-bottom: 10px;
-	color: #00cc00;
+table.data caption {
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    text-align: center;
+    padding-bottom: 10px;
+    color: #00cc00;
 }
 
 /** for editors only */
-table.edit
-{
-	background-color: #00ffcc;
+table.edit {
+    background-color: #00ffcc;
 }
 
-table.edit a
-{
-	color: #0000ff;
+table.edit a {
+    color: #0000ff;
 }
 
 /** controls column widths in listing data */
-.thead .th-sn
-{
-	width: 25px;
+.thead .th-sn {
+    width: 25px;
 }
 
-.thead .th-delete
-{
-	width: 20px;
+.thead .th-delete {
+    width: 20px;
 }
 
-.thead .th-menus
-{
-	width: 70px;
+.thead .th-menus {
+    width: 70px;
 }

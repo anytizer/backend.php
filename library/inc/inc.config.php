@@ -2,20 +2,17 @@
 /**
  * Pre-load public_html/inc.bootstrap.php
  */
-if(empty($backend) || empty($backend['signatures']['paths']))
-{
-	/**
-	 * @todo Verify with Hash Key: c7676247d2f8ccf713a61e7dddd8dfda
-	 */
-	die("Configurations not yet loaded: public_html/inc.bootstrap.php.");
-	
+if (empty($backend) || empty($backend['signatures']['paths'])) {
+    /**
+     * @todo Verify with Hash Key: c7676247d2f8ccf713a61e7dddd8dfda
+     */
+    die("Configurations not yet loaded: public_html/inc.bootstrap.php.");
+
 }
-foreach($backend['paths'] as $p => $path)
-{
-	if(!is_dir($path))
-	{
-		throw new \Exception("{$p}: {$path} - not valid directory.");
-	}
+foreach ($backend['paths'] as $p => $path) {
+    if (!is_dir($path)) {
+        throw new \Exception("{$p}: {$path} - not valid directory.");
+    }
 }
 
 $umask = umask(0);
@@ -38,7 +35,7 @@ $_SERVER['SERVER_PORT'] = !empty($_SERVER['SERVER_PORT']) ? $_SERVER['SERVER_POR
 /**
  * @todo Remove on production mode; used to analyze url calls. Save on test path only.
  */
-file_put_contents($backend['paths']['__TEMP_PATH__'].'/access.log', "\r\n" . $_SERVER['REQUEST_URI'], FILE_APPEND | FILE_BINARY);
+file_put_contents($backend['paths']['__TEMP_PATH__'] . '/access.log', "\r\n" . $_SERVER['REQUEST_URI'], FILE_APPEND | FILE_BINARY);
 
 /**
  * A lot of scripts must often run from cron too.
@@ -48,48 +45,44 @@ file_put_contents($backend['paths']['__TEMP_PATH__'].'/access.log', "\r\n" . $_S
  * Rather consider using alias ID.
  * Sites without alias ID are a bit faster - as conversion is NOT required.
  */
-$verify_installed_modules = function()
-{
-	/**
-	 * Check for some standard PHP pre-requisites to run the system flawlessly
-	 */
+$verify_installed_modules = function () {
+    /**
+     * Check for some standard PHP pre-requisites to run the system flawlessly
+     */
     $modules_missing = array();
-	$modules_required = array(# Basic PHP
-		'CURLFile' => 'curl_file_create',
-		'cURL' => 'curl_init',
-		'OpenSSL' => 'openssl_encrypt',
-		'GD' => 'gd_info',
-		'SPL' => 'spl_autoload',
+    $modules_required = array(# Basic PHP
+        'CURLFile' => 'curl_file_create',
+        'cURL' => 'curl_init',
+        'OpenSSL' => 'openssl_encrypt',
+        'GD' => 'gd_info',
+        'SPL' => 'spl_autoload',
 
-		# Databases
-		#'MySQL' => 'mysql_connect', # 2016-05-01 use with PHP7
-		'MySQLi' => 'mysqli_connect', # Optional but very good
-		#'pdo' => '',
-		#'pdo_mysql' => '',
-		#'pdo_sqlite' => '',
+        # Databases
+        #'MySQL' => 'mysql_connect', # 2016-05-01 use with PHP7
+        'MySQLi' => 'mysqli_connect', # Optional but very good
+        #'pdo' => "",
+        #'pdo_mysql' => "",
+        #'pdo_sqlite' => "",
 
-		# Other PHP Internals
-		'Hash' => 'hash',
-		'IconV' => 'iconv',
-		'MCrypt' => 'mcrypt_module_open',
-		'MB String' => 'mb_internal_encoding', # mb_get_info
+        # Other PHP Internals
+        'Hash' => 'hash',
+        'IconV' => 'iconv',
+        'MCrypt' => 'mcrypt_module_open',
+        'MB String' => 'mb_internal_encoding', # mb_get_info
 
-		# API Development
-		'DOM' => 'dom_import_simplexml',
-		'SimpleXML' => 'simplexml_load_file',
-		'SOAP' => 'is_soap_fault',
-		'json' => 'json_encode',
-	);
-	foreach($modules_required as $module => $function)
-	{
-		if(!function_exists($function))
-		{
+        # API Development
+        'DOM' => 'dom_import_simplexml',
+        'SimpleXML' => 'simplexml_load_file',
+        'SOAP' => 'is_soap_fault',
+        'json' => 'json_encode',
+    );
+    foreach ($modules_required as $module => $function) {
+        if (!function_exists($function)) {
             $modules_missing[] = $module;
-		}
-	}
-    if($modules_missing)
-    {
-        die("<p>First, enable the following module(s) in php.ini to continue:</p><p>".implode(",<br />", $modules_missing)."</p>");
+        }
+    }
+    if ($modules_missing) {
+        die("<p>First, enable the following module(s) in php.ini to continue:</p><p>" . implode(",<br />", $modules_missing) . "</p>");
     }
 };
 $verify_installed_modules();
@@ -103,21 +96,18 @@ define('__THIRD_PARTIES__', $backend['paths']['__LIBRARY_PATH__'] . '/vendors');
 
 # At least don't mask error while creating a temp zone.
 $subdomain_temp_zone = __TEMP_PATH__ . '/' . $_SERVER['SERVER_NAME'];
-if(!(is_dir($subdomain_temp_zone) && is_writable($subdomain_temp_zone)))
-{
-	#die("Temp Zone: {$subdomain_temp_zone}");
-	if(!mkdir($subdomain_temp_zone, 0777, true))
-	{
-		die("Failed to create temp zone: {$subdomain_temp_zone}.");
-	}
+if (!(is_dir($subdomain_temp_zone) && is_writable($subdomain_temp_zone))) {
+    #die("Temp Zone: {$subdomain_temp_zone}");
+    if (!mkdir($subdomain_temp_zone, 0777, true)) {
+        die("Failed to create temp zone: {$subdomain_temp_zone}.");
+    }
 }
 #die($subdomain_temp_zone);
 ini_set('error_log', $subdomain_temp_zone . '/' . @date('Ymd') . '.log');
 ini_set('session.save_path', __TEMP_PATH__);
-$ini = parse_ini_file(__LIBRARY_PATH__.'/inc/php.ini', true);
-foreach($ini['backend'] as $key => $value)
-{
-	ini_set($key, $value);
+$ini = parse_ini_file(__LIBRARY_PATH__ . '/inc/php.ini', true);
+foreach ($ini['backend'] as $key => $value) {
+    ini_set($key, $value);
 }
 
 /**
@@ -137,9 +127,9 @@ $smarty->direct_access_security = false;
 # May have to modify the Smarty itself.
 
 
-require_once(__LIBRARY_PATH__.'/backend/class.backend.inc.php');
+require_once(__LIBRARY_PATH__ . '/backend/class.backend.inc.php');
 $backend_backend = new \backend\backend();
-$backend_backend->log_access(true, __TEMP_PATH__.'/accessed-classes.log');
+$backend_backend->log_access(true, __TEMP_PATH__ . '/accessed-classes.log');
 $backend_backend->setup(true);
 
 $variable = new \common\variable();
@@ -160,15 +150,13 @@ $framework->load_user_defined_constants('config');
 $subdomain_id = $framework->subdomain_id();
 $subdomain_base = $framework->subdomain_base($subdomain_id);
 #die("Debug notes:<br />\r\n \$subdomain_base: {$subdomain_base}, <br />\r\n \$subdomain_id: #{$subdomain_id}");
-if(!defined('__SUBDOMAIN_BASE__'))
-{
-	# Give a chance for the super script define base.
-	# You can skip this declaration here
-	define('__SUBDOMAIN_BASE__', $subdomain_base);
+if (!defined('__SUBDOMAIN_BASE__')) {
+    # Give a chance for the super script define base.
+    # You can skip this declaration here
+    define('__SUBDOMAIN_BASE__', $subdomain_base);
 }
-if(!is_dir(__SUBDOMAIN_BASE__))
-{
-	die("Subdomain base (__SUBDOMAIN_BASE__) is not a directory: " . __SUBDOMAIN_BASE__);
+if (!is_dir(__SUBDOMAIN_BASE__)) {
+    die("Subdomain base (__SUBDOMAIN_BASE__) is not a directory: " . __SUBDOMAIN_BASE__);
 }
 chdir(__SUBDOMAIN_BASE__); # Enter inside the subdomain directory path
 
@@ -177,10 +165,10 @@ chdir(__SUBDOMAIN_BASE__); # Enter inside the subdomain directory path
 require_once(__LIBRARY_PATH__ . '/inc/inc.constants.php');
 
 # Avoid the risk of files being over-written when using common directory for all subdomains
-$smarty->compile_id = preg_replace('/[^a-z]/is', '', $_SERVER['SERVER_NAME']);
+$smarty->compile_id = preg_replace('/[^a-z]/is', "", $_SERVER['SERVER_NAME']);
 $smarty->addPluginsDir(array(
-	__SUBDOMAIN_BASE__ . '/plugins',
-	__LIBRARY_PATH__ . '/plugins',
+    __SUBDOMAIN_BASE__ . '/plugins',
+    __LIBRARY_PATH__ . '/plugins',
 ));
 $smarty->setTemplateDir(__SUBDOMAIN_BASE__ . '/templates');
 $smarty->setConfigDir(__SUBDOMAIN_BASE__ . '/configs');
@@ -190,13 +178,11 @@ $smarty->caching = false;
 /**
  * Because when not writable, the page ends silently (White Screen).
  */
-if(!is_writable($smarty->compile_dir))
-{
-	throw new \Exception("Unable to write to: chmod -R 777 {$smarty->compile_dir}");
+if (!is_writable($smarty->compile_dir)) {
+    throw new \Exception("Unable to write to: chmod -R 777 {$smarty->compile_dir}");
 }
-if(!is_writable($smarty->cache_dir))
-{
-	throw new \Exception("Unable to write to: chmod -R 777 {$smarty->cache_dir}");
+if (!is_writable($smarty->cache_dir)) {
+    throw new \Exception("Unable to write to: chmod -R 777 {$smarty->cache_dir}");
 }
 #$smarty->testInstall();
 

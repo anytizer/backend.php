@@ -11,9 +11,9 @@
  */
 function smarty_modifier_tick($is_active = 'Y', $id = 0, $class_name = 'icon-tick')
 {
-	$id = (int)$id;
-	$icon_file = ($is_active == 'Y') ? 'tick' : 'cross';
-	$icon = "<img src=\"images/actions/{$icon_file}.png\" alt=\"\" title=\"\" rel=\"{$id}\" class=\"{$class_name}\" />";
+    $id = (int)$id;
+    $icon_file = ($is_active == 'Y') ? 'tick' : 'cross';
+    $icon = "<img src=\"images/actions/{$icon_file}.png\" alt=\"\" title=\"\" rel=\"{$id}\" class=\"{$class_name}\" />";
 
-	return $icon;
+    return $icon;
 }

@@ -17,10 +17,9 @@ $database = MYSQL_DATABASENAME;
 
 $sql = "SHOW FULL TABLES FROM `{$database}` WHERE table_type = 'BASE TABLE';";
 $db->query($sql);
-while($table = $db->row(''))
-{
-	$table = $table["Tables_in_{$database}"];
-	echo("
+while ($table = $db->row("")) {
+    $table = $table["Tables_in_{$database}"];
+    echo("
 ALTER TABLE `{$table}` CHARSET=utf8 COLLATE=utf8_general_ci;");
 }
 

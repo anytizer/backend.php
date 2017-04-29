@@ -50,14 +50,14 @@ NOW(), '0', NOW(), NOW(), NOW(),
 '0', '80', '0',
 'Y', 'Y', 'Y', 'N', 'N', 'N', 'N',
 'N', 'N', 'N', 'N', 'N',
-'', '', '',
-'localhost', '', '',
-'', 'controllers', 'templates', 'configs',
-'plugins', '', '', @subdomain_ip,
-'', '', '', '', '/',
-'', '', '', '',
-'', '',
-''
+"", "", "",
+'localhost', "", "",
+"", 'controllers', 'templates', 'configs',
+'plugins', "", "", @subdomain_ip,
+"", "", "", "", '/',
+"", "", "", "",
+"", "",
+""
 );
 
 INSERT INTO query_subdomains(
@@ -80,12 +80,12 @@ NOW(), '0', NOW(), NOW(), NOW(),
 '0', '80', '0', 
 'N', 'N', 'N', 'N', 'N', 'N', 'N', 
 'N', 'N', 'N', 'N', 'N', 
-'', '', '', 
-@subdomain_name, '', '', 
-'', 'controllers', 'templates', 'configs', 
-'plugins', '', '', @subdomain_ip, 
-'', '', '', '', '/', 
-'', '', '', '', 
-'', '', 
-''
+"", "", "",
+@subdomain_name, "", "",
+"", 'controllers', 'templates', 'configs',
+'plugins', "", "", @subdomain_ip,
+"", "", "", "", '/',
+"", "", "", "",
+"", "",
+""
 );

@@ -1,9 +1,13 @@
+Checkout: git checkout
+Open: http://localhost/backend/
+Rdirects: http://localhost/backend/backend/public_html/install/
+
 12:14 PM 7/17/2012
 --------------------------------------------------------------------------------
 	How to install and use this framework
 --------------------------------------------------------------------------------
 
-Install server system - xampp, wamp or whatever.
+Install server system - xampp, wamp, nginx, iis or whatever.
 	Add MySQL and PHP binary directory location into your system path.
 	You can access system path at:
 		> My computer > Right click > properties

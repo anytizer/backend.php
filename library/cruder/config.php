@@ -80,7 +80,7 @@ setlocale(LC_ALL, 'en_US.utf8');
  */
 function is_live()
 {
-	return in_array($_SERVER['SERVER_NAME'], array('__SUBDOMAIN_NAME__')) && $_SERVER['SERVER_ADDR'] != $_SERVER['REMOTE_ADDR'];
+    return in_array($_SERVER['SERVER_NAME'], array('__SUBDOMAIN_NAME__')) && $_SERVER['SERVER_ADDR'] != $_SERVER['REMOTE_ADDR'];
 }
 
 /**

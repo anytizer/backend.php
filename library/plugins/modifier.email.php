@@ -4,22 +4,22 @@
 /**
  * Obfuscates an email address for showing up in the HTML.
  */
-function smarty_modifier_email($email_address = '')
+function smarty_modifier_email($email_address = "")
 {
-	$search = array(
-		'-',
-		'_',
-		'@',
-		'.',
-	);
+    $search = array(
+        '-',
+        '_',
+        '@',
+        '.',
+    );
 
-	$replace = array(
-		'<!-- - -->(hyphen)<!-- - -->',
-		'<!--_-->(underscore)<!--_-->',
-		'<!--at-->(at)<!--at-->',
-		'<!--dot-->(dot)<!--dot-->',
-	);
+    $replace = array(
+        '<!-- - -->(hyphen)<!-- - -->',
+        '<!--_-->(underscore)<!--_-->',
+        '<!--at-->(at)<!--at-->',
+        '<!--dot-->(dot)<!--dot-->',
+    );
     $email_address = str_replace($search, $replace, $email_address);
 
-	return $email_address;
+    return $email_address;
 }

@@ -6,6 +6,6 @@
  */
 function smarty_function_trace($params = array(), &$smarty)
 {
-	#debug_print_backtrace();
-	print_r(debug_backtrace());
+    #debug_print_backtrace();
+    print_r(debug_backtrace());
 }

@@ -98,11 +98,10 @@ $sqls[] = 'ALTER TABLE `query_uploads` ADD UNIQUE KEY `file_code_unique_index` (
 /**
  * Cleans up the database
  */
-foreach($sqls as $s => $sql)
-{
-	# Only after specified period of last execution, excetute this.
-	# Otherwise, not necessary to rebuild the indices so often.
-	#$db->query($sql);
+foreach ($sqls as $s => $sql) {
+    # Only after specified period of last execution, excetute this.
+    # Otherwise, not necessary to rebuild the indices so often.
+    #$db->query($sql);
 }
 
 /**
@@ -118,9 +117,9 @@ foreach($sqls as $s => $sql)
 # Clear compiled files, with their IDs
 $sql='SELECT subdomain_name subdomain FROM query_subdomains GROUP BY subdomain_name;';
 $db->query($sql);
-while($row = $db->row(''))
+while($row = $db->row(""))
 {
-	$smarty->compile_id = preg_replace('/[^a-z]/is', '', $row['subdomain']);
+	$smarty->compile_id = preg_replace('/[^a-z]/is', "", $row['subdomain']);
 	$smarty->utility->clearCompiledTemplate(null, $smarty->compile_id);
 	#$smarty->utility->clearCompiledTemplate(); # Removes everything
 	$smarty->utility->clearCache()
@@ -131,40 +130,36 @@ while($row = $db->row(''))
  * Cleanup these directories that contain .php cachec files.
  */
 $dirs = array(
-	'sessions', # File based session data: It may immediately logout a user
-	'smarty_cache', # Smarty's caches
-	'smarty_compiles', # Smarty's compiled output - for all registered subdomains
-	'sqls', # Chronoligical log of SQLs operated
-	'superfish', # SuperFish menus for jQuery plugin
-	#'to_javascript', # Externalized javascripts
+    'sessions', # File based session data: It may immediately logout a user
+    'smarty_cache', # Smarty's caches
+    'smarty_compiles', # Smarty's compiled output - for all registered subdomains
+    'sqls', # Chronoligical log of SQLs operated
+    'superfish', # SuperFish menus for jQuery plugin
+    #'to_javascript', # Externalized javascripts
 );
 
-foreach($dirs as $d => $dir)
-{
-	/**
-	 * @todo Check if useful
-	 */
-	$dir = __TEMP_PATH__ . '/' . $dir;
-	if(is_dir($dir) && $handle = opendir($dir))
-	{
-		while(false !== ($file = readdir($handle)))
-		{
-			# .php : plain html/php generated within the loops.
-			# .cok : Cookies for cURL
-			# .js  : Extenalized javascripts, using Smarty's block
-			# .log : Logs, Database Queries
-			# .serialised : PHP Variables, to build dropdown lists of links.* pages.
-			# sess_: PHP session data files
-			if(preg_match('/\.(php|cok|js|log|serialized)$/', $file) || preg_match('/^sess_[a-z0-9]{32}$/', $file))
-			{
-				# Deletes only specified extensions
-				# Removes PHP Sessions, if any
-				unlink("{$dir}/{$file}");
-				#echo "\r\n{$dir}/{$file}";
-			}
-		}
-		closedir($handle);
-	}
+foreach ($dirs as $d => $dir) {
+    /**
+     * @todo Check if useful
+     */
+    $dir = __TEMP_PATH__ . '/' . $dir;
+    if (is_dir($dir) && $handle = opendir($dir)) {
+        while (false !== ($file = readdir($handle))) {
+            # .php : plain html/php generated within the loops.
+            # .cok : Cookies for cURL
+            # .js  : Extenalized javascripts, using Smarty's block
+            # .log : Logs, Database Queries
+            # .serialised : PHP Variables, to build dropdown lists of links.* pages.
+            # sess_: PHP session data files
+            if (preg_match('/\.(php|cok|js|log|serialized)$/', $file) || preg_match('/^sess_[a-z0-9]{32}$/', $file)) {
+                # Deletes only specified extensions
+                # Removes PHP Sessions, if any
+                unlink("{$dir}/{$file}");
+                #echo "\r\n{$dir}/{$file}";
+            }
+        }
+        closedir($handle);
+    }
 }
 
 /**

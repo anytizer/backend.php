@@ -15,23 +15,17 @@
 $permissions = new \subdomain\permissions();
 
 # Assumes, ID always, in the GET parameter
-if(($crud_id = $variable->get('id', 'integer', 0)) && ($code = $variable->get('code', 'string', '')))
-{
-	if($permissions->delete('inactivate', $crud_id, $code))
-	{
-		$messenger = new \common\messenger('warning', 'The record has been deleted.');
+if (($crud_id = $variable->get('id', 'integer', 0)) && ($code = $variable->get('code', 'string', ""))) {
+    if ($permissions->delete('inactivate', $crud_id, $code)) {
+        $messenger = new \common\messenger('warning', 'The record has been deleted.');
 
-		#\common\stopper::url('permissions-delete-successful.php');
-		\common\stopper::url('permissions-list.php');
-	}
-	else
-	{
-		$messenger = new \common\messenger('error', 'The record has NOT been deleted.');
+        #\common\stopper::url('permissions-delete-successful.php');
+        \common\stopper::url('permissions-list.php');
+    } else {
+        $messenger = new \common\messenger('error', 'The record has NOT been deleted.');
 
-		\common\stopper::url('permissions-delete-error.php');
-	}
-}
-else
-{
-	\common\stopper::url('permissions-direct-access-error.php');
+        \common\stopper::url('permissions-delete-error.php');
+    }
+} else {
+    \common\stopper::url('permissions-direct-access-error.php');
 }

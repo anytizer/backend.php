@@ -19,12 +19,11 @@ $database = MYSQL_DATABASENAME;
 
 $sql = "SHOW FULL TABLES FROM `{$database}` WHERE table_type = 'BASE TABLE';";
 $db->query($sql);
-while($table = $db->row(''))
-{
-	$table = $table["Tables_in_{$database}"];
-	echo "
+while ($table = $db->row("")) {
+    $table = $table["Tables_in_{$database}"];
+    echo "
 ALTER TABLE `{$table}` ENGINE = {$engine};";
-	#echo "\r\n", "ALTER TABLE `{$table}` ENGINE = MyISAM;";
+    #echo "\r\n", "ALTER TABLE `{$table}` ENGINE = MyISAM;";
 }
 
 $scripts = ob_get_flush();

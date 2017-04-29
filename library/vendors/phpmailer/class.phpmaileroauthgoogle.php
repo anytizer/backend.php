@@ -26,10 +26,10 @@
  */
 class PHPMailerOAuthGoogle
 {
-    private $oauthUserEmail = '';
-    private $oauthRefreshToken = '';
-    private $oauthClientId = '';
-    private $oauthClientSecret = '';
+    private $oauthUserEmail = "";
+    private $oauthRefreshToken = "";
+    private $oauthClientId = "";
+    private $oauthClientSecret = "";
 
     /**
      * @param string $UserEmail

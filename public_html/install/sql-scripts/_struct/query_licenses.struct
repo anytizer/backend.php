@@ -4,7 +4,6 @@
 * ==========================================================
 * Timely view/truncate this table, as it may swell too soon.
 *
-* @author Bimal Poudel
 * @package Backend Framework
 */
 
@@ -21,13 +20,13 @@ CREATE TABLE `query_licenses` (
   `is_active` enum('N','Y') NOT NULL DEFAULT 'N' COMMENT 'Active license?',
   `is_approved` enum('N','Y') NOT NULL DEFAULT 'N' COMMENT 'Approved license?',
   `is_valid` enum('N','Y') NOT NULL DEFAULT 'N' COMMENT 'Is the generated license key valid?',
-  `application_name` varchar(255) NOT NULL DEFAULT '' COMMENT 'Name of the application being licensed',
-  `server_name` varchar(255) NOT NULL DEFAULT '' COMMENT '$_SERVER[SERVER_NAME] of the client''s machine: web host name there',
-  `installed_on` varchar(255) NOT NULL DEFAULT '' COMMENT 'YYYYMMDDHHIISSXXXX 18 characters stamp when installed',
-  `protection_key` varchar(255) NOT NULL DEFAULT '' COMMENT 'Some random text to use in MD5 Hash Generation',
-  `license_key` varchar(255) NOT NULL DEFAULT '' COMMENT 'md5(protection_key.installed_on.server_name), unique',
-  `license_email` varchar(255) NOT NULL DEFAULT '' COMMENT 'License owner (email address)',
-  `license_to` varchar(255) NOT NULL DEFAULT '' COMMENT 'License owner (full name)',
+  `application_name` varchar(255) NOT NULL DEFAULT "" COMMENT 'Name of the application being licensed',
+  `server_name` varchar(255) NOT NULL DEFAULT "" COMMENT '$_SERVER[SERVER_NAME] of the client""s machine: web host name there',
+  `installed_on` varchar(255) NOT NULL DEFAULT "" COMMENT 'YYYYMMDDHHIISSXXXX 18 characters stamp when installed',
+  `protection_key` varchar(255) NOT NULL DEFAULT "" COMMENT 'Some random text to use in MD5 Hash Generation',
+  `license_key` varchar(255) NOT NULL DEFAULT "" COMMENT 'md5(protection_key.installed_on.server_name), unique',
+  `license_email` varchar(255) NOT NULL DEFAULT "" COMMENT 'License owner (email address)',
+  `license_to` varchar(255) NOT NULL DEFAULT "" COMMENT 'License owner (full name)',
   PRIMARY KEY (`license_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Licenses generated for users';
 

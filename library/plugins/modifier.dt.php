@@ -10,14 +10,12 @@
  */
 function smarty_modifier_dt($format_string = 'm/d/Y', $date = 0)
 {
-	if(!$format_string)
-	{
-		$format_string = 'm/d/Y';
-	}
-	if(!$date)
-	{
-		$date = time();
-	}
+    if (!$format_string) {
+        $format_string = 'm/d/Y';
+    }
+    if (!$date) {
+        $date = time();
+    }
 
-	return date($format_string, $date);
+    return date($format_string, $date);
 }

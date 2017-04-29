@@ -15,23 +15,17 @@
 $identifiers = new \subdomain\identifiers();
 
 # Assumes, ID always, in the GET parameter
-if(($identifier_id = $variable->get('id', 'integer', 0)) && ($code = $variable->get('code', 'string', '')))
-{
-	if($identifiers->delete('inactivate', $identifier_id, $code))
-	{
-		$messenger = new \common\messenger('warning', 'The record has been deleted.');
+if (($identifier_id = $variable->get('id', 'integer', 0)) && ($code = $variable->get('code', 'string', ""))) {
+    if ($identifiers->delete('inactivate', $identifier_id, $code)) {
+        $messenger = new \common\messenger('warning', 'The record has been deleted.');
 
-		#\common\stopper::url('identifiers-delete-successful.php');
-		\common\stopper::url('identifiers-list.php');
-	}
-	else
-	{
-		$messenger = new \common\messenger('error', 'The record has NOT been deleted.');
+        #\common\stopper::url('identifiers-delete-successful.php');
+        \common\stopper::url('identifiers-list.php');
+    } else {
+        $messenger = new \common\messenger('error', 'The record has NOT been deleted.');
 
-		\common\stopper::url('identifiers-delete-error.php');
-	}
-}
-else
-{
-	\common\stopper::url('identifiers-direct-access-error.php');
+        \common\stopper::url('identifiers-delete-error.php');
+    }
+} else {
+    \common\stopper::url('identifiers-direct-access-error.php');
 }

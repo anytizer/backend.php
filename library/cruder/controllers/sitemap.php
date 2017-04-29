@@ -1,6 +1,9 @@
 <?php
-$sitemap_sql = "
+/**
+ * @todo Real escape the server name
+ */
 # Sitemap of all the available pages in this subdomain
+$sitemap_sql = "
 SELECT
 	`qp`.`page_name` `n`,
 	`qp`.`content_title` `t`,

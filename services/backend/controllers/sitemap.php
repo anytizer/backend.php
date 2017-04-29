@@ -1,6 +1,6 @@
 <?php
-$sitemap_sql = "
 # Sitemap for our urls
+$sitemap_sql = "
 SELECT
 	qp.page_name n,
 	qp.content_title t

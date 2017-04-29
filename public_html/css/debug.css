@@ -4,82 +4,66 @@
 
 */
 
-*
-{
-	outline: 2px dotted #003300;
+* {
+    outline: 2px dotted #003300;
 }
 
-* *
-{
-	outline: 2px dotted #009933;
+* * {
+    outline: 2px dotted #009933;
 }
 
-* * *
-{
-	outline: 2px dotted #ff3300;
+* * * {
+    outline: 2px dotted #ff3300;
 }
 
-* * * *
-{
-	outline: 2px dotted #ff9966;
+* * * * {
+    outline: 2px dotted #ff9966;
 }
 
-* * * * *
-{
-	outline: 1px solid #0000ff
+* * * * * {
+    outline: 1px solid #0000ff
 }
 
-* * * * * *
-{
-	outline: 1px solid #6666ff;
+* * * * * * {
+    outline: 1px solid #6666ff;
 }
 
-* * * * * * *
-{
-	outline: 1px solid #ffff00;
+* * * * * * * {
+    outline: 1px solid #ffff00;
 }
 
-* * * * * * * *
-{
-	outline: 1px solid #999933;
+* * * * * * * * {
+    outline: 1px solid #999933;
 }
 
-*
-{
-	background-color: #003300;
+* {
+    background-color: #003300;
 }
 
-* *
-{
-	background-color: #009933;
+* * {
+    background-color: #009933;
 }
 
-* * *
-{
-	background-color: #ff3300;
+* * * {
+    background-color: #ff3300;
 }
 
-* * * *
-{
-	background-color: #ff9966;
+* * * * {
+    background-color: #ff9966;
 }
 
-* * * * *
-{
-	background-color: #0000ff
+* * * * * {
+    background-color: #0000ff
 }
 
-* * * * * *
-{
-	background-color: #6666ff;
+* * * * * * {
+    background-color: #6666ff;
 }
 
-* * * * * * *
-{
-	background-color: #ffff00;
+* * * * * * * {
+    background-color: #ffff00;
 }
 
-* * * * * * * *
-{
-	background-color: #999933;
+* * * * * * * * {
+    background-color: #999933;
 }

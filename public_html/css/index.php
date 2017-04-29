@@ -16,16 +16,13 @@ header("Expires: Mon, 26 Jul 1997 05:00:00 GMT"); // Date in the past
 
 $css = $variable->get('css', 'string', 'style.css');
 $css_files = explode('|', $css);
-if(count($css_files))
-{
-	foreach($css_files as $c => $css_file)
-	{
-		if(file_exists($css_file))
-		{
-			echo "/** File: {$css_file} - Starts **/", file_get_contents($css_file), "/** File: {$css_file} - Ends **/";
-		}
-	}
-	exit(0);
+if (count($css_files)) {
+    foreach ($css_files as $c => $css_file) {
+        if (file_exists($css_file)) {
+            echo "/** File: {$css_file} - Starts **/", file_get_contents($css_file), "/** File: {$css_file} - Ends **/";
+        }
+    }
+    exit(0);
 }
 ?>
 /**

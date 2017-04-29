@@ -15,28 +15,25 @@ ini_set('session.bug_compat_warn', 'Off');
  * Collect the keys from all possible global variables
  */
 $keys = array(
-	'env' => array_keys($_ENV),
-	'get' => array_keys($_GET),
-	'post' => array_keys($_POST),
-	'session' => array_keys($_SESSION),
-	'request' => array_keys($_REQUEST),
-	'cookie' => array_keys($_COOKIE),
-	'files' => array_keys($_FILES),
+    'env' => array_keys($_ENV),
+    'get' => array_keys($_GET),
+    'post' => array_keys($_POST),
+    'session' => array_keys($_SESSION),
+    'request' => array_keys($_REQUEST),
+    'cookie' => array_keys($_COOKIE),
+    'files' => array_keys($_FILES),
 );
 
 /**
  * And unset them all if their variables were found
  * There should be no any creation of php internal variable via such global variables
  */
-foreach($keys as $k => $key)
-{
-	foreach($key as $v => $variable)
-	{
-		if(isset($$variable))
-		{
-			unset($$variable);
-		}
-	}
+foreach ($keys as $k => $key) {
+    foreach ($key as $v => $variable) {
+        if (isset($$variable)) {
+            unset($$variable);
+        }
+    }
 }
 
 /**

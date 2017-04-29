@@ -4,7 +4,6 @@
 * ==========================================================
 * Timely view/truncate this table, as it may swell too soon.
 *
-* @author Bimal Poudel
 * @package Backend Framework
 */
 
@@ -19,10 +18,10 @@ CREATE TABLE `query_emails` (
   `is_active` enum('N','Y') NOT NULL DEFAULT 'N' COMMENT 'Active Template?',
   `is_approved` enum('N','Y') NOT NULL DEFAULT 'N' COMMENT 'Approved email template?',
   `allow_edit` enum('N','Y') NOT NULL DEFAULT 'N' COMMENT 'Allow edit this email template for admin users?',
-  `email_code` varchar(255) NOT NULL DEFAULT '' COMMENT 'Unique email identifier',
+  `email_code` varchar(255) NOT NULL DEFAULT "" COMMENT 'Unique email identifier',
   `email_language` varchar(255) NOT NULL DEFAULT 'EN' COMMENT 'Additional lanaguge (if developing language specific application)',
-  `email_subject` varchar(255) NOT NULL DEFAULT '' COMMENT 'Email subject',
-  `email_comments` varchar(255) NOT NULL DEFAULT '' COMMENT 'Comments on this email template',
+  `email_subject` varchar(255) NOT NULL DEFAULT "" COMMENT 'Email subject',
+  `email_comments` varchar(255) NOT NULL DEFAULT "" COMMENT 'Comments on this email template',
   `email_html` text NOT NULL COMMENT 'Full HTML text',
   `email_text` text NOT NULL COMMENT 'Alternative plain text',
   PRIMARY KEY (`email_id`),

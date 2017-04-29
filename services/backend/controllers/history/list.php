@@ -20,7 +20,7 @@ $history = new \subdomain\history();
 # Please modify this code, particularly for:
 #	Page Limits
 #	Selection Conditions
-$search = $variable->post('search-query', 'string', '');
+$search = $variable->post('search-query', 'string', "");
 $search_query = $variable->remember_string('search-query');
 $smarty->assign('search_query', $search_query);
 
@@ -28,24 +28,23 @@ $condition = new \others\condition();
 
 # Listed records that are bound to the current subdomain only
 $subdomain_id = $variable->get('id', 'integer', 0);
-if(!$subdomain_id)
-{
-	$subdomain_id = $framework->subdomain_id();
+if (!$subdomain_id) {
+    $subdomain_id = $framework->subdomain_id();
 }
 
 # Compulsory conditions
 $condition->add('AND', array(
-	# Avoid this line to list the development history of all subdomains
-	'e.subdomain_id' => $subdomain_id, # Bind the records
+    # Avoid this line to list the development history of all subdomains
+    'e.subdomain_id' => $subdomain_id, # Bind the records
 
-	'e.is_active' => 'Y', # Do not remove this
+    'e.is_active' => 'Y', # Do not remove this
 ));
 
 # List out the entries
 $entries = $history->list_entries(
-	$condition,
-	$from_index = $pagination->beginning_entry(),
-	$pagination->per_page()
+    $condition,
+    $from_index = $pagination->beginning_entry(),
+    $pagination->per_page()
 );
 
 # Pagination helper

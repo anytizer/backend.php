@@ -4,7 +4,6 @@
 * ==========================================================
 * Timely view/truncate this table, as it may swell too soon.
 *
-* @author Bimal Poudel
 * @package Backend Framework
 */
 
@@ -19,8 +18,8 @@ CREATE TABLE `query_dropdowns` (
   `sink_weight` int(10) unsigned NOT NULL DEFAULT '99' COMMENT 'Ordering',
   `is_active` enum('N','Y') NOT NULL DEFAULT 'N' COMMENT 'Active superfish menu?',
   `is_approved` enum('N','Y') NOT NULL DEFAULT 'N' COMMENT 'Approved dropdown link?',
-  `menu_context` varchar(255) NOT NULL DEFAULT '' COMMENT 'Identifier',
-  `menu_text` varchar(255) NOT NULL DEFAULT '' COMMENT 'Link Name',
+  `menu_context` varchar(255) NOT NULL DEFAULT "" COMMENT 'Identifier',
+  `menu_text` varchar(255) NOT NULL DEFAULT "" COMMENT 'Link Name',
   `menu_link` varchar(255) NOT NULL DEFAULT '#' COMMENT 'Links to this url',
   `menu_description` text NOT NULL COMMENT 'Descriptions for reusability',
   PRIMARY KEY (`menu_id`),

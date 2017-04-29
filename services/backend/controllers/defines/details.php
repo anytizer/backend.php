@@ -8,7 +8,7 @@
  */
 
 $define_id = $variable->get('id', 'integer', 0); # Some IDs
-$code = $variable->get('code', 'string', ''); # Protection Code
+$code = $variable->get('code', 'string', ""); # Protection Code
 
 $defines = new \subdomain\defines();
 

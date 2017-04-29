@@ -18,8 +18,8 @@
  * @url http://www.smarty.net/forums/viewtopic.php?t=2044&highlight=ternary
  * @url http://www.smarty.net/forums/viewtopic.php?p=54700
  */
-function smarty_modifier_ternary($original_value = '', $compare_to_value = '', $yes_value = '', $no_value = '')
+function smarty_modifier_ternary($original_value = "", $compare_to_value = "", $yes_value = "", $no_value = "")
 {
-	$value = ($original_value === $compare_to_value) ? $yes_value : $no_value;
-	return $value;
+    $value = ($original_value === $compare_to_value) ? $yes_value : $no_value;
+    return $value;
 }

@@ -9,23 +9,17 @@
  */
 function smarty_modifier_ordinal($number = 0, $html = false, $class = 'ordinal')
 {
-	$o = new \common\ordinal();
-	$output = '';
-	if($html === true)
-	{
-		if($class)
-		{
-			$output = "<sup class='{$class}'>{$o->ordinality($number)}</sup>";
-		}
-		else
-		{
-			$output = "<sup>{$o->ordinality($number)}</sup>";
-		}
-	}
-	else
-	{
-		$output = $o->ordinality($number);
-	}
+    $o = new \common\ordinal();
+    $output = "";
+    if ($html === true) {
+        if ($class) {
+            $output = "<sup class='{$class}'>{$o->ordinality($number)}</sup>";
+        } else {
+            $output = "<sup>{$o->ordinality($number)}</sup>";
+        }
+    } else {
+        $output = $o->ordinality($number);
+    }
 
-	return $number . $output;
+    return $number . $output;
 }

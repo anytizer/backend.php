@@ -18,10 +18,9 @@ $database = MYSQL_DATABASENAME;
 
 $sql = "SHOW FULL TABLES FROM `{$database}` WHERE table_type = 'BASE TABLE';";
 $db->query($sql);
-while($table = $db->row(''))
-{
-	$table = $table["Tables_in_{$database}"];
-	echo("
+while ($table = $db->row("")) {
+    $table = $table["Tables_in_{$database}"];
+    echo("
 mysql -uroot -ptoor {$database} < {$table}.dmp");
 }
 

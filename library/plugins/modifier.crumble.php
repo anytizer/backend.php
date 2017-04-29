@@ -11,11 +11,11 @@
 /**
  * @todo Scrumble a text
  */
-function smarty_modifier_crumble($text = '')
+function smarty_modifier_crumble($text = "")
 {
-	# plain => painl
+    # plain => painl
 
-	$crumble = '';
+    $crumble = "";
 
-	return $text;
+    return $text;
 }

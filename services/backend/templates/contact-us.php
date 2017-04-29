@@ -1,1 +1,1 @@
-<a href="https://github.com/bimalpoudel/backend">Contact Us</a>
+<a href="https://goo.gl/WnpFxB">Contact Us</a>

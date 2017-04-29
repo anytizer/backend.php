@@ -9,5 +9,5 @@
  */
 function smarty_function_customcss($params = array(), &$smarty)
 {
-	return 'management';
+    return 'management';
 }

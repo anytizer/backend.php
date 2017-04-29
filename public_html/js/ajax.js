@@ -86,12 +86,12 @@ window.Blink = function (args) {
     var who = document.getElementById(args[0]);
     var count = parseInt(args[2]);
     if (--count <= 0) {
-        who.style.backgroundColor = '';
+        who.style.backgroundColor = "";
         if (who.focus) who.focus();
     }
     else {
-        args[2] = count + '';
-        who.style.backgroundColor = (count % 2 == 0) ? '' : args[1];
+        args[2] = count + "";
+        who.style.backgroundColor = (count % 2 == 0) ? "" : args[1];
         args = '\"' + args.join(',') + '\"';
         setTimeout("Blink(" + args + ")", 200);
     }
@@ -107,11 +107,11 @@ window.Blink = function (args) {
 function hint(element, default_text) {
     if (!element.value) element.value = default_text;
     element.onfocus = function () {
-        if (element.value == default_text) element.value = '';
+        if (element.value == default_text) element.value = "";
         return true;
     };
     element.onblur = function () {
-        if (element.value == '') element.value = default_text;
+        if (element.value == "") element.value = default_text;
         return true;
     };
     return true;

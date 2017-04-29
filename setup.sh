@@ -1,7 +1,8 @@
 #!/bin/bash
 
 # Get the project
-git clone https://github.com/bimalpoudel/backend.git backend
+# @todo Replace GIT URL
+git clone goo.gl/WnpFxB backend
 cd backend
 
 # Accept the GIT file differences

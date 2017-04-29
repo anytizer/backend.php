@@ -1,17 +1,15 @@
 /**
  * When adding a page name to a subdomain, it hints to the administrator, if the page exists already.
  */
-function subdomain_page_valid()
-{
-	var page_name = document.forms['page-add-form'].elements['page[page_name]'].value;
-	var subdomain = parseInt(document.forms['page-add-form'].elements['page[subdomain_id]'].value);
+function subdomain_page_valid() {
+    var page_name = document.forms['page-add-form'].elements['page[page_name]'].value;
+    var subdomain = parseInt(document.forms['page-add-form'].elements['page[subdomain_id]'].value);
 
-	if(page_name && subdomain)
-	{
-		var ajaxURL = 'ajax-page-valid.php?subdomain_id=' + subdomain + '&page_name=' + page_name + '&rand=' + Math.random();
-		ajaxLoader(document.getElementById('page-valid-message'), ajaxURL);
-	}
-	return(false);
+    if (page_name && subdomain) {
+        var ajaxURL = 'ajax-page-valid.php?subdomain_id=' + subdomain + '&page_name=' + page_name + '&rand=' + Math.random();
+        ajaxLoader(document.getElementById('page-valid-message'), ajaxURL);
+    }
+    return (false);
 }
 document.forms['page-add-form'].elements['page[page_name]'].onblur = subdomain_page_valid;
 

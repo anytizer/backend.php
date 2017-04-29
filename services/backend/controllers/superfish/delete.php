@@ -15,23 +15,17 @@
 $superfish = new \subdomain\superfish();
 
 # Assumes, ID always, in the GET parameter
-if(($menu_id = $variable->get('id', 'integer', 0)) && ($code = $variable->get('code', 'string', '')))
-{
-	if($superfish->delete('inactivate', $menu_id, $code))
-	{
-		$messenger = new \common\messenger('warning', 'The record has been deleted.');
+if (($menu_id = $variable->get('id', 'integer', 0)) && ($code = $variable->get('code', 'string', ""))) {
+    if ($superfish->delete('inactivate', $menu_id, $code)) {
+        $messenger = new \common\messenger('warning', 'The record has been deleted.');
 
-		#\common\stopper::url('superfish-delete-successful.php');
-		\common\stopper::url('superfish-list.php');
-	}
-	else
-	{
-		$messenger = new \common\messenger('error', 'The record has NOT been deleted.');
+        #\common\stopper::url('superfish-delete-successful.php');
+        \common\stopper::url('superfish-list.php');
+    } else {
+        $messenger = new \common\messenger('error', 'The record has NOT been deleted.');
 
-		\common\stopper::url('superfish-delete-error.php');
-	}
-}
-else
-{
-	\common\stopper::url('superfish-direct-access-error.php');
+        \common\stopper::url('superfish-delete-error.php');
+    }
+} else {
+    \common\stopper::url('superfish-direct-access-error.php');
 }

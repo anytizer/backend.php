@@ -10,8 +10,8 @@
 
 function smarty_function_dump($params = array(), &$smarty)
 {
-	$params['var'] = isset($params['var']) ? $params['var'] : null;
-	$dump = '<pre>' . var_export($params['var'], true) . '</pre>';
+    $params['var'] = isset($params['var']) ? $params['var'] : null;
+    $dump = '<pre>' . var_export($params['var'], true) . '</pre>';
 
-	return $dump;
+    return $dump;
 }

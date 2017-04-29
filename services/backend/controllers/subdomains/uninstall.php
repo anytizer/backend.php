@@ -3,9 +3,8 @@ $subdomain_id = $variable->get('id', 'integer', 0);
 $subdomain = new \subdomain\subdomains();
 
 $install_flag_changed = $subdomain->uninstall_subdomain($subdomain_id);
-if($install_flag_changed != true)
-{
-	\common\stopper::url('subdomains-uninstall-error.php');
+if ($install_flag_changed != true) {
+    \common\stopper::url('subdomains-uninstall-error.php');
 }
 
 $self_protection_code = $subdomain->code();

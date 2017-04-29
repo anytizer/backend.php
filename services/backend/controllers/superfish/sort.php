@@ -8,7 +8,7 @@
  */
 
 $menu_id = $variable->get('id', 'integer', 0);
-$code = $variable->get('code', 'string', ''); # For future references
+$code = $variable->get('code', 'string', ""); # For future references
 
 # Find out the direction to sort. Go upwards or downloads in the list.
 $direction = strtolower($variable->get('direction', 'string', 'down'));
@@ -17,15 +17,12 @@ $direction = (in_array($direction, array('up', 'down'))) ? $direction : 'down';
 # Sort only within a context only in which the record exists
 $context_sql = "SELECT `context` FROM query_dropdowns WHERE menu_id={$menu_id};";
 $context = $db->row($context_sql);
-if(!isset($context['context']))
-{
-	$context = array(
-		'context' => '',
-	);
-}
-else
-{
-	$context['context'] = addslashes($context['context']);
+if (!isset($context['context'])) {
+    $context = array(
+        'context' => "",
+    );
+} else {
+    $context['context'] = addslashes($context['context']);
 }
 
 # Match active records (and optionally other condistions)

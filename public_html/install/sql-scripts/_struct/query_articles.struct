@@ -4,7 +4,6 @@
 * ==========================================================
 * Timely view/truncate this table, as it may swell too soon.
 *
-* @author Bimal Poudel
 * @package Backend Framework
 */
 
@@ -20,11 +19,11 @@ CREATE TABLE `query_articles` (
   `is_active` enum('N','Y') NOT NULL DEFAULT 'N' COMMENT 'Active record?',
   `is_approved` enum('N','Y') NOT NULL DEFAULT 'N' COMMENT 'Did we approve this record?',
   `is_html` enum('N','Y') NOT NULL DEFAULT 'N' COMMENT 'Should we support HTML tags?',
-  `article_code` varchar(255) NOT NULL DEFAULT '' COMMENT 'Some Code',
-  `article_title` varchar(255) NOT NULL DEFAULT '' COMMENT 'Box text title',
-  `article_xref` varchar(255) NOT NULL DEFAULT '' COMMENT 'Additional XREF if used',
-  `article_image` varchar(255) NOT NULL DEFAULT '' COMMENT 'Associated image file',
-  `article_comments` varchar(255) NOT NULL DEFAULT '' COMMENT 'Short comments',
+  `article_code` varchar(255) NOT NULL DEFAULT "" COMMENT 'Some Code',
+  `article_title` varchar(255) NOT NULL DEFAULT "" COMMENT 'Box text title',
+  `article_xref` varchar(255) NOT NULL DEFAULT "" COMMENT 'Additional XREF if used',
+  `article_image` varchar(255) NOT NULL DEFAULT "" COMMENT 'Associated image file',
+  `article_comments` varchar(255) NOT NULL DEFAULT "" COMMENT 'Short comments',
   `article_excerpt` text NOT NULL COMMENT 'Summary of the article',
   `article_text` text NOT NULL COMMENT 'Main, full text contents',
   PRIMARY KEY (`article_id`)

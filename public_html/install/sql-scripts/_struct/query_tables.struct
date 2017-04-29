@@ -4,7 +4,6 @@
 * ==========================================================
 * Timely view/truncate this table, as it may swell too soon.
 *
-* @author Bimal Poudel
 * @package Backend Framework
 */
 
@@ -23,10 +22,10 @@ CREATE TABLE `query_tables` (
   `export_structure` enum('N','Y') NOT NULL DEFAULT 'N' COMMENT 'Export table structure',
   `export_data` enum('N','Y') NOT NULL DEFAULT 'N' COMMENT 'Export Data, only if the structure was also allowed',
   `export_framework` enum('N','Y') NOT NULL DEFAULT 'N' COMMENT 'Export framework data as well?',
-  `entity_name` varchar(255) NOT NULL DEFAULT '' COMMENT 'Entity name proposed for this table',
-  `primary_key` varchar(255) NOT NULL DEFAULT '' COMMENT 'Name of the primary key',
-  `table_name` varchar(255) NOT NULL DEFAULT '' COMMENT 'The table name (with full name / prefix) to export',
-  `table_comments` varchar(255) NOT NULL DEFAULT '' COMMENT 'Why this table? What does this table do?',
+  `entity_name` varchar(255) NOT NULL DEFAULT "" COMMENT 'Entity name proposed for this table',
+  `primary_key` varchar(255) NOT NULL DEFAULT "" COMMENT 'Name of the primary key',
+  `table_name` varchar(255) NOT NULL DEFAULT "" COMMENT 'The table name (with full name / prefix) to export',
+  `table_comments` varchar(255) NOT NULL DEFAULT "" COMMENT 'Why this table? What does this table do?',
   `export_query` text NOT NULL COMMENT 'Partially import the data (Warning: SELECT * FROM .. WHERE...: All fileds in the same order); FULL and end with semicolon.',
   `export_query_reference` text NOT NULL COMMENT 'Reference/Backup',
   `export_comments` text NOT NULL COMMENT 'Extra comments',

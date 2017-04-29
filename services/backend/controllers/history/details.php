@@ -8,26 +8,20 @@
  */
 
 $history_id = $variable->get('id', 'integer', 0); # Entity ID
-$code = $variable->get('code', 'string', ''); # Protection Code
+$code = $variable->get('code', 'string', ""); # Protection Code
 
-if(!$history_id)
-{
-	# Page was loaded without the ID parameter
-	\common\stopper::url('history-direct-access-error.php?context=identity');
-}
-else
-{
-	$history = new \subdomain\history();
+if (!$history_id) {
+    # Page was loaded without the ID parameter
+    \common\stopper::url('history-direct-access-error.php?context=identity');
+} else {
+    $history = new \subdomain\history();
 
-	# Try to load the details
-	if($history_details = $history->details($history_id, $code))
-	{
-		# We aim to reach here only.
-		$smarty->assignByRef('history', $history_details);
-	}
-	else
-	{
-		# Record not found
-		\common\stopper::url('history-direct-access-error.php?context=data');
-	}
+    # Try to load the details
+    if ($history_details = $history->details($history_id, $code)) {
+        # We aim to reach here only.
+        $smarty->assignByRef('history', $history_details);
+    } else {
+        # Record not found
+        \common\stopper::url('history-direct-access-error.php?context=data');
+    }
 }

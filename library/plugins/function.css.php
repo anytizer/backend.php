@@ -11,9 +11,9 @@
  */
 function smarty_function_css($params = array(), &$smarty)
 {
-	$css = '';
+	$css = "";
 	$css_es = array();
-	$params['href'] = !empty($params['href']) ? $params['href'] : '';
+	$params['href'] = !empty($params['href']) ? $params['href'] : "";
 	$params['base'] = !empty($params['base']) ? $params['base'] : 'css/custom'; # give a link to FULL URL
 	if($params['href'])
 	{

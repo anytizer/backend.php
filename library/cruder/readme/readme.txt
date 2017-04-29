@@ -36,15 +36,15 @@ Contains
 
 	entity-add.php
 	entity-add-successful.php
-	enity-add-error.php
+	entity-add-error.php
 	entity-details.php
 	entity-delete.php
 	entity-delete-successful.php
 	entity-delete-error.php
-	enity-direct-access-error.php
+	entity-direct-access-error.php
 	entity-edit.php
-	enity-edit-successful.php
-	enity-edit-error.php
+	entity-edit-successful.php
+	entity-edit-error.php
 	entity-list.php
 		User interaction and messaging
 
@@ -70,5 +70,3 @@ CRUDer class will handle all these files to produce a really functional classes 
 And, it will put all these files in their own locations.
 
 Just, run: http://<domain>/cruder.php and give a new CRUD name to begin.
-
-Bimal

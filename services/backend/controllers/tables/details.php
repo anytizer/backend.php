@@ -8,7 +8,7 @@
  */
 
 $table_id = $variable->get('id', 'integer', 0); # Some IDs
-$code = $variable->get('code', 'string', ''); # Protection Code
+$code = $variable->get('code', 'string', ""); # Protection Code
 
 $tables = new \subdomain\tables();
 

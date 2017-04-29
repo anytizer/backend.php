@@ -12,15 +12,14 @@ $from_db = 'source_database';
 $to_db = 'target_database';
 
 $copy_tables = array(
-	'query_errors',
+    'query_errors',
 );
 
-foreach($copy_tables as $table)
-{
-	$sqls = array(
-		"CREATE TABLE `{$to_db}`.`{$table}` LIKE `{$from_db}`.`{$table}`;",
-		"INSERT INTO `{$to_db}`.`{$table}` SELECT * FROM `{$from_db}`.`{$table}`;",
-	);
+foreach ($copy_tables as $table) {
+    $sqls = array(
+        "CREATE TABLE `{$to_db}`.`{$table}` LIKE `{$from_db}`.`{$table}`;",
+        "INSERT INTO `{$to_db}`.`{$table}` SELECT * FROM `{$from_db}`.`{$table}`;",
+    );
 
-	echo implode("\r\n", $sqls), "\r\n\r\n";
+    echo implode("\r\n", $sqls), "\r\n\r\n";
 }

@@ -15,23 +15,17 @@
 $cms = new \subdomain\cms();
 
 # Assumes, ID always, in the GET parameter
-if(($page_id = $variable->get('id', 'integer', 0)) && ($code = $variable->get('code', 'string', '')))
-{
-	if($cms->delete('inactivate', $page_id, $code))
-	{
-		$messenger = new \common\messenger('warning', 'The record has been deleted.');
+if (($page_id = $variable->get('id', 'integer', 0)) && ($code = $variable->get('code', 'string', ""))) {
+    if ($cms->delete('inactivate', $page_id, $code)) {
+        $messenger = new \common\messenger('warning', 'The record has been deleted.');
 
-		#\common\stopper::url('cms-delete-successful.php');
-		\common\stopper::url('cms-list.php');
-	}
-	else
-	{
-		$messenger = new \common\messenger('error', 'The record has NOT been deleted.');
+        #\common\stopper::url('cms-delete-successful.php');
+        \common\stopper::url('cms-list.php');
+    } else {
+        $messenger = new \common\messenger('error', 'The record has NOT been deleted.');
 
-		\common\stopper::url('cms-delete-error.php');
-	}
-}
-else
-{
-	\common\stopper::url('cms-direct-access-error.php');
+        \common\stopper::url('cms-delete-error.php');
+    }
+} else {
+    \common\stopper::url('cms-direct-access-error.php');
 }

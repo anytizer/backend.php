@@ -5,121 +5,101 @@
  */
 
 /** #body-admin  **/
-ul.nav, .nav ul
-{
-	list-style-type: none;
-	list-style-position: outside;
-	line-height: 1.5em;
+ul.nav, .nav ul {
+  list-style-type: none;
+  list-style-position: outside;
+  line-height: 1.5em;
 }
 
-ul.nav li
-{
-	float: left;
-	position: relative;
-	background: none;
-	margin-left: 0px;
+ul.nav li {
+  float: left;
+  position: relative;
+  background: none;
+  margin-left: 0px;
 }
 
-ul.nav li a
-{
-	display: block;
-	padding: 11px 10px;
-	font-size: 14px;
-	background: none;
-	background-repeat: no-repeat;
-	text-decoration: none;
-	color: #ffffff;
+ul.nav li a {
+  display: block;
+  padding: 11px 10px;
+  font-size: 14px;
+  background: none;
+  background-repeat: no-repeat;
+  text-decoration: none;
+  color: #ffffff;
 }
 
-ul.nav a:hover, .nav li.current > a
-{
-	background-color: $menu-background;
-	color: #ffffff;
-	text-decoration: none;
+ul.nav a:hover, .nav li.current > a {
+  background-color: $menu-background;
+  color: #ffffff;
+  text-decoration: none;
 }
 
-.nav > li:hover > a
-{
-	background-color: $menu-background;
+.nav > li:hover > a {
+  background-color: $menu-background;
 }
 
-ul.nav li ul li.parent a
-{
+ul.nav li ul li.parent a {
 }
 
-ul.nav ul
-{
-	position: absolute;
-	display: none;
-	background-image: none;
-	z-index: 9;
+ul.nav ul {
+  position: absolute;
+  display: none;
+  background-image: none;
+  z-index: 9;
 }
 
-ul.nav li:hover ul
-{
-	display: block
+ul.nav li:hover ul {
+  display: block
 }
 
-ul.nav li ul li
-{
-	width: 200px;
+ul.nav li ul li {
+  width: 200px;
 }
 
-ul.nav li ul
-{
-	a
-	{
-		height: auto;
-		clear: both;
-		font-size: 12px;
-		padding: 7px 16px;
-		background-color: #2f2f2f;
-		border-bottom: 1px solid #000000;
-		border-top: 1px solid #4d4d4d;
-		color: #a7a7a7;
-	}
-	
-	a:hover
-	{
-		background-color: #242424;
-		color: #ffffff
-	}
-	a span
-	{
-		padding: 3px 0px;
-	}
+ul.nav li ul {
+  a {
+    height: auto;
+    clear: both;
+    font-size: 12px;
+    padding: 7px 16px;
+    background-color: #2f2f2f;
+    border-bottom: 1px solid #000000;
+    border-top: 1px solid #4d4d4d;
+    color: #a7a7a7;
+  }
+
+  a:hover {
+    background-color: #242424;
+    color: #ffffff
+  }
+  a span {
+    padding: 3px 0px;
+  }
 }
 
-
-ul.nav ul ul
-{
-	top: auto;
+ul.nav ul ul {
+  top: auto;
 }
 
-ul.nav li ul li
-{
-	position: relative;
+ul.nav li ul li {
+  position: relative;
 }
 
-ul.nav li ul ul
-{
-	left: 165px;
-	margin: 0px 0px 0px 10px;
-	position: absolute;
-	top: 0px;
+ul.nav li ul ul {
+  left: 165px;
+  margin: 0px 0px 0px 10px;
+  position: absolute;
+  top: 0px;
 }
 
-.nav li ul li:hover ul
-{
-	display: block !important;
+.nav li ul li:hover ul {
+  display: block !important;
 }
 
-ul.nav li:hover ul, .nav li li:hover ul, .nav li li li:hover ul, .nav li li li li:hover ul
-{
-	display: block;
+ul.nav li:hover ul, .nav li li:hover ul, .nav li li li:hover ul, .nav li li li li:hover ul {
+  display: block;
 }
 
-html > body .nav li ul li
-{
-	margin-top: -2px;
+html > body .nav li ul li {
+  margin-top: -2px;
 }

@@ -7,7 +7,7 @@
  */
 function smarty_modifier_nf($number = 0)
 {
-	$nf = number_format($number, 2, '.', ',');
+    $nf = number_format($number, 2, '.', ',');
 
-	return $nf;
+    return $nf;
 }

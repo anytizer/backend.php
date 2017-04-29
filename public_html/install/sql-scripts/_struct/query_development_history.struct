@@ -4,7 +4,6 @@
 * ==========================================================
 * Timely view/truncate this table, as it may swell too soon.
 *
-* @author Bimal Poudel
 * @package Backend Framework
 */
 
@@ -18,7 +17,7 @@ CREATE TABLE `query_development_history` (
   `sink_weight` int(10) unsigned NOT NULL DEFAULT '0' COMMENT 'Sorting weight',
   `is_active` enum('N','Y') NOT NULL DEFAULT 'N' COMMENT 'Active record?',
   `is_approved` enum('N','Y') NOT NULL DEFAULT 'N' COMMENT 'Approved history?',
-  `history_title` varchar(255) NOT NULL DEFAULT '' COMMENT 'Quick title',
+  `history_title` varchar(255) NOT NULL DEFAULT "" COMMENT 'Quick title',
   `history_text` text NOT NULL COMMENT 'Development Message',
   PRIMARY KEY (`history_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Records of what we did while developing things';

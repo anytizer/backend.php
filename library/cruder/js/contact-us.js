@@ -1,5 +1,5 @@
 /** Anti spam measures: revert the values */
-document.forms['contact-form'].elements['noemail'].value = '';
+document.forms['contact-form'].elements['noemail'].value = "";
 document.forms['contact-form'].elements['nospam'].value = 'nospam';
 
 var v = new Validator('contact-form');

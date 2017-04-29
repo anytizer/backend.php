@@ -1,53 +1,53 @@
 <!-- Created on: 2010-06-16 21:19:04 969 -->
 <div class="information">
-	<ul>
-		<li><a href="defines-list.php"><img src="{'table'|icon}"/> List defines</a></li>
-	</ul>
+    <ul>
+        <li><a href="defines-list.php"><img src="{'table'|icon}"/> List defines</a></li>
+    </ul>
 </div>
 <p>Changing values here may damanage the service. Please be highly careful. Your changes are immediately reflected.</p>
 <form autocomplete="off" id="defines-edit-form" name="defines-edit-form" method="post" action="defines-edit.php">
-	<table class="data edit">
-		<tr>
-			<td class="attribute">Name:</td>
-			<td>{$defines.define_name}</td>
-		</tr>
-		<tr>
-			<td class="attribute">Context:</td>
-			<td><input type="text" class="input" name="defines[define_context]"
-			           value="{$defines.define_context|htmlentities}"/></td>
-		</tr>
-		<tr>
-			<td class="attribute">Value:</td>
-			<td><input type="text" class="input" name="defines[define_value]"
-			           value="{$defines.define_value|htmlentities}"/></td>
-		</tr>
-		<tr>
-			<td class="attribute">Sample Value:</td>
-			<td><input type="text" class="input" name="defines[define_sample]"
-			           value="{$defines.define_sample|htmlentities}"/></td>
-		</tr>
-		<tr>
-			<td class="attribute">Validation Handler:</td>
-			<td><input type="text" class="input" name="defines[define_handler]"
-			           value="{$defines.define_handler|htmlentities}"/></td>
-		</tr>
-		<tr>
-			<td class="attribute">Comments:</td>
-			<td><input type="text" class="input" name="defines[define_comments]"
-			           value="{$defines.define_comments|htmlentities}"/></td>
-		</tr>
-		<tr>
-			<td class="attribute">&nbsp;</td>
-			<td>
-				<input type="hidden" name="define_id" value="{$defines.define_id}"/>
-				<!-- This is different than system's protection code. This is related to particular ID. -->
-				<input type="hidden" name="protection_code" value="{$defines.code}"/> <input type="hidden"
-				                                                                             name="edit-action"
-				                                                                             value="Edit defines"/>
-				<input type="submit" name="submit-button" class="submit" value="Save Changes"/> Or, <a
-					href="defines-list.php">Cancel</a></td>
-		</tr>
-	</table>
+    <table class="data edit">
+        <tr>
+            <td class="attribute">Name:</td>
+            <td>{$defines.define_name}</td>
+        </tr>
+        <tr>
+            <td class="attribute">Context:</td>
+            <td><input type="text" class="input" name="defines[define_context]"
+                       value="{$defines.define_context|htmlentities}"/></td>
+        </tr>
+        <tr>
+            <td class="attribute">Value:</td>
+            <td><input type="text" class="input" name="defines[define_value]"
+                       value="{$defines.define_value|htmlentities}"/></td>
+        </tr>
+        <tr>
+            <td class="attribute">Sample Value:</td>
+            <td><input type="text" class="input" name="defines[define_sample]"
+                       value="{$defines.define_sample|htmlentities}"/></td>
+        </tr>
+        <tr>
+            <td class="attribute">Validation Handler:</td>
+            <td><input type="text" class="input" name="defines[define_handler]"
+                       value="{$defines.define_handler|htmlentities}"/></td>
+        </tr>
+        <tr>
+            <td class="attribute">Comments:</td>
+            <td><input type="text" class="input" name="defines[define_comments]"
+                       value="{$defines.define_comments|htmlentities}"/></td>
+        </tr>
+        <tr>
+            <td class="attribute">&nbsp;</td>
+            <td>
+                <input type="hidden" name="define_id" value="{$defines.define_id}"/>
+                <!-- This is different than system's protection code. This is related to particular ID. -->
+                <input type="hidden" name="protection_code" value="{$defines.code}"/> <input type="hidden"
+                                                                                             name="edit-action"
+                                                                                             value="Edit defines"/>
+                <input type="submit" name="submit-button" class="submit" value="Save Changes"/> Or, <a
+                    href="defines-list.php">Cancel</a></td>
+        </tr>
+    </table>
 </form>
 {* Edit validation *}
 {js src='validators/defines/edit.js' validator=true}

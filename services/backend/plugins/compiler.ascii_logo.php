@@ -10,7 +10,7 @@
  */
 function smarty_compiler_ascii_logo($tag_arg, $smarty)
 {
-	$ascii_logo = "
+    $ascii_logo = "
   .sss.   .aaaaaaa.  nnn.     nnn  jjjjjjj .aaaaaaa.  .aaaaaaa.  lll
  .sssss.  aaa   aaa  nnnn\\    nnn    jjj   aaa   aaa  aaa   aaa  lll
  sss  ss  aaa   aaa  nnn n\\   nnn    jjj   aaa   aaa  aaa   aaa  lll
@@ -24,5 +24,5 @@ function smarty_compiler_ascii_logo($tag_arg, $smarty)
   .sss.   aaa   aaa  nnn     .nnn  .j.     aaa   aaa  aaa   aaa  .lllllll.
 ";
 
-	return $ascii_logo;
+    return $ascii_logo;
 }

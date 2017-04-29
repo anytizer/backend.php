@@ -20,15 +20,15 @@ $identifiers = new \subdomain\identifiers();
 # Please modify this code, particularly for:
 #	Page Limits
 #	Selection Conditions
-$search = $variable->post('search-query', 'string', '');
+$search = $variable->post('search-query', 'string', "");
 $search_query = $variable->remember_string('search-query');
 $smarty->assign('search_query', $search_query);
 
 $condition = new \others\condition();
 
 $condition->add('FULL', array(
-	#"e.subdomain_id={$subdomain_id}", # Bind the records
-	"e.is_active='Y'", # Do not remove this
+    #"e.subdomain_id={$subdomain_id}", # Bind the records
+    "e.is_active='Y'", # Do not remove this
 ));
 
 # Compulsory conditions
@@ -37,9 +37,9 @@ $condition->add('AND', array( #'e.search_field' => 'Y', # Partial %contents%
 
 # List out the entries
 $entries = $identifiers->list_entries(
-	$condition,
-	$from_index = $pagination->beginning_entry(),
-	$pagination->per_page()
+    $condition,
+    $from_index = $pagination->beginning_entry(),
+    $pagination->per_page()
 );
 
 # Pagination helper

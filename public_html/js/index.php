@@ -16,16 +16,13 @@ header("Expires: Mon, 26 Jul 1997 05:00:00 GMT"); // Date in the past
 
 $js = $variable->get('js', 'string', 'javascript.js');
 $js_files = explode('|', $js);
-if(count($js_files))
-{
-	foreach($js_files as $j => $js_file)
-	{
-		if(file_exists($js_file))
-		{
-			readfile($js_file);
-		}
-	}
-	exit(0);
+if (count($js_files)) {
+    foreach ($js_files as $j => $js_file) {
+        if (file_exists($js_file)) {
+            readfile($js_file);
+        }
+    }
+    exit(0);
 }
 ?>
 /**

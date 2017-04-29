@@ -29,7 +29,7 @@ IEPNGFix.fix = function(elm, src, t) {
 	this.hook.enabled = 0;
 
 	var f = 'DXImageTransform.Microsoft.AlphaImageLoader';
-		src = (src || '').replace(/\(/g, '%28').replace(/\)/g, '%29');
+		src = (src || "").replace(/\(/g, '%28').replace(/\)/g, '%29');
 
 	if (
 		src && !(/IMG|INPUT/.test(elm.nodeName) && (t != 2)) &&
@@ -79,7 +79,7 @@ IEPNGFix.process = function(elm, init) {
 	}
 	if (!this.data[elm.uniqueID]) {
 		this.data[elm.uniqueID] = {
-			className: ''
+			className: ""
 		};
 	}
 	var data = this.data[elm.uniqueID],
@@ -103,7 +103,7 @@ IEPNGFix.process = function(elm, init) {
 		eS.backgroundImage.indexOf(blank) > -1)
 	) {
 		return setTimeout(function() {
-			eS.backgroundImage = '';
+			eS.backgroundImage = "";
 		}, 0);
 	}
 
@@ -116,7 +116,7 @@ IEPNGFix.process = function(elm, init) {
 			}
 			this.fix(elm, elm.src, 2);
 		} else if (elm.src.indexOf(blank) == -1) {
-			this.fix(elm, '');
+			this.fix(elm, "");
 		}
 	}
 
@@ -127,19 +127,19 @@ IEPNGFix.process = function(elm, init) {
 		if (bgPNG) {
 			if (this.tileBG && !{ IMG: 1, INPUT: 1 }[elm.nodeName]) {
 				this.tileBG(elm, bgPNG[1]);
-				this.fix(elm, '', 1);
+				this.fix(elm, "", 1);
 			} else {
 				if (data.tiles && data.tiles.src) {
-					this.tileBG(elm, '');
+					this.tileBG(elm, "");
 				}
 				this.fix(elm, bgPNG[1], 1);
 				this.childFix(elm);
 			}
 		} else {
 			if (data.tiles && data.tiles.src) {
-				this.tileBG(elm, '');
+				this.tileBG(elm, "");
 			}
-			this.fix(elm, '');
+			this.fix(elm, "");
 		}
 	} else if ((isPos || isClass) && data.tiles && data.tiles.src) {
 		this.tileBG(elm, data.tiles.src);

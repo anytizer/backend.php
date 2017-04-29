@@ -15,23 +15,17 @@
 $messages = new \subdomain\messages();
 
 # Assumes, ID always, in the GET parameter
-if(($message_id = $variable->get('id', 'integer', 0)) && ($code = $variable->get('code', 'string', '')))
-{
-	if($messages->delete('inactivate', $message_id, $code))
-	{
-		$messenger = new \common\messenger('warning', 'The record has been deleted.');
+if (($message_id = $variable->get('id', 'integer', 0)) && ($code = $variable->get('code', 'string', ""))) {
+    if ($messages->delete('inactivate', $message_id, $code)) {
+        $messenger = new \common\messenger('warning', 'The record has been deleted.');
 
-		#\common\stopper::url('messages-delete-successful.php');
-		\common\stopper::url('messages-list.php');
-	}
-	else
-	{
-		$messenger = new \common\messenger('error', 'The record has NOT been deleted.');
+        #\common\stopper::url('messages-delete-successful.php');
+        \common\stopper::url('messages-list.php');
+    } else {
+        $messenger = new \common\messenger('error', 'The record has NOT been deleted.');
 
-		\common\stopper::url('messages-delete-error.php');
-	}
-}
-else
-{
-	\common\stopper::url('messages-direct-access-error.php');
+        \common\stopper::url('messages-delete-error.php');
+    }
+} else {
+    \common\stopper::url('messages-direct-access-error.php');
 }

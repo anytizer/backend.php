@@ -7,37 +7,37 @@ namespace others;
  * @package Interfaces
  */
 class datatype_recipient
-	extends \abstracts\datatype
+    extends \abstracts\datatype
 {
-	/**
-	 * Set the variables properly
-	 */
-	public function __construct()
-	{
-		parent::__construct(array(
-			'email',
-			'name',
-		));
-	}
-	
-	public function setup($email = '', $name = '')
-	{
-		$this->email = \common\tools::sanitize($email);
-		$this->name = \common\tools::sanitize($name);
-	}
+    /**
+     * Set the variables properly
+     */
+    public function __construct()
+    {
+        parent::__construct(array(
+            'email',
+            'name',
+        ));
+    }
 
-	/**
-	 * If the current object holds valid email and name?
-	 */
-	public function is_valid()
-	{
-		# Validate name
-		$success = ($this->name != '' && $this->email != '');
+    public function setup($email = "", $name = "")
+    {
+        $this->email = \common\tools::sanitize($email);
+        $this->name = \common\tools::sanitize($name);
+    }
 
-		# Add more validation here...
-		# ...
+    /**
+     * If the current object holds valid email and name?
+     */
+    public function is_valid()
+    {
+        # Validate name
+        $success = ($this->name != "" && $this->email != "");
 
-		# Finally, return the status
-		return $success;
-	}
+        # Add more validation here...
+        # ...
+
+        # Finally, return the status
+        return $success;
+    }
 }

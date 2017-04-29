@@ -11,22 +11,21 @@
  */
 function smarty_function_yninput($params = array(), &$smarty)
 {
-	$name = isset($params['name']) ? $params['name'] : '';
-	$value = isset($params['value']) ? $params['value'] : '';
+    $name = isset($params['name']) ? $params['name'] : "";
+    $value = isset($params['value']) ? $params['value'] : "";
 
-	$y_checked = ($value == 'Y') ? ' checked="checked"' : '';
-	$n_checked = ($value == 'N') ? ' checked="checked"' : '';
+    $y_checked = ($value == 'Y') ? ' checked="checked"' : "";
+    $n_checked = ($value == 'N') ? ' checked="checked"' : "";
 
-	# Force to choose NO.
-	if(!$y_checked && !$y_checked)
-	{
-		$n_checked = ' checked="checked"';
-	}
+    # Force to choose NO.
+    if (!$y_checked && !$y_checked) {
+        $n_checked = ' checked="checked"';
+    }
 
-	$input_html = '
+    $input_html = '
 <span class="radio"><input name="' . $name . '" type="radio" value="Y" ' . $y_checked . ' /> Yes</span>
 <span class="radio"><input name="' . $name . '" type="radio" value="N" ' . $n_checked . ' /> No</span>
 ';
 
-	return $input_html;
+    return $input_html;
 }

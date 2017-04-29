@@ -6,7 +6,7 @@
  */
 function smarty_modifier_numeric($value = 0)
 {
-	$value = (int)$value;
+    $value = (int)$value;
 
-	return $value;
+    return $value;
 }

@@ -1,51 +1,43 @@
-body, td, th
-{
-	color: #003300;
-	font-family: Georgia, Times New Roman, Times, serif;
-	font-size: 12px;
+body, td, th {
+    color: #003300;
+    font-family: Georgia, Times New Roman, Times, serif;
+    font-size: 12px;
 }
 
-body
-{
-	background-color: #ffffcc;
+body {
+    background-color: #ffffcc;
 }
 
-a:link
-{
-	color: #000066;
+a:link {
+    color: #000066;
 }
 
-h1
-{
-	font-size: 18px;
-	color: #ff6600;
+h1 {
+    font-size: 18px;
+    color: #ff6600;
 }
 
-td.r
-{
-	text-align: right;
-	font-weight: bold;
+td.r {
+    text-align: right;
+    font-weight: bold;
 }
 
-.wrapper
-{
-	width: 650px;
-	padding: 10px;
-	border: 2px solid #ff9900;
-	margin: 10px auto 10px auto;
-	background-color: #ffcccc;
+.wrapper {
+    width: 650px;
+    padding: 10px;
+    border: 2px solid #ff9900;
+    margin: 10px auto 10px auto;
+    background-color: #ffcccc;
 }
 
-input[type="submit"]
-{
-	background-color: #000000;
-	color: #00ff00;
-	font-weight: bold;
+input[type="submit"] {
+    background-color: #000000;
+    color: #00ff00;
+    font-weight: bold;
 }
 
-.submit
-{
-	background-color: #000000;
-	color: #00ff00;
-	font-weight: bold;
+.submit {
+    background-color: #000000;
+    color: #00ff00;
+    font-weight: bold;
 }

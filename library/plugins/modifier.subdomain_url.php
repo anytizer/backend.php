@@ -7,11 +7,11 @@
  */
 function smarty_modifier_subdomain_url($subdomain_id = 0)
 {
-	$subdomain_id = (int)$subdomain_id;
+    $subdomain_id = (int)$subdomain_id;
 
-	$url = '#';
+    $url = '#';
 
-	$subdomain_sql = "
+    $subdomain_sql = "
 SELECT
 	subdomain_name,
 	is_https,
@@ -20,14 +20,13 @@ FROM query_subdomains
 WHERE
 	subdomain_id = {$subdomain_id}
 ;";
-	$db = new \common\mysql();
-	if($subdomain = $db->row($subdomain_sql))
-	{
-		# check for full flags like: is_http
-		$http = ($subdomain['is_https'] == 'Y') ? 'https://' : 'http://';
-		$www = ($subdomain['is_www'] == 'Y') ? 'www.' : '';
-		$url = $http . $www . $subdomain['subdomain_name'] . '/';
-	}
+    $db = new \common\mysql();
+    if ($subdomain = $db->row($subdomain_sql)) {
+        # check for full flags like: is_http
+        $http = ($subdomain['is_https'] == 'Y') ? 'https://' : 'http://';
+        $www = ($subdomain['is_www'] == 'Y') ? 'www.' : "";
+        $url = $http . $www . $subdomain['subdomain_name'] . '/';
+    }
 
-	return $url;
+    return $url;
 }

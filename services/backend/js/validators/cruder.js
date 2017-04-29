@@ -21,28 +21,25 @@ v.addValidation('entity[pk_name]', 'required', 'What is the name of PRIMARY KEY 
 /**
  * entity and revesed name should match
  */
-function reversed_entity_check()
-{
-	var original = document.forms['cruder-form'].elements['entity[name]'].value;
-	var reversed = document.forms['cruder-form'].elements['entity[reverse]'].value;
+function reversed_entity_check() {
+    var original = document.forms['cruder-form'].elements['entity[name]'].value;
+    var reversed = document.forms['cruder-form'].elements['entity[reverse]'].value;
 
-	var success = (original != '' && reversed != '' && original.split('').reverse().join('') == reversed);
-	if(success != true)
-	{
-		alert("Self CAPTCHA Error:\r\nYour entity name and reversed letters mismatched.");
-	}
+    var success = (original != "" && reversed != "" && original.split("").reverse().join("") == reversed);
+    if (success != true) {
+        alert("Self CAPTCHA Error:\r\nYour entity name and reversed letters mismatched.");
+    }
 
-	return success;
+    return success;
 }
 v.setAddnlValidationFunction('reversed_entity_check');
 
-function reverse_captcha()
-{
-	var original = document.forms['cruder-form'].elements['entity[name]'].value;
-	var reversed = original.split('').reverse().join('');
-	//document.getElementById('reverse-captcha').innerHTML = reversed;
-	document.getElementById('reverse-captcha').value = reversed;
-	return true;
+function reverse_captcha() {
+    var original = document.forms['cruder-form'].elements['entity[name]'].value;
+    var reversed = original.split("").reverse().join("");
+    //document.getElementById('reverse-captcha').innerHTML = reversed;
+    document.getElementById('reverse-captcha').value = reversed;
+    return true;
 }
 document.getElementById('entity-name').onkeyup = reverse_captcha;
 

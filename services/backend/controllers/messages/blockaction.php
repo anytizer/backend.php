@@ -7,24 +7,23 @@
  * Perform a block action in entities. Input is via POST only
  */
 
-$action = $variable->post('action', 'string', '');
+$action = $variable->post('action', 'string', "");
 
 $ids = $variable->post('messages', 'array', array());
 #print_r($_POST); print_r($ids); die();
 
 $messages = new \subdomain\messages();
 
-switch($action)
-{
-	case 'delete':
-	case 'disable':
-	case 'enable':
-	case 'prune':
-		$messages->blockaction($action, $ids);
-		break;
-	case 'nothing':
-	default:
-		break;
+switch ($action) {
+    case 'delete':
+    case 'disable':
+    case 'enable':
+    case 'prune':
+        $messages->blockaction($action, $ids);
+        break;
+    case 'nothing':
+    default:
+        break;
 }
 
 /**

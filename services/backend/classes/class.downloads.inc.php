@@ -1,5 +1,5 @@
 <?php
-namespace subdomain;
+namespace \subdomain;
 
 # Created on: 2010-12-14 00:48:38 194
 
@@ -21,93 +21,93 @@ namespace subdomain;
  *        Fetches the details of downloads
  */
 class downloads
-	extends \abstracts\entity
+    extends \abstracts\entity
 {
-	/**
-	 * Optional Constructor: Load on demand only.
-	 */
-	public function __construct()
-	{
-		# Parent's default constructor is necessary.
-		parent::__construct();
+    /**
+     * Optional Constructor: Load on demand only.
+     */
+    public function __construct()
+    {
+        # Parent's default constructor is necessary.
+        parent::__construct();
 
-		/**
-		 * Set Private, Protected or Public Members
-		 */
-		$this->protection_code = '29e82713e41e98e175228565718b2a31'; # Some random text, valid for the entire life
-		$this->table_name = 'query_distributions'; # Name of this table/entity name
-		$this->pk_column = 'distribution_id'; # Primary Key's Column Name
+        /**
+         * Set Private, Protected or Public Members
+         */
+        $this->protection_code = '29e82713e41e98e175228565718b2a31'; # Some random text, valid for the entire life
+        $this->table_name = 'query_distributions'; # Name of this table/entity name
+        $this->pk_column = 'distribution_id'; # Primary Key's Column Name
 
-		/**
-		 * Validation fields as used in add/edit forms
-		 */
-		$this->fields = array(
-			# Remove the columns that you do not want to use in the ADD form
-			'add' => array(
-				'file_size' => null,
-				'stats_comments' => null,
-				'stats_html' => null,
-				'stats_php' => null,
-				'stats_js' => null,
-				'stats_css' => null,
-				'stats_images' => null,
-				'stats_text' => null,
-				'stats_templates' => null,
-				'stats_scripts' => null,
-				'show_links' => null,
-				'show_samples' => null,
-				'distribution_link' => null,
-				'distribution_title' => null,
-				'distribution_text' => null,
-			),
+        /**
+         * Validation fields as used in add/edit forms
+         */
+        $this->fields = array(
+            # Remove the columns that you do not want to use in the ADD form
+            'add' => array(
+                'file_size' => null,
+                'stats_comments' => null,
+                'stats_html' => null,
+                'stats_php' => null,
+                'stats_js' => null,
+                'stats_css' => null,
+                'stats_images' => null,
+                'stats_text' => null,
+                'stats_templates' => null,
+                'stats_scripts' => null,
+                'show_links' => null,
+                'show_samples' => null,
+                'distribution_link' => null,
+                'distribution_title' => null,
+                'distribution_text' => null,
+            ),
 
-			# Remove the columns that you do not want to use in the EDIT form
-			'edit' => array(
-				'file_size' => null,
-				'stats_comments' => null,
-				'stats_html' => null,
-				'stats_php' => null,
-				'stats_js' => null,
-				'stats_css' => null,
-				'stats_images' => null,
-				'stats_text' => null,
-				'stats_templates' => null,
-				'stats_scripts' => null,
-				'show_links' => null,
-				'show_samples' => null,
-				'distribution_link' => null,
-				'distribution_title' => null,
-				'distribution_text' => null,
-			),
-		);
-	}
+            # Remove the columns that you do not want to use in the EDIT form
+            'edit' => array(
+                'file_size' => null,
+                'stats_comments' => null,
+                'stats_html' => null,
+                'stats_php' => null,
+                'stats_js' => null,
+                'stats_css' => null,
+                'stats_images' => null,
+                'stats_text' => null,
+                'stats_templates' => null,
+                'stats_scripts' => null,
+                'show_links' => null,
+                'show_samples' => null,
+                'distribution_link' => null,
+                'distribution_title' => null,
+                'distribution_text' => null,
+            ),
+        );
+    }
 
-	/**
-	 * List entries from [ downloads ]
-	 * Column `code` signifies a protection code while deleting/editing a record
-	 *
-	 * @param $conditions SQL Conditions
-	 *
-	 * @return Multi-Dimensional array of entries in the list
-	 */
-	public function list_entries(\others\condition $condition, $from_index = 0, $per_page = 50)
-	{
-		$crud = new \backend\crud();
+    /**
+     * List entries from [ downloads ]
+     * Column `code` signifies a protection code while deleting/editing a record
+     *
+     * @param $conditions SQL Conditions
+     *
+     * @return Multi-Dimensional array of entries in the list
+     */
+    public function list_entries(\others\condition $condition, $from_index = 0, $per_page = 50)
+    {
+        $crud = new \backend\crud();
 
-		$conditions_compiled_AND = $crud->compile_conditions(
-			$condition->get_condition('AND'),
-			false, 'AND', 1
-		);
-		$conditions_compiled_OR = $crud->compile_conditions(
-			$condition->get_condition('OR'),
-			false, 'OR', 2
-		);
+        $conditions_compiled_AND = $crud->compile_conditions(
+            $condition->get_condition('AND'),
+            false, 'AND', 1
+        );
+        $conditions_compiled_OR = $crud->compile_conditions(
+            $condition->get_condition('OR'),
+            false, 'OR', 2
+        );
 
-		$from_index = (int)$from_index;
-		$per_page = (int)$per_page;
-		$variable = new \common\variable(); # It may be necessary to read list out data of a user
+        $from_index = (int)$from_index;
+        $per_page = (int)$per_page;
+        $variable = new \common\variable(); # It may be necessary to read list out data of a user
 
-		$listing_sql = "
+        $listing_sql = "
 SELECT SQL_CALC_FOUND_ROWS
 	e.`distribution_id`, # Do not remove this
 	
@@ -142,28 +142,28 @@ ORDER BY
 LIMIT {$from_index}, {$per_page}
 ;";
 
-		$this->query($listing_sql);
-		$entries = $this->to_array();
+        $this->query($listing_sql);
+        $entries = $this->to_array();
 
-		# Pagination helper: Set the number of entries
-		$counter_sql = "SELECT FOUND_ROWS() total;"; # Uses SQL_CALC_FOUND_ROWS from above query. So, run it immediately.
-		$totals = $this->row($counter_sql);
-		$this->total_entries_for_pagination = $totals['total'];
+        # Pagination helper: Set the number of entries
+        $counter_sql = "SELECT FOUND_ROWS() total;"; # Uses SQL_CALC_FOUND_ROWS from above query. So, run it immediately.
+        $totals = $this->row($counter_sql);
+        $this->total_entries_for_pagination = $totals['total'];
 
-		return $entries;
-	}
+        return $entries;
+    }
 
-	/**
-	 * Details of an entity in [ downloads ] for management activities
-	 *
-	 * @param $pk integer Primary Key's value of an entity
-	 *
-	 * @return $details Associative Array of Detailed records of an entity
-	 */
-	public function details($distribution_id = 0)
-	{
-		$distribution_id = (int)$distribution_id;
-		$details_sql = "
+    /**
+     * Details of an entity in [ downloads ] for management activities
+     *
+     * @param $pk integer Primary Key's value of an entity
+     *
+     * @return $details Associative Array of Detailed records of an entity
+     */
+    public function details($distribution_id = 0)
+    {
+        $distribution_id = (int)$distribution_id;
+        $details_sql = "
 SELECT
 	e.`distribution_id`, # Do not remove this
 
@@ -175,23 +175,23 @@ FROM `query_distributions` `e`
 WHERE
 	`distribution_id` = {$distribution_id}
 ;";
-		$details = $this->row($details_sql);
+        $details = $this->row($details_sql);
 
-		return $details;
-	}
+        return $details;
+    }
 
-	/**
-	 * Details of an entity in [ downloads ] for public display.
-	 *
-	 * @param $pk integer Primary Key's value of an entity
-	 *
-	 * @return $details Associative Array of Detailed records of an entity
-	 */
-	public function get_details($distribution_id = 0, $protection_code = '')
-	{
-		$protection_code = $this->sanitize($protection_code);
-		$distribution_id = (int)$distribution_id;
-		$details_sql = "
+    /**
+     * Details of an entity in [ downloads ] for public display.
+     *
+     * @param $pk integer Primary Key's value of an entity
+     *
+     * @return $details Associative Array of Detailed records of an entity
+     */
+    public function get_details($distribution_id = 0, $protection_code = "")
+    {
+        $protection_code = $this->sanitize($protection_code);
+        $distribution_id = (int)$distribution_id;
+        $details_sql = "
 SELECT
 	`distribution_id`, # Do not remove this
 
@@ -206,8 +206,8 @@ WHERE
 	# Optionally validate
 	AND MD5(CONCAT(`distribution_id`, '{$this->protection_code}')) = '{$protection_code}'
 ;";
-		$details = $this->row($details_sql);
+        $details = $this->row($details_sql);
 
-		return $details;
-	}
+        return $details;
+    }
 }

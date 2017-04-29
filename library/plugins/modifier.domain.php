@@ -7,16 +7,16 @@
  *
  * @see |url, |www, |domain
  */
-function smarty_modifier_domain($domain = '')
+function smarty_modifier_domain($domain = "")
 {
-	$replaces = array(
-		'#^.*?\://#is' => '',
-		'/www./is' => '',
-		'#/.*?$#' => '',
-		'#/$#' => '',
-	);
+    $replaces = array(
+        '#^.*?\://#is' => "",
+        '/www./is' => "",
+        '#/.*?$#' => "",
+        '#/$#' => "",
+    );
 
-	$url = preg_replace(array_keys($replaces), array_values($replaces), $domain);
+    $url = preg_replace(array_keys($replaces), array_values($replaces), $domain);
 
-	return $url;
+    return $url;
 }

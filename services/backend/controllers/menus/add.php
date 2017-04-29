@@ -24,24 +24,18 @@ Array
 */
 $menus = new \subdomain\menus();
 
-if($variable->post('add-action', 'string', ''))
-{
-	$data = $variable->post('menus', 'array', array());
-	$data['is_active'] = 'Y';
+if ($variable->post('add-action', 'string', "")) {
+    $data = $variable->post('menus', 'array', array());
+    $data['is_active'] = 'Y';
 
-	if($menus_id = $menus->add($data))
-	{
-		\common\stopper::url('menus-add-successful.php');
-	}
-	else
-	{
-		\common\stopper::url('menus-add-error.php');
-	}
-}
-else
-{
-	# Must allow a chance to load the ADD form.
-	#\common\stopper::url('menus-direct-access-error.php');
+    if ($menus_id = $menus->add($data)) {
+        \common\stopper::url('menus-add-successful.php');
+    } else {
+        \common\stopper::url('menus-add-error.php');
+    }
+} else {
+    # Must allow a chance to load the ADD form.
+    #\common\stopper::url('menus-direct-access-error.php');
 }
 
 $contexts = $menus->used_contexts();

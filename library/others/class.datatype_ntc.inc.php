@@ -7,16 +7,16 @@ namespace others;
  * @package Interfaces
  */
 class datatype_ntc
-	extends \abstracts\datatype
+    extends \abstracts\datatype
 {
-	public function __construct($username = '', $password = '')
-	{
-		parent::__construct(array(
-			'username',
-			'password'
-		));
+    public function __construct($username = "", $password = "")
+    {
+        parent::__construct(array(
+            'username',
+            'password'
+        ));
 
-		$this->username = \common\tools::sanitize($username);
-		$this->password = \common\tools::sanitize($password);
-	}
+        $this->username = \common\tools::sanitize($username);
+        $this->password = \common\tools::sanitize($password);
+    }
 }

@@ -1,10 +1,9 @@
 /**
-* Skeleton of [Query Emails Smtp: query_emails_smtp]
+* Skeleton of [Query Emails SMTP: query_emails_smtp]
 * List of SMTP user accounts
 * ==========================================================
 * Timely view/truncate this table, as it may swell too soon.
 *
-* @author Bimal Poudel
 * @package Backend Framework
 */
 
@@ -16,21 +15,21 @@ CREATE TABLE `query_emails_smtp` (
   `modified_on` datetime NOT NULL DEFAULT '0000-00-00 00:00:00' COMMENT 'Modified on',
   `modified_counter` int(10) unsigned NOT NULL DEFAULT '0' COMMENT 'Number of total modifications',
   `sink_weight` int(10) unsigned NOT NULL DEFAULT '0' COMMENT 'Sink weight',
-  `smtp_identifier` varchar(255) NOT NULL DEFAULT '' COMMENT 'Unique Code',
-  `smtp_host` varchar(255) NOT NULL DEFAULT '' COMMENT 'SMTP Server',
+  `smtp_identifier` varchar(255) NOT NULL DEFAULT "" COMMENT 'Unique Code',
+  `smtp_host` varchar(255) NOT NULL DEFAULT "" COMMENT 'SMTP Server',
   `smtp_port` varchar(255) NOT NULL DEFAULT '587' COMMENT 'Port to connect, eg 25, 26, 465, 587, 2525, ...',
-  `connection_prefix` varchar(255) NOT NULL DEFAULT '' COMMENT 'Empty String / TLS / SSL',
+  `connection_prefix` varchar(255) NOT NULL DEFAULT "" COMMENT 'Empty String / TLS / SSL',
   `do_authenticate` enum('N','Y') NOT NULL DEFAULT 'Y' COMMENT 'Y/N - SMTP Login needs authentication',
   `is_active` enum('N','Y') NOT NULL DEFAULT 'N' COMMENT 'Active account?',
   `is_approved` enum('N','Y') NOT NULL DEFAULT 'N' COMMENT 'Approved account?',
   `is_smtp` enum('N','Y') NOT NULL DEFAULT 'Y' COMMENT 'By default, SMTP account. If no, send messages as php default.',
-  `smtp_username` varchar(255) NOT NULL DEFAULT '' COMMENT 'SMTP Username',
-  `smtp_password` varchar(255) NOT NULL DEFAULT '' COMMENT 'SMTP Password',
-  `from_name` varchar(255) NOT NULL DEFAULT '' COMMENT 'From Name',
-  `from_email` varchar(255) NOT NULL DEFAULT '' COMMENT 'From Email',
-  `replyto_name` varchar(255) NOT NULL DEFAULT '' COMMENT 'Reply To Name',
-  `replyto_email` varchar(255) NOT NULL DEFAULT '' COMMENT 'Reply To Email',
-  `smtp_comments` varchar(255) NOT NULL DEFAULT '' COMMENT 'Notes on this login details',
+  `smtp_username` varchar(255) NOT NULL DEFAULT "" COMMENT 'SMTP Username',
+  `smtp_password` varchar(255) NOT NULL DEFAULT "" COMMENT 'SMTP Password',
+  `from_name` varchar(255) NOT NULL DEFAULT "" COMMENT 'From Name',
+  `from_email` varchar(255) NOT NULL DEFAULT "" COMMENT 'From Email',
+  `replyto_name` varchar(255) NOT NULL DEFAULT "" COMMENT 'Reply To Name',
+  `replyto_email` varchar(255) NOT NULL DEFAULT "" COMMENT 'Reply To Email',
+  `smtp_comments` varchar(255) NOT NULL DEFAULT "" COMMENT 'Notes on this login details',
   PRIMARY KEY (`smtp_id`),
   UNIQUE KEY `smtp_identifier_unique_index` (`smtp_identifier`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='List of SMTP user accounts';

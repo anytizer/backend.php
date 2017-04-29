@@ -8,7 +8,7 @@ require_once(dirname(__FILE__) . '/modifier.partial.php');
  * @todo Remove this plugin
  * @see |partial
  */
-function smarty_modifier_short($text = '', $acceptable_length = 10)
+function smarty_modifier_short($text = "", $acceptable_length = 10)
 {
-	return smarty_modifier_partial($text, $acceptable_length);
+    return smarty_modifier_partial($text, $acceptable_length);
 }
