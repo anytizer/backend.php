@@ -1,8 +1,13 @@
 {
-  "require-dev": {
-    "apigen/apigen": "*",
-    "phpunit/phpunit": "*",
-    "phpunit/phpunit-selenium": "*"
-    "phpdocumentor/phpdocumentor": "*"
-  }
+    "require-dev": {
+        "squizlabs/php_codesniffer": "^3.2"
+    },
+    "require": {
+        "anytizer/capitalizer.php": "dev-master",
+        "anytizer/guid.php": "dev-master",
+        "anytizer/pluralizer.php": "dev-master",
+        "phpmailer/phpmailer": "dev-master",
+        "smarty/smarty": "dev-master",
+        "anytizer/includer.php": "dev-master"
+    }
 }

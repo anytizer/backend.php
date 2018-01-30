@@ -26,3 +26,4 @@ todo.txt
 /phpunit/phpunit.phar
 /phpunit/phpunit.cmd
 /scss/.sass-cache
+/vendor
