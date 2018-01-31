@@ -1,6 +1,5 @@
 {
     "require-dev": {
-        "squizlabs/php_codesniffer": "^3.2"
     },
     "require": {
         "anytizer/capitalizer.php": "dev-master",
@@ -8,6 +7,9 @@
         "anytizer/pluralizer.php": "dev-master",
         "phpmailer/phpmailer": "dev-master",
         "smarty/smarty": "dev-master",
-        "anytizer/includer.php": "dev-master"
+        "anytizer/includer.php": "dev-master",
+        "twbs/bootstrap": "dev-master",
+        "squizlabs/php_codesniffer": "dev-master",
+        "angular-ui/bootstrap": "dev-master"
     }
 }

@@ -21,3 +21,4 @@
    * [Smarty](http://www.smarty.net/)
    * [TinyMCE](https://www.tinymce.com/)
    * [XHTTP](#) - Twitter Connection
+   * [W3CSS](https://www.w3schools.com/w3css/w3css_downloads.asp)
