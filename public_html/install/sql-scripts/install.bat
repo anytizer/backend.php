@@ -12,14 +12,14 @@ SET MYSQLDATABASE=REPLACE_MYSQLDATABASE
 
 REM copies all of the table structures into structure.sql
 ECHO > 03-structure.sql
-DEL /Q /F 03-structure.sql
-copy /B ..\public_html\install\sql-scripts\_struct\*.struct 03-structure.sql
+IF EXISTS 03-structure.sql DEL /Q /F 03-structure.sql
+copy /B ..\..\public_html\install\sql-scripts\_struct\*.struct 03-structure.sql
 
 
 REM copies all of the table table data into data.sql
 ECHO > 04-data.sql
-DEL /Q /F 04-data.sql
-copy /B ..\public_html\install\sql-scripts\_dat\*.dat 04-data.sql
+IF EXISTS 04-data.sql DEL /Q /F 04-data.sql
+copy /B ..\..\public_html\install\sql-scripts\_dat\*.dat 04-data.sql
 
 
 REM Loads the table structuers into the database.

@@ -13,7 +13,8 @@ if (is_file($database_config_file)) {
      * Do not overwrite the database configuration file.
      */
     // throw new \Exception("Your configuration file exists already at: {$database_config_file}");
-    die("Your configuration file exists already at: {$database_config_file}");
+    echo "Your configuration file exists already at: {$database_config_file}";
+    die();
 }
 
 /**
@@ -247,12 +248,12 @@ FLUSH PRIVILEGES;
             semicolon ( ; ) to append a new path in the list.
         </li>
         <li>Execute the file
-            <strong><em>database/<?php echo $config["MYSQLDATABASE"]; ?>/install-<?php echo $config["MYSQLDATABASE"]; ?>.bat</em></strong>
+            <strong><em>database/<?php echo $config["MYSQLDATABASE"]; ?>/02-install-<?php echo $config["MYSQLDATABASE"]; ?>.bat</em></strong>
             produced. Run it - that it
             completes the installation. It imports all the table structures and necessary data into your MySQL database.
         </li>
         <li>Optionally execute the query:
-            <em>INSERT INTO `<?php echo $config["MYSQLDATABASE"]; ?>`.`query_subdomains`(`alias_id`,`is_active`,
+            <em>INSERT IGNORE INTO `<?php echo $config["MYSQLDATABASE"]; ?>`.`query_subdomains`(`alias_id`,`is_active`,
                 subdomain_name) VALUES ("27","Y", "localhost");</em>
         </li>
         <li>Navigate to the database
