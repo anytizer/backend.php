@@ -13,7 +13,7 @@ if (is_file($database_config_file)) {
      * Do not overwrite the database configuration file.
      */
     // throw new \Exception("Your configuration file exists already at: {$database_config_file}");
-    echo "Your configuration file exists already at: {$database_config_file}";
+    echo "Did you install? <a href='../'>Run app rather</a>. Your configuration file exists already at: {$database_config_file}";
     die();
 }
 
