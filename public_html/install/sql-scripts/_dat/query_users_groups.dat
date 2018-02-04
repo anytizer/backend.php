@@ -1,7 +1,7 @@
 
 TRUNCATE `query_users_groups`;
 
-LOAD DATA LOCAL INFILE '../public_html/install/sql-scripts/_csv/query_users_groups.csv'
+LOAD DATA LOCAL INFILE '../../public_html/install/sql-scripts/_csv/query_users_groups.csv'
 INTO TABLE `query_users_groups`
 FIELDS ESCAPED BY '\\' TERMINATED BY ',' ENCLOSED BY '"'
 LINES TERMINATED BY '\r\n';

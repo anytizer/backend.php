@@ -1,7 +1,7 @@
 
 TRUNCATE `query_cruded`;
 
-LOAD DATA LOCAL INFILE '../public_html/install/sql-scripts/_csv/query_cruded.csv'
+LOAD DATA LOCAL INFILE '../../public_html/install/sql-scripts/_csv/query_cruded.csv'
 INTO TABLE `query_cruded`
 FIELDS ESCAPED BY '\\' TERMINATED BY ',' ENCLOSED BY '"'
 LINES TERMINATED BY '\r\n';

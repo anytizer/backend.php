@@ -1,7 +1,7 @@
 
 TRUNCATE `query_distributions`;
 
-LOAD DATA LOCAL INFILE '../public_html/install/sql-scripts/_csv/query_distributions.csv'
+LOAD DATA LOCAL INFILE '../../public_html/install/sql-scripts/_csv/query_distributions.csv'
 INTO TABLE `query_distributions`
 FIELDS ESCAPED BY '\\' TERMINATED BY ',' ENCLOSED BY '"'
 LINES TERMINATED BY '\r\n';

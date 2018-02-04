@@ -1,7 +1,7 @@
 
 TRUNCATE `query_defines`;
 
-LOAD DATA LOCAL INFILE '../public_html/install/sql-scripts/_csv/query_defines.csv'
+LOAD DATA LOCAL INFILE '../../public_html/install/sql-scripts/_csv/query_defines.csv'
 INTO TABLE `query_defines`
 FIELDS ESCAPED BY '\\' TERMINATED BY ',' ENCLOSED BY '"'
 LINES TERMINATED BY '\r\n';

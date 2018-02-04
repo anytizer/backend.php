@@ -27,3 +27,5 @@ todo.txt
 /phpunit/phpunit.cmd
 /scss/.sass-cache
 /vendor
+/public_html/js/angularjs
+/public_html/js/ui-router

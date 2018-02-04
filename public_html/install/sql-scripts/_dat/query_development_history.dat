@@ -1,7 +1,7 @@
 
 TRUNCATE `query_development_history`;
 
-LOAD DATA LOCAL INFILE '../public_html/install/sql-scripts/_csv/query_development_history.csv'
+LOAD DATA LOCAL INFILE '../../public_html/install/sql-scripts/_csv/query_development_history.csv'
 INTO TABLE `query_development_history`
 FIELDS ESCAPED BY '\\' TERMINATED BY ',' ENCLOSED BY '"'
 LINES TERMINATED BY '\r\n';

@@ -1,7 +1,7 @@
 
 TRUNCATE `query_code_generators`;
 
-LOAD DATA LOCAL INFILE '../public_html/install/sql-scripts/_csv/query_code_generators.csv'
+LOAD DATA LOCAL INFILE '../../public_html/install/sql-scripts/_csv/query_code_generators.csv'
 INTO TABLE `query_code_generators`
 FIELDS ESCAPED BY '\\' TERMINATED BY ',' ENCLOSED BY '"'
 LINES TERMINATED BY '\r\n';

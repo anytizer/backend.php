@@ -5,7 +5,7 @@
 define("__ROOT_PATH__", realpath(dirname(__FILE__) . "/.."));
 chdir(__ROOT_PATH__);
 
-require_once(__ROOT_PATH__ . "/inc.bootstrap.php");
+require_once __ROOT_PATH__ . "/inc.bootstrap.php";
 
 $database_config_file = "{$backend["paths"]["__APP_PATH__"]}/database/config.mysql.inc.php";
 if (is_file($database_config_file)) {
@@ -38,8 +38,8 @@ if ($errors) {
     die("<p>Error! Please do the following touch first:</p>" . implode("\r\n<br />", $errors));
 }
 
-require_once(__ROOT_PATH__ . "/install/inc.config.php");
-require_once(__ROOT_PATH__ . "/install/class.installer.inc.php");
+require_once __ROOT_PATH__ . "/install/inc.config.php";
+require_once __ROOT_PATH__ . "/install/class.installer.inc.php";
 
 $installer = new installer();
 
@@ -227,7 +227,7 @@ $install = !preg_match("#/install/#", $_SERVER["REQUEST_URI"]) ? "install/" : ""
 # mysql -uroot -p****
 
 DROP DATABASE IF EXISTS `<?php echo $config["MYSQLDATABASE"]; ?>`;
-CREATE DATABASE `<?php echo $config["MYSQLDATABASE"]; ?>` CHARACTER SET utf8 COLLATE utf8_general_ci;
+CREATE DATABASE `<?php echo $config["MYSQLDATABASE"]; ?>` CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
 GRANT ALL ON `<?php echo $config["MYSQLDATABASE"]; ?>`.* TO "<?php echo $config["MYSQLUSERNAME"]; ?>"@"<?php echo $config["MYSQLHOSTNAME"]; ?>" IDENTIFIED BY "<?php echo $config["MYSQLPASSWORD"]; ?>";
 FLUSH PRIVILEGES;
 </pre>

@@ -1,7 +1,7 @@
 
 TRUNCATE `query_messages`;
 
-LOAD DATA LOCAL INFILE '../public_html/install/sql-scripts/_csv/query_messages.csv'
+LOAD DATA LOCAL INFILE '../../public_html/install/sql-scripts/_csv/query_messages.csv'
 INTO TABLE `query_messages`
 FIELDS ESCAPED BY '\\' TERMINATED BY ',' ENCLOSED BY '"'
 LINES TERMINATED BY '\r\n';

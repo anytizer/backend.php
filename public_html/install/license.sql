@@ -8,8 +8,6 @@
 # Single random digit
 SELECT (FLOOR(0 + (RAND() * 9))%10) d; # 0-9
 
-
-#SELECT DATE_FORMAT(CURRENT_TIMESTAMP(), '%Y%m%d%H%i%S');
 INSERT INTO query_licenses (
 	added_on, modified_on, expires_on,
 	is_active,
