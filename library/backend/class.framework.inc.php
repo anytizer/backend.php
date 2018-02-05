@@ -16,6 +16,9 @@ class framework
 
     /**
      * Load a specific context - Not used so far.
+     *
+     * framework constructor.
+     * @param string $default_context
      */
     public function __construct($default_context = 'config')
     {
@@ -31,6 +34,9 @@ class framework
      * To be called within a particular subdomain only, for generating codes
      *
      * @see \common\tools::timestamp()
+     *
+     * @param int $subdomain_id
+     * @return string
      */
     public static function code($subdomain_id = 0)
     {
@@ -94,6 +100,8 @@ WHERE
     /**
      * Load the user defined constants specific to a subdomain
      * Chooses the currently active subdomain.
+     *
+     * @param string $context
      */
     public function load_user_defined_constants($context = "")
     {
@@ -223,15 +231,15 @@ WHERE
     /**
      * Returns a __SUBDOMAIN_BASE__ path to a subdomain
      *
-     * @param $subdomain_id Integer Subdomain ID
-     * @param $expected Boolean Return the expected area, if not found?
-     *
-     * @return $subdomain_base Path to the subdomain base
      * Installer Mode ($expected=true)
      * Returns an expected __SUBDOMAIN_BASE__ path of a subdomain. Usage: to install the subdomain.
      * Checks if the subdomain base exists already.
      * Hides the error messages, unlike subdomain_base()
      * @todo No need to query if Subdomain ID is 0.
+     *
+     * @param int $subdomain_id
+     * @param bool $expected
+     * @return string
      */
     public function subdomain_base($subdomain_id = 0, $expected = false)
     {
@@ -305,6 +313,10 @@ Here is the location list of expected area:
      * Extract a zip file into a location.
      * Zip/Unzip needs ZipArchive installed.
      * Caution: It does not run on all servers.
+     *
+     * @param string $zip_file
+     * @param string $unzip_to
+     * @return int|mixed
      */
     function unzip($zip_file = 'nothing.zip', $unzip_to = '/tmp')
     {
@@ -341,6 +353,9 @@ Here is the location list of expected area:
 
     /**
      * Verifies that the configuration value is an email
+     *
+     * @param string $value
+     * @return string
      */
     private function handler_email($value = "")
     {
@@ -351,6 +366,9 @@ Here is the location list of expected area:
      * Verifies that the configuration value is one of the booleans:
      * true, TRUE, 1
      * false, FALSE, 0
+     *
+     * @param string $value
+     * @return string
      */
     private function handler_boolean($value = "")
     {
@@ -359,6 +377,9 @@ Here is the location list of expected area:
 
     /**
      * Verifies that the configuration value is in YYYY-MM-DD format
+     *
+     * @param string $value
+     * @return string
      */
     private function handler_date($value = "")
     {
@@ -367,6 +388,9 @@ Here is the location list of expected area:
 
     /**
      * Verifies that the configuration value is in HH:MM:DD time format
+     *
+     * @param string $value
+     * @return string
      */
     private function handler_time($value = "")
     {
@@ -376,6 +400,9 @@ Here is the location list of expected area:
     /**
      * Extracts all digits from a value.
      * It does not accept FLOAT.ING numbers.
+     *
+     * @param string $value
+     * @return null|string|string[]
      */
     private function handler_numeric($value = "")
     {
@@ -386,6 +413,9 @@ Here is the location list of expected area:
 
     /**
      * String data sanitizer
+     *
+     * @param string $value
+     * @return string
      */
     private function handler_string($value = "")
     {
@@ -394,6 +424,9 @@ Here is the location list of expected area:
 
     /**
      * URL data validator
+     *
+     * @param string $value
+     * @return string
      */
     private function handler_url($value = "")
     {
