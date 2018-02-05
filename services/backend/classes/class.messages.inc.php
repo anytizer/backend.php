@@ -1,5 +1,5 @@
 <?php
-namespace \subdomain;
+namespace subdomain;
 
 
 # Created on: 2011-04-06 14:42:31 485
@@ -22,7 +22,7 @@ namespace \subdomain;
  *        Fetches the details of messages
  */
 class messages
-    extends \abstracts\entity
+    extends abstracts\entity
 {
     /**
      * Optional Constructor: Load on demand only.

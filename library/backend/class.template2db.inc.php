@@ -6,7 +6,7 @@ namespace backend;
  * @see Smarty Template Handling
  */
 class template2db
-    extends \common\mysql
+    extends common\mysql
 {
     private $subdomain_name = "";
     private $template_location = "";

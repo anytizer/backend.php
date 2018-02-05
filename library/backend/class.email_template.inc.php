@@ -5,7 +5,7 @@ namespace backend;
  * Reads an email template
  */
 class email_template
-    extends \common\mysql
+    extends common\mysql
 {
     private $template;
     # subject, html, text

@@ -1,5 +1,5 @@
 <?php
-namespace \subdomain;
+namespace subdomain;
 
 # Created on: 2011-02-14 12:48:48 850
 
@@ -21,7 +21,7 @@ namespace \subdomain;
  *        Fetches the details of domains
  */
 class domains
-    extends \abstracts\entity
+    extends abstracts\entity
 {
     /**
      * Optional Constructor: Load on demand only.

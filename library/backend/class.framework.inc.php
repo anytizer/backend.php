@@ -5,7 +5,7 @@ namespace backend;
  * Has basics of our framework
  */
 class framework
-    extends \common\mysql
+    extends common\mysql
 {
     # Bind the framework to particular context.
     # For future use only

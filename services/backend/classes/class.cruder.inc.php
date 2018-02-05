@@ -1,5 +1,5 @@
 <?php
-namespace \subdomain;
+namespace subdomain;
 
 /**
  * Helps to create an automatic full CRUD class for each entity under consideration.
@@ -9,7 +9,7 @@ namespace \subdomain;
  * @todo Replace using .sqlite database
  */
 class cruder
-    extends \common\mysql
+    extends common\mysql
 {
     private $entity_name = null;
 

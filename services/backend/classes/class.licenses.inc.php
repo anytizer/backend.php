@@ -1,5 +1,5 @@
 <?php
-namespace \subdomain;
+namespace subdomain;
 
 # Created on: 2011-02-10 00:12:27 318
 
@@ -21,7 +21,7 @@ namespace \subdomain;
  *        Fetches the details of licenses
  */
 class licenses
-    extends \abstracts\entity
+    extends abstracts\entity
 {
     /**
      * Optional Constructor: Load on demand only.

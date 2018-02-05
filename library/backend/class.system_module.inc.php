@@ -5,7 +5,7 @@ namespace backend;
  * Installed system module
  */
 class system_module
-    extends \common\mysql
+    extends common\mysql
 {
     private $subdomain_name = "";
 

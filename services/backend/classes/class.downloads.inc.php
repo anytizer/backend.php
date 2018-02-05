@@ -1,5 +1,5 @@
 <?php
-namespace \subdomain;
+namespace subdomain;
 
 # Created on: 2010-12-14 00:48:38 194
 
@@ -21,7 +21,7 @@ namespace \subdomain;
  *        Fetches the details of downloads
  */
 class downloads
-    extends \abstracts\entity
+    extends abstracts\entity
 {
     /**
      * Optional Constructor: Load on demand only.

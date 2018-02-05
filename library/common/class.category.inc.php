@@ -5,7 +5,7 @@ namespace common;
  * Multi Level Categorisation
  */
 class category
-    extends \common\mysql
+    extends common\mysql
 {
     public function __construct()
     {

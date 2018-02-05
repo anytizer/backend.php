@@ -9,7 +9,7 @@ namespace backend;
  *
  * @todo Check if MySQLi conversion was good and works ok
  */
-class sorter extends \common\mysql
+class sorter extends common\mysql
 {
     private $context_sql;
 

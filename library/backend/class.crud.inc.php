@@ -6,7 +6,7 @@ namespace backend;
  * Performs INSERT, UPDATE, DELETE operations on the database in the most trusted way.
  */
 class crud
-    extends \common\mysql
+    extends common\mysql
 {
     /**
      * Adds a record into a table.

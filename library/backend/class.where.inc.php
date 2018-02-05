@@ -5,7 +5,7 @@ namespace backend;
  * Locations - Where is a user visiting within your website?
  */
 class where
-    extends \common\mysql
+    extends common\mysql
 {
     /**
      * Record a human page access

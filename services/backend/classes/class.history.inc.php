@@ -1,5 +1,5 @@
 <?php
-namespace \subdomain;
+namespace subdomain;
 
 # Created on: 2010-12-27 11:38:12 391
 
@@ -21,7 +21,7 @@ namespace \subdomain;
  *        Fetches the details of history
  */
 class history
-    extends \abstracts\entity
+    extends abstracts\entity
 {
     /**
      * Optional Constructor: Load on demand only.

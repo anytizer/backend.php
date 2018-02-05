@@ -5,7 +5,7 @@ namespace backend;
  * Access Control List and APIs
  */
 class acl
-    extends \common\mysql
+    extends common\mysql
 {
     private $error;
     private $user_id = 0;

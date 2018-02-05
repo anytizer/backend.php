@@ -8,7 +8,7 @@ namespace abstracts;
  * @package abstracts
  */
 abstract class entity
-    extends \common\mysql
+    extends common\mysql
 {
     /**
      * Change these values to affect globally.

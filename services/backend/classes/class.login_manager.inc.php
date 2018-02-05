@@ -1,5 +1,5 @@
 <?php
-namespace \subdomain;
+namespace subdomain;
 
 #__DEVELOPER-COMMENTS__
 

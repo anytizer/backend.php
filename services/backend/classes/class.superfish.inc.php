@@ -1,5 +1,5 @@
 <?php
-namespace \subdomain;
+namespace subdomain;
 
 
 # Created on: 2011-02-02 00:36:55 983
@@ -22,7 +22,7 @@ namespace \subdomain;
  *        Fetches the details of superfish
  */
 class superfish
-    extends \abstracts\entity
+    extends abstracts\entity
 {
     /**
      * Optional Constructor: Load on demand only.

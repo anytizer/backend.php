@@ -21,7 +21,7 @@ namespace backend;
  *        Fetches the details of email
  */
 class email
-    extends \abstracts\entity
+    extends abstracts\entity
 {
     /**
      * Optional Constructor: Load on demand only.

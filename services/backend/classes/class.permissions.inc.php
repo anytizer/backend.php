@@ -1,5 +1,5 @@
 <?php
-namespace \subdomain;
+namespace subdomain;
 
 
 # Created on: 2011-03-29 23:48:23 316
@@ -22,7 +22,7 @@ namespace \subdomain;
  *        Fetches the details of permissions
  */
 class permissions
-    extends \abstracts\entity
+    extends abstracts\entity
 {
     /**
      * Optional Constructor: Load on demand only.

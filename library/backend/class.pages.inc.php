@@ -22,7 +22,7 @@ namespace backend;
  *        Fetches the details of pages
  */
 class pages
-    extends \abstracts\entity
+    extends abstracts\entity
 {
     /**
      * Optional Constructor: Load on demand only.
@@ -334,6 +334,10 @@ WHERE
     public function get_current_page($page_name = "")
     {
         $page_name = addslashes($page_name);
+        if(!$page_name)
+        {
+            $page_name = "/";
+        }
         $subdomain_name = addslashes($_SERVER['SERVER_NAME']);
         $page_details_sql = "
 SELECT
