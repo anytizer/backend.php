@@ -5,7 +5,7 @@ namespace backend;
  * Intelligently create mysql users
  */
 class mysqluser
-    extends common\mysql
+    extends \common\mysql
 {
     private $username = "";
     private $hostname = "";

@@ -25,5 +25,5 @@ if (!$_SESSION['simulate_live'] === true) {
     /**
      * Do not continue serving the original files.
      */
-    require_once(dirname(__FILE__) . '/under-construction.php');
+    require_once(__DIR__ . '/under-construction.php');
 }

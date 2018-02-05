@@ -1,7 +1,7 @@
 <?php
 #namespace plugins;
 
-require_once(dirname(__FILE__) . '/modifier.partial.php');
+require_once(__DIR__ . '/modifier.partial.php');
 
 /**
  * Truncates long text in the middle and eats it up to genreate sort text

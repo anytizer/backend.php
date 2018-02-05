@@ -2,7 +2,7 @@
 /**
  * @todo Bootstrap configurations should be loaded earlier.
  */
-define("__ROOT_PATH__", realpath(dirname(__FILE__) . "/.."));
+define("__ROOT_PATH__", realpath(__DIR__ . "/.."));
 chdir(__ROOT_PATH__);
 
 require_once __ROOT_PATH__ . "/inc.bootstrap.php";

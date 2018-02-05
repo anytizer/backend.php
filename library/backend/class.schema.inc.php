@@ -7,7 +7,7 @@ namespace backend;
  * @package Databases
  */
 class schema
-    extends common\mysql
+    extends \common\mysql
 {
     private $database = 'information_schema';
 

@@ -42,7 +42,7 @@ if (!defined('DS')) {
  * Sets SMARTY_DIR only if user application has not already defined it.
  */
 if (!defined('SMARTY_DIR')) {
-    define('SMARTY_DIR', dirname(__FILE__) . DS);
+    define('SMARTY_DIR', __DIR__ . DS);
 }
 
 /**
@@ -79,7 +79,7 @@ if (!defined('SMARTY_RESOURCE_DATE_FORMAT')) {
  */
 if (!class_exists('Smarty_Autoloader', false)) {
     if (!class_exists('Smarty_Internal_Data', true)) {
-        require_once dirname(__FILE__) . '/Autoloader.php';
+        require_once __DIR__ . '/Autoloader.php';
         Smarty_Autoloader::registerBC();
     }
 }

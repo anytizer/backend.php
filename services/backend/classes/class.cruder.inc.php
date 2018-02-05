@@ -9,7 +9,7 @@ namespace subdomain;
  * @todo Replace using .sqlite database
  */
 class cruder
-    extends common\mysql
+    extends \common\mysql
 {
     private $entity_name = null;
 

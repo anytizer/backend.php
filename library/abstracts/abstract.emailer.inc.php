@@ -8,7 +8,7 @@ namespace abstracts;
  * @package abstracts
  */
 abstract class emailer
-    extends common\mysql
+    extends \common\mysql
 {
     private $sender; # The mail delivery engine
 

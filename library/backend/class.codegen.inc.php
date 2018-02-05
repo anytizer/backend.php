@@ -5,7 +5,7 @@ namespace backend;
  * PHP based incremental code generator.
  */
 class codegen
-    extends common\mysql
+    extends \common\mysql
 {
     private $context;
     private $name;

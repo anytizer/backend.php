@@ -72,7 +72,7 @@ class Smarty_Autoloader
      */
     public static function register($prepend = false)
     {
-        self::$SMARTY_DIR = defined('SMARTY_DIR') ? SMARTY_DIR : dirname(__FILE__) . DIRECTORY_SEPARATOR;
+        self::$SMARTY_DIR = defined('SMARTY_DIR') ? SMARTY_DIR : __DIR__ . DIRECTORY_SEPARATOR;
         self::$SMARTY_SYSPLUGINS_DIR = defined('SMARTY_SYSPLUGINS_DIR') ? SMARTY_SYSPLUGINS_DIR :
             self::$SMARTY_DIR . 'sysplugins' . DIRECTORY_SEPARATOR;
         if (version_compare(phpversion(), '5.3.0', '>=')) {

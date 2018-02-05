@@ -33,7 +33,7 @@ Array
 */
 
 class uploader
-    extends common\mysql
+    extends \common\mysql
 {
     public $destination = "";
     public $last_name = ""; # Name of recently uploaded file

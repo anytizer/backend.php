@@ -69,7 +69,7 @@ class mysql
          * Guarantees single connection to mysql by using a globally available connection, if connected already.
          */
         if (empty($MYSQL_CONNECTION)) {
-            $myself = dirname(__FILE__);
+            $myself = __DIR__;
 
             /**
              * All possible configuration files

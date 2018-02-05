@@ -28,7 +28,7 @@ $backend = array(
 # path to realpath(../public_html)
 # @todo Remove the usage
 # DO NOT EDIT
-$backend["paths"]["__APP_PATH__"] = realpath(dirname(__FILE__) . "/..");
+$backend["paths"]["__APP_PATH__"] = realpath(__DIR__. "/..");
 
 # 15 files; resolved
 # Where is the library/ directory

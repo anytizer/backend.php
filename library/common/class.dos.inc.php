@@ -48,7 +48,7 @@ class dos
             # Reason: Might need to suppport dynamic contents
 
             # Most important: Some fake and blank HTML contents to be sent out.
-            \common\stopper::message(file_get_contents(dirname(__FILE__) . '/error-messages/dos.attack.php') . "<!-- DIF($difference) @ {$when} - Preventing DOS Attack -->");
+            \common\stopper::message(file_get_contents(__DIR__ . '/error-messages/dos.attack.php') . "<!-- DIF($difference) @ {$when} - Preventing DOS Attack -->");
         }
     }
 }

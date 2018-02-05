@@ -28,7 +28,7 @@
 /**
  * @ignore
  */
-require_once(dirname(__FILE__) . '/Smarty.class.php');
+require_once(__DIR__ . '/Smarty.class.php');
 
 /**
  * Smarty Backward Compatibility Wrapper Class

@@ -5,7 +5,7 @@ namespace backend;
  * Handler for Database enabled session data
  */
 class session
-    extends common\mysql
+    extends \common\mysql
 {
     /**
      * Immediately sets up the session handler

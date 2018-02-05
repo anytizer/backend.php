@@ -9,7 +9,7 @@ namespace subdomain;
  * Customized login manager
  */
 class login_manager
-    extends common\mysql
+    extends \common\mysql
 {
     # Flags, if a user has successfully logged on.
     private $is_logged_on = false;

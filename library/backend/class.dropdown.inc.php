@@ -7,7 +7,7 @@ namespace backend;
  * @uses `__TEMP_PATH__`
  */
 class dropdown
-    extends common\mysql
+    extends \common\mysql
 {
     private $context;
 

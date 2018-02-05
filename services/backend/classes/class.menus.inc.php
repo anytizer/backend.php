@@ -21,7 +21,7 @@ namespace subdomain;
  *        Fetches the details of menus
  */
 class menus
-    extends common\mysql
+    extends \common\mysql
 {
     /**
      * Set Private, Protected or Public Members

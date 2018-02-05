@@ -1,11 +1,14 @@
 <?php
 namespace backend;
+use \Exception;
+use \common\tools;
+use \common\mysql;
 
 /**
  * Has basics of our framework
  */
 class framework
-    extends common\mysql
+    extends mysql
 {
     # Bind the framework to particular context.
     # For future use only
@@ -19,6 +22,7 @@ class framework
      *
      * framework constructor.
      * @param string $default_context
+     * @throws Exception
      */
     public function __construct($default_context = 'config')
     {
@@ -52,7 +56,7 @@ WHERE
         if ($subdomain = $db->row($prefix_sql)) {
             return $subdomain['subdomain_prefix'] . \common\tools::timestamp();
         } else {
-            return \common\tools::timestamp();
+            return tools::timestamp();
         }
     }
 

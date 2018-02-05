@@ -50,7 +50,7 @@ if (!$image_file_found) {
             \common\headers::headers_by_extension($info['extension']);
             #$blank = 'blank.'.$info['extension'];
             $blank = 'default.' . $info['extension'];
-            readfile(dirname(__FILE__) . '/' . $blank);
+            readfile(__DIR__ . '/' . $blank);
             break;
         default:
             \common\headers::error404();

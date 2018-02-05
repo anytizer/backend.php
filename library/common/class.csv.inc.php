@@ -7,7 +7,7 @@ namespace common;
  * @package Databases
  */
 class csv
-    extends common\mysql
+    extends \common\mysql
 {
     /**
      * Make an CSV output

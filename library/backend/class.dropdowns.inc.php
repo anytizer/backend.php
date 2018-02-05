@@ -6,7 +6,7 @@ namespace backend;
  * @todo List out the usages and examples
  */
 class dropdowns
-    extends common\mysql
+    extends \common\mysql
 {
     private $table_name;
     private $pk_column;
