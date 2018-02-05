@@ -9,5 +9,7 @@
 
  * MariaDB (latest version)
  * MySQL (latest version)
- * Removed support to other databases
-
+ * Removed support or did not support to other databases (may support again in future)
+    * SQL Server
+    * PostgreSQL
+    * SQLite

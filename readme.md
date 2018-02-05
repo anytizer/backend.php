@@ -7,7 +7,7 @@ Generates an admin panel for your database.
 
 Being affected by the newer development techniques there are some planned changes](future.md).
 
- - [Motivation](motivation.md).
+ - [Motivation](motivation.md)
  - [Installation Steps](installation.md)
  - [Requirements](requirements.md)
  - [Technologies used](technologies.md)

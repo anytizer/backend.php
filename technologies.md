@@ -13,7 +13,7 @@ The following applications are used to test, and create backend framework.
  * [HTML](https://www.w3.org/TR/html5/), JavaScript
  * [JQuery](http://jquery.com/)
  * [JSON](http://www.json.org/), CSV, XML, Parsers
- * Linux - [Ubuntu](https://www.ubuntu.com/), [CentOS](https://www.centos.org/)
+ * Linux Flavors: [Ubuntu](https://www.ubuntu.com/), [CentOS](https://www.centos.org/)
  * [MariaDB](https://mariadb.org/), [MySQL](http://www.mysql.com/) and command line utilities
  * [Notepad++](https://notepad-plus-plus.org/)
  * [PHPMailer](https://github.com/PHPMailer/PHPMailer)
