@@ -123,12 +123,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/anytizer/includer.php.git",
-                "reference": "cbc0c298fc85254e931cb5a9c2f27aaddcabcb89"
+                "reference": "5e58dbbd787738dc9287fcffa020b7d874909c93"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/anytizer/includer.php/zipball/cbc0c298fc85254e931cb5a9c2f27aaddcabcb89",
-                "reference": "cbc0c298fc85254e931cb5a9c2f27aaddcabcb89",
+                "url": "https://api.github.com/repos/anytizer/includer.php/zipball/5e58dbbd787738dc9287fcffa020b7d874909c93",
+                "reference": "5e58dbbd787738dc9287fcffa020b7d874909c93",
                 "shasum": ""
             },
             "require": {
@@ -141,11 +141,13 @@
                 ]
             },
             "notification-url": "https://packagist.org/downloads/",
-            "description": "Class auto includer",
+            "description": "Custom SPL autoload registration",
             "keywords": [
-                "includer"
+                "autoload",
+                "includer",
+                "spl"
             ],
-            "time": "2018-01-09T06:13:06+00:00"
+            "time": "2018-02-02T16:10:02+00:00"
         },
         {
             "name": "anytizer/pluralizer.php",
@@ -648,12 +650,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/squizlabs/PHP_CodeSniffer.git",
-                "reference": "8f108e3ac08251e3b864ceb7c6025daa442aa6a0"
+                "reference": "2503b5aca573b6d4b9c4f92ab639183a663ff7c7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/squizlabs/PHP_CodeSniffer/zipball/8f108e3ac08251e3b864ceb7c6025daa442aa6a0",
-                "reference": "8f108e3ac08251e3b864ceb7c6025daa442aa6a0",
+                "url": "https://api.github.com/repos/squizlabs/PHP_CodeSniffer/zipball/2503b5aca573b6d4b9c4f92ab639183a663ff7c7",
+                "reference": "2503b5aca573b6d4b9c4f92ab639183a663ff7c7",
                 "shasum": ""
             },
             "require": {
@@ -691,7 +693,7 @@
                 "phpcs",
                 "standards"
             ],
-            "time": "2018-01-30T21:59:06+00:00"
+            "time": "2018-02-04T22:33:35+00:00"
         },
         {
             "name": "twbs/bootstrap",
