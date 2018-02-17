@@ -1,5 +1,7 @@
 <?php
 namespace abstracts;
+use \common\mysql;
+use \others\condition;
 
 /**
  * Database Entity for total CURD functions.
@@ -8,7 +10,7 @@ namespace abstracts;
  * @package abstracts
  */
 abstract class entity
-    extends \common\mysql
+    extends mysql
 {
     /**
      * Change these values to affect globally.
@@ -47,7 +49,7 @@ abstract class entity
         parent::__construct();
     }
 
-    abstract public function list_entries(\others\condition $condition, $from_index = 0, $per_page = 50);
+    abstract public function list_entries(condition $condition, $from_index = 0, $per_page = 50);
 
     abstract public function details($__PK_NAME__ = 0);
 
@@ -224,8 +226,10 @@ WHERE
     /**
      * Delete a record from [ __ENTITY__ ]
      *
-     * @param $pk_value Integer: __PK_NAME__ to delete
-     * @param $protection_code String Secret Hash Key
+     * @param string $mode
+     * @param int $__PK_NAME__
+     * @param string $protection_code
+     * @return bool
      */
     public function delete($mode = 'inactivate', $__PK_NAME__ = 0, $protection_code = "")
     {

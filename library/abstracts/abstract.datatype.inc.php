@@ -16,6 +16,9 @@ abstract class datatype
 
     /**
      * The constructor should give a set of indices to be used in its life time.
+     *
+     * datatype constructor.
+     * @param array $array_of_indices
      */
     protected function __construct($array_of_indices = array())
     {
@@ -37,11 +40,10 @@ abstract class datatype
     /**
      * Reads value of an index
      *
-     * @param $index string Index Key to read
-     *
+     * @param string $index
      * @return bool
      */
-    public function __get($index = "")
+    public function __get($index = ""): bool
     {
         $value = $this->is_index_valid($index) ? $this->data[$index] : false;
 
@@ -51,9 +53,8 @@ abstract class datatype
     /**
      * Writes a value for an index
      *
-     * @param string $index Index Key to write
-     * @param string $value Value to write
-     *
+     * @param string $index
+     * @param string $value
      * @return bool
      */
     public function __set($index = "", $value = "")
@@ -112,7 +113,8 @@ Valid list is:<br>
     /**
      * Optionally reset an index.
      *
-     * @param $index string Index Key to unset
+     * @param string $index
+     * @return bool
      */
     public function __unset($index = "")
     {

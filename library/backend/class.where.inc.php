@@ -1,11 +1,13 @@
 <?php
 namespace backend;
+use  \common\mysql;
+use \common\variable;
 
 /**
  * Locations - Where is a user visiting within your website?
  */
 class where
-    extends \common\mysql
+    extends mysql
 {
     /**
      * Record a human page access
@@ -13,7 +15,7 @@ class where
     public function save()
     {
         if (!$this->is_bot()) {
-            $variable = new \common\variable();
+            $variable = new variable();
             $user_id = $variable->session('user_id', 'int');
             $session_id = $variable->session('session_id', 'string');
             $ip_address = addslashes($_SERVER['REMOTE_ADDR']);
@@ -36,6 +38,7 @@ INSERT INTO query_logs (
 
     /**
      * Find out, if a user agent is a known bot
+     * @todo Pikup a bot from database
      */
     private function is_bot()
     {

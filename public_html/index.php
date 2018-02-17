@@ -2,27 +2,11 @@
 header("HTTP/1.0 404 Not Found");
 ?>
 <!doctype html>
+<html>
 <head>
     <meta charset="utf-8"/>
     <title>index.php - Unused</title>
-    <style type="text/css">
-        <!--
-        body, td, th {
-            font-size: 12px;
-            font-family: Verdana, Arial, Helvetica, sans-serif;
-        }
-
-        em.error {
-            color: #F00;
-        }
-
-        strong.database {
-            color: #00F;
-            font-weight: normal;
-        }
-
-        -->
-    </style>
+    <link href="css/protection.css" type="text/css" rel="stylesheet" />
 </head>
 <body>
 <h2>.htacces/web.config - rewrite error</h2>

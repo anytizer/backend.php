@@ -1,5 +1,8 @@
 <?php
 namespace backend;
+use Exception;
+use \abstracts\entity;
+use \backend\crud;
 
     /**
      * @todo Remove this file's extra items.
@@ -22,7 +25,7 @@ namespace backend;
  *        Fetches the details of pages
  */
 class pages
-    extends abstracts\entity
+    extends entity
 {
     /**
      * Optional Constructor: Load on demand only.
@@ -70,9 +73,10 @@ class pages
      * List entries from [ pages ]
      * Column `code` signifies a protection code while deleting/editing a record
      *
-     * @param $conditions SQL Conditions
-     *
-     * @return Multi-Dimensional array of entries in the list
+     * @param \others\condition $condition
+     * @param int $from_index
+     * @param int $per_page
+     * @return array
      */
     public function list_entries(\others\condition $condition, $from_index = 0, $per_page = 50)
     {
@@ -143,9 +147,8 @@ LIMIT {$from_index}, {$per_page}
     /**
      * Details of an entity in [ pages ] for management activities
      *
-     * @param $pk integer Primary Key's value of an entity
-     *
-     * @return $details Associative Array of Detailed records of an entity
+     * @param int $page_id
+     * @return array
      */
     public function details($page_id = 0)
     {
@@ -171,9 +174,9 @@ WHERE
     /**
      * Details of an entity in [ pages ] for public display.
      *
-     * @param $pk integer Primary Key's value of an entity
-     *
-     * @return $details Associative Array of Detailed records of an entity
+     * @param int $page_id
+     * @param string $protection_code
+     * @return array
      */
     public function get_details($page_id = 0, $protection_code = "")
     {
@@ -201,6 +204,9 @@ WHERE
 
     /**
      * Shows all pages to list out
+     *
+     * @param int $subdomain_id
+     * @return array
      */
     public function list_pages($subdomain_id = 0)
     {
@@ -230,6 +236,9 @@ ORDER BY
 
     /**
      * For sorting
+     *
+     * @param int $subdomain_id
+     * @return array
      */
     public function list_pages_for_sorting_in_sitemap($subdomain_id = 0)
     {
@@ -279,6 +288,9 @@ WHERE
 
     /**
      * Saves a page details
+     *
+     * @param int $page_id
+     * @return int
      */
     public function save($page_id = 0)
     {
@@ -303,6 +315,10 @@ WHERE
 
     /**
      * Checks if a page name exists in a subdomain
+     *
+     * @param int $subdomain_id
+     * @param string $filename
+     * @return mixed
      */
     public function if_page_exists($subdomain_id = 0, $filename = "")
     {
@@ -330,6 +346,10 @@ WHERE
     /**
      * Sends page details - static contents defined in the database.
      * @todo Make use of alias ID in subdomain_name
+     *
+     * @param string $page_name
+     * @return array
+     * @throws Exception
      */
     public function get_current_page($page_name = "")
     {
@@ -354,13 +374,13 @@ INNER JOIN query_subdomains qs ON
 	AND qp.is_active='Y'
 ;";
         $page_details = $this->row($page_details_sql);
-        #echo $page_details_sql;
+        echo $page_details_sql;
 
         if (!$page_details) {
             /**
              * @todo Send 404 Header and Log the page title and subdomain name, HTTP REFERER
              */
-            throw new \Exception("Domain [{$subdomain_name}] has not registered page [/{$page_name}].");
+            throw new Exception("Domain [{$subdomain_name}] has not registered page [/{$page_name}].");
         }
         $this->update_counter($page_details['page_id']);
 
@@ -371,6 +391,9 @@ INNER JOIN query_subdomains qs ON
      * Internal records on how many times a page is served for.
      * You may extend this feature to keep details for information.
      * Like, time, date, ip, page, user id, ...
+     *
+     * @param $page_id
+     * @return bool
      */
     private function update_counter($page_id)
     {
@@ -390,6 +413,8 @@ WHERE
      * For blank Subdomain ID, draw one from current subdomain
      * @todo Deprecate this and rather use $subdomain_id. Only one page using it.
      * @see framework::subdomain_id()
+     *
+     * @return mixed
      */
     function subdomain_id_for_current_subdomain()
     {
@@ -428,6 +453,9 @@ WHERE
 
     /**
      * Reset ADMIN Login requirements on a particular page
+     *
+     * @param int $page_id
+     * @return bool
      */
     public function reset_admin_login_requirements($page_id = 0)
     {
@@ -446,6 +474,9 @@ WHERE
 
     /**
      * Reset ADMIN Login requirements on a particular page
+     *
+     * @param int $page_id
+     * @return bool
      */
     public function reset_sitemap($page_id = 0)
     {
@@ -463,6 +494,8 @@ WHERE
 
     /**
      * Lists out how many files are produced so far in each subdomains.
+     *
+     * @return array
      */
     public function statistics()
     {
