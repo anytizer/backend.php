@@ -528,11 +528,11 @@ class tools
 
     /**
      * Encrypts a string
+     * @todo Fix for deprecation
      */
     public static function encrypt($string = "")
     {
-        #$cipher = $string;
-        #return $cipher;
+        return $string;
 
         /**
          * @todo Warning: mcrypt_encrypt() supports only keys of sizes 16, 24 or 32.
@@ -548,11 +548,12 @@ class tools
 
     /**
      * Decrypts a string
+     * @todo Fix for deprecation
      */
     public static function decrypt($cipher = "")
     {
-        #$string = $cipher;
-        #return $string;
+        return $cipher;
+
 
         $key1 = "encryption key one";
         $key2 = "encryption key two";
