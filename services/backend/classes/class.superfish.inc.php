@@ -22,7 +22,7 @@ namespace subdomain;
  *        Fetches the details of superfish
  */
 class superfish
-    extends abstracts\entity
+    extends \abstracts\entity
 {
     /**
      * Optional Constructor: Load on demand only.

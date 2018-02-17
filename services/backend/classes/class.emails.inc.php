@@ -21,7 +21,7 @@ namespace subdomain;
  *        Fetches the details of emails
  */
 class emails
-    extends abstracts\entity
+    extends \abstracts\entity
 {
     /**
      * Optional Constructor: Load on demand only.

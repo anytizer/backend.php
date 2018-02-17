@@ -21,7 +21,7 @@ namespace subdomain;
  *        Fetches the details of history
  */
 class history
-    extends abstracts\entity
+    extends \abstracts\entity
 {
     /**
      * Optional Constructor: Load on demand only.

@@ -21,7 +21,7 @@ namespace subdomain;
  *        Fetches the details of domains
  */
 class domains
-    extends abstracts\entity
+    extends \abstracts\entity
 {
     /**
      * Optional Constructor: Load on demand only.

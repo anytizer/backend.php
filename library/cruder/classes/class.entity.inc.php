@@ -9,7 +9,7 @@ namespace subdomain;
  * `__ENTITY__` Class
  */
 class __ENTITY__
-    extends abstracts\entity
+    extends \abstracts\entity
 {
     /**
      * Optional Constructor: Load on demand only.

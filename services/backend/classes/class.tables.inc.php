@@ -21,7 +21,7 @@ namespace subdomain;
  *        Fetches the details of tables
  */
 class tables
-    extends abstracts\entity
+    extends \abstracts\entity
 {
     /**
      * Optional Constructor: Load on demand only.

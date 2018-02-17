@@ -21,7 +21,7 @@ namespace subdomain;
  *        Fetches the details of downloads
  */
 class downloads
-    extends abstracts\entity
+    extends \abstracts\entity
 {
     /**
      * Optional Constructor: Load on demand only.

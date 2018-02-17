@@ -22,7 +22,7 @@ namespace subdomain;
  *        Fetches the details of messages
  */
 class messages
-    extends abstracts\entity
+    extends \abstracts\entity
 {
     /**
      * Optional Constructor: Load on demand only.
