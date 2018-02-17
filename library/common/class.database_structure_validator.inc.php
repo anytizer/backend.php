@@ -1,10 +1,11 @@
 <?php
 namespace common;
+use \common\mysql;
 
 /**
  * Validates database structures
  */
-class database_structure_validator extends \common\mysql
+class database_structure_validator extends mysql
 {
     # List of acceptable Data Types
     private $common_types = array(

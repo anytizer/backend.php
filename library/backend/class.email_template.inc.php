@@ -1,11 +1,12 @@
 <?php
 namespace backend;
+use \common\mysql;
 
 /**
  * Reads an email template
  */
 class email_template
-    extends \common\mysql
+    extends mysql
 {
     private $template;
     # subject, html, text

@@ -1,11 +1,12 @@
 <?php
 namespace backend;
+use \common\mysql;
 
 /**
  * PHP based incremental code generator.
  */
 class codegen
-    extends \common\mysql
+    extends mysql
 {
     private $context;
     private $name;

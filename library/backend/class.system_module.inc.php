@@ -1,11 +1,12 @@
 <?php
 namespace backend;
+use \common\mysql;
 
 /**
  * Installed system module
  */
 class system_module
-    extends \common\mysql
+    extends mysql
 {
     private $subdomain_name = "";
 

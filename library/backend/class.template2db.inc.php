@@ -1,12 +1,13 @@
 <?php
 namespace backend;
+use \common\mysql;
 
 /**
  * Template to Database: Uses Templates table(query_templates).
  * @see Smarty Template Handling
  */
 class template2db
-    extends \common\mysql
+    extends mysql
 {
     private $subdomain_name = "";
     private $template_location = "";

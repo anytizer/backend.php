@@ -1,12 +1,13 @@
 <?php
 namespace backend;
+use \common\mysql;
 
 /**
  * Dropdown generator (used in menus)
  * @todo List out the usages and examples
  */
 class dropdowns
-    extends \common\mysql
+    extends mysql
 {
     private $table_name;
     private $pk_column;

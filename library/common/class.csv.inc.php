@@ -1,5 +1,6 @@
 <?php
 namespace common;
+use \common\mysql;
 
 /**
  * MySQL extension to build CSV output from the tables.
@@ -7,7 +8,7 @@ namespace common;
  * @package Databases
  */
 class csv
-    extends \common\mysql
+    extends mysql
 {
     /**
      * Make an CSV output

@@ -1,11 +1,12 @@
 <?php
 namespace backend;
+use \common\mysql;
 
 /**
  * Handles the products referred by a party.
  */
 class referral
-    extends \common\mysql
+    extends mysql
 {
     public function is_valid_referrer($referrer_id = 0)
     {

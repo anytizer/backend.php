@@ -1,12 +1,13 @@
 <?php
 namespace backend;
+use \common\mysql;
 
 /**
  * Helps to build safe queries in an automated process.
  * Performs INSERT, UPDATE, DELETE operations on the database in the most trusted way.
  */
 class crud
-    extends \common\mysql
+    extends mysql
 {
     /**
      * Adds a record into a table.

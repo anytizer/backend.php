@@ -1,11 +1,13 @@
 <?php
 namespace backend;
+use \Exception;
+use \common\mysql;
 
 /**
  * Access Control List and APIs
  */
 class acl
-    extends \common\mysql
+    extends mysql
 {
     private $error;
     private $user_id = 0;
@@ -16,7 +18,6 @@ class acl
 
         parent::__construct();
     }
-
 
     /**
      * Login a user
@@ -50,7 +51,7 @@ class acl
         }
 
         if ($error != "") {
-            throw new \Exception($this->error->message($error));
+            throw new Exception($this->error->message($error));
 
             return false;
         } else {

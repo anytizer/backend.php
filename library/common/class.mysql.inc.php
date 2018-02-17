@@ -642,4 +642,4 @@ WHERE
     {
         return mysqli_select_db($this->CONNECTION, $database);
     }
-} # class mysql
+}

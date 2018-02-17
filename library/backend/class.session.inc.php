@@ -1,11 +1,12 @@
 <?php
 namespace backend;
+use \common\mysql;
 
 /**
  * Handler for Database enabled session data
  */
 class session
-    extends \common\mysql
+    extends mysql
 {
     /**
      * Immediately sets up the session handler

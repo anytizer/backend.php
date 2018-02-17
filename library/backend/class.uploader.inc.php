@@ -1,5 +1,6 @@
 <?php
 namespace backend;
+use \common\mysql;
 
     /**
      * Uploads a file on the server.
@@ -33,7 +34,7 @@ Array
 */
 
 class uploader
-    extends \common\mysql
+    extends mysql
 {
     public $destination = "";
     public $last_name = ""; # Name of recently uploaded file

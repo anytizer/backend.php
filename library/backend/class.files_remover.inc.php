@@ -1,11 +1,12 @@
 <?php
 namespace backend;
+use \common\mysql;
 
 /**
  * Removes orphan files from some directories on the server
  */
 class files_remover
-    extends \common\mysql
+    extends mysql
 {
     private $setup = array();
 

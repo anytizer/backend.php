@@ -1,11 +1,12 @@
 <?php
 namespace backend;
+use \common\mysql;
 
 /**
  * Intelligently create mysql users
  */
 class mysqluser
-    extends \common\mysql
+    extends mysql
 {
     private $username = "";
     private $hostname = "";

@@ -1,11 +1,12 @@
 <?php
 namespace subdomain;
+use \common\mysql;
 
 /**
  * A member details - handler
  */
 class member
-    extends \common\mysql
+    extends mysql
 {
     public function __construct()
     {

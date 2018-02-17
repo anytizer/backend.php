@@ -1,5 +1,6 @@
 <?php
 namespace backend;
+use \common\mysql;
 
 /**
  * Makes a dropdown HTML for suferfish menu using jquery.
@@ -7,7 +8,7 @@ namespace backend;
  * @uses `__TEMP_PATH__`
  */
 class dropdown
-    extends \common\mysql
+    extends mysql
 {
     private $context;
 

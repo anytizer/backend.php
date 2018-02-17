@@ -1,5 +1,6 @@
 <?php
 namespace backend;
+use \common\mysql;
 
 /**
  * Sorts the table entries with their sink_weight values, under some conditions.
@@ -9,7 +10,7 @@ namespace backend;
  *
  * @todo Check if MySQLi conversion was good and works ok
  */
-class sorter extends \common\mysql
+class sorter extends mysql
 {
     private $context_sql;
 

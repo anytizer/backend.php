@@ -374,7 +374,7 @@ INNER JOIN query_subdomains qs ON
 	AND qp.is_active='Y'
 ;";
         $page_details = $this->row($page_details_sql);
-        echo $page_details_sql;
+        #echo $page_details_sql;
 
         if (!$page_details) {
             /**

@@ -1,11 +1,12 @@
 <?php
 namespace common;
+use \common\mysql;
 
 /**
  * Multi Level Categorisation
  */
 class category
-    extends \common\mysql
+    extends mysql
 {
     public function __construct()
     {

@@ -1,5 +1,6 @@
 <?php
 namespace backend;
+use \common\mysql;
 
 /**
  * MySQL schema class dealing with information schema
@@ -7,7 +8,7 @@ namespace backend;
  * @package Databases
  */
 class schema
-    extends \common\mysql
+    extends mysql
 {
     private $database = 'information_schema';
 

@@ -1,5 +1,6 @@
 <?php
 namespace abstracts;
+use \common\mysql;
 
 /**
  * Interfaces an email sending process with lock marker
@@ -8,7 +9,7 @@ namespace abstracts;
  * @package abstracts
  */
 abstract class emailer
-    extends \common\mysql
+    extends mysql
 {
     private $sender; # The mail delivery engine
 

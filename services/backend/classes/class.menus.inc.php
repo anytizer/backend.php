@@ -1,5 +1,6 @@
 <?php
 namespace subdomain;
+use \common\mysql;
 
 # Created on: 2009-11-11 20:04:26 653
 
@@ -21,7 +22,7 @@ namespace subdomain;
  *        Fetches the details of menus
  */
 class menus
-    extends \common\mysql
+    extends mysql
 {
     /**
      * Set Private, Protected or Public Members

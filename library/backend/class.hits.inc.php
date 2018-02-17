@@ -1,6 +1,6 @@
 <?php
 namespace backend;
-
+use \common\mysql;
 
     /*
     # Sample table
@@ -20,7 +20,7 @@ namespace backend;
  * Updates hits of some entities
  */
 class hits
-    extends \common\mysql
+    extends mysql
 {
     public function update_hits($table_name = "", $pk_name = "", $pk_id = 0)
     {
