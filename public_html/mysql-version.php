@@ -22,7 +22,7 @@ $db = new \common\mysql();
 
 # What is the file being requested?
 # If not found, assume it as index.php.
-$page = $variable->get('page', 'string', 'index.php');
+$page = $variable->get('qp', 'string', 'index.php');
 
 # Serve case-insensitive page names.
 # This globally affects the pages that are rendered through this script.

@@ -24,13 +24,173 @@ class variable
     }
 
     /**
-     * From a user supplied variable, read/extract a data
+     * Uniform type conversion
      *
-     * @param        $variable object/integer/string/boolean passed by reference only to save memory in large objects.
+     * @param string $type
+     * @return string
+     */
+    private function type($type="")
+    {
+        $value = "";
+        $type = strtolower(trim($type));
+        switch ($type) {
+            case 'int':
+            case 'integer':
+            case 'number':
+            case 'numeric':
+                $value = "integer";
+                break;
+            case 'float':
+                $value = 'float';
+                break;
+            case 'bool':
+            case 'boolean':
+                $value = 'boolean';
+                break;
+            case 'string':
+                $value = 'string';
+                break;
+            case 'array':
+                $value = 'array';
+                break;
+            default:
+                $this->wrong_datatype($type);
+        }
+        
+        return $value;
+    }
+
+    /**
+     * Read out from $_GET parameters
+     *
+     * @param string $key Index Name
+     * @param string $type Data Type
+     * @param string $default Default Value, Mixed Variable
+     *
+     * @return array|bool|float|int|null|string
+     */
+    public function get($key = "", $type = 'integer', $default = "")
+    {
+        $value = null;
+
+        /**
+         * Check the validity of variable
+         */
+        $this->proceed = isset($_GET[$key]);
+
+        switch ($this->type($type)) {
+            case 'integer':
+                $value = ($this->proceed) ? $this->read_integer($_GET[$key]) : 0;
+                break;
+            case 'float':
+                $value = ($this->proceed) ? $this->read_float($_GET[$key]) : 0;
+                break;
+            case 'boolean':
+                $value = ($this->proceed) ? $this->read_boolean($_GET[$key]) : false;
+                break;
+            case 'string':
+                $value = ($this->proceed) ? $this->read_string($_GET[$key]) : "";
+                break;
+            case 'array':
+                $value = ($this->proceed) ? (array)($_GET[$key]) : array();
+                break;
+            default:
+                $this->wrong_datatype($type);
+        }
+
+        $value = !empty($value)?$value:$default;
+
+        return $value;
+    }
+
+    /**
+     * Read out from $_POST parameters
+     *
      * @param string $key
      * @param string $type
      * @param string $default
+     * @return array|bool|float|int|null|string
+     */
+    public function post($key = "", $type = 'integer', $default = "")
+    {
+        $value = null;
+
+        /**
+         * Check the validity of variable
+         */
+        $this->proceed = isset($_POST[$key]);
+
+        switch ($this->type($type)) {
+            case 'integer':
+                $value = ($this->proceed) ? $this->read_integer($_POST[$key]) : 0;
+                break;
+            case 'float':
+                $value = ($this->proceed) ? $this->read_float($_POST[$key]) : 0;
+                break;
+            case 'boolean':
+                $value = ($this->proceed) ? $this->read_boolean($_POST[$key]) : false;
+                break;
+            case 'string':
+                $value = ($this->proceed) ? $this->read_string($_POST[$key]) : "";
+                break;
+            case 'array':
+                $value = ($this->proceed) ? (array)($_POST[$key]) : array();
+                break;
+            default:
+                $this->wrong_datatype($type);
+        }
+
+        $value = $value ?? $default;
+
+        return $value;
+    }
+
+    /**
+     * Read out from $_SESSION parameters
      *
+     * @param string $key
+     * @param string $type
+     * @param string $default
+     * @return array|bool|float|int|null|string
+     */
+    public function session($key = "", $type = 'integer', $default = "")
+    {
+        $value = null;
+
+        $this->proceed = isset($_SESSION[$key]);
+
+        switch ($this->type($type)) {
+            case 'integer':
+                $value = ($this->proceed) ? $this->read_integer($_SESSION[$key]) : 0;
+                break;
+            case 'float':
+                $value = ($this->proceed) ? $this->read_float($_SESSION[$key]) : 0;
+                break;
+            case 'boolean':
+                $value = ($this->proceed) ? $this->read_boolean($_SESSION[$key]) : false;
+                break;
+            case 'string':
+                $value = ($this->proceed) ? $this->read_string($_SESSION[$key]) : "";
+                break;
+            case 'array':
+                $value = ($this->proceed) ? (array)($_SESSION[$key]) : array();
+                break;
+            default:
+                $this->wrong_datatype($type);
+        }
+
+        $value = !empty($value) ? $value : $default;
+
+        return $value;
+    }
+
+    /**
+     * From a user supplied variable, read/extract a data
+     *
+     * @param array $variable
+     * @param string $key
+     * @param string $type
+     * @param string $default
      * @return array|float|int|null|string
      */
     public function read($variable = array(), $key = "", $type = 'integer', $default = "")
@@ -39,11 +199,8 @@ class variable
 
         $this->proceed = isset($variable[$key]);
 
-        switch ($type) {
-            case 'int':
+        switch ($this->type($type)) {
             case 'integer':
-            case 'number':
-            case 'numeric':
                 $value = ($this->proceed) ? (int)($variable[$key]) : 0;
                 break;
             case 'float':
@@ -66,6 +223,9 @@ class variable
 
     /**
      * Read a variable as SAFE string
+     *
+     * @param string $variable
+     * @return string
      */
     private function read_string($variable = "")
     {
@@ -77,6 +237,9 @@ class variable
     /**
      * When the user defined datatype is not in our consideration,
      * stop executing the script. This is most likely due to typo error.
+     *
+     * @param string $data_type
+     * @return null
      */
     private function wrong_datatype($data_type = 'unknown')
     {
@@ -88,6 +251,9 @@ class variable
 
     /**
      * Destroy a super global variable (session, get, post)
+     *
+     * @param string $what
+     * @return bool
      */
     public function kill($what = 'nothing')
     {
@@ -142,6 +308,9 @@ class variable
      *
      * @see remember_as() method
      * @reference Clicking on the refresh() button/link will clear the memory
+     *
+     * @param string $alias_key
+     * @return bool
      */
     function forget($alias_key = "")
     {
@@ -156,6 +325,10 @@ class variable
      * Remembers a POST/SESSION data with POST priorities.
      * Next call returns the value from the SESSION, even without the POST.
      * Warning: Explicitly works for Integers ONLY.
+     *
+     * @param string $variable_index
+     * @param int $default
+     * @return array|bool|float|int|null|string
      */
     public function remember($variable_index = 'remembered', $default = 0)
     {
@@ -182,48 +355,10 @@ class variable
     }
 
     /**
-     * Read out from $_POST parameters
-     */
-    public function post($key = "", $type = 'integer', $default = "")
-    {
-        $value = null;
-
-        /**
-         * Check the validty of variable
-         */
-        $this->proceed = isset($_POST[$key]);
-
-        switch ($type) {
-            case 'int':
-            case 'integer':
-            case 'number':
-            case 'numeric':
-                $value = ($this->proceed) ? $this->read_integer($_POST[$key]) : 0;
-                break;
-            case 'float':
-                $value = ($this->proceed) ? $this->read_float($_POST[$key]) : 0;
-                break;
-            case 'bool':
-            case 'boolean':
-                $value = ($this->proceed) ? $this->read_boolean($_POST[$key]) : false;
-                break;
-            case 'string':
-                $value = ($this->proceed) ? $this->read_string($_POST[$key]) : "";
-                break;
-            case 'array':
-                $value = ($this->proceed) ? (array)($_POST[$key]) : array();
-                break;
-            default:
-                $this->wrong_datatype($type);
-        }
-
-        $value = $value ?? $default;
-
-        return $value;
-    }
-
-    /**
      * Make a variable an Integer
+     *
+     * @param int $value
+     * @return int
      */
     private function read_integer($value = 0)
     {
@@ -232,6 +367,9 @@ class variable
 
     /**
      * Make a variable an Integer
+     *
+     * @param float $value
+     * @return float
      */
     private function read_float($value = 0.00)
     {
@@ -252,6 +390,11 @@ class variable
 
     /**
      * Writes a session, get, post
+     *
+     * @param string $where
+     * @param string $key
+     * @param string $value
+     * @return bool
      */
     public function write($where = 'nothing', $key = "", $value = "")
     {
@@ -273,43 +416,7 @@ class variable
         return $success;
     }
 
-    /**
-     * Read out from $_SESSION parameters
-     */
-    public function session($key = "", $type = 'integer', $default = "")
-    {
-        $value = null;
 
-        $this->proceed = isset($_SESSION[$key]);
-
-        switch ($type) {
-            case 'int':
-            case 'integer':
-            case 'number':
-            case 'numeric':
-                $value = ($this->proceed) ? $this->read_integer($_SESSION[$key]) : 0;
-                break;
-            case 'float':
-                $value = ($this->proceed) ? $this->read_float($_SESSION[$key]) : 0;
-                break;
-            case 'bool':
-            case 'boolean':
-                $value = ($this->proceed) ? $this->read_boolean($_SESSION[$key]) : false;
-                break;
-            case 'string':
-                $value = ($this->proceed) ? $this->read_string($_SESSION[$key]) : "";
-                break;
-            case 'array':
-                $value = ($this->proceed) ? (array)($_SESSION[$key]) : array();
-                break;
-            default:
-                $this->wrong_datatype($type);
-        }
-
-        $value = !empty($value) ? $value : $default;
-
-        return $value;
-    }
 
     /**
      * Remembers an ID/Numeric data from GET/POST with GET priorities.
@@ -317,6 +424,10 @@ class variable
      * Creates a session clone of the data
      *
      * @example $creator_id = $variable->remember_as('id', 'creator_id');
+     *
+     * @param string $variable_index
+     * @param string $alias
+     * @return array|bool|float|int|null|string
      */
     public function remember_as($variable_index = 'remembered', $alias = "")
     {
@@ -337,55 +448,13 @@ class variable
         return $value;
     }
 
-    /**
-     * Read out from $_GET parameters
-     *
-     * @param string $key Index Name
-     * @param string $type Data Type
-     * @param string $default Default Value, Mixed Variable
-     *
-     * @return array|bool|float|int|null|string
-     */
-    public function get($key = "", $type = 'integer', $default = "")
-    {
-        $value = null;
-
-        /**
-         * Check the validty of variable
-         */
-        $this->proceed = isset($_GET[$key]);
-
-        switch ($type) {
-            case 'int':
-            case 'integer':
-            case 'number':
-            case 'numeric':
-                $value = ($this->proceed) ? $this->read_integer($_GET[$key]) : 0;
-                break;
-            case 'float':
-                $value = ($this->proceed) ? $this->read_float($_GET[$key]) : 0;
-                break;
-            case 'bool':
-            case 'boolean':
-                $value = ($this->proceed) ? $this->read_boolean($_GET[$key]) : false;
-                break;
-            case 'string':
-                $value = ($this->proceed) ? $this->read_string($_GET[$key]) : "";
-                break;
-            case 'array':
-                $value = ($this->proceed) ? (array)($_GET[$key]) : array();
-                break;
-            default:
-                $this->wrong_datatype($type);
-        }
-
-        $value = $value ?? $default;
-
-        return $value;
-    }
 
     /**
      * Similar to remember() method, but works for STRING data types.
+     *
+     * @param string $variable_index
+     * @param string $default
+     * @return array|bool|float|int|null|string
      */
     public function remember_string($variable_index = 'index', $default = "")
     {
@@ -413,6 +482,10 @@ class variable
     /**
      * Permanently traps a variable, once it is queried to access it default value.
      * Useful in making column heads for sorting.
+     *
+     * @param string $variable_index
+     * @param string $default_value
+     * @return string
      */
     public function find($variable_index = "", $default_value = "")
     {
@@ -437,6 +510,10 @@ class variable
     /**
      * Makes sure that a variable has an index.
      * It is harmless except that it may create unnecessary indices while validation was requested.
+     *
+     * @param string $what
+     * @param array $params_kv
+     * @return bool
      */
     public function validate($what = 'nothing', $params_kv = array())
     {
@@ -482,6 +559,10 @@ class variable
     /**
      * Ensures that a variable contains all the keys we need.
      * If not, patch from params. Useful in assigning default values
+     *
+     * @param array $variable
+     * @param array $params_kv
+     * @return array
      */
     public function validate_variable($variable = array(), $params_kv = array())
     {
@@ -497,7 +578,10 @@ class variable
 
     /**
      * Returns only integers from the list.
-     * @exammple $categories = $variable->validate_integers($variable->post('categories', 'array', array()));
+     * @example $categories = $variable->validate_integers($variable->post('categories', 'array', array()));
+     *
+     * @param array $integers
+     * @return array
      */
     public function validate_integers($integers = array())
     {
