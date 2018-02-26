@@ -1,0 +1,8 @@
+localhost goes to backend
+default page is /
+	- empty
+	- index.php
+	- /
+Subdomain alisasing works on temp paths
+CRUD pre-checks file write permissions
+Composer based classes are used
