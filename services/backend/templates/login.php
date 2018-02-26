@@ -158,11 +158,11 @@
             <table class="data" cellpadding="0" cellspacing="0">
                 <tr>
                     <td class="field">Usernane</td>
-                    <td class="values"><input type="text" name="username" value="" class="input"/></td>
+                    <td class="values"><input autocomplete="off" type="text" name="username" value="" class="input"/></td>
                 </tr>
                 <tr>
                     <td class="field">Password</td>
-                    <td class="values"><input type="password" name="password" value="" class="input"/></td>
+                    <td class="values"><input autocomplete="off" type="password" name="password" value="" class="input"/></td>
                 </tr>
                 <tr>
                     <td class="field">&nbsp;</td>
