@@ -1,3 +1,5 @@
+{{ascii_logo}}
+
 By-Passing PHP's safe_mode restrictions - which would disallow to use $smarty->templateExist():
 Add the first line, instead of the second line in the static.php template file:
 

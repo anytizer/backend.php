@@ -8,9 +8,6 @@
     <link href="css/framework.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
-<!--
-{ascii_logo}
--->
 <div class="wrapper">
     <div class="menus">
         <ul class="links-collection">

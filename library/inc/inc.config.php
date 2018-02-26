@@ -115,7 +115,10 @@ foreach ($ini['backend'] as $key => $value) {
  * @todo New update caused issues with Auto Include.
  * @see http://stackoverflow.com/questions/8574794/importing-class-without-namespace-to-namespaced-class
  */
-require_once(__THIRD_PARTIES__ . '/smarty/Smarty.class.php');
+#require_once(__THIRD_PARTIES__ . '/smarty/Smarty.class.php');
+require_once("vendor/autoload.php");
+#require_once("vendor/smarty/smarty/libs/Smarty.class.php");
+#require_once('/smarty/Smarty.class.php');
 $smarty = new \Smarty();
 /**
  * Compiled files are already protected, and are not available for direct download.
