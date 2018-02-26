@@ -128,7 +128,7 @@ $sqls[] = "
 
 # Create the database
 DROP DATABASE IF EXISTS `{$database_name}`;
-CREATE DATABASE `{$database_name}` CHARACTER SET utf8 COLLATE utf8_general_ci;
+CREATE DATABASE `{$database_name}` CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
 
 # Create a user for this DB
 GRANT ALL ON `{$database_name}`.* TO '{$database_name}'@'localhost' IDENTIFIED BY '{$password}';

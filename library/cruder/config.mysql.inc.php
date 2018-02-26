@@ -35,8 +35,6 @@ switch ($dbinfo['dbindex']) {
         $dbinfo[$dbinfo['dbindex']]['dbuser'] = 'MYSQLUSERNAME';
         $dbinfo[$dbinfo['dbindex']]['dbpassword'] = 'MYSQLPASSWORD';
         $dbinfo[$dbinfo['dbindex']]['database'] = 'MYSQLDATABASE';
-        # CREATE DATABASE `MYSQLDATABASE` CHARACTER SET utf8 COLLATE utf8_general_ci;
-        # GRANT ALL ON `MYSQLDATABASE`.* TO 'MYSQLUSERNAME'@'MYSQLHOSTNAME' IDENTIFIED BY 'MYSQLPASSWORD';
         break;
 }
 
@@ -64,7 +62,7 @@ mysqli_query($MYSQL_CONNECTION, "SET time_zone = '{$timezone}';");
 /**
  * Support Unicode by default.
  */
-mysqli_query($MYSQL_CONNECTION, "SET NAMES 'utf8' COLLATE 'utf8_general_ci';");
-mysqli_query($MYSQL_CONNECTION, "SET CHARACTER_SET_CONNECTION=utf8;");
+mysqli_query($MYSQL_CONNECTION, "SET NAMES 'utf8' COLLATE 'utf8mb4_general_ci';");
+mysqli_query($MYSQL_CONNECTION, "SET CHARACTER_SET_CONNECTION=utf8mb4;");
 mysqli_query($MYSQL_CONNECTION, "SET SQL_MODE = '';");
 mysqli_query($MYSQL_CONNECTION, "SET SESSION sql_mode='STRICT_ALL_TABLES';");

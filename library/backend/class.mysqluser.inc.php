@@ -80,7 +80,7 @@ class mysqluser
      */
     public function allow_database($database_name = "")
     {
-        $create_sql = "CREATE DATABASE IF NOT EXISTS `{$database_name}` CHARACTER SET utf8 COLLATE utf8_general_ci;";
+        $create_sql = "CREATE DATABASE IF NOT EXISTS `{$database_name}` CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;";
         #$permissions_sql="GRANT USAGE ON `{$database_name}`.* TO '{$this->username}'@'{$this->hostname}';";
         $permissions_sql = "GRANT ALL ON `{$database_name}`.* TO '{$this->username}'@'{$this->hostname}';";
 

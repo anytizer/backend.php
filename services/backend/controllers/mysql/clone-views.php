@@ -23,7 +23,7 @@ $system_database = MYSQL_DATABASENAME;
 \common\headers::plain();
 
 echo "
-# CREATE DATABASE `{$target_database}` CHARACTER SET utf8 COLLATE utf8_general_ci;
+# CREATE DATABASE `{$target_database}` CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
 USE `{$target_database}`;
 ";
 

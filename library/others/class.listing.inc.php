@@ -115,7 +115,7 @@ LIMIT 0 , {$this->total_list};";
                 $this->connections[$index][2]
             ) or \common\stopper::message('Error connecting: ' . mysql_error());
 
-            mysql_query("SET NAMES 'utf8' COLLATE 'utf8_general_ci';", $this->connection_pool[$connection_md5]); # or \common\stopper::message('Error setting charset: '.mysql_error());
+            mysql_query("SET NAMES 'utf8mb4' COLLATE 'utf8mb4_general_ci';", $this->connection_pool[$connection_md5]); # or \common\stopper::message('Error setting charset: '.mysql_error());
         }
         mysql_select_db($this->connections[$index][3], $this->connection_pool[$connection_md5]); # Each time, a different database might be selcted
 

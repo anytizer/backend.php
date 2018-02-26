@@ -1,3 +1,5 @@
 Replace icons with font awesome
 Define pre-requisites with AngularJS
 Style with bootstrap or w3css
+Right after install, send to backend.
+Right after dashboard, login user/pass fix.

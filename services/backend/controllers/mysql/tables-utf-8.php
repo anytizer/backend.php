@@ -20,7 +20,7 @@ $db->query($sql);
 while ($table = $db->row("")) {
     $table = $table["Tables_in_{$database}"];
     echo("
-ALTER TABLE `{$table}` CHARSET=utf8 COLLATE=utf8_general_ci;");
+ALTER TABLE `{$table}` CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;");
 }
 
 $scripts = ob_get_flush();
