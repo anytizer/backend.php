@@ -28,6 +28,11 @@ h2 {
     padding: 10px 0 10px 20px;
 }
 
+h2 strong
+{
+    font-color: red;
+}
+
 h3 {
     color: #ff0000;
     font-size: 14px;

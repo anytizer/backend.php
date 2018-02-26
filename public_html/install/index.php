@@ -219,10 +219,22 @@ $install = !preg_match("#/install/#", $_SERVER["REQUEST_URI"]) ? "install/" : ""
 </head>
 <body>
 <div class="wrapper">
-    <h2>Step #1: Database and configurations</h2>
 
+    <h2>Pre-Requisite</h2>
+    <ol>
+        <li>Add MySQL's <em>bin</em> directory to your
+            <strong>system path</strong>. This means, from anywhere, your MySQL client files should be accessible. If
+            you have done this, just skip this step. Press
+            <strong>Windows key + Pause </strong>together (for my computer =&gt; properties). Go to
+            <strong>Advanced</strong> tab. Click on <strong>Environment Variables</strong>. Add/append
+            <em>bin</em> directory of your MySQL into
+            <strong>PATH</strong>. eg. c:\xampp\mysql\bin. If some value is already in the path, you may have to use a
+            semicolon ( ; ) to append a new path in the list.
+        </li>
+    </ol>
+
+    <h2><strong>Step #1</strong>: Database and configurations</h2>
     <p>Using the <strong>root</strong> account in MySQL|MariaDB Server, hit the following Query:</p>
-
     <div>
 <pre>
 # mysql -uroot -p****
@@ -236,17 +248,8 @@ FLUSH PRIVILEGES;
 
     <p><strong>Caution</strong>: It has been <strong class="error">replaced automatically</strong> for the first time.</p>
 
-    <h2>Step #2: Create table structures and import the sample data</h2>
+    <h2><strong>Step #2</strong>: Create table structures and import the sample data</h2>
     <ol>
-        <li>Add MySQL's <em>bin</em> directory to your
-            <strong>system path</strong>. This means, from anywhere, your MySQL client files should be accessible. If
-            you have done this, just skip this step. Press
-            <strong>Windows key + Pause </strong>together (for my computer =&gt; properties). Go to
-            <strong>Advanced</strong> tab. Click on <strong>Environment Variables</strong>. Add/append
-            <em>bin</em> directory of your MySQL into
-            <strong>PATH</strong>. eg. c:\xampp\mysql\bin. If some value is already in the path, you may have to use a
-            semicolon ( ; ) to append a new path in the list.
-        </li>
         <li>Execute the file
             <strong><em>database/<?php echo $config["MYSQLDATABASE"]; ?>/02-install-<?php echo $config["MYSQLDATABASE"]; ?>.bat</em></strong>
             produced. Run it - that it
@@ -265,6 +268,8 @@ FLUSH PRIVILEGES;
             <em>revise the list of tables and their structures</em>. Try to understand their relationships.
         </li>
     </ol>
+
+    <h2><strong>Step #3</strong>: Modify your [ hosts ] file</h2>
     <p><strong class="error">Notes</strong>: For automatic installation, run</p>
     <ol>
         <li>
@@ -272,7 +277,8 @@ FLUSH PRIVILEGES;
             newly created databases, from above)
         </li>
     </ol>
-    <h2>Step #4: Modify your [ hosts ] file</h2>
+
+    <h2><strong>Step #4</strong>: Modify your [ hosts ] file</h2>
 
     <p>Locate and edit your
         <strong>hosts</strong> file. Your test domain should point to your local machine, until you deploy. Your default
@@ -309,14 +315,11 @@ FLUSH PRIVILEGES;
         locally. If you see something but the error, you are done.
     </p>
 
-    <h2>Step #6: Allow file permissions (chmod)</h2>
+    <h2><strong>Step #6</strong>: Allow file permissions (chmod)</h2>
 
     <p>The below directories need a full access, right after you install this framework.</p>
-
     <p>For producing the MySQL table structures by the admin.</p>
-
     <p><em>chmod -R 777 install/sql-scripts/</em></p>
-
     <p>For system operation. Includes smarty compiles, caches, menus and temporary working zones.</p>
 
     <!-- @todo Examples from separate file -->
