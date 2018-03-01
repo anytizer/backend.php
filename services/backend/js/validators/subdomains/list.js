@@ -8,7 +8,7 @@
  */
 
 /**
- * Live search subdomain names
+ * Live search sub-domain names
  */
 function livesearch_subdomains() {
     var str = this.value;

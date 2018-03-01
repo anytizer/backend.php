@@ -4,7 +4,7 @@ your server's root locations. They are normalled named similar to:
 	public_html
 	httpdocs
 	httpsdocs
-Contents under "root" directory are spefic to the subdomain service only.
+Contents under "root" directory are spefic to the sub-domain service only.
 And they are developed as different applications; out of the scope of the 
 core framework you have used. Each sudomain might have its own dependencies.
 
@@ -59,8 +59,8 @@ If the names collide with the parent's name, they will be discarded.
 
 sqls (library/services/__SUBDOMAIN_NAME__/sqls)
 Sets of SQLs to register pages.
-Be careful with with the subdomain ID.
-Make sure that each sql file has used the correct subdomain id.
+Be careful with with the sub-domain ID.
+Make sure that each sql file has used the correct sub-domain id.
 All this files are created dynamically here, once you make files for an entity.
 
 
@@ -110,6 +110,6 @@ Be careful with the CSS when using [ / ] and [ - ] in the URLs.
 
 
 js (library/services/__SUBDOMAIN_NAME__/js)
-Holds subdomain specific js files (name should be different as that in parent js directory)
+Holds sub-domain specific js files (name should be different as that in parent js directory)
 These js files should be used straight forward, without {js} plugin function.
 Files here now act as /js/*.js with proper header responses.

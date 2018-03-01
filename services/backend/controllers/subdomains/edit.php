@@ -19,7 +19,7 @@ if ($variable->post('edit-action', 'string', "") && ($subdomain_id = $variable->
     $data['modified_on'] = 'CURRENT_TIMESTAMP()';
 
     if (empty($data['subdomain_ip'])) {
-        # Try to auto-find the IP address of the subdomain name.
+        # Try to auto-find the IP address of the sub-domain name.
         $data['subdomain_ip'] = @gethostbyname($data['subdomain_name']);
     }
 

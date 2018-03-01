@@ -26,7 +26,7 @@ $smarty->assign('search_query', $search_query);
 
 $condition = new \others\condition();
 
-# Listed records that are bound to the current subdomain only
+# Listed records that are bound to the current sub-domain only
 $subdomain_id = $variable->get('id', 'integer', 0);
 if (!$subdomain_id) {
     $subdomain_id = $framework->subdomain_id();

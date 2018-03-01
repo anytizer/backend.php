@@ -1,4 +1,4 @@
-# Subdomain   : __SUBDOMAIN_NAME__ (id: __SUBDOMAIN_ID__))
+# sub-domain  : __SUBDOMAIN_NAME__ (id: __SUBDOMAIN_ID__))
 # Entity      : __ENTITY__
 # Produced on : __TIMESTAMP__
 

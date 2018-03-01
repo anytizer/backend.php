@@ -14,7 +14,7 @@ class framework
     # For future use only
     private $context;
 
-    # Subdomain prefix, used to generate codes
+    # sub-domain prefix, used to generate codes
     private $prefix = "";
 
     /**
@@ -35,7 +35,7 @@ class framework
 
     /**
      * Generates a unique code for this framework.
-     * To be called within a particular subdomain only, for generating codes
+     * To be called within a particular sub-domain only, for generating codes
      *
      * @see \common\tools::timestamp()
      *
@@ -53,7 +53,7 @@ WHERE
 	subdomain_name='{$_SERVER['SERVER_NAME']}'
 ;";
         $db = new \common\mysql();
-        if ($subdomain = $db->row($prefix_sql)) {
+        if ($sub-domain = $db->row($prefix_sql)) {
             return $subdomain['subdomain_prefix'] . \common\tools::timestamp();
         } else {
             return tools::timestamp();
@@ -62,7 +62,7 @@ WHERE
 
     /**
      * If alias ID was set in subdomain, jump to it.
-     * In this case, forgets, whatever the earlier subdomain name was.
+     * In this case, forgets, whatever the earlier sub-domain name was.
      */
     public function reset_server_name_by_alias()
     {
@@ -90,7 +90,7 @@ FROM query_subdomains
 WHERE
 	subdomain_id={$alias['alias_id']}
 ;";
-                if ($subdomain = $this->row($new_subdomain_sql)) {
+                if ($sub-domain = $this->row($new_subdomain_sql)) {
                     # The main thing here...
                     $_SERVER['SERVER_NAME'] = $subdomain['server_name'];
                     $alias_changed = true;
@@ -128,7 +128,7 @@ WHERE
 	AND `qd`.`is_active`='Y'
 	AND `qd`.`auto_load`='Y'
 
-	# Bind to current subdomain and framework only
+	# Bind to current sub-domain and framework only
 	AND (
 		(
 			`qs`.`subdomain_name`='{$_SERVER['SERVER_NAME']}'
@@ -209,7 +209,7 @@ WHERE
     }
 
     /**
-     * Converts server name into Subdomain ID
+     * Converts server name into sub-domain ID
      * @todo Remove static access to this method.
      */
     public function subdomain_id()
@@ -222,9 +222,9 @@ WHERE
 	subdomain_name='{$_SERVER['SERVER_NAME']}'
 	# AND is_active='Y' # Loose searching
 ;";
-        if ($subdomain = $this->row($subdomain_sql)) {
+        if ($sub-domain = $this->row($subdomain_sql)) {
         } else {
-            $subdomain = array(
+            $sub-domain = array(
                 'id' => 0,
             );
         }
@@ -237,9 +237,9 @@ WHERE
      *
      * Installer Mode ($expected=true)
      * Returns an expected __SUBDOMAIN_BASE__ path of a subdomain. Usage: to install the subdomain.
-     * Checks if the subdomain base exists already.
+     * Checks if the sub-domain base exists already.
      * Hides the error messages, unlike subdomain_base()
-     * @todo No need to query if Subdomain ID is 0.
+     * @todo No need to query if sub-domain ID is 0.
      *
      * @param int $subdomain_id
      * @param bool $expected
@@ -258,8 +258,8 @@ WHERE
 	subdomain_id={$subdomain_id}
 	# AND is_active='Y' # Loose searching
 ;";
-        if (!($subdomain = $this->row($subdomain_sql))) {
-            $subdomain = array(
+        if (!($sub-domain = $this->row($subdomain_sql))) {
+            $sub-domain = array(
                 'subdomain_id' => 0,
                 'subdomain_name' => $_SERVER['SERVER_NAME'],
                 'pointed_to' => '/tmp',

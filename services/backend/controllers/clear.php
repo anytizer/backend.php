@@ -1,7 +1,7 @@
 <?php
 
 
-# This file can be refered by any subdomain service
+# This file can be refered by any sub-domain service
 # and browsed as http://<subdomain>/clear.php
 
 # Updates the number of pages counter in each subdomains.
@@ -47,11 +47,11 @@ $sqls[] = 'DELETE FROM query_sessions WHERE added_on <= UNIX_TIMESTAMP(DATE_SUB(
 # These queries should not be loaded too frequently.
 # Once in a month is okay, or right after the first installation.
 
-# Subdomain names
+# sub-domain names
 $sqls[] = 'ALTER TABLE `query_subdomains` DROP KEY `subdomain_name_unique_index`;';
 $sqls[] = 'ALTER TABLE `query_subdomains` ADD UNIQUE KEY `subdomain_name_unique_index` (`subdomain_name`);';
 
-# Remake the key for Subdomain ID and page name.
+# Remake the key for sub-domain ID and page name.
 $sqls[] = 'ALTER TABLE `query_pages` DROP KEY `subdomain_page_name_unique_index`;';
 $sqls[] = 'ALTER TABLE `query_pages` ADD UNIQUE KEY `subdomain_page_name_unique_index` (`subdomain_id`,`page_name`);';
 
@@ -115,7 +115,7 @@ foreach ($sqls as $s => $sql) {
 
 /*
 # Clear compiled files, with their IDs
-$sql='SELECT subdomain_name subdomain FROM query_subdomains GROUP BY subdomain_name;';
+$sql='SELECT subdomain_name sub-domain FROM query_subdomains GROUP BY subdomain_name;';
 $db->query($sql);
 while($row = $db->row(""))
 {

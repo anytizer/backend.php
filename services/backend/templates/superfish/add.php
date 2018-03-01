@@ -11,7 +11,7 @@ Created on: 2011-02-02 00:36:55 983
 <form autocomplete="off" id="superfish-add-form" name="superfish-add-form" method="post" action="superfish-add.php">
     <table class="data">
         <tr class="{cycle values='A,B'}">
-            <td class="attribute">Subdomain ID:</td>
+            <td class="attribute">sub-domain ID:</td>
             <td><input name="superfish[subdomain_id]" type="text" class="input" id="superfish[subdomain_id]"
                        value="{$superfish.subdomain_id|htmlentities}"/></td>
         </tr>

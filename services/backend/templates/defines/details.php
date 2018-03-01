@@ -9,7 +9,7 @@
 <!-- admmin details for defines -->
 <div class="details">
     <div><strong>Define Id</strong>: {$defines.define_id}</div>
-    <div><strong>Subdomain Id</strong>: {$defines.subdomain_id}</div>
+    <div><strong>sub-domain Id</strong>: {$defines.subdomain_id}</div>
     <div><strong>Is Active</strong>: {$defines.is_active}</div>
     <div><strong>Define Context</strong>: {$defines.define_context}</div>
     <div><strong>Define Name</strong>: {$defines.define_name}</div>

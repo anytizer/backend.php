@@ -5,9 +5,9 @@ Created on: 2011-02-10 00:27:11 536
 <div class="information">
     <ul class="links">
         <li><a href="subdomains-add.php"><img src="{'add'|icon}" title="Add subdomains"
-                                              alt="Add Sub-Domains"/> Add a Sub-Domain</a></li>
+                                              alt="Add sub-domain s"/> Add a sub-domain </a></li>
         <li><a href="write-hosts-file.php"><img src="{'edit'|icon}"/> Write &quot;hosts&quot; file</a></li>
-        <li><a href="install/export/index.php"><img src="images/selected-icons/briefcase.png"/> Export Sub-Domains</a>
+        <li><a href="install/export/index.php"><img src="images/selected-icons/briefcase.png"/> Export sub-domain s</a>
         </li>
     </ul>
 </div>
@@ -59,7 +59,7 @@ Created on: 2011-02-10 00:27:11 536
 <form autocomplete="off" id="subdomains-list-form" name="subdomains-list-form" method="post"
       action="subdomains-blockaction.php">
     <table class="data" id="data-table">
-        <caption>List of Sub-Domains</caption>
+        <caption>List of sub-domain s</caption>
         <thead>
         <tr class="thead">
             <th><input type="checkbox" id="subdomains-checkall" name="checkallentities" value="checkallentities"/></th>

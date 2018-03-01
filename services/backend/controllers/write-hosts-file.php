@@ -3,7 +3,7 @@
 
 \common\headers::plain();
 
-$subdomain = new \subdomain\subdomains();
+$sub-domain = new \subdomain\subdomains();
 $hosts = $subdomain->get_hosts();
 
 $lines = array();

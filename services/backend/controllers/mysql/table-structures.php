@@ -63,8 +63,8 @@ ORDER BY
         $processed_table_name = processed_name($table['table_name']);
         $table_comments = $validator->table_comments($table['table_name']);
 
-        # The considered subdomain or core framework's Subdomain ID
-        $subdomain_id = 27; # Replace this with your subdomain to export the data.
+        # The considered sub-domain or core framework's sub-domain ID
+        $subdomain_id = 27; # Replace this with your sub-domain to export the data.
         $framework_subdomain_id = 27;
 
         $csv_file_name = str_replace('\\', '/', __APP_PATH__ . '/install/sql-scripts/_csv/' . $table['table_name'] . '.csv');
@@ -90,7 +90,7 @@ FIELDS ESCAPED BY '\\\\' TERMINATED BY ',' ENCLOSED BY '\"'
 LINES TERMINATED BY '\\r\\n'
 FROM `{$table['table_name']}`
 WHERE
-	# Intended Subdomain ID
+	# Intended sub-domain ID
 	subdomain_id={$subdomain_id}
 
 	# The framework and its alias

@@ -25,7 +25,7 @@ $backend = array(
 # global $
 
 # 16 files
-# path to realpath(../public_html)
+# realpath to public_html)
 # @todo Remove the usage
 # DO NOT EDIT
 $backend["paths"]["__APP_PATH__"] = realpath(__DIR__. "/..");
@@ -44,7 +44,7 @@ $backend["paths"]["__TEMP_PATH__"] = $backend["paths"]["__APP_PATH__"] . "/tmp";
 # DO NOT EDIT
 $backend["paths"]["__SERVICES_PATH__"] = $backend["paths"]["__APP_PATH__"] . "/services";
 
-# 31 files, Subdomain Root, Dynamic;
+# 31 files, sub-domain Root, Dynamic;
 # @todo Calculate
 # Proposed only
 $backend["paths"]["__SUBDOMAIN_BASE__"] = $backend["paths"]["__SERVICES_PATH__"] . "/localhost";

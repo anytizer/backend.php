@@ -13,7 +13,7 @@ Created on: 2010-12-27 11:38:12 391
         <tr class="{cycle values='A,B'}">
             <td class="attribute">Subdomain:</td>
             <td><select name="history[subdomain_id]">
-                    <option value="">-- Choose a subdomain --</option>
+                    <option value="">-- Choose a sub-domain --</option>
                     {html_options options='system:services'|dropdown selected='subdomain_id'|magical} </select>
             </td>
         </tr>

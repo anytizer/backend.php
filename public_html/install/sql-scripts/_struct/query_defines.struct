@@ -9,7 +9,7 @@
 
 CREATE TABLE `query_defines` (
   `define_id` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT 'Defined Constant ID',
-  `subdomain_id` int(10) unsigned NOT NULL DEFAULT '0' COMMENT 'For which Subdomain ID?',
+  `subdomain_id` int(10) unsigned NOT NULL DEFAULT '0' COMMENT 'For which sub-domain ID?',
   `added_on` datetime NOT NULL DEFAULT '0000-00-00 00:00:00' COMMENT 'First time added on',
   `fixed_on` datetime NOT NULL DEFAULT '0000-00-00 00:00:00' COMMENT 'Last time when CRON executed on this record',
   `modified_on` datetime NOT NULL DEFAULT '0000-00-00 00:00:00' COMMENT 'Last modified on',

@@ -138,7 +138,7 @@ $backend_backend->setup(true);
 $variable = new \common\variable();
 $framework = new \backend\framework();
 
-# First, reset the subdomain name, if an alias was used for local development
+# First, reset the sub-domain name, if an alias was used for local development
 # Safely turn off this feature, if not needed on the server environment.
 # Examples:
 #   It can handle "www.domain.com" and "domain.com" as different server.
@@ -159,9 +159,9 @@ if (!defined('__SUBDOMAIN_BASE__')) {
     define('__SUBDOMAIN_BASE__', $subdomain_base);
 }
 if (!is_dir(__SUBDOMAIN_BASE__)) {
-    die("Subdomain base (__SUBDOMAIN_BASE__) is not a directory: " . __SUBDOMAIN_BASE__);
+    die("sub-domain base (__SUBDOMAIN_BASE__) is not a directory: " . __SUBDOMAIN_BASE__);
 }
-chdir(__SUBDOMAIN_BASE__); # Enter inside the subdomain directory path
+chdir(__SUBDOMAIN_BASE__); # Enter inside the sub-domain directory path
 
 # Validates any missing constants with their suitable values.
 # Importantly, __SUBDOMAIN_BASE__ is available here onwards.
@@ -189,7 +189,7 @@ if (!is_writable($smarty->cache_dir)) {
 }
 #$smarty->testInstall();
 
-# Read subdomain specific configuration file
+# Read sub-domain specific configuration file
 $service_config_file = __SUBDOMAIN_BASE__ . '/config.php';
 $controller_location = __SUBDOMAIN_BASE__ . '/controllers';
 

@@ -2,13 +2,13 @@
 Created on: 2011-02-10 00:27:11 536
 *}-->
 <table class="data" id="data-table">
-    <caption>List of Sub-Domains</caption>
+    <caption>List of sub-domain s</caption>
     <thead>
     <tr class="thead">
         <th>S.N.</th>
-        <th>Subdomain Name</th>
-        <th>Subdomain Comments</th>
-        <th>Subdomain URL</th>
+        <th>sub-domain Name</th>
+        <th>sub-domain Comments</th>
+        <th>sub-domain URL</th>
     </tr>
     </thead>
     <tbody>

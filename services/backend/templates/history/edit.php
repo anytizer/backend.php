@@ -11,7 +11,7 @@ Created on: 2010-12-27 11:38:12 391
 <form autocomplete="off" id="history-edit-form" name="history-edit-form" method="post" action="history-edit.php">
     <table class="data edit">
         <tr class="{cycle values='A,B'}">
-            <td class="attribute">Subdomain ID:</td>
+            <td class="attribute">sub-domain ID:</td>
             <td><strong>{$history.subdomain_id}</strong></td>
         </tr>
         <tr class="{cycle values='A,B'}">

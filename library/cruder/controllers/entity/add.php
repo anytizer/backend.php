@@ -20,7 +20,7 @@ if ($variable->post('add-action', 'string', "")) {
     # When this record is added for the first time?
     $data['added_on'] = 'CURRENT_TIMESTAMP()';
 
-    # Bind the data edited, to the current subdomain only, if there is a subdomain_id column
+    # Bind the data edited, to the current sub-domain only, if there is a subdomain_id column
     $data['subdomain_id'] = $subdomain_id;
 
     /*

@@ -11,7 +11,7 @@ Created on: 2011-03-18 13:20:47 198
 <form id="identifiers-add-form" name="identifiers-add-form" method="post" action="identifiers-add.php">
     <table class="data">
         <tr class="{cycle values='A,B'}">
-            <td class="attribute">Subdomain ID</td>
+            <td class="attribute">sub-domain ID</td>
             <td><select name="identifiers[subdomain_id]"
                         id="select"> {html_options options='system:subdomains_available'|dropdown
                     selected=$identifiers.subdomain_id} </select>

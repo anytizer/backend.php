@@ -9,7 +9,7 @@
 
 CREATE TABLE `query_contacts` (
   `contact_id` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT 'Contact ID',
-  `subdomain_id` int(10) unsigned NOT NULL DEFAULT '0' COMMENT 'For which Subdomain ID?',
+  `subdomain_id` int(10) unsigned NOT NULL DEFAULT '0' COMMENT 'For which sub-domain ID?',
   `added_on` datetime NOT NULL DEFAULT '0000-00-00 00:00:00' COMMENT 'Record added on (first entry)',
   `fixed_on` datetime NOT NULL DEFAULT '0000-00-00 00:00:00' COMMENT 'Last time when CRON executed on this record',
   `replied_on` datetime NOT NULL DEFAULT '0000-00-00 00:00:00' COMMENT 'When was it replied back',

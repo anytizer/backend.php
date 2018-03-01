@@ -10,7 +10,7 @@
             <td class="attribute">Subdomain:</td>
             <td>
                 <select name="defines[subdomain_id]">
-                    <option value="">-- Choose a subdomain --</option>
+                    <option value="">-- Choose a sub-domain --</option>
                     {html_options options='system:services'|dropdown selected=$defines.subdomain_id} </select>
             </td>
         </tr>

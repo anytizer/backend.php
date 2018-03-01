@@ -1,7 +1,7 @@
 <?php
 /**
- * Purpose: To send the subdomain specific js files.
- * This allows to put the image packs within the subdomain service only.
+ * Purpose: To send the sub-domain specific js files.
+ * This allows to put the image packs within the sub-domain service only.
  * Uses the power of HTTP Headers.
  * @todo Find out the path of library
  */

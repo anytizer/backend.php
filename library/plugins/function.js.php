@@ -42,14 +42,14 @@ function smarty_function_js($params = array(), &$smarty)
                 $js[] = "<script src=\"{$file}\" type=\"text/javascript\"></script>";
             } else {
                 /**
-                 * Try to use the subdomain server, if any.
+                 * Try to use the sub-domain server, if any.
                  * @todo Make independent
                  */
                 $file = $params['base'] . '/' . $_SERVER['SERVER_NAME'] . '/' . $src;
                 if (file_exists($file)) {
                     $js[] = "<script src=\"{$file}\" type=\"text/javascript\"></script>";
                 } else {
-                    # Search within the subdomain pack. Do not consider PARAMS[BASE], here.
+                    # Search within the sub-domain pack. Do not consider PARAMS[BASE], here.
                     $subdomain_file = __SUBDOMAIN_BASE__ . '/js/' . $src;
                     if (file_exists($subdomain_file)) {
                         # .htaccess will serve this file

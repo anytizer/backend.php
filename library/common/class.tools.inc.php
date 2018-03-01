@@ -196,7 +196,7 @@ class tools
     }
 
     /**
-     * Load a subdomain specific class
+     * Load a sub-domain specific class
      * This class file is probably not seen by the autoloaders.
      */
     public static function service_class($class_name = "")

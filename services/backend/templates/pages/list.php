@@ -7,7 +7,7 @@
 </ul>
 <form name="subdomains-pages" method="post" action="?">
     Choose a specific subdomain: <select name="subdomain_id">
-        <option value="">-- choose a subdomain --</option>
+        <option value="">-- choose a sub-domain --</option>
         {html_options options='system:services'|dropdown selected='subdomain_id'|magical} </select> <input type="submit"
                                                                                                            name="submit-buttom"
                                                                                                            value="List pages"

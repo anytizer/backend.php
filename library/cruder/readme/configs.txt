@@ -1,4 +1,4 @@
-Subdomain : __SUBDOMAIN_NAME__
+sub-domain : __SUBDOMAIN_NAME__
 Created on: __TIMESTAMP__
 
 

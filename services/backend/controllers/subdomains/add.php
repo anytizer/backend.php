@@ -26,7 +26,7 @@ if ($variable->post('add-action', 'string', "")) {
     $data['pointed_to'] = !empty($data['pointed_to']) ? str_replace('\\', '/', $data['pointed_to']) : "";
 
     if (empty($data['subdomain_ip'])) {
-        # Try to auto-find the IP address of the subdomain name.
+        # Try to auto-find the IP address of the sub-domain name.
         $data['subdomain_ip'] = @gethostbyname($data['subdomain_name']);
     }
 

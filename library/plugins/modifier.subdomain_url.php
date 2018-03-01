@@ -2,7 +2,7 @@
 #namespace plugins;
 
 /**
- * Gives the FULL URL of a Subdomain ID.
+ * Gives the FULL URL of a sub-domain ID.
  * Assumed that only trusted source calls this file.
  */
 function smarty_modifier_subdomain_url($subdomain_id = 0)
@@ -21,7 +21,7 @@ WHERE
 	subdomain_id = {$subdomain_id}
 ;";
     $db = new \common\mysql();
-    if ($subdomain = $db->row($subdomain_sql)) {
+    if ($sub-domain = $db->row($subdomain_sql)) {
         # check for full flags like: is_http
         $http = ($subdomain['is_https'] == 'Y') ? 'https://' : 'http://';
         $www = ($subdomain['is_www'] == 'Y') ? 'www.' : "";

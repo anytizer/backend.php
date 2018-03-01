@@ -26,7 +26,7 @@ Created on: 2011-03-23 11:38:46 911
         <tr class="{cycle values='A,B'}">
             <td class="attribute">Email Subject:</td>
             <td><input type="text" name="emails[email_subject]" value="{$emails.email_subject|htmlentities}"
-                       class="input" id="emails-email_subject"/> Write subdomain prefix as well for easy reading
+                       class="input" id="emails-email_subject"/> Write sub-domain prefix as well for easy reading
             </td>
         </tr>
         <tr class="{cycle values='A,B'}">

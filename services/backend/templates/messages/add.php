@@ -11,9 +11,9 @@ Created on: 2011-04-06 14:42:31 485
 <form id="messages-add-form" name="messages-add-form" method="post" action="messages-add.php">
     <table class="data-editor">
         <tr class="{cycle values='A,B'}">
-            <td class="attribute">Subdomain ID: <span class="required">*</span></td>
+            <td class="attribute">sub-domain ID: <span class="required">*</span></td>
             <td><select name="messages[subdomain_id]">
-                    <option value="">-- Choose a subdomain --</option>
+                    <option value="">-- Choose a sub-domain --</option>
                     {html_options options='system:services'|dropdown selected=$defines.subdomain_id} </select></td>
         </tr>
         <tr class="{cycle values='A,B'}">

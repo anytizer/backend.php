@@ -26,7 +26,7 @@ $smarty->assign('search___ENTITY__', $search___ENTITY__);
 $condition = new \others\condition();
 
 $condition->add('FULL', array(
-    "e.subdomain_id={$subdomain_id}", # Bind the records with this subdomain only
+    "e.subdomain_id={$subdomain_id}", # Bind the records with this sub-domain only
     "e.is_active='Y'", # Do not remove this
 
     $search___ENTITY__ ? "(

@@ -1,4 +1,4 @@
-This is a /css directory of this subdomain (backend).
+This is a /css directory of this sub-domain (backend).
 Anything here, will appear as if called from the parent.
 Write your .css files uniquenly, not matching to the parent's /css/* files.
 

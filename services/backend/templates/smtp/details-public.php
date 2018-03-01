@@ -2,7 +2,7 @@
 <!-- public details for smtp -->
 <div class="details">
     <div><strong>SMTP ID</strong>: {$smtp.smtp_id}</div>
-    <div><strong>Subdomain ID</strong>: {$smtp.subdomain_id}</div>
+    <div><strong>sub-domain ID</strong>: {$smtp.subdomain_id}</div>
     <div><strong>SMTP Identifier</strong>: {$smtp.smtp_identifier}</div>
     <div><strong>Host</strong>: {$smtp.smtp_host}</div>
     <div><strong>Port</strong>: {$smtp.smtp_port}</div>

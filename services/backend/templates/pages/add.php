@@ -4,7 +4,7 @@
             <td class="attribute">Subdomain:</td>
             <td>
                 <select name="page[subdomain_id]">
-                    <option value="">-- Choose a subdomain --</option>
+                    <option value="">-- Choose a sub-domain --</option>
                     {html_options options='system:services'|dropdown selected='subdomain_id'|magical} </select>
             </td>
         </tr>

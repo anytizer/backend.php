@@ -8,7 +8,7 @@ function smarty_modifier_superfish($context = "", $force_compile = false)
 {
     $dd = new \backend\dropdown($context);
 
-    # Force a menu bound to a subdomain only.
+    # Force a menu bound to a sub-domain only.
     $framework = new \backend\framework();
     $dd->subdomain_id($framework->subdomain_id());
 

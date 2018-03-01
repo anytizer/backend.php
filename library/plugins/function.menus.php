@@ -46,7 +46,7 @@ function smarty_function_menus($params = array(), &$smarty)
         # included from a flat file.
         $menu_output = file_get_contents($cache_file);
     } else {
-        # Bind a subdomain specific menus?
+        # Bind a sub-domain specific menus?
         # But admin should be able to load other's menus as well.
         # Hence, at the moment, just use the menu context.
         $subdomain_id = 0;
@@ -65,7 +65,7 @@ SELECT
 	TRIM(m.html_title) title
 FROM query_menus m
 WHERE
-	# Do not force to use a Subdomain ID
+	# Do not force to use a sub-domain ID
 	# But use it in a leased script.
 	# m.subdomain_id={$subdomain_id}
 

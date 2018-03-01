@@ -378,7 +378,7 @@ INNER JOIN query_subdomains qs ON
 
         if (!$page_details) {
             /**
-             * @todo Send 404 Header and Log the page title and subdomain name, HTTP REFERER
+             * @todo Send 404 Header and Log the page title and sub-domain name, HTTP REFERER
              */
             throw new Exception("Domain [{$subdomain_name}] has not registered page [/{$page_name}].");
         }
@@ -410,7 +410,7 @@ WHERE
     }
 
     /**
-     * For blank Subdomain ID, draw one from current subdomain
+     * For blank sub-domain ID, draw one from current subdomain
      * @todo Deprecate this and rather use $subdomain_id. Only one page using it.
      * @see framework::subdomain_id()
      *
@@ -425,9 +425,9 @@ FROM `query_subdomains`
 WHERE
 	`subdomain_name`='{$_SERVER['SERVER_NAME']}'
 ;";
-        if ($subdomain = $this->row($subdomain_id_sql)) {
+        if ($sub-domain = $this->row($subdomain_id_sql)) {
         } else {
-            $subdomain = array('id' => 0);
+            $sub-domain = array('id' => 0);
         }
 
         return $subdomain['id'];

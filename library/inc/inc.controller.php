@@ -1,5 +1,5 @@
 <?php
-# Read subdomain specific configuration file
+# Read sub-domain specific configuration file
 $service_config_file = __SUBDOMAIN_BASE__ . '/config.php';
 #require_once($service_config_file);
 
@@ -8,7 +8,7 @@ $controller_location = __SUBDOMAIN_BASE__ . '/controllers';
 # Try to load the service specific config file,
 # as defined globally in library/inc/inc.config.php
 if (isset($service_config_file) && file_exists($service_config_file) && is_file($service_config_file)) {
-    # Needed only for subdomain services. Used before the controllers.
+    # Needed only for sub-domain services. Used before the controllers.
     # Pattern: /SERVER_NAME/config.mysql.inc.php
     require_once($service_config_file);
 }

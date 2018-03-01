@@ -37,7 +37,7 @@
 
     <div class="meta">
         <p>Visit <a href="http://{$subdomains[s].sn}/backend/backend/">Local Site</a> | <a
-                href="{$subdomains[s].id|subdomain_url}">Live Site</a>, ID: {{$subdomains[s].id}}. This subdomain has
+                href="{$subdomains[s].id|subdomain_url}">Live Site</a>, ID: {{$subdomains[s].id}}. This sub-domain has
             {$subdomains[s].pages} {'page'|plural:$subdomains[s].pages}.
         </p>
 

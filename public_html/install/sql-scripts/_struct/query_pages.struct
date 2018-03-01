@@ -9,7 +9,7 @@
 
 CREATE TABLE `query_pages` (
   `page_id` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT 'Page ID',
-  `subdomain_id` int(10) unsigned NOT NULL DEFAULT '0' COMMENT 'For which Subdomain ID?',
+  `subdomain_id` int(10) unsigned NOT NULL DEFAULT '0' COMMENT 'For which sub-domain ID?',
   `sink_weight` int(10) unsigned NOT NULL DEFAULT '0' COMMENT 'Sorting pages, eg. In sitemaps',
   `page_counter` int(10) unsigned NOT NULL DEFAULT '0' COMMENT 'Count how many times is this page served for',
   `added_on` datetime NOT NULL DEFAULT '0000-00-00 00:00:00' COMMENT 'Date/Time of creating this page',

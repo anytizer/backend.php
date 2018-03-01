@@ -6,7 +6,7 @@
 -- - All entities have their front-pages disabled, and require login
 -- - Data safety against possible information leakages
 
--- Subdomain   : __SUBDOMAIN_NAME__ (ID: __SUBDOMAIN_ID__)
+-- sub-domain  : __SUBDOMAIN_NAME__ (ID: __SUBDOMAIN_ID__)
 -- Entity      : __ENTITY__ (__ENTITY_FULLNAME__)
 -- Produced on : __TIMESTAMP__
 

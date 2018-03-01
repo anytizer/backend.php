@@ -3,8 +3,8 @@
 var v = new Validator('cruder-form');
 v.EnableMsgsTogether();
 
-// Subdomain ID
-v.addValidation('entity[subdomain_id]', 'required', 'Choose a subdomain to CRUD this entity.');
+// sub-domain ID
+v.addValidation('entity[subdomain_id]', 'required', 'Choose a sub-domain to CRUD this entity.');
 
 // Entity name
 v.addValidation('entity[name]', 'required', 'Enter an entity name to CRUD.');

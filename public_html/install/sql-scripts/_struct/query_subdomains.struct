@@ -1,6 +1,6 @@
 /**
 * Skeleton of [Query Subdomains: query_subdomains]
-* List of all sub-domains
+* List of all sub-domain s
 * ==========================================================
 * Timely view/truncate this table, as it may swell too soon.
 *
@@ -8,7 +8,7 @@
 */
 
 CREATE TABLE `query_subdomains` (
-  `subdomain_id` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT 'Subdomain ID?',
+  `subdomain_id` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT 'sub-domain ID?',
   `alias_id` int(10) unsigned NOT NULL DEFAULT '0' COMMENT 'Alias/Redirection ID: KEEP ZERO for most of the times',
   `status_id` int(10) unsigned NOT NULL DEFAULT '0' COMMENT 'Current status of the project - in idea, begun, development, revision, production, obsolete',
   `begun_on` datetime NOT NULL DEFAULT '0000-00-00 00:00:00' COMMENT 'Timestamp - When did the project begin?',
@@ -22,10 +22,10 @@ CREATE TABLE `query_subdomains` (
   `sink_weight` int(10) unsigned NOT NULL DEFAULT '0' COMMENT 'Sinking weight',
   `subdomain_port` int(10) unsigned NOT NULL DEFAULT '80' COMMENT 'Port on which the server is currently running on, useful in making FULL URL of the subdomain',
   `pages_counter` int(10) unsigned NOT NULL DEFAULT '0' COMMENT 'Static counter of number of active pages inside it',
-  `is_active` enum('N','Y') NOT NULL DEFAULT 'N' COMMENT 'Active subdomain module?',
-  `is_approved` enum('N','Y') NOT NULL DEFAULT 'N' COMMENT 'Approved subdomain module?',
+  `is_active` enum('N','Y') NOT NULL DEFAULT 'N' COMMENT 'Active sub-domain module?',
+  `is_approved` enum('N','Y') NOT NULL DEFAULT 'N' COMMENT 'Approved sub-domain module?',
   `is_installed` enum('N','Y') NOT NULL DEFAULT 'N' COMMENT 'Did we install this subdomain?',
-  `is_protected` enum('N','Y') NOT NULL DEFAULT 'N' COMMENT 'Avoid a subdomain being exported - Exporter will not see this',
+  `is_protected` enum('N','Y') NOT NULL DEFAULT 'N' COMMENT 'Avoid a sub-domain being exported - Exporter will not see this',
   `is_hidden` enum('N','Y') NOT NULL DEFAULT 'N' COMMENT 'Logically hide this domain?',
   `is_system` enum('N','Y') NOT NULL DEFAULT 'N' COMMENT 'Does this application ship as a default module?',
   `is_down` enum('N','Y') NOT NULL DEFAULT 'N' COMMENT 'Is this website taken into offline mode?',
@@ -39,7 +39,7 @@ CREATE TABLE `query_subdomains` (
   `subdomain_prefix` varchar(255) NOT NULL DEFAULT "" COMMENT 'CSV Prefix on database tables and auto-generated files',
   `subdomain_name` varchar(255) NOT NULL DEFAULT "" COMMENT 'FQDN, Complete identifying name, eg: localhost, www.subdomain.com',
   `subdomain_short` varchar(255) NOT NULL DEFAULT "" COMMENT 'Short identifiying name, used as quick identifier',
-  `subdomain_comments` varchar(255) NOT NULL DEFAULT "" COMMENT 'Extra comments on this subdomain name',
+  `subdomain_comments` varchar(255) NOT NULL DEFAULT "" COMMENT 'Extra comments on this sub-domain name',
   `subdomanin_theme` varchar(255) NOT NULL DEFAULT "" COMMENT 'Default customized theme',
   `dir_controllers` varchar(255) NOT NULL DEFAULT 'controllers' COMMENT 'Directory: controllers - Smarty Configuration',
   `dir_templates` varchar(255) NOT NULL DEFAULT 'templates' COMMENT 'Directory: templates - Smarty configuration',
@@ -47,7 +47,7 @@ CREATE TABLE `query_subdomains` (
   `dir_plugins` varchar(255) NOT NULL DEFAULT 'plugins' COMMENT 'Directory: plugins - Smarty configuration',
   `subdomain_url` varchar(255) NOT NULL DEFAULT "" COMMENT 'On deployment - Redirected/Full URL',
   `subdomain_url_local` varchar(255) NOT NULL DEFAULT "" COMMENT 'Local (test server URL)',
-  `subdomain_ip` varchar(255) NOT NULL DEFAULT '0.0.0.0' COMMENT 'Static IP Address of the server where this subdomain is deployed on',
+  `subdomain_ip` varchar(255) NOT NULL DEFAULT '0.0.0.0' COMMENT 'Static IP Address of the server where this sub-domain is deployed on',
   `pointed_to` varchar(255) NOT NULL DEFAULT "" COMMENT '__BASE__: Where is this domain pointed physically on the LOCAL?',
   `ftp_host` varchar(255) NOT NULL DEFAULT "" COMMENT 'FTP Host Name on remote server',
   `ftp_username` varchar(255) NOT NULL DEFAULT "" COMMENT 'FTP User Name on remote server',
@@ -62,5 +62,5 @@ CREATE TABLE `query_subdomains` (
   `subdomain_description` text NOT NULL COMMENT 'Some detailed descriptions about this subdomain',
   PRIMARY KEY (`subdomain_id`),
   UNIQUE KEY `subdomain_name_unique_index` (`subdomain_name`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='List of all sub-domains';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='List of all sub-domain s';
 

@@ -6,7 +6,7 @@
 "6","27","0000-00-00 00:00:00","0000-00-00 00:00:00","0000-00-00 00:00:00","0","0","Y","N","N","N","Y","N","Y","","xxx_id","query_sessions","User session data","","",""
 "7","27","0000-00-00 00:00:00","0000-00-00 00:00:00","0000-00-00 00:00:00","0","0","N","N","N","Y","N","N","Y","","","query_sites","Application specific - collection of sites","","",""
 "8","27","0000-00-00 00:00:00","0000-00-00 00:00:00","0000-00-00 00:00:00","0","0","Y","N","N","Y","Y","Y","Y","subdomains","","query_subdomains","List of all sub-domain services","","",""
-"9","27","0000-00-00 00:00:00","0000-00-00 00:00:00","0000-00-00 00:00:00","0","0","Y","N","N","Y","Y","Y","Y","","status_id","query_subdomains_status","State of current subdomain service in action","","",""
+"9","27","0000-00-00 00:00:00","0000-00-00 00:00:00","0000-00-00 00:00:00","0","0","Y","N","N","Y","Y","Y","Y","","status_id","query_subdomains_status","State of current sub-domain service in action","","",""
 "10","27","0000-00-00 00:00:00","0000-00-00 00:00:00","0000-00-00 00:00:00","0","0","Y","N","Y","Y","Y","Y","Y","menus","menu_id","query_menus","List of menus for a subdomainm service","","SELECT\
 	*\
 FROM `smarty_framework`.`query_menus`\
@@ -17,7 +17,7 @@ ORDER BY\
 	menu_context,\
 	sink_weight,\
 	menu_text\
-;","We have a problem with unassigned subdomain IDs"
+;","We have a problem with unassigned sub-domain IDs"
 "11","27","0000-00-00 00:00:00","0000-00-00 00:00:00","0000-00-00 00:00:00","0","0","Y","N","N","Y","Y","Y","Y","","","query_tables","This table - holds meta data about other query tables","","","<p>Controls a list of tables that require to:</p>\
 <ul>\
 <li>Export the Structure</li>\

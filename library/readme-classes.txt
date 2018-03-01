@@ -8,7 +8,7 @@ This is the inclusion hierarchy:
 	backend
 	auto
 	$_SERVER['SERVER_NAME']
-	and, subdomain services
+	and, sub-domain services
 
 Modify inc/inc.config.php to add more auto-include locations.
 

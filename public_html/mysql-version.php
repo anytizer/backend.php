@@ -70,7 +70,7 @@ if ($page_details) {
     # Try to load the service specific config file,
     # as defined globally in library/inc/inc.config.php
     if (isset($service_config_file) && file_exists($service_config_file) && is_file($service_config_file)) {
-        # Needed only for subdomain services. Used before the controllers.
+        # Needed only for sub-domain services. Used before the controllers.
         # Pattern: /library/SERVER_NAME/config.mysql.inc.php
         require_once($service_config_file);
     }
@@ -167,18 +167,18 @@ if ($page_details) {
         }
     }
 } else {
-    $subdomain = new subdomains();
+    $sub-domain = new subdomains();
     $subdomain_details = $subdomain->current_subdomain();
 
     $message = "
 <p><strong>{$page}</strong> @ {$_SERVER['SERVER_NAME']}</p>
 <p>Shareable modules disabled or 404 error. | Or, <strong>CRUD missing</strong>.</p>
-<p>Current subdomain and alias are: <strong>{$subdomain_details}</strong>.</p>
+<p>Current sub-domain and alias are: <strong>{$subdomain_details}</strong>.</p>
 <p>
-	If you created this subdomain <strong>recently</strong>,
+	If you created this sub-domain <strong>recently</strong>,
 	please <em>consider registering</em> the default pages.
 </p>
-<p>In case of <strong>exported subdomains</strong>, check that the server name is alias with the development version. Then re-export the subdomain database scripts.</p>
+<p>In case of <strong>exported subdomains</strong>, check that the server name is alias with the development version. Then re-export the sub-domain database scripts.</p>
 <p>If this is the first time, you have to import the database and tables correctly. Please refer to: install/sql-scripts/*.sh or install/sql-scripts/*.bat files.</p>
 ";
 

@@ -3,31 +3,31 @@ Created on: 2011-02-10 00:27:11 536
 *}-->
 <div class="information">
     <ul class="links">
-        <li><a href="subdomains-list.php"><img src="{'table'|icon}" title="List Sub-Domains"
-                                               alt="List Sub-Domains"/> List Sub-Domains</a></li>
+        <li><a href="subdomains-list.php"><img src="{'table'|icon}" title="List sub-domain s"
+                                               alt="List sub-domain s"/> List sub-domain s</a></li>
     </ul>
 </div>
 <div class="clear"><!--{*  style="clear:both;" *}--></div>
 <form autocomplete="off" id="subdomains-add-form" name="subdomains-add-form" method="post" action="subdomains-add.php">
     <table class="data">
         <tr class="{cycle values='A,B'}">
-            <td class="attribute">Subdomain Name:</td>
+            <td class="attribute">sub-domain Name:</td>
             <td><input type="text" name="subdomains[subdomain_name]" value="{$subdomains.subdomain_name|htmlentities}"
                        class="input" id="subdomains-subdomain_name" style="background-color:#FF99CC;"/></td>
         </tr>
         <tr class="{cycle values='A,B'}">
-            <td class="attribute">Subdomain Short:</td>
+            <td class="attribute">sub-domain Short:</td>
             <td><input type="text" name="subdomains[subdomain_short]" value="{$subdomains.subdomain_short|htmlentities}"
                        class="input" id="subdomains-subdomain_short"/></td>
         </tr>
         <tr class="{cycle values='A,B'}">
-            <td class="attribute">Subdomain Comments:</td>
+            <td class="attribute">sub-domain Comments:</td>
             <td><input type="text" name="subdomains[subdomain_comments]"
                        value="{$subdomains.subdomain_comments|htmlentities}" class="input"
                        id="subdomains-subdomain_comments"/></td>
         </tr>
         <tr class="{cycle values='A,B'}">
-            <td class="attribute">Subdomain URL:</td>
+            <td class="attribute">sub-domain URL:</td>
             <td><input type="text" name="subdomains[subdomain_url]" value="{$subdomains.subdomain_url|htmlentities}"
                        class="input" id="subdomains-subdomain_url"/></td>
         </tr>
@@ -46,7 +46,7 @@ Created on: 2011-02-10 00:27:11 536
                 <!--{* 100% sure, only spammers fill these fields, Leave blank. *}-->
                 <input type="hidden" name="protection_code" value="{$protection_code}"/> <input type="hidden"
                                                                                                 name="add-action"
-                                                                                                value="Add Sub-Domains"/>
+                                                                                                value="Add sub-domain s"/>
                 <input type="submit" name="submit-button" class="submit" value="Add"/> Or, <a
                     href="{\common\url::last_page('subdomains-list.php')}">Cancel</a></td>
         </tr>

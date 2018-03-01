@@ -10,7 +10,7 @@
 CREATE TABLE `query_articles` (
   `article_id` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT 'Article ID',
   `user_id` int(10) unsigned NOT NULL DEFAULT '0' COMMENT 'Who wrote this article?',
-  `subdomain_id` int(10) unsigned NOT NULL DEFAULT '0' COMMENT 'For which Subdomain ID?',
+  `subdomain_id` int(10) unsigned NOT NULL DEFAULT '0' COMMENT 'For which sub-domain ID?',
   `added_on` datetime NOT NULL DEFAULT '0000-00-00 00:00:00' COMMENT 'Added on: first time created date',
   `fixed_on` datetime NOT NULL DEFAULT '0000-00-00 00:00:00' COMMENT 'Last time when CRON executed on this record',
   `modified_on` datetime NOT NULL DEFAULT '0000-00-00 00:00:00' COMMENT 'Last modified on',
@@ -40,7 +40,7 @@ CREATE TABLE `query_articles` (
 
 CREATE TABLE `query_cdn` (
   `cdn_id` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT 'Content Distribution Network Link ID',
-  `subdomain_id` int(10) unsigned NOT NULL DEFAULT '0' COMMENT 'For which Subdomain ID?',
+  `subdomain_id` int(10) unsigned NOT NULL DEFAULT '0' COMMENT 'For which sub-domain ID?',
   `added_on` datetime NOT NULL DEFAULT '0000-00-00 00:00:00' COMMENT 'First time added on',
   `fixed_on` datetime NOT NULL DEFAULT '0000-00-00 00:00:00' COMMENT 'Last time when CRON executed on this record',
   `modified_on` datetime NOT NULL DEFAULT '0000-00-00 00:00:00' COMMENT 'Last modified on',
@@ -68,7 +68,7 @@ CREATE TABLE `query_cdn` (
 
 CREATE TABLE `query_code_generators` (
   `code_id` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT 'Code Generator ID',
-  `subdomain_id` int(10) unsigned NOT NULL DEFAULT '0' COMMENT 'For which Subdomain ID?',
+  `subdomain_id` int(10) unsigned NOT NULL DEFAULT '0' COMMENT 'For which sub-domain ID?',
   `added_on` datetime NOT NULL DEFAULT '0000-00-00 00:00:00' COMMENT 'Added on',
   `fixed_on` datetime NOT NULL DEFAULT '0000-00-00 00:00:00' COMMENT 'Last time when CRON executed on this record',
   `modified_on` datetime NOT NULL DEFAULT '0000-00-00 00:00:00' COMMENT 'Modified on',
@@ -105,7 +105,7 @@ CREATE TABLE `query_code_generators` (
 
 CREATE TABLE `query_config` (
   `config_id` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT 'Configuration ID',
-  `subdomain_id` int(10) unsigned NOT NULL DEFAULT '0' COMMENT 'For which Subdomain ID?',
+  `subdomain_id` int(10) unsigned NOT NULL DEFAULT '0' COMMENT 'For which sub-domain ID?',
   `added_on` datetime NOT NULL DEFAULT '0000-00-00 00:00:00' COMMENT 'Added on',
   `fixed_on` datetime NOT NULL DEFAULT '0000-00-00 00:00:00' COMMENT 'Last time when CRON executed on this record',
   `modified_on` datetime NOT NULL DEFAULT '0000-00-00 00:00:00' COMMENT 'Modified on',
@@ -134,7 +134,7 @@ CREATE TABLE `query_config` (
 
 CREATE TABLE `query_contacts` (
   `contact_id` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT 'Contact ID',
-  `subdomain_id` int(10) unsigned NOT NULL DEFAULT '0' COMMENT 'For which Subdomain ID?',
+  `subdomain_id` int(10) unsigned NOT NULL DEFAULT '0' COMMENT 'For which sub-domain ID?',
   `added_on` datetime NOT NULL DEFAULT '0000-00-00 00:00:00' COMMENT 'Record added on (first entry)',
   `fixed_on` datetime NOT NULL DEFAULT '0000-00-00 00:00:00' COMMENT 'Last time when CRON executed on this record',
   `replied_on` datetime NOT NULL DEFAULT '0000-00-00 00:00:00' COMMENT 'When was it replied back',
@@ -167,7 +167,7 @@ CREATE TABLE `query_contacts` (
 
 CREATE TABLE `query_cruded` (
   `crud_id` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT 'CRUD ID',
-  `subdomain_id` int(10) unsigned NOT NULL DEFAULT '0' COMMENT 'For which Subdomain ID?',
+  `subdomain_id` int(10) unsigned NOT NULL DEFAULT '0' COMMENT 'For which sub-domain ID?',
   `cruded_on` datetime NOT NULL DEFAULT '0000-00-00 00:00:00' COMMENT 'When CRUDed?',
   `added_on` datetime NOT NULL DEFAULT '0000-00-00 00:00:00' COMMENT 'Added on',
   `fixed_on` datetime NOT NULL DEFAULT '0000-00-00 00:00:00' COMMENT 'Last time when CRON executed on this record',
@@ -199,7 +199,7 @@ CREATE TABLE `query_cruded` (
 
 CREATE TABLE `query_defines` (
   `define_id` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT 'Defined Constant ID',
-  `subdomain_id` int(10) unsigned NOT NULL DEFAULT '0' COMMENT 'For which Subdomain ID?',
+  `subdomain_id` int(10) unsigned NOT NULL DEFAULT '0' COMMENT 'For which sub-domain ID?',
   `added_on` datetime NOT NULL DEFAULT '0000-00-00 00:00:00' COMMENT 'First time added on',
   `fixed_on` datetime NOT NULL DEFAULT '0000-00-00 00:00:00' COMMENT 'Last time when CRON executed on this record',
   `modified_on` datetime NOT NULL DEFAULT '0000-00-00 00:00:00' COMMENT 'Last modified on',
@@ -231,7 +231,7 @@ CREATE TABLE `query_defines` (
 
 CREATE TABLE `query_development_history` (
   `history_id` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT 'History ID',
-  `subdomain_id` int(10) unsigned NOT NULL DEFAULT '0' COMMENT 'For which Subdomain ID?',
+  `subdomain_id` int(10) unsigned NOT NULL DEFAULT '0' COMMENT 'For which sub-domain ID?',
   `added_on` datetime NOT NULL DEFAULT '0000-00-00 00:00:00' COMMENT 'Added on',
   `fixed_on` datetime NOT NULL DEFAULT '0000-00-00 00:00:00' COMMENT 'Last time when CRON executed on this record',
   `modified_on` datetime NOT NULL DEFAULT '0000-00-00 00:00:00' COMMENT 'Modified on',
@@ -255,7 +255,7 @@ CREATE TABLE `query_development_history` (
 
 CREATE TABLE `query_distributions` (
   `distribution_id` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT 'Distribution ID',
-  `subdomain_id` int(10) unsigned NOT NULL DEFAULT '0' COMMENT 'For which Subdomain ID?',
+  `subdomain_id` int(10) unsigned NOT NULL DEFAULT '0' COMMENT 'For which sub-domain ID?',
   `added_on` datetime NOT NULL DEFAULT '0000-00-00 00:00:00' COMMENT 'When added?',
   `fixed_on` datetime NOT NULL DEFAULT '0000-00-00 00:00:00' COMMENT 'Last time when CRON executed on this record',
   `modified_on` datetime NOT NULL DEFAULT '0000-00-00 00:00:00' COMMENT 'Last modified on',
@@ -292,7 +292,7 @@ CREATE TABLE `query_distributions` (
 
 CREATE TABLE `query_downloads` (
   `download_id` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT 'Downloadable URL ID',
-  `subdomain_id` int(10) unsigned NOT NULL DEFAULT '0' COMMENT 'For which Subdomain ID?',
+  `subdomain_id` int(10) unsigned NOT NULL DEFAULT '0' COMMENT 'For which sub-domain ID?',
   `added_on` datetime NOT NULL DEFAULT '0000-00-00 00:00:00' COMMENT 'Added on',
   `fixed_on` datetime NOT NULL DEFAULT '0000-00-00 00:00:00' COMMENT 'Last time when CRON executed on this record',
   `modified_on` datetime NOT NULL DEFAULT '0000-00-00 00:00:00' COMMENT 'Modified on',
@@ -317,7 +317,7 @@ CREATE TABLE `query_downloads` (
 CREATE TABLE `query_dropdowns` (
   `menu_id` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT 'Menu ID',
   `parent_id` int(10) unsigned NOT NULL DEFAULT '0' COMMENT 'Parent Menu ID',
-  `subdomain_id` int(10) unsigned NOT NULL DEFAULT '0' COMMENT 'For which Subdomain ID?',
+  `subdomain_id` int(10) unsigned NOT NULL DEFAULT '0' COMMENT 'For which sub-domain ID?',
   `added_on` datetime NOT NULL DEFAULT '0000-00-00 00:00:00' COMMENT 'Added on',
   `fixed_on` datetime NOT NULL DEFAULT '0000-00-00 00:00:00' COMMENT 'Last time when CRON executed on this record',
   `modified_on` datetime NOT NULL DEFAULT '0000-00-00 00:00:00' COMMENT 'Modified on',
@@ -344,7 +344,7 @@ CREATE TABLE `query_dropdowns` (
 
 CREATE TABLE `query_emails` (
   `email_id` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT 'Email Template ID',
-  `subdomain_id` int(10) unsigned NOT NULL DEFAULT '0' COMMENT 'For which Subdomain ID?',
+  `subdomain_id` int(10) unsigned NOT NULL DEFAULT '0' COMMENT 'For which sub-domain ID?',
   `added_on` datetime NOT NULL DEFAULT '0000-00-00 00:00:00' COMMENT 'Added on',
   `fixed_on` datetime NOT NULL DEFAULT '0000-00-00 00:00:00' COMMENT 'Last time when CRON executed on this record',
   `modified_on` datetime NOT NULL DEFAULT '0000-00-00 00:00:00' COMMENT 'Modified on',
@@ -374,7 +374,7 @@ CREATE TABLE `query_emails` (
 
 CREATE TABLE `query_emails_smtp` (
   `smtp_id` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT 'SMTP Account ID',
-  `subdomain_id` int(10) unsigned NOT NULL DEFAULT '0' COMMENT 'For which Subdomain ID?',
+  `subdomain_id` int(10) unsigned NOT NULL DEFAULT '0' COMMENT 'For which sub-domain ID?',
   `added_on` datetime NOT NULL DEFAULT '0000-00-00 00:00:00' COMMENT 'Added on',
   `fixed_on` datetime NOT NULL DEFAULT '0000-00-00 00:00:00' COMMENT 'Last time when CRON executed on this record',
   `modified_on` datetime NOT NULL DEFAULT '0000-00-00 00:00:00' COMMENT 'Modified on',
@@ -410,7 +410,7 @@ CREATE TABLE `query_emails_smtp` (
 
 CREATE TABLE `query_errors` (
   `error_id` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT 'Error ID',
-  `subdomain_id` int(10) unsigned NOT NULL DEFAULT '0' COMMENT 'Subdomain ID',
+  `subdomain_id` int(10) unsigned NOT NULL DEFAULT '0' COMMENT 'sub-domain ID',
   `added_on` DATETIME NOT NULL DEFAULT '0000-00-00 00:00:00' COMMENT 'Added on',
   `fixed_on` DATETIME NOT NULL DEFAULT '0000-00-00 00:00:00' COMMENT 'Last time when CRON executed on this record',
   `modified_on` DATETIME NOT NULL DEFAULT '0000-00-00 00:00:00' COMMENT 'Modified on',
@@ -437,7 +437,7 @@ CREATE TABLE `query_errors` (
 
 CREATE TABLE `query_identifiers` (
   `identifier_id` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT 'Identifier ID',
-  `subdomain_id` int(10) unsigned NOT NULL DEFAULT '0' COMMENT 'For which Subdomain ID?',
+  `subdomain_id` int(10) unsigned NOT NULL DEFAULT '0' COMMENT 'For which sub-domain ID?',
   `added_on` datetime NOT NULL DEFAULT '0000-00-00 00:00:00' COMMENT 'Added on',
   `fixed_on` datetime NOT NULL DEFAULT '0000-00-00 00:00:00' COMMENT 'Last time when CRON executed on this record',
   `modified_on` datetime NOT NULL DEFAULT '0000-00-00 00:00:00' COMMENT 'Modified on',
@@ -465,7 +465,7 @@ CREATE TABLE `query_identifiers` (
 
 CREATE TABLE `query_licenses` (
   `license_id` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT 'License ID',
-  `subdomain_id` int(10) unsigned NOT NULL DEFAULT '0' COMMENT 'For which Subdomain ID?',
+  `subdomain_id` int(10) unsigned NOT NULL DEFAULT '0' COMMENT 'For which sub-domain ID?',
   `added_on` datetime NOT NULL DEFAULT '0000-00-00 00:00:00' COMMENT 'License added on',
   `fixed_on` datetime NOT NULL DEFAULT '0000-00-00 00:00:00' COMMENT 'Last time when CRON executed on this record',
   `modified_on` datetime NOT NULL DEFAULT '0000-00-00 00:00:00' COMMENT 'License modified on',
@@ -497,7 +497,7 @@ CREATE TABLE `query_licenses` (
 
 CREATE TABLE `query_logger` (
   `logged_id` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT 'Logger ID',
-  `subdomain_id` int(10) unsigned NOT NULL DEFAULT '0' COMMENT 'For which Subdomain ID?',
+  `subdomain_id` int(10) unsigned NOT NULL DEFAULT '0' COMMENT 'For which sub-domain ID?',
   `added_on` datetime NOT NULL DEFAULT '0000-00-00 00:00:00' COMMENT 'Useless; logged_on',
   `fixed_on` datetime NOT NULL DEFAULT '0000-00-00 00:00:00' COMMENT 'Last time when CRON executed on this record',
   `modified_on` datetime NOT NULL DEFAULT '0000-00-00 00:00:00' COMMENT 'Useless',
@@ -532,7 +532,7 @@ CREATE TABLE `query_logger` (
 CREATE TABLE `query_menus` (
   `menu_id` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT 'Menu ID',
   `parent_id` int(10) unsigned NOT NULL DEFAULT '0' COMMENT 'Parent Menu ID',
-  `subdomain_id` int(10) unsigned NOT NULL DEFAULT '0' COMMENT 'For which Subdomain ID?',
+  `subdomain_id` int(10) unsigned NOT NULL DEFAULT '0' COMMENT 'For which sub-domain ID?',
   `added_on` datetime NOT NULL DEFAULT '0000-00-00 00:00:00' COMMENT 'Added on',
   `fixed_on` datetime NOT NULL DEFAULT '0000-00-00 00:00:00' COMMENT 'Last time when CRON executed on this record',
   `modified_on` datetime NOT NULL DEFAULT '0000-00-00 00:00:00' COMMENT 'Modified on',
@@ -568,7 +568,7 @@ CREATE TABLE `query_menus` (
 
 CREATE TABLE `query_messages` (
   `message_id` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT 'Message ID',
-  `subdomain_id` int(10) unsigned NOT NULL DEFAULT '0' COMMENT 'For which Subdomain ID?',
+  `subdomain_id` int(10) unsigned NOT NULL DEFAULT '0' COMMENT 'For which sub-domain ID?',
   `added_on` datetime NOT NULL DEFAULT '0000-00-00 00:00:00' COMMENT 'Added on',
   `fixed_on` datetime NOT NULL DEFAULT '0000-00-00 00:00:00' COMMENT 'Last time when CRON executed on this record',
   `modified_on` datetime NOT NULL DEFAULT '0000-00-00 00:00:00' COMMENT 'Modified on',
@@ -596,7 +596,7 @@ CREATE TABLE `query_messages` (
 
 CREATE TABLE `query_pages` (
   `page_id` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT 'Page ID',
-  `subdomain_id` int(10) unsigned NOT NULL DEFAULT '0' COMMENT 'For which Subdomain ID?',
+  `subdomain_id` int(10) unsigned NOT NULL DEFAULT '0' COMMENT 'For which sub-domain ID?',
   `sink_weight` int(10) unsigned NOT NULL DEFAULT '0' COMMENT 'Sorting pages, eg. In sitemaps',
   `page_counter` int(10) unsigned NOT NULL DEFAULT '0' COMMENT 'Count how many times is this page served for',
   `added_on` datetime NOT NULL DEFAULT '0000-00-00 00:00:00' COMMENT 'Date/Time of creating this page',
@@ -639,7 +639,7 @@ CREATE TABLE `query_pages` (
 
 CREATE TABLE `query_server` (
   `query_id` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT 'Server Query ID',
-  `subdomain_id` int(10) unsigned NOT NULL DEFAULT '0' COMMENT 'For which Subdomain ID?',
+  `subdomain_id` int(10) unsigned NOT NULL DEFAULT '0' COMMENT 'For which sub-domain ID?',
   `added_on` datetime NOT NULL DEFAULT '0000-00-00 00:00:00' COMMENT 'Added on',
   `fixed_on` datetime NOT NULL DEFAULT '0000-00-00 00:00:00' COMMENT 'Last time when CRON executed on this record',
   `modified_on` datetime NOT NULL DEFAULT '0000-00-00 00:00:00' COMMENT 'Modified on',
@@ -666,7 +666,7 @@ CREATE TABLE `query_server` (
 CREATE TABLE `query_sessions` (
   `session_id` varchar(50) NOT NULL DEFAULT "" COMMENT 'PHP Session ID - String',
   `session_ip` int(10) unsigned NOT NULL DEFAULT '0' COMMENT 'Which IP is used to request the services?',
-  `subdomain_id` int(10) unsigned NOT NULL DEFAULT '0' COMMENT 'For which Subdomain ID?',
+  `subdomain_id` int(10) unsigned NOT NULL DEFAULT '0' COMMENT 'For which sub-domain ID?',
   `added_on` datetime NOT NULL DEFAULT '0000-00-00 00:00:00' COMMENT 'Session created or last modified on',
   `fixed_on` datetime NOT NULL DEFAULT '0000-00-00 00:00:00' COMMENT 'Last time when CRON executed on this record',
   `modified_on` datetime NOT NULL DEFAULT '0000-00-00 00:00:00' COMMENT 'Modified on',
@@ -681,7 +681,7 @@ CREATE TABLE `query_sessions` (
 
 /**
 * Skeleton of [Query Subdomains: query_subdomains]
-* List of all sub-domains
+* List of all sub-domain s
 * ==========================================================
 * Timely view/truncate this table, as it may swell too soon.
 *
@@ -689,7 +689,7 @@ CREATE TABLE `query_sessions` (
 */
 
 CREATE TABLE `query_subdomains` (
-  `subdomain_id` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT 'Subdomain ID?',
+  `subdomain_id` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT 'sub-domain ID?',
   `alias_id` int(10) unsigned NOT NULL DEFAULT '0' COMMENT 'Alias/Redirection ID: KEEP ZERO for most of the times',
   `status_id` int(10) unsigned NOT NULL DEFAULT '0' COMMENT 'Current status of the project - in idea, begun, development, revision, production, obsolete',
   `begun_on` datetime NOT NULL DEFAULT '0000-00-00 00:00:00' COMMENT 'Timestamp - When did the project begin?',
@@ -703,10 +703,10 @@ CREATE TABLE `query_subdomains` (
   `sink_weight` int(10) unsigned NOT NULL DEFAULT '0' COMMENT 'Sinking weight',
   `subdomain_port` int(10) unsigned NOT NULL DEFAULT '80' COMMENT 'Port on which the server is currently running on, useful in making FULL URL of the subdomain',
   `pages_counter` int(10) unsigned NOT NULL DEFAULT '0' COMMENT 'Static counter of number of active pages inside it',
-  `is_active` enum('N','Y') NOT NULL DEFAULT 'N' COMMENT 'Active subdomain module?',
-  `is_approved` enum('N','Y') NOT NULL DEFAULT 'N' COMMENT 'Approved subdomain module?',
+  `is_active` enum('N','Y') NOT NULL DEFAULT 'N' COMMENT 'Active sub-domain module?',
+  `is_approved` enum('N','Y') NOT NULL DEFAULT 'N' COMMENT 'Approved sub-domain module?',
   `is_installed` enum('N','Y') NOT NULL DEFAULT 'N' COMMENT 'Did we install this subdomain?',
-  `is_protected` enum('N','Y') NOT NULL DEFAULT 'N' COMMENT 'Avoid a subdomain being exported - Exporter will not see this',
+  `is_protected` enum('N','Y') NOT NULL DEFAULT 'N' COMMENT 'Avoid a sub-domain being exported - Exporter will not see this',
   `is_hidden` enum('N','Y') NOT NULL DEFAULT 'N' COMMENT 'Logically hide this domain?',
   `is_system` enum('N','Y') NOT NULL DEFAULT 'N' COMMENT 'Does this application ship as a default module?',
   `is_down` enum('N','Y') NOT NULL DEFAULT 'N' COMMENT 'Is this website taken into offline mode?',
@@ -720,7 +720,7 @@ CREATE TABLE `query_subdomains` (
   `subdomain_prefix` varchar(255) NOT NULL DEFAULT "" COMMENT 'CSV Prefix on database tables and auto-generated files',
   `subdomain_name` varchar(255) NOT NULL DEFAULT "" COMMENT 'FQDN, Complete identifying name, eg: localhost, www.subdomain.com',
   `subdomain_short` varchar(255) NOT NULL DEFAULT "" COMMENT 'Short identifiying name, used as quick identifier',
-  `subdomain_comments` varchar(255) NOT NULL DEFAULT "" COMMENT 'Extra comments on this subdomain name',
+  `subdomain_comments` varchar(255) NOT NULL DEFAULT "" COMMENT 'Extra comments on this sub-domain name',
   `subdomanin_theme` varchar(255) NOT NULL DEFAULT "" COMMENT 'Default customized theme',
   `dir_controllers` varchar(255) NOT NULL DEFAULT 'controllers' COMMENT 'Directory: controllers - Smarty Configuration',
   `dir_templates` varchar(255) NOT NULL DEFAULT 'templates' COMMENT 'Directory: templates - Smarty configuration',
@@ -728,7 +728,7 @@ CREATE TABLE `query_subdomains` (
   `dir_plugins` varchar(255) NOT NULL DEFAULT 'plugins' COMMENT 'Directory: plugins - Smarty configuration',
   `subdomain_url` varchar(255) NOT NULL DEFAULT "" COMMENT 'On deployment - Redirected/Full URL',
   `subdomain_url_local` varchar(255) NOT NULL DEFAULT "" COMMENT 'Local (test server URL)',
-  `subdomain_ip` varchar(255) NOT NULL DEFAULT '0.0.0.0' COMMENT 'Static IP Address of the server where this subdomain is deployed on',
+  `subdomain_ip` varchar(255) NOT NULL DEFAULT '0.0.0.0' COMMENT 'Static IP Address of the server where this sub-domain is deployed on',
   `pointed_to` varchar(255) NOT NULL DEFAULT "" COMMENT '__BASE__: Where is this domain pointed physically on the LOCAL?',
   `ftp_host` varchar(255) NOT NULL DEFAULT "" COMMENT 'FTP Host Name on remote server',
   `ftp_username` varchar(255) NOT NULL DEFAULT "" COMMENT 'FTP User Name on remote server',
@@ -743,7 +743,7 @@ CREATE TABLE `query_subdomains` (
   `subdomain_description` text NOT NULL COMMENT 'Some detailed descriptions about this subdomain',
   PRIMARY KEY (`subdomain_id`),
   UNIQUE KEY `subdomain_name_unique_index` (`subdomain_name`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='List of all sub-domains';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='List of all sub-domain s';
 
 /**
 * Skeleton of [Query Subdomains Categories: query_subdomains_categories]
@@ -755,8 +755,8 @@ CREATE TABLE `query_subdomains` (
 */
 
 CREATE TABLE `query_subdomains_categories` (
-  `category_id` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT 'Subdomain Categry ID',
-  `subdomain_id` int(10) unsigned NOT NULL DEFAULT '0' COMMENT 'For which Subdomain ID?',
+  `category_id` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT 'sub-domain Categry ID',
+  `subdomain_id` int(10) unsigned NOT NULL DEFAULT '0' COMMENT 'For which sub-domain ID?',
   `added_on` datetime NOT NULL DEFAULT '0000-00-00 00:00:00' COMMENT 'Added on',
   `fixed_on` datetime NOT NULL DEFAULT '0000-00-00 00:00:00' COMMENT 'Last time when CRON executed on this record',
   `modified_on` datetime NOT NULL DEFAULT '0000-00-00 00:00:00' COMMENT 'Modified on',
@@ -764,14 +764,14 @@ CREATE TABLE `query_subdomains_categories` (
   `sink_weight` int(10) unsigned NOT NULL DEFAULT '0' COMMENT 'Sink Weight',
   `is_active` enum('N','Y') NOT NULL DEFAULT 'N' COMMENT 'Use this category?',
   `is_approved` enum('N','Y') NOT NULL DEFAULT 'N' COMMENT 'Approved category?',
-  `category_name` varchar(255) NOT NULL DEFAULT "" COMMENT 'Subdomain Category',
+  `category_name` varchar(255) NOT NULL DEFAULT "" COMMENT 'sub-domain Category',
   `category_comments` varchar(255) NOT NULL DEFAULT "" COMMENT 'Comments',
   PRIMARY KEY (`category_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Grouping of subdomains based on these categories';
 
 /**
 * Skeleton of [Query Subdomains Status: query_subdomains_status]
-* Development status of subdomain services
+* Development status of sub-domain services
 * ==========================================================
 * Timely view/truncate this table, as it may swell too soon.
 *
@@ -780,7 +780,7 @@ CREATE TABLE `query_subdomains_categories` (
 
 CREATE TABLE `query_subdomains_status` (
   `status_id` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT 'Status ID',
-  `subdomain_id` int(10) unsigned NOT NULL DEFAULT '0' COMMENT 'For which Subdomain ID?',
+  `subdomain_id` int(10) unsigned NOT NULL DEFAULT '0' COMMENT 'For which sub-domain ID?',
   `added_on` datetime NOT NULL DEFAULT '0000-00-00 00:00:00' COMMENT 'Added on',
   `fixed_on` datetime NOT NULL DEFAULT '0000-00-00 00:00:00' COMMENT 'Last time when CRON executed on this record',
   `modified_on` datetime NOT NULL DEFAULT '0000-00-00 00:00:00' COMMENT 'Modified on',
@@ -791,7 +791,7 @@ CREATE TABLE `query_subdomains_status` (
   `status_name` varchar(255) NOT NULL DEFAULT "" COMMENT 'Readable status name',
   `status_comments` varchar(255) NOT NULL DEFAULT "" COMMENT 'Status Comments',
   PRIMARY KEY (`status_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Development status of subdomain services';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Development status of sub-domain services';
 
 /**
 * Skeleton of [Query Tables: query_tables]
@@ -804,7 +804,7 @@ CREATE TABLE `query_subdomains_status` (
 
 CREATE TABLE `query_tables` (
   `table_id` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT 'Table ID',
-  `subdomain_id` int(10) unsigned NOT NULL DEFAULT '0' COMMENT 'For which Subdomain ID?',
+  `subdomain_id` int(10) unsigned NOT NULL DEFAULT '0' COMMENT 'For which sub-domain ID?',
   `added_on` datetime NOT NULL DEFAULT '0000-00-00 00:00:00' COMMENT 'Added on',
   `fixed_on` datetime NOT NULL DEFAULT '0000-00-00 00:00:00' COMMENT 'Last time when CRON executed on this record',
   `modified_on` datetime NOT NULL DEFAULT '0000-00-00 00:00:00' COMMENT 'Modified on',
@@ -839,7 +839,7 @@ CREATE TABLE `query_tables` (
 
 CREATE TABLE `query_toc` (
   `toc_id` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT 'TOC Chapter ID',
-  `subdomain_id` int(10) unsigned NOT NULL DEFAULT '0' COMMENT 'For which Subdomain ID?',
+  `subdomain_id` int(10) unsigned NOT NULL DEFAULT '0' COMMENT 'For which sub-domain ID?',
   `parent_id` int(10) unsigned NOT NULL DEFAULT '0' COMMENT 'Parent ID',
   `book_id` int(10) unsigned NOT NULL DEFAULT '0' COMMENT 'For which book?',
   `chapter_id` int(10) unsigned NOT NULL DEFAULT '0' COMMENT 'Chapted - the depth level identifier',
@@ -866,7 +866,7 @@ CREATE TABLE `query_toc` (
 
 CREATE TABLE `query_uploads` (
   `upload_id` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT 'Upload ID',
-  `subdomain_id` int(10) unsigned NOT NULL DEFAULT '0' COMMENT 'For which Subdomain ID?',
+  `subdomain_id` int(10) unsigned NOT NULL DEFAULT '0' COMMENT 'For which sub-domain ID?',
   `added_on` datetime NOT NULL DEFAULT '0000-00-00 00:00:00' COMMENT 'Useless at the moment',
   `fixed_on` datetime NOT NULL DEFAULT '0000-00-00 00:00:00' COMMENT 'Last time when CRON executed on this record',
   `upload_size` int(10) unsigned NOT NULL DEFAULT '0' COMMENT 'File size',
@@ -901,7 +901,7 @@ CREATE TABLE `query_uploads` (
 CREATE TABLE `query_users` (
   `user_id` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT 'User ID',
   `group_id` int(10) unsigned NOT NULL DEFAULT '0' COMMENT 'Group ID',
-  `subdomain_id` int(10) unsigned NOT NULL DEFAULT '0' COMMENT 'For which Subdomain ID?',
+  `subdomain_id` int(10) unsigned NOT NULL DEFAULT '0' COMMENT 'For which sub-domain ID?',
   `added_on` datetime NOT NULL DEFAULT '0000-00-00 00:00:00' COMMENT 'Added on',
   `fixed_on` datetime NOT NULL DEFAULT '0000-00-00 00:00:00' COMMENT 'Last time when CRON executed on this record',
   `modified_on` datetime NOT NULL DEFAULT '0000-00-00 00:00:00' COMMENT 'Modified on',
@@ -931,7 +931,7 @@ CREATE TABLE `query_users` (
 CREATE TABLE `query_users_groups` (
   `relationship_id` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT 'Relationship ID',
   `group_id` int(10) unsigned NOT NULL DEFAULT '0' COMMENT 'Group ID',
-  `subdomain_id` int(10) unsigned NOT NULL DEFAULT '0' COMMENT 'For which Subdomain ID?',
+  `subdomain_id` int(10) unsigned NOT NULL DEFAULT '0' COMMENT 'For which sub-domain ID?',
   `added_on` datetime NOT NULL DEFAULT '0000-00-00 00:00:00' COMMENT 'Added on',
   `fixed_on` datetime NOT NULL DEFAULT '0000-00-00 00:00:00' COMMENT 'Last time when CRON executed on this record',
   `modified_on` datetime NOT NULL DEFAULT '0000-00-00 00:00:00' COMMENT 'Modified on',

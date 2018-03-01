@@ -43,7 +43,7 @@ $condition->add(
         'e.is_active' => 'Y', # Partial %contents%
 
         # When this is used, reset the pagination indices
-        'e.subdomain_name' => $subdomain_name, # Searched subdomain name
+        'e.subdomain_name' => $subdomain_name, # Searched sub-domain name
     )
 );
 
@@ -55,8 +55,8 @@ $entries = $subdomains->list_entries(
 );
 
 # Variations
-# sn: Subdomain Name
-# sc: Subdomain Comments
+# sn: sub-domain Name
+# sc: sub-domain Comments
 $sort_name = $variable->find('sort', 'subdomain_name');
 
 # List out the entries

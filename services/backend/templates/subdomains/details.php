@@ -9,8 +9,8 @@ Created on: 2011-02-10 00:27:11 536
         <li>| <a href="subdomains-list.php"><img src="{'table'|icon}" title="List subdomains"
                                                  alt="List subdomains"/> List subdomains</a></li>
         <li>| <a href="subdomains-change-id.php?id={$subdomains.subdomain_id}"><img src="{'edit'|icon}"
-                                                                                    title="Subdomain ID"
-                                                                                    alt="Subdomain ID"/> Change ID</a>
+                                                                                    title="sub-domain ID"
+                                                                                    alt="sub-domain ID"/> Change ID</a>
         </li>
         <li>| <a href="subdomains-clone.php?id={$subdomains.subdomain_id}"><img src="{'in'|icon}" title="Clone"
                                                                                 alt="Clone"/> Clone</a></li>
@@ -23,7 +23,7 @@ Created on: 2011-02-10 00:27:11 536
 <!-- admmin details for subdomains -->
 <div class="details">
     <div class="holder">
-        <div class="title">Subdomain Port</div>
+        <div class="title">sub-domain Port</div>
         <div class="content">{$subdomains.subdomain_port|default:'&nbsp;'}</div>
     </div>
     <div class="holder">
@@ -35,23 +35,23 @@ Created on: 2011-02-10 00:27:11 536
         <div class="content">{$subdomains.template_file|default:'&nbsp;'}</div>
     </div>
     <div class="holder">
-        <div class="title">Subdomain Key</div>
+        <div class="title">sub-domain Key</div>
         <div class="content">{$subdomains.subdomain_key|default:'&nbsp;'}</div>
     </div>
     <div class="holder">
-        <div class="title">Subdomain Prefix</div>
+        <div class="title">sub-domain Prefix</div>
         <div class="content">{$subdomains.subdomain_prefix|default:'&nbsp;'}</div>
     </div>
     <div class="holder">
-        <div class="title">Subdomain Name</div>
+        <div class="title">sub-domain Name</div>
         <div class="content">{$subdomains.subdomain_name|default:'&nbsp;'}</div>
     </div>
     <div class="holder">
-        <div class="title">Subdomain Short</div>
+        <div class="title">sub-domain Short</div>
         <div class="content">{$subdomains.subdomain_short|default:'&nbsp;'}</div>
     </div>
     <div class="holder">
-        <div class="title">Subdomain Comments</div>
+        <div class="title">sub-domain Comments</div>
         <div class="content">{$subdomains.subdomain_comments|default:'&nbsp;'}</div>
     </div>
     <div class="holder">
@@ -71,7 +71,7 @@ Created on: 2011-02-10 00:27:11 536
         <div class="content">{$subdomains.dir_plugins|default:'&nbsp;'}</div>
     </div>
     <div class="holder">
-        <div class="title">Subdomain URL</div>
+        <div class="title">sub-domain URL</div>
         <div class="content"><a href="{$subdomains.subdomain_url}">{$subdomains.subdomain_url|default:'&nbsp;'}</a>
         </div>
     </div>
@@ -114,4 +114,4 @@ Created on: 2011-02-10 00:27:11 536
         </ul>
     </div>
     <div class="clear"></div>
-    <!-- End of admin details of subdomains (Sub-Domains) -->
+    <!-- End of admin details of subdomains (sub-domain s) -->

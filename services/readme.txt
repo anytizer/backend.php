@@ -42,11 +42,11 @@ reports and other kinds of documents.
 
 
 ============================================================
-This directory is a subdomain service using the framework.
+This directory is a sub-domain service using the framework.
 As this section may contain items in a commercial production,
 please avoid it from the SVN upload/download.
 
-Free/Stand Alone subdomain services
+Free/Stand Alone sub-domain services
 	localhost (distributed as a sample CMS application)
 	backend (distribution continued as a core framework)
 	(a real time example on primitive use of this framework)

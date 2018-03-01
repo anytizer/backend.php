@@ -15,7 +15,7 @@ Planned changes are:
   * Completely remove third party applications (installed on demand)
   * Provide full scss
     - For application itself
-	- For any sub-domains generated underneath
+	- For any sub-domain s generated underneath
 
  
 ## Regarding test scripts

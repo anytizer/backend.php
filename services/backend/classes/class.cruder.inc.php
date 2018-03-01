@@ -198,7 +198,7 @@ class cruder
     {
         $subdomain_id = (int)$subdomain_id;
         if ($subdomain_id == 0) {
-            \common\stopper::message('Please choose a correct Subdomain ID.');
+            \common\stopper::message('Please choose a correct sub-domain ID.');
         }
 
         $variable = new \common\variable();
@@ -224,11 +224,11 @@ WHERE
 	subdomain_id={$subdomain_id}
 	AND is_active='Y'
 ;";
-        $subdomain = $this->row($subdomain_sql);
+        $sub-domain = $this->row($subdomain_sql);
         if (!isset($subdomain['subdomain_name'])) {
             # Warning: This is not good to use the default framework.
-            \common\stopper::message('Subdomain details is not available for ID: ' . $subdomain_id);
-            $subdomain = array(
+            \common\stopper::message('sub-domain details is not available for ID: ' . $subdomain_id);
+            $sub-domain = array(
                 'subdomain_id' => 0,
                 'subdomain_name' => $_SERVER['SERVER_NAME'],
             );
@@ -333,7 +333,7 @@ WHERE
 
             # Javascript validators: Create blank files
             # {$validator}: on the parent.
-            # {$js}: within the subdomain pack
+            # {$js}: within the sub-domain pack
             'js/validators/entity/add.js' => "{$js}/validators/{$entity_name}/add.js",
             'js/validators/entity/edit.js' => "{$js}/validators/{$entity_name}/edit.js",
             'js/validators/entity/list.js' => "{$js}/validators/{$entity_name}/list.js",

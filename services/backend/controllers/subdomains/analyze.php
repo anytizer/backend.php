@@ -187,8 +187,8 @@ $sizes = array(
 # How many files? All reset to zero, initially
 $counters = $sizes;
 
-# Which subdomain pack to analyze?
-$subdomain = new \subdomain\subdomains();
+# Which sub-domain pack to analyze?
+$sub-domain = new \subdomain\subdomains();
 $subdomain_id = $variable->get('id', 'integer', 0);
 $subdomain_base_dir = $framework->subdomain_base($subdomain_id);
 

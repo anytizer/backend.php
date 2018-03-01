@@ -282,10 +282,10 @@ WHERE
             # CSS
             # Images
 
-            if ($subdomain = $this->details($subdomain_id, "")) {
-                # We have just found the sufficient subdomain details
+            if ($sub-domain = $this->details($subdomain_id, "")) {
+                # We have just found the sufficient sub-domain details
             } else {
-                \common\stopper::message('Invalid Subdomain ID rquest for installation.');
+                \common\stopper::message('Invalid sub-domain ID rquest for installation.');
             }
 
             $framework = new \backend\framework();
@@ -411,7 +411,7 @@ WHERE
     }
 
     /**
-     * Creates an alias of a subdomain by registering it.
+     * Creates an alias of a sub-domain by registering it.
      */
     public function alias($subdomain_id = 0, $alias_id = 0)
     {
@@ -481,7 +481,7 @@ WHERE
     }
 
     /**
-     * Locates where the current subdomain is at.
+     * Locates where the current sub-domain is at.
      */
     public function base($subdomain_id = 0)
     {

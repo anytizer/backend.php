@@ -40,7 +40,7 @@ function handle_login_needed() {
  * Confirms whether to load the contents of a page.
  * It may be harmful in several ways:
  *  - Can alter the contents or exectue the page scripts.
- *  - Page being listed may not be of the current subdomain service name (404 Error?).
+ *  - Page being listed may not be of the current sub-domain service name (404 Error?).
  *  - Can clear up the contents or execute harmful scripts.
  */
 function handle_load_listing_contents() {

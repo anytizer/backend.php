@@ -3,7 +3,7 @@ $variable->validate('get', array(
     'id' => 0,
 ));
 
-$subdomain = new \subdomain\subdomains();
+$sub-domain = new \subdomain\subdomains();
 
 if ($variable->post('alias-button', 'string', "")) {
     $data = $variable->post('alias', 'array', array());

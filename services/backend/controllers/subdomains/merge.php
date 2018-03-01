@@ -1,7 +1,7 @@
 <?php
 /**
  * Reverse of cloning
- * Merges an externally built subdomain project into a parent.
+ * Merges an externally built sub-domain project into a parent.
  *
  * @todo Auto calculate the list of subdomains needed to move.
  * @todo Make more dynamic merger

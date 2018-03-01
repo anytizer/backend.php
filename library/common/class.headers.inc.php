@@ -451,7 +451,7 @@ class headers
 
     /**
      * Anti operation of is_server() function.
-     * Detects if the current subdomain is localhost or the one
+     * Detects if the current sub-domain is localhost or the one
      * created by modifying the "hosts" file.
      * Usage examples:
      *   to hide tracking
@@ -471,7 +471,7 @@ class headers
 
     /**
      * Identifies if the current server is local or remote/live server.
-     * The subdomain name could be used by modifying the "hosts" file.
+     * The sub-domain name could be used by modifying the "hosts" file.
      * In this case, it detects whether it is a real server or not.
      *   TRUE  = Server is a remote machine
      *   FALSE = Server is a local  machine

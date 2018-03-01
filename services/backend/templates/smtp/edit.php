@@ -12,7 +12,7 @@
             Remove [ smtp_id ] in the list.
         *}-->
         <tr>
-            <td class="attribute">Subdomain ID:</td>
+            <td class="attribute">sub-domain ID:</td>
             <td>{$smtp.subdomain_id} - {$smtp.subdomain_id|table:'query_subdomains':'subdomain_name':'subdomain_id'}
             </td>
         </tr>

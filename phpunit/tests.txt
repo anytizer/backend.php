@@ -3,7 +3,7 @@ default page is /
 	- empty
 	- index.php
 	- /
-Subdomain alias works on temp paths
+sub-domain alias works on temp paths
 CRUD pre-checks file write permissions
 Composer based classes are used
 Default username, password fix

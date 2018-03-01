@@ -1,9 +1,9 @@
 <?php
 /**
  * Exports database tables of a subdomain.
- * This script NOT meant to export a subdomain into production environment.
- * Rather, it will just help ISOLATE a subdomain from the framework.
- * And, make the exported subdomain work as stand-alone application.
+ * This script NOT meant to export a sub-domain into production environment.
+ * Rather, it will just help ISOLATE a sub-domain from the framework.
+ * And, make the exported sub-domain work as stand-alone application.
  * You will have to re-install the database, configure the subdomain, and test it
  *   before you export it into the production environment.
  * If the framework database was modified after exporting the subdomain,
@@ -42,7 +42,7 @@ $database_name = 'db' . date('mdHis');
 $timestamp = date('Y-m-d H:i:s');
 $password = \common\tools::random_text(5);
 
-# Export this Subdomain ID
+# Export this sub-domain ID
 # And the framework too.
 $framework_subdomain_id = $config['framework_id'];
 $current_database = MYSQL_DATABASENAME;
@@ -50,7 +50,7 @@ $current_database = MYSQL_DATABASENAME;
 $subdomain_id = $variable->post('subdomain_id', 'integer', 0);
 $framework_subdomain_id = 27;
 
-# Verify that we have the subdomain available to export.
+# Verify that we have the sub-domain available to export.
 $subdomain_sql = "
 SELECT
 	subdomain_id,
@@ -60,11 +60,11 @@ FROM `{$current_database}`.query_subdomains
 WHERE
 	subdomain_id={$subdomain_id}
 ;";
-$subdomain = $db->row($subdomain_sql);
+$sub-domain = $db->row($subdomain_sql);
 
-# The subdomain should exist first.
+# The sub-domain should exist first.
 if (!isset($subdomain['subdomain_id'])) {
-    \common\stopper::message('Invalid Subdomain ID: ' . $subdomain_id);
+    \common\stopper::message('Invalid sub-domain ID: ' . $subdomain_id);
 }
 
 # Privacy control: Do not allow protected subdomains being exported.
@@ -119,11 +119,11 @@ $db->query($sql);
 $sqls = array();
 $sqls[] = "
 ############################################
-## Subdomain ID: {$subdomain['subdomain_id']}
-## Subdomain Name: {$subdomain['subdomain_name']}
+## sub-domain ID: {$subdomain['subdomain_id']}
+## sub-domain Name: {$subdomain['subdomain_name']}
 ## Server Timestamp: {$timestamp}
 ## Server Export Scripts    : install/export-scripts/{$subdomain['filename']}
-## Subdomain Import Scripts : {$subdomain['subdomain_name']}/export-scripts.sql
+## sub-domain Import Scripts : {$subdomain['subdomain_name']}/export-scripts.sql
 ############################################
 
 # Create the database
@@ -183,7 +183,7 @@ $script_contents = implode("\r\n", $sqls);
 file_put_contents(__APP_PATH__ . "/install/export-scripts/{$subdomain['filename']}", $script_contents);
 echo $script_contents;
 
-# Put the dump script within the subdomain files
+# Put the dump script within the sub-domain files
 $subdomain_name_sql = "
 SELECT
 	subdomain_name `name`,
@@ -192,7 +192,7 @@ FROM query_subdomains
 WHERE
 	subdomain_id={$subdomain_id}
 ;";
-$subdomain = $db->row($subdomain_name_sql);
+$sub-domain = $db->row($subdomain_name_sql);
 $subdomain['name'] = isset($subdomain['name']) ? $subdomain['name'] : "";
 if ($subdomain['name']) {
     $__SUBDOMAIN_BASE__ = $framework->subdomain_base($subdomain['subdomain_id']);
@@ -201,8 +201,8 @@ if ($subdomain['name']) {
     @file_put_contents($export_sql_script, $script_contents);
     @file_put_contents($__SUBDOMAIN_BASE__ . '/export-scripts.bat',
         "@ECHO OFF
-REM Begin to create the exported subdomain database.
-REM It will clone the system database and subdomain service database.
+REM Begin to create the exported sub-domain database.
+REM It will clone the system database and sub-domain service database.
 
 REM Database [{$database_name}] will be created.
 mysql -u{$target['username']} -p{$target['password']} -h{$target['hostname']} < export-scripts.sql

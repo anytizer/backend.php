@@ -1,6 +1,6 @@
 /**
 * Skeleton of [Query Subdomains Status: query_subdomains_status]
-* Development status of subdomain services
+* Development status of sub-domain services
 * ==========================================================
 * Timely view/truncate this table, as it may swell too soon.
 *
@@ -9,7 +9,7 @@
 
 CREATE TABLE `query_subdomains_status` (
   `status_id` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT 'Status ID',
-  `subdomain_id` int(10) unsigned NOT NULL DEFAULT '0' COMMENT 'For which Subdomain ID?',
+  `subdomain_id` int(10) unsigned NOT NULL DEFAULT '0' COMMENT 'For which sub-domain ID?',
   `added_on` datetime NOT NULL DEFAULT '0000-00-00 00:00:00' COMMENT 'Added on',
   `fixed_on` datetime NOT NULL DEFAULT '0000-00-00 00:00:00' COMMENT 'Last time when CRON executed on this record',
   `modified_on` datetime NOT NULL DEFAULT '0000-00-00 00:00:00' COMMENT 'Modified on',
@@ -20,5 +20,5 @@ CREATE TABLE `query_subdomains_status` (
   `status_name` varchar(255) NOT NULL DEFAULT "" COMMENT 'Readable status name',
   `status_comments` varchar(255) NOT NULL DEFAULT "" COMMENT 'Status Comments',
   PRIMARY KEY (`status_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Development status of subdomain services';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Development status of sub-domain services';
 

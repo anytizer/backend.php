@@ -22,14 +22,14 @@ Created on: 2011-02-10 00:27:11 536
 	</tr>
 *}-->
         <tr class="{cycle values='A,B'}">
-            <td class="attribute">Subdomain Port:</td>
+            <td class="attribute">sub-domain Port:</td>
             <td><input type="text" name="subdomains[subdomain_port]" value="{$subdomains.subdomain_port|htmlentities}"
                        class="input" id="subdomains-subdomain_port"/> <a
                     href="subdomains-install.php?id={$subdomains.subdomain_id}">Install Again</a>
             </td>
         </tr>
         <tr class="{cycle values='A,B'}">
-            <td class="attribute">Subdomain Name:</td>
+            <td class="attribute">sub-domain Name:</td>
             <td><input type="text" name="subdomains[subdomain_name]" value="{$subdomains.subdomain_name|htmlentities}"
                        class="input" id="subdomains-subdomain_name" style="background-color:#FF99CC;"/></td>
         </tr>
@@ -40,12 +40,12 @@ Created on: 2011-02-10 00:27:11 536
                        id="subdomains-subdomain_comments"/></td>
         </tr>
         <tr class="{cycle values='A,B'}">
-            <td class="attribute">Subdomain URL:</td>
+            <td class="attribute">sub-domain URL:</td>
             <td><input type="text" name="subdomains[subdomain_url]" value="{$subdomains.subdomain_url|htmlentities}"
                        class="input" id="subdomains-subdomain_url"/></td>
         </tr>
         <tr>
-            <td class="attribute">Subdomain IP:</td>
+            <td class="attribute">sub-domain IP:</td>
             <td><input type="text" name="subdomains[subdomain_ip]"
                        value="{$subdomains.subdomain_ip|default:$subdomains.subdomain_name|gethostbyname|default:'0.0.0.0'}"
                        class="input" id="subdomains-subdomain_ip"/> Leave blank to auto find
@@ -106,7 +106,7 @@ Created on: 2011-02-10 00:27:11 536
                 <!-- This is different than system's protection code. This is related to particular ID. -->
                 <input type="hidden" name="protection_code" value="{$subdomains.code}"/> <input type="hidden"
                                                                                                 name="edit-action"
-                                                                                                value="Edit Sub-Domains"/>
+                                                                                                value="Edit sub-domain s"/>
                 <input type="submit" name="submit-button" class="submit" value="Save Changes"/> Or, <a
                     href="{\common\url::last_page('subdomains-list.php')}">Cancel</a></td>
         </tr>

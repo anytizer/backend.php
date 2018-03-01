@@ -3,10 +3,10 @@
  */
 function subdomain_page_valid() {
     var page_name = document.forms['page-add-form'].elements['page[page_name]'].value;
-    var subdomain = parseInt(document.forms['page-add-form'].elements['page[subdomain_id]'].value);
+    var sub-domain = parseInt(document.forms['page-add-form'].elements['page[subdomain_id]'].value);
 
     if (page_name && subdomain) {
-        var ajaxURL = 'ajax-page-valid.php?subdomain_id=' + subdomain + '&page_name=' + page_name + '&rand=' + Math.random();
+        var ajaxURL = 'ajax-page-valid.php?subdomain_id=' + sub-domain + '&page_name=' + page_name + '&rand=' + Math.random();
         ajaxLoader(document.getElementById('page-valid-message'), ajaxURL);
     }
     return (false);
@@ -18,7 +18,7 @@ document.forms['page-add-form'].elements['page[page_name]'].onblur = subdomain_p
  * Continue to validate the other fields
  */
 var v = new Validator('page-add-form');
-v.addValidation('page[subdomain_id]', 'required', 'Please choose a subdomain name.');
+v.addValidation('page[subdomain_id]', 'required', 'Please choose a sub-domain name.');
 v.addValidation('page[page_name]', 'required', 'Please enter a page name.');
 v.addValidation('page[page_name]', "regexp=^[a-z0-9\\\_\\\-\\\.]+$", 'Invalid characters in page (file) name.');
 v.addValidation('page[page_title]', 'required', 'Please enter page title.');

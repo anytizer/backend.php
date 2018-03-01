@@ -10,7 +10,7 @@
 CREATE TABLE `query_menus` (
   `menu_id` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT 'Menu ID',
   `parent_id` int(10) unsigned NOT NULL DEFAULT '0' COMMENT 'Parent Menu ID',
-  `subdomain_id` int(10) unsigned NOT NULL DEFAULT '0' COMMENT 'For which Subdomain ID?',
+  `subdomain_id` int(10) unsigned NOT NULL DEFAULT '0' COMMENT 'For which sub-domain ID?',
   `added_on` datetime NOT NULL DEFAULT '0000-00-00 00:00:00' COMMENT 'Added on',
   `fixed_on` datetime NOT NULL DEFAULT '0000-00-00 00:00:00' COMMENT 'Last time when CRON executed on this record',
   `modified_on` datetime NOT NULL DEFAULT '0000-00-00 00:00:00' COMMENT 'Modified on',

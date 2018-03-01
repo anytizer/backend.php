@@ -29,7 +29,7 @@ class mysql_table
 # DROP TABLE IF EXISTS `{$this->prefix}_{$table}`;
 CREATE TABLE `{$this->prefix}_{$table}` (
  `{$this->primary_prefix}_id` INT(10) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT 'Runner ID',
- `subdomain_id` INT(10) UNSIGNED DEFAULT '0' NOT NULL COMMENT 'Subdomain ID',
+ `subdomain_id` INT(10) UNSIGNED DEFAULT '0' NOT NULL COMMENT 'sub-domain ID',
 
  # The administrative columns
  `added_on` DATETIME NOT NULL DEFAULT '0000-00-00 00:00:00' COMMENT 'Added on (first time)',

@@ -11,10 +11,10 @@
             Remove [ smtp_id ] in the list.
         *}-->
         <tr>
-            <td class="attribute">Subdomain ID:</td>
+            <td class="attribute">sub-domain ID:</td>
             <td>
                 <select name="smtp[subdomain_id]">
-                    <option value="">-- Choose a subdomain --</option>
+                    <option value="">-- Choose a sub-domain --</option>
                     {html_options options='system:subdomains_available'|dropdown selected=$smtp.subdomain_id} </select>
             </td>
         </tr>

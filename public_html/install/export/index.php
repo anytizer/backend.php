@@ -33,7 +33,7 @@ $subdomains = $db->arrays($subdomains_sql);
 <div class="wrapper">
     <h1>Install by exporting a subdmain</h1>
 
-    <p>You can isolate a subdomain being from the core framework. This rebuilds a database for your subdomain. </p>
+    <p>You can isolate a sub-domain being from the core framework. This rebuilds a database for your subdomain. </p>
 
     <p>It carries both the <strong>Framework Database</strong> along with the records needed for the
         <strong>subdomain</strong> you will extract. </p>
@@ -47,7 +47,7 @@ $subdomains = $db->arrays($subdomains_sql);
     </ul>
     <h1>Export now</h1>
 
-    <p>Please choose a subdomain to export. Exporting is perfectly harmless.</p>
+    <p>Please choose a sub-domain to export. Exporting is perfectly harmless.</p>
 
     <form autocomplete="off" id="export-database" name="export-database" method="post" action="export.php">
         <table>

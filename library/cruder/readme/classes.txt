@@ -1,9 +1,9 @@
-Subdomain : __SUBDOMAIN_NAME__
+sub-domain : __SUBDOMAIN_NAME__
 Created on: __TIMESTAMP__
 
 
 Info:
-Holds the class files specific to this subdomain service.
+Holds the class files specific to this sub-domain service.
 
 
 Developer's Notes:
