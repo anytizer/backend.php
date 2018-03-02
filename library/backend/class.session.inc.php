@@ -93,9 +93,9 @@ class session
 
         $session_id = $this->find_session_id($session_id);
         $subdomain_sql = "SELECT subdomain_id id FROM query_subdomains WHERE subdomain_name='{$_SERVER['SERVER_NAME']}';";
-        $sub-domain = $this->row($subdomain_sql);
+        $subdomain = $this->row($subdomain_sql);
         if (!isset($subdomain['id'])) {
-            $sub-domain = array('id' => 0);
+            $subdomain = array('id' => 0);
         }
 
         $write_session_data_sql = "

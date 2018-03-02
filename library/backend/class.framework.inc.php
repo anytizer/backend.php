@@ -53,7 +53,7 @@ WHERE
 	subdomain_name='{$_SERVER['SERVER_NAME']}'
 ;";
         $db = new \common\mysql();
-        if ($sub-domain = $db->row($prefix_sql)) {
+        if ($subdomain = $db->row($prefix_sql)) {
             return $subdomain['subdomain_prefix'] . \common\tools::timestamp();
         } else {
             return tools::timestamp();
@@ -90,7 +90,7 @@ FROM query_subdomains
 WHERE
 	subdomain_id={$alias['alias_id']}
 ;";
-                if ($sub-domain = $this->row($new_subdomain_sql)) {
+                if ($subdomain = $this->row($new_subdomain_sql)) {
                     # The main thing here...
                     $_SERVER['SERVER_NAME'] = $subdomain['server_name'];
                     $alias_changed = true;
@@ -222,9 +222,9 @@ WHERE
 	subdomain_name='{$_SERVER['SERVER_NAME']}'
 	# AND is_active='Y' # Loose searching
 ;";
-        if ($sub-domain = $this->row($subdomain_sql)) {
+        if ($subdomain = $this->row($subdomain_sql)) {
         } else {
-            $sub-domain = array(
+            $subdomain = array(
                 'id' => 0,
             );
         }
@@ -258,8 +258,8 @@ WHERE
 	subdomain_id={$subdomain_id}
 	# AND is_active='Y' # Loose searching
 ;";
-        if (!($sub-domain = $this->row($subdomain_sql))) {
-            $sub-domain = array(
+        if (!($subdomain = $this->row($subdomain_sql))) {
+            $subdomain = array(
                 'subdomain_id' => 0,
                 'subdomain_name' => $_SERVER['SERVER_NAME'],
                 'pointed_to' => '/tmp',

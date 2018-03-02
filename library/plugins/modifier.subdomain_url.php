@@ -21,7 +21,7 @@ WHERE
 	subdomain_id = {$subdomain_id}
 ;";
     $db = new \common\mysql();
-    if ($sub-domain = $db->row($subdomain_sql)) {
+    if ($subdomain = $db->row($subdomain_sql)) {
         # check for full flags like: is_http
         $http = ($subdomain['is_https'] == 'Y') ? 'https://' : 'http://';
         $www = ($subdomain['is_www'] == 'Y') ? 'www.' : "";

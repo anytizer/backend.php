@@ -167,7 +167,7 @@ if ($page_details) {
         }
     }
 } else {
-    $sub-domain = new subdomains();
+    $subdomain = new subdomains();
     $subdomain_details = $subdomain->current_subdomain();
 
     $message = "

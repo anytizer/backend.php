@@ -6,3 +6,4 @@ Right after dashboard, login user/pass fix.
 Composer based classes are used
 Replace IDs with GUID
 Replace times with datetime
+Replace JS using CDN

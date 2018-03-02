@@ -282,7 +282,7 @@ WHERE
             # CSS
             # Images
 
-            if ($sub-domain = $this->details($subdomain_id, "")) {
+            if ($subdomain = $this->details($subdomain_id, "")) {
                 # We have just found the sufficient sub-domain details
             } else {
                 \common\stopper::message('Invalid sub-domain ID rquest for installation.');

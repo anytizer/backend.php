@@ -425,9 +425,9 @@ FROM `query_subdomains`
 WHERE
 	`subdomain_name`='{$_SERVER['SERVER_NAME']}'
 ;";
-        if ($sub-domain = $this->row($subdomain_id_sql)) {
+        if ($subdomain = $this->row($subdomain_id_sql)) {
         } else {
-            $sub-domain = array('id' => 0);
+            $subdomain = array('id' => 0);
         }
 
         return $subdomain['id'];

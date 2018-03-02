@@ -224,11 +224,11 @@ WHERE
 	subdomain_id={$subdomain_id}
 	AND is_active='Y'
 ;";
-        $sub-domain = $this->row($subdomain_sql);
+        $subdomain = $this->row($subdomain_sql);
         if (!isset($subdomain['subdomain_name'])) {
             # Warning: This is not good to use the default framework.
             \common\stopper::message('sub-domain details is not available for ID: ' . $subdomain_id);
-            $sub-domain = array(
+            $subdomain = array(
                 'subdomain_id' => 0,
                 'subdomain_name' => $_SERVER['SERVER_NAME'],
             );

@@ -1,7 +1,7 @@
 <?php
 $subdomain_id = $variable->get('id', 'integer', 0);
 
-$sub-domain = new \subdomain\subdomains();
+$subdomain = new \subdomain\subdomains();
 if ($subdomain->install_subdomain($subdomain_id) === true) {
     # 100% chance that flow controller will come here.
     #\common\stopper::url('subdomains-install-successful.php');

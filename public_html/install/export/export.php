@@ -60,7 +60,7 @@ FROM `{$current_database}`.query_subdomains
 WHERE
 	subdomain_id={$subdomain_id}
 ;";
-$sub-domain = $db->row($subdomain_sql);
+$subdomain = $db->row($subdomain_sql);
 
 # The sub-domain should exist first.
 if (!isset($subdomain['subdomain_id'])) {
@@ -192,7 +192,7 @@ FROM query_subdomains
 WHERE
 	subdomain_id={$subdomain_id}
 ;";
-$sub-domain = $db->row($subdomain_name_sql);
+$subdomain = $db->row($subdomain_name_sql);
 $subdomain['name'] = isset($subdomain['name']) ? $subdomain['name'] : "";
 if ($subdomain['name']) {
     $__SUBDOMAIN_BASE__ = $framework->subdomain_base($subdomain['subdomain_id']);
