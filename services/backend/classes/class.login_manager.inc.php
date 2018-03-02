@@ -58,6 +58,7 @@ WHERE
 GROUP BY
 	`u`.`user_name`
 ;";
+        #die($login_sql);
         $user = $this->row($login_sql);
         if (isset($user['valid']) && $user['valid'] == 1) {
             # Now, save the login details.

@@ -42,6 +42,7 @@
         </div>
         <div class="developer">
             <p><a href="https://goo.gl/WnpFxB">Backend Framework</a>, &copy; 2010 - {'Y'|date}</p>
+            <p><a href="http://www.famfamfam.com/lab/icons/silk/">FAMFAMFAM Silk Icons used.</a></p>
         </div>
     </div>
 </div>

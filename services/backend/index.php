@@ -27,8 +27,7 @@
     </style>
 </head>
 <body>
-<p>This application requires <a href="https://goo.gl/WnpFxB"
-                                title="Backend Framework">Backend Framework</a> to operate.</p>
+<p>This application requires <a href="https://goo.gl/WnpFxB" title="Backend Framework">Backend Framework</a> to operate.</p>
 <!--
 Files protection mechanism for www.facet.sg
 You are looking at the partial files only.
