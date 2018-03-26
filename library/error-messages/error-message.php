@@ -3,11 +3,12 @@
 <head>
     <meta charset="utf-8"/>
     <title>Error Message</title>
+    <link href="css/w3.css" rel="stylesheet" type="text/css"/>
     <link href="css/error-messages.css" rel="stylesheet" type="text/css"/>
 </head>
-<body>
+<body class="w3-teal">
 <div class="wrapper">
-    <h1>Ouch! Error...</h1>
+    <h1 class="w3-pale-red w3-padding">Ouch! Error...</h1>
 
     <div class="error-body"><?php
         if (is_object($message)) {
@@ -15,14 +16,9 @@
         } else {
             echo($message);
         } ?></div>
+
     <p class="administrator">- Administrator</p>
 
-    <div class="footer">
-        <p>Domain: <a href="#"><?php echo $_SERVER['SERVER_NAME']; ?></p>
-    </div>
 </div>
-<!--
-<?php print_r($_SERVER); ?>
--->
 </body>
 </html>
