@@ -1,7 +1,7 @@
 <?php
 
 
-# Created on: 2011-04-06 14:42:31 485
+
 
 /**
  * Sorts messages by changing the sinking weight.

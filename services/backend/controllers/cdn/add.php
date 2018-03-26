@@ -1,7 +1,7 @@
 <?php
 
 
-# Created on: 2010-11-15 13:36:42 243
+
 
 /**
  * Add an entity in [ cdn ]

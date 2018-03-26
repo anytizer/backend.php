@@ -1,7 +1,7 @@
 <?php
 
 
-# Created on: 2011-02-10 00:12:27 318
+
 
 /**
  * Delete an entity in [ licenses ]

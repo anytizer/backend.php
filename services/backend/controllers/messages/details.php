@@ -1,7 +1,7 @@
 <?php
 
 
-# Created on: 2011-04-06 14:42:31 485
+
 
 /**
  * Details of an entry in [ messages ]

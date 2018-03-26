@@ -1,7 +1,7 @@
 <?php
 namespace subdomain;
 
-# Created on: 2011-02-14 12:48:48 850
+
 
 /**
  * domains Class

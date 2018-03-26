@@ -1,7 +1,7 @@
 <?php
 
 
-# Created on: 2010-06-16 21:19:04 969
+
 
 /**
  * Edit an entity in [ defines ]

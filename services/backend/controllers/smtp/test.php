@@ -1,7 +1,7 @@
 <?php
 
 
-# Created on: 2010-10-06 12:53:18 781
+
 
 /**
  * Sends a test email using the preferred smtp identifier code

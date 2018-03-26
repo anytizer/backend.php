@@ -1,7 +1,7 @@
 <?php
 namespace subdomain;
 
-# Created on: 2010-11-15 13:36:42 243
+
 
 /**
  * cdn Class

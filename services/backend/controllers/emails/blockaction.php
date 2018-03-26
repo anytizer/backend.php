@@ -1,7 +1,7 @@
 <?php
 
 
-# Created on: 2011-03-23 11:38:46 911
+
 
 /**
  * Perform a block action in entities. Input is via POST only

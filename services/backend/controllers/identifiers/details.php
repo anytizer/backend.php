@@ -1,7 +1,7 @@
 <?php
 
 
-# Created on: 2011-03-18 13:20:47 198
+
 
 /**
  * Details of an entry in [ identifiers ]

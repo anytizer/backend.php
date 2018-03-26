@@ -1,7 +1,7 @@
 <?php
 
 
-# Created on: 2011-02-02 00:36:55 983
+
 
 /**
  * Add an entity in [ superfish ]

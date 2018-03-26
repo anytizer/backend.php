@@ -1,7 +1,7 @@
 <?php
 
 
-# Created on: 2011-03-23 11:38:46 911
+
 
 /**
  * Sorts emails by changing the sinking weight.

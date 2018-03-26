@@ -1,7 +1,7 @@
 <?php
 
 
-# Created on: 2011-02-14 12:48:48 850
+
 
 /**
  * Lists entities in domains

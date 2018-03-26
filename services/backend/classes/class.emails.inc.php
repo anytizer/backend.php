@@ -1,7 +1,7 @@
 <?php
 namespace subdomain;
 
-# Created on: 2011-03-23 11:38:46 911
+
 
 /**
  * emails Class

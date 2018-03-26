@@ -1,7 +1,7 @@
 <?php
 
 
-# Created on: 2010-10-06 12:53:18 781
+
 
 /**
  * Add an entity in [ smtp ]

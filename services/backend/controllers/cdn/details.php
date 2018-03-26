@@ -1,7 +1,7 @@
 <?php
 
 
-# Created on: 2010-11-15 13:36:42 243
+
 
 /**
  * Details of an entry in [ cdn ]

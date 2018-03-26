@@ -1,7 +1,7 @@
 <?php
 
 
-# Created on: 2011-02-10 00:27:11 536
+
 
 /**
  * Lists entities in subdomains

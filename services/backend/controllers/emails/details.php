@@ -1,7 +1,7 @@
 <?php
 
 
-# Created on: 2011-03-23 11:38:46 911
+
 
 /**
  * Details of an entry in [ emails ]
