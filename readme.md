@@ -3,6 +3,15 @@
 Generates an admin panel for your database.
 
 
+## Installation
+
+ - Checkout
+ - Update composer
+ - File permissions
+ - Setup
+ - SQLs
+
+
 ## Special notes on development
 
 Being affected by the newer development techniques there are some planned changes](future.md).

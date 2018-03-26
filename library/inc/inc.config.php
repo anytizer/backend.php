@@ -90,9 +90,11 @@ $verify_installed_modules();
 define('__APP_PATH__', $backend['paths']['__APP_PATH__']); # 
 define('__LIBRARY_PATH__', $backend['paths']['__LIBRARY_PATH__']);
 define('__SERVICES_PATH__', $backend['paths']['__SERVICES_PATH__']);
-define('__LIVE__', $_SERVER['SERVER_ADDR'] != $_SERVER['REMOTE_ADDR']);
 define('__TEMP_PATH__', $backend['paths']['__TEMP_PATH__']);
+
 define('__THIRD_PARTIES__', $backend['paths']['__LIBRARY_PATH__'] . '/vendors');
+
+define('__LIVE__', $_SERVER['SERVER_ADDR'] != $_SERVER['REMOTE_ADDR']);
 
 # At least don't mask error while creating a temp zone.
 $subdomain_temp_zone = __TEMP_PATH__ . '/' . $_SERVER['SERVER_NAME'];
@@ -115,10 +117,17 @@ foreach ($ini['backend'] as $key => $value) {
  * @todo New update caused issues with Auto Include.
  * @see http://stackoverflow.com/questions/8574794/importing-class-without-namespace-to-namespaced-class
  */
-#require_once(__THIRD_PARTIES__ . '/smarty/Smarty.class.php');
-require_once("vendor/autoload.php");
-#require_once("vendor/smarty/smarty/libs/Smarty.class.php");
-#require_once('/smarty/Smarty.class.php');
+#require_once(__THIRD_PARTIES__ . '/smarty/Smarty.class.php'); # removed
+
+/**
+ * Load standard composer libraries
+ */
+require_once __APP_PATH__."/vendor/autoload.php";
+
+/**
+ * Load libraries not included by composer
+ */
+require_once __APP_PATH__."/vendor/smarty/smarty/libs/Smarty.class.php";
 $smarty = new \Smarty();
 /**
  * Compiled files are already protected, and are not available for direct download.

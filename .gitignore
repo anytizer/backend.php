@@ -31,3 +31,4 @@ todo.txt
 /public_html/js/ui-router
 /node_modules
 /vendors
+/composer.lock

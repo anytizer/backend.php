@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# DEPRECATED
+
 # Exports this application for a live production.
 # Clears the ".svn" directories and files inside them.
 # Tar/GZips the current entire directory.
