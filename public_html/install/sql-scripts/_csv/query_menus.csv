@@ -39,7 +39,6 @@
 18,0,27,"0000-00-00 00:00:00","0000-00-00 00:00:00","0000-00-00 00:00:00",0,70,"N","N","Y","Y","N","O","framework:footer","List of Pages","pages-listing.php","_top",,,,,
 19,0,27,"0000-00-00 00:00:00","0000-00-00 00:00:00","0000-00-00 00:00:00",0,60,"Y","N","Y","Y","N","O","framework:footer","Sitemap (XML)","sitemap-xml.php","_top",,,,,
 20,0,27,"0000-00-00 00:00:00","0000-00-00 00:00:00","0000-00-00 00:00:00",0,60,"N","N","Y","Y","N","O","framework:footer","Syndicated Module","syndicate/index.php","_top",,,,,
-21,0,27,"0000-00-00 00:00:00","0000-00-00 00:00:00","0000-00-00 00:00:00",0,50,"Y","N","Y","Y","N","O","framework:footer","Breaking News","breaking_news-list.php","_top",,,,,
 22,0,27,"0000-00-00 00:00:00","0000-00-00 00:00:00","0000-00-00 00:00:00",0,30,"N","N","Y","Y","N","O","framework:footer","SMTP","smtp-list.php","_top",,,,,
 43,0,27,"0000-00-00 00:00:00","0000-00-00 00:00:00","0000-00-00 00:00:00",0,100,"N","N","Y","Y","N","O","framework:footer","Add a page","pages-add.php","_top",,,,,
 49,0,27,"0000-00-00 00:00:00","0000-00-00 00:00:00","0000-00-00 00:00:00",0,30,"Y","N","Y","Y","Y","O","framework:footer","Clear Caches","clear.php","_top",,"Clear all temporary files and remake them",,,

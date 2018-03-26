@@ -4,9 +4,9 @@ Generates an admin panel for your database.
 
 
 ## Installation
-
+ - System paths
+ - Compose installation
  - Checkout
- - Update composer
  - File permissions
  - Setup
  - SQLs
