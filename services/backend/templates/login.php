@@ -166,16 +166,18 @@
                 </tr>
                 <tr>
                     <td class="field">&nbsp;</td>
-                    <td class="values"><input type="submit" name="login-action" value="Login" class="submit"/> or <a
-                            href="./">Cancel</a></td>
+                    <td class="values">
+						<input type="submit" name="login-action" value="Login" class="submit"/> 
+						or <a href="./">Cancel</a>
+					</td>
                 </tr>
             </table>
             <p>
-                <a href="http://www.opera.com/browser/">Opera</a>, <a href="http://www.mozilla.com/firefox/">Firefox</a>,
-                <a href="http://www.apple.com/safari/">Safari</a>, <a href="http://www.google.com/chrome/">Chrome</a> |
+                <a href="https://www.opera.com/download">Opera</a>, <a href="https://www.mozilla.org/en-US/firefox/">Firefox</a>,
+                <a href="https://www.apple.com/safari/">Safari</a>, <a href="https://www.google.com/chrome/">Chrome</a> |
                 <a href="{$smarty.const.__DEVELOPER_URL__}">{$smarty.const.__DEVELOPER_NAME__}</a></p>
 
-            <p>&copy; 2011 - {'Y'|date}.</p>
+            <p>&copy; 2018 - {'Y'|date}.</p>
         </div>
     </form>
 </div>
