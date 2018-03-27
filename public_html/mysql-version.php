@@ -179,7 +179,7 @@ if ($page_details) {
 	please <em>consider registering</em> the default pages.
 </p>
 <p>In case of <strong>exported subdomains</strong>, check that the server name is alias with the development version. Then re-export the sub-domain database scripts.</p>
-<p>If this is the first time, you have to import the database and tables correctly. Please refer to: install/sql-scripts/*.sh or install/sql-scripts/*.bat files.</p>
+<p>If this is the first time, you have to import the database and tables correctly. Please refer to: public_html/install/sql-scripts/*.sh or public_html/install/sql-scripts/*.bat files.</p>
 ";
 
     $smarty->assign('message', $message);

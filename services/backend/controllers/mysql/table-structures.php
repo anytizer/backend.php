@@ -2,6 +2,7 @@
 /**
  * Generates a fresh copy of Framework Tables.
  */
+use common\database_structure_validator;
 
 $validator = new database_structure_validator();
 
@@ -67,7 +68,7 @@ ORDER BY
         $subdomain_id = 27; # Replace this with your sub-domain to export the data.
         $framework_subdomain_id = 27;
 
-        $csv_file_name = str_replace('\\', '/', __APP_PATH__ . '/install/sql-scripts/_csv/' . $table['table_name'] . '.csv');
+        $csv_file_name = str_replace('\\', '/', __APP_PATH__ . '/public_html/install/sql-scripts/_csv/' . $table['table_name'] . '.csv');
         #echo "<p>{$csv_file_name}</p>";
 
         # Make sure that the CSV filename is available to create new.
@@ -122,7 +123,7 @@ WHERE
 
 ";
         # Update the scripts for SVN's use Or for installers
-        $structure_file = __APP_PATH__ . '/install/sql-scripts/_struct/' . $table['table_name'] . '.struct';
+        $structure_file = __APP_PATH__ . '/public_html/install/sql-scripts/_struct/' . $table['table_name'] . '.struct';
         file_put_contents($structure_file, $information_text);
         file_put_contents($structure_file, $body['Create Table'], FILE_APPEND);
         file_put_contents($structure_file, ";\r\n\r\n", FILE_APPEND);
@@ -136,7 +137,7 @@ FIELDS ESCAPED BY '\\\\' TERMINATED BY ',' ENCLOSED BY '\"'
 LINES TERMINATED BY '\\r\\n';
 
 ";
-        $dat_file = __APP_PATH__ . '/install/sql-scripts/_dat/' . $table['table_name'] . '.dat';
+        $dat_file = __APP_PATH__ . '/public_html/install/sql-scripts/_dat/' . $table['table_name'] . '.dat';
         file_put_contents($dat_file, $import_csv_sql);
     }
     ?>
