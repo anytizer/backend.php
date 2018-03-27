@@ -1,7 +1,7 @@
 
 TRUNCATE `query_subdomains`;
 
-LOAD DATA LOCAL INFILE '../../public_html/install/sql-scripts/_csv/query_subdomains.csv'
+LOAD DATA LOCAL INFILE '../public_html/install/sql-scripts/_csv/query_subdomains.csv'
 INTO TABLE `query_subdomains`
 FIELDS ESCAPED BY '\\' TERMINATED BY ',' ENCLOSED BY '"'
 LINES TERMINATED BY '\r\n';

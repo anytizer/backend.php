@@ -1,7 +1,7 @@
 
 TRUNCATE `query_emails_smtp`;
 
-LOAD DATA LOCAL INFILE '../../public_html/install/sql-scripts/_csv/query_emails_smtp.csv'
+LOAD DATA LOCAL INFILE '../public_html/install/sql-scripts/_csv/query_emails_smtp.csv'
 INTO TABLE `query_emails_smtp`
 FIELDS ESCAPED BY '\\' TERMINATED BY ',' ENCLOSED BY '"'
 LINES TERMINATED BY '\r\n';

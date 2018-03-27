@@ -1,7 +1,7 @@
 
 TRUNCATE `query_cdn`;
 
-LOAD DATA LOCAL INFILE '../../public_html/install/sql-scripts/_csv/query_cdn.csv'
+LOAD DATA LOCAL INFILE '../public_html/install/sql-scripts/_csv/query_cdn.csv'
 INTO TABLE `query_cdn`
 FIELDS ESCAPED BY '\\' TERMINATED BY ',' ENCLOSED BY '"'
 LINES TERMINATED BY '\r\n';
