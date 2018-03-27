@@ -269,7 +269,7 @@ FLUSH PRIVILEGES;
         </li>
     </ol>
 
-    <h2><strong>Step #3</strong>: Modify your [ hosts ] file</h2>
+    <h2><strong>Step #3</strong>: Automatic Installation</h2>
     <p><strong class="error">Notes</strong>: For automatic installation, run</p>
     <ol>
         <li>
