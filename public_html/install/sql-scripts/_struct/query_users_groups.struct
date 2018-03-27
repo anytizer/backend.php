@@ -22,5 +22,5 @@ CREATE TABLE `query_users_groups` (
   `group_name` varchar(255) NOT NULL DEFAULT '' COMMENT 'Full group name',
   `group_description` text NOT NULL COMMENT 'Some description of this group of users',
   PRIMARY KEY (`relationship_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='User groups to classify and set various permissions to them';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='User groups to classify and set various permissions to them';
 

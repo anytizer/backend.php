@@ -237,7 +237,7 @@ class database_structure_validator extends mysql
 
         #die($table['Create Table']);
 
-        # ) ENGINE=INNODB AUTO_INCREMENT=23 DEFAULT CHARSET=utf8 COMMENT='Fee items to charge'
+        # ) ENGINE=INNODB AUTO_INCREMENT=23 DEFAULT CHARSET=utf8mb4 COMMENT='Fee items to charge'
         $data = array();
         #preg_match('#\) ENGINE=(.*?) .*? COMMENT=\'(.*?)\'#', $table['Create Table'], $data);
         #preg_match_all('#\) ENGINE=([a-z]+)#is', $table['Create Table'], $data); # Works for ENGINE

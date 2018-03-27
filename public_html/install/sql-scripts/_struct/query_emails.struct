@@ -26,5 +26,5 @@ CREATE TABLE `query_emails` (
   `email_text` text NOT NULL COMMENT 'Alternative plain text',
   PRIMARY KEY (`email_id`),
   UNIQUE KEY `email_code_unique_index` (`email_code`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Email Templates Holder';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='Email Templates Holder';
 

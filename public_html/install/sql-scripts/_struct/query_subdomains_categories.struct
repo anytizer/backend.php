@@ -20,5 +20,5 @@ CREATE TABLE `query_subdomains_categories` (
   `category_name` varchar(255) NOT NULL DEFAULT '' COMMENT 'Subdomain Category',
   `category_comments` varchar(255) NOT NULL DEFAULT '' COMMENT 'Comments',
   PRIMARY KEY (`category_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Grouping of subdomains based on these categories';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='Grouping of subdomains based on these categories';
 

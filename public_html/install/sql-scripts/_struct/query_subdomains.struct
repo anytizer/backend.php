@@ -62,5 +62,5 @@ CREATE TABLE `query_subdomains` (
   `subdomain_description` text NOT NULL COMMENT 'Some detailed descriptions about this subdomain',
   PRIMARY KEY (`subdomain_id`),
   UNIQUE KEY `subdomain_name_unique_index` (`subdomain_name`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='List of all sub-domains';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='List of all sub-domains';
 

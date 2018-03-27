@@ -28,5 +28,5 @@ CREATE TABLE `query_cruded` (
   `written_to` varchar(255) NOT NULL DEFAULT '' COMMENT 'Where were the CRUD base files exported to?',
   PRIMARY KEY (`crud_id`),
   UNIQUE KEY `subdomain_id_crud_name_index` (`subdomain_id`,`crud_name`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Record of cruded classes and services';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='Record of cruded classes and services';
 

@@ -24,5 +24,5 @@ CREATE TABLE `query_cdn` (
   `cdn_comments` varchar(255) NOT NULL DEFAULT '' COMMENT 'Comments to the link',
   `cdn_version` varchar(255) NOT NULL DEFAULT '' COMMENT 'Latest available version number, if applies',
   PRIMARY KEY (`cdn_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Distributes CDN(Content Distribution Network) links';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='Distributes CDN(Content Distribution Network) links';
 

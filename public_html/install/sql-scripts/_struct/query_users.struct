@@ -26,5 +26,5 @@ CREATE TABLE `query_users` (
   `do_export` enum('N','Y') NOT NULL DEFAULT 'N' COMMENT 'Export this account in default installations?',
   PRIMARY KEY (`user_id`),
   UNIQUE KEY `user_name_unique_index` (`user_name`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Users to login into the system';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='Users to login into the system';
 

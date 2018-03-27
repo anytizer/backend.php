@@ -32,5 +32,5 @@ CREATE TABLE `query_emails_smtp` (
   `smtp_comments` varchar(255) NOT NULL DEFAULT '' COMMENT 'Notes on this login details',
   PRIMARY KEY (`smtp_id`),
   UNIQUE KEY `smtp_identifier_unique_index` (`smtp_identifier`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='List of SMTP user accounts';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='List of SMTP user accounts';
 

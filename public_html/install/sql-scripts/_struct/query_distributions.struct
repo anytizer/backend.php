@@ -33,5 +33,5 @@ CREATE TABLE `query_distributions` (
   `distribution_title` varchar(255) NOT NULL DEFAULT '' COMMENT 'Title',
   `distribution_text` text NOT NULL COMMENT 'Description',
   PRIMARY KEY (`distribution_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Downlodable distributions made with this framework';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='Downlodable distributions made with this framework';
 

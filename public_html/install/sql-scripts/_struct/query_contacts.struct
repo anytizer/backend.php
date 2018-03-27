@@ -29,5 +29,5 @@ CREATE TABLE `query_contacts` (
   `contact_host` varchar(255) NOT NULL DEFAULT '' COMMENT 'Host name of the current IP address',
   `contact_browser` varchar(255) NOT NULL DEFAULT '' COMMENT 'HTTP user agent',
   PRIMARY KEY (`contact_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Contact Us data received by the front end contact us forms';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='Contact Us data received by the front end contact us forms';
 

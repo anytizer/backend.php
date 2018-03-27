@@ -27,7 +27,7 @@ CREATE TABLE `query_articles` (
   `article_excerpt` text NOT NULL COMMENT 'Summary of the article',
   `article_text` text NOT NULL COMMENT 'Main, full text contents',
   PRIMARY KEY (`article_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Dynamic article pieces';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='Dynamic article pieces';
 
 /**
 * Skeleton of [Query Cdn: query_cdn]
@@ -55,7 +55,7 @@ CREATE TABLE `query_cdn` (
   `cdn_comments` varchar(255) NOT NULL DEFAULT "" COMMENT 'Comments to the link',
   `cdn_version` varchar(255) NOT NULL DEFAULT "" COMMENT 'Latest available version number, if applies',
   PRIMARY KEY (`cdn_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Distributes CDN(Content Distribution Network) links';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='Distributes CDN(Content Distribution Network) links';
 
 /**
 * Skeleton of [Query Code Generators: query_code_generators]
@@ -92,7 +92,7 @@ CREATE TABLE `query_code_generators` (
   `code_meta` varchar(255) NOT NULL DEFAULT "" COMMENT 'Additional information on meta data',
   PRIMARY KEY (`code_id`),
   UNIQUE KEY `code_context_code_name_unique_index` (`code_context`,`code_name`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Code Generator - Standard Framework';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='Code Generator - Standard Framework';
 
 /**
 * Skeleton of [Query Config: query_config]
@@ -121,7 +121,7 @@ CREATE TABLE `query_config` (
   `config_comments` varchar(255) NOT NULL DEFAULT "" COMMENT 'Explanation',
   PRIMARY KEY (`config_id`),
   UNIQUE KEY `query_config_subdomain_id_config_name_index` (`subdomain_id`,`config_name`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Standard configurations used in the subdomains';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='Standard configurations used in the subdomains';
 
 /**
 * Skeleton of [Query Contacts: query_contacts]
@@ -154,7 +154,7 @@ CREATE TABLE `query_contacts` (
   `contact_host` varchar(255) NOT NULL DEFAULT "" COMMENT 'Host name of the current IP address',
   `contact_browser` varchar(255) NOT NULL DEFAULT "" COMMENT 'HTTP user agent',
   PRIMARY KEY (`contact_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Contact Us data received by the front end contact us forms';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='Contact Us data received by the front end contact us forms';
 
 /**
 * Skeleton of [Query Cruded: query_cruded]
@@ -186,7 +186,7 @@ CREATE TABLE `query_cruded` (
   `written_to` varchar(255) NOT NULL DEFAULT "" COMMENT 'Where were the CRUD base files exported to?',
   PRIMARY KEY (`crud_id`),
   UNIQUE KEY `subdomain_id_crud_name_index` (`subdomain_id`,`crud_name`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Record of cruded classes and services';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='Record of cruded classes and services';
 
 /**
 * Skeleton of [Query Defines: query_defines]
@@ -218,7 +218,7 @@ CREATE TABLE `query_defines` (
   `define_comments` varchar(255) NOT NULL DEFAULT "" COMMENT 'What does this configuration do?',
   PRIMARY KEY (`define_id`),
   UNIQUE KEY `subdomain_id_define_name_unique_index` (`subdomain_id`,`define_name`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='PHP Constants defined here per subdomain';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='PHP Constants defined here per subdomain';
 
 /**
 * Skeleton of [Query Development History: query_development_history]
@@ -242,7 +242,7 @@ CREATE TABLE `query_development_history` (
   `history_title` varchar(255) NOT NULL DEFAULT "" COMMENT 'Quick title',
   `history_text` text NOT NULL COMMENT 'Development Message',
   PRIMARY KEY (`history_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Records of what we did while developing things';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='Records of what we did while developing things';
 
 /**
 * Skeleton of [Query Distributions: query_distributions]
@@ -279,7 +279,7 @@ CREATE TABLE `query_distributions` (
   `distribution_title` varchar(255) NOT NULL DEFAULT "" COMMENT 'Title',
   `distribution_text` text NOT NULL COMMENT 'Description',
   PRIMARY KEY (`distribution_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Downlodable distributions made with this framework';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='Downlodable distributions made with this framework';
 
 /**
 * Skeleton of [Query Downloads: query_downloads]
@@ -303,7 +303,7 @@ CREATE TABLE `query_downloads` (
   `download_text` varchar(255) NOT NULL DEFAULT "" COMMENT 'Link Text',
   `download_url` varchar(255) NOT NULL DEFAULT "" COMMENT 'Downlaod link',
   PRIMARY KEY (`download_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='List of good products to allow downloads';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='List of good products to allow downloads';
 
 /**
 * Skeleton of [Query Dropdowns: query_dropdowns]
@@ -331,7 +331,7 @@ CREATE TABLE `query_dropdowns` (
   `menu_description` text NOT NULL COMMENT 'Descriptions for reusability',
   PRIMARY KEY (`menu_id`),
   KEY `dropdown_parent_id_index` (`parent_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='SQL holder to generate dropdown menus via superfish plugin';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='SQL holder to generate dropdown menus via superfish plugin';
 
 /**
 * Skeleton of [Query Emails: query_emails]
@@ -361,7 +361,7 @@ CREATE TABLE `query_emails` (
   `email_text` text NOT NULL COMMENT 'Alternative plain text',
   PRIMARY KEY (`email_id`),
   UNIQUE KEY `email_code_unique_index` (`email_code`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Email Templates Holder';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='Email Templates Holder';
 
 /**
 * Skeleton of [Query Emails Smtp: query_emails_smtp]
@@ -397,7 +397,7 @@ CREATE TABLE `query_emails_smtp` (
   `smtp_comments` varchar(255) NOT NULL DEFAULT "" COMMENT 'Notes on this login details',
   PRIMARY KEY (`smtp_id`),
   UNIQUE KEY `smtp_identifier_unique_index` (`smtp_identifier`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='List of SMTP user accounts';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='List of SMTP user accounts';
 
 /**
 * Skeleton of [Query Errors: query_errors]
@@ -425,7 +425,7 @@ CREATE TABLE `query_errors` (
   `variables` text NOT NULL COMMENT 'Variables',
   `error_message` text NOT NULL COMMENT 'Error Message',
   PRIMARY KEY (`error_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COMMENT='Trapped PHP Error logs';
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COMMENT='Trapped PHP Error logs';
 /**
 * Skeleton of [Query Identifiers: query_identifiers]
 * To be used by Smarty plugin: |dropdown
@@ -452,7 +452,7 @@ CREATE TABLE `query_identifiers` (
   `identifier_comments` text NOT NULL COMMENT 'Hints, reasons or backup',
   PRIMARY KEY (`identifier_id`),
   UNIQUE KEY `subdomain_id_identifier_code_unique_index` (`subdomain_id`,`identifier_code`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='To be used by Smarty plugin: |dropdown';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='To be used by Smarty plugin: |dropdown';
 
 /**
 * Skeleton of [Query Licenses: query_licenses]
@@ -484,7 +484,7 @@ CREATE TABLE `query_licenses` (
   `license_email` varchar(255) NOT NULL DEFAULT "" COMMENT 'License owner (email address)',
   `license_to` varchar(255) NOT NULL DEFAULT "" COMMENT 'License owner (full name)',
   PRIMARY KEY (`license_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Licenses generated for users';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='Licenses generated for users';
 
 /**
 * Skeleton of [Query Logger: query_logger]
@@ -518,7 +518,7 @@ CREATE TABLE `query_logger` (
   `profile_wap` varchar(255) NOT NULL DEFAULT "" COMMENT 'WAP Profile',
   `browser_referer` varchar(255) NOT NULL DEFAULT "" COMMENT 'Entry point referer',
   PRIMARY KEY (`logged_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Unique visitors - browser access log';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='Unique visitors - browser access log';
 
 /**
 * Skeleton of [Query Menus: query_menus]
@@ -555,7 +555,7 @@ CREATE TABLE `query_menus` (
   `menus_comments` varchar(255) NOT NULL DEFAULT "" COMMENT 'Any extra notes',
   PRIMARY KEY (`menu_id`),
   KEY `menu_context_index` (`menu_context`,`sink_weight`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='List of menus to load with {menus} plugin';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='List of menus to load with {menus} plugin';
 
 /**
 * Skeleton of [Query Messages: query_messages]
@@ -583,7 +583,7 @@ CREATE TABLE `query_messages` (
   `message_body` text NOT NULL COMMENT 'Full message body',
   PRIMARY KEY (`message_id`),
   UNIQUE KEY `message_code_index` (`message_code`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Who sent what message to whom?';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='Who sent what message to whom?';
 
 /**
 * Skeleton of [Query Pages: query_pages]
@@ -626,7 +626,7 @@ CREATE TABLE `query_pages` (
   `page_extra` varchar(255) NOT NULL DEFAULT "" COMMENT 'Anything that can be used programtically, like: page banner URL',
   PRIMARY KEY (`page_id`),
   UNIQUE KEY `subdomain_page_name_unique_index` (`subdomain_id`,`page_name`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='All registered webpages for each subdomains';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='All registered webpages for each subdomains';
 
 /**
 * Skeleton of [Query Server: query_server]
@@ -652,7 +652,7 @@ CREATE TABLE `query_server` (
   `query_body` text NOT NULL COMMENT 'FULL Body of the SQL',
   PRIMARY KEY (`query_id`),
   UNIQUE KEY `identifier_index` (`query_identifier`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='List of SQLs to intake as Standard Report Queires';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='List of SQLs to intake as Standard Report Queires';
 
 /**
 * Skeleton of [Query Sessions: query_sessions]
@@ -677,7 +677,7 @@ CREATE TABLE `query_sessions` (
   `session_ipv6` varchar(255) NOT NULL DEFAULT "" COMMENT 'IPV6 text format address',
   `session_data` text NOT NULL COMMENT 'Session Data, keep as short as possible',
   PRIMARY KEY (`session_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Storage for database handled PHP Sessions';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='Storage for database handled PHP Sessions';
 
 /**
 * Skeleton of [Query Subdomains: query_subdomains]
@@ -743,7 +743,7 @@ CREATE TABLE `query_subdomains` (
   `subdomain_description` text NOT NULL COMMENT 'Some detailed descriptions about this subdomain',
   PRIMARY KEY (`subdomain_id`),
   UNIQUE KEY `subdomain_name_unique_index` (`subdomain_name`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='List of all sub-domain s';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='List of all sub-domain s';
 
 /**
 * Skeleton of [Query Subdomains Categories: query_subdomains_categories]
@@ -767,7 +767,7 @@ CREATE TABLE `query_subdomains_categories` (
   `category_name` varchar(255) NOT NULL DEFAULT "" COMMENT 'sub-domain Category',
   `category_comments` varchar(255) NOT NULL DEFAULT "" COMMENT 'Comments',
   PRIMARY KEY (`category_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Grouping of subdomains based on these categories';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='Grouping of subdomains based on these categories';
 
 /**
 * Skeleton of [Query Subdomains Status: query_subdomains_status]
@@ -791,7 +791,7 @@ CREATE TABLE `query_subdomains_status` (
   `status_name` varchar(255) NOT NULL DEFAULT "" COMMENT 'Readable status name',
   `status_comments` varchar(255) NOT NULL DEFAULT "" COMMENT 'Status Comments',
   PRIMARY KEY (`status_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Development status of sub-domain services';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='Development status of sub-domain services';
 
 /**
 * Skeleton of [Query Tables: query_tables]
@@ -826,7 +826,7 @@ CREATE TABLE `query_tables` (
   `export_comments` text NOT NULL COMMENT 'Extra comments',
   PRIMARY KEY (`table_id`),
   UNIQUE KEY `table_name_unique_key` (`table_name`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='List of all tables used within this application (exports)';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='List of all tables used within this application (exports)';
 
 /**
 * Skeleton of [Query Toc: query_toc]
@@ -853,7 +853,7 @@ CREATE TABLE `query_toc` (
   `toc_title` varchar(255) NOT NULL DEFAULT "" COMMENT 'Title',
   `toc_text` text NOT NULL COMMENT 'Explanatory HTML body',
   PRIMARY KEY (`toc_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COMMENT='Table of contents for book chapters';
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COMMENT='Table of contents for book chapters';
 
 /**
 * Skeleton of [Query Uploads: query_uploads]
@@ -887,7 +887,7 @@ CREATE TABLE `query_uploads` (
   `is_approved` enum('N','Y') NOT NULL DEFAULT 'N' COMMENT 'Useless at the moment',
   PRIMARY KEY (`upload_id`),
   UNIQUE KEY `file_code_unique_index` (`file_code`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='List of files uploaded using APIs';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='List of files uploaded using APIs';
 
 /**
 * Skeleton of [Query Users: query_users]
@@ -917,7 +917,7 @@ CREATE TABLE `query_users` (
   `do_export` enum('N','Y') NOT NULL DEFAULT 'N' COMMENT 'Export this account in default installations?',
   PRIMARY KEY (`user_id`),
   UNIQUE KEY `user_name_unique_index` (`user_name`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Users to login into the system';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='Users to login into the system';
 
 /**
 * Skeleton of [Query Users Groups: query_users_groups]
@@ -943,5 +943,5 @@ CREATE TABLE `query_users_groups` (
   `group_name` varchar(255) NOT NULL DEFAULT "" COMMENT 'Full group name',
   `group_description` text NOT NULL COMMENT 'Some description of this group of users',
   PRIMARY KEY (`relationship_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='User groups to classify and set various permissions to them';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='User groups to classify and set various permissions to them';
 

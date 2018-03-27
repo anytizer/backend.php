@@ -21,5 +21,5 @@ CREATE TABLE `query_sessions` (
   `session_ipv6` varchar(255) NOT NULL DEFAULT '' COMMENT 'IPV6 text format address',
   `session_data` text NOT NULL COMMENT 'Session Data, keep as short as possible',
   PRIMARY KEY (`session_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Storage for database handled PHP Sessions';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='Storage for database handled PHP Sessions';
 

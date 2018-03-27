@@ -39,5 +39,5 @@ CREATE TABLE `query_pages` (
   `page_extra` varchar(255) NOT NULL DEFAULT '' COMMENT 'Anything that can be used programtically, like: page banner URL',
   PRIMARY KEY (`page_id`),
   UNIQUE KEY `subdomain_page_name_unique_index` (`subdomain_id`,`page_name`(50))
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='All registered webpages for each subdomains';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='All registered webpages for each subdomains';
 

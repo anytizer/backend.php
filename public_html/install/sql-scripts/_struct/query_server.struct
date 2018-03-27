@@ -22,5 +22,5 @@ CREATE TABLE `query_server` (
   `query_body` text NOT NULL COMMENT 'FULL Body of the SQL',
   PRIMARY KEY (`query_id`),
   UNIQUE KEY `identifier_index` (`query_identifier`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='List of SQLs to intake as Standard Report Queires';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='List of SQLs to intake as Standard Report Queires';
 

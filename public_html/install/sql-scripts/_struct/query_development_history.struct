@@ -20,5 +20,5 @@ CREATE TABLE `query_development_history` (
   `history_title` varchar(255) NOT NULL DEFAULT '' COMMENT 'Quick title',
   `history_text` text NOT NULL COMMENT 'Development Message',
   PRIMARY KEY (`history_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Records of what we did while developing things';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='Records of what we did while developing things';
 

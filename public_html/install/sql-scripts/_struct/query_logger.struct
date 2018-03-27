@@ -30,5 +30,5 @@ CREATE TABLE `query_logger` (
   `profile_wap` varchar(255) NOT NULL DEFAULT '' COMMENT 'WAP Profile',
   `browser_referer` varchar(255) NOT NULL DEFAULT '' COMMENT 'Entry point referer',
   PRIMARY KEY (`logged_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Unique visitors - browser access log';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='Unique visitors - browser access log';
 

@@ -33,5 +33,5 @@ CREATE TABLE `query_code_generators` (
   `code_meta` varchar(255) NOT NULL DEFAULT '' COMMENT 'Additional information on meta data',
   PRIMARY KEY (`code_id`),
   UNIQUE KEY `code_context_code_name_unique_index` (`code_context`,`code_name`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Code Generator - Standard Framework';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='Code Generator - Standard Framework';
 

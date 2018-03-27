@@ -33,5 +33,5 @@ CREATE TABLE `query_menus` (
   `menus_comments` varchar(255) NOT NULL DEFAULT '' COMMENT 'Any extra notes',
   PRIMARY KEY (`menu_id`),
   KEY `menu_context_index` (`menu_context`,`sink_weight`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='List of menus to load with {menus} plugin';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='List of menus to load with {menus} plugin';
 

@@ -20,5 +20,5 @@ CREATE TABLE `query_subdomains_status` (
   `status_name` varchar(255) NOT NULL DEFAULT '' COMMENT 'Readable status name',
   `status_comments` varchar(255) NOT NULL DEFAULT '' COMMENT 'Status Comments',
   PRIMARY KEY (`status_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Development status of subdomain services';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='Development status of subdomain services';
 

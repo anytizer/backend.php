@@ -20,5 +20,5 @@ CREATE TABLE `query_downloads` (
   `download_text` varchar(255) NOT NULL DEFAULT '' COMMENT 'Link Text',
   `download_url` varchar(255) NOT NULL DEFAULT '' COMMENT 'Downlaod link',
   PRIMARY KEY (`download_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='List of good products to allow downloads';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='List of good products to allow downloads';
 

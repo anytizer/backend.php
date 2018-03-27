@@ -30,5 +30,5 @@ CREATE TABLE `query_uploads` (
   `is_approved` enum('N','Y') NOT NULL DEFAULT 'N' COMMENT 'Useless at the moment',
   PRIMARY KEY (`upload_id`),
   UNIQUE KEY `file_code_unique_index` (`file_code`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='List of files uploaded using APIs';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='List of files uploaded using APIs';
 

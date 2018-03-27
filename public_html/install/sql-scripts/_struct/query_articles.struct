@@ -27,5 +27,5 @@ CREATE TABLE `query_articles` (
   `article_excerpt` text NOT NULL COMMENT 'Summary of the article',
   `article_text` text NOT NULL COMMENT 'Main, full text contents',
   PRIMARY KEY (`article_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Dynamic article pieces';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='Dynamic article pieces';
 

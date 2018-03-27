@@ -28,5 +28,5 @@ CREATE TABLE `query_licenses` (
   `license_email` varchar(255) NOT NULL DEFAULT '' COMMENT 'License owner (email address)',
   `license_to` varchar(255) NOT NULL DEFAULT '' COMMENT 'License owner (full name)',
   PRIMARY KEY (`license_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Licenses generated for users';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='Licenses generated for users';
 

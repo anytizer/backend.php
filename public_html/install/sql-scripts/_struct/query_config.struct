@@ -25,5 +25,5 @@ CREATE TABLE `query_config` (
   `config_comments` varchar(255) NOT NULL DEFAULT '' COMMENT 'Explanation',
   PRIMARY KEY (`config_id`),
   UNIQUE KEY `query_config_subdomain_id_config_name_index` (`subdomain_id`,`config_name`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Standard configurations used in the subdomains';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='Standard configurations used in the subdomains';
 

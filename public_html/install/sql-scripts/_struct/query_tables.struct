@@ -31,5 +31,5 @@ CREATE TABLE `query_tables` (
   `export_comments` text NOT NULL COMMENT 'Extra comments',
   PRIMARY KEY (`table_id`),
   UNIQUE KEY `table_name_unique_key` (`table_name`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='List of all tables used within this application (exports)';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='List of all tables used within this application (exports)';
 
