@@ -20,4 +20,4 @@ mysqldump -uroot -ptoor --routine {$database['Database']} > {$database['Database
 }
 
 $scripts = ob_get_flush();
-file_put_contents(__APP_PATH__ . '/resources/database/databases.bat', $scripts);
+#file_put_contents(__APP_PATH__ . '/resources/database/databases.bat', $scripts);

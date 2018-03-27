@@ -6,6 +6,7 @@
  * Assumed that only trusted source calls this file.
  *
  * @see |url, |www, |domain
+ * @todo Testing required
  */
 function smarty_modifier_url($page_id = 0)
 {
@@ -30,7 +31,8 @@ INNER JOIN query_subdomains qs ON
         # check for full flags like: is_http
         $http = ($page['is_https'] == 'Y') ? 'https://' : 'http://';
         $www = ($page['is_www'] == 'Y') ? 'www.' : "";
-        $url = "{$http}{$www}{$page['domain']}:{$page['port']}/{$page['page']}";
+        
+		$url = "{$http}{$www}{$page['domain']}:{$page['port']}/{$page['page']}";
     }
 
     return $url;

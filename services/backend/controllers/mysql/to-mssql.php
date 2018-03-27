@@ -87,4 +87,4 @@ COPY /Y /B *.dmp backup.sql
 PAUSE";
 
 $scripts = ob_get_flush();
-file_put_contents(__APP_PATH__ . "/resources/database/mssql/mssql-{$tablename_prefix}.bat", $scripts);
+#file_put_contents(__APP_PATH__ . "/../resources/database/mssql/mssql-{$tablename_prefix}.bat", $scripts);
