@@ -1,0 +1,30 @@
+cases\PHPClasses
+ [x] Simple xml element
+ [x] Pdo
+ [x] Pdo statement
+ [ ] Sqlite
+
+cases\PHPExtensions
+ [x] Spl autoload register
+ [x] Gd info
+ [x] Curl init
+ [x] Multi byte string
+ [x] Xdebug installed
+
+cases\PhpIniConfigurations
+ [x] Php ini configurations
+ [x] Error log
+ [x] Allow url
+ [x] Uploads
+ [x] Short tags
+ [x] Auto features
+ [x] Register globals
+ [x] Magic quotes
+ [x] Mysqli
+
+cases\Plugins
+ [x] Www replacemement
+ [x] Non www replacemement
+ [x] Tighten
+ [x] Suspense
+
