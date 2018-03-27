@@ -9,7 +9,7 @@
 
 CREATE TABLE `query_distributions` (
   `distribution_id` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT 'Distribution ID',
-  `subdomain_id` int(10) unsigned NOT NULL DEFAULT '0' COMMENT 'For which sub-domain ID?',
+  `subdomain_id` int(10) unsigned NOT NULL DEFAULT '0' COMMENT 'For which Subdomain ID?',
   `added_on` datetime NOT NULL DEFAULT '0000-00-00 00:00:00' COMMENT 'When added?',
   `fixed_on` datetime NOT NULL DEFAULT '0000-00-00 00:00:00' COMMENT 'Last time when CRON executed on this record',
   `modified_on` datetime NOT NULL DEFAULT '0000-00-00 00:00:00' COMMENT 'Last modified on',
@@ -29,8 +29,8 @@ CREATE TABLE `query_distributions` (
   `is_approved` enum('N','Y') NOT NULL DEFAULT 'N' COMMENT 'Approved distribution?',
   `show_links` enum('N','Y') NOT NULL DEFAULT 'N' COMMENT 'Show links?',
   `show_samples` enum('N','Y') NOT NULL DEFAULT 'N' COMMENT 'Show samples?',
-  `distribution_link` varchar(255) NOT NULL DEFAULT "" COMMENT 'Link to this product or sample',
-  `distribution_title` varchar(255) NOT NULL DEFAULT "" COMMENT 'Title',
+  `distribution_link` varchar(255) NOT NULL DEFAULT '' COMMENT 'Link to this product or sample',
+  `distribution_title` varchar(255) NOT NULL DEFAULT '' COMMENT 'Title',
   `distribution_text` text NOT NULL COMMENT 'Description',
   PRIMARY KEY (`distribution_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Downlodable distributions made with this framework';

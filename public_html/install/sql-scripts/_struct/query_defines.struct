@@ -9,7 +9,7 @@
 
 CREATE TABLE `query_defines` (
   `define_id` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT 'Defined Constant ID',
-  `subdomain_id` int(10) unsigned NOT NULL DEFAULT '0' COMMENT 'For which sub-domain ID?',
+  `subdomain_id` int(10) unsigned NOT NULL DEFAULT '0' COMMENT 'For which Subdomain ID?',
   `added_on` datetime NOT NULL DEFAULT '0000-00-00 00:00:00' COMMENT 'First time added on',
   `fixed_on` datetime NOT NULL DEFAULT '0000-00-00 00:00:00' COMMENT 'Last time when CRON executed on this record',
   `modified_on` datetime NOT NULL DEFAULT '0000-00-00 00:00:00' COMMENT 'Last modified on',
@@ -21,11 +21,11 @@ CREATE TABLE `query_defines` (
   `auto_load` enum('N','Y') NOT NULL DEFAULT 'N' COMMENT 'Autoload this value?',
   `allow_edit` enum('N','Y') NOT NULL DEFAULT 'N' COMMENT 'On leased systems; allow editors modify this value?',
   `define_context` varchar(255) NOT NULL DEFAULT 'config' COMMENT 'config = System defined context for logical grouping of configurations',
-  `define_name` varchar(255) NOT NULL DEFAULT "" COMMENT 'Define Name, the CONSTANT name (upper case with underscores preferred)',
-  `define_value` varchar(255) NOT NULL DEFAULT "" COMMENT 'Defined value that it holds',
-  `define_sample` varchar(255) NOT NULL DEFAULT "" COMMENT 'Copy of defined value as a sample/hint/reference',
-  `define_handler` varchar(255) NOT NULL DEFAULT "" COMMENT 'PHP hanlder function to process the data',
-  `define_comments` varchar(255) NOT NULL DEFAULT "" COMMENT 'What does this configuration do?',
+  `define_name` varchar(255) NOT NULL DEFAULT '' COMMENT 'Define Name, the CONSTANT name (upper case with underscores preferred)',
+  `define_value` varchar(255) NOT NULL DEFAULT '' COMMENT 'Defined value that it holds',
+  `define_sample` varchar(255) NOT NULL DEFAULT '' COMMENT 'Copy of defined value as a sample/hint/reference',
+  `define_handler` varchar(255) NOT NULL DEFAULT '' COMMENT 'PHP hanlder function to process the data',
+  `define_comments` varchar(255) NOT NULL DEFAULT '' COMMENT 'What does this configuration do?',
   PRIMARY KEY (`define_id`),
   UNIQUE KEY `subdomain_id_define_name_unique_index` (`subdomain_id`,`define_name`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='PHP Constants defined here per subdomain';

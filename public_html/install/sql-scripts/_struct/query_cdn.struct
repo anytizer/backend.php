@@ -9,7 +9,7 @@
 
 CREATE TABLE `query_cdn` (
   `cdn_id` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT 'Content Distribution Network Link ID',
-  `subdomain_id` int(10) unsigned NOT NULL DEFAULT '0' COMMENT 'For which sub-domain ID?',
+  `subdomain_id` int(10) unsigned NOT NULL DEFAULT '0' COMMENT 'For which Subdomain ID?',
   `added_on` datetime NOT NULL DEFAULT '0000-00-00 00:00:00' COMMENT 'First time added on',
   `fixed_on` datetime NOT NULL DEFAULT '0000-00-00 00:00:00' COMMENT 'Last time when CRON executed on this record',
   `modified_on` datetime NOT NULL DEFAULT '0000-00-00 00:00:00' COMMENT 'Last modified on',
@@ -17,12 +17,12 @@ CREATE TABLE `query_cdn` (
   `sink_weight` int(10) unsigned NOT NULL DEFAULT '0' COMMENT 'Sink weight',
   `is_active` enum('N','Y') NOT NULL DEFAULT 'N' COMMENT 'Active link?',
   `is_approved` enum('N','Y') NOT NULL DEFAULT 'N' COMMENT 'Approved CDN?',
-  `cdn_name` varchar(255) NOT NULL DEFAULT "" COMMENT 'Full name of the content in CDN',
-  `cdn_mime` varchar(255) NOT NULL DEFAULT "" COMMENT 'MIME for this CDN content',
-  `cdn_local_link` varchar(255) NOT NULL DEFAULT "" COMMENT 'When using local links or internet is not available',
-  `cdn_remote_link` varchar(255) NOT NULL DEFAULT "" COMMENT 'Live links to the content',
-  `cdn_comments` varchar(255) NOT NULL DEFAULT "" COMMENT 'Comments to the link',
-  `cdn_version` varchar(255) NOT NULL DEFAULT "" COMMENT 'Latest available version number, if applies',
+  `cdn_name` varchar(255) NOT NULL DEFAULT '' COMMENT 'Full name of the content in CDN',
+  `cdn_mime` varchar(255) NOT NULL DEFAULT '' COMMENT 'MIME for this CDN content',
+  `cdn_local_link` varchar(255) NOT NULL DEFAULT '' COMMENT 'When using local links or internet is not available',
+  `cdn_remote_link` varchar(255) NOT NULL DEFAULT '' COMMENT 'Live links to the content',
+  `cdn_comments` varchar(255) NOT NULL DEFAULT '' COMMENT 'Comments to the link',
+  `cdn_version` varchar(255) NOT NULL DEFAULT '' COMMENT 'Latest available version number, if applies',
   PRIMARY KEY (`cdn_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Distributes CDN(Content Distribution Network) links';
 

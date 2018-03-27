@@ -9,7 +9,7 @@
 
 CREATE TABLE `query_cruded` (
   `crud_id` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT 'CRUD ID',
-  `subdomain_id` int(10) unsigned NOT NULL DEFAULT '0' COMMENT 'For which sub-domain ID?',
+  `subdomain_id` int(10) unsigned NOT NULL DEFAULT '0' COMMENT 'For which Subdomain ID?',
   `cruded_on` datetime NOT NULL DEFAULT '0000-00-00 00:00:00' COMMENT 'When CRUDed?',
   `added_on` datetime NOT NULL DEFAULT '0000-00-00 00:00:00' COMMENT 'Added on',
   `fixed_on` datetime NOT NULL DEFAULT '0000-00-00 00:00:00' COMMENT 'Last time when CRON executed on this record',
@@ -20,12 +20,12 @@ CREATE TABLE `query_cruded` (
   `is_uninstalled` enum('N','Y') NOT NULL DEFAULT 'N' COMMENT 'Removed this CRUDed entity?',
   `is_active` enum('N','Y') NOT NULL DEFAULT 'N' COMMENT 'Active entity? Defaults to Yes - Y',
   `is_approved` enum('N','Y') NOT NULL DEFAULT 'N' COMMENT 'Approved record?',
-  `full_name` varchar(255) NOT NULL DEFAULT "" COMMENT 'Full and readable name of this CRUD entity',
-  `crud_name` varchar(255) NOT NULL DEFAULT "" COMMENT 'CRUD Entity Name',
-  `protection_code` varchar(255) NOT NULL DEFAULT "" COMMENT 'Protection code that was generated for this entity',
-  `table_name` varchar(255) NOT NULL DEFAULT "" COMMENT 'Which table is it refering to?',
-  `pk_name` varchar(255) NOT NULL DEFAULT "" COMMENT 'Primary Key Name (Column) in this table',
-  `written_to` varchar(255) NOT NULL DEFAULT "" COMMENT 'Where were the CRUD base files exported to?',
+  `full_name` varchar(255) NOT NULL DEFAULT '' COMMENT 'Full and readable name of this CRUD entity',
+  `crud_name` varchar(255) NOT NULL DEFAULT '' COMMENT 'CRUD Entity Name',
+  `protection_code` varchar(255) NOT NULL DEFAULT '' COMMENT 'Protection code that was generated for this entity',
+  `table_name` varchar(255) NOT NULL DEFAULT '' COMMENT 'Which table is it refering to?',
+  `pk_name` varchar(255) NOT NULL DEFAULT '' COMMENT 'Primary Key Name (Column) in this table',
+  `written_to` varchar(255) NOT NULL DEFAULT '' COMMENT 'Where were the CRUD base files exported to?',
   PRIMARY KEY (`crud_id`),
   UNIQUE KEY `subdomain_id_crud_name_index` (`subdomain_id`,`crud_name`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Record of cruded classes and services';
