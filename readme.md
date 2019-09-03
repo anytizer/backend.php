@@ -29,4 +29,6 @@ There may be alternative links to the products listed above.
 [Read more](future.md).
 
 ## Third party
+[Smarty](https://github.com/smarty-php/smarty)
+[PHPMailer](https://github.com/PHPMailer/PHPMailer)
 [FamFamFam Silk Icons](http://www.famfamfam.com/lab/icons/silk/)
